@@ -10,6 +10,7 @@ import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
 import 'package:agent/ui/pages/profile_page/profile_page.dart';
 import 'package:agent/ui/pages/saved_ones_page/saved_ones_page.dart';
 import 'package:agent/ui/pages/search_page/search_page.dart';
+import 'package:uikit/uikit.dart';
 
 class HomePageModule extends Module {
   @override
@@ -45,6 +46,7 @@ class HomePage extends StatelessWidget {
             body: bodyBuilder(state.appNavigationType, context),
             bottomNavigationBar: AppNavigationBar(
               children: [
+              
                 AppNavigationBarItem(
                   onPressed: () {
                     bloc.add(
