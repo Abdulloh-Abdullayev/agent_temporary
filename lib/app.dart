@@ -1,3 +1,4 @@
+import 'package:agent/ui/pages/booking/boking_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -9,16 +10,13 @@ import 'package:agent/core/bloc/language/language_cubit.dart';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
-import 'package:agent/ui/pages/home/home_page.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(
-     HomePage.routeName
-    );
+    Modular.setInitialRoute(BookingPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -66,6 +64,7 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ModuleRoute("/", module: HomePageModule()),
+        // ModuleRoute("/", module: HomePageModule()),
+        ModuleRoute("/", module: BookingModule()),
       ];
 }

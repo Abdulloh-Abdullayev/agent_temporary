@@ -58,10 +58,10 @@ class AppBarMain extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
                 color: ColorName.green, borderRadius: BorderRadius.circular(6)),
-            child: InkWell(
-              onTap: onTapButton,
-              child: Assets.images.icons.notification.svg(),
-            ),
+            // child: InkWell(
+            //   onTap: onTapButton,
+            //   child: Assets.images.icons.notification.svg(),
+            // ),
           )
         ],
       ),
