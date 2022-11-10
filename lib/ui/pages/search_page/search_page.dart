@@ -16,12 +16,12 @@ class SearchPage extends StatelessWidget {
             onTapButton: () {},
             text: "Qayerga //ketmoqdasiz?//",
           ),
-          const PopupMenu(
+          // const PopupMenu(
             
-          ),
-          const CommitTextField(),
-          AppCheckBox(onTap: () {}, isCheck: false),
-          BalancePopupMenu(),
+          // ),
+          // const CommitTextField(),
+          // AppCheckBox(onTap: () {}, isCheck: false),
+          // BalancePopupMenu(),
         ],
       ),
     );
