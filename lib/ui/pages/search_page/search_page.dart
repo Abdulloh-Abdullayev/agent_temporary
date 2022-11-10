@@ -17,8 +17,8 @@ class SearchPage extends StatelessWidget {
       child: Column(
         children: [
           AppBarMain(
-            onTapButton: () {},
             text: "Qayerga //ketmoqdasiz?//",
+            menuTab: () {},
           ),
         ],
       ),
