@@ -31,8 +31,9 @@ class MainPage extends StatelessWidget {
                   padding: EdgeInsets.all(18.w),
                   margin: EdgeInsets.all(20.w),
                   decoration: BoxDecoration(
-                      color: ColorName.white,
-                      borderRadius: BorderRadius.circular(12)),
+                    color: ColorName.white,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
@@ -64,7 +65,9 @@ class MainPage extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                               color: ColorName.gray2,
                             ),
-                            SizedBox(width: 12.w,),
+                            SizedBox(
+                              width: 12.w,
+                            ),
                             Row(
                               children: [
                                 Assets.images.icons.imageIcon.svg(),
@@ -74,7 +77,9 @@ class MainPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   color: ColorName.black,
                                 ),
-                                SizedBox(width: 20.w,),
+                                SizedBox(
+                                  width: 20.w,
+                                ),
                                 Assets.images.icons.shopping.svg(),
                                 AppWidgets.textLocale(
                                   localeKey: " : 2",
@@ -94,7 +99,9 @@ class MainPage extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                               color: ColorName.gray2,
                             ),
-                            SizedBox(width: 12.w,),
+                            SizedBox(
+                              width: 12.w,
+                            ),
                             AppWidgets.text(
                               text: "31 - Авг 16:40",
                               fontSize: 12.sp,
@@ -102,11 +109,29 @@ class MainPage extends StatelessWidget {
                               color: ColorName.mainColor,
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
-                )
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Widgets.showCount(
+                      height: 98.w,
+                      width: 162.w,
+                      count: 10000000,
+                      title: "Сумма заказов за сегодня",
+                      color: ColorName.white,
+                    ),
+                    Widgets.showData(
+
+                      count: "135",
+                      title: "По объему продукции за сегодя",
+                      color: ColorName.white,
+                    ),
+                  ],
+                ).paddingSymmetric(horizontal: 20.w)
               ],
             ),
           );
