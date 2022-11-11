@@ -55,6 +55,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/clock.svg
   SvgGenImage get clock => const SvgGenImage('assets/icons/clock.svg');
 
+  /// File path: assets/icons/date.svg
+  SvgGenImage get date => const SvgGenImage('assets/icons/date.svg');
+
   /// File path: assets/icons/down.svg
   SvgGenImage get down => const SvgGenImage('assets/icons/down.svg');
 
@@ -134,6 +137,7 @@ class $AssetsIconsGen {
         chat,
         check,
         clock,
+        date,
         down,
         edit,
         exchange,

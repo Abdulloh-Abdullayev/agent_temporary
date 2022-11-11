@@ -1,7 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/booking/widgets/booking_widgets.dart';
+import 'package:agent/ui/pages/booking/widgets/o_booking_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -36,24 +36,24 @@ class BookingPage extends StatefulWidget {
 
 class _BookingPageState extends State<BookingPage> {
   final List<String> firstTextNameItems = [
-    "Bobur",
-    "Nuriddin aka",
-    "Bobur",
-    "Nuriddin aka",
-    "Bobur",
-    "Nuriddin aka",
-    "Bobur",
-    "Nuriddin aka",
+    "Скидка",
+    "Тип направления",
+    "Тип цены",
+    "Склад",
+    "Бонус",
+    "Заказ добавлен",
+    "Дата отгрузки",
+    "Срок консигнации",
   ];
   final List<String> secondTextNameItems = [
-    "Bobur",
-    "Nuriddin aka",
-    "Bobur",
-    "Nuriddin aka",
-    "Bobur",
-    "Nuriddin aka",
-    "Bobur",
-    "Nuriddin aka",
+    "Без скидки",
+    "Торговое направления",
+    "Перечисления",
+    "Основной склад",
+    "10%",
+    "16 окт, 1:43",
+    "12.10.2022",
+    "12.10.2022",
   ];
   String? selectedMenu;
 
@@ -64,9 +64,10 @@ class _BookingPageState extends State<BookingPage> {
         backgroundColor: ColorName.background,
         body: Column(
           children: [
-            BookingWidgets.appBar(
+            OBookingWidgets.appBar(
               title: "О заказе",
               ontap: (key) {},
+              context: context,
             ),
             Expanded(
               child: ListView(
@@ -92,7 +93,7 @@ class _BookingPageState extends State<BookingPage> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 const SizedBox(height: 21),
-                                BookingWidgets.bookingItems(
+                                OBookingWidgets.bookingItems(
                                   firstName: firstTextNameItems[i],
                                   secondName: secondTextNameItems[i],
                                 ),
@@ -177,14 +178,14 @@ class _BookingPageState extends State<BookingPage> {
                         const SizedBox(
                           height: 15,
                         ),
-                        BookingWidgets.cocaColaItems(),
+                        OBookingWidgets.cocaColaItems(),
                         const SizedBox(
                           height: 18,
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            BookingWidgets.textBuilder(
+                            OBookingWidgets.textBuilder(
                               "Общая объем",
                               "1365 о",
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -192,7 +193,7 @@ class _BookingPageState extends State<BookingPage> {
                             const SizedBox(
                               height: 12,
                             ),
-                            BookingWidgets.textBuilder(
+                            OBookingWidgets.textBuilder(
                               "Общее кол-во",
                               "1258 шт",
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -200,7 +201,7 @@ class _BookingPageState extends State<BookingPage> {
                             const SizedBox(
                               height: 12,
                             ),
-                            BookingWidgets.textBuilder(
+                            OBookingWidgets.textBuilder(
                               "Общая сумма",
                               "150 000 000 UZS",
                               color: ColorName.button,

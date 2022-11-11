@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-class BookingWidgets {
+class OBookingWidgets {
   static Widget bookingItems({
     required String firstName,
     required String secondName,
@@ -44,7 +44,9 @@ class BookingWidgets {
   }
 
   static Widget appBar(
-          {required String title, required Function(String key) ontap}) =>
+          {required String title,
+          required BuildContext context,
+          required Function(String key) ontap}) =>
       Container(
         height: 139.h,
         width: 1.sw,
@@ -78,28 +80,71 @@ class BookingWidgets {
                 Container(
                   height: 28.w,
                   width: 28.w,
-                  padding: EdgeInsets.only(bottom: 5),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(.10),
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: PopupMenuTools(
+                    onTap: (p0) {
+                      if (p0 == 1) {
+                        showDialog(
+                          context: context,
+                          builder: (ctx) => const AlertDialog(
+                            content: CommitTextField(
+                              text: "Добавление комментарии",
+                            ),
+                          ),
+                        );
+                      } else if (p0 == 2) {
+                        showDialog(
+                          context: context,
+                          builder: (ctx) => Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: DateTimeDialog(
+                                title: "Добавить дату отгрузки",
+                                closeTitle: "Закрыть",
+                                addTitle: "Добавить",
+                                addTap: () {}),
+                          ),
+                        );
+                      } else if (p0 == 3) {
+                        showDialog(
+                          context: context,
+                          builder: (ctx) => Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: DateTimeDialog(
+                                title: "Добавить консигнация",
+                                closeTitle: "Закрыть",
+                                addTitle: "Добавить",
+                                addTap: () {}),
+                          ),
+                        );
+                      }
+                    },
                     textName: const [
                       "Редактрировать",
                       "Комментария к заказу",
                       "Дата отгрузки",
                       "Срок Консигнация",
                       "Закрепить фото",
-                      'Удалить',
+                      'Отменить',
                     ],
                     icons: [
                       Assets.icons.edit.svg(),
                       Assets.icons.chat.svg(),
-                      Assets.icons.calendar.svg(),
+                      Assets.icons.date.svg(),
                       Assets.icons.clock.svg(),
                       Assets.icons.uploadingFile.svg(),
-                      Assets.icons.trash.svg(),
+                      SizedBox.shrink(),
+                    ],
+                    textColor: const [
+                      ColorName.button,
+                      ColorName.black,
+                      ColorName.black,
+                      ColorName.black,
+                      ColorName.black,
+                      ColorName.red,
                     ],
                   ),
                 ),
