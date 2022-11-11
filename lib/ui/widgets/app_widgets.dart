@@ -7,7 +7,6 @@ import 'package:super_rich_text/super_rich_text.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 
 class AppWidgets {
-
   static void showText({
     required String text,
     Duration? duration,
@@ -24,14 +23,13 @@ class AppWidgets {
     );
   }
 
-
   static Widget appButton({
     required String title,
     required VoidCallback onTap,
     double? width,
     double? height,
     Color color = ColorName.gray6,
-    Color textColor =ColorName.black,
+    Color textColor = ColorName.black,
     double fontSize = 16.0,
     FontWeight fontWeight = FontWeight.w600,
     double borderRadius = 12.0,
@@ -69,6 +67,7 @@ class AppWidgets {
       ),
     );
   }
+
   static Widget text({
     required String text,
     Color color = ColorName.black,
@@ -78,6 +77,7 @@ class AppWidgets {
     EdgeInsets padding = const EdgeInsets.all(0),
     TextAlign textAlign = TextAlign.start,
     int maxLines = 3,
+    TextStyle? textStyle,
     fontStyle = FontStyle.normal,
     bool isRichText = false,
     List<MarkerText> othersMarkers = const [],
@@ -87,7 +87,7 @@ class AppWidgets {
         padding: padding,
         child: SuperRichText(
           text: text,
-          style: GoogleFonts.roboto(
+          style:textStyle ?? GoogleFonts.inter(
             color: color,
             fontSize: fontSize.sp,
             decoration: decoration,
@@ -104,7 +104,7 @@ class AppWidgets {
       padding: padding,
       child: Text(
         text,
-        style: GoogleFonts.roboto(
+        style:textStyle ?? GoogleFonts.inter(
           color: color,
           fontSize: fontSize.sp,
           decoration: decoration,
@@ -127,6 +127,7 @@ class AppWidgets {
     TextAlign textAlign = TextAlign.start,
     int maxLines = 3,
     bool isRichText = false,
+    TextStyle? textStyle,
     List<MarkerText> othersMarkers = const [],
     List<String>? args,
     Map<String, String>? namedArgs,
@@ -140,13 +141,13 @@ class AppWidgets {
             args: args,
             namedArgs: namedArgs,
           ),
-          style: TextStyle(
-            color: color,
-            fontSize: fontSize.sp,
-            decoration: decoration,
-            fontWeight: fontWeight,
-            fontFamily: "Gilroy"
-          ),
+          style: textStyle ??
+              TextStyle(
+                  color: color,
+                  fontSize: fontSize.sp,
+                  decoration: decoration,
+                  fontWeight: fontWeight,
+                  fontFamily: "Gilroy"),
           textAlign: textAlign,
           maxLines: maxLines,
           overflow: TextOverflow.ellipsis,
@@ -158,7 +159,7 @@ class AppWidgets {
       padding: padding,
       child: Text(
         localeKey,
-        style: GoogleFonts.roboto(
+        style:textStyle ?? GoogleFonts.inter(
           color: color,
           fontSize: fontSize.sp,
           decoration: decoration,
@@ -173,6 +174,4 @@ class AppWidgets {
       ),
     );
   }
-
-
 }

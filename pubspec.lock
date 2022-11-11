@@ -1018,7 +1018,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "4a842f4543fcd5287bc18d2bb80bd4db8701b055"
+      resolved-ref: b229f0efeacf4ff91484584daa6418021259fad8
       url: "https://gitlab.com/tlps-project/ui-kit.git"
     source: git
     version: "1.0.0+1"
