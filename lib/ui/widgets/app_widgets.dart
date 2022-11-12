@@ -1,13 +1,13 @@
+import 'package:agent/core/utils/assets.gen.dart';
+import 'package:agent/core/utils/colors.gen.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:super_rich_text/super_rich_text.dart';
-import 'package:agent/core/utils/colors.gen.dart';
 
 class AppWidgets {
-
   static void showText({
     required String text,
     Duration? duration,
@@ -24,14 +24,13 @@ class AppWidgets {
     );
   }
 
-
   static Widget appButton({
     required String title,
     required VoidCallback onTap,
     double? width,
     double? height,
     Color color = ColorName.gray6,
-    Color textColor =ColorName.black,
+    Color textColor = ColorName.black,
     double fontSize = 16.0,
     FontWeight fontWeight = FontWeight.w600,
     double borderRadius = 12.0,
@@ -69,6 +68,7 @@ class AppWidgets {
       ),
     );
   }
+
   static Widget text({
     required String text,
     Color color = ColorName.black,
@@ -141,12 +141,11 @@ class AppWidgets {
             namedArgs: namedArgs,
           ),
           style: TextStyle(
-            color: color,
-            fontSize: fontSize.sp,
-            decoration: decoration,
-            fontWeight: fontWeight,
-            fontFamily: "Gilroy"
-          ),
+              color: color,
+              fontSize: fontSize.sp,
+              decoration: decoration,
+              fontWeight: fontWeight,
+              fontFamily: "Gilroy"),
           textAlign: textAlign,
           maxLines: maxLines,
           overflow: TextOverflow.ellipsis,
@@ -174,5 +173,44 @@ class AppWidgets {
     );
   }
 
+  static Widget backButton(VoidCallback onPressed) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        height: 28.w,
+        width: 28.w,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          color: const Color.fromRGBO(255, 255, 255, 0.1),
+        ),
+        child: Center(
+          child: Assets.images.icons.backIcon.svg(
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
 
+  static Widget iconButton({
+    required VoidCallback onPressed,
+    required SvgGenImage icon,
+  }) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        height: 28.w,
+        width: 28.w,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          color: const Color.fromRGBO(255, 255, 255, 0.1),
+        ),
+        child: Center(
+          child: icon.svg(
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
 }

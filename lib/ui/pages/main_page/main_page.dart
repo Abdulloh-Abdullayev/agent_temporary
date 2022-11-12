@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/balance_page/balance_page.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
+import 'package:agent/ui/pages/refund_page/refund_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:agent/ui/widgets/appbar_main.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +27,9 @@ class MainPage extends StatelessWidget {
               children: [
                 AppBarMain(
                   text: 'Главная',
-                  menuTab: () {},
+                  menuTab: () {
+                    Modular.to.pushNamed(BalancePage.routeName);
+                  },
                 ),
                 Container(
                   padding: EdgeInsets.all(18.w),
@@ -64,7 +68,9 @@ class MainPage extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                               color: ColorName.gray2,
                             ),
-                            SizedBox(width: 12.w,),
+                            SizedBox(
+                              width: 12.w,
+                            ),
                             Row(
                               children: [
                                 Assets.images.icons.imageIcon.svg(),
@@ -74,7 +80,9 @@ class MainPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   color: ColorName.black,
                                 ),
-                                SizedBox(width: 20.w,),
+                                SizedBox(
+                                  width: 20.w,
+                                ),
                                 Assets.images.icons.shopping.svg(),
                                 AppWidgets.textLocale(
                                   localeKey: " : 2",
@@ -94,7 +102,9 @@ class MainPage extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                               color: ColorName.gray2,
                             ),
-                            SizedBox(width: 12.w,),
+                            SizedBox(
+                              width: 12.w,
+                            ),
                             AppWidgets.text(
                               text: "31 - Авг 16:40",
                               fontSize: 12.sp,
