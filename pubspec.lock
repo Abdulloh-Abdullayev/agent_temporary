@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.2.0"
+  animated_digit:
+    dependency: "direct main"
+    description:
+      name: animated_digit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.2.1"
   args:
     dependency: transitive
     description:
@@ -1018,7 +1025,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "4a301b2263caeee75999386aa8413a48a89e01eb"
+      resolved-ref: db0ef1c351db175e856548c04fa2f7f58ea3efbd
       url: "https://gitlab.com/tlps-project/ui-kit.git"
     source: git
     version: "1.0.0+1"

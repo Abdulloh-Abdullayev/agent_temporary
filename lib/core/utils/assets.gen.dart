@@ -44,6 +44,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get imageIcon =>
       const SvgGenImage('assets/images/icons/Image_icon.svg');
 
+  /// File path: assets/images/icons/back_icon.svg
+  SvgGenImage get backIcon =>
+      const SvgGenImage('assets/images/icons/back_icon.svg');
+
   /// File path: assets/images/icons/communication.svg
   SvgGenImage get communication =>
       const SvgGenImage('assets/images/icons/communication.svg');
@@ -58,6 +62,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/draft_active.svg
   SvgGenImage get draftActive =>
       const SvgGenImage('assets/images/icons/draft_active.svg');
+
+  /// File path: assets/images/icons/filtr_icon.svg
+  SvgGenImage get filtrIcon =>
+      const SvgGenImage('assets/images/icons/filtr_icon.svg');
 
   /// File path: assets/images/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/images/icons/home.svg');
