@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/balance_page/balance_page.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
+import 'package:agent/ui/pages/refund_page/refund_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:agent/ui/widgets/appbar_main.dart';
 import 'package:flutter/material.dart';
@@ -10,9 +12,39 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
 import '../../../core/utils/assets.gen.dart';
+import 'widgets/tabbar_widget.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
+   late TabController _tabController;
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    _tabController = TabController(
+      length: 2,
+      vsync: this,
+    );
+    _tabController.addListener(_handleTabSelection);
+    super.initState();
+  }
+
+  void _handleTabSelection() {
+    if (_tabController.indexIsChanging) {
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +57,9 @@ class MainPage extends StatelessWidget {
               children: [
                 AppBarMain(
                   text: 'Главная',
-                  menuTab: () {},
+                  menuTab: () {
+                    Modular.to.pushNamed(BalancePage.routeName);
+                  },
                 ),
                 Container(
                   padding: EdgeInsets.all(18.w),
@@ -125,16 +159,32 @@ class MainPage extends StatelessWidget {
                       color: ColorName.white,
                     ),
                     Widgets.showData(
-
+                      height: 98.w,
+                      width: 162.w,
                       count: "135",
                       title: "По объему продукции за сегодя",
                       color: ColorName.white,
                     ),
                   ],
-                ).paddingSymmetric(horizontal: 20.w)
+                ).paddingSymmetric(horizontal: 20.w),
+
+                TabBarWidget(
+                  _tabController,
+                  "Заказы",
+                  "Другие",
+                      (int i) {},
+                ).paddingSymmetric(horizontal: 20.w,vertical: 15.w),
+
+                Container(
+                  child: [
+                    Container(),
+                    Container()
+                  ][_tabController.index],
+                )
               ],
             ),
           );
-        });
+        },
+    );
   }
 }

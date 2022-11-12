@@ -16,11 +16,17 @@ class ColorName {
   /// Color: #DFDFDF
   static const Color background = Color(0xFFDFDFDF);
 
+  /// Color: #D9D9D9
+  static const Color bgColor = Color(0xFFD9D9D9);
+
   /// Color: #000000
   static const Color black = Color(0xFF000000);
 
   /// Color: #36E5E5
   static const Color bluePercent = Color(0xFF36E5E5);
+
+  /// Color: #299B9B
+  static const Color button = Color(0xFF299B9B);
 
   /// Color: #B0CCCC
   static const Color defaultIcon = Color(0xFFB0CCCC);
