@@ -1,4 +1,4 @@
-import 'package:agent/ui/pages/booking/o_boking_page.dart';
+import 'package:agent/ui/pages/o_booking/o_boking_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
