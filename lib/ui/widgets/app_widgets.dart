@@ -29,11 +29,11 @@ class AppWidgets {
     required VoidCallback onTap,
     double? width,
     double? height,
-    Color color = ColorName.gray6,
-    Color textColor = ColorName.black,
+    Color color = ColorName.buttonColor,
+    Color textColor = ColorName.white,
     double fontSize = 16.0,
     FontWeight fontWeight = FontWeight.w600,
-    double borderRadius = 12.0,
+    double borderRadius = 8.0,
     Widget icon = const SizedBox(),
   }) {
     return Material(
@@ -87,7 +87,7 @@ class AppWidgets {
         padding: padding,
         child: SuperRichText(
           text: text,
-          style: GoogleFonts.roboto(
+          style: GoogleFonts.inter(
             color: color,
             fontSize: fontSize.sp,
             decoration: decoration,
@@ -104,7 +104,7 @@ class AppWidgets {
       padding: padding,
       child: Text(
         text,
-        style: GoogleFonts.roboto(
+        style: GoogleFonts.inter(
           color: color,
           fontSize: fontSize.sp,
           decoration: decoration,
@@ -141,11 +141,12 @@ class AppWidgets {
             namedArgs: namedArgs,
           ),
           style: TextStyle(
-              color: color,
-              fontSize: fontSize.sp,
-              decoration: decoration,
-              fontWeight: fontWeight,
-              fontFamily: "Gilroy"),
+            color: color,
+            fontSize: fontSize.sp,
+            decoration: decoration,
+            fontWeight: fontWeight,
+            fontFamily: "Gilroy",
+          ),
           textAlign: textAlign,
           maxLines: maxLines,
           overflow: TextOverflow.ellipsis,
@@ -157,7 +158,7 @@ class AppWidgets {
       padding: padding,
       child: Text(
         localeKey,
-        style: GoogleFonts.roboto(
+        style: GoogleFonts.inter(
           color: color,
           fontSize: fontSize.sp,
           decoration: decoration,

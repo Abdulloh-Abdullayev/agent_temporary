@@ -1,3 +1,9 @@
 {
-  "app_name": "ThinkBooking"
+  "app_name": "ThinkBooking",
+  "refund_tara": "Возврат тары",
+  "draft": "Черновик",
+  "refund": "Возврат",
+  "payment_information": "Информация оплаты",
+  "client_balance": "Баланс клиента",
+  "total_sum": "Общая сумма"
 }

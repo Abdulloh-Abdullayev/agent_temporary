@@ -25,8 +25,14 @@ class ColorName {
   /// Color: #36E5E5
   static const Color bluePercent = Color(0xFF36E5E5);
 
+  /// Color: #299B9B
+  static const Color buttonColor = Color(0xFF299B9B);
+
   /// Color: #B0CCCC
   static const Color defaultIcon = Color(0xFFB0CCCC);
+
+  /// Color: #E1E4E4
+  static const Color gray = Color(0xFFE1E4E4);
 
   /// Color: #8FA0A0
   static const Color gray2 = Color(0xFF8FA0A0);
