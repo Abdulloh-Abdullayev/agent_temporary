@@ -1,7 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
-import 'package:agent/ui/pages/refund_page/refund_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:agent/ui/widgets/appbar_main.dart';
 import 'package:flutter/material.dart';
@@ -27,8 +27,9 @@ class MainPage extends StatelessWidget {
                 AppBarMain(
                   text: 'Главная',
                   menuTab: () {
-                    Modular.to.pushNamed(RefundPage.routeName);
+                    HomePage.globalKey.currentState!.openDrawer();
                   },
+
                 ),
                 Container(
                   padding: EdgeInsets.all(18.w),
