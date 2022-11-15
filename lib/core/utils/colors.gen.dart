@@ -28,8 +28,17 @@ class ColorName {
   /// Color: #299B9B
   static const Color button = Color(0xFF299B9B);
 
+  /// Color: #299B9B
+  static const Color buttonColor = Color(0xFF299B9B);
+
   /// Color: #B0CCCC
   static const Color defaultIcon = Color(0xFFB0CCCC);
+
+  /// Color: #012B2B
+  static const Color drawerColor = Color(0xFF012B2B);
+
+  /// Color: #E1E4E4
+  static const Color gray = Color(0xFFE1E4E4);
 
   /// Color: #8FA0A0
   static const Color gray2 = Color(0xFF8FA0A0);
@@ -51,6 +60,9 @@ class ColorName {
 
   /// Color: #FF0000
   static const Color red = Color(0xFFFF0000);
+
+  /// Color: #56FFFF
+  static const Color textAddAccount = Color(0xFF56FFFF);
 
   /// Color: #FFFFFF
   static const Color white = Color(0xFFFFFFFF);

@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/balance_page/bloc/balance_cubit.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
@@ -53,9 +54,9 @@ class BalancePage extends StatelessWidget {
 
   Widget buildList(BalanceState state) {
     if (state.loading) {
-      return const Center(child:  CircularProgressIndicator());
+      return const Center(child: CircularProgressIndicator());
     } else if (state.hasError) {
-      return const Center(child:  Icon(Icons.error));
+      return const Center(child: Icon(Icons.error));
     }
     return Expanded(
       child: SingleChildScrollView(
@@ -63,7 +64,7 @@ class BalancePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppWidgets.textLocale(
-              localeKey: "Информация оплаты",
+              localeKey: LocaleKeys.payment_information,
               fontSize: 18.sp,
               fontWeight: FontWeight.w600,
             ).paddingOnly(top: 24.w, left: 20.w),
@@ -111,7 +112,7 @@ class BalancePage extends StatelessWidget {
             },
           ),
           AppWidgets.textLocale(
-            localeKey: "Баланс клиента",
+            localeKey: LocaleKeys.client_balance,
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,
@@ -120,14 +121,12 @@ class BalancePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: "Общая сумма",
+                localeKey: LocaleKeys.total_sum,
                 fontWeight: FontWeight.w400,
                 fontSize: 14.sp,
                 color: Colors.white.withOpacity(0.6),
               ),
               AnimatedDigitWidget(
-
-
                 value: state.totalPrice,
                 separateSymbol: ' ',
                 separateLength: 3,
@@ -139,13 +138,6 @@ class BalancePage extends StatelessWidget {
                 ),
                 suffix: " UZS",
               ),
-
-              // AppWidgets.textLocale(
-              //   localeKey: "125 000 000 UZS",
-              //   fontWeight: FontWeight.w600,
-              //   fontSize: 18.sp,
-              //   color: Colors.white,
-              // ),
             ],
           )
         ],

@@ -1,17 +1,18 @@
-import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
-import 'package:agent/ui/pages/main_page/main_page.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/Interesting_page/Interesting_page.dart';
 import 'package:agent/ui/pages/communication_page/communication_page.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
+import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
+import 'package:agent/ui/pages/left_menu/left_menu.dart';
+import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
+import 'package:agent/ui/pages/main_page/main_page.dart';
 import 'package:agent/ui/pages/profile_page/profile_page.dart';
 import 'package:agent/ui/pages/saved_ones_page/saved_ones_page.dart';
-import 'package:uikit/uikit.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePageModule extends Module {
   @override
@@ -33,6 +34,10 @@ class HomePageModule extends Module {
           (i) => MainCubit(),
       onDispose: (value) => value.close(),
     ),
+    Bind<LeftMenuBloc>(
+          (i) => LeftMenuBloc(),
+      onDispose: (value) => value.close(),
+    ),
 
 
   ];
@@ -40,6 +45,8 @@ class HomePageModule extends Module {
 
 class HomePage extends StatelessWidget {
   static const String routeName = "/homePage";
+  static final GlobalKey<ScaffoldState> globalKey =
+  GlobalKey<ScaffoldState>(debugLabel: "globalKey");
 
   const HomePage({Key? key}) : super(key: key);
 
@@ -51,6 +58,8 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           return SafeArea(
             child: Scaffold(
+              key: HomePage.globalKey,
+              drawer: LeftMenuPage(),
               extendBody: true,
               body: bodyBuilder(state.appNavigationType, context),
               bottomNavigationBar: AppNavigationBar(
