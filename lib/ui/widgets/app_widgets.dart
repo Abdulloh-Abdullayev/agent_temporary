@@ -1,10 +1,11 @@
+import 'package:agent/core/utils/assets.gen.dart';
+import 'package:agent/core/utils/colors.gen.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:super_rich_text/super_rich_text.dart';
-import 'package:agent/core/utils/colors.gen.dart';
 
 class AppWidgets {
   static void showText({
@@ -87,12 +88,13 @@ class AppWidgets {
         padding: padding,
         child: SuperRichText(
           text: text,
-          style:textStyle ?? GoogleFonts.inter(
-            color: color,
-            fontSize: fontSize.sp,
-            decoration: decoration,
-            fontWeight: fontWeight,
-          ),
+          style: textStyle ??
+              GoogleFonts.inter(
+                color: color,
+                fontSize: fontSize.sp,
+                decoration: decoration,
+                fontWeight: fontWeight,
+              ),
           textAlign: textAlign,
           maxLines: maxLines,
           overflow: TextOverflow.ellipsis,
@@ -104,12 +106,13 @@ class AppWidgets {
       padding: padding,
       child: Text(
         text,
-        style:textStyle ?? GoogleFonts.inter(
-          color: color,
-          fontSize: fontSize.sp,
-          decoration: decoration,
-          fontWeight: fontWeight,
-        ),
+        style: textStyle ??
+            GoogleFonts.inter(
+              color: color,
+              fontSize: fontSize.sp,
+              decoration: decoration,
+              fontWeight: fontWeight,
+            ),
         textAlign: textAlign,
         maxLines: maxLines,
         overflow: TextOverflow.ellipsis,
@@ -141,13 +144,12 @@ class AppWidgets {
             args: args,
             namedArgs: namedArgs,
           ),
-          style: textStyle ??
-              TextStyle(
-                  color: color,
-                  fontSize: fontSize.sp,
-                  decoration: decoration,
-                  fontWeight: fontWeight,
-                  fontFamily: "Gilroy"),
+          style: TextStyle(
+              color: color,
+              fontSize: fontSize.sp,
+              decoration: decoration,
+              fontWeight: fontWeight,
+              fontFamily: "Gilroy"),
           textAlign: textAlign,
           maxLines: maxLines,
           overflow: TextOverflow.ellipsis,
@@ -159,18 +161,60 @@ class AppWidgets {
       padding: padding,
       child: Text(
         localeKey,
-        style:textStyle ?? GoogleFonts.inter(
-          color: color,
-          fontSize: fontSize.sp,
-          decoration: decoration,
-          fontWeight: fontWeight,
-        ),
+        style: textStyle ??
+            GoogleFonts.inter(
+              color: color,
+              fontSize: fontSize.sp,
+              decoration: decoration,
+              fontWeight: fontWeight,
+            ),
         textAlign: textAlign,
         maxLines: maxLines,
         overflow: TextOverflow.ellipsis,
       ).tr(
         args: args,
         namedArgs: namedArgs,
+      ),
+    );
+  }
+
+  static Widget backButton(VoidCallback onPressed) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        height: 28.w,
+        width: 28.w,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          color: const Color.fromRGBO(255, 255, 255, 0.1),
+        ),
+        child: Center(
+          child: Assets.images.icons.backIcon.svg(
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
+
+  static Widget iconButton({
+    required VoidCallback onPressed,
+    required SvgGenImage icon,
+  }) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        height: 28.w,
+        width: 28.w,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          color: const Color.fromRGBO(255, 255, 255, 0.1),
+        ),
+        child: Center(
+          child: icon.svg(
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
     );
   }

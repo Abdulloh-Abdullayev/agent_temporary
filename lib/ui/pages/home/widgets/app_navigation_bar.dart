@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/utils/colors.gen.dart';
 import 'app_navigation_bar_item.dart';
 
 class AppNavigationBar extends StatelessWidget {
@@ -15,7 +16,7 @@ class AppNavigationBar extends StatelessWidget {
       height: 70.w,
       width: MediaQuery.of(context).size.width,
       decoration:  const BoxDecoration(
-        color: Colors.white,
+        color: ColorName.primaryColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(12),
           topRight: Radius.circular(12)

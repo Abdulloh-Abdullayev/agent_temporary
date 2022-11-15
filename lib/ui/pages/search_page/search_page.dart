@@ -13,15 +13,9 @@ class SearchPage extends StatelessWidget {
       child: Column(
         children: [
           AppBarMain(
-            onTapButton: () {},
             text: "Qayerga //ketmoqdasiz?//",
+            menuTab: () {},
           ),
-          // const PopupMenu(
-            
-          // ),
-          // const CommitTextField(),
-          // AppCheckBox(onTap: () {}, isCheck: false),
-          // BalancePopupMenu(),
         ],
       ),
     );

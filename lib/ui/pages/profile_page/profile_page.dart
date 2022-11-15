@@ -11,10 +11,7 @@ class ProfilePage extends StatelessWidget {
       color: Colors.yellow,
       child:  Column(
         children: [
-          AppBarMain(
-            onTapButton: () {},
-            text: "Shaxsiy //Profilga kirish//",
-          ),
+
         ],
       ),
     );

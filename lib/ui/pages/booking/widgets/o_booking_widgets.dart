@@ -73,7 +73,8 @@ class OBookingWidgets {
                   child: GestureDetector(
                     onTap: () {},
                     child: Center(
-                      child: Assets.icons.left.svg(height: 9.5),
+                      child:
+                       Assets.images.icons.left.svg(height: 9.5),
                     ),
                   ),
                 ),
@@ -131,11 +132,11 @@ class OBookingWidgets {
                       'Отменить',
                     ],
                     icons: [
-                      Assets.icons.edit.svg(),
-                      Assets.icons.chat.svg(),
-                      Assets.icons.date.svg(),
-                      Assets.icons.clock.svg(),
-                      Assets.icons.uploadingFile.svg(),
+                      Assets.images.icons.edit.svg(),
+                      Assets.images.icons.chat.svg(),
+                      Assets.images.icons.date.svg(),
+                      Assets.images.icons.clock.svg(),
+                      Assets.images.icons.uploadingFile.svg(),
                       SizedBox.shrink(),
                     ],
                     textColor: const [

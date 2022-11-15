@@ -8,7 +8,7 @@ part 'app_navigation_state.dart';
 class AppNavigationBloc extends Bloc<AppNavigationEvent, AppNavigationState> {
   AppNavigationBloc()
       : super(const AppNavigationState(
-          appNavigationType: AppNavigationType.SEARCH,
+          appNavigationType: AppNavigationType.MAIN,
         )) {
     on<AppNavigationChanged>((event, emit) {
       emit(

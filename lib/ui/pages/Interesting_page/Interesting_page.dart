@@ -13,10 +13,7 @@ class InterestingPage extends StatelessWidget {
       color: Colors.red,
       child:  Column(
         children: [
-          AppBarMain(
-            onTapButton: () {},
-            text: "Qiziq //bo’lishi mumkin//",
-          ),
+
         ],
       ),
     );

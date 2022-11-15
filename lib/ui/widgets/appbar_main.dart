@@ -1,3 +1,4 @@
+import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,58 +11,75 @@ import 'app_widgets.dart';
 class AppBarMain extends StatelessWidget {
   AppBarMain({
     required this.text,
-    required this.onTapButton,
+    required this.menuTab,
+     this.pinTab,
+     this.searchTab,
+     this.locationTab,
+     this.pinShow = false,
+     this.searchShow = false,
     Key? key,
   }) : super(key: key);
 
   String text;
-  VoidCallback onTapButton;
+  VoidCallback menuTab;
+  VoidCallback? pinTab;
+  VoidCallback? searchTab;
+  VoidCallback? locationTab;
+  bool pinShow;
+  bool searchShow;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
-        top: 30.w,
+      padding: const EdgeInsets.only(
+        top: 20,
         left: 20,
         right: 20,
       ),
-      height: 90.w,
+      height: 100.w,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(12),
           bottomRight: Radius.circular(12),
         ),
-        color: ColorName.white,
+        color: ColorName.primaryColor,
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AppWidgets.textLocale(
-              localeKey: text,
-              fontSize: 22.sp,
-              fontWeight: FontWeight.bold,
-              color: ColorName.black,
-              isRichText: true,
-              othersMarkers: [
-                MarkerText(
-                  marker: "//",
-                  style: TextStyle(
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w600,
-                    color: ColorName.green,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              InkWell(
+                onTap: menuTab,
+                child: Assets.images.icons.menu.svg(),
+              ),
+              Row(
+                children: [
+
+                pinShow?  InkWell(
+                    onTap: pinTab,
+                     child: Assets.images.icons.pinButton.svg(),
+                  ): SizedBox(),
+                 searchShow? InkWell(
+                    onTap: searchTab,
+                     child: Assets.images.icons.searchButton.svg(),
+                  ).paddingSymmetric(horizontal: 10.w) : SizedBox(),
+                  InkWell(
+                    onTap: locationTab,
+                   child: Assets.images.icons.locationBuuton.svg(),
                   ),
-                )
-              ]),
-          Container(
-            height: 28.w,
-            width: 28.w,
-            padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(
-                color: ColorName.green, borderRadius: BorderRadius.circular(6)),
-            // child: InkWell(
-            //   onTap: onTapButton,
-            //   child: Assets.images.icons.notification.svg(),
-            // ),
+                ],
+              )
+
+            ],
+          ),
+          AppWidgets.textLocale(
+            localeKey: text,
+            color: ColorName.white,
+            fontSize: 20.sp,
+            fontWeight: FontWeight.w500,
+            padding: EdgeInsets.only(top: 12.w),
           )
         ],
       ),

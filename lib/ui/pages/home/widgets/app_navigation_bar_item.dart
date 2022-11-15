@@ -36,15 +36,15 @@ class AppNavigationBarItem extends StatelessWidget {
                   width: 41.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
-                    color: isActive ?ColorName.green :Colors.white
+                    color: ColorName.primaryColor,
                   ),
-                  child: isActive ? iconOnTap.paddingAll(5) : icon.paddingAll(5),
+                  child: isActive ? iconOnTap.paddingAll(2) : icon.paddingAll(2),
                 ),
                 const SizedBox(height: 3,),
                 AppWidgets.textLocale(
                   localeKey: title.tr(),
                   fontSize: 12,
-                  color: isActive ? ColorName.black : ColorName.gray6,
+                  color: isActive ? ColorName.bluePercent : ColorName.defaultIcon,
                 )
               ],
             ),

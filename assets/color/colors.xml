@@ -25,5 +25,17 @@
     <color name="dark_blue1">#265454</color>
     <color name="select_color">#6EEAEA</color>
 
-</resources>
 
+
+    <color name="gray2">#8FA0A0</color>
+    <color name="gray3">#424F4F</color>
+    <color name="green">#00A000</color>
+    <color name="blue_percent">#36E5E5</color>
+    <color name="default_icon">#B0CCCC</color>
+    <color name="primary_color">#013636</color>
+    <color name="background">#DFDFDF</color>
+    <color name="main_color">#336666</color>
+    <color name="bg_color">#D9D9D9</color>
+    <color name="green3">#1D9908</color>
+
+</resources>

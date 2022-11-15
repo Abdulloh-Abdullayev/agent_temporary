@@ -13,10 +13,7 @@ class CommunicationPage extends StatelessWidget {
 
       child:  Column(
         children: [
-          AppBarMain(
-            onTapButton: () {},
-            text: "Aloqa",
-          ),
+
         ],
       ),
     );

@@ -13,10 +13,7 @@ class SavedOnesPage extends StatelessWidget {
       color: Colors.green,
       child: Column(
         children: [
-          AppBarMain(
-            onTapButton: () {},
-            text: "Saqlanganlar",
-          ),
+
         ],
       ),
     );

@@ -16,11 +16,17 @@ class ColorName {
   /// Color: #F2F5F5
   static const Color background = Color(0xFFF2F5F5);
 
+  /// Color: #D9D9D9
+  static const Color bgColor = Color(0xFFD9D9D9);
+
   /// Color: #000000
   static const Color black = Color(0xFF000000);
 
   /// Color: #057CD1
   static const Color blue = Color(0xFF057CD1);
+
+  /// Color: #36E5E5
+  static const Color bluePercent = Color(0xFF36E5E5);
 
   /// Color: #95AFAF
   static const Color borderColor = Color(0xFF95AFAF);
@@ -30,6 +36,9 @@ class ColorName {
 
   /// Color: #265454
   static const Color darkBlue1 = Color(0xFF265454);
+
+  /// Color: #B0CCCC
+  static const Color defaultIcon = Color(0xFFB0CCCC);
 
   /// Color: #ECEFEF
   static const Color disabledGray1 = Color(0xFFECEFEF);
@@ -55,14 +64,23 @@ class ColorName {
   /// Color: #23C00A
   static const Color green2 = Color(0xFF23C00A);
 
+  /// Color: #1D9908
+  static const Color green3 = Color(0xFF1D9908);
+
   /// Color: #FAFDFD
   static const Color input = Color(0xFFFAFDFD);
 
   /// Color: #336666
   static const Color main = Color(0xFF336666);
 
+  /// Color: #336666
+  static const Color mainColor = Color(0xFF336666);
+
   /// Color: #013636
   static const Color primary = Color(0xFF013636);
+
+  /// Color: #013636
+  static const Color primaryColor = Color(0xFF013636);
 
   /// Color: #D10505
   static const Color red = Color(0xFFD10505);
