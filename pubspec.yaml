@@ -41,6 +41,8 @@ dependencies:
     git:
       url: https://gitlab.com/tlps-project/ui-kit.git
   animated_digit: ^3.2.1
+  yandex_mapkit: ^3.2.0
+  cached_network_image: ^3.2.2
 
 dev_dependencies:
   flutter_test:

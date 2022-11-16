@@ -13,6 +13,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'ui/pages/balance_page/balance_page.dart';
+import 'ui/pages/outlets_page/outlets_map_page.dart';
 import 'ui/pages/refund_page/refund_page.dart';
 
 class App extends StatelessWidget {
@@ -72,5 +73,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: LoginPageModule()),
         ModuleRoute("/", module: BalancePageModule()),
         ModuleRoute("/", module: RefundPageModule()),
+        ModuleRoute("/", module: OutletsMapModule()),
       ];
 }

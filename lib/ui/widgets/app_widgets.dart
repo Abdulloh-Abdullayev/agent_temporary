@@ -174,7 +174,26 @@ class AppWidgets {
     );
   }
 
-  static Widget backButton(VoidCallback onPressed) {
+  static Widget imgError({
+    double height = 50,
+    double width = 50,
+  }) {
+    return Container(
+      height: height,
+      width: width,
+      padding: const EdgeInsets.all(15),
+      color: ColorName.background,
+      child: Assets.images.icons.homeIcon.svg(
+        color: ColorName.gray,
+      ),
+    );
+  }
+
+  static Widget backButton(
+    VoidCallback onPressed, {
+    Color? color,
+    Color? iconColor,
+  }) {
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -182,12 +201,11 @@ class AppWidgets {
         width: 28.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          color: const Color.fromRGBO(255, 255, 255, 0.1),
+          color: color ?? const Color.fromRGBO(255, 255, 255, 0.1),
         ),
         child: Center(
-          child: Assets.images.icons.backIcon.svg(
-            fit: BoxFit.cover,
-          ),
+          child: Assets.images.icons.backIcon
+              .svg(fit: BoxFit.cover, color: iconColor),
         ),
       ),
     );

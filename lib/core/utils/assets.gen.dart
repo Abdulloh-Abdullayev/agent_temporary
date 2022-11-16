@@ -74,6 +74,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get homeActive =>
       const SvgGenImage('assets/images/icons/home_active.svg');
 
+  /// File path: assets/images/icons/home_icon.svg
+  SvgGenImage get homeIcon =>
+      const SvgGenImage('assets/images/icons/home_icon.svg');
+
   /// File path: assets/images/icons/interesting.svg
   SvgGenImage get interesting =>
       const SvgGenImage('assets/images/icons/interesting.svg');
@@ -93,6 +97,14 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/location_buuton.svg
   SvgGenImage get locationBuuton =>
       const SvgGenImage('assets/images/icons/location_buuton.svg');
+
+  /// File path: assets/images/icons/map_arrow_icon.svg
+  SvgGenImage get mapArrowIcon =>
+      const SvgGenImage('assets/images/icons/map_arrow_icon.svg');
+
+  /// File path: assets/images/icons/map_icon.svg
+  SvgGenImage get mapIcon =>
+      const SvgGenImage('assets/images/icons/map_icon.svg');
 
   /// File path: assets/images/icons/menu.svg
   SvgGenImage get menu => const SvgGenImage('assets/images/icons/menu.svg');
@@ -150,6 +162,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/shopping.svg
   SvgGenImage get shopping =>
       const SvgGenImage('assets/images/icons/shopping.svg');
+
+  /// File path: assets/images/icons/x_icon.svg
+  SvgGenImage get xIcon => const SvgGenImage('assets/images/icons/x_icon.svg');
 }
 
 class Assets {

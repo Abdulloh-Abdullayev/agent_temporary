@@ -1,17 +1,16 @@
-import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
-import 'package:agent/ui/pages/main_page/main_page.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/Interesting_page/Interesting_page.dart';
 import 'package:agent/ui/pages/communication_page/communication_page.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
-import 'package:agent/ui/pages/profile_page/profile_page.dart';
+import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
+import 'package:agent/ui/pages/main_page/main_page.dart';
+import 'package:agent/ui/pages/outlets_page/outlets_page.dart';
 import 'package:agent/ui/pages/saved_ones_page/saved_ones_page.dart';
-import 'package:uikit/uikit.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePageModule extends Module {
   @override
@@ -28,14 +27,11 @@ class HomePageModule extends Module {
           (i) => AppNavigationBloc(),
           onDispose: (value) => value.close(),
         ),
-
-    Bind<MainCubit>(
+        Bind<MainCubit>(
           (i) => MainCubit(),
-      onDispose: (value) => value.close(),
-    ),
-
-
-  ];
+          onDispose: (value) => value.close(),
+        ),
+      ];
 }
 
 class HomePage extends StatelessWidget {
@@ -79,8 +75,8 @@ class HomePage extends StatelessWidget {
                     icon: Assets.images.icons.location.svg(),
                     iconOnTap: Assets.images.icons.locationActive.svg(),
                     title: "Визиты",
-                    isActive: state.appNavigationType == AppNavigationType.VISITS,
-
+                    isActive:
+                        state.appNavigationType == AppNavigationType.VISITS,
                   ),
                   AppNavigationBarItem(
                     onPressed: () {
@@ -107,8 +103,8 @@ class HomePage extends StatelessWidget {
                     icon: Assets.images.icons.draft.svg(),
                     iconOnTap: Assets.images.icons.draftActive.svg(),
                     title: "Черновик",
-                    isActive: state.appNavigationType ==
-                        AppNavigationType.DRAFT,
+                    isActive:
+                        state.appNavigationType == AppNavigationType.DRAFT,
                   ),
                   AppNavigationBarItem(
                     onPressed: () {
@@ -137,15 +133,15 @@ class HomePage extends StatelessWidget {
   ) {
     switch (appNavigationType) {
       case AppNavigationType.MAIN:
-        return const MainPage();
+        return  MainPage();
       case AppNavigationType.VISITS:
-        return const SavedOnesPage();
+        return  SavedOnesPage();
       case AppNavigationType.REPORT:
-        return const InterestingPage();
+        return  InterestingPage();
       case AppNavigationType.DRAFT:
-        return const CommunicationPage();
+        return  CommunicationPage();
       case AppNavigationType.POINTS:
-        return const ProfilePage();
+        return  OutletsPage();
       default:
         return Container();
     }

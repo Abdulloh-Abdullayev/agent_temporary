@@ -5,5 +5,12 @@
   "refund": "Возврат",
   "payment_information": "Информация оплаты",
   "client_balance": "Баланс клиента",
-  "total_sum": "Общая сумма"
+  "total_sum": "Общая сумма",
+  "dept_amount": "Dept: {} uzs",
+  "no_dept": "No dept",
+  "show_on_map": "Show on the map",
+  "no_show_on_map": "No show on the map",
+  "visited": "Visited",
+  "inventory": "Inventory",
+  "client_with_dept": "Client with dept"
 }
