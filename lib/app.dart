@@ -3,6 +3,8 @@ import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
+import 'package:agent/ui/pages/left_menu/left_menu.dart';
+import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -74,5 +76,7 @@ class AppModule extends Module {
         ModuleRoute("/", module: BalancePageModule()),
         ModuleRoute("/", module: RefundPageModule()),
         ModuleRoute("/", module: OutletsMapModule()),
+        ModuleRoute("/", module: LeftMenuModule()),
+        ModuleRoute("/", module: CreateAccountModule()),
       ];
 }

@@ -4,6 +4,11 @@ import 'package:agent/ui/pages/Interesting_page/Interesting_page.dart';
 import 'package:agent/ui/pages/communication_page/communication_page.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
+import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
+import 'package:agent/ui/pages/left_menu/left_menu.dart';
+import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
+import 'package:agent/ui/pages/main_page/main_page.dart';
+import 'package:agent/ui/pages/profile_page/profile_page.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
 import 'package:agent/ui/pages/main_page/main_page.dart';
 import 'package:agent/ui/pages/outlets_page/outlets_page.dart';
@@ -27,15 +32,23 @@ class HomePageModule extends Module {
           (i) => AppNavigationBloc(),
           onDispose: (value) => value.close(),
         ),
-        Bind<MainCubit>(
+
+    Bind<MainCubit>(
           (i) => MainCubit(),
-          onDispose: (value) => value.close(),
-        ),
-      ];
+      onDispose: (value) => value.close(),
+    ),
+    Bind<LeftMenuBloc>(
+          (i) => LeftMenuBloc(),
+      onDispose: (value) => value.close(),
+    ),
+
+  ];
 }
 
 class HomePage extends StatelessWidget {
   static const String routeName = "/homePage";
+  static final GlobalKey<ScaffoldState> globalKey =
+  GlobalKey<ScaffoldState>(debugLabel: "globalKey");
 
   const HomePage({Key? key}) : super(key: key);
 
@@ -47,6 +60,8 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           return SafeArea(
             child: Scaffold(
+              key: HomePage.globalKey,
+              drawer: LeftMenuPage(),
               extendBody: true,
               body: bodyBuilder(state.appNavigationType, context),
               bottomNavigationBar: AppNavigationBar(
@@ -75,8 +90,8 @@ class HomePage extends StatelessWidget {
                     icon: Assets.images.icons.location.svg(),
                     iconOnTap: Assets.images.icons.locationActive.svg(),
                     title: "Визиты",
-                    isActive:
-                        state.appNavigationType == AppNavigationType.VISITS,
+                    isActive: state.appNavigationType == AppNavigationType.VISITS,
+
                   ),
                   AppNavigationBarItem(
                     onPressed: () {
@@ -103,8 +118,8 @@ class HomePage extends StatelessWidget {
                     icon: Assets.images.icons.draft.svg(),
                     iconOnTap: Assets.images.icons.draftActive.svg(),
                     title: "Черновик",
-                    isActive:
-                        state.appNavigationType == AppNavigationType.DRAFT,
+                    isActive: state.appNavigationType ==
+                        AppNavigationType.DRAFT,
                   ),
                   AppNavigationBarItem(
                     onPressed: () {

@@ -12,6 +12,26 @@
   "no_show_on_map": "Не показано на карте",
   "visited": "Посещено",
   "inventory": "Инвентарь",
-  "client_with_dept": "Клиенты с долгами"
-
+  "client_with_dept": "Клиенты с долгами",
+  "add_account": "Добавить аккаунт",
+  "main": "Главная",
+  "outlets": "Торговые точки",
+  "orders": "Заказы",
+  "remains": "Остатки",
+  "debtors_on_orders": "Должники по заказам",
+  "debtors": "Должники",
+  "my_location": "Моя локация",
+  "tasks": "Задачи",
+  "kpi": "KPI",
+  "diagnostics": "Diagnostics",
+  "settings": "Настройки",
+  "share": "Поделиться",
+  "personal_data": "Личные данные",
+  "full_name": "Ф.И.О",
+  "phone_number": "Номер телефона",
+  "change_password": "Изменить пароль",
+  "old_password": "Старый пароль",
+  "new_password": "Новый пароль",
+  "repeat_new_password": "Повторите новый пароль",
+  "save": "Сохранить"
 }
