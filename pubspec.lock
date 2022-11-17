@@ -881,7 +881,7 @@ packages:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.27.6"
+    version: "0.27.7"
   shared_preferences:
     dependency: transitive
     description:
@@ -1074,7 +1074,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: c9188b3adc3fee79164e2ccd33fbc5158c0ab2c9
+      resolved-ref: "31d9c3d5351d19df2a9aeaa31bb23ae98cf64618"
       url: "https://gitlab.com/tlps-project/ui-kit.git"
     source: git
     version: "1.0.0+1"

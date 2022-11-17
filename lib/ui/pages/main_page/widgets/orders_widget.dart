@@ -1,5 +1,3 @@
-
-
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/balance_page/balance_page.dart';
@@ -8,16 +6,21 @@ import 'package:agent/ui/pages/refund_page/refund_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:super_rich_text/super_rich_text.dart';
+import 'package:uikit/uikit.dart';
 
+import '../../../widgets/app_widgets.dart';
 
-class OrdersPage extends StatefulWidget {
-  const OrdersPage({Key? key}) : super(key: key);
+class OrdersWidget extends StatefulWidget {
+  const OrdersWidget({Key? key}) : super(key: key);
 
   @override
-  State<OrdersPage> createState() => _OrdersPageState();
+  State<OrdersWidget> createState() => _OrdersWidgetState();
 }
 
-class _OrdersPageState extends State<OrdersPage> with TickerProviderStateMixin {
+class _OrdersWidgetState extends State<OrdersWidget>
+    with TickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -29,7 +32,7 @@ class _OrdersPageState extends State<OrdersPage> with TickerProviderStateMixin {
   @override
   void initState() {
     _tabController = TabController(
-      length: 2,
+      length: 5,
       vsync: this,
     );
     _tabController.addListener(_handleTabSelection);
@@ -48,9 +51,110 @@ class _OrdersPageState extends State<OrdersPage> with TickerProviderStateMixin {
       bloc: Modular.get<MainCubit>(),
       builder: (context, state) {
         return Container(
-          color: ColorName.background,
-          child: Column()
-        );
+            margin: EdgeInsets.symmetric(horizontal: 20.w),
+            decoration: BoxDecoration(
+              color: ColorName.white,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    AppWidgets.text(
+                      text: "//*// Не синхрованные заказы",
+                      isRichText: true,
+                      color: ColorName.gray3,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      othersMarkers: [
+                        MarkerText(
+                          marker: "//",
+                          style: TextStyle(
+                            color: ColorName.red,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        )
+                      ],
+                    ).paddingOnly(left: 18.w, top: 15.w),
+                  ],
+                ),
+                Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    Container(
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: ColorName.gray,
+                            width: 1,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TabBar(
+                      controller: _tabController,
+                      enableFeedback: true,
+                      labelColor: ColorName.button,
+                      unselectedLabelColor: ColorName.gray3,
+                      unselectedLabelStyle: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      labelStyle: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      tabs: List.generate(
+                        5,
+                        (index) => Text(
+                          "Osiyo M",
+                        ),
+                      ),
+                      onTap: (index) {},
+                      isScrollable: true,
+                      indicatorWeight: 3,
+                      indicatorColor: ColorName.button,
+                      indicatorSize: TabBarIndicatorSize.tab,
+                      indicatorPadding: EdgeInsets.only(
+                        right: 10.w,
+                        left: 10.w,
+                      ),
+                      labelPadding:
+                          EdgeInsets.only(right: 10.w, left: 10.w, bottom: 2),
+                    )
+                  ],
+                ).paddingOnly(
+                  top: 8,
+                  bottom: 17.w,
+                ),
+                Column(
+                  children: List.generate(
+                    9,
+                    (index) {
+                      return Cards.cards_1(
+                        height: 85.w,
+                        width: 1.sw,
+                        name: "name",
+                        time: "17:18",
+                        spot: "spot",
+                        noBonus: "noBonus",
+                        volume: "Obem",
+                        volumeNumber: "15",
+                        count: "count",
+                        countNumber: '15',
+                        summa: 'summa',
+                        summaNumber: "150 000 000",
+                      ).paddingOnly(
+                        left: 18.w,
+                        right: 18.w,
+                        bottom: 10.w,
+                      );
+                    },
+                  ),
+                )
+              ],
+            ));
       },
     );
   }
