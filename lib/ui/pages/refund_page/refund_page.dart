@@ -2,6 +2,7 @@ import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/refund_page/bloc/refund_cubit.dart';
+import 'package:agent/ui/pages/salary_page/salary_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
 
 import '../../widgets/app_widgets.dart';
+import '../remain_stock_page/remain_stock_page.dart';
 import 'widgets/item_refund_widget.dart';
 
 class RefundPageModule extends Module {
@@ -145,11 +147,15 @@ class RefundPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   AppWidgets.iconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Modular.to.pushNamed(RemainStockPage.routeName);
+                    },
                     icon: Assets.images.icons.searchActive,
                   ),
                   AppWidgets.iconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Modular.to.pushNamed(SalaryPage.routeName);
+                    },
                     icon: Assets.images.icons.filtrIcon,
                   ).paddingOnly(left: 12.w),
                 ],

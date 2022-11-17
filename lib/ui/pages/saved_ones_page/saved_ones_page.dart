@@ -1,8 +1,4 @@
-
-
 import 'package:flutter/material.dart';
-
-import '../../widgets/appbar_main.dart';
 
 class SavedOnesPage extends StatelessWidget {
   const SavedOnesPage({Key? key}) : super(key: key);
@@ -13,7 +9,6 @@ class SavedOnesPage extends StatelessWidget {
       color: Colors.green,
       child: Column(
         children: [
-
         ],
       ),
     );
