@@ -3,7 +3,10 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Widget rowWidget(String text_1, String text_2, [Color color = ColorName.black]){
+Widget rowWidget(
+    String text_1,
+    String text_2,
+    [Color color = ColorName.black]) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [

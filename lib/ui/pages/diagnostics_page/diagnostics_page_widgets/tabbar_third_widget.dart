@@ -90,15 +90,20 @@ class TabbarThirdWidget extends StatelessWidget {
             ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 50),
+        const Padding(
+          padding: EdgeInsets.only(top: 50),
           child: Divider(),
         ),
-        MarkWidget(text: "Факт", ptop: 60.w, pleft: 120, width: 76.w),
+        MarkWidget(
+          text: "Факт",
+          ptop: 60.w,
+          pleft: 120,
+          width: 76.w,
+        ),
         Container(
           margin: EdgeInsets.only(top: 113.w),
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               color: ColorName.white,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(12),
@@ -107,11 +112,11 @@ class TabbarThirdWidget extends StatelessWidget {
           child: Column(
             children: [
               AppWidgets.textLocale(
-                  localeKey: "5",
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600,
-                  isRichText: true,
-                  color: ColorName.black)
+                      localeKey: "5",
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w600,
+                      isRichText: true,
+                      color: ColorName.black)
                   .paddingOnly(bottom: 4.w),
               AppWidgets.textLocale(
                   localeKey: "Общее количество заказов",
@@ -120,10 +125,10 @@ class TabbarThirdWidget extends StatelessWidget {
                   isRichText: true,
                   color: ColorName.gray2)
             ],
-          ).paddingOnly(top: 18.w,bottom: 16.w),
+          ).paddingOnly(top: 18.w, bottom: 16.w),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 101),
+        const Padding(
+          padding: EdgeInsets.only(top: 101),
           child: Divider(),
         ),
       ],

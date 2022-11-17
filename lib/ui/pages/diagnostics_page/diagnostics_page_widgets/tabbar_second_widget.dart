@@ -24,11 +24,11 @@ class TabbarSecondWidget extends StatelessWidget {
               Column(
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "5",
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
-                      isRichText: true,
-                      color: ColorName.black)
+                          localeKey: "5",
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                          isRichText: true,
+                          color: ColorName.black)
                       .paddingOnly(bottom: 4.w),
                   AppWidgets.textLocale(
                       localeKey: "План",
@@ -37,7 +37,7 @@ class TabbarSecondWidget extends StatelessWidget {
                       isRichText: true,
                       color: ColorName.gray2)
                 ],
-              ).paddingOnly(top: 14.w,bottom: 20.w),
+              ).paddingOnly(top: 14.w, bottom: 20.w),
               Row(
                 children: [
                   Expanded(
@@ -51,12 +51,11 @@ class TabbarSecondWidget extends StatelessWidget {
                           color: ColorName.black),
                     ),
                   ),
-                   Container(
-                      height: 51,
-                      color: ColorName.gray.withOpacity(0.3),
-                      width: 12.w,
-                    ),
-
+                  Container(
+                    height: 51,
+                    color: ColorName.gray.withOpacity(0.3),
+                    width: 12.w,
+                  ),
                   Expanded(
                     child: Align(
                       alignment: Alignment.center,
@@ -73,30 +72,35 @@ class TabbarSecondWidget extends StatelessWidget {
               Column(
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "5",
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
-                      isRichText: true,
-                      color: ColorName.black)
+                          localeKey: "5",
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                          isRichText: true,
+                          color: ColorName.black)
                       .paddingOnly(bottom: 4.w),
                   AppWidgets.textLocale(
-                        localeKey: "Общее количество заказов",
+                      localeKey: "Общее количество заказов",
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
                       isRichText: true,
                       color: ColorName.gray2)
                 ],
-              ).paddingOnly(top: 18.w,bottom: 16.w),
+              ).paddingOnly(top: 18.w, bottom: 16.w),
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 50),
+        const Padding(
+          padding: EdgeInsets.only(top: 50),
           child: Divider(),
         ),
-        MarkWidget(text: "Факт", ptop: 60.w, pleft: 125, width: 76.w),
-        Padding(
-          padding: const EdgeInsets.only(top: 106),
+        MarkWidget(
+          text: "Факт",
+          ptop: 60.w,
+          pleft: 125,
+          width: 76.w,
+        ),
+        const Padding(
+          padding: EdgeInsets.only(top: 106),
           child: Divider(),
         ),
       ],

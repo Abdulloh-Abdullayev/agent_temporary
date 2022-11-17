@@ -12,8 +12,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderPageModule extends Module {
   @override
-  List<ModularRoute> get routes =>
-      [
+  List<ModularRoute> get routes => [
         ChildRoute(
           OrderPage.routeName,
           child: (context, args) => const OrderPage(),
@@ -56,11 +55,13 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            AppBarIcon.backButton(() { }),
+                            AppBarIcon.backButton(() {}),
                             Row(
                               children: [
-                                AppBarIcon.telephoneButton(() { }),
-                                const SizedBox(width: 12,),
+                                AppBarIcon.telephoneButton(() {}),
+                                const SizedBox(
+                                  width: 12,
+                                ),
                                 AppBarIcon.menuButtpon()
                               ],
                             )
@@ -165,17 +166,16 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                                       fontWeight: FontWeight.w600,
                                       fontSize: 14.sp,
                                       color: ColorName.button,
-                                      isRichText: true
-                                  ),
+                                      isRichText: true),
                                 )
                               ],
                               padding: const EdgeInsets.only(right: 166),
                               indicatorWeight: 3,
                               indicatorPadding:
-                              const EdgeInsets.symmetric(horizontal: 7),
+                                  const EdgeInsets.symmetric(horizontal: 7),
                               indicatorColor: ColorName.button,
                             ).paddingOnly(left: 20.w),
-                             const SizedBox(
+                            const SizedBox(
                               height: 800,
                               child: TabBarView(
                                 children: [
@@ -189,13 +189,15 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                       ),
                     ],
                   ),
-                 const MarketImage(image: "assets/images/market.png").paddingOnly(top: 70.w, left: 140.w)
+                  const MarketImage(image: "assets/images/market.png")
+                      .paddingOnly(top: 70.w, left: 140.w)
                 ],
               ),
             ),
-            floatingActionButton: const FloatingDialog().paddingOnly(bottom: 160.w),
+            floatingActionButton:
+                const FloatingDialog().paddingOnly(bottom: 160.w),
           ),
-        // const BottomButtonWidget(),
+          // const BottomButtonWidget(),
         ],
       ),
     );

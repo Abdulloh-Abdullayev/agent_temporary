@@ -24,42 +24,48 @@ class TableWidget extends StatelessWidget {
             children: [
               Container(
                 width: 67.w,
-                decoration: BoxDecoration(
-                    color: Colors.white,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(12)
-                  )
+                    topLeft: Radius.circular(12),
+                  ),
                 ),
                 child: Column(
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: "День",
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                        color: ColorName.gray2,
-                        isRichText: true
-                    ).paddingOnly(top: 12.w,),
+                            localeKey: "День",
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                            color: ColorName.gray2,
+                            isRichText: true)
+                        .paddingOnly(
+                      top: 12.w,
+                    ),
                     AppWidgets.textLocale(
-                        localeKey: "Объем",
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                        color: ColorName.gray2,
-                        isRichText: true
-                    ).paddingOnly(top: 24.w,),
+                            localeKey: "Объем",
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                            color: ColorName.gray2,
+                            isRichText: true)
+                        .paddingOnly(
+                      top: 24.w,
+                    ),
                     AppWidgets.textLocale(
-                        localeKey: "Strike",
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                        color: ColorName.gray2,
-                        isRichText: true
-                    ).paddingOnly(top: 24.w,),
+                            localeKey: "Strike",
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                            color: ColorName.gray2,
+                            isRichText: true)
+                        .paddingOnly(
+                      top: 24.w,
+                    ),
                     AppWidgets.textLocale(
-                        localeKey: "АКБ",
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                        color: ColorName.gray2,
-                        isRichText: true
-                    ).paddingOnly(top: 24.w,bottom: 11.w),
+                            localeKey: "АКБ",
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                            color: ColorName.gray2,
+                            isRichText: true)
+                        .paddingOnly(top: 24.w, bottom: 11.w),
                   ],
                 ),
               ),

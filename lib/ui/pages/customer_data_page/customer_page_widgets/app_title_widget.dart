@@ -11,16 +11,16 @@ class AppTitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CircleAvatar(
-            radius: 13,
-            backgroundImage: NetworkImage("https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000")
-        ).paddingOnly(right: 8.w),
+        const CircleAvatar(
+                radius: 13,
+                backgroundImage: NetworkImage(
+                    "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000"))
+            .paddingOnly(right: 8.w),
         AppWidgets.textLocale(
             localeKey: "Osiyo Market",
             fontWeight: FontWeight.w600,
             fontSize: 16.sp,
-            color: ColorName.white
-        )
+            color: ColorName.white)
       ],
     );
   }

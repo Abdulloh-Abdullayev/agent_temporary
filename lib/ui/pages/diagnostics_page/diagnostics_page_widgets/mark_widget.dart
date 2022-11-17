@@ -3,7 +3,6 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class MarkWidget extends StatelessWidget {
   const MarkWidget(
       {Key? key,
@@ -28,11 +27,11 @@ class MarkWidget extends StatelessWidget {
         height: 30.w,
         width: width,
         decoration: const BoxDecoration(
-            color: ColorName.gray,
-            borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(8),
-              bottomLeft: Radius.circular(8),
-            ),
+          color: ColorName.gray,
+          borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(8),
+            bottomLeft: Radius.circular(8),
+          ),
         ),
         child: Center(
           child: AppWidgets.textLocale(

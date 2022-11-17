@@ -6,9 +6,15 @@ import '../../../../core/utils/colors.gen.dart';
 
 class TabBarWidget extends StatelessWidget {
   TabBarWidget(
-      this._controller, this.title1, this.title2, this.title3, this.function);
+    this._controller,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.function,
+  );
+
   static int index = 0;
-  TabController _controller;
+  final TabController _controller;
   String title1;
   String title2;
   String title3;

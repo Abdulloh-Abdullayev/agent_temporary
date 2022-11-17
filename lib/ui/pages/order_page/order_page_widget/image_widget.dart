@@ -5,7 +5,11 @@ import '../../../../core/utils/assets.gen.dart';
 import '../../../../core/utils/colors.gen.dart';
 
 class ImageWidget extends StatelessWidget {
-  const ImageWidget({Key? key, required this.image, required this.onPressedDelete,}) : super(key: key);
+  const ImageWidget({
+    Key? key,
+    required this.image,
+    required this.onPressedDelete,
+  }) : super(key: key);
   final String image;
   final VoidCallback onPressedDelete;
 
@@ -19,21 +23,27 @@ class ImageWidget extends StatelessWidget {
           child: SizedBox(
             height: 104.w,
             width: 104.w,
-            child: Image.network(image,fit: BoxFit.cover,),
+            child: Image.network(
+              image,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         InkWell(
           onTap: onPressedDelete,
           child: Container(
-            margin: EdgeInsets.only(left: 8.w,bottom: 8.w),
+            margin: EdgeInsets.only(
+              left: 8.w,
+              bottom: 8.w,
+            ),
             height: 24.w,
             width: 24.w,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
-                color: ColorName.black
+              borderRadius: BorderRadius.circular(4),
+              color: ColorName.black,
             ),
             child: Center(
-              child:  Assets.images.icons.delete.svg(
+              child: Assets.images.icons.delete.svg(
                 fit: BoxFit.cover,
               ),
             ),

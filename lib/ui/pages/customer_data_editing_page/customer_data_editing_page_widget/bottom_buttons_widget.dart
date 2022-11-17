@@ -86,7 +86,11 @@ class BottomButtonsWidget extends StatelessWidget {
             ],
           )
         ],
-      ).paddingOnly(left: 20.w, right: 20.w, top: 13.w),
+      ).paddingOnly(
+        left: 20.w,
+        right: 20.w,
+        top: 13.w,
+      ),
     );
   }
 }

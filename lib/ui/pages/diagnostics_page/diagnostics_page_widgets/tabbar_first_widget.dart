@@ -106,16 +106,26 @@ class TabbarFirstWidget extends StatelessWidget {
             ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 50),
+        const Padding(
+          padding: EdgeInsets.only(top: 50),
           child: Divider(),
         ),
-        MarkWidget(text: "Факт", ptop: 60.w, pleft: 120, width: 76.w),
-        Padding(
-          padding: const EdgeInsets.only(top: 105),
+        MarkWidget(
+          text: "Факт",
+          ptop: 60.w,
+          pleft: 120,
+          width: 76.w,
+        ),
+        const Padding(
+          padding: EdgeInsets.only(top: 105),
           child: Divider(),
         ),
-        MarkWidget(text: "Прогноз", ptop: 118.w, pleft: 105, width: 108.w)
+        MarkWidget(
+          text: "Прогноз",
+          ptop: 118.w,
+          pleft: 105,
+          width: 108.w,
+        )
       ],
     );
   }

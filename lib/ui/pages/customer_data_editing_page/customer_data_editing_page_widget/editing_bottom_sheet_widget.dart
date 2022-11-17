@@ -38,12 +38,12 @@ class EditingBottomSheet extends StatelessWidget {
               ),
               AddingAnOrderSheet(
                 text: "Редактрирование",
-                listTextName: [
+                listTextName: const [
                   "Склад",
                   "Тип направления",
                   "Тип цены",
                 ],
-                seeListTextName: [
+                seeListTextName: const [
                   "Основной склад",
                   "Направление...",
                   "Наличные",

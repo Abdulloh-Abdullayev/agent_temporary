@@ -31,24 +31,23 @@ class SelectPhotoDialaog extends StatelessWidget {
                         localeKey: "Выберите тип фото",
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
-                        isRichText: true
-                    ),
+                        isRichText: true),
                   ).paddingOnly(bottom: 4.w),
                 ),
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     Modular.to.pop();
                   },
                   child: Assets.images.icons.xIcon.svg(
-                      fit: BoxFit.cover
-                  )
+                    fit: BoxFit.cover,
+                  ),
                 )
               ],
             ),
             ListView.builder(
               shrinkWrap: true,
               itemCount: 6,
-              itemBuilder: (context,index){
+              itemBuilder: (context, index) {
                 return Column(
                   children: [
                     Align(
@@ -57,10 +56,9 @@ class SelectPhotoDialaog extends StatelessWidget {
                           localeKey: "Lorem Ipsum",
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
-                          isRichText: true
-                      ),
-                    ).paddingOnly(bottom: 14.w,top: 14.w),
-                    Divider()
+                          isRichText: true),
+                    ).paddingOnly(bottom: 14.w, top: 14.w),
+                    const Divider()
                   ],
                 );
               },

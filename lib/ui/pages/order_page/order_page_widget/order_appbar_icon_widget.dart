@@ -16,7 +16,7 @@ class AppBarIcon{
         width: 28.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          color: Color.fromRGBO(255, 255, 255, 0.1),
+          color: const Color.fromRGBO(255, 255, 255, 0.1),
         ),
         child: Center(
           child: Assets.images.icons.backButton.svg(
@@ -35,7 +35,7 @@ class AppBarIcon{
         width: 28.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          color: Color.fromRGBO(255, 255, 255, 0.1),
+          color: const Color.fromRGBO(255, 255, 255, 0.1),
         ),
         child: Center(
           child:
@@ -53,7 +53,7 @@ class AppBarIcon{
       width: 28.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
-        color: Color.fromRGBO(255, 255, 255, 0.1),
+        color: const Color.fromRGBO(255, 255, 255, 0.1),
       ),
       child: Center(
         child: BalancePopupMenu(
@@ -123,7 +123,7 @@ class AppBarIcon{
         width: 28.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          color: Color.fromRGBO(255, 255, 255, 0.1),
+          color: const Color.fromRGBO(255, 255, 255, 0.1),
         ),
         child: Center(
           child: Assets.images.icons.edite.svg(
@@ -142,7 +142,7 @@ class AppBarIcon{
         width: 28.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          color: Color.fromRGBO(255, 255, 255, 0.1),
+          color: const Color.fromRGBO(255, 255, 255, 0.1),
         ),
         child: Center(
           child: Assets.images.icons.search1.svg(
@@ -161,7 +161,7 @@ class AppBarIcon{
         width: 28.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          color: Color.fromRGBO(255, 255, 255, 0.1),
+          color: const Color.fromRGBO(255, 255, 255, 0.1),
         ),
         child: Center(
           child: Assets.images.icons.filter.svg(

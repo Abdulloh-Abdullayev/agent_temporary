@@ -133,26 +133,16 @@ class TabbarOrderPage extends StatelessWidget {
                           'Отменить',
                         ],
                         icons: [
-                          Assets.images.icons.editeAlt.svg(
-                              fit: BoxFit.cover,
-                              color: ColorName.button
-                          ),
-                          Assets.images.icons.chat.svg(
-                              fit: BoxFit.cover,
-                              color: ColorName.gray2
-                          ),
-                          Assets.images.icons.calender.svg(
-                              fit: BoxFit.cover,
-                              color: ColorName.gray2
-                          ),
-                          Assets.images.icons.clock.svg(
-                              fit: BoxFit.cover,
-                              color: ColorName.gray2
-                          ),
-                          Assets.images.icons.fileUpload.svg(
-                              fit: BoxFit.cover,
-                              color: ColorName.gray2
-                          ),
+                          Assets.images.icons.editeAlt
+                              .svg(fit: BoxFit.cover, color: ColorName.button),
+                          Assets.images.icons.chat
+                              .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                          Assets.images.icons.calender
+                              .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                          Assets.images.icons.clock
+                              .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                          Assets.images.icons.fileUpload
+                              .svg(fit: BoxFit.cover, color: ColorName.gray2),
                           const SizedBox.shrink(),
                         ],
                         textColor: const [

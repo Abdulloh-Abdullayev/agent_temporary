@@ -15,8 +15,7 @@ import 'diagnostics_page_widgets/tabbar_widget.dart';
 
 class DiagnosticsPageModule extends Module {
   @override
-  List<ModularRoute> get routes =>
-      [
+  List<ModularRoute> get routes => [
         ChildRoute(
           DiagnosticsPage.routeName,
           child: (context, args) => const DiagnosticsPage(),
@@ -34,8 +33,8 @@ class DiagnosticsPage extends StatefulWidget {
   State<DiagnosticsPage> createState() => _DiagnosticsPageState();
 }
 
-class _DiagnosticsPageState extends State<DiagnosticsPage> with TickerProviderStateMixin {
-
+class _DiagnosticsPageState extends State<DiagnosticsPage>
+    with TickerProviderStateMixin {
   late TabController _controller;
 
   @override
@@ -82,16 +81,20 @@ class _DiagnosticsPageState extends State<DiagnosticsPage> with TickerProviderSt
                         }),
                         AppBarIcon.filterButton(() {})
                       ],
-                    ).paddingOnly(left: 20.w, right: 20.w, top: 19.w),
+                    ).paddingOnly(
+                      left: 20.w,
+                      right: 20.w,
+                      top: 19.w,
+                    ),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: AppWidgets.textLocale(
-                          localeKey: "Диагностика",
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w500,
-                          color: ColorName.white,
-                          isRichText: true
-                      ).paddingOnly(top: 18.w, left: 20),
+                              localeKey: "Диагностика",
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w500,
+                              color: ColorName.white,
+                              isRichText: true)
+                          .paddingOnly(top: 18.w, left: 20),
                     )
                   ],
                 ),
@@ -100,25 +103,32 @@ class _DiagnosticsPageState extends State<DiagnosticsPage> with TickerProviderSt
                 children: [
                   Row(
                     children: [
-                      Widgets.showData(count: "28", title: "Всего дней",color: ColorName.white),
-                      SizedBox(width: 12.w,),
-                      Widgets.showData(count: "28", title: "Отработано",color: ColorName.white),
-                      SizedBox(width: 12.w,),
-                      Widgets.showData(count: "28", title: "Осталось",color: ColorName.white,),
+                      Widgets.showData(
+                          count: "28",
+                          title: "Всего дней",
+                          color: ColorName.white),
+                      SizedBox(
+                        width: 12.w,
+                      ),
+                      Widgets.showData(
+                          count: "28",
+                          title: "Отработано",
+                          color: ColorName.white),
+                      SizedBox(
+                        width: 12.w,
+                      ),
+                      Widgets.showData(
+                        count: "28",
+                        title: "Осталось",
+                        color: ColorName.white,
+                      ),
                     ],
                   ).paddingOnly(bottom: 24.w),
-
-                  TabBarWidget(
-                      _controller,
-                      "Объем",
-                      "Strike",
-                      "Акб",
-                       (int i) {
+                  TabBarWidget(_controller, "Объем", "Strike", "Акб", (int i) {
                     if (i == 0) {
                     } else if (i == 1) {
                     } else {}
                   }).paddingOnly(bottom: 15.w),
-
                   Container(
                     child: [
                       const TabbarFirstWidget(),
@@ -126,9 +136,7 @@ class _DiagnosticsPageState extends State<DiagnosticsPage> with TickerProviderSt
                       const TabbarThirdWidget(),
                     ][_controller.index],
                   ).paddingOnly(bottom: 24.w),
-
-                  TableWidget(),
-
+                  const TableWidget(),
                 ],
               ).paddingSymmetric(horizontal: 20.w)
             ],
