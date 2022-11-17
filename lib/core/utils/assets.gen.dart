@@ -67,6 +67,9 @@ class $AssetsImagesIconsGen {
   SvgGenImage get backIcon =>
       const SvgGenImage('assets/images/icons/back_icon.svg');
 
+  /// File path: assets/images/icons/box.svg
+  SvgGenImage get box => const SvgGenImage('assets/images/icons/box.svg');
+
   /// File path: assets/images/icons/calender.svg
   SvgGenImage get calender =>
       const SvgGenImage('assets/images/icons/calender.svg');
@@ -80,6 +83,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/caset.svg
   SvgGenImage get caset => const SvgGenImage('assets/images/icons/caset.svg');
+
+  /// File path: assets/images/icons/cencel_icon.svg
+  SvgGenImage get cencelIcon =>
+      const SvgGenImage('assets/images/icons/cencel_icon.svg');
 
   /// File path: assets/images/icons/chat.svg
   SvgGenImage get chat => const SvgGenImage('assets/images/icons/chat.svg');
@@ -266,6 +273,9 @@ class $AssetsImagesIconsGen {
   SvgGenImage get refresh =>
       const SvgGenImage('assets/images/icons/refresh.svg');
 
+  /// File path: assets/images/icons/remove.svg
+  SvgGenImage get remove => const SvgGenImage('assets/images/icons/remove.svg');
+
   /// File path: assets/images/icons/saved_ones.svg
   SvgGenImage get savedOnes =>
       const SvgGenImage('assets/images/icons/saved_ones.svg');
@@ -299,6 +309,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/shopping.svg
   SvgGenImage get shopping =>
       const SvgGenImage('assets/images/icons/shopping.svg');
+
+  /// File path: assets/images/icons/shoppingCart.svg
+  SvgGenImage get shoppingCart =>
+      const SvgGenImage('assets/images/icons/shoppingCart.svg');
 
   /// File path: assets/images/icons/shopping_card_icon.svg
   SvgGenImage get shoppingCardIcon =>
@@ -334,10 +348,12 @@ class $AssetsImagesIconsGen {
         add,
         backButton,
         backIcon,
+        box,
         calender,
         card,
         caretDown,
         caset,
+        cencelIcon,
         chat,
         clock,
         communication,
@@ -388,6 +404,7 @@ class $AssetsImagesIconsGen {
         profile,
         profileActive,
         refresh,
+        remove,
         savedOnes,
         savedOnesActive,
         search,
@@ -397,6 +414,7 @@ class $AssetsImagesIconsGen {
         setting,
         share,
         shopping,
+        shoppingCart,
         shoppingCardIcon,
         stack,
         telephoneButton,

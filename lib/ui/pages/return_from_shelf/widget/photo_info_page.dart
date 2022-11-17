@@ -6,8 +6,8 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PhotoReportPage extends StatelessWidget {
-  const PhotoReportPage({Key? key}) : super(key: key);
+class PhotoInfoPage extends StatelessWidget {
+  const PhotoInfoPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class PhotoReportPage extends StatelessWidget {
                     maxCrossAxisExtent: 150,
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 9),
-                itemCount: 11,
+                itemCount: 24,
                 itemBuilder: (BuildContext ctx, index) {
                   return ClipRRect(
                     borderRadius: BorderRadius.circular(8),

@@ -15,7 +15,6 @@ class TabbarOrderPage extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.only(bottom: 18.w),
           decoration: BoxDecoration(
             border: Border.all(color: ColorName.gray),
           ),
@@ -76,6 +75,7 @@ class TabbarOrderPage extends StatelessWidget {
           ).paddingSymmetric(horizontal: 20.w),
         ),
         Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
@@ -156,7 +156,7 @@ class TabbarOrderPage extends StatelessWidget {
               },
             )
           ],
-        ).paddingSymmetric(horizontal: 20),
+        ).paddingSymmetric(horizontal: 20.w),
       ],
     );
   }

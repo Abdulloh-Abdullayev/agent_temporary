@@ -10,6 +10,7 @@ import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
+import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/refund_page/refund_page.dart';
+import 'ui/pages/return_about_page/return_about_page.dart';
+import 'ui/pages/return_from_shelf/return_from_shelf.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -80,9 +83,12 @@ class AppModule extends Module {
         ModuleRoute("/", module: RefundPageModule()),
         ModuleRoute("/", module: LeftMenuModule()),
         ModuleRoute("/", module: CreateAccountModule()),
-    ModuleRoute("/", module: OrderPageModule()),
-    ModuleRoute("/", module: CustomerDataPageModule()),
-    ModuleRoute("/", module: CustomerDataEditingPageModule()),
-    ModuleRoute("/", module: DiagnosticsPageModule()),
+        ModuleRoute("/", module: OrderPageModule()),
+        ModuleRoute("/", module: CustomerDataPageModule()),
+        ModuleRoute("/", module: CustomerDataEditingPageModule()),
+        ModuleRoute("/", module: DiagnosticsPageModule()),
+        ModuleRoute("/", module: ReturnOrderDatePageModule()),
+        ModuleRoute("/", module: ReturnFromShelfModule()),
+        ModuleRoute("/", module: ReturnAboutPageModule()),
       ];
 }
