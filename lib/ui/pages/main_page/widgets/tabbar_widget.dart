@@ -39,7 +39,7 @@ class TabBarWidget extends StatelessWidget {
               ),
               child: TabBar(
                 controller: _controller,
-                unselectedLabelColor: ColorName.green,
+                unselectedLabelColor: ColorName.gray3,
                 labelColor: ColorName.white,
                 onTap: (i) {
                   function(i);
@@ -47,15 +47,15 @@ class TabBarWidget extends StatelessWidget {
                 },
                 indicator: BoxDecoration(
                   borderRadius: BorderRadius.circular(50.r),
-                  color: ColorName.red,
+                  color: ColorName.button,
                 ),
                 tabs: [
                   Tab(
                     child: Text(
                       title1,
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.sp,
                       ),
                     ),
                   ),
@@ -63,8 +63,8 @@ class TabBarWidget extends StatelessWidget {
                     child: Text(
                      title2,
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.sp,
                       ),
                     ),
                   ),
