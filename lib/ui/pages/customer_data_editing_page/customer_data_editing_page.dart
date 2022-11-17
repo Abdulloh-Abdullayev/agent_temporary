@@ -11,8 +11,7 @@ import 'customer_data_editing_page_widget/bottom_buttons_widget.dart';
 
 class CustomerDataEditingPageModule extends Module {
   @override
-  List<ModularRoute> get routes =>
-      [
+  List<ModularRoute> get routes => [
         ChildRoute(
           CustomerDataEditingPage.routeName,
           child: (context, args) => const CustomerDataEditingPage(),
@@ -59,7 +58,9 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                             Row(
                               children: [
                                 AppBarIcon.searchButton(() {}),
-                                const SizedBox(width: 12,),
+                                const SizedBox(
+                                  width: 12,
+                                ),
                                 AppBarIcon.filterButton(() {})
                               ],
                             )
@@ -68,12 +69,12 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: AppWidgets.textLocale(
-                              localeKey: "Редактрирование заказа",
-                              fontSize: 24.sp,
-                              fontWeight: FontWeight.w600,
-                              color: ColorName.white,
-                              isRichText: true
-                          ).paddingOnly(top: 18.w, left: 20),
+                                  localeKey: "Редактрирование заказа",
+                                  fontSize: 24.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: ColorName.white,
+                                  isRichText: true)
+                              .paddingOnly(top: 18.w, left: 20),
                         )
                       ],
                     ),
@@ -85,7 +86,7 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: 7,
-                        itemBuilder: (context,index){
+                        itemBuilder: (context, index) {
                           return Column(
                             children: [
                               ExpansionTile(
@@ -95,16 +96,21 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.w600,
                                     color: ColorName.black,
-                                    isRichText: true
-                                ),
+                                    isRichText: true),
                                 children: [
                                   ListView.builder(
                                     shrinkWrap: true,
-                                    physics: const NeverScrollableScrollPhysics(),
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
                                     itemCount: 4,
                                     itemBuilder: (context, index) {
                                       return Container(
-                                        margin: EdgeInsets.only(top: 12.w, bottom: 12.w,left: 13.w,right: 13.w,),
+                                        margin: EdgeInsets.only(
+                                          top: 12.w,
+                                          bottom: 12.w,
+                                          left: 13.w,
+                                          right: 13.w,
+                                        ),
                                         child: Cards.cards_7(
                                           name: "name",
                                           nalichi: "nalichi",
@@ -115,7 +121,8 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                                           blokNumber: "1",
                                           sht: "sht",
                                           shtNumber: "2",
-                                          image: "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg",
+                                          image:
+                                              "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg",
                                           blokRemove: () {},
                                           blokAdd: () {},
                                           shtRemove: () {},
@@ -127,13 +134,13 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                                 ],
                               ),
                               Container(
-                                color:ColorName.gray.withOpacity(0.1),
-                                height: 12.w,)
+                                color: ColorName.gray.withOpacity(0.1),
+                                height: 12.w,
+                              )
                             ],
                           );
                         },
-                      )
-                  ).paddingOnly(bottom: 150.w)
+                      )).paddingOnly(bottom: 150.w)
                 ],
               ),
             ),

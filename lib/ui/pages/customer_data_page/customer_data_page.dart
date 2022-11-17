@@ -28,12 +28,10 @@ class CustomerDataPage extends StatefulWidget {
 }
 
 class _CustomerDataPageState extends State<CustomerDataPage> {
-
   late ScrollController scrolController;
 
   var color = ColorName.black.withOpacity(0.3);
   dynamic appTitle = const AppTitleWidget();
-
 
   @override
   void initState() {
@@ -81,7 +79,7 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                           ),
                           child: PageView.builder(
                             itemCount: 10,
-                            itemBuilder: (context,index){
+                            itemBuilder: (context, index) {
                               return Image.network(
                                 "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000",
                                 fit: BoxFit.cover,
@@ -91,21 +89,19 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(bottom: 22.w,right: 20.w),
+                        margin: EdgeInsets.only(bottom: 22.w, right: 20.w),
                         height: 31.w,
                         width: 45.w,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: ColorName.black.withOpacity(0.3)
-                        ),
+                            borderRadius: BorderRadius.circular(8),
+                            color: ColorName.black.withOpacity(0.3)),
                         child: Center(
                           child: AppWidgets.textLocale(
-                            localeKey: "1/10",
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            isRichText: true,
-                            color: ColorName.white
-                          ),
+                              localeKey: "1/10",
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              isRichText: true,
+                              color: ColorName.white),
                         ),
                       )
                     ],
@@ -242,7 +238,6 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                         appTitle,
                       ],
                     ),
-
                     AppBarIcon.editeButton(() {
                       Modular.to.pushNamed(CustomerDataEditingPage.routeName);
                     })
