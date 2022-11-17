@@ -26,26 +26,37 @@ class BottomButtonsWidget extends StatelessWidget {
       ),
       child: Column(
         children: [
-          CustomerEditingRowWidget("Общая объем", "1365 о").paddingOnly(bottom: 12.w),
-          CustomerEditingRowWidget("Общее кол-во", "Общее кол-во").paddingOnly(bottom: 12.w),
-          CustomerEditingRowWidget("Общая сумма", "1150 000 000 UZS",ColorName.button).paddingOnly(bottom: 16.w),
+          CustomerEditingRowWidget(
+            "Общая объем",
+            "1365 о",
+          ).paddingOnly(bottom: 12.w),
+          CustomerEditingRowWidget(
+            "Общее кол-во",
+            "Общее кол-во",
+          ).paddingOnly(bottom: 12.w),
+          CustomerEditingRowWidget(
+            "Общая сумма",
+            "1150 000 000 UZS",
+            ColorName.button,
+          ).paddingOnly(bottom: 16.w),
           Row(
             children: [
               Expanded(
                 child: SizedBox(
                     height: 45.w,
-                   // padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    // padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: AppButton(
                       text: "Черновик",
                       textSize: 14,
                       textColor: ColorName.mainColor,
                       color: ColorName.gray,
                       splashColor: ColorName.black.withOpacity(0.2),
-                      onPressed: (){},
-                    )
-                ),
+                      onPressed: () {},
+                    )),
               ),
-              SizedBox(width: 12.w,),
+              SizedBox(
+                width: 12.w,
+              ),
               Expanded(
                 child: SizedBox(
                     height: 45.w,
@@ -55,15 +66,15 @@ class BottomButtonsWidget extends StatelessWidget {
                       textSize: 14,
                       textColor: ColorName.white,
                       color: ColorName.button,
-                      onPressed: (){
+                      onPressed: () {
                         showModalBottomSheet(
                           enableDrag: true,
                           isDismissible: false,
                           isScrollControlled: true,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.vertical(
-                                top: Radius.circular(12),
-                              )),
+                            top: Radius.circular(12),
+                          )),
                           context: context,
                           builder: (context) {
                             return const EditingBottomSheet();
@@ -75,7 +86,7 @@ class BottomButtonsWidget extends StatelessWidget {
             ],
           )
         ],
-      ).paddingOnly(left: 20.w,right: 20.w,top: 13.w),
+      ).paddingOnly(left: 20.w, right: 20.w, top: 13.w),
     );
   }
 }
