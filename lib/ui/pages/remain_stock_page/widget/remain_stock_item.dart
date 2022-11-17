@@ -91,17 +91,17 @@ class _RemainStockItemState extends State<RemainStockItem> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppWidgets.textLocale(
-                          localeKey: "LocaleKeys.category",
+                          localeKey: LocaleKeys.category,
                           color: ColorName.gray2,
                           fontSize: 12.sp,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: "LocaleKeys.price",
+                          localeKey: LocaleKeys.price,
                           color: ColorName.gray2,
                           fontSize: 12.sp,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: "LocaleKeys.remainder",
+                          localeKey: LocaleKeys.remainder,
                           color: ColorName.gray2,
                           fontSize: 12.sp,
                         ),

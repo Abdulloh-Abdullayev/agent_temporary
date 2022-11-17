@@ -65,15 +65,15 @@ class RemainStockPage extends StatelessWidget {
                     ],
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "LocaleKeys.remain_stock",
+                    localeKey: LocaleKeys.remain_stock,
                     fontWeight: FontWeight.w600,
                     fontSize: 24.sp,
                     color: Colors.white,
                   ).paddingOnly(top: 20.w),
                   AppTabBar(
                     tabTitle: [
-                      "LocaleKeys.remain_stock.tr()",
-                      "LocaleKeys.remain_stock.tr()"
+                      LocaleKeys.main_warehouse.tr(),
+                      LocaleKeys.stock.tr()
                     ],
                     onTap: (i) {
                       pageController.animateToPage(
