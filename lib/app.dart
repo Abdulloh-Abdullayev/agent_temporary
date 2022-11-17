@@ -76,5 +76,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: RefundPageModule()),
         ModuleRoute("/", module: LeftMenuModule()),
         ModuleRoute("/", module: CreateAccountModule()),
+        //ModuleRoute("/", module: TableFactModule()),
       ];
 }
