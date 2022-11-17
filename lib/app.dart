@@ -16,6 +16,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/refund_page/refund_page.dart';
+import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -76,5 +77,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: RefundPageModule()),
         ModuleRoute("/", module: LeftMenuModule()),
         ModuleRoute("/", module: CreateAccountModule()),
+        ModuleRoute("/", module: RestContainerPageModule()),
       ];
 }

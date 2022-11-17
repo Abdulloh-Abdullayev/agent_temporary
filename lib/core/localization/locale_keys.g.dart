@@ -29,5 +29,6 @@ abstract class  LocaleKeys {
   static const new_password = 'new_password';
   static const repeat_new_password = 'repeat_new_password';
   static const save = 'save';
+  static const rest_of_container = 'rest_of_container';
 
 }
