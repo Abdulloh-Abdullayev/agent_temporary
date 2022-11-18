@@ -29,5 +29,12 @@ abstract class  LocaleKeys {
   static const new_password = 'new_password';
   static const repeat_new_password = 'repeat_new_password';
   static const save = 'save';
+  static const main_warehouse = "main_warehouse";
+  static const  stock= "stock";
+  static const  remain_stock= "remain_stock";
+  static const  remainder= "remainder";
+  static const  price= "price";
+  static const  category= "category";
+  static const  salary= "salary";
 
 }

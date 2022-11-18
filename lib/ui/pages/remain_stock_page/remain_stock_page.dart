@@ -14,15 +14,17 @@ import 'widget/main_warehouse.dart';
 
 class RemainStockPageModel extends Module {
   @override
-  List<ModularRoute> get routes => [
+  List<ModularRoute> get routes =>
+      [
         ChildRoute(RemainStockPage.routeName,
-            child: (context, args) => RemainStockPage()),
+          child: (context, args) => RemainStockPage(),),
       ];
 
   @override
-  List<Bind> get binds => [
+  List<Bind> get binds =>
+      [
         Bind<RemainStockCubit>(
-          (i) => RemainStockCubit(),
+              (i) => RemainStockCubit(),
         ),
       ];
 }
@@ -54,7 +56,7 @@ class RemainStockPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.backButton(
-                        () {
+                            () {
                           Modular.to.pop();
                         },
                       ),
@@ -65,15 +67,15 @@ class RemainStockPage extends StatelessWidget {
                     ],
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "LocaleKeys.remain_stock",
+                    localeKey: LocaleKeys.remain_stock,
                     fontWeight: FontWeight.w600,
                     fontSize: 24.sp,
                     color: Colors.white,
                   ).paddingOnly(top: 20.w),
                   AppTabBar(
                     tabTitle: [
-                      "LocaleKeys.remain_stock.tr()",
-                      "LocaleKeys.remain_stock.tr()"
+                      LocaleKeys.main_warehouse.tr(),
+                      LocaleKeys.stock.tr()
                     ],
                     onTap: (i) {
                       pageController.animateToPage(

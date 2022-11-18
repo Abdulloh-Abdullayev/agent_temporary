@@ -93,7 +93,7 @@ class SalaryPage extends StatelessWidget {
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: "LocaleKeys.salary",
+            localeKey: LocaleKeys.salary,
             fontWeight: FontWeight.w500,
             fontSize: 20.sp,
             color: Colors.white,
