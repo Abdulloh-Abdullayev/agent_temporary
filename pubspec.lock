@@ -608,21 +608,21 @@ packages:
       name: isar
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.2"
+    version: "3.0.4"
   isar_flutter_libs:
     dependency: "direct main"
     description:
       name: isar_flutter_libs
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.2"
+    version: "3.0.4"
   isar_generator:
     dependency: "direct dev"
     description:
       name: isar_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.2"
+    version: "3.0.4"
   js:
     dependency: transitive
     description:
@@ -867,7 +867,7 @@ packages:
       name: pub_semver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.2"
+    version: "2.1.3"
   pubspec_parse:
     dependency: transitive
     description:
@@ -881,7 +881,7 @@ packages:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.27.5"
+    version: "0.27.7"
   shared_preferences:
     dependency: transitive
     description:
@@ -1074,7 +1074,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: cb9b87db47c2325eab842d94ad224c783525e9f6
+      resolved-ref: "31d9c3d5351d19df2a9aeaa31bb23ae98cf64618"
       url: "https://gitlab.com/tlps-project/ui-kit.git"
     source: git
     version: "1.0.0+1"
@@ -1140,7 +1140,7 @@ packages:
       name: uuid
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.6"
+    version: "3.0.7"
   vector_math:
     dependency: transitive
     description:

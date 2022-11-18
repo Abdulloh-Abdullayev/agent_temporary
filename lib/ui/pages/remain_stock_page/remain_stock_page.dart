@@ -1,7 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -63,16 +65,15 @@ class RemainStockPage extends StatelessWidget {
                     ],
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Nimadir",
-                    // localeKey: LocaleKeys.remain_stock,
+                    localeKey: "LocaleKeys.remain_stock",
                     fontWeight: FontWeight.w600,
                     fontSize: 24.sp,
                     color: Colors.white,
                   ).paddingOnly(top: 20.w),
                   AppTabBar(
                     tabTitle: [
-                      // LocaleKeys.remain_stock.tr(),
-                      // LocaleKeys.remain_stock.tr()
+                      "LocaleKeys.remain_stock.tr()",
+                      "LocaleKeys.remain_stock.tr()"
                     ],
                     onTap: (i) {
                       pageController.animateToPage(

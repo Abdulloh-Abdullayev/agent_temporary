@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
@@ -90,20 +91,17 @@ class _RemainStockItemState extends State<RemainStockItem> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppWidgets.textLocale(
-                          localeKey: "category",
-                          // localeKey: LocaleKeys.category,
+                          localeKey: "LocaleKeys.category",
                           color: ColorName.gray2,
                           fontSize: 12.sp,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: "price",
-                          // localeKey: LocaleKeys.price,
+                          localeKey: "LocaleKeys.price",
                           color: ColorName.gray2,
                           fontSize: 12.sp,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: "remimder",
-                          // localeKey: LocaleKeys.remainder,
+                          localeKey: "LocaleKeys.remainder",
                           color: ColorName.gray2,
                           fontSize: 12.sp,
                         ),

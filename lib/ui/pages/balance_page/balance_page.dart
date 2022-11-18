@@ -85,6 +85,7 @@ class BalancePage extends StatelessWidget {
                   nachisleniya: model.status!,
                   summa: "Сумма",
                   summaNumber: model.priceToString,
+                  onTap: () {},
                 ).paddingOnly(top: 12.w);
               },
             ),
