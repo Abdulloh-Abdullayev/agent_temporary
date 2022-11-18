@@ -13,8 +13,8 @@ import 'package:flutter/material.dart';
 class ColorName {
   ColorName._();
 
-  /// Color: #DFDFDF
-  static const Color background = Color(0xFFDFDFDF);
+  /// Color: #F2F5F5
+  static const Color background = Color(0xFFF2F5F5);
 
   /// Color: #D9D9D9
   static const Color bgColor = Color(0xFFD9D9D9);
@@ -24,6 +24,9 @@ class ColorName {
 
   /// Color: #36E5E5
   static const Color bluePercent = Color(0xFF36E5E5);
+
+  /// Color: #299B9B
+  static const Color button = Color(0xFF299B9B);
 
   /// Color: #299B9B
   static const Color buttonColor = Color(0xFF299B9B);
@@ -49,11 +52,20 @@ class ColorName {
   /// Color: #00A000
   static const Color green = Color(0xFF00A000);
 
+  /// Color: #1D9908
+  static const Color lightGreen = Color(0xFF1D9908);
+
+  /// Color: #FAFDFD
+  static const Color lightBlue = Color(0xFFFAFDFD);
+
   /// Color: #336666
   static const Color mainColor = Color(0xFF336666);
 
   /// Color: #013636
   static const Color primaryColor = Color(0xFF013636);
+
+  /// Color: #052C2C
+  static const Color primaryDark = Color(0xFF052C2C);
 
   /// Color: #FF0000
   static const Color red = Color(0xFFFF0000);

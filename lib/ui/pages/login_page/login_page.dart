@@ -106,7 +106,7 @@ class LoginPage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           textAlign: TextAlign.start,
                         ),
-                        AppInputTextField(
+                        PasswordTextField(
                           onChanged: (v) {},
                           isIconVisible: true,
                           hint: "************",

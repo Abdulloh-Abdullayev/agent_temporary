@@ -21,7 +21,7 @@ class TabBarWidget extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               color: ColorName.white,
-              borderRadius: BorderRadius.circular(11.0)),
+              borderRadius: BorderRadius.circular(50.r)),
           alignment: Alignment.center,
           child: DefaultTabController(
             initialIndex: 0,
@@ -30,32 +30,32 @@ class TabBarWidget extends StatelessWidget {
               height: 46.w,
               padding: EdgeInsets.all(3),
               margin: EdgeInsets.symmetric(
-                horizontal: 20.w,
+                horizontal: 3.w,
               ),
               decoration: BoxDecoration(
                   color: ColorName.white,
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(50.r),
 
               ),
               child: TabBar(
                 controller: _controller,
-                unselectedLabelColor: ColorName.green,
+                unselectedLabelColor: ColorName.gray3,
                 labelColor: ColorName.white,
                 onTap: (i) {
                   function(i);
 
                 },
                 indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: ColorName.red,
+                  borderRadius: BorderRadius.circular(50.r),
+                  color: ColorName.button,
                 ),
                 tabs: [
                   Tab(
                     child: Text(
                       title1,
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.sp,
                       ),
                     ),
                   ),
@@ -63,8 +63,8 @@ class TabBarWidget extends StatelessWidget {
                     child: Text(
                      title2,
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.sp,
                       ),
                     ),
                   ),
