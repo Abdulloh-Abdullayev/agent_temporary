@@ -31,7 +31,7 @@ class SalesTableWidget extends StatelessWidget {
             } else if (index == 7) {
               return tableTotal();
             }
-            return SaleTableItem();
+            return const SaleTableItem();
           },
           separatorBuilder: (context, index) => Container(
             height: 1,

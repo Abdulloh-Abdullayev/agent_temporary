@@ -26,10 +26,11 @@ class LeftMenuBloc extends Bloc<LeftMenuEvent, LeftMenuState> {
       source: ImageSource.gallery,
     );
     if (imagePicker != null) {
-      emit(state.copyWith(
-        image: imagePicker,
-
-      ),);
+      emit(
+        state.copyWith(
+          image: imagePicker,
+        ),
+      );
     }
   }
 

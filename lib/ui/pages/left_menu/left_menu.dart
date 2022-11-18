@@ -2,6 +2,7 @@ import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
@@ -185,7 +186,9 @@ class LeftMenuPage extends StatelessWidget {
                     icon: Assets.images.icons.user.svg(),
                   ),
                   DrawerItem(
-                    onTap: () {},
+                    onTap: () {
+                      Modular.to.pushNamed(DebtorsPage.routeName);
+                    },
                     text: "Должники",
                     icon: Assets.images.icons.userTimer.svg(),
                   ),

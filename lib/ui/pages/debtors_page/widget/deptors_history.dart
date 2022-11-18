@@ -1,18 +1,28 @@
+import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/home/home_page.dart';
-import 'package:agent/ui/pages/reports_page/widgets/reports_filter_bottomsheet.dart';
+import 'package:agent/ui/pages/debtors_page/widget/debtors_table.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uikit/extensions/app_extensions.dart';
 import 'package:uikit/uikit.dart';
 
-import 'widgets/sales_table_widget.dart';
-import 'widgets/table_fact_widget.dart';
+import '../../reports_page/widgets/sales_table_widget.dart';
 
-class ReportsPage extends StatelessWidget {
-  const ReportsPage({Key? key}) : super(key: key);
+class DebtorsHistoryModule extends Module {
+  @override
+  List<ModularRoute> get routes => [
+        ChildRoute(
+          DebtorsHistory.routeName,
+          child: (context, args) => const DebtorsHistory(),
+        ),
+      ];
+}
+
+class DebtorsHistory extends StatelessWidget {
+  const DebtorsHistory({Key? key}) : super(key: key);
+  static const String routeName = '/debtorsHistory';
 
   @override
   Widget build(BuildContext context) {
@@ -33,22 +43,9 @@ class ReportsPage extends StatelessWidget {
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InkWell(
-                  onTap: () {
-                    HomePage.globalKey.currentState!.openDrawer();
-                  },
-                  child: Assets.images.icons.menu.svg(),
-                ),
-                AppWidgets.iconButton(
-                  onPressed: () {
-                    showModalBottomSheet(
-                      context: context,
-                      backgroundColor: Colors.transparent,
-                      builder: (context) => const ReportsFilterBottomSheet(),
-                    );
-                  },
-                  icon: Assets.images.icons.filtrIcon,
-                )
+                AppWidgets.backButton(() {
+                  Modular.to.pop();
+                }),
               ],
             ),
             flexibleSpace: FlexibleSpaceBar(
@@ -56,7 +53,7 @@ class ReportsPage extends StatelessWidget {
               collapseMode: CollapseMode.none,
             ),
             pinned: true,
-            expandedHeight: 258,
+            expandedHeight: 270.w,
           ),
           SliverList(
             delegate: SliverChildListDelegate(
@@ -65,95 +62,23 @@ class ReportsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    dataPanel(),
-                    planFactBuild(),
-                    const TableFact().paddingOnly(top: 16.w),
-                    const SalesTableWidget()
+                    AppWidgets.textLocale(
+                      localeKey: "Запросить историю",
+                      color: ColorName.button,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    // dataPanel(),
+                    // planFactBuild(),
+                    // const TableFact().paddingOnly(top: 16.w),
+                     const DebtorsTable(),
                   ],
-                ).paddingSymmetric(horizontal: 20.w,vertical: 20.w)
+                ).paddingSymmetric(horizontal: 20.w, vertical: 20.w)
               ],
             ),
           ),
         ],
       ),
-    );
-  }
-
-  Widget planFactBuild() {
-    return Column(
-      children: [
-        AppWidgets.textLocale(
-          localeKey: "План факт прогноз",
-          fontWeight: FontWeight.w500,
-          fontSize: 20.sp,
-        ).paddingOnly(top: 24.w, bottom: 16.w),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Widgets.showData(
-              width: 104.w,
-              count: "143%",
-              title: "Факт",
-              color: ColorName.white,
-            ),
-            const SizedBox(width: 8),
-            Widgets.showData(
-              width: 104.w,
-              count: "143%",
-              title: "Прогноз",
-              color: ColorName.white,
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget dataPanel() {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Expanded(
-              child: Widgets.showCount(
-                count: 120000,
-                title: "Общая сумма",
-                withOpacity: 0.1,
-                color: ColorName.green2,
-              ),
-            ),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Widgets.showCount(
-                count: 120000,
-                title: "АКБ",
-                color: ColorName.blue,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        Row(
-          children: [
-            Expanded(
-              child: Widgets.showCount(
-                count: 120000,
-                title: "Общее кол-во ",
-                withOpacity: 0.1,
-                color: ColorName.green2,
-              ),
-            ),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Widgets.showCount(
-                count: 120000,
-                title: "Общий обьем",
-                color: ColorName.blue,
-              ),
-            ),
-          ],
-        ),
-      ],
     );
   }
 
@@ -170,7 +95,7 @@ class ReportsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppWidgets.textLocale(
-            localeKey: "Отчёты",
+            localeKey: "Баланс: ${"Osiyo market"}",
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,
@@ -198,9 +123,7 @@ class ReportsPage extends StatelessWidget {
                 ),
               );
             },
-            dropDownOnTap: () {
-
-            },
+            dropDownOnTap: () {},
             SecondDateOnTap: () {
               showDialog(
                 context: context,
@@ -225,6 +148,6 @@ class ReportsPage extends StatelessWidget {
           ).paddingOnly(top: 18.w)
         ],
       ),
-    );
+    ).paddingOnly(top: 40.w);
   }
 }
