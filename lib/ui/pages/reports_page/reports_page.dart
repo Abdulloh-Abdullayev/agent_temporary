@@ -193,7 +193,7 @@ class ReportsPage extends StatelessWidget {
                   closeTitle: 'Закрыть',
                   addTitle: 'Добавить',
                   addTap: (DateTime time) {
-                    print("time");
+                    // print("time");
                   },
                 ),
               );
@@ -209,7 +209,7 @@ class ReportsPage extends StatelessWidget {
                   closeTitle: 'Закрыть',
                   addTitle: 'Добавить',
                   addTap: (DateTime time) {
-                    print("time");
+                    // print("time");
                   },
                 ),
               );
