@@ -55,7 +55,7 @@ class OutletsBottomSheet extends StatelessWidget {
                     localeKey: LocaleKeys.no_show_on_map,
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w600,
-                  ).paddingOnly(left: 20.w),
+                  ).paddingOnly(left: 20.w,top: 20.w),
                   ListView.builder(
                     physics: const BouncingScrollPhysics(),
                     padding: EdgeInsets.symmetric(horizontal: 20.w),

@@ -1,6 +1,7 @@
 import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/outlets_page/outlets_map_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,9 @@ class OutletsPage extends StatelessWidget {
             bottom: 100,
             right: 20.w,
             child: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                Modular.to.pushNamed(AddOutletsPage.routeName);
+              },
               backgroundColor: ColorName.buttonColor,
               child: const Icon(Icons.add),
             ),
@@ -116,8 +119,8 @@ class OutletsPage extends StatelessWidget {
             fontSize: 24.sp,
             color: Colors.white,
           ).paddingOnly(top: 20.w, bottom: 18.w),
-          const AppSelectTabBar(
-            tabs: [
+          AppSelectTabBar(
+            tabs: const [
               'Все',
               'ПН',
               'ВТ',
@@ -127,6 +130,7 @@ class OutletsPage extends StatelessWidget {
               'СБ',
               'ВС',
             ],
+            onTap: () {},
           )
         ],
       ),
