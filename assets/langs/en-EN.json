@@ -33,5 +33,16 @@
   "old_password": "Старый пароль",
   "new_password": "Новый пароль",
   "repeat_new_password": "Повторите новый пароль",
-  "save": "Сохранить"
+  "save": "Сохранить",
+  "Main warehouse": "Main warehouse",
+  "stock": "Warehouse",
+  "remain_stock": "Remaining stock",
+  "remainder": "Remainder",
+  "price": "Price",
+  "category": "Category",
+  "salary": "Salary"
+
+
+
+
 }
