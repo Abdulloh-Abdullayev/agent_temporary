@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
+// ignore_for_file: directives_ordering,unnecessary_import
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -405,6 +405,55 @@ class $AssetsImagesIconsGen {
         wallet,
         xIcon,
         zadachi
+      ];
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        imageIcon,
+        add,
+        backIcon,
+        card,
+        caretDown,
+        communication,
+        communicationActive,
+        draft,
+        draftActive,
+        edit,
+        filtrIcon,
+        home,
+        homeActive,
+        homeIcon,
+        homeIcon2,
+        interesting,
+        interestingActive,
+        location,
+        locationActive,
+        locationBuuton,
+        locationIcon,
+        logout,
+        menu,
+        note,
+        notification,
+        pie2Chart,
+        pieChart,
+        pieChartActive,
+        pieIcon,
+        pinButton,
+        pinned,
+        place,
+        placeActive,
+        profile,
+        profileActive,
+        savedOnes,
+        savedOnesActive,
+        search,
+        searchActive,
+        searchButton,
+        setting,
+        share,
+        shopping,
+        user,
+        userTimer
       ];
 }
 

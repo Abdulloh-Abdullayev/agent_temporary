@@ -60,4 +60,5 @@
     <color name="main_color">#336666</color>
     <color name="light_blue">#FAFDFD</color>
 
+    <color name="input">#FAFDFD</color>
 </resources>

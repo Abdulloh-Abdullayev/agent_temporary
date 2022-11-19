@@ -33,9 +33,7 @@
   "remainder": "Remainder",
   "price": "Price",
   "category": "Category",
-  "salary": "Salary"
-
-
-
+  "salary": "Salary",
+  "rest_of_container": "The rest of the container"
 
 }

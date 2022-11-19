@@ -36,5 +36,6 @@ abstract class  LocaleKeys {
   static const  price= "price";
   static const  category= "category";
   static const  salary= "salary";
+  static const rest_of_container = 'rest_of_container';
 
 }
