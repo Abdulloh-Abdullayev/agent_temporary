@@ -40,6 +40,7 @@ dependencies:
   flutter_gen: ^5.0.3
   percent_indicator: ^4.2.2
   super_rich_text: ^1.0.0
+  mask_text_input_formatter: ^2.4.0
   uikit:
     git:
       url: https://gitlab.com/tlps-project/ui-kit.git
