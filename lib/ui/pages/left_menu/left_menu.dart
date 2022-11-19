@@ -97,14 +97,29 @@ class LeftMenuPage extends StatelessWidget {
                             onTap: () {
                               bloc.add(HideShowed(!state.hideShow));
                             },
-                            child: AnimatedRotation(
-                              duration: const Duration(milliseconds: 300),
-                              turns: state.hideShow ? 0.5 : 1,
-                              child: Assets.images.icons.caretDown.svg(
-                                width: 27.w,
-                                height: 27.w,
+
+                            child: Container(
+                              height: 28.w,
+                              width: 28.w,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                color: const Color.fromRGBO(255, 255, 255, 0.1),
+                              ),
+                              child: Center(
+                                child: AnimatedRotation(
+                                  duration: const Duration(milliseconds: 400),
+                                  turns: state.hideShow ? 0.5 : 1,
+                                  child: Assets.images.icons.downIcon.svg(
+                                    width: 14.w,
+                                    height: 8.w,
+                                    color: ColorName.white,
+                                  ),
+                                ),
                               ),
                             ),
+
+                            // AppWidgets.iconButton(onPressed: (){}, icon:  Assets.images.icons.downIcon)
+
                           ),
                         ],
                       ).paddingSymmetric(horizontal: 20.w, vertical: 25.w),
@@ -132,15 +147,15 @@ class LeftMenuPage extends StatelessWidget {
                                   icon: const Icon(
                                     Icons.add,
                                     color: ColorName.textAddAccount,
-                                  ),
-                                ).paddingOnly(left: 20.w),
+                                  ).paddingOnly(left: 20.w),
+                                ),
                               ],
                             )
                           : const SizedBox(),
                     ],
                   ),
                 ),
-                buildMenus().paddingAll(20),
+                buildMenus(),
                 AppWidgets.textLocale(
                   localeKey: "Версия 12.3.8.7",
                   color: ColorName.white.withOpacity(0.3),
@@ -306,15 +321,18 @@ class DrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => onTap(),
-      child: Row(
-        children: [
-          icon.paddingOnly(right: 15.w),
-          AppWidgets.textLocale(
-            localeKey: text,
-            color: textColor,
-          ),
-        ],
+      child: SizedBox(
+        height: 55,
+        child: Row(
+          children: [
+            icon.paddingOnly(right: 15.w),
+            AppWidgets.textLocale(
+              localeKey: text,
+              color: textColor,
+            ),
+          ],
+        ).paddingOnly(left: 20.w),
       ),
-    ).paddingOnly(bottom: 25.w);
+    );
   }
 }

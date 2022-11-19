@@ -19,8 +19,9 @@ class HistoryOrdersModule extends Module {
 
 class HistoryOrdersPage extends StatelessWidget {
   static String routeName = "/history-orders";
+  PageController pageController = PageController();
 
-  const HistoryOrdersPage({Key? key}) : super(key: key);
+  HistoryOrdersPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +48,35 @@ class HistoryOrdersPage extends StatelessWidget {
                       AppWidgets.backButton(() {
                         Modular.to.pop();
                       }),
-                      AppWidgets.iconButton(
-                        onPressed: () {},
-                        icon: Assets.images.icons.filtrIcon,
+                      InkWell(
+                        onTap: () {
+                          // Modular.to.pushNamed(OrderFromWidget.routeName);
+
+                          showModalBottomSheet(
+                              enableDrag: false,
+                              context: context,
+                              backgroundColor: Colors.transparent,
+                              builder: (context) {
+                                return PurchaseHistorySheet(
+                                  text: 'Фильтр',
+                                  height: 900,
+                                );
+                              });
+                        },
+                        child: Container(
+                          height: 28.w,
+                          width: 28.w,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: const Color.fromRGBO(255, 255, 255, 0.1),
+                          ),
+                          child: Center(
+                            child: Assets.images.icons.filter.svg(
+                              width: 16.w,
+                              height: 19.w,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ).paddingSymmetric(
@@ -68,11 +95,22 @@ class HistoryOrdersPage extends StatelessWidget {
                   AppTabBar(
                     tabTitle: const ["Заказы", "Топ"],
                     onTap: (i) {
-                      Tab(child: buildOrdersWidget());
-                      Tab(child: buildOrdersWidget());
+                      pageController.animateToPage(
+                        i,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.linear,
+                      );
                     },
-                    tabs: [],
-                  )
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: PageView(
+                controller: pageController,
+                children: [
+                  buildOrdersWidget(),
+                  buildTopWidget(),
                 ],
               ),
             ),
@@ -84,7 +122,7 @@ class HistoryOrdersPage extends StatelessWidget {
 
   Widget buildOrdersWidget() {
     return ListView.builder(
-      itemCount: 8,
+      itemCount: 5,
       itemBuilder: ((context, index) {
         return Container(
           width: 1.sw,
@@ -113,6 +151,7 @@ class HistoryOrdersPage extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       color: ColorName.green.withOpacity(0.18),
+                      borderRadius: BorderRadius.circular(8.r),
                     ),
                     child: AppWidgets.textLocale(
                       localeKey: "Доставлен",
@@ -143,12 +182,10 @@ class HistoryOrdersPage extends StatelessWidget {
                     ],
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Доставлен",
+                    localeKey: "Начисления",
                     color: ColorName.gray2,
-                  ).paddingSymmetric(
-                    vertical: 4.w,
-                    horizontal: 10.w,
-                  )
+                    fontSize: 12.sp,
+                  ),
                 ],
               ),
             ],
@@ -156,8 +193,48 @@ class HistoryOrdersPage extends StatelessWidget {
             horizontal: 12.w,
             vertical: 18.w,
           ),
+        ).paddingOnly(
+          top: 15.w,
+          left: 20.w,
+          right: 20.w,
         );
       }),
     );
+  }
+
+  Widget buildTopWidget() {
+    return Container(
+      width: 1.sw,
+      decoration: BoxDecoration(
+        color: ColorName.white,
+        borderRadius: BorderRadius.circular(8.r),
+      ),
+      child: ListView.builder(
+        itemCount: 5,
+        itemBuilder: ((context, index) {
+          return Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  AppWidgets.textLocale(
+                    localeKey: "Coca cola 1.5",
+                    fontSize: 12.sp,
+                  ),
+                  AppWidgets.textLocale(
+                    localeKey: "10.0",
+                    fontSize: 12.sp,
+                  ),
+                ],
+              ).paddingSymmetric(vertical: 10.w),
+              const Divider()
+            ],
+          );
+        }),
+      ).paddingSymmetric(
+        horizontal: 20.w,
+        vertical: 10,
+      ),
+    ).paddingOnly(top: 20.w);
   }
 }

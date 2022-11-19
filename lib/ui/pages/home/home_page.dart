@@ -59,8 +59,8 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           return SafeArea(
             child: Scaffold(
-              key: HomePage.globalKey,
               drawer: LeftMenuPage(),
+              key: HomePage.globalKey,
               extendBody: true,
               body: bodyBuilder(state.appNavigationType, context).paddingOnly(bottom: 70,),
               bottomNavigationBar: AppNavigationBar(
