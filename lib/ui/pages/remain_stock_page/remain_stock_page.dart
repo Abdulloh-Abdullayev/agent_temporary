@@ -14,15 +14,17 @@ import 'widget/main_warehouse.dart';
 
 class RemainStockPageModel extends Module {
   @override
-  List<ModularRoute> get routes => [
+  List<ModularRoute> get routes =>
+      [
         ChildRoute(RemainStockPage.routeName,
-            child: (context, args) => RemainStockPage()),
+          child: (context, args) => RemainStockPage(),),
       ];
 
   @override
-  List<Bind> get binds => [
+  List<Bind> get binds =>
+      [
         Bind<RemainStockCubit>(
-          (i) => RemainStockCubit(),
+              (i) => RemainStockCubit(),
         ),
       ];
 }
@@ -54,7 +56,7 @@ class RemainStockPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.backButton(
-                        () {
+                            () {
                           Modular.to.pop();
                         },
                       ),

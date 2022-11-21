@@ -20,6 +20,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'ui/pages/balance_page/balance_page.dart';
+import 'ui/pages/outlets_page/outlets_map_page.dart';
 import 'ui/pages/refund_page/refund_page.dart';
 import 'ui/pages/return_about_page/return_about_page.dart';
 import 'ui/pages/return_from_shelf/return_from_shelf.dart';
@@ -81,6 +82,7 @@ class AppModule extends Module {
         ModuleRoute("/", module: LoginPageModule()),
         ModuleRoute("/", module: BalancePageModule()),
         ModuleRoute("/", module: RefundPageModule()),
+        ModuleRoute("/", module: OutletsMapModule()),
         ModuleRoute("/", module: LeftMenuModule()),
         ModuleRoute("/", module: CreateAccountModule()),
         ModuleRoute("/", module: OrderPageModule()),
@@ -90,5 +92,9 @@ class AppModule extends Module {
         ModuleRoute("/", module: ReturnOrderDatePageModule()),
         ModuleRoute("/", module: ReturnFromShelfModule()),
         ModuleRoute("/", module: ReturnAboutPageModule()),
+        ModuleRoute("/", module: OrderPageModule()),
+        ModuleRoute("/", module: CustomerDataPageModule()),
+        ModuleRoute("/", module: CustomerDataEditingPageModule()),
+        ModuleRoute("/", module: DiagnosticsPageModule()),
       ];
 }

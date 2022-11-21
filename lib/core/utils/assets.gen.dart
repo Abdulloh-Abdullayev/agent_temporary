@@ -26,11 +26,14 @@ class $AssetsImagesGen {
 
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
+  /// File path: assets/images/img1.jpg
+  AssetGenImage get img1 => const AssetGenImage('assets/images/img1.jpg');
+
   /// File path: assets/images/market.png
   AssetGenImage get market => const AssetGenImage('assets/images/market.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [market];
+  List<AssetGenImage> get values => [img1, market];
 }
 
 class $AssetsLangsGen {
@@ -69,6 +72,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/box.svg
   SvgGenImage get box => const SvgGenImage('assets/images/icons/box.svg');
+
+  /// File path: assets/images/icons/calendar_icon.svg
+  SvgGenImage get calendarIcon =>
+      const SvgGenImage('assets/images/icons/calendar_icon.svg');
 
   /// File path: assets/images/icons/calender.svg
   SvgGenImage get calender =>
@@ -203,6 +210,14 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/logout.svg
   SvgGenImage get logout => const SvgGenImage('assets/images/icons/logout.svg');
 
+  /// File path: assets/images/icons/map_arrow_icon.svg
+  SvgGenImage get mapArrowIcon =>
+      const SvgGenImage('assets/images/icons/map_arrow_icon.svg');
+
+  /// File path: assets/images/icons/map_icon.svg
+  SvgGenImage get mapIcon =>
+      const SvgGenImage('assets/images/icons/map_icon.svg');
+
   /// File path: assets/images/icons/menu.svg
   SvgGenImage get menu => const SvgGenImage('assets/images/icons/menu.svg');
 
@@ -325,6 +340,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get telephoneButton =>
       const SvgGenImage('assets/images/icons/telephone_button.svg');
 
+  /// File path: assets/images/icons/trash_can.svg
+  SvgGenImage get trashCan =>
+      const SvgGenImage('assets/images/icons/trash_can.svg');
+
   /// File path: assets/images/icons/user.svg
   SvgGenImage get user => const SvgGenImage('assets/images/icons/user.svg');
 
@@ -349,6 +368,7 @@ class $AssetsImagesIconsGen {
         backButton,
         backIcon,
         box,
+        calendarIcon,
         calender,
         card,
         caretDown,
@@ -385,6 +405,8 @@ class $AssetsImagesIconsGen {
         locationBuuton,
         locationIcon,
         logout,
+        mapArrowIcon,
+        mapIcon,
         menu,
         moreButton,
         note,
@@ -418,6 +440,7 @@ class $AssetsImagesIconsGen {
         shoppingCardIcon,
         stack,
         telephoneButton,
+        trashCan,
         user,
         userTimer,
         wallet,

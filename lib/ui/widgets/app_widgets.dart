@@ -4,6 +4,7 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:super_rich_text/super_rich_text.dart';
 
@@ -177,28 +178,25 @@ class AppWidgets {
     );
   }
 
-  static Widget backButton(VoidCallback onPressed) {
-    return InkWell(
-      onTap: onPressed,
-      child: Container(
-        height: 28.w,
-        width: 28.w,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4),
-          color: const Color.fromRGBO(255, 255, 255, 0.1),
-        ),
-        child: Center(
-          child: Assets.images.icons.backIcon.svg(
-            fit: BoxFit.cover,
-          ),
-        ),
+  static Widget imgError({
+    double height = 50,
+    double width = 50,
+  }) {
+    return Container(
+      height: height,
+      width: width,
+      padding: const EdgeInsets.all(15),
+      color: ColorName.background,
+      child: Assets.images.icons.homeIcon.svg(
+        color: ColorName.gray,
       ),
     );
   }
 
-  static Widget iconButton({
-    required VoidCallback onPressed,
-    required SvgGenImage icon,
+  static Widget backButton(
+    VoidCallback onPressed, {
+    Color? color,
+    Color? iconColor,
   }) {
     return InkWell(
       onTap: onPressed,
@@ -207,7 +205,31 @@ class AppWidgets {
         width: 28.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          color: const Color.fromRGBO(255, 255, 255, 0.1),
+          color: color ?? const Color.fromRGBO(255, 255, 255, 0.1),
+        ),
+        child: Center(
+          child: Assets.images.icons.backIcon
+              .svg(fit: BoxFit.cover, color: iconColor),
+        ),
+      ),
+    );
+  }
+
+  static Widget iconButton({
+    required VoidCallback onPressed,
+    required SvgGenImage icon,
+    Color bgColor = const Color.fromRGBO(255, 255, 255, 0.1),
+    double height = 28,
+    double width = 28,
+  }) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          color: bgColor,
         ),
         child: Center(
           child: icon.svg(
@@ -215,6 +237,38 @@ class AppWidgets {
           ),
         ),
       ),
+    );
+  }
+
+  static Widget imageAsset({
+    required String path,
+    double? height,
+    double? width,
+    Color? color,
+    BoxFit fit = BoxFit.cover,
+  }) {
+    return Image.asset(
+      path,
+      height: height,
+      width: width,
+      fit: fit,
+      color: color,
+    );
+  }
+
+  static Widget imageSvg({
+    required String path,
+    double? height,
+    double? width,
+    BoxFit fit = BoxFit.cover,
+    Color? color,
+  }) {
+    return SvgPicture.asset(
+      path,
+      height: height,
+      width: width,
+      fit: fit,
+      color: color,
     );
   }
 }
