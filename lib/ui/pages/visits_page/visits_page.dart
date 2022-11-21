@@ -73,7 +73,7 @@ class _VisitsPageState extends State<VisitsPage> {
                             color: Colors.black, height: 17.4, width: 17.4),
                       ),
                     ).marginLTRB(20, 18, 20, 0)
-                  : SizedBox.fromSize(),
+                  : SizedBox.shrink(),
               SizedBox(height: 18),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

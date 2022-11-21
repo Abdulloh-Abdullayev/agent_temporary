@@ -38,7 +38,7 @@ class VisitWidgets {
                     AppWidgets.buttonBuilder(
                       backColor: ColorName.buttonBackColor,
                       child: Assets.images.icons.searchActive.svg(),
-                      padding: EdgeInsets.fromLTRB(2.96, 2.25, 1.04, 1.75),
+                      padding: EdgeInsets.all(5),
                       onTap: () => ontap("1"),
                     ),
                     SizedBox(width: 12),
@@ -46,7 +46,7 @@ class VisitWidgets {
                       backColor: ColorName.buttonBackColor,
                       child: Assets.images.icons.mapLocation.svg(),
                       onTap: () => ontap("2"),
-                      padding: EdgeInsets.fromLTRB(1.94, 2.23, 2.06, 1.77),
+                      padding: EdgeInsets.all(3),
                     ),
                   ],
                 ),

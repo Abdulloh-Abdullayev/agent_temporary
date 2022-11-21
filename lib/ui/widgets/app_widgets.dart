@@ -195,16 +195,18 @@ class AppWidgets {
   }) =>
       Container(
         alignment: alignment,
-        padding: padding,
         decoration: BoxDecoration(
           color: backColor,
           borderRadius: BorderRadius.circular(4),
         ),
         child: GestureDetector(
-            child: Container(
-                height: height,
-                width: width,
-                child: child ?? SizedBox.shrink())),
+          child: Container(
+            height: height,
+            width: width,
+            padding: padding,
+            child: child ?? SizedBox.shrink(),
+          ),
+        ),
       );
 
   /// set only net image url
