@@ -1,4 +1,7 @@
+import 'package:agent/ui/pages/act_reconciliation_dape/act_reconciliation_page.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
+import 'package:agent/ui/pages/map_page/custom_map.dart';
+import 'package:agent/ui/pages/visits_page/visits_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +20,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(
-      HomePage.routeName
-    );
+    Modular.setInitialRoute(VisitsPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -69,5 +70,8 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ModuleRoute("/", module: HomePageModule()),
         ModuleRoute("/", module: LoginPageModule()),
+        ModuleRoute("/", module: VisitsPageModule()),
+        ModuleRoute("/", module: ActReconciliationPageModule()),
+        ModuleRoute("/", module: CustomMapPageModule()),
       ];
 }

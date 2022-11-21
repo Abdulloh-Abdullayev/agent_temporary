@@ -40,6 +40,11 @@ dependencies:
   uikit:
     git:
       url: https://gitlab.com/tlps-project/ui-kit.git
+  cached_network_image: ^3.2.2
+  google_maps_flutter: ^2.2.1
+  flutter_polyline_points: ^1.0.0
+  location: ^4.4.0
+
 
 dev_dependencies:
   flutter_test:
