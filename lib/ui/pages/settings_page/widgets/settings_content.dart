@@ -1,4 +1,3 @@
-import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
@@ -23,18 +22,18 @@ class SettingsContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          isDisable
-              ? AppWidgets.textLocale(
-                  localeKey: "Эти настройки может изменить только модератор!",
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w400,
-                  color: ColorName.gray2,
-                ).paddingOnly(
-                  left: 20.w,
-                  right: 20.w,
-                  top: 18.w,
-                )
-              : const SizedBox(),
+          // isDisable
+          //     ? AppWidgets.textLocale(
+          //         localeKey: "Эти настройки может изменить только модератор!",
+          //         fontSize: 14.sp,
+          //         fontWeight: FontWeight.w400,
+          //         color: ColorName.gray2,
+          //       ).paddingOnly(
+          //         left: 20.w,
+          //         right: 20.w,
+          //         top: 18.w,
+          //       )
+          //     : const SizedBox(),
           Container(
             margin: EdgeInsets.only(top: 18.w),
             padding: EdgeInsets.symmetric(

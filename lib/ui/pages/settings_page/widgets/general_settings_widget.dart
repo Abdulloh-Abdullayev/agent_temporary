@@ -39,6 +39,7 @@ class GeneralSettingsWidget extends StatelessWidget {
                 onChanged: (bool v) {},
                 title: "Префикс номера телефона",
                 initial: false,
+                isLast:true,
                 isDisable: isDisable,
               ),
             ],
@@ -81,6 +82,122 @@ class GeneralSettingsWidget extends StatelessWidget {
                 title: "Дни посещений",
                 initial: false,
                 isLast: true,
+              ),
+            ],
+          ),
+          SettingsContent(
+            title: "GPS",
+            isDisable: isDisable,
+            items: [
+              SettingsSwitch(
+                isDisable: isDisable,
+                title: "Минимальные уровень заряда",
+                onChanged: (bool value) {},
+              ),
+              SettingsSwitch(
+                isDisable: isDisable,
+                title: "Всегда включен",
+                onChanged: (bool value) {},
+              ),
+              SettingsSwitch(
+                isDisable: isDisable,
+                title: "Всегда прикрепить местоположения при добавления заказа",
+                onChanged: (bool value) {},
+              ),
+              SettingsSwitch(
+                isDisable: isDisable,
+                title: "Отслеживать местоположений",
+                onChanged: (bool value) {},
+              ),
+              //todo Интервал отслеживания местоположений
+            ],
+          ),
+          SettingsContent(
+            title: "Обязательные действие",
+            isDisable: isDisable,
+            items: [
+              SettingsSwitch(
+                onChanged: (bool v) {},
+                title: "Фото",
+                initial: true,
+                isDisable: isDisable,
+              ),
+              SettingsSwitch(
+                onChanged: (bool v) {},
+                title: "Остаток",
+                initial: false,
+                isDisable: isDisable,
+              ),
+              SettingsSwitch(
+                onChanged: (bool v) {},
+                title: "Дата отгрузки",
+                initial: true,
+                isLast: true,
+                isDisable: isDisable,
+              ),
+            ],
+          ),
+          SettingsContent(
+            title: "OULET",
+            isDisable: isDisable,
+            items: [
+              SettingsSwitch(
+                onChanged: (bool v) {},
+                title: "Включено",
+                initial: true,
+                isDisable: isDisable,
+              ),
+              SettingsSwitch(
+                onChanged: (bool v) {},
+                title: "Версия",
+                initial: true,
+                isDisable: isDisable,
+                isLast: true,
+              ),
+            ],
+          ),
+          SettingsContent(
+            title: "Настройка списка товаров",
+            isDisable: isDisable,
+            items: [
+              SettingsSwitch(
+                onChanged: (bool v) {},
+                title: "Показать товары которые  нет на складе",
+                initial: true,
+                isLast: true,
+                isDisable: isDisable,
+              ),
+            ],
+          ),
+          SettingsContent(
+            title: "торговые точки",
+            isDisable: isDisable,
+            items: [
+              SettingsSwitch(
+                onChanged: (bool v) {},
+                title: "Показать главную фотографию",
+                initial: true,
+                isLast: true,
+                isDisable: isDisable,
+              ),
+            ],
+          ),
+          SettingsContent(
+            title: "Прочие",
+            isDisable: isDisable,
+            items: [
+              SettingsSwitch(
+                onChanged: (bool v) {},
+                title: "При добавление заказа требуется фото отёт",
+                initial: true,
+                isDisable: isDisable,
+              ),
+              SettingsSwitch(
+                onChanged: (bool v) {},
+                title: "Показать товары которые  нет на складе",
+                initial: true,
+                isLast: true,
+                isDisable: isDisable,
               ),
             ],
           ),
