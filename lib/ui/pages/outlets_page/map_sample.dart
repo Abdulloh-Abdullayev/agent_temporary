@@ -2,33 +2,34 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:yandex_mapkit/yandex_mapkit.dart';
 
-class MapSample extends StatefulWidget {
-  const MapSample({super.key});
+// class MapSample extends StatefulWidget {
+//   const MapSample({super.key});
+//
+//   @override
+//   State<MapSample> createState() => MapSampleState();
+// }
 
-  @override
-  State<MapSample> createState() => MapSampleState();
-}
-
-class MapSampleState extends State<MapSample> {
-  final Completer<GoogleMapController> _controller = Completer();
-
-  static const CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(41.363905, 69.297385),
-    zoom: 18,
-  );
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: GoogleMap(
-        mapType: MapType.terrain,
-        initialCameraPosition: _kGooglePlex,
-        myLocationEnabled: true,
-        zoomControlsEnabled: false,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
-      ),
-    );
-  }
-}
+// class MapSampleState extends State<MapSample> {
+//   final Completer<GoogleMapController> _controller = Completer();
+// Completer
+//   static const CameraPosition _kGooglePlex = CameraPosition(
+//     target: LatLng(41.363905, 69.297385),
+//     zoom: 18,
+//   );
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: GoogleMap(
+//         mapType: MapType.terrain,
+//         initialCameraPosition: _kGooglePlex,
+//         myLocationEnabled: true,
+//         zoomControlsEnabled: false,
+//         onMapCreated: (GoogleMapController controller) {
+//           _controller.complete(controller);
+//         },
+//       ),
+//     );
+//   }
+// }
