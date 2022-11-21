@@ -3,7 +3,6 @@ import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
 import 'package:agent/ui/pages/booking/o_boking_page.dart';
-import 'package:agent/ui/pages/booking/widgets/o_booking_widgets.dart';
 import 'package:agent/ui/pages/equipment_page/pages/add_equipment_page.dart';
 import 'package:agent/ui/pages/equipment_page/equipment_page.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
@@ -75,7 +74,7 @@ class AppModule extends Module {
         ModuleRoute("/", module: LoginPageModule()),
         ModuleRoute("/", module: BalancePageModule()),
         ModuleRoute("/", module: RefundPageModule()),
-        ModuleRoute("/", module: BookingModule()),
+        ModuleRoute("/", module: OBookingModule()),
         ModuleRoute("/", module: EquipmentModule()),
         ModuleRoute("/", module: AddEquipmentModule()),
       ];

@@ -85,8 +85,8 @@ class EquipmentWidgets {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        AppWidgets.text(
-                          text: "Artel холодильник",
+                        AppWidgets.textLocale(
+                          localeKey: "Artel холодильник",
                           fontSize: 14,
                         ),
                         textBuilder(
@@ -126,14 +126,14 @@ class EquipmentWidgets {
         crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          AppWidgets.text(
-            text: text1,
+          AppWidgets.textLocale(
+            localeKey: text1,
             fontSize: 12,
             fontWeight: FontWeight.w400,
             color: ColorName.gray2,
           ),
-          AppWidgets.text(
-            text: text2,
+          AppWidgets.textLocale(
+            localeKey: text2,
             fontSize: 12,
             fontWeight: FontWeight.w400,
             color: ColorName.gray2,

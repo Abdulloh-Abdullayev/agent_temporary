@@ -58,9 +58,9 @@ class EquipmentPage extends StatelessWidget {
                       SizedBox(
                         height: 18.h,
                       ),
-                      AppWidgets.text(
+                      AppWidgets.textLocale(
                         textAlign: TextAlign.center,
-                        text: "Пока что ничего не \nнайдено",
+                        localeKey: "Пока что ничего не \nнайдено",
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       ),

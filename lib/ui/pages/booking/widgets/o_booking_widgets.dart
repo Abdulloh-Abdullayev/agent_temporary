@@ -44,7 +44,7 @@ class OBookingWidgets {
   }
 
   static Widget appBar(
-          {required String title,
+          {required title,
           required BuildContext context,
           required Function(String key) ontap}) =>
       Container(
@@ -73,8 +73,7 @@ class OBookingWidgets {
                   child: GestureDetector(
                     onTap: () {},
                     child: Center(
-                      child:
-                       Assets.images.icons.left.svg(height: 9.5),
+                      child: Assets.images.icons.left.svg(height: 9.5),
                     ),
                   ),
                 ),
@@ -137,7 +136,7 @@ class OBookingWidgets {
                       Assets.images.icons.date.svg(),
                       Assets.images.icons.clock.svg(),
                       Assets.images.icons.uploadingFile.svg(),
-                      SizedBox.shrink(),
+                      const SizedBox.shrink(),
                     ],
                     textColor: const [
                       ColorName.button,
@@ -173,8 +172,8 @@ class OBookingWidgets {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AppWidgets.text(
-                  text: "Coca cola 1.5",
+          AppWidgets.textLocale(
+                  localeKey: "Coca cola 1.5",
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                   color: ColorName.black)
@@ -209,8 +208,8 @@ class OBookingWidgets {
         crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          AppWidgets.text(
-            text: text1,
+          AppWidgets.textLocale(
+            localeKey: text1,
             fontSize: 12,
             fontWeight: FontWeight.w400,
             color: ColorName.gray2,

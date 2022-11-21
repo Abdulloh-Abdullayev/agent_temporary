@@ -301,7 +301,7 @@ packages:
       name: dropdown_button2
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.9"
+    version: "1.9.0"
   easy_localization:
     dependency: "direct main"
     description:
@@ -881,7 +881,7 @@ packages:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.27.6"
+    version: "0.27.7"
   shared_preferences:
     dependency: transitive
     description:
@@ -1074,7 +1074,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: a536a8816eec587d3bccf7ff9caa29d667a77703
+      resolved-ref: "8b545351182e096f0313877135f6510452a62718"
       url: "https://gitlab.com/tlps-project/ui-kit.git"
     source: git
     version: "1.0.0+1"

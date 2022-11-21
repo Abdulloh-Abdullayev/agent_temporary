@@ -11,87 +11,85 @@ class EquipmentDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: ColorName.bgColor,
-        body: Column(
+    return Scaffold(
+      backgroundColor: ColorName.bgColor,
+      body: SafeArea(
+        child: Column(
           children: [
             appBarWidget(context),
             Expanded(
               child: ListView(
                 children: [
                   // First container
-                  Expanded(
-                    child: Container(
-                      height: 243.h,
-                      margin: const EdgeInsets.only(top: 18),
-                      decoration: BoxDecoration(
-                        color: ColorName.white,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              AppWidgets.text(
-                                text: "Тип",
-                                fontSize: 14,
-                                color: ColorName.gray2,
-                              ),
-                              AppWidgets.text(
-                                text: "Холодильник",
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ],
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 16),
-                            height: 1,
-                            color: ColorName.gray,
-                          ),
-                          const SizedBox(
-                            height: 16,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              AppWidgets.text(
-                                text: "Дата прикрепления",
-                                fontSize: 14,
-                                color: ColorName.gray2,
-                              ),
-                              AppWidgets.text(
-                                text: "12.10.2022",
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ],
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 16, bottom: 16),
-                            height: 1,
-                            color: ColorName.gray,
-                          ),
-                          AppWidgets.text(
-                            text: "Комментарии",
-                            fontSize: 14,
-                            color: ColorName.gray2,
-                          ),
-                          const SizedBox(
-                            height: 12,
-                          ),
-                          AppWidgets.text(
-                            text:
-                                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-                            fontSize: 14,
-                          ),
-                        ],
-                      ).paddingOnly(
-                        top: 18,
-                        left: 20,
-                        right: 20,
-                      ),
+                  Container(
+                    height: 243.h,
+                    margin: const EdgeInsets.only(top: 18),
+                    decoration: BoxDecoration(
+                      color: ColorName.white,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppWidgets.textLocale(
+                              localeKey: "Тип",
+                              fontSize: 14,
+                              color: ColorName.gray2,
+                            ),
+                            AppWidgets.text(
+                              text: "Холодильник",
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 16),
+                          height: 1,
+                          color: ColorName.gray,
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppWidgets.textLocale(
+                              localeKey: "Дата прикрепления",
+                              fontSize: 14,
+                              color: ColorName.gray2,
+                            ),
+                            AppWidgets.text(
+                              text: "12.10.2022",
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 16, bottom: 16),
+                          height: 1,
+                          color: ColorName.gray,
+                        ),
+                        AppWidgets.textLocale(
+                          localeKey: "Комментарии",
+                          fontSize: 14,
+                          color: ColorName.gray2,
+                        ),
+                        const SizedBox(
+                          height: 12,
+                        ),
+                        AppWidgets.text(
+                          text:
+                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+                          fontSize: 14,
+                        ),
+                      ],
+                    ).paddingOnly(
+                      top: 18,
+                      left: 20,
+                      right: 20,
                     ),
                   ),
 
@@ -103,114 +101,112 @@ class EquipmentDetails extends StatelessWidget {
                       color: ColorName.white,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AppWidgets.text(
-                            text: "О оборудования",
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          const SizedBox(
-                            height: 18,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              AppWidgets.text(
-                                text: "Серийный номер",
-                                fontSize: 14,
-                                color: ColorName.gray2,
-                              ),
-                              AppWidgets.text(
-                                text: "12365489621321",
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ],
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 16),
-                            height: 1,
-                            color: ColorName.gray,
-                          ),
-                          const SizedBox(
-                            height: 16,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              AppWidgets.text(
-                                text: "Инвертарный номер",
-                                fontSize: 14,
-                                color: ColorName.gray2,
-                              ),
-                              AppWidgets.text(
-                                text: "12365489621321",
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ],
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 16, bottom: 16),
-                            height: 1,
-                            color: ColorName.gray,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              AppWidgets.text(
-                                text: "Состояние",
-                                fontSize: 14,
-                                color: ColorName.gray2,
-                              ),
-                              AppWidgets.text(
-                                text: "Новый",
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ],
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 16, bottom: 16),
-                            height: 1,
-                            color: ColorName.gray,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              AppWidgets.text(
-                                text: "Дата производтсво",
-                                fontSize: 14,
-                                color: ColorName.gray2,
-                              ),
-                              AppWidgets.text(
-                                text: "12.10.2022",
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ],
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 16, bottom: 16),
-                            height: 1,
-                            color: ColorName.gray,
-                          ),
-                          AppWidgets.text(
-                            text: "Фото",
-                            fontSize: 14,
-                            color: ColorName.gray2,
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 8),
-                            height: 104,
-                            width: 104.w,
-                            child: Image.asset('assets/images/person.png'),
-                          ),
-                        ],
-                      ).paddingOnly(
-                        top: 18,
-                        left: 20,
-                        right: 20,
-                      ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AppWidgets.textLocale(
+                          localeKey: "О оборудования",
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        const SizedBox(
+                          height: 18,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppWidgets.textLocale(
+                              localeKey: "Серийный номер",
+                              fontSize: 14,
+                              color: ColorName.gray2,
+                            ),
+                            AppWidgets.text(
+                              text: "12365489621321",
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 16),
+                          height: 1,
+                          color: ColorName.gray,
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppWidgets.textLocale(
+                              localeKey: "Инвертарный номер",
+                              fontSize: 14,
+                              color: ColorName.gray2,
+                            ),
+                            AppWidgets.text(
+                              text: "12365489621321",
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 16, bottom: 16),
+                          height: 1,
+                          color: ColorName.gray,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppWidgets.textLocale(
+                              localeKey: "Состояние",
+                              fontSize: 14,
+                              color: ColorName.gray2,
+                            ),
+                            AppWidgets.text(
+                              text: "Новый",
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 16, bottom: 16),
+                          height: 1,
+                          color: ColorName.gray,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppWidgets.textLocale(
+                              localeKey: "Дата производтсво",
+                              fontSize: 14,
+                              color: ColorName.gray2,
+                            ),
+                            AppWidgets.text(
+                              text: "12.10.2022",
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 16, bottom: 16),
+                          height: 1,
+                          color: ColorName.gray,
+                        ),
+                        AppWidgets.textLocale(
+                          localeKey: "Фото",
+                          fontSize: 14,
+                          color: ColorName.gray2,
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 8),
+                          height: 104,
+                          width: 104.w,
+                          child: Image.asset('assets/images/person.png'),
+                        ),
+                      ],
+                    ).paddingOnly(
+                      top: 18,
+                      left: 20,
+                      right: 20,
                     ),
                   ),
                 ],

@@ -46,7 +46,6 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
   final attachmentDateController = TextEditingController();
   final photoController = TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -81,8 +80,8 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          AppWidgets.text(
-                            text: "Тип оборудование ",
+                          AppWidgets.textLocale(
+                            localeKey: "Тип оборудование ",
                             fontSize: 14,
                           ),
                           DropDown(
@@ -99,9 +98,9 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                             top: 12,
                           ),
 
-                          // Equipment Type  
-                          AppWidgets.text(
-                            text: "Название оборудования",
+                          // Equipment Type
+                          AppWidgets.textLocale(
+                            localeKey: "Название оборудования",
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -115,9 +114,9 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                             controller: typeController,
                           ),
 
-                          // Serial Number   
-                          AppWidgets.text(
-                            text: "Серийный номер",
+                          // Serial Number
+                          AppWidgets.textLocale(
+                            localeKey: "Серийный номер",
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -132,8 +131,8 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ),
 
                           // Invent number
-                          AppWidgets.text(
-                            text: "Инвертарный номер",
+                          AppWidgets.textLocale(
+                            localeKey: "Инвертарный номер",
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -147,11 +146,9 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                             controller: inventNumberController,
                           ),
 
-              
-
                           // Production Date
-                          AppWidgets.text(
-                            text: "Дата производство",
+                          AppWidgets.textLocale(
+                            localeKey: "Дата производство",
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -165,7 +162,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                             prefix: Assets.images.icons.calendar
                                 .svg(
                                   color: ColorName.gray2,
-                                  width: 2,
+                                  width: 16,
                                 )
                                 .marginOnly(right: 15),
                             onTap: () {
@@ -185,9 +182,9 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                             hint: "Выбрать",
                           ),
 
-                          // Commit 
-                          AppWidgets.text(
-                            text: "Комментарий",
+                          // Commit
+                          AppWidgets.textLocale(
+                            localeKey: "Комментарий",
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -212,8 +209,8 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ),
 
                           // State
-                          AppWidgets.text(
-                            text: "Состояние",
+                          AppWidgets.textLocale(
+                            localeKey: "Состояние",
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -226,10 +223,10 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                             hint: "Пишите",
                             controller: stateController,
                           ),
- 
+
                           // Attachment Date
-                          AppWidgets.text(
-                            text: "Дата прикрепления",
+                          AppWidgets.textLocale(
+                            localeKey: "Дата прикрепления",
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -258,7 +255,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                             prefix: Assets.images.icons.calendar
                                 .svg(
                                   color: ColorName.gray2,
-                                  width: 12,
+                                  width: 16,
                                 )
                                 .marginOnly(right: 15),
                           ),
@@ -270,16 +267,16 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              AppWidgets.text(
-                                text: "Фото",
+                              AppWidgets.textLocale(
+                                localeKey: "Фото",
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                                 color: ColorName.gray2,
                               ),
                               TextButton(
                                 onPressed: () {},
-                                child: AppWidgets.text(
-                                  text: "Загрузить фото",
+                                child: AppWidgets.textLocale(
+                                  localeKey: "Загрузить фото",
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                   color: ColorName.button,

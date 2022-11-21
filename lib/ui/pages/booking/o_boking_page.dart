@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class BookingModule extends Module {
+class OBookingModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
-          BookingPage.routeName,
-          child: (context, args) => const BookingPage(),
+          OBookingPage.routeName,
+          child: (context, args) => const OBookingPage(),
         ),
       ];
 
@@ -25,15 +25,15 @@ class BookingModule extends Module {
   //     ];
 }
 
-class BookingPage extends StatefulWidget {
-  static const String routeName = "/bookingPage";
-  const BookingPage({Key? key}) : super(key: key);
+class OBookingPage extends StatefulWidget {
+  static const String routeName = "/obookingPage";
+  const OBookingPage({Key? key}) : super(key: key);
 
   @override
-  State<BookingPage> createState() => _BookingPageState();
+  State<OBookingPage> createState() => _OBookingPageState();
 }
 
-class _BookingPageState extends State<BookingPage> {
+class _OBookingPageState extends State<OBookingPage> {
   final List<String> firstTextNameItems = [
     "Скидка",
     "Тип направления",
@@ -98,8 +98,8 @@ class _BookingPageState extends State<BookingPage> {
                                 ),
                               ],
                             ),
-                          AppWidgets.text(
-                            text: "Комментарии к заказу",
+                          AppWidgets.textLocale(
+                            localeKey: "Комментарии к заказу",
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                             color: ColorName.gray2,
@@ -115,8 +115,8 @@ class _BookingPageState extends State<BookingPage> {
                             width: 1.sw,
                             color: Colors.grey,
                           ),
-                          AppWidgets.text(
-                                  text: "Закрепленные файлы",
+                          AppWidgets.textLocale(
+                                  localeKey: "Закрепленные файлы",
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
                                   color: ColorName.gray2)
@@ -163,14 +163,14 @@ class _BookingPageState extends State<BookingPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        AppWidgets.text(
-                                text: "Заказанные товары",
+                        AppWidgets.textLocale(
+                                localeKey: "Заказанные товары",
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
                                 color: ColorName.black)
                             .marginOnly(top: 18),
-                        AppWidgets.text(
-                                text: "Напитки",
+                        AppWidgets.textLocale(
+                                localeKey: "Напитки",
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                                 color: ColorName.black)
