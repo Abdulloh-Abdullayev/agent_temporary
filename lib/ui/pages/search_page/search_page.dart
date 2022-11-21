@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:uikit/uikit.dart';
 
 import '../../widgets/appbar_main.dart';
 

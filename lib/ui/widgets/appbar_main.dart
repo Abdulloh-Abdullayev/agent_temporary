@@ -1,8 +1,6 @@
 import 'package:agent/core/extensions/app_extensions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:super_rich_text/super_rich_text.dart';
 
 import '../../core/utils/assets.gen.dart';
 import '../../core/utils/colors.gen.dart';
@@ -12,11 +10,11 @@ class AppBarMain extends StatelessWidget {
   AppBarMain({
     required this.text,
     required this.menuTab,
-     this.pinTab,
-     this.searchTab,
-     this.locationTab,
-     this.pinShow = false,
-     this.searchShow = false,
+    this.pinTab,
+    this.searchTab,
+    this.locationTab,
+    this.pinShow = false,
+    this.searchShow = false,
     Key? key,
   }) : super(key: key);
 
@@ -56,22 +54,24 @@ class AppBarMain extends StatelessWidget {
               ),
               Row(
                 children: [
-
-                pinShow?  InkWell(
-                    onTap: pinTab,
-                     child: Assets.images.icons.pinButton.svg(),
-                  ): SizedBox(),
-                 searchShow? InkWell(
-                    onTap: searchTab,
-                     child: Assets.images.icons.searchButton.svg(),
-                  ).paddingSymmetric(horizontal: 10.w) : SizedBox(),
+                  pinShow
+                      ? InkWell(
+                          onTap: pinTab,
+                          child: Assets.images.icons.pinButton.svg(),
+                        )
+                      : const SizedBox(),
+                  searchShow
+                      ? InkWell(
+                          onTap: searchTab,
+                          child: Assets.images.icons.searchButton.svg(),
+                        ).paddingSymmetric(horizontal: 10.w)
+                      : const SizedBox(),
                   InkWell(
                     onTap: locationTab,
-                   child: Assets.images.icons.locationBuuton.svg(),
+                    child: Assets.images.icons.locationBuuton.svg(),
                   ),
                 ],
               )
-
             ],
           ),
           AppWidgets.textLocale(

@@ -1,16 +1,25 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/refund_page/bloc/refund_cubit.dart';
+import 'package:agent/ui/pages/salary_page/salary_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
-import 'package:uikit/uikit.dart';
 
 import '../../widgets/app_widgets.dart';
+import '../remain_stock_page/remain_stock_page.dart';
+import 'widgets/item_refund_widget.dart';
 
 class RefundPageModule extends Module {
   @override
-  List<Bind> get binds => [];
+  List<Bind> get binds => [
+        Bind<RefundCubit>(
+          (i) => RefundCubit()..load(),
+        ),
+      ];
 
   @override
   List<ModularRoute> get routes => [
@@ -31,53 +40,85 @@ class RefundPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorName.bgColor,
       body: SafeArea(
+        child: BlocBuilder<RefundCubit, RefundState>(
+          bloc: RefundCubit.to,
+          builder: (context, state) {
+            return Column(
+              children: [
+                refundAppBar().paddingOnly(bottom: 18.w),
+                buildList(state)
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget buildList(RefundState state) {
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(8.r),
+          ),
+        ),
         child: Column(
           children: [
-            refundAppBar().paddingOnly(bottom: 18.w),
             Expanded(
               child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(8.r),
-                      ),
-                ),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        children: [
-                          Cards.cards_9(
-                            width: 71,
-                            name: "name",
-                            sht: "sht",
-                            shtNumber: "1",
-                            image: "image",
-                            shtRemove: () {},
-                            shtAdd: () {},
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 80,
-                      decoration: const BoxDecoration(
-                        // color: Colors.lightBlueAccent,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(0, 0, 0, 0.04),
-                            blurRadius: 12,
-                            offset: Offset(0, -4)
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: state.list.length,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) => ItemRefundWidget(
+                    model: state.list[index],
+                    index: index,
+                  ).paddingOnly(top: 12.w),
                 ),
               ),
-            )
+            ),
+            bottomActions()
           ],
         ),
+      ),
+    );
+  }
+
+  Widget bottomActions() {
+    return Container(
+      height: 80.w,
+      padding: EdgeInsets.all(20.w),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(0, 0, 0, 0.04),
+            blurRadius: 5,
+            offset: Offset(0, -4),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: AppWidgets.appButton(
+              color: ColorName.gray,
+              textColor: ColorName.mainColor,
+              title: LocaleKeys.draft,
+              onTap: () {},
+            ),
+          ),
+          SizedBox(width: 12.w),
+          Expanded(
+            child: AppWidgets.appButton(
+              title: LocaleKeys.refund,
+              onTap: () {},
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -106,11 +147,15 @@ class RefundPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   AppWidgets.iconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Modular.to.pushNamed(RemainStockPage.routeName);
+                    },
                     icon: Assets.images.icons.searchActive,
                   ),
                   AppWidgets.iconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Modular.to.pushNamed(SalaryPage.routeName);
+                    },
                     icon: Assets.images.icons.filtrIcon,
                   ).paddingOnly(left: 12.w),
                 ],
@@ -118,7 +163,7 @@ class RefundPage extends StatelessWidget {
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: "Возврат тары",
+            localeKey: LocaleKeys.refund_tara,
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,

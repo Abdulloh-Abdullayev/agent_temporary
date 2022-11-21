@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:agent/app.dart';
+import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,8 +10,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:agent/app.dart';
-import 'package:agent/core/utils/app_logger_util.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
@@ -29,7 +29,7 @@ Future<void> main() async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
-
+  // AndroidYandexMap.useAndroidViewSurface = false;
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
@@ -45,9 +45,9 @@ Future<void> main() async {
   );
 
   await runZonedGuarded(
-        () async {
+    () async {
       await HydratedBlocOverrides.runZoned(
-            () async => runApp(
+        () async => runApp(
           EasyLocalization(
             path: "assets/langs",
             supportedLocales: const [
@@ -66,6 +66,6 @@ Future<void> main() async {
         storage: storage,
       );
     },
-        (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
+    (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
   );
 }

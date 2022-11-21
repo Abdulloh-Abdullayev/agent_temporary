@@ -4,7 +4,7 @@ import '../../../../core/utils/colors.gen.dart';
 import 'app_navigation_bar_item.dart';
 
 class AppNavigationBar extends StatelessWidget {
-  const AppNavigationBar({required this.children});
+  const AppNavigationBar({super.key, required this.children});
   final List<AppNavigationBarItem> children;
 
 

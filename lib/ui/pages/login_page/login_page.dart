@@ -66,7 +66,7 @@ class LoginPage extends StatelessWidget {
                     top: 12,
                     bottom: 24,
                   ),
-                  Container(
+                  SizedBox(
                     width: 1.sw,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,7 +106,7 @@ class LoginPage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           textAlign: TextAlign.start,
                         ),
-                        AppInputTextField(
+                        PasswordTextField(
                           onChanged: (v) {},
                           isIconVisible: true,
                           hint: "************",
