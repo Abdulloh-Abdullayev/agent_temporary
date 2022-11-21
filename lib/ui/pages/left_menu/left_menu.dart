@@ -3,8 +3,7 @@ import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
-import 'package:agent/ui/pages/home/home_page.dart';
+import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
@@ -163,79 +162,71 @@ class LeftMenuPage extends StatelessWidget {
 
   Column buildMenus() {
     return Column(
-      children: [
-        DrawerItem(
-          onTap: () {},
-          text: "Главная",
-          icon: Assets.images.icons.homeIcon.svg(),
-        ),
-        DrawerItem(
-          onTap: () {
-            AppNavigationBloc.to.add(
-              const AppNavigationChanged(
-                appNavigationType: AppNavigationType.POINTS,
-              ),
-            );
-          },
-          text: "Торговые точки",
-          icon: Assets.images.icons.homeIcon2.svg(),
-        ),
-        DrawerItem(
-          onTap: () {},
-          text: "Заказы",
-          icon: Assets.images.icons.card.svg(),
-        ),
-        DrawerItem(
-          onTap: () {},
-          text: "Остатки",
-          icon: Assets.images.icons.note.svg(),
-        ),
-        DrawerItem(
-          onTap: () {},
-          text: "Должники по заказам",
-          icon: Assets.images.icons.user.svg(),
-        ),
-        DrawerItem(
-          onTap: () {},
-          text: "Должники",
-          icon: Assets.images.icons.userTimer.svg(),
-        ),
-        DrawerItem(
-          onTap: () {},
-          text: "Моя локация",
-          icon: Assets.images.icons.locationIcon.svg(),
-        ),
-        DrawerItem(
-          onTap: () {},
-          text: "Задачи",
-          icon: Assets.images.icons.pinned.svg(),
-        ),
-        DrawerItem(
-          onTap: () {},
-          text: "KPI",
-          icon: Assets.images.icons.pieIcon.svg(),
-        ),
-        DrawerItem(
-          onTap: () {
-            Modular.to.pushNamed(DiagnosticsPage.routeName);
-          },
-          text: "Диагностика",
-          icon: Assets.images.icons.pie2Chart.svg(),
-        ),
-        DrawerItem(
-          onTap: () {
-            Modular.to.pushNamed(SettingsPage.routeName);
-          },
-          text: "Настройки",
-          icon: Assets.images.icons.setting.svg(),
-        ),
-        DrawerItem(
-          onTap: () {},
-          text: "Поделиться",
-          icon: Assets.images.icons.share.svg(),
-        ),
-      ],
-    );
+                children: [
+                  DrawerItem(
+                    onTap: () {},
+                    text: "Главная",
+                    icon: Assets.images.icons.homeIcon.svg(),
+                  ),
+                  DrawerItem(
+                    onTap: () {},
+                    text: "Торговые точки",
+                    icon: Assets.images.icons.homeIcon2.svg(),
+                  ),
+                  DrawerItem(
+                    onTap: () {},
+                    text: "Заказы",
+                    icon: Assets.images.icons.card.svg(),
+                  ),
+                  DrawerItem(
+                    onTap: () {},
+                    text: "Остатки",
+                    icon: Assets.images.icons.note.svg(),
+                  ),
+                  DrawerItem(
+                    onTap: () {},
+                    text: "Должники по заказам",
+                    icon: Assets.images.icons.user.svg(),
+                  ),
+                  DrawerItem(
+                    onTap: () {
+                      Modular.to.pushNamed(DebtorsPage.routeName);
+                    },
+                    text: "Должники",
+                    icon: Assets.images.icons.userTimer.svg(),
+                  ),
+                  DrawerItem(
+                    onTap: () {},
+                    text: "Моя локация",
+                    icon: Assets.images.icons.locationIcon.svg(),
+                  ),
+                  DrawerItem(
+                    onTap: () {},
+                    text: "Задачи",
+                    icon: Assets.images.icons.pinned.svg(),
+                  ),
+                  DrawerItem(
+                    onTap: () {},
+                    text: "KPI",
+                    icon: Assets.images.icons.pieIcon.svg(),
+                  ),
+                  DrawerItem(
+                    onTap: () {},
+                    text: "Диагностика",
+                    icon: Assets.images.icons.pie2Chart.svg(),
+                  ),
+                  DrawerItem(
+                    onTap: () {},
+                    text: "Настройки",
+                    icon: Assets.images.icons.setting.svg(),
+                  ),
+                  DrawerItem(
+                    onTap: () {},
+                    text: "Поделиться",
+                    icon: Assets.images.icons.share.svg(),
+                  ),
+                ],
+              );
   }
 
   List<Widget> listAccounts = [
