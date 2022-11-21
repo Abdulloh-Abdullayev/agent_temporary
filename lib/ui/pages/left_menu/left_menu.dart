@@ -119,7 +119,6 @@ class LeftMenuPage extends StatelessWidget {
                             ),
 
                             // AppWidgets.iconButton(onPressed: (){}, icon:  Assets.images.icons.downIcon)
-
                           ),
                         ],
                       ).paddingSymmetric(horizontal: 20.w, vertical: 25.w),
@@ -174,71 +173,71 @@ class LeftMenuPage extends StatelessWidget {
 
   Column buildMenus() {
     return Column(
-                children: [
-                  DrawerItem(
-                    onTap: () {},
-                    text: "Главная",
-                    icon: Assets.images.icons.homeIcon.svg(),
-                  ),
-                  DrawerItem(
-                    onTap: () {},
-                    text: "Торговые точки",
-                    icon: Assets.images.icons.homeIcon2.svg(),
-                  ),
-                  DrawerItem(
-                    onTap: () {
-                      Modular.to.pushNamed(HistoryOrdersPage.routeName);
-                    },
-                    text: "Заказы",
-                    icon: Assets.images.icons.card.svg(),
-                  ),
-                  DrawerItem(
-                    onTap: () {},
-                    text: "Остатки",
-                    icon: Assets.images.icons.note.svg(),
-                  ),
-                  DrawerItem(
-                    onTap: () {},
-                    text: "Должники по заказам",
-                    icon: Assets.images.icons.user.svg(),
-                  ),
-                  DrawerItem(
-                    onTap: () {},
-                    text: "Должники",
-                    icon: Assets.images.icons.userTimer.svg(),
-                  ),
-                  DrawerItem(
-                    onTap: () {},
-                    text: "Моя локация",
-                    icon: Assets.images.icons.locationIcon.svg(),
-                  ),
-                  DrawerItem(
-                    onTap: () {},
-                    text: "Задачи",
-                    icon: Assets.images.icons.pinned.svg(),
-                  ),
-                  DrawerItem(
-                    onTap: () {},
-                    text: "KPI",
-                    icon: Assets.images.icons.pieIcon.svg(),
-                  ),
-                  DrawerItem(
-                    onTap: () {},
-                    text: "Диагностика",
-                    icon: Assets.images.icons.pie2Chart.svg(),
-                  ),
-                  DrawerItem(
-                    onTap: () {},
-                    text: "Настройки",
-                    icon: Assets.images.icons.setting.svg(),
-                  ),
-                  DrawerItem(
-                    onTap: () {},
-                    text: "Поделиться",
-                    icon: Assets.images.icons.share.svg(),
-                  ),
-                ],
-              );
+      children: [
+        DrawerItem(
+          onTap: () {},
+          text: "Главная",
+          icon: Assets.images.icons.homeIcon.svg(),
+        ),
+        DrawerItem(
+          onTap: () {},
+          text: "Добавить торговую точку",
+          icon: Assets.images.icons.plus.svg(),
+        ),
+        DrawerItem(
+          onTap: () {
+            Modular.to.pushNamed(HistoryOrdersPage.routeName);
+          },
+          text: "Заказы",
+          icon: Assets.images.icons.card.svg(),
+        ),
+        DrawerItem(
+          onTap: () {},
+          text: "Остатки",
+          icon: Assets.images.icons.note.svg(),
+        ),
+        DrawerItem(
+          onTap: () {},
+          text: "Должники по заказам",
+          icon: Assets.images.icons.user.svg(),
+        ),
+        DrawerItem(
+          onTap: () {},
+          text: "Должники",
+          icon: Assets.images.icons.userTimer.svg(),
+        ),
+        DrawerItem(
+          onTap: () {},
+          text: "Моя локация",
+          icon: Assets.images.icons.locationIcon.svg(),
+        ),
+        DrawerItem(
+          onTap: () {},
+          text: "Задачи",
+          icon: Assets.images.icons.pinned.svg(),
+        ),
+        DrawerItem(
+          onTap: () {},
+          text: "KPI",
+          icon: Assets.images.icons.pieIcon.svg(),
+        ),
+        DrawerItem(
+          onTap: () {},
+          text: "Диагностика",
+          icon: Assets.images.icons.pie2Chart.svg(),
+        ),
+        DrawerItem(
+          onTap: () {},
+          text: "Настройки",
+          icon: Assets.images.icons.setting.svg(),
+        ),
+        DrawerItem(
+          onTap: () {},
+          text: "Поделиться",
+          icon: Assets.images.icons.share.svg(),
+        ),
+      ],
+    );
   }
 
   List<Widget> listAccounts = [

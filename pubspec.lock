@@ -308,7 +308,7 @@ packages:
       name: dropdown_button2
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.9"
+    version: "1.9.0"
   easy_localization:
     dependency: "direct main"
     description:
@@ -1081,7 +1081,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: caeaddf37d0d98a99e534d402eef4c07e2ea23d4
+      resolved-ref: "125b91d992e79a55d8232058f61a1a2fd9d8f51c"
       url: "https://gitlab.com/tlps-project/ui-kit.git"
     source: git
     version: "1.0.0+1"

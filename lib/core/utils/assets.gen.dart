@@ -245,6 +245,9 @@ class $AssetsImagesIconsGen {
   SvgGenImage get placeActive =>
       const SvgGenImage('assets/images/icons/place_active.svg');
 
+  /// File path: assets/images/icons/plus.svg
+  SvgGenImage get plus => const SvgGenImage('assets/images/icons/plus.svg');
+
   /// File path: assets/images/icons/profile.svg
   SvgGenImage get profile =>
       const SvgGenImage('assets/images/icons/profile.svg');

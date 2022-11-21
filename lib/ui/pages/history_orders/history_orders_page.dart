@@ -17,11 +17,31 @@ class HistoryOrdersModule extends Module {
       ];
 }
 
-class HistoryOrdersPage extends StatelessWidget {
+class HistoryOrdersPage extends StatefulWidget  {
   static String routeName = "/history-orders";
-  PageController pageController = PageController();
 
   HistoryOrdersPage({Key? key}) : super(key: key);
+
+  @override
+  State<HistoryOrdersPage> createState() => _HistoryOrdersPageState();
+}
+
+class _HistoryOrdersPageState extends State<HistoryOrdersPage> with TickerProviderStateMixin {
+  PageController pageController = PageController();
+  late TabController tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(vsync: this, length: 2);
+  }
+
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +113,9 @@ class HistoryOrdersPage extends StatelessWidget {
                     left: 20,
                   ),
                   AppTabBar(
-                    tabTitle: const ["Заказы", "Топ"],
+                    tabController: tabController,
+                    isScrollable: true,
+                    tabTitle: ["Заказы", "Топ"],
                     onTap: (i) {
                       pageController.animateToPage(
                         i,
@@ -106,8 +128,8 @@ class HistoryOrdersPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: PageView(
-                controller: pageController,
+              child: TabBarView(
+                controller: tabController,
                 children: [
                   buildOrdersWidget(),
                   buildTopWidget(),
