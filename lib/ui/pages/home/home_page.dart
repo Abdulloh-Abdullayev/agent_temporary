@@ -12,6 +12,7 @@ import 'package:agent/ui/pages/main_page/main_page.dart';
 import 'package:agent/ui/pages/outlets_page/outlets_page.dart';
 import 'package:agent/ui/pages/reports_page/reports_page.dart';
 import 'package:agent/ui/pages/saved_ones_page/saved_ones_page.dart';
+import 'package:agent/ui/pages/settings_page/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -24,6 +25,7 @@ class HomePageModule extends Module {
           child: (context, args) => const HomePage(),
         ),
         ModuleRoute("/", module: AddOutletsModule()),
+        ModuleRoute("/", module: SettingsPageModule()),
       ];
 
   @override
