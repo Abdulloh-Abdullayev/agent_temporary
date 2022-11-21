@@ -29,7 +29,7 @@ class AddImgButton extends StatelessWidget {
         color: ColorName.buttonColor.withOpacity(0.1),
         child: InkWell(
           borderRadius: BorderRadius.circular(borderRadius.r),
-          onTap: () {},
+          onTap: onTap,
           child: Container(
             decoration: BoxDecoration(
               color: Colors.transparent,

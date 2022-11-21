@@ -1,3 +1,4 @@
+import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
@@ -12,6 +13,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../settings_page/settings_page.dart';
 
 class LeftMenuModule extends Module {
   @override
@@ -305,7 +308,10 @@ class DrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onTap(),
+      onTap: () {
+        HomePage.globalKey.currentState!.closeDrawer();
+        onTap();
+      },
       child: Row(
         children: [
           icon.paddingOnly(right: 15.w),

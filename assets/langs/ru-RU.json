@@ -39,7 +39,9 @@
   "remainder": "Остаток",
   "price": "Цена",
   "category": "Категория",
-  "salary": "Цена"
+  "salary": "Цена",
+  "select": "Выбрать",
+  "write": "Пишите"
 
 
 }

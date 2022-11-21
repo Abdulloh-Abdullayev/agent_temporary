@@ -268,6 +268,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get profileActive =>
       const SvgGenImage('assets/images/icons/profile_active.svg');
 
+  /// File path: assets/images/icons/qr_code.png
+  AssetGenImage get qrCode =>
+      const AssetGenImage('assets/images/icons/qr_code.png');
+
   /// File path: assets/images/icons/refresh.svg
   SvgGenImage get refresh =>
       const SvgGenImage('assets/images/icons/refresh.svg');

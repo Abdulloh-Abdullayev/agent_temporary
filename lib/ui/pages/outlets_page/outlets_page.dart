@@ -2,6 +2,7 @@ import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
+import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/outlets_page/outlets_map_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
@@ -95,7 +96,9 @@ class OutletsPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  HomePage.globalKey.currentState!.openDrawer();
+                },
                 child: Assets.images.icons.menu.svg(),
               ),
               Row(

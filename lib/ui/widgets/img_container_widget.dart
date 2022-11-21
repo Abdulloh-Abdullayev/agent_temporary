@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 
 class ImageContainer extends StatelessWidget {
   final VoidCallback? delete;
-  final String imgPath;
+  final String path;
   final VoidCallback? onTap;
   final EdgeInsets padding;
 
   const ImageContainer({
-    required this.imgPath,
+    required this.path,
     this.onTap,
     this.delete,
     this.padding = const EdgeInsets.all(5),
@@ -18,32 +18,37 @@ class ImageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: padding,
-      child: InkWell(
-        onTap: onTap ?? () {},
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: AppWidgets.imageAsset(
-                path: imgPath,
-                height: 83,
-                width: 105,
+    return Hero(
+      tag: path,
+      child: Padding(
+        padding: padding,
+        child: InkWell(
+          onTap: () {
+            AppWidgets.openImgDialog(context: context, imgPath: path);
+          },
+          child: Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: AppWidgets.imageFile(
+                  path: path,
+                  height: 83,
+                  width: 105,
+                ),
               ),
-            ),
-            Positioned(
-              bottom: 9,
-              left: 7,
-              child: AppWidgets.iconButton(
-                onPressed: delete ?? () {},
-                icon: Assets.images.icons.trashCan,
-                height: 24,
-                width: 24,
-                bgColor: Colors.black,
-              ),
-            )
-          ],
+              Positioned(
+                bottom: 9,
+                left: 7,
+                child: AppWidgets.iconButton(
+                  onPressed: delete ?? () {},
+                  icon: Assets.images.icons.trashCan,
+                  height: 24,
+                  width: 24,
+                  bgColor: Colors.black,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

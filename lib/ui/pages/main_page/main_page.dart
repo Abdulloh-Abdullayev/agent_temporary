@@ -175,7 +175,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                         _tabController,
                         "Заказы",
                         "Другие",
-                        (int i) {},
+                            (int i) {},
                       ).paddingSymmetric(horizontal: 20.w, vertical: 15.w),
                       Container(
                         child: [
