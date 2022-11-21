@@ -107,7 +107,7 @@ class LeftMenuPage extends StatelessWidget {
                               ),
                               child: Center(
                                 child: AnimatedRotation(
-                                  duration: const Duration(milliseconds: 400),
+                                  duration: const Duration(milliseconds: 500),
                                   turns: state.hideShow ? 0.5 : 1,
                                   child: Assets.images.icons.downIcon.svg(
                                     width: 14.w,
