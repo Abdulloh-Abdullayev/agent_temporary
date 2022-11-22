@@ -1,27 +1,26 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/exchange/widget/exchange_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-class ExchangeModule extends Module {
+class ExchangeWidgetModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
-          ExchangePage.routeName,
-          child: (context, args) => ExchangePage(),
+          ExchangeWidget.routeName,
+          child: (context, args) => ExchangeWidget(),
         ),
       ];
 }
 
-class ExchangePage extends StatelessWidget {
-  ExchangePage({Key? key}) : super(key: key);
+class ExchangeWidget extends StatelessWidget {
+  ExchangeWidget({Key? key}) : super(key: key);
 
-  static String routeName = "/exchange";
+  static String routeName = "/exchange-widget";
   ScrollController controller = ScrollController();
 
   @override
@@ -79,6 +78,29 @@ class ExchangePage extends StatelessWidget {
                   ],
                 ).paddingAll(20.w),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  AppWidgets.iconButton(
+                    onPressed: () {
+                      Modular.to.pop();
+                    },
+                    icon: Assets.images.icons.backIcon,
+                    bgColor: const Color(0x1A7E7C7C),
+                    iconColor: ColorName.black,
+                  ),
+                  AppWidgets.textLocale(
+                    localeKey: "Обменять на",
+                    color: ColorName.gray3,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  const SizedBox(),
+                ],
+              ).paddingSymmetric(
+                horizontal: 20.w,
+                vertical: 16.w,
+              ),
               Container(
                 width: 1.sw,
                 decoration: BoxDecoration(
@@ -109,7 +131,7 @@ class ExchangePage extends StatelessWidget {
                       itemCount: 8,
                       controller: controller,
                       itemBuilder: (context, index) {
-                        return Cards.cards_8(
+                        return Cards.cards_7(
                           name: "Coca cola 1.5",
                           summa: "Сумма",
                           summaNumber: "100 000",
@@ -122,24 +144,21 @@ class ExchangePage extends StatelessWidget {
                           blokAdd: () {},
                           shtRemove: () {},
                           shtAdd: () {},
-                          icon: Assets.images.icons.clock
-                              .svg(color: ColorName.button),
+                          nalichi: 'В наличие',
+                          nalichiNumber: '20',
                         ).paddingOnly(bottom: 12.w);
                       },
                     ),
                   ],
                 ).paddingSymmetric(horizontal: 20.w),
-              ).paddingOnly(
-                top: 18.w,
-                bottom: 80.w,
-              ),
+              ).paddingOnly(bottom: 80.w),
             ],
           ),
           Positioned(
             bottom: 0,
             child: Container(
               width: 1.sw,
-              decoration:const BoxDecoration(
+              decoration: const BoxDecoration(
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, -4),
@@ -162,10 +181,7 @@ class ExchangePage extends StatelessWidget {
                   AppWidgets.appButton(
                     width: 150,
                     title: "Продолжить",
-                    onTap: () {
-                      Modular.to.pushNamed(ExchangeWidget.routeName);
-
-                    },
+                    onTap: () {},
                   ),
                 ],
               ).paddingSymmetric(

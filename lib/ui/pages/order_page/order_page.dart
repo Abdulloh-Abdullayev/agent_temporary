@@ -206,9 +206,9 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                               height: 800,
                               child: TabBarView(
                                 controller: tabController,
-                                children: const [
-                                  TabbarOrderPage(),
-                                  PhotoReportPage(),
+                                children: [
+                                  const TabbarOrderPage(),
+                                  const PhotoReportPage(),
                                   ExchangePage(),
                                 ],
                               ),
@@ -223,8 +223,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                 ],
               ),
             ),
-            floatingActionButton:
-                FloatingDialog().paddingOnly(bottom: 160.w),
+            floatingActionButton: FloatingDialog().paddingOnly(bottom: 160.w),
           ),
           // const BottomButtonWidget(),
         ],

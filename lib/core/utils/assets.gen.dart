@@ -53,6 +53,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/add.svg
   SvgGenImage get add => const SvgGenImage('assets/images/icons/add.svg');
 
+  /// File path: assets/images/icons/arrow_down.svg
+  SvgGenImage get arrowDown =>
+      const SvgGenImage('assets/images/icons/arrow_down.svg');
+
   /// File path: assets/images/icons/back_button.svg
   SvgGenImage get backButton =>
       const SvgGenImage('assets/images/icons/back_button.svg');

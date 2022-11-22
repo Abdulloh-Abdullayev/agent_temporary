@@ -7,6 +7,7 @@ import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
 import 'package:agent/ui/pages/exchange/exchange_page.dart';
+import 'package:agent/ui/pages/exchange/widget/exchange_widget.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
@@ -94,5 +95,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: RemainStockPageModel()),
         ModuleRoute("/", module: DebtorsHistoryModule()),
         ModuleRoute("/", module: ExchangeModule()),
+        ModuleRoute("/", module: ExchangeWidgetModule()),
       ];
 }

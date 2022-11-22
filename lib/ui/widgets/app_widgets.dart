@@ -223,6 +223,7 @@ class AppWidgets {
     Color bgColor = const Color.fromRGBO(255, 255, 255, 0.1),
     double height = 28,
     double width = 28,
+    Color? iconColor,
   }) {
     return InkWell(
       onTap: onPressed,
@@ -236,6 +237,7 @@ class AppWidgets {
         child: Center(
           child: icon.svg(
             fit: BoxFit.cover,
+            color: iconColor,
           ),
         ),
       ),
