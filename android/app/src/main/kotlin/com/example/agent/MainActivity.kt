@@ -7,7 +7,7 @@ import com.yandex.mapkit.MapKitFactory
 class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
-        MapKitFactory.setApiKey("654ee27b-67b3-44fe-a250-2b8217ea990c")
+        MapKitFactory.setApiKey("5a832d4a-0dbb-48c4-b91a-7f8c01ba8bde")
         super.configureFlutterEngine(flutterEngine)
     }
 }

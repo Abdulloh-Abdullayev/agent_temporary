@@ -11,6 +11,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:yandex_mapkit/yandex_mapkit.dart';
 
+import 'map_sample.dart';
 import 'widgets/outlets_bottom_sheet.dart';
 
 class OutletsMapModule extends Module {
@@ -72,9 +73,7 @@ class _OutletsMapPageState extends State<OutletsMapPage> {
       ),
       body: Stack(
         children: [
-          YandexMap(
-            onMapCreated: _onMapCreated,
-          ),
+          MapSample(),
           bottomSection()
         ],
       ),
@@ -177,9 +176,5 @@ class _OutletsMapPageState extends State<OutletsMapPage> {
         ),
       ),
     );
-  }
-
-  void _onMapCreated(YandexMapController controller) {
-    completer.complete(controller);
   }
 }
