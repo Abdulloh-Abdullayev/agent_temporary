@@ -1,11 +1,13 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/exchange/exchange_page.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/floating_dialog_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/market_image_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/pages/order_page/pages/photo_report_page.dart';
 import 'package:agent/ui/pages/order_page/pages/tabbar_order_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,6 +34,18 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
   late TabController tabController;
 
   @override
+  void initState() {
+    tabController = TabController(length: 3, vsync: this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
@@ -55,7 +69,11 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            AppBarIcon.backButton(() {}),
+                            AppBarIcon.backButton(
+                              () {
+                                Modular.to.pop();
+                              },
+                            ),
                             Row(
                               children: [
                                 AppBarIcon.telephoneButton(() {}),
@@ -167,20 +185,31 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                                       fontSize: 14.sp,
                                       color: ColorName.button,
                                       isRichText: true),
-                                )
+                                ),
+                                Tab(
+                                  child: AppWidgets.textLocale(
+                                      localeKey: "Обмен товара",
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 14.sp,
+                                      color: ColorName.button,
+                                      isRichText: true),
+                                ),
                               ],
-                              padding: const EdgeInsets.only(right: 166),
+                              controller: tabController,
+                              indicator: BoxDecoration(),
                               indicatorWeight: 3,
                               indicatorPadding:
                                   const EdgeInsets.symmetric(horizontal: 7),
                               indicatorColor: ColorName.button,
                             ).paddingOnly(left: 20.w),
-                            const SizedBox(
+                            SizedBox(
                               height: 800,
                               child: TabBarView(
-                                children: [
+                                controller: tabController,
+                                children: const [
                                   TabbarOrderPage(),
                                   PhotoReportPage(),
+                                  ExchangePage(),
                                 ],
                               ),
                             )
@@ -195,7 +224,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
               ),
             ),
             floatingActionButton:
-                const FloatingDialog().paddingOnly(bottom: 160.w),
+                FloatingDialog().paddingOnly(bottom: 160.w),
           ),
           // const BottomButtonWidget(),
         ],

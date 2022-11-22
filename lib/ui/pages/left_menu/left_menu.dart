@@ -7,6 +7,7 @@ import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
+import 'package:agent/ui/pages/order_page/order_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -181,7 +182,9 @@ class LeftMenuPage extends StatelessWidget {
           icon: Assets.images.icons.homeIcon2.svg(),
         ),
         DrawerItem(
-          onTap: () {},
+          onTap: () {
+            Modular.to.pushNamed(OrderPage.routeName);
+          },
           text: "Заказы",
           icon: Assets.images.icons.card.svg(),
         ),

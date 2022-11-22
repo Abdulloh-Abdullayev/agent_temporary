@@ -79,6 +79,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/caset.svg
   SvgGenImage get caset => const SvgGenImage('assets/images/icons/caset.svg');
 
+  /// File path: assets/images/icons/cash.svg
+  SvgGenImage get cash => const SvgGenImage('assets/images/icons/cash.svg');
+
   /// File path: assets/images/icons/chat.svg
   SvgGenImage get chat => const SvgGenImage('assets/images/icons/chat.svg');
 
