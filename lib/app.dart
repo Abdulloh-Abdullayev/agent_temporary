@@ -6,6 +6,8 @@ import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
+import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
+import 'package:agent/ui/pages/history_orders/widgets/order_from_widget.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
@@ -109,5 +111,11 @@ class AppModule extends Module {
         ModuleRoute("/", module: CustomerDataPageModule()),
         ModuleRoute("/", module: CustomerDataEditingPageModule()),
         ModuleRoute("/", module: DiagnosticsPageModule()),
+        ModuleRoute("/", module: OrderPageModule()),
+        ModuleRoute("/", module: CustomerDataPageModule()),
+        ModuleRoute("/", module: CustomerDataEditingPageModule()),
+        ModuleRoute("/", module: DiagnosticsPageModule()),
+        ModuleRoute("/", module: HistoryOrdersModule()),
+        ModuleRoute("/", module: OrderFromModule()),
       ];
 }
