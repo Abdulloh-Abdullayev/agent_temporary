@@ -11,14 +11,14 @@ class ExchangeWidgetModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
-          ExchangeWidget.routeName,
-          child: (context, args) => ExchangeWidget(),
+          NextExchangeWidget.routeName,
+          child: (context, args) => NextExchangeWidget(),
         ),
       ];
 }
 
-class ExchangeWidget extends StatelessWidget {
-  ExchangeWidget({Key? key}) : super(key: key);
+class NextExchangeWidget extends StatelessWidget {
+  NextExchangeWidget({Key? key}) : super(key: key);
 
   static String routeName = "/exchange-widget";
   ScrollController controller = ScrollController();
@@ -181,7 +181,20 @@ class ExchangeWidget extends StatelessWidget {
                   AppWidgets.appButton(
                     width: 150,
                     title: "Продолжить",
-                    onTap: () {},
+                    onTap: () {
+                      showModalBottomSheet(
+                        backgroundColor: Colors.transparent,
+                        context: context,
+                        builder: (context) => ReasomnForReturnSheet(
+                          text: 'Причина обмена',
+                          textItemsName: [
+                            "Не получается продать",
+                            "Lorem ipsum",
+                            "Lorem ipsum",
+                          ],
+                        ),
+                      );
+                    },
                   ),
                 ],
               ).paddingSymmetric(

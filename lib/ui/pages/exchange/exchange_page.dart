@@ -1,7 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/exchange/widget/exchange_widget.dart';
+import 'package:agent/ui/pages/exchange/widget/next_exchange_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -163,7 +163,7 @@ class ExchangePage extends StatelessWidget {
                     width: 150,
                     title: "Продолжить",
                     onTap: () {
-                      Modular.to.pushNamed(ExchangeWidget.routeName);
+                      Modular.to.pushNamed(NextExchangeWidget.routeName);
 
                     },
                   ),

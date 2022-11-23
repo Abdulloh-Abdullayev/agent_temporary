@@ -1,13 +1,11 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/exchange/exchange_page.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/floating_dialog_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/market_image_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/pages/order_page/pages/photo_report_page.dart';
 import 'package:agent/ui/pages/order_page/pages/tabbar_order_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -209,7 +207,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                                 children: [
                                   const TabbarOrderPage(),
                                   const PhotoReportPage(),
-                                  ExchangePage(),
+                                  Container(),
                                 ],
                               ),
                             )
