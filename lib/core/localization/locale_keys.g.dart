@@ -45,5 +45,6 @@ abstract class  LocaleKeys {
   static const salary = 'salary';
   static const select = 'select';
   static const write = 'write';
+  static const rest_of_container = 'rest_of_container';
 
 }

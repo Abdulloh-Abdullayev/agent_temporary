@@ -134,7 +134,7 @@ class AppBarIcon{
     );
   }
 
-  static Widget searchButton(VoidCallback onPressed){
+  static Widget   searchButton(VoidCallback onPressed){
     return InkWell(
       onTap: onPressed,
       child: Container(
