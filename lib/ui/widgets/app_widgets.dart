@@ -77,6 +77,7 @@ class AppWidgets {
 
   static Widget text({
     required String text,
+    TextStyle? textStyle,
     Color color = ColorName.black,
     double fontSize = 16,
     TextDecoration decoration = TextDecoration.none,
@@ -94,6 +95,7 @@ class AppWidgets {
         child: SuperRichText(
           text: text,
           style: GoogleFonts.inter(
+            textStyle: textStyle,
             color: color,
             fontSize: fontSize.sp,
             decoration: decoration,
@@ -112,6 +114,7 @@ class AppWidgets {
         text,
         style: GoogleFonts.inter(
           color: color,
+          textStyle: textStyle,
           fontSize: fontSize.sp,
           decoration: decoration,
           fontWeight: fontWeight,

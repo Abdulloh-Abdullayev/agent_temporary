@@ -1,8 +1,8 @@
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:flutter/material.dart';
 
-class MarketImage extends StatelessWidget {
-  const MarketImage({Key? key, required this.image}) : super(key: key);
+class MarketImageReturn extends StatelessWidget {
+  const MarketImageReturn({Key? key, required this.image}) : super(key: key);
   final String image;
 
   @override
