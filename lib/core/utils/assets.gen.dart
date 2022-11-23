@@ -23,6 +23,9 @@ class $AssetsImagesGen {
 
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
+  /// File path: assets/images/img1.jpg
+  AssetGenImage get img1 => const AssetGenImage('assets/images/img1.jpg');
+
   /// File path: assets/images/market.png
   AssetGenImage get market => const AssetGenImage('assets/images/market.png');
 }
@@ -57,6 +60,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/back_icon.svg
   SvgGenImage get backIcon =>
       const SvgGenImage('assets/images/icons/back_icon.svg');
+
+  /// File path: assets/images/icons/calendar_icon.svg
+  SvgGenImage get calendarIcon =>
+      const SvgGenImage('assets/images/icons/calendar_icon.svg');
 
   /// File path: assets/images/icons/calender.svg
   SvgGenImage get calender =>
@@ -187,6 +194,14 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/logout.svg
   SvgGenImage get logout => const SvgGenImage('assets/images/icons/logout.svg');
 
+  /// File path: assets/images/icons/map_arrow_icon.svg
+  SvgGenImage get mapArrowIcon =>
+      const SvgGenImage('assets/images/icons/map_arrow_icon.svg');
+
+  /// File path: assets/images/icons/map_icon.svg
+  SvgGenImage get mapIcon =>
+      const SvgGenImage('assets/images/icons/map_icon.svg');
+
   /// File path: assets/images/icons/menu.svg
   SvgGenImage get menu => const SvgGenImage('assets/images/icons/menu.svg');
 
@@ -253,6 +268,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get profileActive =>
       const SvgGenImage('assets/images/icons/profile_active.svg');
 
+  /// File path: assets/images/icons/qr_code.png
+  AssetGenImage get qrCode =>
+      const AssetGenImage('assets/images/icons/qr_code.png');
+
   /// File path: assets/images/icons/refresh.svg
   SvgGenImage get refresh =>
       const SvgGenImage('assets/images/icons/refresh.svg');
@@ -301,6 +320,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/telephone_button.svg
   SvgGenImage get telephoneButton =>
       const SvgGenImage('assets/images/icons/telephone_button.svg');
+
+  /// File path: assets/images/icons/trash_can.svg
+  SvgGenImage get trashCan =>
+      const SvgGenImage('assets/images/icons/trash_can.svg');
 
   /// File path: assets/images/icons/user.svg
   SvgGenImage get user => const SvgGenImage('assets/images/icons/user.svg');

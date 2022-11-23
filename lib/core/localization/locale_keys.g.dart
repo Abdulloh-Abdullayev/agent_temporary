@@ -7,6 +7,13 @@ abstract class  LocaleKeys {
   static const refund = 'refund';
   static const payment_information = 'payment_information';
   static const client_balance = 'client_balance';
+  static const dept_amount = 'dept_amount';
+  static const no_dept = 'no_dept';
+  static const show_on_map = 'show_on_map';
+  static const no_show_on_map = 'no_show_on_map';
+  static const visited = 'visited';
+  static const inventory = 'inventory';
+  static const client_with_dept = 'client_with_dept';
   static const total_sum = 'total_sum';
   static const add_account = 'add_account';
   static const main = 'main';
@@ -29,13 +36,15 @@ abstract class  LocaleKeys {
   static const new_password = 'new_password';
   static const repeat_new_password = 'repeat_new_password';
   static const save = 'save';
-  static const main_warehouse = "main_warehouse";
-  static const  stock= "stock";
-  static const  remain_stock= "remain_stock";
-  static const  remainder= "remainder";
-  static const  price= "price";
-  static const  category= "category";
-  static const  salary= "salary";
+  static const main_warehouse = 'main_warehouse';
+  static const stock = 'stock';
+  static const remain_stock = 'remain_stock';
+  static const remainder = 'remainder';
+  static const price = 'price';
+  static const category = 'category';
+  static const salary = 'salary';
+  static const select = 'select';
+  static const write = 'write';
   static const rest_of_container = 'rest_of_container';
 
 }

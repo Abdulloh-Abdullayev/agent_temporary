@@ -6,6 +6,13 @@
   "payment_information": "Информация оплаты",
   "client_balance": "Баланс клиента",
   "total_sum": "Общая сумма",
+  "dept_amount": "Долг: {} сум",
+  "no_dept": "Без долгов",
+  "show_on_map": "Показано на карте",
+  "no_show_on_map": "Не показано на карте",
+  "visited": "Посещено",
+  "inventory": "Инвентарь",
+  "client_with_dept": "Клиенты с долгами",
   "add_account": "Добавить аккаунт",
   "main": "Главная",
   "outlets": "Торговые точки",
@@ -33,6 +40,8 @@
   "price": "Цена",
   "category": "Категория",
   "salary": "Цена",
+  "select": "Выбрать",
+  "write": "Пишите",
   "rest_of_container": "Остаток тары"
 
 }

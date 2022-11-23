@@ -504,6 +504,34 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.1"
+  google_maps_flutter:
+    dependency: "direct main"
+    description:
+      name: google_maps_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.1"
+  google_maps_flutter_android:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_android
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.3.3"
+  google_maps_flutter_ios:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_ios
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.12"
+  google_maps_flutter_platform_interface:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.4"
   graphs:
     dependency: transitive
     description:
@@ -608,21 +636,21 @@ packages:
       name: isar
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.4"
+    version: "3.0.5"
   isar_flutter_libs:
     dependency: "direct main"
     description:
       name: isar_flutter_libs
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.4"
+    version: "3.0.5"
   isar_generator:
     dependency: "direct dev"
     description:
       name: isar_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.4"
+    version: "3.0.5"
   js:
     dependency: transitive
     description:
@@ -659,7 +687,7 @@ packages:
     source: hosted
     version: "1.1.0"
   mask_text_input_formatter:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: mask_text_input_formatter
       url: "https://pub.dartlang.org"
@@ -1074,7 +1102,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "31d9c3d5351d19df2a9aeaa31bb23ae98cf64618"
+      resolved-ref: "125b91d992e79a55d8232058f61a1a2fd9d8f51c"
       url: "https://gitlab.com/tlps-project/ui-kit.git"
     source: git
     version: "1.0.0+1"
@@ -1197,6 +1225,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.1"
+  yandex_mapkit:
+    dependency: "direct main"
+    description:
+      name: yandex_mapkit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.2.0"
 sdks:
   dart: ">=2.18.2 <3.0.0"
   flutter: ">=3.3.0"

@@ -1,15 +1,16 @@
 import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
-import 'package:agent/ui/pages/balance_page/balance_page.dart';
-import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
-import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
+import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
 import 'package:agent/ui/pages/main_page/main_page.dart';
+import 'package:agent/ui/pages/outlets_page/outlets_page.dart';
+import 'package:agent/ui/pages/reports_page/reports_page.dart';
+import 'package:agent/ui/pages/settings_page/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -23,6 +24,8 @@ class HomePageModule extends Module {
           HomePage.routeName,
           child: (context, args) => const HomePage(),
         ),
+        ModuleRoute("/", module: AddOutletsModule()),
+        ModuleRoute("/", module: SettingsPageModule()),
       ];
 
   @override
@@ -148,15 +151,15 @@ class HomePage extends StatelessWidget {
   ) {
     switch (appNavigationType) {
       case AppNavigationType.MAIN:
-        return const MainPage();
+        return MainPage();
       case AppNavigationType.VISITS:
-        return const OrderPage();
+        return MainPage();
       case AppNavigationType.REPORT:
-        return const BalancePage();
+        return ReportsPage();
       case AppNavigationType.DRAFT:
-        return const CustomerDataPage();
+        return MainPage();
       case AppNavigationType.POINTS:
-        return const DiagnosticsPage();
+        return OutletsPage();
       default:
         return Container();
     }

@@ -1,7 +1,9 @@
+import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
@@ -11,6 +13,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../home/home_page.dart';
+import '../settings_page/settings_page.dart';
 
 class LeftMenuModule extends Module {
   @override
@@ -185,7 +190,9 @@ class LeftMenuPage extends StatelessWidget {
                     icon: Assets.images.icons.user.svg(),
                   ),
                   DrawerItem(
-                    onTap: () {},
+                    onTap: () {
+                      Modular.to.pushNamed(DebtorsPage.routeName);
+                    },
                     text: "Должники",
                     icon: Assets.images.icons.userTimer.svg(),
                   ),
@@ -302,7 +309,10 @@ class DrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onTap(),
+      onTap: () {
+        HomePage.globalKey.currentState!.closeDrawer();
+        onTap();
+      },
       child: Row(
         children: [
           icon.paddingOnly(right: 15.w),

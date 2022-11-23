@@ -4,6 +4,7 @@ import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
+import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/left_menu.dart';
@@ -21,6 +22,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'ui/pages/balance_page/balance_page.dart';
+import 'ui/pages/debtors_page/widget/deptors_history.dart';
+import 'ui/pages/outlets_page/outlets_map_page.dart';
 import 'ui/pages/refund_page/refund_page.dart';
 import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
 
@@ -81,8 +84,16 @@ class AppModule extends Module {
         ModuleRoute("/", module: LoginPageModule()),
         ModuleRoute("/", module: BalancePageModule()),
         ModuleRoute("/", module: RefundPageModule()),
+        ModuleRoute("/", module: OutletsMapModule()),
         ModuleRoute("/", module: LeftMenuModule()),
         ModuleRoute("/", module: CreateAccountModule()),
+        ModuleRoute("/", module: OrderPageModule()),
+        ModuleRoute("/", module: CustomerDataPageModule()),
+        ModuleRoute("/", module: CustomerDataEditingPageModule()),
+        ModuleRoute("/", module: DiagnosticsPageModule()),
+        ModuleRoute("/", module: DebtorsPageModule()),
+        ModuleRoute("/", module: RemainStockPageModel()),
+        ModuleRoute("/", module: DebtorsHistoryModule()),
     ModuleRoute("/", module: OrderPageModule()),
     ModuleRoute("/", module: CustomerDataPageModule()),
     ModuleRoute("/", module: CustomerDataEditingPageModule()),

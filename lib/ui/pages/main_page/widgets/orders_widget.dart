@@ -1,8 +1,6 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/balance_page/balance_page.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
-import 'package:agent/ui/pages/refund_page/refund_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
