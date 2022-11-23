@@ -7,87 +7,86 @@ import 'package:uikit/uikit.dart';
 
 import '../../../../core/utils/assets.gen.dart';
 
-class TabbarOrderPage extends StatelessWidget {
-  const TabbarOrderPage({Key? key}) : super(key: key);
+class OrderTabBarPage extends StatelessWidget {
+  const OrderTabBarPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: ColorName.gray),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: ColorName.gray),
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppWidgets.textLocale(
+                        localeKey: "Общая объем",
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12.sp,
+                        color: ColorName.gray2,
+                        isRichText: true),
+                    AppWidgets.textLocale(
+                        localeKey: "1365 о",
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12.sp,
+                        color: ColorName.black,
+                        isRichText: true),
+                  ],
+                ).paddingSymmetric(vertical: 12.w),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppWidgets.textLocale(
+                        localeKey: "Общее кол-во",
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12.sp,
+                        color: ColorName.gray2,
+                        isRichText: true),
+                    AppWidgets.textLocale(
+                        localeKey: "1365 sht",
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12.sp,
+                        color: ColorName.black,
+                        isRichText: true),
+                  ],
+                ).paddingOnly(bottom: 12.w),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppWidgets.textLocale(
+                        localeKey: "Общее summa",
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12.sp,
+                        color: ColorName.gray2,
+                        isRichText: true),
+                    AppWidgets.textLocale(
+                        localeKey: "150 000 000 UZS",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12.sp,
+                        color: ColorName.button,
+                        isRichText: true),
+                  ],
+                ).paddingOnly(bottom: 12.w),
+              ],
+            ).paddingSymmetric(horizontal: 20.w),
           ),
-          child: Column(
+          Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  AppWidgets.textLocale(
-                      localeKey: "Общая объем",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
-                  AppWidgets.textLocale(
-                      localeKey: "1365 о",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.black,
-                      isRichText: true),
-                ],
-              ).paddingSymmetric(vertical: 12.w),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  AppWidgets.textLocale(
-                      localeKey: "Общее кол-во",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
-                  AppWidgets.textLocale(
-                      localeKey: "1365 sht",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.black,
-                      isRichText: true),
-                ],
-              ).paddingOnly(bottom: 12.w),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  AppWidgets.textLocale(
-                      localeKey: "Общее summa",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
-                  AppWidgets.textLocale(
-                      localeKey: "150 000 000 UZS",
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
-                      color: ColorName.button,
-                      isRichText: true),
-                ],
-              ).paddingOnly(bottom: 12.w),
-            ],
-          ).paddingSymmetric(horizontal: 20.w),
-        ),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: 1,
-              itemBuilder: (context, index) {
-                return Container(
-                    margin: EdgeInsets.only(bottom: 11.w),
-                    child: Cards.cards_2(
-                      name: "name",
-                      time: "17:02",
-                      icon: PopupMenuTools(
+              ListView.builder(
+                padding: EdgeInsets.only(top: 10.w),
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: 20,
+                itemBuilder: (context, index) {
+                  return Container(
+                      margin: EdgeInsets.only(bottom: 11.w),
+                      child: Cards.cards_2(name: "name", time: "time", icon: PopupMenuTools(
                         onTap: (p0) {
                           if (p0 == 1) {
                             showDialog(
@@ -153,22 +152,16 @@ class TabbarOrderPage extends StatelessWidget {
                           ColorName.black,
                           ColorName.red,
                         ],
-                      ),
-                      nalichniy: "spot",
-                      bezbonus: "noBonus",
-                      obem: "volume",
-                      obemNumber: "15",
-                      soni: "count",
-                      soniNumber: "325",
-                      summa: "summa",
-                      summaNumber: "150 000 000",
-                      dostavlen: '',
-                    ));
-              },
-            )
-          ],
-        ).paddingSymmetric(horizontal: 20.w),
-      ],
+                      ), nalichniy: "nalichniy",
+                          bezbonus: "bezbonus", dostavlen: "dostavlen", obem: "obem", obemNumber: "15",
+                          soni: "soni", soniNumber: "15", summa: "summa", summaNumber: "1000000")
+                  );
+                },
+              )
+            ],
+          ).paddingSymmetric(horizontal: 20),
+        ],
+      ),
     );
   }
 }

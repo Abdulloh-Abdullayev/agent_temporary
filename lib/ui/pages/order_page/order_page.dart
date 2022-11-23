@@ -22,7 +22,7 @@ class OrderPageModule extends Module {
 
 class OrderPage extends StatefulWidget {
   const OrderPage({Key? key}) : super(key: key);
-  static const String routeName = "/OrderPage";
+  static const String routeName = "/orderPage";
 
   @override
   State<OrderPage> createState() => _OrderPageState();

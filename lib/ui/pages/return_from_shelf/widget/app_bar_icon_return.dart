@@ -6,9 +6,9 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-class AppBarIcon{
+class AppBarIconReturn{
 
-  static Widget backButton(VoidCallback onPressed){
+  static Widget backButtonShelf(VoidCallback onPressed){
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -27,7 +27,7 @@ class AppBarIcon{
     );
   }
 
-  static Widget telephoneButton(VoidCallback onPressed){
+  static Widget telephoneButtonShelf(VoidCallback onPressed){
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -47,75 +47,74 @@ class AppBarIcon{
     );
   }
 
-  static Widget menuButtpon(){
+  static Widget menuButtonShelf(){
     return Container(
+      alignment: Alignment.center,
       height: 28.w,
       width: 28.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
         color: const Color.fromRGBO(255, 255, 255, 0.1),
       ),
-      child: Center(
-        child: BalancePopupMenu(
-            textName: const [
-              "Данные клиента",
-              "Баланс клиента",
-              "Оборудование",
-              "Акт - сверки",
-              "Акт - сверки по заказам",
-              'Остаток тары',
-        ],
-            icons: [
-             InkWell(
-               onTap: (){
-                 Modular.to.pushNamed(CustomerDataPage.routeName);
-               },
-               child:  Assets.images.icons.infoCircle.svg(
-                   fit: BoxFit.cover,
-                   color: ColorName.button
-               ),
-             ),
-              InkWell(
-                onTap: (){},
-                child: Assets.images.icons.wallet.svg(
-                    fit: BoxFit.cover,
-                    color: ColorName.gray2
-                ),
+      child: BalancePopupMenu(
+          textName: const [
+            "Данные клиента",
+            "Баланс клиента",
+            "Оборудование",
+            "Акт - сверки",
+            "Акт - сверки по заказам",
+            'Остаток тары',
+          ],
+          icons: [
+            InkWell(
+              onTap: (){
+                Modular.to.pushNamed(CustomerDataPage.routeName);
+              },
+              child:  Assets.images.icons.infoCircle.svg(
+                  fit: BoxFit.cover,
+                  color: ColorName.button
               ),
-              InkWell(
-                onTap: (){},
-                child: Assets.images.icons.freedge.svg(
-                    fit: BoxFit.cover,
-                    color: ColorName.gray2
-                ),
+            ),
+            InkWell(
+              onTap: (){},
+              child: Assets.images.icons.wallet.svg(
+                  fit: BoxFit.cover,
+                  color: ColorName.gray2
               ),
-              InkWell(
-                onTap: (){},
-                child: Assets.images.icons.piceChart.svg(
-                    fit: BoxFit.cover,
-                    color: ColorName.gray2
-                ),
+            ),
+            InkWell(
+              onTap: (){},
+              child: Assets.images.icons.freedge.svg(
+                  fit: BoxFit.cover,
+                  color: ColorName.gray2
               ),
-              InkWell(
-                onTap: (){},
-                child: Assets.images.icons.piceChartAlt.svg(
-                    fit: BoxFit.cover,
-                    color: ColorName.gray2
-                ),
+            ),
+            InkWell(
+              onTap: (){},
+              child: Assets.images.icons.piceChart.svg(
+                  fit: BoxFit.cover,
+                  color: ColorName.gray2
               ),
-              InkWell(
-                onTap: (){},
-                child: Assets.images.icons.invoise.svg(
-                    fit: BoxFit.cover,
-                    color: ColorName.gray2
-                ),
+            ),
+            InkWell(
+              onTap: (){},
+              child: Assets.images.icons.piceChartAlt.svg(
+                  fit: BoxFit.cover,
+                  color: ColorName.gray2
               ),
-        ])
-      ),
+            ),
+            InkWell(
+              onTap: (){},
+              child: Assets.images.icons.invoise.svg(
+                  fit: BoxFit.cover,
+                  color: ColorName.gray2
+              ),
+            ),
+          ]),
     );
   }
 
-  static Widget editeButton(VoidCallback onPressed){
+  static Widget editeButtonShelf(VoidCallback onPressed){
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -134,7 +133,7 @@ class AppBarIcon{
     );
   }
 
-  static Widget   searchButton(VoidCallback onPressed){
+  static Widget searchButtonShelf(VoidCallback onPressed){
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -153,7 +152,7 @@ class AppBarIcon{
     );
   }
 
-  static Widget filterButton(VoidCallback onPressed){
+  static Widget filterButtonShelf(VoidCallback onPressed){
     return InkWell(
       onTap: onPressed,
       child: Container(

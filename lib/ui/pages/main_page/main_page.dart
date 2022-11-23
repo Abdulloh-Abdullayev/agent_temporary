@@ -6,6 +6,7 @@ import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
 import 'package:agent/ui/pages/main_page/widgets/orders_widget.dart';
 import 'package:agent/ui/pages/refund_page/refund_page.dart';
+import 'package:agent/ui/pages/return_from_shelf/return_from_shelf.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:agent/ui/widgets/appbar_main.dart';
 import 'package:flutter/material.dart';
@@ -63,6 +64,9 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                 text: 'Главная',
                 menuTab: () {
                   HomePage.globalKey.currentState!.openDrawer();
+                },
+                locationTab: (){
+                  Modular.to.pushNamed(ReturnFromShelf.routeName);
                 },
               ),
              Expanded(

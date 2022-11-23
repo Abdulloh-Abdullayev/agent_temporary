@@ -11,6 +11,7 @@ import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
+import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
 import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
 import 'package:agent/ui/pages/salary_page/salary_page.dart';
 import 'package:bot_toast/bot_toast.dart';
@@ -25,6 +26,8 @@ import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/debtors_page/widget/deptors_history.dart';
 import 'ui/pages/outlets_page/outlets_map_page.dart';
 import 'ui/pages/refund_page/refund_page.dart';
+import 'ui/pages/return_about_page/return_about_page.dart';
+import 'ui/pages/return_from_shelf/return_from_shelf.dart';
 import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
 
 class App extends StatelessWidget {
@@ -99,5 +102,12 @@ class AppModule extends Module {
     ModuleRoute("/", module: CustomerDataEditingPageModule()),
     ModuleRoute("/", module: DiagnosticsPageModule()),
         ModuleRoute("/", module: RestContainerPageModule()),
+        ModuleRoute("/", module: ReturnOrderDatePageModule()),
+        ModuleRoute("/", module: ReturnFromShelfModule()),
+        ModuleRoute("/", module: ReturnAboutPageModule()),
+        ModuleRoute("/", module: OrderPageModule()),
+        ModuleRoute("/", module: CustomerDataPageModule()),
+        ModuleRoute("/", module: CustomerDataEditingPageModule()),
+        ModuleRoute("/", module: DiagnosticsPageModule()),
       ];
 }
