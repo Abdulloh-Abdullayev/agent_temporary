@@ -1,19 +1,20 @@
 import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
-import 'package:agent/ui/pages/Interesting_page/Interesting_page.dart';
-import 'package:agent/ui/pages/communication_page/communication_page.dart';
+import 'package:agent/ui/pages/balance_page/balance_page.dart';
+import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
+import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
 import 'package:agent/ui/pages/main_page/main_page.dart';
-import 'package:agent/ui/pages/profile_page/profile_page.dart';
-import 'package:agent/ui/pages/saved_ones_page/saved_ones_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
+import '../order_page/order_page.dart';
 
 class HomePageModule extends Module {
   @override
@@ -149,13 +150,13 @@ class HomePage extends StatelessWidget {
       case AppNavigationType.MAIN:
         return const MainPage();
       case AppNavigationType.VISITS:
-        return const SavedOnesPage();
+        return const OrderPage();
       case AppNavigationType.REPORT:
-        return const InterestingPage();
+        return const BalancePage();
       case AppNavigationType.DRAFT:
-        return const CommunicationPage();
+        return const CustomerDataPage();
       case AppNavigationType.POINTS:
-        return const ProfilePage();
+        return const DiagnosticsPage();
       default:
         return Container();
     }

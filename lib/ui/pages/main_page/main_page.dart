@@ -1,6 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/balance_page/balance_page.dart';
+import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
 import 'package:agent/ui/pages/main_page/widgets/orders_widget.dart';
 import 'package:agent/ui/pages/refund_page/refund_page.dart';
@@ -13,6 +14,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
 import '../../../core/utils/assets.gen.dart';
+import '../left_menu/left_menu.dart';
 import 'widgets/tabbar_widget.dart';
 
 class MainPage extends StatefulWidget {
@@ -59,7 +61,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
               AppBarMain(
                 text: 'Главная',
                 menuTab: () {
-                  Modular.to.pushNamed(BalancePage.routeName);
+                  HomePage.globalKey.currentState!.openDrawer();
                 },
               ),
              Expanded(

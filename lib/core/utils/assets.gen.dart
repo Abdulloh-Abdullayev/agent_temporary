@@ -16,9 +16,6 @@ class $AssetsColorGen {
 
   /// File path: assets/color/colors.xml
   String get colors => 'assets/color/colors.xml';
-
-  /// List of all assets
-  List<String> get values => [colors];
 }
 
 class $AssetsImagesGen {
@@ -28,9 +25,6 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/market.png
   AssetGenImage get market => const AssetGenImage('assets/images/market.png');
-
-  /// List of all assets
-  List<AssetGenImage> get values => [market];
 }
 
 class $AssetsLangsGen {
@@ -44,9 +38,6 @@ class $AssetsLangsGen {
 
   /// File path: assets/langs/uz-UZ.json
   String get uzUZ => 'assets/langs/uz-UZ.json';
-
-  /// List of all assets
-  List<String> get values => [enEN, ruRU, uzUZ];
 }
 
 class $AssetsImagesIconsGen {
@@ -327,134 +318,6 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/zadachi.svg
   SvgGenImage get zadachi =>
       const SvgGenImage('assets/images/icons/zadachi.svg');
-
-  /// List of all assets
-  List<SvgGenImage> get values => [
-        imageIcon,
-        add,
-        backButton,
-        backIcon,
-        calender,
-        card,
-        caretDown,
-        caset,
-        chat,
-        clock,
-        communication,
-        communicationActive,
-        delete,
-        downIcon,
-        draft,
-        draftActive,
-        edit,
-        edite,
-        editeAlt,
-        exchange,
-        fileUpload,
-        filter,
-        filtrIcon,
-        fotoOtchot,
-        freedge,
-        history,
-        home,
-        homeActive,
-        homeIcon,
-        homeIcon2,
-        infoCircle,
-        interesting,
-        interestingActive,
-        invoise,
-        location,
-        locationActive,
-        locationBuuton,
-        locationIcon,
-        logout,
-        menu,
-        moreButton,
-        note,
-        notification,
-        obmen,
-        otkaz,
-        piceChart,
-        piceChartAlt,
-        pie2Chart,
-        pieChart,
-        pieChartActive,
-        pieIcon,
-        pinButton,
-        pinned,
-        place,
-        placeActive,
-        profile,
-        profileActive,
-        refresh,
-        savedOnes,
-        savedOnesActive,
-        search,
-        search1,
-        searchActive,
-        searchButton,
-        setting,
-        share,
-        shopping,
-        shoppingCardIcon,
-        stack,
-        telephoneButton,
-        user,
-        userTimer,
-        wallet,
-        xIcon,
-        zadachi
-      ];
-
-  /// List of all assets
-  List<SvgGenImage> get values => [
-        imageIcon,
-        add,
-        backIcon,
-        card,
-        caretDown,
-        communication,
-        communicationActive,
-        draft,
-        draftActive,
-        edit,
-        filtrIcon,
-        home,
-        homeActive,
-        homeIcon,
-        homeIcon2,
-        interesting,
-        interestingActive,
-        location,
-        locationActive,
-        locationBuuton,
-        locationIcon,
-        logout,
-        menu,
-        note,
-        notification,
-        pie2Chart,
-        pieChart,
-        pieChartActive,
-        pieIcon,
-        pinButton,
-        pinned,
-        place,
-        placeActive,
-        profile,
-        profileActive,
-        savedOnes,
-        savedOnesActive,
-        search,
-        searchActive,
-        searchButton,
-        setting,
-        share,
-        shopping,
-        user,
-        userTimer
-      ];
 }
 
 class Assets {
@@ -523,8 +386,6 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider() => AssetImage(_assetName);
-
   String get path => _assetName;
 
   String get keyName => _assetName;
@@ -577,6 +438,4 @@ class SvgGenImage {
   }
 
   String get path => _assetName;
-
-  String get keyName => _assetName;
 }
