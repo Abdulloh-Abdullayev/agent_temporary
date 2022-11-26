@@ -1,7 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page_widget/editing_bottom_sheet_widget.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page_widget/row_widget.dart';
+import 'package:agent/ui/pages/return_from_shelf/widget/edit_shelf_button_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
@@ -77,7 +77,7 @@ class BottomButtonsWidget extends StatelessWidget {
                           )),
                           context: context,
                           builder: (context) {
-                            return const EditingBottomSheet();
+                            return const EditShelfButtonSheet();
                           },
                         );
                       },

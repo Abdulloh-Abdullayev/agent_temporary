@@ -27,7 +27,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(TableFact.routeName);
+    Modular.setInitialRoute(OrderPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -85,6 +85,6 @@ class AppModule extends Module {
     ModuleRoute("/", module: CustomerDataPageModule()),
     ModuleRoute("/", module: CustomerDataEditingPageModule()),
     ModuleRoute("/", module: DiagnosticsPageModule()),
-        ModuleRoute("/", module: TableFactModule()),
+        ModuleRoute("/", module: TableDioModule()),
       ];
 }

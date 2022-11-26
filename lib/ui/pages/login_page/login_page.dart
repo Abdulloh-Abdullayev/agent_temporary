@@ -66,7 +66,7 @@ class LoginPage extends StatelessWidget {
                     top: 12,
                     bottom: 24,
                   ),
-                  Container(
+                  SizedBox(
                     width: 1.sw,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

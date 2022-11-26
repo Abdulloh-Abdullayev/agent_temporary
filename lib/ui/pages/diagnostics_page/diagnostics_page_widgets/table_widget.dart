@@ -1,9 +1,12 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/ui/pages/reports_page/widgets/table_fact_widget.dart';
+import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/utils/colors.gen.dart';
 import '../../../widgets/app_widgets.dart';
+import '../../table.dart';
 
 class TableWidget extends StatelessWidget {
   const TableWidget({Key? key}) : super(key: key);
@@ -69,6 +72,7 @@ class TableWidget extends StatelessWidget {
                   ],
                 ),
               ),
+
             ],
           )
         ],

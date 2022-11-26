@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,6 +16,9 @@ class $AssetsColorGen {
 
   /// File path: assets/color/colors.xml
   String get colors => 'assets/color/colors.xml';
+
+  /// List of all assets
+  List<String> get values => [colors];
 }
 
 class $AssetsImagesGen {
@@ -23,8 +26,14 @@ class $AssetsImagesGen {
 
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
+  /// File path: assets/images/img1.jpg
+  AssetGenImage get img1 => const AssetGenImage('assets/images/img1.jpg');
+
   /// File path: assets/images/market.png
   AssetGenImage get market => const AssetGenImage('assets/images/market.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [img1, market];
 }
 
 class $AssetsLangsGen {
@@ -38,6 +47,9 @@ class $AssetsLangsGen {
 
   /// File path: assets/langs/uz-UZ.json
   String get uzUZ => 'assets/langs/uz-UZ.json';
+
+  /// List of all assets
+  List<String> get values => [enEN, ruRU, uzUZ];
 }
 
 class $AssetsImagesIconsGen {
@@ -58,6 +70,13 @@ class $AssetsImagesIconsGen {
   SvgGenImage get backIcon =>
       const SvgGenImage('assets/images/icons/back_icon.svg');
 
+  /// File path: assets/images/icons/box.svg
+  SvgGenImage get box => const SvgGenImage('assets/images/icons/box.svg');
+
+  /// File path: assets/images/icons/calendar_icon.svg
+  SvgGenImage get calendarIcon =>
+      const SvgGenImage('assets/images/icons/calendar_icon.svg');
+
   /// File path: assets/images/icons/calender.svg
   SvgGenImage get calender =>
       const SvgGenImage('assets/images/icons/calender.svg');
@@ -71,6 +90,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/caset.svg
   SvgGenImage get caset => const SvgGenImage('assets/images/icons/caset.svg');
+
+  /// File path: assets/images/icons/cencel_icon.svg
+  SvgGenImage get cencelIcon =>
+      const SvgGenImage('assets/images/icons/cencel_icon.svg');
 
   /// File path: assets/images/icons/chat.svg
   SvgGenImage get chat => const SvgGenImage('assets/images/icons/chat.svg');
@@ -187,6 +210,14 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/logout.svg
   SvgGenImage get logout => const SvgGenImage('assets/images/icons/logout.svg');
 
+  /// File path: assets/images/icons/map_arrow_icon.svg
+  SvgGenImage get mapArrowIcon =>
+      const SvgGenImage('assets/images/icons/map_arrow_icon.svg');
+
+  /// File path: assets/images/icons/map_icon.svg
+  SvgGenImage get mapIcon =>
+      const SvgGenImage('assets/images/icons/map_icon.svg');
+
   /// File path: assets/images/icons/menu.svg
   SvgGenImage get menu => const SvgGenImage('assets/images/icons/menu.svg');
 
@@ -245,6 +276,9 @@ class $AssetsImagesIconsGen {
   SvgGenImage get placeActive =>
       const SvgGenImage('assets/images/icons/place_active.svg');
 
+  /// File path: assets/images/icons/plus.svg
+  SvgGenImage get plus => const SvgGenImage('assets/images/icons/plus.svg');
+
   /// File path: assets/images/icons/profile.svg
   SvgGenImage get profile =>
       const SvgGenImage('assets/images/icons/profile.svg');
@@ -253,9 +287,16 @@ class $AssetsImagesIconsGen {
   SvgGenImage get profileActive =>
       const SvgGenImage('assets/images/icons/profile_active.svg');
 
+  /// File path: assets/images/icons/qr_code.png
+  AssetGenImage get qrCode =>
+      const AssetGenImage('assets/images/icons/qr_code.png');
+
   /// File path: assets/images/icons/refresh.svg
   SvgGenImage get refresh =>
       const SvgGenImage('assets/images/icons/refresh.svg');
+
+  /// File path: assets/images/icons/remove.svg
+  SvgGenImage get remove => const SvgGenImage('assets/images/icons/remove.svg');
 
   /// File path: assets/images/icons/saved_ones.svg
   SvgGenImage get savedOnes =>
@@ -291,6 +332,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get shopping =>
       const SvgGenImage('assets/images/icons/shopping.svg');
 
+  /// File path: assets/images/icons/shoppingCart.svg
+  SvgGenImage get shoppingCart =>
+      const SvgGenImage('assets/images/icons/shoppingCart.svg');
+
   /// File path: assets/images/icons/shopping_card_icon.svg
   SvgGenImage get shoppingCardIcon =>
       const SvgGenImage('assets/images/icons/shopping_card_icon.svg');
@@ -301,6 +346,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/telephone_button.svg
   SvgGenImage get telephoneButton =>
       const SvgGenImage('assets/images/icons/telephone_button.svg');
+
+  /// File path: assets/images/icons/trash_can.svg
+  SvgGenImage get trashCan =>
+      const SvgGenImage('assets/images/icons/trash_can.svg');
 
   /// File path: assets/images/icons/user.svg
   SvgGenImage get user => const SvgGenImage('assets/images/icons/user.svg');
@@ -318,6 +367,93 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/zadachi.svg
   SvgGenImage get zadachi =>
       const SvgGenImage('assets/images/icons/zadachi.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        imageIcon,
+        add,
+        backButton,
+        backIcon,
+        box,
+        calendarIcon,
+        calender,
+        card,
+        caretDown,
+        caset,
+        cencelIcon,
+        chat,
+        clock,
+        communication,
+        communicationActive,
+        delete,
+        downIcon,
+        draft,
+        draftActive,
+        edit,
+        edite,
+        editeAlt,
+        exchange,
+        fileUpload,
+        filter,
+        filtrIcon,
+        fotoOtchot,
+        freedge,
+        history,
+        home,
+        homeActive,
+        homeIcon,
+        homeIcon2,
+        infoCircle,
+        interesting,
+        interestingActive,
+        invoise,
+        location,
+        locationActive,
+        locationBuuton,
+        locationIcon,
+        logout,
+        mapArrowIcon,
+        mapIcon,
+        menu,
+        moreButton,
+        note,
+        notification,
+        obmen,
+        otkaz,
+        piceChart,
+        piceChartAlt,
+        pie2Chart,
+        pieChart,
+        pieChartActive,
+        pieIcon,
+        pinButton,
+        pinned,
+        place,
+        placeActive,
+        profile,
+        profileActive,
+        refresh,
+        remove,
+        savedOnes,
+        savedOnesActive,
+        search,
+        search1,
+        searchActive,
+        searchButton,
+        setting,
+        share,
+        shopping,
+        shoppingCart,
+        shoppingCardIcon,
+        stack,
+        telephoneButton,
+        trashCan,
+        user,
+        userTimer,
+        wallet,
+        xIcon,
+        zadachi
+      ];
 }
 
 class Assets {
@@ -386,6 +522,8 @@ class AssetGenImage {
     );
   }
 
+  ImageProvider provider() => AssetImage(_assetName);
+
   String get path => _assetName;
 
   String get keyName => _assetName;
@@ -438,4 +576,6 @@ class SvgGenImage {
   }
 
   String get path => _assetName;
+
+  String get keyName => _assetName;
 }

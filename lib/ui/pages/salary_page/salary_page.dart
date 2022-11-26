@@ -4,6 +4,7 @@ import 'package:agent/ui/pages/salary_page/widget/plan_salary_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../widgets/app_widgets.dart';
 import 'widget/working_day_widget.dart';
 
@@ -52,12 +53,23 @@ class SalaryPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      PlanSalaryWidget(width: 162.w, titleFirst: 'Сумма плана', titleSecond: '100000000',),
-                      PlanSalaryWidget(width: 162.w, titleFirst: 'Фикс. зарплата', titleSecond: '100000000',),
+                      PlanSalaryWidget(
+                        width: 162.w,
+                        titleFirst: 'Сумма плана',
+                        titleSecond: '100000000',
+                      ),
+                      PlanSalaryWidget(
+                        width: 162.w,
+                        titleFirst: 'Фикс. зарплата',
+                        titleSecond: '100000000',
+                      ),
                     ],
                   ).paddingOnly(bottom: 12.w),
-                  PlanSalaryWidget(width: 1.sw, titleFirst: 'Сумма плана', titleSecond: '100000000',),
-
+                  PlanSalaryWidget(
+                    width: 1.sw,
+                    titleFirst: 'Сумма плана',
+                    titleSecond: '100000000',
+                  ),
                 ],
               ).paddingSymmetric(horizontal: 20.w),
             ],

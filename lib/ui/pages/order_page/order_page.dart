@@ -9,6 +9,10 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:uikit/uikit.dart';
+
+import '../main_page/widgets/tabbar_widget.dart';
+import 'order_page_widget/order_tabbar_widget.dart';
 
 class OrderPageModule extends Module {
   @override
@@ -22,15 +26,37 @@ class OrderPageModule extends Module {
 
 class OrderPage extends StatefulWidget {
   const OrderPage({Key? key}) : super(key: key);
-  static const String routeName = "/OrderPage";
+  static const String routeName = "/orderPage";
+
 
   @override
   State<OrderPage> createState() => _OrderPageState();
 }
 
 class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
-  late TabController tabController;
+  late TabController _tabController;
 
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    _tabController = TabController(
+      length: 2,
+      vsync: this,
+    );
+    _tabController.addListener(_handleTabSelection);
+    super.initState();
+  }
+
+  void _handleTabSelection() {
+    if (_tabController.indexIsChanging) {
+      setState(() {});
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -137,53 +163,67 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                       ],
                     ).paddingSymmetric(horizontal: 20),
                   ),
+
+                  TabBarWidget(
+                    _tabController,
+                    "Заказы",
+                    "Другие",
+                        (int i) {},
+                  ).paddingSymmetric(horizontal: 20.w, vertical: 15.w),
                   Container(
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(8),
-                        topLeft: Radius.circular(8),
-                      ),
-                    ),
-                   child: Column(
-                     children: [
-                       TabBar(
-                         tabs: [
-                           Tab(
-                             child: AppWidgets.textLocale(
-                                 localeKey: "Заказы",
-                                 fontWeight: FontWeight.w600,
-                                 fontSize: 14.sp,
-                                 color: ColorName.button,
-                                 isRichText: true),
-                           ),
-                           Tab(
-                             child: AppWidgets.textLocale(
-                                 localeKey: "Фото отчёт",
-                                 fontWeight: FontWeight.w600,
-                                 fontSize: 14.sp,
-                                 color: ColorName.button,
-                                 isRichText: true),
-                           )
-                         ],
-                         padding: const EdgeInsets.only(right: 166),
-                         indicatorWeight: 3,
-                         indicatorPadding:
-                         const EdgeInsets.symmetric(horizontal: 7),
-                         indicatorColor: ColorName.button,
-                       ).paddingOnly(left: 20.w),
-                       SizedBox(
-                         height: MediaQuery.of(context).size.height,
-                         child: const TabBarView(
-                           children: [
-                             TabbarOrderPage(),
-                             PhotoReportPage(),
-                           ],
-                         ),
-                       )
-                     ],
-                   ),
-                  ).paddingOnly(bottom: 20),
+                    child: [
+
+                    ][_tabController.index],
+                  )
+
+
+                  // Container(
+                  //   decoration: const BoxDecoration(
+                  //     color: Colors.white,
+                  //     borderRadius: BorderRadius.only(
+                  //       topRight: Radius.circular(8),
+                  //       topLeft: Radius.circular(8),
+                  //     ),
+                  //   ),
+                  //  child: Column(
+                  //    children: [
+                  //      TabBar(
+                  //        tabs: [
+                  //          Tab(
+                  //            child: AppWidgets.textLocale(
+                  //                localeKey: "Заказы",
+                  //                fontWeight: FontWeight.w600,
+                  //                fontSize: 14.sp,
+                  //                color: ColorName.button,
+                  //                isRichText: true),
+                  //          ),
+                  //          Tab(
+                  //            child: AppWidgets.textLocale(
+                  //                localeKey: "Фото отчёт",
+                  //                fontWeight: FontWeight.w600,
+                  //                fontSize: 14.sp,
+                  //                color: ColorName.button,
+                  //                isRichText: true),
+                  //          )
+                  //        ],
+                  //        padding: const EdgeInsets.only(right: 166),
+                  //        indicatorWeight: 3,
+                  //        indicatorPadding:
+                  //        const EdgeInsets.symmetric(horizontal: 7),
+                  //        indicatorColor: ColorName.button,
+                  //      ).paddingOnly(left: 20.w),
+                  //      SizedBox(
+                  //        height: MediaQuery.of(context).size.height,
+                  //        child: const TabBarView(
+                  //          children: [
+                  //            TabbarOrderPage(),
+                  //            PhotoReportPage(),
+                  //          ],
+                  //        ),
+                  //      )
+                  //    ],
+                  //  ),
+                  // ).paddingOnly(bottom: 20),
                 ],
               ),
                 Positioned(
@@ -200,4 +240,5 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
       ),
     );
   }
+
 }

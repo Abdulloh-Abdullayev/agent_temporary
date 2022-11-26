@@ -1,3 +1,4 @@
+import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
@@ -6,236 +7,78 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/utils/colors.gen.dart';
 
-class TableFactModule extends Module {
+class TableDioModule extends Module {
   @override
   List<ModularRoute> get routes => [
     ChildRoute(
-      TableFact.routeName,
-      child: (context, args) => const TableFact(),
+      TableDio.routeName,
+      child: (context, args) => const TableDio(),
     ),
   ];
 }
 
-class TableFact extends StatelessWidget {
-  const TableFact({Key? key}) : super(key: key);
-  static String routeName = "/TableFact";
+class TableDio extends StatelessWidget {
+  const TableDio({Key? key}) : super(key: key);
+  static String routeName = "/TableDio";
 
   @override
   Widget build(BuildContext context) {
-    // return ListView.separated(
-    //   padding: EdgeInsets.zero,
-    //   shrinkWrap: true,
-    //   physics: const BouncingScrollPhysics(),
-    //   itemBuilder: (context, index) {
-    //     if (index == 0) {
-    //       return tableTitle().paddingOnly(top: 40.w);
-    //     } else {
-    //       return tableItem(isLast: index == 7);
-    //     }
-    //   },
-    //   separatorBuilder: (context, index) => Container(
-    //     height: 1,
-    //     color: ColorName.gray,
-    //   ),
-    //   itemCount: 4,
-    // );
-    return Center(
-      child: DataTable(
-        columns: const <DataColumn>[
-          DataColumn(
-            label: Expanded(
-              child: Text(
-                '19 okt',
-                style: TextStyle(fontStyle: FontStyle.italic),
-              ),
-            ),
-          ),
-          DataColumn(
-            label: Expanded(
-              child: Text(
-                '19 okt',
-                style: TextStyle(fontStyle: FontStyle.italic),
-              ),
-            ),
-          ),
-          DataColumn(
-            label: Expanded(
-              child: Text(
-                  '19 okt',
-                style: TextStyle(fontStyle: FontStyle.italic),
-              ),
-            ),
-          ),
-          DataColumn(
-            label: Expanded(
-              child: Text(
-                '19 okt',
-                style: TextStyle(fontStyle: FontStyle.italic),
-              ),
-            ),
-          ),
-          DataColumn(
-            label: Expanded(
-              child: Text(
-                '19 okt',
-                style: TextStyle(fontStyle: FontStyle.italic),
-              ),
-            ),
-          ),
-        ],
-        rows: const <DataRow>[
-          DataRow(
-            cells: <DataCell>[
-              DataCell(Text('0')),
-              DataCell(Text('0')),
-              DataCell(Text('0')),
-            ],
-          ),
-          DataRow(
-            cells: <DataCell>[
-              DataCell(Text('0')),
-              DataCell(Text('0')),
-              DataCell(Text('0')),
-            ],
-          ),
-          DataRow(
-            cells: <DataCell>[
-              DataCell(Text('0')),
-              DataCell(Text('0')),
-              DataCell(Text('0')),
-            ],
-          ),
-          DataRow(
-            cells: <DataCell>[
-              DataCell(Text('0')),
-              DataCell(Text('0')),
-              DataCell(Text('0')),
-            ],
-          ),
-          DataRow(
-            cells: <DataCell>[
-              DataCell(Text('0')),
-              DataCell(Text('0')),
-              DataCell(Text('0')),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-
-  Widget tableTitle() {
-    return Container(
-      height: 40,
+    return  Container(
       decoration: BoxDecoration(
-        color: ColorName.white,
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(8.r),
-        ),
+        border: Border.all(color: ColorName.black)
       ),
-      child: Row(
-        children: [
-          Expanded(
-            flex: 1,
-            child: AppWidgets.text(
-              text: "9 okt",
-              maxLines: 1,
-              color: ColorName.gray2,
-              fontSize: 12.sp,
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: AppWidgets.text(
-              text: "9 okt",
-              maxLines: 1,
-              color: ColorName.gray2,
-              fontSize: 12.sp,
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: AppWidgets.text(
-              text: "9 okt",
-              maxLines: 1,
-              color: ColorName.gray2,
-              fontSize: 12.sp,
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: AppWidgets.text(
-              text: "9 okt",
-              maxLines: 1,
-              color: ColorName.gray2,
-              fontSize: 12.sp,
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+      child: DataTable2(
+          columnSpacing: 12,
+            minWidth: 600,
+            horizontalMargin: 12,
+            columns: const <DataColumn>[
+              DataColumn(label: Text('19 okt',),),
+              DataColumn(label: Text('19 okt',),),
+              DataColumn(label: Text('19 okt',),),
+              DataColumn(label: Text('19 okt',),),
+              DataColumn(label: Text('19 okt',),),
+              DataColumn(label: Text('19 okt',),),
+              DataColumn(label: Text('19 okt',),),
+              DataColumn(label: Text('19 okt',),),
+              DataColumn(label: Text('19 okt',),),
+            ],
+           rows: <DataRow>[
+             DataRow(cells: [
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
 
-  Widget tableItem({bool isLast = false}) {
-    return Container(
-      height: 40.w,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: isLast
-            ? BorderRadius.vertical(
-          bottom: Radius.circular(8.r),
-        )
-            : null,
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            flex: 1,
-            child: AppWidgets.text(
-              text: "Напитки",
-              maxLines: 1,
-              color: ColorName.gray3,
-              fontSize: 12.sp,
-              textAlign: TextAlign.center,
-            ),
+             ]),
+             DataRow(cells: [
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+             ]),
+             DataRow(cells: [
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+               DataCell(Text('0')),
+             ]),
+           ],
           ),
-          Expanded(
-            flex: 1,
-            child: AppWidgets.text(
-              text: "30 шт",
-              maxLines: 1,
-              color: ColorName.gray3,
-              fontSize: 12.sp,
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: AppWidgets.text(
-              text: "33% (10)",
-              maxLines: 1,
-              color: ColorName.red,
-              fontSize: 12.sp,
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: AppWidgets.text(
-              text: "33% (10)",
-              maxLines: 1,
-              color: ColorName.green,
-              fontSize: 12.sp,
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

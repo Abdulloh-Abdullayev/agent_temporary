@@ -7,6 +7,7 @@
     <color name="gray2">#8FA0A0</color>
     <color name="gray3">#424F4F</color>
     <color name="green">#00A000</color>
+    <color name="green2">#1DBE03</color>
     <color name="blue_percent">#36E5E5</color>
     <color name="default_icon">#B0CCCC</color>
     <color name="primary_color">#013636</color>
@@ -58,5 +59,9 @@
     <color name="primary_color">#013636</color>
     <color name="background">#DFDFDF</color>
     <color name="main_color">#336666</color>
+    <color name="light_blue">#FAFDFD</color>
+    <color name="blue">#DDF0EF</color>
+    <color name="input">#FAFDFD</color>
 
+    <color name="input">#FAFDFD</color>
 </resources>

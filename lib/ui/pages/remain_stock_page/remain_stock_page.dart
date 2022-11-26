@@ -15,8 +15,10 @@ import 'widget/main_warehouse.dart';
 class RemainStockPageModel extends Module {
   @override
   List<ModularRoute> get routes => [
-        ChildRoute(RemainStockPage.routeName,
-            child: (context, args) => RemainStockPage()),
+        ChildRoute(
+          RemainStockPage.routeName,
+          child: (context, args) => RemainStockPage(),
+        ),
       ];
 
   @override
@@ -27,10 +29,27 @@ class RemainStockPageModel extends Module {
       ];
 }
 
-class RemainStockPage extends StatelessWidget {
+class RemainStockPage extends StatefulWidget {
   RemainStockPage({Key? key}) : super(key: key);
   static const String routeName = '/remainStockPage';
+
+  @override
+  State<RemainStockPage> createState() => _RemainStockPageState();
+}
+
+class _RemainStockPageState extends State<RemainStockPage> with TickerProviderStateMixin {
   PageController pageController = PageController();
+  late TabController tabController;
+  @override
+  void initState() {
+    tabController=TabController(length: 2, vsync: this);
+    super.initState();
+  }
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,15 +84,16 @@ class RemainStockPage extends StatelessWidget {
                     ],
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "LocaleKeys.remain_stock",
+                    localeKey: LocaleKeys.remain_stock,
                     fontWeight: FontWeight.w600,
                     fontSize: 24.sp,
                     color: Colors.white,
                   ).paddingOnly(top: 20.w),
                   AppTabBar(
+                    tabController: tabController,
                     tabTitle: [
-                      "LocaleKeys.remain_stock.tr()",
-                      "LocaleKeys.remain_stock.tr()"
+                      LocaleKeys.main_warehouse.tr(),
+                      LocaleKeys.stock.tr()
                     ],
                     onTap: (i) {
                       pageController.animateToPage(
@@ -88,13 +108,16 @@ class RemainStockPage extends StatelessWidget {
             ).paddingOnly(bottom: 18.h),
             Expanded(
               flex: 5,
-              child: PageView(controller: pageController, children: [
-                const MainWarehouse(),
-                Container(
-                  color: Colors.red,
-                  child: Text("Omborxona Zaxirasi"),
-                ),
-              ]),
+              child: TabBarView(
+                controller: tabController,
+                children: [
+                  const MainWarehouse(),
+                  Container(
+                    color: Colors.red,
+                    child: Text("Omborxona Zaxirasi"),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

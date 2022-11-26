@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
 
 import 'package:flutter/painting.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +21,9 @@ class ColorName {
 
   /// Color: #000000
   static const Color black = Color(0xFF000000);
+
+  /// Color: #DDF0EF
+  static const Color blue = Color(0xFFDDF0EF);
 
   /// Color: #36E5E5
   static const Color bluePercent = Color(0xFF36E5E5);
@@ -51,6 +54,12 @@ class ColorName {
 
   /// Color: #00A000
   static const Color green = Color(0xFF00A000);
+
+  /// Color: #1DBE03
+  static const Color green2 = Color(0xFF1DBE03);
+
+  /// Color: #FAFDFD
+  static const Color input = Color(0xFFFAFDFD);
 
   /// Color: #1D9908
   static const Color lightGreen = Color(0xFF1D9908);

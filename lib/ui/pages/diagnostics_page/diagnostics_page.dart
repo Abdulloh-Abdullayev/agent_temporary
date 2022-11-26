@@ -139,7 +139,10 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                       ),
                     ],
                   ).paddingOnly(bottom: 24.w),
-                  TabBarWidget(_controller, "Объем", "Strike", "Акб", (int i) {
+                  DiagnosticTabBarWidget(
+                      _controller,
+                      "Объем", "Strike", "Акб",
+                          (int i) {
                     if (i == 0) {
                     } else if (i == 1) {
                     } else {}
