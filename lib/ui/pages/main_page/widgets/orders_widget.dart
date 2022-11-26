@@ -131,7 +131,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                     9,
                     (index) {
                       return Cards.cards_1(
-                        height: 85.w,
+                        height: 88.w,
                         width: 1.sw,
                         name: "name",
                         time: "17:18",
@@ -143,6 +143,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                         countNumber: '15',
                         summa: 'summa',
                         summaNumber: "150 000 000",
+                        context: context,
                       ).paddingOnly(
                         left: 18.w,
                         right: 18.w,

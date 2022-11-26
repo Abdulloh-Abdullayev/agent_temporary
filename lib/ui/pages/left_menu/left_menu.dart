@@ -13,6 +13,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../settings_page/settings_page.dart';
+
 class LeftMenuModule extends Module {
   @override
   List<ModularRoute> get routes => [
@@ -227,7 +229,9 @@ class LeftMenuPage extends StatelessWidget {
           icon: Assets.images.icons.pie2Chart.svg(),
         ),
         DrawerItem(
-          onTap: () {},
+          onTap: () {
+            Modular.to.pushNamed(SettingsPage.routeName);
+          },
           text: "Настройки",
           icon: Assets.images.icons.setting.svg(),
         ),

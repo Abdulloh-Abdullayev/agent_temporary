@@ -17,7 +17,7 @@ class HistoryOrdersModule extends Module {
       ];
 }
 
-class HistoryOrdersPage extends StatefulWidget  {
+class HistoryOrdersPage extends StatefulWidget {
   static String routeName = "/history-orders";
 
   HistoryOrdersPage({Key? key}) : super(key: key);
@@ -26,7 +26,8 @@ class HistoryOrdersPage extends StatefulWidget  {
   State<HistoryOrdersPage> createState() => _HistoryOrdersPageState();
 }
 
-class _HistoryOrdersPageState extends State<HistoryOrdersPage> with TickerProviderStateMixin {
+class _HistoryOrdersPageState extends State<HistoryOrdersPage>
+    with TickerProviderStateMixin {
   PageController pageController = PageController();
   late TabController tabController;
 
@@ -41,7 +42,6 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage> with TickerProvid
     tabController.dispose();
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +80,11 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage> with TickerProvid
                                 return PurchaseHistorySheet(
                                   text: 'Фильтр',
                                   height: 900,
+                                  firstDate: '',
+                                  secondDate: '',
+                                  firstMoneyStatus: '',
+                                  secondMoneyStatus: '',
+                                  dropdownText: [],
                                 );
                               });
                         },
