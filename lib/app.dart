@@ -1,4 +1,5 @@
-import 'package:agent/ui/pages/act_reconciliation_dape/act_reconciliation_page.dart';
+import 'package:agent/ui/pages/act_reconciliation_oder_page/act_reconciliation_oder_page.dart';
+import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:agent/ui/pages/map_page/custom_map.dart';
 import 'package:agent/ui/pages/visits_page/visits_page.dart';
@@ -20,7 +21,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(CustomMap.routeName);
+    Modular.setInitialRoute(actReconciliationOderPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -72,6 +73,7 @@ class AppModule extends Module {
         ModuleRoute("/", module: LoginPageModule()),
         ModuleRoute("/", module: VisitsPageModule()),
         ModuleRoute("/", module: ActReconciliationPageModule()),
+        ModuleRoute("/", module: ActReconciliationOderPageModule()),
         ModuleRoute("/", module: CustomMapPageModule()),
       ];
 }

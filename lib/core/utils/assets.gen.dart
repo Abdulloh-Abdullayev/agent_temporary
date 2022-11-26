@@ -64,6 +64,14 @@ class $AssetsImagesIconsGen {
   SvgGenImage get imageIcon =>
       const SvgGenImage('assets/images/icons/Image_icon.svg');
 
+  /// File path: assets/images/icons/back_arrow.svg
+  SvgGenImage get backArrow =>
+      const SvgGenImage('assets/images/icons/back_arrow.svg');
+
+  /// File path: assets/images/icons/calender.svg
+  SvgGenImage get calender =>
+      const SvgGenImage('assets/images/icons/calender.svg');
+
   /// File path: assets/images/icons/communication.svg
   SvgGenImage get communication =>
       const SvgGenImage('assets/images/icons/communication.svg');
@@ -78,6 +86,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/draft_active.svg
   SvgGenImage get draftActive =>
       const SvgGenImage('assets/images/icons/draft_active.svg');
+
+  /// File path: assets/images/icons/filter.svg
+  SvgGenImage get filter => const SvgGenImage('assets/images/icons/filter.svg');
 
   /// File path: assets/images/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/images/icons/home.svg');
@@ -186,10 +197,13 @@ class $AssetsImagesIconsGen {
   /// List of all assets
   List<SvgGenImage> get values => [
         imageIcon,
+        backArrow,
+        calender,
         communication,
         communicationActive,
         draft,
         draftActive,
+        filter,
         home,
         homeActive,
         interesting,
