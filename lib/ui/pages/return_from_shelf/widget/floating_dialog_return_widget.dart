@@ -179,7 +179,7 @@ class FloatingDialogReturn extends StatelessWidget {
                       "Обмен",
                       "Остатки",
                     ],
-                    cencelButton: (){
+                    cencelButton:  (){
                       Modular.to.pop(context);
                     },
                   ),
