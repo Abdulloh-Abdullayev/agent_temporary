@@ -3,8 +3,6 @@ import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
-import 'package:agent/ui/pages/home/home_page.dart';
-import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
@@ -16,6 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/bloc/app_navigation/app_navigation_bloc.dart';
 import '../settings_page/settings_page.dart';
 
 class LeftMenuModule extends Module {

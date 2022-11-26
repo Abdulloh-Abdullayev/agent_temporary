@@ -7,6 +7,7 @@ import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
 import 'package:agent/ui/pages/exchange/exchange_page.dart';
+import 'package:agent/ui/pages/exchange/widget/edit_exchange_widget.dart';
 import 'package:agent/ui/pages/exchange/widget/next_exchange_widget.dart';
 import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
 import 'package:agent/ui/pages/history_orders/widgets/order_from_widget.dart';
@@ -17,7 +18,6 @@ import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
 import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
-import 'package:agent/ui/pages/salary_page/salary_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -101,10 +101,10 @@ class AppModule extends Module {
         ModuleRoute("/", module: DebtorsPageModule()),
         ModuleRoute("/", module: RemainStockPageModel()),
         ModuleRoute("/", module: DebtorsHistoryModule()),
-    ModuleRoute("/", module: OrderPageModule()),
-    ModuleRoute("/", module: CustomerDataPageModule()),
-    ModuleRoute("/", module: CustomerDataEditingPageModule()),
-    ModuleRoute("/", module: DiagnosticsPageModule()),
+        ModuleRoute("/", module: OrderPageModule()),
+        ModuleRoute("/", module: CustomerDataPageModule()),
+        ModuleRoute("/", module: CustomerDataEditingPageModule()),
+        ModuleRoute("/", module: DiagnosticsPageModule()),
         ModuleRoute("/", module: RestContainerPageModule()),
         ModuleRoute("/", module: ReturnOrderDatePageModule()),
         ModuleRoute("/", module: ReturnFromShelfModule()),
@@ -121,5 +121,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: OrderFromModule()),
         ModuleRoute("/", module: ExchangeModule()),
         ModuleRoute("/", module: ExchangeWidgetModule()),
+        ModuleRoute("/", module: EditExchangeWidgetModule()),
       ];
 }

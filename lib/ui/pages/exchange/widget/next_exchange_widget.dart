@@ -1,6 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/order_page/order_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -187,11 +188,17 @@ class NextExchangeWidget extends StatelessWidget {
                         context: context,
                         builder: (context) => ReasomnForReturnSheet(
                           text: 'Причина обмена',
-                          textItemsName: [
+                          textItemsName: const [
                             "Не получается продать",
                             "Lorem ipsum",
                             "Lorem ipsum",
                           ],
+                          returnOnTapButton: (){
+                            Modular.to.pushNamed(OrderPage.routeName);
+                          },
+                          quitOnTapButton: (){
+                            Navigator.pop(context);
+                          },
                         ),
                       );
                     },

@@ -4,6 +4,7 @@ import 'package:agent/ui/pages/order_page/order_page_widget/floating_dialog_widg
 import 'package:agent/ui/pages/order_page/order_page_widget/market_image_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/pages/order_page/pages/photo_report_page.dart';
+import 'package:agent/ui/pages/order_page/pages/tabbar_exchange_page.dart';
 import 'package:agent/ui/pages/order_page/pages/tabbar_order_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
@@ -194,7 +195,6 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                                 ),
                               ],
                               controller: tabController,
-                              indicator: BoxDecoration(),
                               indicatorWeight: 3,
                               indicatorPadding:
                                   const EdgeInsets.symmetric(horizontal: 7),
@@ -204,10 +204,10 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                               height: 800,
                               child: TabBarView(
                                 controller: tabController,
-                                children: [
-                                  const TabbarOrderPage(),
-                                  const PhotoReportPage(),
-                                  Container(),
+                                children: const [
+                                  TabbarOrderPage(),
+                                  PhotoReportPage(),
+                                  TabbarExchangePage(),
                                 ],
                               ),
                             )
@@ -217,11 +217,14 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                     ],
                   ),
                   const MarketImage(image: "assets/images/market.png")
-                      .paddingOnly(top: 70.w, left: 140.w)
+                      .paddingOnly(
+                    top: 70.w,
+                    // left: 40.w,
+                  ),
                 ],
               ),
             ),
-            floatingActionButton: FloatingDialog().paddingOnly(bottom: 160.w),
+            floatingActionButton: const FloatingDialog().paddingOnly(bottom: 160.w),
           ),
           // const BottomButtonWidget(),
         ],

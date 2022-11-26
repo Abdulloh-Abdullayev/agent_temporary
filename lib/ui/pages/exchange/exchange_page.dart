@@ -155,7 +155,9 @@ class ExchangePage extends StatelessWidget {
                   AppWidgets.appButton(
                     width: 150,
                     title: "Черновик",
-                    onTap: () {},
+                    onTap: () {
+
+                    },
                     color: ColorName.gray,
                     textColor: ColorName.mainColor,
                   ),
