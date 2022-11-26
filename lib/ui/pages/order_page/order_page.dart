@@ -139,52 +139,51 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                   ),
                   Container(
                     decoration: const BoxDecoration(
-                      color: ColorName.white,
+                      color: Colors.white,
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(8),
                         topLeft: Radius.circular(8),
                       ),
                     ),
-                    child: Column(
-                      children: [
-                        TabBar(
-                          tabs: [
-                            Tab(
-                              child: AppWidgets.textLocale(
-                                  localeKey: "Заказы",
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14.sp,
-                                  color: ColorName.button,
-                                  isRichText: true),
-                            ),
-                            Tab(
-                              child: AppWidgets.textLocale(
-                                  localeKey: "Фото отчёт",
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14.sp,
-                                  color: ColorName.button,
-                                  isRichText: true),
-                            )
-                          ],
-                          padding: const EdgeInsets.only(right: 166),
-                          indicatorWeight: 3,
-                          indicatorPadding:
-                              const EdgeInsets.symmetric(horizontal: 7),
-                          indicatorColor: ColorName.button,
-                        ).paddingOnly(left: 20.w),
-                        const SizedBox(
-                          height: 800,
-                          child: TabBarView(
-                            physics: NeverScrollableScrollPhysics(),
-                            children: [
-                              TabbarOrderPage(),
-                              PhotoReportPage(),
-                            ],
-                          ),
-                        )
-                      ],
-                    ).paddingOnly(bottom: 70),
-                  ),
+                   child: Column(
+                     children: [
+                       TabBar(
+                         tabs: [
+                           Tab(
+                             child: AppWidgets.textLocale(
+                                 localeKey: "Заказы",
+                                 fontWeight: FontWeight.w600,
+                                 fontSize: 14.sp,
+                                 color: ColorName.button,
+                                 isRichText: true),
+                           ),
+                           Tab(
+                             child: AppWidgets.textLocale(
+                                 localeKey: "Фото отчёт",
+                                 fontWeight: FontWeight.w600,
+                                 fontSize: 14.sp,
+                                 color: ColorName.button,
+                                 isRichText: true),
+                           )
+                         ],
+                         padding: const EdgeInsets.only(right: 166),
+                         indicatorWeight: 3,
+                         indicatorPadding:
+                         const EdgeInsets.symmetric(horizontal: 7),
+                         indicatorColor: ColorName.button,
+                       ).paddingOnly(left: 20.w),
+                       SizedBox(
+                         height: MediaQuery.of(context).size.height,
+                         child: const TabBarView(
+                           children: [
+                             TabbarOrderPage(),
+                             PhotoReportPage(),
+                           ],
+                         ),
+                       )
+                     ],
+                   ),
+                  ).paddingOnly(bottom: 20),
                 ],
               ),
                 Positioned(

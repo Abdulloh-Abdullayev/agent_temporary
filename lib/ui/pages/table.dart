@@ -22,22 +22,105 @@ class TableFact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: EdgeInsets.zero,
-      shrinkWrap: true,
-      physics: const BouncingScrollPhysics(),
-      itemBuilder: (context, index) {
-        if (index == 0) {
-          return tableTitle().paddingOnly(top: 40.w);
-        } else {
-          return tableItem(isLast: index == 7);
-        }
-      },
-      separatorBuilder: (context, index) => Container(
-        height: 1,
-        color: ColorName.gray,
+    // return ListView.separated(
+    //   padding: EdgeInsets.zero,
+    //   shrinkWrap: true,
+    //   physics: const BouncingScrollPhysics(),
+    //   itemBuilder: (context, index) {
+    //     if (index == 0) {
+    //       return tableTitle().paddingOnly(top: 40.w);
+    //     } else {
+    //       return tableItem(isLast: index == 7);
+    //     }
+    //   },
+    //   separatorBuilder: (context, index) => Container(
+    //     height: 1,
+    //     color: ColorName.gray,
+    //   ),
+    //   itemCount: 4,
+    // );
+    return Center(
+      child: DataTable(
+        columns: const <DataColumn>[
+          DataColumn(
+            label: Expanded(
+              child: Text(
+                '19 okt',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+          ),
+          DataColumn(
+            label: Expanded(
+              child: Text(
+                '19 okt',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+          ),
+          DataColumn(
+            label: Expanded(
+              child: Text(
+                  '19 okt',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+          ),
+          DataColumn(
+            label: Expanded(
+              child: Text(
+                '19 okt',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+          ),
+          DataColumn(
+            label: Expanded(
+              child: Text(
+                '19 okt',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+          ),
+        ],
+        rows: const <DataRow>[
+          DataRow(
+            cells: <DataCell>[
+              DataCell(Text('0')),
+              DataCell(Text('0')),
+              DataCell(Text('0')),
+            ],
+          ),
+          DataRow(
+            cells: <DataCell>[
+              DataCell(Text('0')),
+              DataCell(Text('0')),
+              DataCell(Text('0')),
+            ],
+          ),
+          DataRow(
+            cells: <DataCell>[
+              DataCell(Text('0')),
+              DataCell(Text('0')),
+              DataCell(Text('0')),
+            ],
+          ),
+          DataRow(
+            cells: <DataCell>[
+              DataCell(Text('0')),
+              DataCell(Text('0')),
+              DataCell(Text('0')),
+            ],
+          ),
+          DataRow(
+            cells: <DataCell>[
+              DataCell(Text('0')),
+              DataCell(Text('0')),
+              DataCell(Text('0')),
+            ],
+          ),
+        ],
       ),
-      itemCount: 4,
     );
   }
 
@@ -46,7 +129,7 @@ class TableFact extends StatelessWidget {
     return Container(
       height: 40,
       decoration: BoxDecoration(
-        color: ColorName.buttonColor,
+        color: ColorName.white,
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(8.r),
         ),
@@ -56,7 +139,7 @@ class TableFact extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "Категория",
+              text: "9 okt",
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,
@@ -66,7 +149,7 @@ class TableFact extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "План",
+              text: "9 okt",
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,
@@ -76,7 +159,7 @@ class TableFact extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "Факт",
+              text: "9 okt",
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,
@@ -86,7 +169,7 @@ class TableFact extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "Прогноз",
+              text: "9 okt",
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,
