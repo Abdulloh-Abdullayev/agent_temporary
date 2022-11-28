@@ -172,4 +172,23 @@ class AppBarIcon{
     );
   }
 
+  static Widget menuIcon(VoidCallback onPressed){
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        height: 28.w,
+        width: 28.w,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          color: const Color.fromRGBO(255, 255, 255, 0.1),
+        ),
+        child: Center(
+          child: Assets.images.icons.menuIcon.svg(
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
+
 }
