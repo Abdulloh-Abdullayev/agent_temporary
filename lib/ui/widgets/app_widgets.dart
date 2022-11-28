@@ -293,6 +293,32 @@ class AppWidgets {
     );
   }
 
+  static Widget buttonBuilder({
+    double height = 28,
+    double width = 28,
+    double redius = 28,
+    Color backColor = ColorName.button,
+    Widget? child,
+    EdgeInsets padding = EdgeInsets.zero,
+    Alignment alignment = Alignment.center,
+    required Function() onTap,
+  }) =>
+      Container(
+        alignment: alignment,
+        decoration: BoxDecoration(
+          color: backColor,
+          borderRadius: BorderRadius.circular(4),
+        ),
+        child: GestureDetector(
+          child: Container(
+            height: height,
+            width: width,
+            padding: padding,
+            child: child ?? SizedBox.shrink(),
+          ),
+        ),
+      );
+
   static void openImgDialog({
     required BuildContext context,
     required String imgPath,
