@@ -35,7 +35,7 @@ class ReportsPage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    HomePage.globalKey.currentState!.openDrawer();
+                     HomePage.globalKey.currentState!.openDrawer();
                   },
                   child: Assets.images.icons.menu.svg(),
                 ),

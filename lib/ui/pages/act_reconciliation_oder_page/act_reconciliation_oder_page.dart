@@ -12,8 +12,8 @@ class ActReconciliationOderPageModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
-          actReconciliationOderPage.routeName,
-          child: (context, args) => const actReconciliationOderPage(),
+          ActReconciliationOderPage.routeName,
+          child: (context, args) => const ActReconciliationOderPage(),
         ),
       ];
 
@@ -26,16 +26,16 @@ class ActReconciliationOderPageModule extends Module {
       ];
 }
 
-class actReconciliationOderPage extends StatefulWidget {
+class ActReconciliationOderPage extends StatefulWidget {
   static const String routeName = "/act_reconciliation_oder_page";
-  const actReconciliationOderPage({super.key});
+  const ActReconciliationOderPage({super.key});
 
   @override
-  State<actReconciliationOderPage> createState() =>
-      _actReconciliationOderPageState();
+  State<ActReconciliationOderPage> createState() =>
+      _ActReconciliationOderPageState();
 }
 
-class _actReconciliationOderPageState extends State<actReconciliationOderPage> {
+class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
   var columnTitles = ["Склад", "Дата", "Долг", "Оплачено", "Осталось"];
 
   @override
