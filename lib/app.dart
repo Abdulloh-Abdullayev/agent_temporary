@@ -27,6 +27,17 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:agent/core/bloc/language/language_cubit.dart';
+import 'package:agent/core/services/db/db_service.dart';
+import 'package:agent/core/services/hive_service.dart';
+import 'package:agent/core/services/http/http_service.dart';
+import 'package:agent/ui/pages/act_reconciliation_oder_page/act_reconciliation_oder_page.dart';
+import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
+import 'package:agent/ui/pages/home/home_page.dart';
+import 'package:agent/ui/pages/login_page/login_page.dart';
+import 'package:agent/ui/pages/map_page/custom_map.dart';
+import 'package:agent/ui/pages/visits_page/visits_page.dart';
+
 import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/debtors_page/widget/deptors_history.dart';
 import 'ui/pages/outlets_page/outlets_map_page.dart';
@@ -68,8 +79,8 @@ class App extends StatelessWidget {
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             theme: ThemeData(
-              primarySwatch: Colors.blue,
-            ),
+            androidOverscrollIndicator:androidOverscrollIndicator,
+          ),
             routeInformationParser: Modular.routeInformationParser,
             routerDelegate: Modular.routerDelegate,
           ),
@@ -135,5 +146,9 @@ class AppModule extends Module {
         ModuleRoute("/", module: ExchangeWidgetModule()),
         ModuleRoute("/", module: SalaryPageModule()),
         ModuleRoute("/", module: EditExchangeWidgetModule()),
+        ModuleRoute("/", module: VisitsPageModule()),
+        ModuleRoute("/", module: ActReconciliationPageModule()),
+        ModuleRoute("/", module: ActReconciliationOderPageModule()),
+        ModuleRoute("/", module: CustomMapPageModule()),
       ];
 }

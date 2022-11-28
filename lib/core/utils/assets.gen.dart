@@ -21,10 +21,15 @@ class $AssetsColorGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/direction.png
+  AssetGenImage get direction =>
+      const AssetGenImage('assets/images/direction.png');
+
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
-  /// File path: assets/images/img1.jpg
-  AssetGenImage get img1 => const AssetGenImage('assets/images/img1.jpg');
+  /// File path: assets/images/location.png
+  AssetGenImage get location =>
+      const AssetGenImage('assets/images/location.png');
 
   /// File path: assets/images/market.png
   AssetGenImage get market => const AssetGenImage('assets/images/market.png');
@@ -56,6 +61,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/arrow_down.svg
   SvgGenImage get arrowDown =>
       const SvgGenImage('assets/images/icons/arrow_down.svg');
+
+  /// File path: assets/images/icons/back_arrow.svg
+  SvgGenImage get backArrow =>
+      const SvgGenImage('assets/images/icons/back_arrow.svg');
 
   /// File path: assets/images/icons/back_button.svg
   SvgGenImage get backButton =>
@@ -219,8 +228,15 @@ class $AssetsImagesIconsGen {
   SvgGenImage get mapIcon =>
       const SvgGenImage('assets/images/icons/map_icon.svg');
 
+  /// File path: assets/images/icons/map_location.svg
+  SvgGenImage get mapLocation =>
+      const SvgGenImage('assets/images/icons/map_location.svg');
+
   /// File path: assets/images/icons/menu.svg
   SvgGenImage get menu => const SvgGenImage('assets/images/icons/menu.svg');
+
+  /// File path: assets/images/icons/minus.svg
+  SvgGenImage get minus => const SvgGenImage('assets/images/icons/minus.svg');
 
   /// File path: assets/images/icons/more_button.svg
   SvgGenImage get moreButton =>
@@ -321,6 +337,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/search_button.svg
   SvgGenImage get searchButton =>
       const SvgGenImage('assets/images/icons/search_button.svg');
+
+  /// File path: assets/images/icons/send.svg
+  SvgGenImage get send => const SvgGenImage('assets/images/icons/send.svg');
 
   /// File path: assets/images/icons/setting.svg
   SvgGenImage get setting =>
