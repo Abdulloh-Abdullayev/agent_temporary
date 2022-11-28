@@ -16,12 +16,12 @@ extension WidgetPaddingX on Widget {
           ),
           child: this);
 
-  Widget paddingLTRB({
-    double left = .0,
-    double top = .0,
-    double right = .0,
-    double bottom = .0,
-  }) =>
+  Widget paddingLTRB(
+    double left,
+    double top,
+    double right,
+    double bottom,
+  ) =>
       Padding(
         padding: EdgeInsets.fromLTRB(left, top, right, bottom),
       );
@@ -77,12 +77,12 @@ extension WidgetMarginX on Widget {
             bottom: bottom,
           ),
           child: this);
-  Widget marginLTRB({
-    double left = .0,
-    double top = .0,
-    double right = .0,
-    double bottom = .0,
-  }) =>
+  Widget marginLTRB(
+    double left,
+    double top,
+    double right,
+    double bottom,
+  ) =>
       Container(
         margin: EdgeInsets.fromLTRB(left, top, right, bottom),
         child: this,

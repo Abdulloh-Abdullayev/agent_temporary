@@ -10,13 +10,16 @@ import '../../../../core/utils/colors.gen.dart';
 /// onTap key "0" = menu ontap, "1" = search ontap, "2" = location ontap
 class VisitWidgets {
   /// onTap key "0" = menu ontap, "1" = search ontap, "2" = location ontap
-  static Widget Appbar(
-          {required String title, required Function(String key) ontap}) =>
+  static Widget Appbar({
+    required String title,
+    required Function(String key) ontap,
+  }) =>
       Container(
         height: 107.h,
         width: 1.sw,
+        alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: ColorName.primary,
+          color: ColorName.primaryColor,
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(12),
           ),
@@ -28,7 +31,7 @@ class VisitWidgets {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AppWidgets.buttonBuilder(
-                  backColor: ColorName.buttonBackColor,
+                  backColor: ColorName.buttonColor,
                   child: Assets.images.icons.menu.svg(),
                   onTap: () => ontap("0"),
                 ),
@@ -36,15 +39,15 @@ class VisitWidgets {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.buttonBuilder(
-                      backColor: ColorName.buttonBackColor,
+                      backColor: ColorName.buttonColor,
                       child: Assets.images.icons.searchActive.svg(),
                       padding: EdgeInsets.all(5),
                       onTap: () => ontap("1"),
                     ),
                     SizedBox(width: 12),
                     AppWidgets.buttonBuilder(
-                      backColor: ColorName.buttonBackColor,
-                      child: Assets.images.icons.mapLocation.svg(),
+                      backColor: ColorName.buttonColor,
+                      child: Assets.images.icons.locationIcon.svg(),
                       onTap: () => ontap("2"),
                       padding: EdgeInsets.all(3),
                     ),
@@ -60,7 +63,7 @@ class VisitWidgets {
               fontWeight: FontWeight.w500,
             )
           ],
-        ).paddingLTRB(20, 19, 20, 0),
+        ).paddingAll(10),
       );
 
   static Widget items({

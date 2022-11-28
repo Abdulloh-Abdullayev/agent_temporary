@@ -117,14 +117,6 @@ class _VisitsPageState extends State<VisitsPage> {
                   },
                 ),
               ),
-              AppTabBar(
-                tabTitle: [
-                  "title 1",
-                  "title 2",
-                  "title 3",
-                ],
-                onTap: (p0) {},
-              )
             ],
           ),
         ),

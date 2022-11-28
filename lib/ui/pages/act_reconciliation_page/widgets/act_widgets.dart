@@ -63,7 +63,7 @@ class ActWidget {
                 width: 28,
                 height: 28,
                 redius: 4,
-                child: myIcon.Assets.images.icons.backArrow.svg(),
+                child: myIcon.Assets.images.icons.backButton.svg(),
                 onTap: buttonOnTap,
               ),
               Row(
