@@ -63,11 +63,7 @@ class ActWidget {
                 width: 28,
                 height: 28,
                 redius: 4,
-<<<<<<< HEAD
-                child: myIcon.Assets.images.icons.backButton.svg(),
-=======
                 child: myIcon.Assets.images.icons.backArrow.svg(),
->>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
                 onTap: buttonOnTap,
               ),
               Row(
@@ -119,32 +115,87 @@ class ActWidget {
     );
   }
 
-  static dataColumn(String name, {Alignment align = Alignment.centerLeft}) {
-    return DataColumn(
-      label: Expanded(
-        child: Align(
-          alignment: align,
-          child: Text(name, style: _dataColumnStyle),
+  static Widget customDataTableChild({
+    required String name,
+    int flex = 1,
+    Alignment alignment = Alignment.center,
+  }) {
+    return Expanded(
+      flex: flex,
+      child: Container(
+        alignment: alignment,
+        child: AppWidgets.text(
+          text: name,
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w400,
+          color: colors[findColor(name)],
         ),
       ),
     );
   }
 
-  static dataRow(List<String> names, {TextStyle? style}) {
-    return DataRow(
-      cells: [
-        for (var e in names)
-          DataCell(
-            Align(
-              alignment: e == names.last
-                  ? Alignment.centerRight
-                  : Alignment.centerLeft,
-              child: Text(
-                e,
-                style: TextStyle(color: colors[findColor(e)]),
-              ),
+  static Widget customDataTableTabs(List<String> list) {
+    return Row(
+      children: [
+        for (var e in list)
+          Expanded(
+            flex: e == list.last ? 4 : 2,
+            child: Column(
+              children: [
+                Align(
+                  alignment: e == list.last
+                      ? Alignment.centerRight
+                      : Alignment.centerLeft,
+                  child: AppWidgets.text(
+                    text: e,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
+                    color: ColorName.gray2,
+                  ),
+                ).marginSymmetric(vertical: 12, horizontal: 12),
+                Container(
+                  height: 1,
+                  width: double.infinity,
+                  color: Colors.grey,
+                )
+              ],
             ),
           ),
+      ],
+    );
+  }
+
+  static Widget customDataTable(List<List<String>> list) {
+    return Column(
+      children: [
+        for (var i = 0; i < list.length; i++)
+          Column(
+            children: [
+              Row(
+                children: [
+                  for (var j = 0; j < list[i].length; j++)
+                    customDataTableChild(
+                      name: list[i][j],
+                      flex: j == list[j].length - 1
+                          ? 3
+                          : list[i][j].isEmpty
+                              ? 1
+                              : 2,
+                      alignment: list[i][j] == list[i].last
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
+                    )
+                ],
+              ).marginSymmetric(vertical: 12, horizontal: 12),
+              !(i > list.length - 4)
+                  ? Container(
+                      height: 1,
+                      width: double.infinity,
+                      color: Colors.grey,
+                    )
+                  : SizedBox.shrink()
+            ],
+          )
       ],
     );
   }

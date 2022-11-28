@@ -35,6 +35,7 @@ class ActReconciliationPage extends StatefulWidget {
 
 class _ActReconciliationPageState extends State<ActReconciliationPage> {
   var columnTitles = ["Дата", "Тип", "Сумма"];
+  var scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -59,7 +60,7 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                 localeKey: "Запросить историю",
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
-                color: ColorName.black,
+                color: ColorName.blue,
               ).marginSymmetric(vertical: 18),
               Expanded(
                 child: Container(
@@ -71,77 +72,10 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                   ),
                   child: Column(
                     children: [
+                      ActWidget.customDataTableTabs(myTabsList),
                       Expanded(
                         child: SingleChildScrollView(
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: DataTable(
-                              columnSpacing: 24,
-                              horizontalMargin: 12,
-                              columns: [
-                                for (var e in columnTitles)
-                                  ActWidget.dataColumn(
-                                    e,
-                                    align: e == columnTitles.last
-                                        ? Alignment.centerRight
-                                        : Alignment.centerLeft,
-                                  ),
-                              ],
-                              rows: [
-                                for (var e in [
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '+100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  ['Заказ на сумму', '', '100 000 000 UZS'],
-                                  ['Оплата на заказ', '', '+100 000 000 UZS'],
-                                  ['Итоговый долг', '', '-0'],
-                                ])
-                                  ActWidget.dataRow(e),
-                              ],
-                            ),
-                          ),
+                          child: ActWidget.customDataTable(myList),
                         ),
                       ),
                     ],
@@ -154,4 +88,24 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
       ),
     );
   }
+
+  static List<String> myTabsList = [
+    "Дата",
+    "Тип",
+    "Сумма",
+  ];
+  static List<List<String>> myList = [
+    ['21.10.2022', 'Оплата на заказ', '+100 000 000 UZS'],
+    ['21.10.2022', 'Оплата на заказ', '++100 000 000 UZS'],
+    ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+    ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+    ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+    ['21.10.2022', 'Оплата на заказ', '-100 000 000 UZS'],
+    ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+    ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+    ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+    ['Заказ на сумму', "", '100 000 000 UZS'],
+    ['Оплата на заказ', "", '+100 000 000 UZS'],
+    ['Итоговый долг', "", '-0']
+  ];
 }

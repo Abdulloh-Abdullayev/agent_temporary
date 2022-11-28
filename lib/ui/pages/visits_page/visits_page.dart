@@ -31,10 +31,6 @@ class VisitsPageModule extends Module {
 
 class VisitsPage extends StatefulWidget {
   static const String routeName = "/visits_page";
-<<<<<<< HEAD
-=======
-
->>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
   const VisitsPage({super.key});
 
   @override
@@ -44,20 +40,13 @@ class VisitsPage extends StatefulWidget {
 class _VisitsPageState extends State<VisitsPage> {
   var textfieldIsOpen = false;
   var sbh = MediaQueryData.fromWindow(window).padding.top;
-<<<<<<< HEAD
-=======
-
->>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Container(
-<<<<<<< HEAD
           height: 1.sh - sbh,
           width: 1.sw,
-=======
->>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
           color: ColorName.background,
           child: Column(
             children: [
@@ -104,17 +93,12 @@ class _VisitsPageState extends State<VisitsPage> {
                     ],
                     width: 184.w,
                     title: "Все категории",
-<<<<<<< HEAD
                     onChange: () {},
-=======
-                    onChange: (v) {},
->>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
                   ),
                 ],
               ).marginSymmetric(horizontal: 20),
               SizedBox(height: 12),
               Expanded(
-<<<<<<< HEAD
                 child: ListView.separated(
                   itemCount: 5,
                   separatorBuilder: (BuildContext context, int index) {
@@ -130,29 +114,6 @@ class _VisitsPageState extends State<VisitsPage> {
                       percent: "60-70%",
                       sum: "100 000",
                     ).marginSymmetric(horizontal: 20);
-=======
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: 10,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Cards.cards_12(
-                      name: 'Osiyo Market',
-                      supermarket: 'supermarket',
-                      uzs: 'UZS',
-                      image: '',
-                      persent: '10-12',
-                      summa: '12000',
-                      cp: '1',
-                      zakaz: 'zakaz',
-                      obmen: 'obmen',
-                      vozvrat: 'vozvrat',
-                      vozvratTar: 'vozvratTar',
-                      plusNumber: '1',
-                    ).marginSymmetric(
-                      horizontal: 20,
-                      vertical: 10.w,
-                    );
->>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
                   },
                 ),
               ),

@@ -10,18 +10,6 @@ import '../../../../core/utils/colors.gen.dart';
 /// onTap key "0" = menu ontap, "1" = search ontap, "2" = location ontap
 class VisitWidgets {
   /// onTap key "0" = menu ontap, "1" = search ontap, "2" = location ontap
-<<<<<<< HEAD
-  static Widget Appbar({
-    required String title,
-    required Function(String key) ontap,
-  }) =>
-      Container(
-        height: 107.h,
-        width: 1.sw,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: ColorName.primaryColor,
-=======
   static Widget Appbar(
           {required String title, required Function(String key) ontap}) =>
       Container(
@@ -29,7 +17,6 @@ class VisitWidgets {
         width: 1.sw,
         decoration: BoxDecoration(
           color: ColorName.primary,
->>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(12),
           ),
@@ -41,11 +28,7 @@ class VisitWidgets {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AppWidgets.buttonBuilder(
-<<<<<<< HEAD
-                  backColor: ColorName.buttonColor,
-=======
                   backColor: ColorName.buttonBackColor,
->>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
                   child: Assets.images.icons.menu.svg(),
                   onTap: () => ontap("0"),
                 ),
@@ -53,24 +36,15 @@ class VisitWidgets {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.buttonBuilder(
-<<<<<<< HEAD
-                      backColor: ColorName.buttonColor,
-=======
                       backColor: ColorName.buttonBackColor,
->>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
                       child: Assets.images.icons.searchActive.svg(),
                       padding: EdgeInsets.all(5),
                       onTap: () => ontap("1"),
                     ),
                     SizedBox(width: 12),
                     AppWidgets.buttonBuilder(
-<<<<<<< HEAD
-                      backColor: ColorName.buttonColor,
-                      child: Assets.images.icons.locationIcon.svg(),
-=======
                       backColor: ColorName.buttonBackColor,
                       child: Assets.images.icons.mapLocation.svg(),
->>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
                       onTap: () => ontap("2"),
                       padding: EdgeInsets.all(3),
                     ),
@@ -86,11 +60,7 @@ class VisitWidgets {
               fontWeight: FontWeight.w500,
             )
           ],
-<<<<<<< HEAD
-        ).paddingAll(10),
-=======
         ).paddingLTRB(20, 19, 20, 0),
->>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
       );
 
   static Widget items({
