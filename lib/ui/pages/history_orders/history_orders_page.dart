@@ -1,6 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/history_orders/widgets/order_from_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -17,7 +18,7 @@ class HistoryOrdersModule extends Module {
       ];
 }
 
-class HistoryOrdersPage extends StatefulWidget  {
+class HistoryOrdersPage extends StatefulWidget {
   static String routeName = "/history-orders";
 
   HistoryOrdersPage({Key? key}) : super(key: key);
@@ -26,7 +27,8 @@ class HistoryOrdersPage extends StatefulWidget  {
   State<HistoryOrdersPage> createState() => _HistoryOrdersPageState();
 }
 
-class _HistoryOrdersPageState extends State<HistoryOrdersPage> with TickerProviderStateMixin {
+class _HistoryOrdersPageState extends State<HistoryOrdersPage>
+    with TickerProviderStateMixin {
   PageController pageController = PageController();
   late TabController tabController;
 
@@ -41,7 +43,6 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage> with TickerProvid
     tabController.dispose();
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +74,24 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage> with TickerProvid
                           // Modular.to.pushNamed(OrderFromWidget.routeName);
 
                           showModalBottomSheet(
+                            enableDrag: false,
+                            context: context,
+                            backgroundColor: Colors.transparent,
+                            builder: (context) {
+                              return PurchaseHistorySheet(
+                                text: 'Фильтр',
+                                height: 900,
+                                firstDate: '',
+                                secondDate: '',
+                                firstMoneyStatus: '',
+                                secondMoneyStatus: '',
+                                dropdownText: [],
+                                save: (){
+                                  Modular.to.pushNamed(OrderFromWidget.routeName);
+                                },
+                              );
+                            },
+                          );
                               enableDrag: false,
                               context: context,
                               backgroundColor: Colors.transparent,

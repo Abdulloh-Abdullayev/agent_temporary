@@ -1,7 +1,10 @@
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/exchange/exchange_page.dart';
+import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/select_photo_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
@@ -43,7 +46,9 @@ class FloatingDialog extends StatelessWidget {
                           width: 16,
                           child: Assets.images.icons.history.svg(),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Modular.to.pushNamed(HistoryOrdersPage.routeName);
+                        },
                       ),
                       InkWell(
                         child: SizedBox(
@@ -103,7 +108,38 @@ class FloatingDialog extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          showModalBottomSheet(
+                            backgroundColor: Colors.transparent,
+                            context: context,
+                            builder: (context) {
+                              return AddingAnOrderSheet(
+                                text: 'Обмен товара',
+                                listTextName: const [
+                                  "Склад",
+                                  "Тип направления",
+                                  "Тип цены",
+                                ],
+                                seeListTextName:const [
+                                    "Основной склад",
+                                    "Направление..",
+                                    "Наличные",
+                                ],
+                                icons: [
+                                    Assets.images.icons.stack.svg(),
+                                    Assets.images.icons.shoppingCardIcon.svg(),
+                                    Assets.images.icons.cash.svg(),
+                                ],
+                                quitOnTapButton: (){
+                                  Navigator.pop(context);
+                                },
+                                submitOnTapButton: (){
+                                  Modular.to.pushNamed(ExchangePage.routeName);
+                                },
+                              );
+                            },
+                          );
+                        },
                       ),
                       InkWell(
                         child: SizedBox(

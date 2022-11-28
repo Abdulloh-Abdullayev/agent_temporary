@@ -16,14 +16,18 @@ import 'widget/bottom_buttons_shelf_widget.dart';
 
 class ReturnOrderDatePageModule extends Module {
   @override
-  List<Bind> get binds => [
+  List<Bind> get binds =>
+      [
         Bind<ReturnOrderCubit>(
-          (i) => ReturnOrderCubit()..load(),
+              (i) =>
+          ReturnOrderCubit()
+            ..load(),
         ),
       ];
 
   @override
-  List<ModularRoute> get routes => [
+  List<ModularRoute> get routes =>
+      [
         ChildRoute(
           ReturnOrderDatePage.routeName,
           child: (context, args) => const ReturnOrderDatePage(),
@@ -87,11 +91,11 @@ class _ReturnOrderDatePageState extends State<ReturnOrderDatePage> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: AppWidgets.textLocale(
-                                      localeKey: "Возврат заказа",
-                                      fontSize: 24.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: ColorName.white,
-                                      isRichText: true)
+                                  localeKey: "Возврат заказа",
+                                  fontSize: 24.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: ColorName.white,
+                                  isRichText: true)
                                   .paddingOnly(top: 18.w, left: 20),
                             )
                           ],
@@ -162,7 +166,8 @@ class ItemOrderWidget extends StatelessWidget {
                     context: context,
                     name: model.name!,
                     summa: "Summa",
-                    summaNumber: (ReturnOrderCubit.to.summa(model) * 10000).toString(),
+                    summaNumber: (ReturnOrderCubit.to.summa(model) * 10000)
+                        .toString(),
                     blok: "Bloc",
                     blokNumber: model.blog.toString(),
                     sht: "Sht",
@@ -185,6 +190,7 @@ class ItemOrderWidget extends StatelessWidget {
                           .incrementSht(returnOrderModel.id!, model.id!);
                     },
                     icon: Assets.images.icons.clock.svg(),
+                    context: context,
                   ),
                 );
               },

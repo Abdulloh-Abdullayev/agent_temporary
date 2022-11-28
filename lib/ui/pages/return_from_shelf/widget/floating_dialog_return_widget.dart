@@ -108,9 +108,11 @@ class FloatingDialogReturn extends StatelessWidget {
                               builder: (context) {
                                 return AddingAnOrderSheet(
                                   submitOnTapButton:  (){
+                                  submitOnTapButton: (){
                                     Modular.to.pushNamed(ReturnOrderDatePage.routeName);
                                   },
                                   quitOnTapButton:  (){
+                                  quitOnTapButton: (){
                                     Modular.to.pop(context);
                                   },
                                   text: 'Возврат заказа',

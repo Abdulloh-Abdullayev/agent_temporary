@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -53,6 +53,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/add.svg
   SvgGenImage get add => const SvgGenImage('assets/images/icons/add.svg');
 
+  /// File path: assets/images/icons/arrow_down.svg
+  SvgGenImage get arrowDown =>
+      const SvgGenImage('assets/images/icons/arrow_down.svg');
+
   /// File path: assets/images/icons/arrow_right.svg
   SvgGenImage get arrowRight =>
       const SvgGenImage('assets/images/icons/arrow_right.svg');
@@ -64,6 +68,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/back_icon.svg
   SvgGenImage get backIcon =>
       const SvgGenImage('assets/images/icons/back_icon.svg');
+
+  /// File path: assets/images/icons/bigger.svg
+  SvgGenImage get bigger => const SvgGenImage('assets/images/icons/bigger.svg');
 
   /// File path: assets/images/icons/box.svg
   SvgGenImage get box => const SvgGenImage('assets/images/icons/box.svg');
@@ -85,6 +92,9 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/caset.svg
   SvgGenImage get caset => const SvgGenImage('assets/images/icons/caset.svg');
+
+  /// File path: assets/images/icons/cash.svg
+  SvgGenImage get cash => const SvgGenImage('assets/images/icons/cash.svg');
 
   /// File path: assets/images/icons/cencel_icon.svg
   SvgGenImage get cencelIcon =>
@@ -338,6 +348,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/shopping_card_icon.svg
   SvgGenImage get shoppingCardIcon =>
       const SvgGenImage('assets/images/icons/shopping_card_icon.svg');
+
+  /// File path: assets/images/icons/smaller.svg
+  SvgGenImage get smaller =>
+      const SvgGenImage('assets/images/icons/smaller.svg');
 
   /// File path: assets/images/icons/stack.svg
   SvgGenImage get stack => const SvgGenImage('assets/images/icons/stack.svg');
