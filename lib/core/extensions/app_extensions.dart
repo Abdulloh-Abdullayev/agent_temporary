@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 /// add Padding Property to widget
 extension WidgetPaddingX on Widget {
@@ -41,6 +41,17 @@ extension WidgetPaddingX on Widget {
         child: this,
       );
 
+<<<<<<< HEAD
+=======
+  /// paddingLTRB EdgeInsets.fromLTRB(left, top, right, bottom)
+  Widget paddingLTRB(double left, double top, double right, double bottom) =>
+      Padding(
+        padding: EdgeInsets.fromLTRB(left, top, right, bottom),
+        child: this,
+      );
+
+  /// Transform.rotate
+>>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
   Widget rotateX(double angle) {
     return Transform.rotate(
       angle: angle,
@@ -155,6 +166,7 @@ extension WidgetAlign on Widget {
         alignment: Alignment.topRight,
         child: this,
       );
+<<<<<<< HEAD
 }
 
 extension IntToString on int {
@@ -167,4 +179,6 @@ extension IntToString on int {
       return "0:0${this % 60}";
     }
   }
+=======
+>>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
 }

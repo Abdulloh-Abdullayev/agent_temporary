@@ -9,7 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../widgets/app_widgets.dart';
 import 'widget/working_day_widget.dart';
 
-class SalaryPageModel extends Module {
+class SalaryPageModule extends Module {
   @override
   List<Bind> get binds => [];
 

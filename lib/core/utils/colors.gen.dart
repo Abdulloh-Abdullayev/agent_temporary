@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
+// ignore_for_file: directives_ordering,unnecessary_import
 
 import 'package:flutter/painting.dart';
 import 'package:flutter/material.dart';
@@ -22,26 +22,41 @@ class ColorName {
   /// Color: #000000
   static const Color black = Color(0xFF000000);
 
-  /// Color: #DDF0EF
-  static const Color blue = Color(0xFFDDF0EF);
+  /// Color: #057CD1
+  static const Color blue = Color(0xFF057CD1);
 
   /// Color: #36E5E5
   static const Color bluePercent = Color(0xFF36E5E5);
 
+  /// Color: #95AFAF
+  static const Color borderColor = Color(0xFF95AFAF);
+
   /// Color: #299B9B
   static const Color button = Color(0xFF299B9B);
+
+  /// Color: #1A4A4A
+  static const Color buttonBackColor = Color(0xFF1A4A4A);
 
   /// Color: #299B9B
   static const Color buttonColor = Color(0xFF299B9B);
 
+  /// Color: #265454
+  static const Color darkBlue1 = Color(0xFF265454);
+
   /// Color: #B0CCCC
   static const Color defaultIcon = Color(0xFFB0CCCC);
+
+  /// Color: #ECEFEF
+  static const Color disabledGray1 = Color(0xFFECEFEF);
 
   /// Color: #012B2B
   static const Color drawerColor = Color(0xFF012B2B);
 
   /// Color: #E1E4E4
   static const Color gray = Color(0xFFE1E4E4);
+
+  /// Color: #D2D7D7
+  static const Color gray1 = Color(0xFFD2D7D7);
 
   /// Color: #8FA0A0
   static const Color gray2 = Color(0xFF8FA0A0);
@@ -54,6 +69,9 @@ class ColorName {
 
   /// Color: #00A000
   static const Color green = Color(0xFF00A000);
+
+  /// Color: #1DBE03
+  static const Color green1 = Color(0xFF1DBE03);
 
   /// Color: #1DBE03
   static const Color green2 = Color(0xFF1DBE03);
@@ -71,6 +89,9 @@ class ColorName {
   static const Color mainColor = Color(0xFF336666);
 
   /// Color: #013636
+  static const Color primary = Color(0xFF013636);
+
+  /// Color: #013636
   static const Color primaryColor = Color(0xFF013636);
 
   /// Color: #052C2C
@@ -79,9 +100,15 @@ class ColorName {
   /// Color: #FF0000
   static const Color red = Color(0xFFFF0000);
 
+  /// Color: #6EEAEA
+  static const Color selectColor = Color(0xFF6EEAEA);
+
   /// Color: #56FFFF
   static const Color textAddAccount = Color(0xFF56FFFF);
 
   /// Color: #FFFFFF
   static const Color white = Color(0xFFFFFFFF);
+
+  /// Color: #BD7F06
+  static const Color yellow = Color(0xFFBD7F06);
 }

@@ -3,16 +3,24 @@ import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
 import 'package:agent/ui/pages/act_reconciliation_oder_page/act_reconciliation_oder_page.dart';
+<<<<<<< HEAD
+=======
+import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
+>>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
+import 'package:agent/ui/pages/exchange/exchange_page.dart';
+import 'package:agent/ui/pages/exchange/widget/edit_exchange_widget.dart';
+import 'package:agent/ui/pages/exchange/widget/next_exchange_widget.dart';
 import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
 import 'package:agent/ui/pages/history_orders/widgets/order_from_widget.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
+import 'package:agent/ui/pages/map_page/custom_map.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
 import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
@@ -35,7 +43,12 @@ import 'ui/pages/return_from_shelf/return_from_shelf.dart';
 import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  const App({
+    Key? key,
+    this.androidOverscrollIndicator = AndroidOverscrollIndicator.glow,
+  }) : super(key: key);
+
+  final AndroidOverscrollIndicator androidOverscrollIndicator;
 
   @override
   Widget build(BuildContext context) {
@@ -62,8 +75,8 @@ class App extends StatelessWidget {
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             theme: ThemeData(
-              primarySwatch: Colors.blue,
-            ),
+            androidOverscrollIndicator:androidOverscrollIndicator,
+          ),
             routeInformationParser: Modular.routeInformationParser,
             routerDelegate: Modular.routerDelegate,
           ),
@@ -119,8 +132,25 @@ class AppModule extends Module {
         ModuleRoute("/", module: DiagnosticsPageModule()),
         ModuleRoute("/", module: HistoryOrdersModule()),
         ModuleRoute("/", module: OrderFromModule()),
+<<<<<<< HEAD
         ModuleRoute("/", module: VisitsPageModule()),
         ModuleRoute("/", module: ActReconciliationOderPageModule()),
         // ModuleRoute("/", module: ActReconciliationPageModule()),
+=======
+        ModuleRoute("/", module: OrderPageModule()),
+        ModuleRoute("/", module: CustomerDataPageModule()),
+        ModuleRoute("/", module: CustomerDataEditingPageModule()),
+        ModuleRoute("/", module: DiagnosticsPageModule()),
+        ModuleRoute("/", module: HistoryOrdersModule()),
+        ModuleRoute("/", module: OrderFromModule()),
+        ModuleRoute("/", module: ExchangeModule()),
+        ModuleRoute("/", module: ExchangeWidgetModule()),
+        ModuleRoute("/", module: SalaryPageModule()),
+        ModuleRoute("/", module: EditExchangeWidgetModule()),
+        ModuleRoute("/", module: VisitsPageModule()),
+        ModuleRoute("/", module: ActReconciliationPageModule()),
+        ModuleRoute("/", module: ActReconciliationOderPageModule()),
+        ModuleRoute("/", module: CustomMapPageModule()),
+>>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
       ];
 }

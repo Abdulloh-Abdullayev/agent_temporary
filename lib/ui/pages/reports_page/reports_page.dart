@@ -50,7 +50,7 @@ class ReportsPage extends StatelessWidget {
                   icon: Assets.images.icons.filtrIcon,
                 )
               ],
-            ),
+            ).paddingAll(5),
             flexibleSpace: FlexibleSpaceBar(
               background: reportsAppBar(context),
               collapseMode: CollapseMode.none,
@@ -222,7 +222,7 @@ class ReportsPage extends StatelessWidget {
             width: 1.sw,
             textColor: Colors.white,
             color: ColorName.buttonColor,
-          ).paddingOnly(top: 18.w)
+          ).paddingOnly(top: 10.w)
         ],
       ),
     );

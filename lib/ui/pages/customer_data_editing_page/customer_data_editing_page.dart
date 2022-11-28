@@ -131,6 +131,7 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                                           blokAdd: () {},
                                           shtRemove: () {},
                                           shtAdd: () {},
+                                          context: context,
                                         ),
                                       );
                                     },

@@ -1,12 +1,19 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
+<<<<<<< HEAD
+=======
+import 'package:agent/ui/pages/act_reconciliation_page/widgets/act_widgets.dart';
+>>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/utils/colors.gen.dart';
+<<<<<<< HEAD
 import '../act_reconciliation_page/widgets/act_widgets.dart';
+=======
+>>>>>>> 9a902f021936cbe3f375107ade3850ceadb47082
 
 class ActReconciliationOderPageModule extends Module {
   @override
