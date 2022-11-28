@@ -9,9 +9,8 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uikit/uikit.dart';
 
-import '../main_page/widgets/tabbar_widget.dart';
+import 'order_page_widget/bottom_button_widget.dart';
 import 'order_page_widget/order_tabbar_widget.dart';
 
 class OrderPageModule extends Module {
@@ -28,215 +27,187 @@ class OrderPage extends StatefulWidget {
   const OrderPage({Key? key}) : super(key: key);
   static const String routeName = "/orderPage";
 
+  static int tabChange = 0;
 
   @override
   State<OrderPage> createState() => _OrderPageState();
 }
 
 class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
-  late TabController _tabController;
+  late TabController _controller;
 
   @override
   void dispose() {
-    _tabController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
   @override
   void initState() {
-    _tabController = TabController(
-      length: 2,
-      vsync: this,
-    );
-    _tabController.addListener(_handleTabSelection);
+    _controller = TabController(length: 3, vsync: this);
+    _controller.addListener(_handleTabSelection);
     super.initState();
   }
 
   void _handleTabSelection() {
-    if (_tabController.indexIsChanging) {
+    if (_controller.indexIsChanging) {
       setState(() {});
     }
   }
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Stack(
-            children: [
-              Column(
+      length: 3,
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Scaffold(
+            body: SingleChildScrollView(
+              child: Stack(
                 children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(12),
-                          bottomLeft: Radius.circular(12),
-                        ),
-                        color: ColorName.primaryColor),
-                    height: 133.h,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        AppBarIcon.backButton(() {}),
-                        Row(
-                          children: [
-                            AppBarIcon.telephoneButton(() {}),
-                            const SizedBox(
-                              width: 12,
+                  Column(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(12),
+                              bottomLeft: Radius.circular(12),
                             ),
-                            AppBarIcon.menuButtpon()
-                          ],
-                        )
-                      ],
-                    ).paddingSymmetric(horizontal: 20.w),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(bottom: 18.w),
-                    decoration: const BoxDecoration(
-                      color: ColorName.white,
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(12),
-                        bottomRight: Radius.circular(12),
-                      ),
-                    ),
-                    child: Column(
-                      children: [
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: AppWidgets.textLocale(
-                              localeKey: "Osiyo Market",
-                              fontSize: 24.sp,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w600,
-                              isRichText: true),
-                        ).paddingOnly(top: 50.w),
-                        Row(
+                            color: ColorName.primaryColor),
+                        height: 133.h,
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            AppWidgets.textLocale(
-                                localeKey: "Supermarket",
-                                fontSize: 12.sp,
-                                color: ColorName.gray2,
-                                fontWeight: FontWeight.w400,
-                                isRichText: true),
-                            AppWidgets.textLocale(
-                                localeKey: "Визиты:  Пн, Ср, Сб",
-                                fontSize: 12.sp,
-                                color: ColorName.gray2,
-                                fontWeight: FontWeight.w400,
-                                isRichText: true),
+                            AppBarIcon.backButton(() {}),
+                            Row(
+                              children: [
+                                AppBarIcon.telephoneButton(() {}),
+                                const SizedBox(
+                                  width: 12,
+                                ),
+                                AppBarIcon.menuButtpon()
+                              ],
+                            )
                           ],
-                        ).paddingOnly(top: 12.w),
-                        Row(
+                        ).paddingSymmetric(horizontal: 20.w),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 18.w),
+                        decoration: const BoxDecoration(
+                          color: ColorName.white,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(12),
+                            bottomRight: Radius.circular(12),
+                          ),
+                        ),
+                        child: Column(
                           children: [
-                            AppWidgets.textLocale(
-                                localeKey: "Teritoriya  : ",
-                                fontSize: 12.sp,
-                                color: ColorName.gray2,
-                                fontWeight: FontWeight.w400,
-                                isRichText: true),
-                            AppWidgets.textLocale(
-                                localeKey: "Yunusobod rayoni",
-                                fontSize: 12.sp,
-                                color: ColorName.black,
-                                fontWeight: FontWeight.w600,
-                                isRichText: true),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: AppWidgets.textLocale(
+                                  localeKey: "Osiyo Market",
+                                  fontSize: 24.sp,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                  isRichText: true),
+                            ).paddingOnly(top: 50.w),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                AppWidgets.textLocale(
+                                    localeKey: "Supermarket",
+                                    fontSize: 12.sp,
+                                    color: ColorName.gray2,
+                                    fontWeight: FontWeight.w400,
+                                    isRichText: true),
+                                AppWidgets.textLocale(
+                                    localeKey: "Визиты:  Пн, Ср, Сб",
+                                    fontSize: 12.sp,
+                                    color: ColorName.gray2,
+                                    fontWeight: FontWeight.w400,
+                                    isRichText: true),
+                              ],
+                            ).paddingOnly(top: 12.w),
+                            Row(
+                              children: [
+                                AppWidgets.textLocale(
+                                    localeKey: "Teritoriya  : ",
+                                    fontSize: 12.sp,
+                                    color: ColorName.gray2,
+                                    fontWeight: FontWeight.w400,
+                                    isRichText: true),
+                                AppWidgets.textLocale(
+                                    localeKey: "Yunusobod rayoni",
+                                    fontSize: 12.sp,
+                                    color: ColorName.black,
+                                    fontWeight: FontWeight.w600,
+                                    isRichText: true),
+                              ],
+                            ).paddingOnly(top: 12.w),
+                            Row(
+                              children: [
+                                AppWidgets.textLocale(
+                                    localeKey: "Задолженности : ",
+                                    fontSize: 12.sp,
+                                    color: ColorName.gray2,
+                                    fontWeight: FontWeight.w400,
+                                    isRichText: true),
+                                AppWidgets.textLocale(
+                                    localeKey: "0 UZS",
+                                    fontSize: 12.sp,
+                                    color: ColorName.green,
+                                    fontWeight: FontWeight.w700,
+                                    isRichText: true),
+                              ],
+                            ).paddingOnly(top: 12.w, bottom: 18.w),
                           ],
-                        ).paddingOnly(top: 12.w),
-                        Row(
+                        ).paddingSymmetric(horizontal: 20),
+                      ),
+
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(8),
+                            topLeft: Radius.circular(8),
+                          ),
+                        ),
+                        child: Column(
                           children: [
-                            AppWidgets.textLocale(
-                                localeKey: "Задолженности : ",
-                                fontSize: 12.sp,
-                                color: ColorName.gray2,
-                                fontWeight: FontWeight.w400,
-                                isRichText: true),
-                            AppWidgets.textLocale(
-                                localeKey: "0 UZS",
-                                fontSize: 12.sp,
-                                color: ColorName.green,
-                                fontWeight: FontWeight.w700,
-                                isRichText: true),
+                            OrderTabbarWidget(
+                                _controller,
+                                "Заказы", "Фото отчёт","Возврат",
+                                    (int i) {
+                                  if (i == 0) {
+                                  } else if (i == 1) {
+                                  } else {}
+                                }).paddingOnly(right: MediaQuery.of(context).size.width*0.2,),
+                            Container(
+                              child: [
+                                const TabbarOrderPage(),
+                                const PhotoReportPage(),
+                                Container()
+                              ][_controller.index],
+                            ),
                           ],
-                        ).paddingOnly(top: 12.w, bottom: 18.w),
-                      ],
-                    ).paddingSymmetric(horizontal: 20),
+                        ),
+                      ).paddingOnly(bottom: 20),
+                    ],
+                  ).paddingOnly(bottom: 60.w),
+                  Positioned(
+                      top: 70.w,
+                      right: 0,
+                      left: 0,
+                      child: MarketImage(image: "assets/images/market.png")
                   ),
-
-                  TabBarWidget(
-                    _tabController,
-                    "Заказы",
-                    "Другие",
-                        (int i) {},
-                  ).paddingSymmetric(horizontal: 20.w, vertical: 15.w),
-                  Container(
-                    child: [
-
-                    ][_tabController.index],
-                  )
-
-
-                  // Container(
-                  //   decoration: const BoxDecoration(
-                  //     color: Colors.white,
-                  //     borderRadius: BorderRadius.only(
-                  //       topRight: Radius.circular(8),
-                  //       topLeft: Radius.circular(8),
-                  //     ),
-                  //   ),
-                  //  child: Column(
-                  //    children: [
-                  //      TabBar(
-                  //        tabs: [
-                  //          Tab(
-                  //            child: AppWidgets.textLocale(
-                  //                localeKey: "Заказы",
-                  //                fontWeight: FontWeight.w600,
-                  //                fontSize: 14.sp,
-                  //                color: ColorName.button,
-                  //                isRichText: true),
-                  //          ),
-                  //          Tab(
-                  //            child: AppWidgets.textLocale(
-                  //                localeKey: "Фото отчёт",
-                  //                fontWeight: FontWeight.w600,
-                  //                fontSize: 14.sp,
-                  //                color: ColorName.button,
-                  //                isRichText: true),
-                  //          )
-                  //        ],
-                  //        padding: const EdgeInsets.only(right: 166),
-                  //        indicatorWeight: 3,
-                  //        indicatorPadding:
-                  //        const EdgeInsets.symmetric(horizontal: 7),
-                  //        indicatorColor: ColorName.button,
-                  //      ).paddingOnly(left: 20.w),
-                  //      SizedBox(
-                  //        height: MediaQuery.of(context).size.height,
-                  //        child: const TabBarView(
-                  //          children: [
-                  //            TabbarOrderPage(),
-                  //            PhotoReportPage(),
-                  //          ],
-                  //        ),
-                  //      )
-                  //    ],
-                  //  ),
-                  // ).paddingOnly(bottom: 20),
                 ],
               ),
-                Positioned(
-                 top: 70.w,
-                 right: 0,
-                 left: 0,
-                 child: MarketImage(image: "assets/images/market.png")
-               ),
-            ],
-          ),
-        ),
-        floatingActionButton:
+            ),
+            floatingActionButton:
             const FloatingDialog().paddingOnly(bottom: 160.w),
+          ),
+          const BottomButtonWidget(),
+        ],
       ),
     );
   }

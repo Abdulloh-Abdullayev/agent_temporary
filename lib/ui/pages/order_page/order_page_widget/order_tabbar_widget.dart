@@ -1,4 +1,3 @@
-import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,6 +8,7 @@ class OrderTabbarWidget extends StatelessWidget {
       this._controller,
       this.title1,
       this.title2,
+      this.title3,
       this.function,
       );
 
@@ -16,6 +16,7 @@ class OrderTabbarWidget extends StatelessWidget {
   final TabController _controller;
   String title1;
   String title2;
+  String title3;
   Function function;
 
   @override
@@ -25,10 +26,9 @@ class OrderTabbarWidget extends StatelessWidget {
       children: [
         DefaultTabController(
           initialIndex: 0,
-          length: 2,
-          child: Container(
+          length: 3,
+          child: SizedBox(
             height: 46.w,
-
             child: TabBar(
               controller: _controller,
               unselectedLabelColor: ColorName.button,
@@ -36,10 +36,9 @@ class OrderTabbarWidget extends StatelessWidget {
               onTap: (i) {
                 function(i);
               },
-              indicator: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: ColorName.button,
-              ),
+              indicatorColor: ColorName.button,
+              indicatorWeight: 3,
+              indicatorSize: TabBarIndicatorSize.label,
               tabs: [
                 Tab(
                   child: Text(
@@ -47,8 +46,7 @@ class OrderTabbarWidget extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 14.sp,
-                        overflow: TextOverflow.ellipsis,
-                        fontFamily: "Gilroy"),
+                       ),
                   ),
                 ),
                 Tab(
@@ -57,8 +55,16 @@ class OrderTabbarWidget extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 14.sp,
-                        overflow: TextOverflow.ellipsis,
-                        fontFamily: "Gilroy"),
+                    ),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    title3,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14.sp,
+                    ),
                   ),
                 ),
               ],

@@ -37,10 +37,12 @@ class DiagnosticsPage extends StatefulWidget {
 class _DiagnosticsPageState extends State<DiagnosticsPage>
     with TickerProviderStateMixin {
   late TabController _controller;
+  ScrollController scrollController = ScrollController();
 
   @override
   void dispose() {
     _controller.dispose();
+    scrollController.dispose();
     super.dispose();
   }
 
@@ -48,6 +50,7 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
   void initState() {
     _controller = TabController(length: 3, vsync: this);
     _controller.addListener(_handleTabSelection);
+    scrollController =ScrollController();
     super.initState();
   }
 
@@ -154,7 +157,8 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                       const TabbarThirdWidget(),
                     ][_controller.index],
                   ).paddingOnly(bottom: 24.w),
-                  const TableWidget(),
+                  const TableDio(),
+
                 ],
               ).paddingSymmetric(horizontal: 20.w)
             ],
@@ -164,3 +168,4 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
     );
   }
 }
+

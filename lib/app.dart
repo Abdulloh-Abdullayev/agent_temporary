@@ -10,7 +10,7 @@ import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
-import 'package:agent/ui/pages/table.dart';
+import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/table_widget.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(OrderPage.routeName);
+    Modular.setInitialRoute(DiagnosticsPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,

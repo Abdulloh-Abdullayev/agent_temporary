@@ -80,7 +80,7 @@ class TabbarOrderPage extends StatelessWidget {
             ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount: 1,
+              itemCount: 10,
               itemBuilder: (context, index) {
                 return Container(
                     margin: EdgeInsets.only(bottom: 11.w),
@@ -168,24 +168,6 @@ class TabbarOrderPage extends StatelessWidget {
             )
           ],
         ).paddingSymmetric(horizontal: 20.w),
-        // Container(
-        //   child: ListView.builder(
-        //     shrinkWrap: true,
-        //     itemCount: 8,
-        //     itemBuilder: (context, index) {
-        //       return Container(
-        //           margin: EdgeInsets.only(bottom: 11.w),
-        //           child: Card(
-        //             elevation: 5,
-        //             color: Colors.deepPurple,
-        //             child: Container(
-        //               height: 100,
-        //               width: 300,
-        //             ),
-        //           ));
-        //     },
-        //   ),
-        // ),
       ],
     );
   }
