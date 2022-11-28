@@ -18,7 +18,7 @@ class ColorName {
 
   /// Color: #D9D9D9
   static const Color bgColor = Color(0xFFD9D9D9);
-
+  
   /// Color: #000000
   static const Color black = Color(0xFF000000);
 

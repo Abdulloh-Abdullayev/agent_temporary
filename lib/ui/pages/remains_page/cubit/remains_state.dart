@@ -1,24 +1,26 @@
-part of 'refund_cubit.dart';
+part of 'remains_cubit.dart';
 
-class RefundState extends Equatable {
+
+
+class RemainState extends Equatable {
   final bool loading;
-  final List<RefundCategoryModel> list;
+  final List<RemainsCategoryModel> list;
   final bool hasError;
   final bool reload;
 
-  const RefundState({
+  const RemainState({
     this.loading = true,
     this.list = const [],
     this.hasError = false,
     this.reload = false,
   });
 
-  RefundState copyWith({
+  RemainState copyWith({
     bool? loading,
-    List<RefundCategoryModel>? list,
+    List<RemainsCategoryModel>? list,
     bool? hasError,
   }) {
-    return RefundState(
+    return RemainState(
       loading: loading ?? this.loading,
       hasError: hasError ?? this.hasError,
       reload: !reload,
@@ -34,4 +36,5 @@ class RefundState extends Equatable {
         reload,
       ];
 }
+
 

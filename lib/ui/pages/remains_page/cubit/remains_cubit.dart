@@ -1,27 +1,28 @@
 
 import 'dart:math';
 
-import 'package:agent/core/models/refund_model.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-part 'refund_state.dart';
+import '../../../../core/models/remains_model.dart/remains_model.dart';
 
-class RefundCubit extends Cubit<RefundState> {
-  RefundCubit() : super(const RefundState());
+part 'remains_state.dart';
 
-  static RefundCubit get to => Modular.get<RefundCubit>();
+class RemainCubit extends Cubit<RemainState> {
+  RemainCubit() : super(const RemainState());
+
+  static RemainCubit get to => Modular.get<RemainCubit>();
   static String imgUrl =
       'https://web.lebazar.uz/resources/product/2020/3/14/small_1586880212484CocaCola.jpg';
-  List<RefundModel> list2 = [
-    RefundModel(
+  List<RemainsModel> list2 = [
+    RemainsModel(
       id: 0,
       name: "Coca cola",
       count: 1,
       imgUrl: imgUrl,
     ),
-    RefundModel(
+    RemainsModel(
       id: 1,
       name: "Coca cola",
       count: 1,
@@ -30,13 +31,13 @@ class RefundCubit extends Cubit<RefundState> {
   ];
 
   Future load() async {
-    List<RefundCategoryModel> list = [
-      RefundCategoryModel(
+    List<RemainsCategoryModel> list = [
+      RemainsCategoryModel(
         id: 0,
         name: "Напитки",
         list: genList(),
       ),
-      RefundCategoryModel(
+      RemainsCategoryModel(
         id: 1,
         name: "Печенье",
         list: genList(),
@@ -45,11 +46,11 @@ class RefundCubit extends Cubit<RefundState> {
     emit(state.copyWith(list: list, loading: false));
   }
 
-  List<RefundModel> genList() {
-    List<RefundModel> list = [];
+  List<RemainsModel> genList() {
+    List<RemainsModel> list = [];
     for (int i = 0; i < 3; i++) {
       list.add(
-        RefundModel(
+        RemainsModel(
           name: 'Coca cola',
           imgUrl: imgUrl,
           count: Random.secure().nextInt(10),

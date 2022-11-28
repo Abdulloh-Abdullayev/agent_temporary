@@ -197,7 +197,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
             floatingActionButton:
                 const FloatingDialog().paddingOnly(bottom: 160.w),
           ),
-          // const BottomButtonWidget(),
+         
         ],
       ),
     );

@@ -2,7 +2,7 @@ import 'package:agent/core/bloc/language/language_cubit.dart';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
-import 'package:agent/ui/pages/booking/o_boking_page.dart';
+import 'package:agent/ui/pages/o_booking/o_boking_page.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
@@ -14,6 +14,9 @@ import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
 import 'package:agent/ui/pages/outlets_page/outlets_map_page.dart';
+import 'package:agent/ui/pages/remains_page/pages/remains_edit_page.dart';
+import 'package:agent/ui/pages/remains_page/pages/remains_item_page.dart';
+import 'package:agent/ui/pages/remains_page/remains_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -30,8 +33,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(EquipmentPage.routeName);
-    Modular.setInitialRoute(EquipmentPage.routeName);
+    Modular.setInitialRoute(RemainsPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -79,19 +81,23 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-         ModuleRoute("/", module: HomePageModule()),
+        ModuleRoute("/", module: HomePageModule()),
         ModuleRoute("/", module: LoginPageModule()),
         ModuleRoute("/", module: BalancePageModule()),
         ModuleRoute("/", module: RefundPageModule()),
         ModuleRoute("/", module: OBookingModule()),
         ModuleRoute("/", module: EquipmentModule()),
         ModuleRoute("/", module: AddEquipmentModule()),
-         ModuleRoute("/", module: OutletsMapModule()),
+        ModuleRoute("/", module: OutletsMapModule()),
         ModuleRoute("/", module: LeftMenuModule()),
         ModuleRoute("/", module: CreateAccountModule()),
         ModuleRoute("/", module: OrderPageModule()),
         ModuleRoute("/", module: CustomerDataPageModule()),
         ModuleRoute("/", module: CustomerDataEditingPageModule()),
         ModuleRoute("/", module: DiagnosticsPageModule()),
+        ModuleRoute("/", module: RemainsPageModule()),
+        ModuleRoute("/", module: RemainsItemPageModule()),
+        ModuleRoute("/", module: RemainsEditPageModule()),
+
       ];
 }
