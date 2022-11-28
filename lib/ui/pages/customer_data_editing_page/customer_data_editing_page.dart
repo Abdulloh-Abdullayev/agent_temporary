@@ -116,6 +116,7 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                                           right: 13.w,
                                         ),
                                         child: Cards.cards_7(
+                                          context: context,
                                           name: "name",
                                           nalichi: "nalichi",
                                           nalichiNumber: "20",

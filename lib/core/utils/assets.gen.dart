@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
+// ignore_for_file: directives_ordering,unnecessary_import
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,9 +16,6 @@ class $AssetsColorGen {
 
   /// File path: assets/color/colors.xml
   String get colors => 'assets/color/colors.xml';
-
-  /// List of all assets
-  List<String> get values => [colors];
 }
 
 class $AssetsImagesGen {
@@ -31,9 +28,6 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/market.png
   AssetGenImage get market => const AssetGenImage('assets/images/market.png');
-
-  /// List of all assets
-  List<AssetGenImage> get values => [img1, market];
 }
 
 class $AssetsLangsGen {
@@ -47,9 +41,6 @@ class $AssetsLangsGen {
 
   /// File path: assets/langs/uz-UZ.json
   String get uzUZ => 'assets/langs/uz-UZ.json';
-
-  /// List of all assets
-  List<String> get values => [enEN, ruRU, uzUZ];
 }
 
 class $AssetsImagesIconsGen {
@@ -61,6 +52,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/add.svg
   SvgGenImage get add => const SvgGenImage('assets/images/icons/add.svg');
+
+  /// File path: assets/images/icons/arrow_right.svg
+  SvgGenImage get arrowRight =>
+      const SvgGenImage('assets/images/icons/arrow_right.svg');
 
   /// File path: assets/images/icons/back_button.svg
   SvgGenImage get backButton =>
@@ -279,6 +274,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/plus.svg
   SvgGenImage get plus => const SvgGenImage('assets/images/icons/plus.svg');
 
+  /// File path: assets/images/icons/plus_icon.svg
+  SvgGenImage get plusIcon =>
+      const SvgGenImage('assets/images/icons/plus_icon.svg');
+
   /// File path: assets/images/icons/profile.svg
   SvgGenImage get profile =>
       const SvgGenImage('assets/images/icons/profile.svg');
@@ -347,6 +346,9 @@ class $AssetsImagesIconsGen {
   SvgGenImage get telephoneButton =>
       const SvgGenImage('assets/images/icons/telephone_button.svg');
 
+  /// File path: assets/images/icons/trash.svg
+  SvgGenImage get trash => const SvgGenImage('assets/images/icons/trash.svg');
+
   /// File path: assets/images/icons/trash_can.svg
   SvgGenImage get trashCan =>
       const SvgGenImage('assets/images/icons/trash_can.svg');
@@ -367,93 +369,6 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/zadachi.svg
   SvgGenImage get zadachi =>
       const SvgGenImage('assets/images/icons/zadachi.svg');
-
-  /// List of all assets
-  List<SvgGenImage> get values => [
-        imageIcon,
-        add,
-        backButton,
-        backIcon,
-        box,
-        calendarIcon,
-        calender,
-        card,
-        caretDown,
-        caset,
-        cencelIcon,
-        chat,
-        clock,
-        communication,
-        communicationActive,
-        delete,
-        downIcon,
-        draft,
-        draftActive,
-        edit,
-        edite,
-        editeAlt,
-        exchange,
-        fileUpload,
-        filter,
-        filtrIcon,
-        fotoOtchot,
-        freedge,
-        history,
-        home,
-        homeActive,
-        homeIcon,
-        homeIcon2,
-        infoCircle,
-        interesting,
-        interestingActive,
-        invoise,
-        location,
-        locationActive,
-        locationBuuton,
-        locationIcon,
-        logout,
-        mapArrowIcon,
-        mapIcon,
-        menu,
-        moreButton,
-        note,
-        notification,
-        obmen,
-        otkaz,
-        piceChart,
-        piceChartAlt,
-        pie2Chart,
-        pieChart,
-        pieChartActive,
-        pieIcon,
-        pinButton,
-        pinned,
-        place,
-        placeActive,
-        profile,
-        profileActive,
-        refresh,
-        remove,
-        savedOnes,
-        savedOnesActive,
-        search,
-        search1,
-        searchActive,
-        searchButton,
-        setting,
-        share,
-        shopping,
-        shoppingCart,
-        shoppingCardIcon,
-        stack,
-        telephoneButton,
-        trashCan,
-        user,
-        userTimer,
-        wallet,
-        xIcon,
-        zadachi
-      ];
 }
 
 class Assets {
@@ -522,8 +437,6 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider() => AssetImage(_assetName);
-
   String get path => _assetName;
 
   String get keyName => _assetName;
@@ -576,6 +489,4 @@ class SvgGenImage {
   }
 
   String get path => _assetName;
-
-  String get keyName => _assetName;
 }

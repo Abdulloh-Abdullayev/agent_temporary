@@ -79,7 +79,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage> with TickerProvid
                               builder: (context) {
                                 return PurchaseHistorySheet(
                                   text: 'Фильтр',
-                                  height: 900,
+                                  height: 900, firstDate: '', secondDate: '', firstMoneyStatus: '', secondMoneyStatus: '', dropdownText: [],
                                 );
                               });
                         },
@@ -115,7 +115,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage> with TickerProvid
                   AppTabBar(
                     tabController: tabController,
                     isScrollable: true,
-                    tabTitle: ["Заказы", "Топ"],
+                    tabTitle:const ["Заказы", "Топ"],
                     onTap: (i) {
                       pageController.animateToPage(
                         i,

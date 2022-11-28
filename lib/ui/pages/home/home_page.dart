@@ -2,6 +2,7 @@ import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
+import 'package:agent/ui/pages/all_tasks_page/bloc/all_task_bloc.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
@@ -15,7 +16,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../order_page/order_page.dart';
 
 class HomePageModule extends Module {
   @override
@@ -41,6 +41,10 @@ class HomePageModule extends Module {
     ),
     Bind<LeftMenuBloc>(
           (i) => LeftMenuBloc(),
+      onDispose: (value) => value.close(),
+    ),
+    Bind<AllTaskBloc>(
+          (i) => AllTaskBloc(),
       onDispose: (value) => value.close(),
     ),
 
