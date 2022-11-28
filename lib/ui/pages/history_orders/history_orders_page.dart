@@ -86,21 +86,13 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                                 firstMoneyStatus: '',
                                 secondMoneyStatus: '',
                                 dropdownText: [],
-                                save: (){
-                                  Modular.to.pushNamed(OrderFromWidget.routeName);
+                                save: () {
+                                  Modular.to
+                                      .pushNamed(OrderFromWidget.routeName);
                                 },
                               );
                             },
                           );
-                              enableDrag: false,
-                              context: context,
-                              backgroundColor: Colors.transparent,
-                              builder: (context) {
-                                return PurchaseHistorySheet(
-                                  text: 'Фильтр',
-                                  height: 900, firstDate: '', secondDate: '', firstMoneyStatus: '', secondMoneyStatus: '', dropdownText: [],
-                                );
-                              });
                         },
                         child: Container(
                           height: 28.w,
@@ -134,7 +126,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                   AppTabBar(
                     tabController: tabController,
                     isScrollable: true,
-                    tabTitle:const ["Заказы", "Топ"],
+                    tabTitle: const ["Заказы", "Топ"],
                     onTap: (i) {
                       pageController.animateToPage(
                         i,

@@ -134,6 +134,7 @@ class NextExchangeWidget extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return Cards.cards_7(
                           name: "Coca cola 1.5",
+                          context: context,
                           summa: "Сумма",
                           summaNumber: "100 000",
                           blok: "Блок",

@@ -123,7 +123,7 @@ class ExchangePage extends StatelessWidget {
                           shtRemove: () {},
                           shtAdd: () {},
                           icon: Assets.images.icons.clock
-                              .svg(color: ColorName.button),
+                              .svg(color: ColorName.button), context: context,
                         ).paddingOnly(bottom: 12.w);
                       },
                     ),

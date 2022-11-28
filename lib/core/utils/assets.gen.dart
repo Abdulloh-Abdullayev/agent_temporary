@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
+// ignore_for_file: directives_ordering,unnecessary_import
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,9 +22,6 @@ class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
-
-  /// File path: assets/images/img1.jpg
-  AssetGenImage get img1 => const AssetGenImage('assets/images/img1.jpg');
 
   /// File path: assets/images/market.png
   AssetGenImage get market => const AssetGenImage('assets/images/market.png');
