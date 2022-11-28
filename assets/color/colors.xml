@@ -39,7 +39,6 @@
     <color name="primary_color">#013636</color>
     <color name="background">#DFDFDF</color>
     <color name="main_color">#336666</color>
-
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="red">#FF0000</color>
@@ -62,6 +61,5 @@
     <color name="light_blue">#FAFDFD</color>
     <color name="blue">#DDF0EF</color>
     <color name="input">#FAFDFD</color>
-
     <color name="input">#FAFDFD</color>
 </resources>

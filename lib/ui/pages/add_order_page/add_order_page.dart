@@ -1,8 +1,6 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/models/return_order_model.dart';
-import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/return_from_shelf/bloc/return_order_cubit.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,22 +12,21 @@ import 'bloc/add_order_state.dart';
 import 'widget/app_bar_icon_add_order.dart';
 import 'widget/bottom_buttons_add_order_widget.dart';
 
-
 class AddOrderPageModule extends Module {
   @override
   List<Bind> get binds => [
-    Bind<AddOrderCubit>(
+        Bind<AddOrderCubit>(
           (i) => AddOrderCubit()..load(),
-    ),
-  ];
+        ),
+      ];
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute(
-      AddOrderPage.routeName,
-      child: (context, args) => const AddOrderPage(),
-    ),
-  ];
+        ChildRoute(
+          AddOrderPage.routeName,
+          child: (context, args) => const AddOrderPage(),
+        ),
+      ];
 }
 
 class AddOrderPage extends StatefulWidget {
@@ -39,6 +36,15 @@ class AddOrderPage extends StatefulWidget {
   @override
   State<AddOrderPage> createState() => _AddOrderPageState();
 }
+
+final itemsName = <String>[
+  "Выбрать все",
+  "Напитки",
+  "Печенье",
+  "Шоколад",
+  "Шоколад",
+  "Печенье",
+];
 
 class _AddOrderPageState extends State<AddOrderPage> {
   @override
@@ -72,11 +78,24 @@ class _AddOrderPageState extends State<AddOrderPage> {
                                 }),
                                 Row(
                                   children: [
-                                    AppBarIconAddOrder.searchAddOrderButtonShelf(() {}),
+                                    AppBarIconAddOrder
+                                        .searchAddOrderButtonShelf(() {}),
                                     const SizedBox(
                                       width: 12,
                                     ),
-                                    AppBarIconAddOrder.filterAddOrderButtonShelf(() {}),
+                                    AppBarIconAddOrder
+                                        .filterAddOrderButtonShelf(() {
+                                      showModalBottomSheet(
+                                          backgroundColor: Colors.transparent,
+                                          context: context,
+                                          builder: (context) {
+                                            return OrderReconciliationActSheet(
+                                              onTap: (){},
+                                              text: 'Фильтр',
+                                              itemsName: itemsName,
+                                            );
+                                          });
+                                    }),
                                   ],
                                 )
                               ],
@@ -88,11 +107,11 @@ class _AddOrderPageState extends State<AddOrderPage> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: AppWidgets.textLocale(
-                                  localeKey: "Добавление заказа",
-                                  fontSize: 24.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: ColorName.white,
-                                  isRichText: true)
+                                      localeKey: "Добавление заказа",
+                                      fontSize: 24.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: ColorName.white,
+                                      isRichText: true)
                                   .paddingOnly(top: 18.w, left: 20),
                             )
                           ],
@@ -162,7 +181,8 @@ class ItemAddOrderWidget extends StatelessWidget {
                   child: Cards.cards_7(
                     name: model.name!,
                     summa: "Summa",
-                    summaNumber: (AddOrderCubit.to.summa(model) * 10000).toString(),
+                    summaNumber:
+                        (AddOrderCubit.to.summa(model) * 10000).toString(),
                     blok: "Bloc",
                     blokNumber: model.blog.toString(),
                     sht: "Sht",

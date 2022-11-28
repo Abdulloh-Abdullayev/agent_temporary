@@ -369,7 +369,7 @@ class $AssetsImagesIconsGen {
       const SvgGenImage('assets/images/icons/zadachi.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [
+  List<dynamic> get values => [
         imageIcon,
         add,
         backButton,
@@ -430,8 +430,10 @@ class $AssetsImagesIconsGen {
         pinned,
         place,
         placeActive,
+        plus,
         profile,
         profileActive,
+        qrCode,
         refresh,
         remove,
         savedOnes,
