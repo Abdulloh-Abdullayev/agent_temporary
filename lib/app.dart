@@ -15,7 +15,6 @@ import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
 import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
-import 'package:agent/ui/pages/salary_page/salary_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +22,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'ui/pages/add_order_page/add_order_page.dart';
 import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/debtors_page/widget/deptors_history.dart';
 import 'ui/pages/outlets_page/outlets_map_page.dart';
@@ -37,7 +36,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(HomePage.routeName);
+    Modular.setInitialRoute(AddOrderPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -99,10 +98,10 @@ class AppModule extends Module {
         ModuleRoute("/", module: DebtorsPageModule()),
         ModuleRoute("/", module: RemainStockPageModel()),
         ModuleRoute("/", module: DebtorsHistoryModule()),
-    ModuleRoute("/", module: OrderPageModule()),
-    ModuleRoute("/", module: CustomerDataPageModule()),
-    ModuleRoute("/", module: CustomerDataEditingPageModule()),
-    ModuleRoute("/", module: DiagnosticsPageModule()),
+        ModuleRoute("/", module: OrderPageModule()),
+        ModuleRoute("/", module: CustomerDataPageModule()),
+        ModuleRoute("/", module: CustomerDataEditingPageModule()),
+        ModuleRoute("/", module: DiagnosticsPageModule()),
         ModuleRoute("/", module: RestContainerPageModule()),
         ModuleRoute("/", module: ReturnOrderDatePageModule()),
         ModuleRoute("/", module: ReturnFromShelfModule()),
@@ -117,5 +116,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: DiagnosticsPageModule()),
         ModuleRoute("/", module: HistoryOrdersModule()),
         ModuleRoute("/", module: OrderFromModule()),
+        ModuleRoute("/", module: AddOrderPageModule()),
       ];
 }
