@@ -1,5 +1,6 @@
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/debtors_orders_page/widget/debtors_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -19,6 +20,7 @@ class DebtorsOrdersReportPageModule extends Module {
   ];
 
 }
+var columnTitles = ["Склад", "Дата", "Долг", "Оплачено", "Осталось"];
 
 class DebtorsOrdersReportPage extends StatelessWidget {
   const DebtorsOrdersReportPage({Key? key}) : super(key: key);
@@ -53,7 +55,14 @@ class DebtorsOrdersReportPage extends StatelessWidget {
                     showModalBottomSheet(
                       context: context,
                       backgroundColor: Colors.transparent,
-                      builder: (context) => const ReportsFilterBottomSheet(),
+                      builder: (context) => const OrderReconciliationActSheet(text: 'Фильтр', itemsName: [
+                        "Выбрать все",
+                        "Напитки",
+                        "Печенье",
+                        "Шоколад",
+                        "Шоколад",
+                        "Печенье",
+                      ],),
                     );
                   },
                   icon: Assets.images.icons.filtrIcon,
@@ -74,7 +83,127 @@ class DebtorsOrdersReportPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-
+                    AppWidgets.textLocale(
+                      localeKey: "Запросить историю",
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: ColorName.button,
+                    ).marginSymmetric(vertical: 18),
+                    Container(
+                      width: 1.sw,
+                      margin: EdgeInsets.fromLTRB(20, 0, 20, 50),
+                      decoration: BoxDecoration(
+                        color: ColorName.white,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        children: [
+                          SingleChildScrollView(
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: DataTable(
+                                border: TableBorder.all(color: ColorName.gray, borderRadius: BorderRadius.circular(8)),
+                                headingRowColor: MaterialStateProperty.all<Color>(ColorName.lightBlue),
+                                columnSpacing: 24,
+                                horizontalMargin: 12,
+                                columns: [
+                                  for (var e in columnTitles)
+                                    DebtorsWidget.dataColumn(
+                                      e,
+                                      align: e == columnTitles.last
+                                          ? Alignment.centerRight
+                                          : Alignment.centerLeft,
+                                    ),
+                                ],
+                                rows: [
+                                  for (var e in [
+                                    [
+                                      "Основной склад",
+                                      '21.10.2022',
+                                      "5 000",
+                                      'Оплата на заказ',
+                                      '+100 000 000 UZS',
+                                    ],
+                                    [
+                                      "Основной склад",
+                                      '21.10.2022',
+                                      "5 000",
+                                      'Оплата на заказ',
+                                      '100 000 000 UZS',
+                                    ],
+                                    [
+                                      "Основной склад",
+                                      '21.10.2022',
+                                      "5 000",
+                                      'Оплата на заказ',
+                                      '100 000 000 UZS',
+                                    ],
+                                    [
+                                      "Основной склад",
+                                      '21.10.2022',
+                                      "5 000",
+                                      'Оплата на заказ',
+                                      '100 000 000 UZS',
+                                    ],
+                                    [
+                                      "Основной склад",
+                                      '21.10.2022',
+                                      "5 000",
+                                      'Оплата на заказ',
+                                      '100 000 000 UZS',
+                                    ],
+                                    [
+                                      "Основной склад",
+                                      '21.10.2022',
+                                      "5 000",
+                                      'Оплата на заказ',
+                                      '100 000 000 UZS',
+                                    ],
+                                    [
+                                      "Основной склад",
+                                      '21.10.2022',
+                                      "5 000",
+                                      'Оплата на заказ',
+                                      '100 000 000 UZS',
+                                    ],
+                                    [
+                                      "Основной склад",
+                                      '21.10.2022',
+                                      "5 000",
+                                      'Оплата на заказ',
+                                      '100 000 000 UZS',
+                                    ],
+                                    [
+                                      "Основной склад",
+                                      '21.10.2022',
+                                      "5 000",
+                                      'Оплата на заказ',
+                                      '100 000 000 UZS',
+                                    ],
+                                    [
+                                      'Заказ на сумму',
+                                      '',
+                                      "5 000",
+                                      "",
+                                      '100 000 000 UZS',
+                                    ],
+                                    [
+                                      'Оплата на заказ',
+                                      '',
+                                      "5 000",
+                                      '',
+                                      '+100 000 000 UZS'
+                                    ],
+                                    ['Итоговый долг', '', "5 000", '', '-0'],
+                                  ])
+                                    DebtorsWidget.dataRow(e),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 )
               ],
