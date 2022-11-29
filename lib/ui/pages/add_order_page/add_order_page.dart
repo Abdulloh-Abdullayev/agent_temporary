@@ -14,14 +14,18 @@ import 'widget/bottom_buttons_add_order_widget.dart';
 
 class AddOrderPageModule extends Module {
   @override
-  List<Bind> get binds => [
+  List<Bind> get binds =>
+      [
         Bind<AddOrderCubit>(
-          (i) => AddOrderCubit()..load(),
+              (i) =>
+          AddOrderCubit()
+            ..load(),
         ),
       ];
 
   @override
-  List<ModularRoute> get routes => [
+  List<ModularRoute> get routes =>
+      [
         ChildRoute(
           AddOrderPage.routeName,
           child: (context, args) => const AddOrderPage(),
@@ -90,7 +94,7 @@ class _AddOrderPageState extends State<AddOrderPage> {
                                           context: context,
                                           builder: (context) {
                                             return OrderReconciliationActSheet(
-                                              onTap: (){},
+                                              onTap: () {},
                                               text: 'Фильтр',
                                               itemsName: itemsName,
                                             );
@@ -107,11 +111,11 @@ class _AddOrderPageState extends State<AddOrderPage> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: AppWidgets.textLocale(
-                                      localeKey: "Добавление заказа",
-                                      fontSize: 24.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: ColorName.white,
-                                      isRichText: true)
+                                  localeKey: "Добавление заказа",
+                                  fontSize: 24.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: ColorName.white,
+                                  isRichText: true)
                                   .paddingOnly(top: 18.w, left: 20),
                             )
                           ],
@@ -160,11 +164,11 @@ class ItemAddOrderWidget extends StatelessWidget {
         ExpansionTile(
           collapsedTextColor: ColorName.black,
           title: AppWidgets.textLocale(
-              localeKey: returnOrderModel.name!,
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w600,
-              color: ColorName.black,
-              isRichText: true),
+            localeKey: returnOrderModel.name!,
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w600,
+            color: ColorName.black,
+            isRichText: true,),
           children: [
             ListView.builder(
               shrinkWrap: true,
@@ -179,10 +183,11 @@ class ItemAddOrderWidget extends StatelessWidget {
                     right: 13.w,
                   ),
                   child: Cards.cards_7(
+                    context: context,
                     name: model.name!,
                     summa: "Summa",
                     summaNumber:
-                        (AddOrderCubit.to.summa(model) * 10000).toString(),
+                    (AddOrderCubit.to.summa(model) * 10000).toString(),
                     blok: "Bloc",
                     blokNumber: model.blog.toString(),
                     sht: "Sht",
