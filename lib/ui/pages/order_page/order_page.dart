@@ -4,12 +4,14 @@ import 'package:agent/ui/pages/order_page/order_page_widget/floating_dialog_widg
 import 'package:agent/ui/pages/order_page/order_page_widget/market_image_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/pages/order_page/pages/photo_report_page.dart';
-import 'package:agent/ui/pages/order_page/pages/tabbar_exchange_page.dart';
 import 'package:agent/ui/pages/order_page/pages/tabbar_order_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'order_page_widget/bottom_button_widget.dart';
+import 'order_page_widget/order_tabbar_widget.dart';
 
 class OrderPageModule extends Module {
   @override
@@ -25,29 +27,37 @@ class OrderPage extends StatefulWidget {
   const OrderPage({Key? key}) : super(key: key);
   static const String routeName = "/orderPage";
 
+  static int tabChange = 0;
+
   @override
   State<OrderPage> createState() => _OrderPageState();
 }
 
 class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
-  late TabController tabController;
-
-  @override
-  void initState() {
-    tabController = TabController(length: 3, vsync: this);
-    super.initState();
-  }
+  late TabController _controller;
 
   @override
   void dispose() {
-    tabController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
   @override
+  void initState() {
+    _controller = TabController(length: 3, vsync: this);
+    _controller.addListener(_handleTabSelection);
+    super.initState();
+  }
+
+  void _handleTabSelection() {
+    if (_controller.indexIsChanging) {
+      setState(() {});
+    }
+  }
+  @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
@@ -68,11 +78,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            AppBarIcon.backButton(
-                              () {
-                                Modular.to.pop();
-                              },
-                            ),
+                            AppBarIcon.backButton(() {}),
                             Row(
                               children: [
                                 AppBarIcon.telephoneButton(() {}),
@@ -157,9 +163,10 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                           ],
                         ).paddingSymmetric(horizontal: 20),
                       ),
+
                       Container(
                         decoration: const BoxDecoration(
-                          color: ColorName.white,
+                          color: Colors.white,
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(8),
                             topLeft: Radius.circular(8),
@@ -167,68 +174,42 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                         ),
                         child: Column(
                           children: [
-                            TabBar(
-                              tabs: [
-                                Tab(
-                                  child: AppWidgets.textLocale(
-                                      localeKey: "Заказы",
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14.sp,
-                                      color: ColorName.button,
-                                      isRichText: true),
-                                ),
-                                Tab(
-                                  child: AppWidgets.textLocale(
-                                      localeKey: "Фото отчёт",
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14.sp,
-                                      color: ColorName.button,
-                                      isRichText: true),
-                                ),
-                                Tab(
-                                  child: AppWidgets.textLocale(
-                                      localeKey: "Обмен товара",
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14.sp,
-                                      color: ColorName.button,
-                                      isRichText: true),
-                                ),
-                              ],
-                              controller: tabController,
-                              indicatorWeight: 3,
-                              indicatorPadding:
-                                  const EdgeInsets.symmetric(horizontal: 7),
-                              indicatorColor: ColorName.button,
-                            ).paddingOnly(left: 20.w),
-                            SizedBox(
-                              height: 800,
-                              child: TabBarView(
-                                controller: tabController,
-                                children: const [
-                                  TabbarOrderPage(),
-                                  PhotoReportPage(),
-                                  TabbarExchangePage(),
-                                ],
-                              ),
-                            )
+                            OrderTabbarWidget(
+                                _controller,
+                                "Заказы", "Фото отчёт","Возврат",
+                                    (int i) {
+                                  if (i == 0) {
+                                  } else if (i == 1) {
+                                  } else {}
+                                }).paddingOnly(right: MediaQuery.of(context).size.width*0.2,),
+                            Container(
+                              child: [
+                                const TabbarOrderPage(),
+                                const PhotoReportPage(),
+                                Container()
+                              ][_controller.index],
+                            ),
                           ],
-                        ).paddingOnly(bottom: 70),
-                      ),
+                        ),
+                      ).paddingOnly(bottom: 20),
                     ],
-                  ),
-                  const MarketImage(image: "assets/images/market.png")
-                      .paddingOnly(
-                    top: 70.w,
-                    // left: 40.w,
+                  ).paddingOnly(bottom: 60.w),
+                  Positioned(
+                      top: 70.w,
+                      right: 0,
+                      left: 0,
+                      child: MarketImage(image: "assets/images/market.png")
                   ),
                 ],
               ),
             ),
-            floatingActionButton: const FloatingDialog().paddingOnly(bottom: 160.w),
+            floatingActionButton:
+            const FloatingDialog().paddingOnly(bottom: 160.w),
           ),
-         
+          const BottomButtonWidget(),
         ],
       ),
     );
   }
+
 }

@@ -1,17 +1,16 @@
-import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/utils/colors.gen.dart';
 
-class DiagnosticTabBarWidget extends StatelessWidget {
-  DiagnosticTabBarWidget(
-    this._controller,
-    this.title1,
-    this.title2,
-    this.title3,
-    this.function,
-  );
+class OrderTabbarWidget extends StatelessWidget {
+  OrderTabbarWidget(
+      this._controller,
+      this.title1,
+      this.title2,
+      this.title3,
+      this.function,
+      );
 
   static int index = 0;
   final TabController _controller;
@@ -28,26 +27,18 @@ class DiagnosticTabBarWidget extends StatelessWidget {
         DefaultTabController(
           initialIndex: 0,
           length: 3,
-          child: Container(
+          child: SizedBox(
             height: 46.w,
-            decoration: BoxDecoration(
-                color: ColorName.white,
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(
-                  width: 1,
-                  color: ColorName.gray,
-                )),
             child: TabBar(
               controller: _controller,
-              unselectedLabelColor: ColorName.gray2,
-              labelColor: ColorName.white,
+              unselectedLabelColor: ColorName.button,
+              labelColor: ColorName.button,
               onTap: (i) {
                 function(i);
               },
-              indicator: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: ColorName.button,
-              ),
+              indicatorColor: ColorName.button,
+              indicatorWeight: 3,
+              indicatorSize: TabBarIndicatorSize.label,
               tabs: [
                 Tab(
                   child: Text(
@@ -55,8 +46,7 @@ class DiagnosticTabBarWidget extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 14.sp,
-                        overflow: TextOverflow.ellipsis,
-                        fontFamily: "Gilroy"),
+                       ),
                   ),
                 ),
                 Tab(
@@ -65,22 +55,20 @@ class DiagnosticTabBarWidget extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 14.sp,
-                        overflow: TextOverflow.ellipsis,
-                        fontFamily: "Gilroy"),
+                    ),
                   ),
                 ),
                 Tab(
                   child: Text(
                     title3,
                     style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
-                        overflow: TextOverflow.ellipsis,
-                        fontFamily: "Gilroy"),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14.sp,
+                    ),
                   ),
                 ),
               ],
-            ).paddingAll(3),
+            )
           ),
         ),
       ],

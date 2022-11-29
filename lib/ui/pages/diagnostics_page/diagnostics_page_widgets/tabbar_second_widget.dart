@@ -89,9 +89,9 @@ class TabbarSecondWidget extends StatelessWidget {
             ],
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 50),
-          child: Divider(),
+         Padding(
+          padding: EdgeInsets.only(top: 52.w),
+          child: const Divider(color: ColorName.gray2,),
         ),
         MarkWidget(
           text: "Факт",
@@ -99,9 +99,9 @@ class TabbarSecondWidget extends StatelessWidget {
           pleft: 125,
           width: 76.w,
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 106),
-          child: Divider(),
+         Padding(
+          padding: EdgeInsets.only(top: 112.w),
+          child: const Divider(color: ColorName.gray2,),
         ),
       ],
     );

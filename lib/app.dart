@@ -10,27 +10,16 @@ import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
-import 'package:agent/ui/pages/equipment_page/equipment_page.dart';
-import 'package:agent/ui/pages/equipment_page/pages/add_equipment_page.dart';
-import 'package:agent/ui/pages/exchange/exchange_page.dart';
-import 'package:agent/ui/pages/exchange/widget/edit_exchange_widget.dart';
-import 'package:agent/ui/pages/exchange/widget/next_exchange_widget.dart';
 import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
 import 'package:agent/ui/pages/history_orders/widgets/order_from_widget.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
-import 'package:agent/ui/pages/map_page/custom_map.dart';
-import 'package:agent/ui/pages/o_booking/o_boking_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
-import 'package:agent/ui/pages/remains_page/pages/remains_edit_page.dart';
-import 'package:agent/ui/pages/remains_page/pages/remains_item_page.dart';
-import 'package:agent/ui/pages/remains_page/remains_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
 import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
 import 'package:agent/ui/pages/salary_page/salary_page.dart';
-import 'package:agent/ui/pages/visits_page/visits_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -109,9 +98,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: LoginPageModule()),
         ModuleRoute("/", module: BalancePageModule()),
         ModuleRoute("/", module: RefundPageModule()),
-        ModuleRoute("/", module: OBookingModule()),
-        ModuleRoute("/", module: EquipmentModule()),
-        ModuleRoute("/", module: AddEquipmentModule()),
         ModuleRoute("/", module: OutletsMapModule()),
         ModuleRoute("/", module: LeftMenuModule()),
         ModuleRoute("/", module: CreateAccountModule()),
@@ -122,10 +108,10 @@ class AppModule extends Module {
         ModuleRoute("/", module: DebtorsPageModule()),
         ModuleRoute("/", module: RemainStockPageModel()),
         ModuleRoute("/", module: DebtorsHistoryModule()),
-        ModuleRoute("/", module: OrderPageModule()),
-        ModuleRoute("/", module: CustomerDataPageModule()),
-        ModuleRoute("/", module: CustomerDataEditingPageModule()),
-        ModuleRoute("/", module: DiagnosticsPageModule()),
+    ModuleRoute("/", module: OrderPageModule()),
+    ModuleRoute("/", module: CustomerDataPageModule()),
+    ModuleRoute("/", module: CustomerDataEditingPageModule()),
+    ModuleRoute("/", module: DiagnosticsPageModule()),
         ModuleRoute("/", module: RestContainerPageModule()),
         ModuleRoute("/", module: ReturnOrderDatePageModule()),
         ModuleRoute("/", module: ReturnFromShelfModule()),
@@ -140,23 +126,5 @@ class AppModule extends Module {
         ModuleRoute("/", module: DiagnosticsPageModule()),
         ModuleRoute("/", module: HistoryOrdersModule()),
         ModuleRoute("/", module: OrderFromModule()),
-        ModuleRoute("/", module: OrderPageModule()),
-        ModuleRoute("/", module: CustomerDataPageModule()),
-        ModuleRoute("/", module: CustomerDataEditingPageModule()),
-        ModuleRoute("/", module: DiagnosticsPageModule()),
-        ModuleRoute("/", module: HistoryOrdersModule()),
-        ModuleRoute("/", module: OrderFromModule()),
-        ModuleRoute("/", module: ExchangeModule()),
-        ModuleRoute("/", module: ExchangeWidgetModule()),
-        ModuleRoute("/", module: SalaryPageModule()),
-        ModuleRoute("/", module: EditExchangeWidgetModule()),
-        ModuleRoute("/", module: VisitsPageModule()),
-        ModuleRoute("/", module: ActReconciliationPageModule()),
-        ModuleRoute("/", module: ActReconciliationOderPageModule()),
-        ModuleRoute("/", module: CustomMapPageModule()),
-        ModuleRoute("/", module: RemainsPageModule()),
-        ModuleRoute("/", module: RemainsItemPageModule()),
-        ModuleRoute("/", module: RemainsEditPageModule()),
-
       ];
 }
