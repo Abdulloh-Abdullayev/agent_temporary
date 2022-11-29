@@ -4,6 +4,8 @@ import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
+import 'package:agent/ui/pages/all_tasks_page/all_tasks_page.dart';
+import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
@@ -118,8 +120,8 @@ class LeftMenuPage extends StatelessWidget {
                                   duration: const Duration(milliseconds: 500),
                                   turns: state.hideShow ? 0.5 : 1,
                                   child: Assets.images.icons.downIcon.svg(
-                                    width: 14.w,
-                                    height: 8.w,
+                                    // width: 14.w,
+                                    // height: 8.w,
                                     color: ColorName.white,
                                   ),
                                 ),
@@ -234,7 +236,9 @@ class LeftMenuPage extends StatelessWidget {
           icon: Assets.images.icons.locationIcon.svg(),
         ),
         DrawerItem(
-          onTap: () {},
+          onTap: () {
+            Modular.to.pushNamed(AllTasksPage.routeName);
+          },
           text: "Задачи",
           icon: Assets.images.icons.pinned.svg(),
         ),

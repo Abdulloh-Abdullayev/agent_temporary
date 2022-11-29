@@ -85,6 +85,7 @@ class TabbarOrderPage extends StatelessWidget {
                 return Container(
                     margin: EdgeInsets.only(bottom: 11.w),
                     child: Cards.cards_2(
+                      context: context,
                       name: "name",
                       time: "17:02",
                       icon: PopupMenuTools(
@@ -163,7 +164,6 @@ class TabbarOrderPage extends StatelessWidget {
                       summa: "summa",
                       summaNumber: "150 000 000",
                       dostavlen: '',
-                      context: context,
                     ));
               },
             )

@@ -107,7 +107,7 @@ class FloatingDialogReturn extends StatelessWidget {
                               enableDrag: false,
                               builder: (context) {
                                 return AddingAnOrderSheet(
-                                  submitOnTapButton: (){
+                                  submitOnTapButton:  (){
                                     Modular.to.pushNamed(ReturnOrderDatePage.routeName);
                                   },
                                   quitOnTapButton: (){
@@ -179,7 +179,7 @@ class FloatingDialogReturn extends StatelessWidget {
                       "Обмен",
                       "Остатки",
                     ],
-                    cencelButton:  (){
+                    cencelButton: (){
                       Modular.to.pop(context);
                     },
                   ),

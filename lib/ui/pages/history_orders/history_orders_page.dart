@@ -86,8 +86,9 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                                 firstMoneyStatus: '',
                                 secondMoneyStatus: '',
                                 dropdownText: [],
-                                save: (){
-                                  Modular.to.pushNamed(OrderFromWidget.routeName);
+                                save: () {
+                                  Modular.to
+                                      .pushNamed(OrderFromWidget.routeName);
                                 },
                               );
                             },
@@ -125,7 +126,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                   AppTabBar(
                     tabController: tabController,
                     isScrollable: true,
-                    tabTitle: ["Заказы", "Топ"],
+                    tabTitle: const ["Заказы", "Топ"],
                     onTap: (i) {
                       pageController.animateToPage(
                         i,

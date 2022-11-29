@@ -69,6 +69,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get arrowDown =>
       const SvgGenImage('assets/images/icons/arrow_down.svg');
 
+  /// File path: assets/images/icons/arrow_right.svg
+  SvgGenImage get arrowRight =>
+      const SvgGenImage('assets/images/icons/arrow_right.svg');
+
   /// File path: assets/images/icons/back_arrow.svg
   SvgGenImage get backArrow =>
       const SvgGenImage('assets/images/icons/back_arrow.svg');
@@ -357,6 +361,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/plus.svg
   SvgGenImage get plus => const SvgGenImage('assets/images/icons/plus.svg');
+
+  /// File path: assets/images/icons/plus_icon.svg
+  SvgGenImage get plusIcon =>
+      const SvgGenImage('assets/images/icons/plus_icon.svg');
 
   /// File path: assets/images/icons/popupmenu.svg
   SvgGenImage get popupmenu =>
