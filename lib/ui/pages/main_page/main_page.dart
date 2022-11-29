@@ -64,7 +64,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
               AppBarMain(
                 text: 'Главная',
                 menuTab: () {
-                  HomePage.globalKey.currentState!.openDrawer();
+                   HomePage.globalKey.currentState!.openDrawer();
                 },
                 locationTab: (){
                   Modular.to.pushNamed(ReturnFromShelf.routeName);

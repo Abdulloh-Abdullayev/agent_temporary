@@ -18,7 +18,6 @@ import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
-import 'package:agent/ui/pages/map_page/custom_map.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
 import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
@@ -50,7 +49,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(DraftPage.routeName);
+    Modular.setInitialRoute(HomePage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -112,10 +111,10 @@ class AppModule extends Module {
         ModuleRoute("/", module: DebtorsPageModule()),
         ModuleRoute("/", module: RemainStockPageModel()),
         ModuleRoute("/", module: DebtorsHistoryModule()),
-        ModuleRoute("/", module: OrderPageModule()),
-        ModuleRoute("/", module: CustomerDataPageModule()),
-        ModuleRoute("/", module: CustomerDataEditingPageModule()),
-        ModuleRoute("/", module: DiagnosticsPageModule()),
+    ModuleRoute("/", module: OrderPageModule()),
+    ModuleRoute("/", module: CustomerDataPageModule()),
+    ModuleRoute("/", module: CustomerDataEditingPageModule()),
+    ModuleRoute("/", module: DiagnosticsPageModule()),
         ModuleRoute("/", module: RestContainerPageModule()),
         ModuleRoute("/", module: ReturnOrderDatePageModule()),
         ModuleRoute("/", module: ReturnFromShelfModule()),
@@ -143,7 +142,7 @@ class AppModule extends Module {
         ModuleRoute("/", module: VisitsPageModule()),
         ModuleRoute("/", module: ActReconciliationPageModule()),
         ModuleRoute("/", module: ActReconciliationOderPageModule()),
-        ModuleRoute("/", module: CustomMapPageModule()),
+        // ModuleRoute("/", module: CustomMapPageModule()),
         ModuleRoute("/", module: DraftPageModule()),
       ];
 }

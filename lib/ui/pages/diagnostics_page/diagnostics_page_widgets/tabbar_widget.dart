@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/utils/colors.gen.dart';
 
-class TabBarWidget extends StatelessWidget {
-  TabBarWidget(
+class DiagnosticTabBarWidget extends StatelessWidget {
+  DiagnosticTabBarWidget(
     this._controller,
     this.title1,
     this.title2,

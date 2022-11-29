@@ -67,6 +67,7 @@ class _ItemRefundWidgetState extends State<ItemRefundWidget> {
             itemBuilder: (context, index) {
               var model = widget.model.list![index];
               return Cards.cards_9(
+                context: context,
                 name: model.name ?? '',
                 sht: "Шт",
                 shtNumber: "${model.count}",
@@ -76,7 +77,7 @@ class _ItemRefundWidgetState extends State<ItemRefundWidget> {
                 },
                 shtAdd: () {
                   RefundCubit.to.increment(widget.index, index);
-                }, context: context,
+                },
               ).paddingOnly(top: 12.w);
             },
           ),

@@ -163,6 +163,7 @@ class ItemOrderWidget extends StatelessWidget {
                     right: 13.w,
                   ),
                   child: Cards.cards_8(
+                    context: context,
                     name: model.name!,
                     summa: "Summa",
                     summaNumber: (ReturnOrderCubit.to.summa(model) * 10000)
@@ -189,7 +190,6 @@ class ItemOrderWidget extends StatelessWidget {
                           .incrementSht(returnOrderModel.id!, model.id!);
                     },
                     icon: Assets.images.icons.clock.svg(),
-                    context: context,
                   ),
                 );
               },

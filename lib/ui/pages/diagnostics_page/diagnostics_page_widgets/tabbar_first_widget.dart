@@ -106,9 +106,9 @@ class TabbarFirstWidget extends StatelessWidget {
             ),
           ],
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 50),
-          child: Divider(),
+         Padding(
+          padding: EdgeInsets.only(top: 52.w),
+          child: const Divider(color: ColorName.gray2,),
         ),
         MarkWidget(
           text: "Факт",
@@ -116,9 +116,9 @@ class TabbarFirstWidget extends StatelessWidget {
           pleft: 120,
           width: 76.w,
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 105),
-          child: Divider(),
+         Padding(
+          padding: EdgeInsets.only(top: 110.w),
+          child: const Divider(color: ColorName.gray2,),
         ),
         MarkWidget(
           text: "Прогноз",
