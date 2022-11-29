@@ -181,26 +181,6 @@ class _TableDioState extends State<TableDio>{
                 ),
               ],
             ),
-
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     const Icon(Icons.keyboard_arrow_left,color: ColorName.black,),
-            //     ScrollIndicator(
-            //       scrollController: scrollController,
-            //       width: 100.w,
-            //       height: 8.w,
-            //       indicatorWidth: 120.w,
-            //       decoration: BoxDecoration(
-            //           borderRadius: BorderRadius.circular(8),
-            //           color: ColorName.gray),
-            //       indicatorDecoration: BoxDecoration(
-            //           color: ColorName.button,
-            //           borderRadius: BorderRadius.circular(8)),
-            //     ).marginSymmetric(horizontal: 8.w),
-            //     const Icon(Icons.keyboard_arrow_right,color: ColorName.black,)
-            //   ],
-            // ).paddingOnly(top: 23.w,),
           ],
         ),
       );
