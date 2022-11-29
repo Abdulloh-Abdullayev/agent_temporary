@@ -68,8 +68,8 @@ class AppBarIconReturn{
            case 1:return  Modular.to.pushNamed(BalancePage.routeName);
            case 3:return  Modular.to.pushNamed(EquipmentPage.routeName);
            case 4:return  Modular.to.pushNamed(ActReconciliationPage.routeName);
-           case 3:return  Modular.to.pushNamed(ActReconciliationOderPage.routeName);
-           case 3:return  Modular.to.pushNamed(RestContainerPage.routeName);
+           case 5:return  Modular.to.pushNamed(ActReconciliationOderPage.routeName);
+           case 6:return  Modular.to.pushNamed(RestContainerPage.routeName);
          }
         },
           textName: [
