@@ -140,7 +140,7 @@ class ExchangePage extends StatelessWidget {
             bottom: 0,
             child: Container(
               width: 1.sw,
-              decoration:const BoxDecoration(
+              decoration: const BoxDecoration(
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, -4),
@@ -156,9 +156,7 @@ class ExchangePage extends StatelessWidget {
                   AppWidgets.appButton(
                     width: 150,
                     title: "Черновик",
-                    onTap: () {
-
-                    },
+                    onTap: () {},
                     color: ColorName.gray,
                     textColor: ColorName.mainColor,
                   ),
@@ -167,7 +165,6 @@ class ExchangePage extends StatelessWidget {
                     title: "Продолжить",
                     onTap: () {
                       Modular.to.pushNamed(NextExchangeWidget.routeName);
-
                     },
                   ),
                 ],

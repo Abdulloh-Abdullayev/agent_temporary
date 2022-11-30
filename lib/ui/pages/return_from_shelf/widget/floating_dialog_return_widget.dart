@@ -22,7 +22,7 @@ class FloatingDialogReturn extends StatelessWidget {
 
   final List<Widget> icons = [
     Assets.images.icons.stack.svg(),
-    Assets.images.icons.shoppingCart .svg(),
+    Assets.images.icons.shoppingCardIcon .svg(),
     Assets.images.icons.box.svg(),
   ];
   @override
@@ -86,7 +86,7 @@ class FloatingDialogReturn extends StatelessWidget {
                         child: SizedBox(
                           height: 17,
                           width: 17,
-                          child: Assets.images.icons.otkaz.svg(
+                          child: Assets.images.icons.infoCircle.svg(
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -107,7 +107,7 @@ class FloatingDialogReturn extends StatelessWidget {
                               enableDrag: false,
                               builder: (context) {
                                 return AddingAnOrderSheet(
-                                  submitOnTapButton: (){
+                                  submitOnTapButton:  (){
                                     Modular.to.pushNamed(ReturnOrderDatePage.routeName);
                                   },
                                   quitOnTapButton: (){
@@ -179,7 +179,7 @@ class FloatingDialogReturn extends StatelessWidget {
                       "Обмен",
                       "Остатки",
                     ],
-                    cencelButton:  (){
+                    cencelButton: (){
                       Modular.to.pop(context);
                     },
                   ),

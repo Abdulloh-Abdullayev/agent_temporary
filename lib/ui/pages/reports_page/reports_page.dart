@@ -35,7 +35,7 @@ class ReportsPage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    HomePage.globalKey.currentState!.openDrawer();
+                     HomePage.globalKey.currentState!.openDrawer();
                   },
                   child: Assets.images.icons.menu.svg(),
                 ),
@@ -47,7 +47,7 @@ class ReportsPage extends StatelessWidget {
                       builder: (context) => const ReportsFilterBottomSheet(),
                     );
                   },
-                  icon: Assets.images.icons.filtrIcon,
+                  icon: Assets.images.icons.filter,
                 )
               ],
             ).paddingAll(5),

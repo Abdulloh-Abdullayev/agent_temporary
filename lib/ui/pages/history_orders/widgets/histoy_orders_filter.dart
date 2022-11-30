@@ -33,7 +33,7 @@ class _HistoryOrdersBottomSheetState extends State<HistoryOrdersBottomSheet> {
               Assets.images.icons.downIcon.svg(
                 color: ColorName.gray2,
               ),
-              Assets.images.icons.xIcon.svg(
+              Assets.images.icons.remove.svg(
                 color: ColorName.gray2,
               )
             ],

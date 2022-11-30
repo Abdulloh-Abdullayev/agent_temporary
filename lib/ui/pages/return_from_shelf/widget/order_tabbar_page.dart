@@ -87,86 +87,166 @@ class OrderTabBarPage extends StatelessWidget {
                   return Container(
                       margin: EdgeInsets.only(bottom: 11.w),
                       child: Cards.cards_2(
-                        name: "name",
-                        time: "time",
-                        icon: PopupMenuTools(
-                          onTap: (p0) {
-                            if (p0 == 1) {
-                              showDialog(
-                                context: context,
-                                builder: (ctx) => const AlertDialog(
-                                  content: CommitTextField(
-                                    text: "Добавление комментарии",
+                          context: context,
+                          name: "name",
+                          time: "time",
+                          icon: PopupMenuTools(
+                            onTap: (p0) {
+                              if (p0 == 1) {
+                                showDialog(
+                                  context: context,
+                                  builder: (ctx) => const AlertDialog(
+                                    content: CommitTextField(
+                                      text: "Добавление комментарии",
+                                    ),
                                   ),
-                                ),
-                              );
-                            } else if (p0 == 2) {
-                              showDialog(
-                                context: context,
-                                builder: (ctx) => Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: DateTimeDialog(
-                                      title: "Добавить дату отгрузки",
-                                      closeTitle: "Закрыть",
-                                      addTitle: "Добавить",
-                                      addTap: () {}),
-                                ),
-                              );
-                            } else if (p0 == 3) {
-                              showDialog(
-                                context: context,
-                                builder: (ctx) => Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: DateTimeDialog(
-                                      title: "Добавить консигнация",
-                                      closeTitle: "Закрыть",
-                                      addTitle: "Добавить",
-                                      addTap: () {}),
-                                ),
-                              );
-                            }
-                          },
-                          textName: const [
-                            "Редактрировать",
-                            "Комментария к заказу",
-                            "Дата отгрузки",
-                            "Срок Консигнация",
-                            "Закрепить фото",
-                            'Отменить',
-                          ],
-                          icons: [
-                            Assets.images.icons.editeAlt.svg(
-                                fit: BoxFit.cover, color: ColorName.button),
-                            Assets.images.icons.chat
-                                .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                            Assets.images.icons.calender
-                                .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                            Assets.images.icons.clock
-                                .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                            Assets.images.icons.fileUpload
-                                .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                            const SizedBox.shrink(),
-                          ],
-                          textColor: const [
-                            ColorName.button,
-                            ColorName.black,
-                            ColorName.black,
-                            ColorName.black,
-                            ColorName.black,
-                            ColorName.red,
-                          ],
-                        ),
-                        nalichniy: "nalichniy",
-                        bezbonus: "bezbonus",
-                        dostavlen: "dostavlen",
-                        obem: "obem",
-                        obemNumber: "15",
-                        soni: "soni",
-                        soniNumber: "15",
-                        summa: "summa",
-                        summaNumber: "1000000",
-                        context: context,
-                      ));
+                                );
+                              } else if (p0 == 2) {
+                                showDialog(
+                                  context: context,
+                                  builder: (ctx) => Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: DateTimeDialog(
+                                        title: "Добавить дату отгрузки",
+                                        closeTitle: "Закрыть",
+                                        addTitle: "Добавить",
+                                        addTap: () {}),
+                                  ),
+                                );
+                              } else if (p0 == 3) {
+                                showDialog(
+                                  context: context,
+                                  builder: (ctx) => Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: DateTimeDialog(
+                                        title: "Добавить консигнация",
+                                        closeTitle: "Закрыть",
+                                        addTitle: "Добавить",
+                                        addTap: () {}),
+                                  ),
+                                );
+                              }
+                            },
+                            textName: const [
+                              "Редактрировать",
+                              "Комментария к заказу",
+                              "Дата отгрузки",
+                              "Срок Консигнация",
+                              "Закрепить фото",
+                              'Отменить',
+                            ],
+                            icons: [
+                              Assets.images.icons.editeAlt.svg(
+                                  fit: BoxFit.cover, color: ColorName.button),
+                              Assets.images.icons.chat.svg(
+                                  fit: BoxFit.cover, color: ColorName.gray2),
+                              Assets.images.icons.calender.svg(
+                                  fit: BoxFit.cover, color: ColorName.gray2),
+                              Assets.images.icons.clock.svg(
+                                  fit: BoxFit.cover, color: ColorName.gray2),
+                              Assets.images.icons.fileUpload.svg(
+                                  fit: BoxFit.cover, color: ColorName.gray2),
+                              const SizedBox.shrink(),
+                            ],
+                            textColor: const [
+                              ColorName.button,
+                              ColorName.black,
+                              ColorName.black,
+                              ColorName.black,
+                              ColorName.black,
+                              ColorName.red,
+                            ],
+                          ),
+                          nalichniy: "nalichniy",
+                          bezbonus: "bezbonus",
+                          dostavlen: "dostavlen",
+                          obem: "obem",
+                          obemNumber: "15",
+                          soni: "soni",
+                          soniNumber: "15",
+                          summa: "summa",
+                          summaNumber: "1000000"));
+                      // child: Cards.cards_2(
+                      //   name: "name",
+                      //   time: "time",
+                      //   icon: PopupMenuTools(
+                      //     onTap: (p0) {
+                      //       if (p0 == 1) {
+                      //         showDialog(
+                      //           context: context,
+                      //           builder: (ctx) => const AlertDialog(
+                      //             content: CommitTextField(
+                      //               text: "Добавление комментарии",
+                      //             ),
+                      //           ),
+                      //         );
+                      //       } else if (p0 == 2) {
+                      //         showDialog(
+                      //           context: context,
+                      //           builder: (ctx) => Padding(
+                      //             padding: const EdgeInsets.all(4.0),
+                      //             child: DateTimeDialog(
+                      //                 title: "Добавить дату отгрузки",
+                      //                 closeTitle: "Закрыть",
+                      //                 addTitle: "Добавить",
+                      //                 addTap: () {}),
+                      //           ),
+                      //         );
+                      //       } else if (p0 == 3) {
+                      //         showDialog(
+                      //           context: context,
+                      //           builder: (ctx) => Padding(
+                      //             padding: const EdgeInsets.all(4.0),
+                      //             child: DateTimeDialog(
+                      //                 title: "Добавить консигнация",
+                      //                 closeTitle: "Закрыть",
+                      //                 addTitle: "Добавить",
+                      //                 addTap: () {}),
+                      //           ),
+                      //         );
+                      //       }
+                      //     },
+                      //     textName: const [
+                      //       "Редактрировать",
+                      //       "Комментария к заказу",
+                      //       "Дата отгрузки",
+                      //       "Срок Консигнация",
+                      //       "Закрепить фото",
+                      //       'Отменить',
+                      //     ],
+                      //     icons: [
+                      //       Assets.images.icons.editeAlt.svg(
+                      //           fit: BoxFit.cover, color: ColorName.button),
+                      //       Assets.images.icons.chat
+                      //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                      //       Assets.images.icons.calender
+                      //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                      //       Assets.images.icons.clock
+                      //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                      //       Assets.images.icons.fileUpload
+                      //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                      //       const SizedBox.shrink(),
+                      //     ],
+                      //     textColor: const [
+                      //       ColorName.button,
+                      //       ColorName.black,
+                      //       ColorName.black,
+                      //       ColorName.black,
+                      //       ColorName.black,
+                      //       ColorName.red,
+                      //     ],
+                      //   ),
+                      //   nalichniy: "nalichniy",
+                      //   bezbonus: "bezbonus",
+                      //   dostavlen: "dostavlen",
+                      //   obem: "obem",
+                      //   obemNumber: "15",
+                      //   soni: "soni",
+                      //   soniNumber: "15",
+                      //   summa: "summa",
+                      //   summaNumber: "1000000",
+                      //   context: context,
+                      // );
                 },
               )
             ],

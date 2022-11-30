@@ -74,7 +74,7 @@ class FloatingDialog extends StatelessWidget {
                         child: SizedBox(
                           height: 17,
                           width: 17,
-                          child: Assets.images.icons.otkaz.svg(
+                          child: Assets.images.icons.infoCircle.svg(
                             fit: BoxFit.cover,
                           ),
                         ),

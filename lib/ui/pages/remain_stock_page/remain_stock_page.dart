@@ -79,7 +79,7 @@ class _RemainStockPageState extends State<RemainStockPage> with TickerProviderSt
                       ),
                       AppWidgets.iconButton(
                         onPressed: () {},
-                        icon: Assets.images.icons.searchActive,
+                        icon: Assets.images.icons.search,
                       ),
                     ],
                   ),

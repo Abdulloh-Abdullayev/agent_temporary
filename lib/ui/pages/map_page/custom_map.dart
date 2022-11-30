@@ -260,7 +260,7 @@ class _CustomMapState extends State<CustomMap> {
                                   onTap: () {},
                                   borderRadius: BorderRadius.circular(12),
                                   splashColor: Colors.black.withOpacity(.5),
-                                  child: Assets.images.icons.xIcon.svg(
+                                  child: Assets.images.icons.remove.svg(
                                     color: Colors.black,
                                   ),
                                 ),

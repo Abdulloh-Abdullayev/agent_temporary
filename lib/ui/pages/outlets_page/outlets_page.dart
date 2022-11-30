@@ -47,7 +47,7 @@ class OutletsPage extends StatelessWidget {
                   itemCount: 10,
                   itemBuilder: (context, index) => GestureDetector(
                     onTap: () {
-                      Modular.to.pushNamed(OutletsMapPage.routeName);
+                      // Modular.to.pushNamed(OutletsMapPage.routeName);
                     },
                     child: Cards.cards_11(
                       name: "name",
@@ -97,7 +97,7 @@ class OutletsPage extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  HomePage.globalKey.currentState!.openDrawer();
+                   HomePage.globalKey.currentState!.openDrawer();
                 },
                 child: Assets.images.icons.menu.svg(),
               ),
@@ -106,11 +106,11 @@ class OutletsPage extends StatelessWidget {
                 children: [
                   AppWidgets.iconButton(
                     onPressed: () {},
-                    icon: Assets.images.icons.searchActive,
+                    icon: Assets.images.icons.search,
                   ),
                   AppWidgets.iconButton(
                     onPressed: () {},
-                    icon: Assets.images.icons.mapIcon,
+                    icon: Assets.images.icons.mapLocation,
                   ).paddingOnly(left: 12.w),
                 ],
               )

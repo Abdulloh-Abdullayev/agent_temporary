@@ -16,7 +16,7 @@ class VisitWidgets {
         height: 107.h,
         width: 1.sw,
         decoration: BoxDecoration(
-          color: ColorName.primary,
+          color: ColorName.primaryColor,
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(12),
           ),
@@ -37,7 +37,7 @@ class VisitWidgets {
                   children: [
                     AppWidgets.buttonBuilder(
                       backColor: ColorName.buttonBackColor,
-                      child: Assets.images.icons.searchActive.svg(),
+                      child: Assets.images.icons.search.svg(),
                       padding: EdgeInsets.all(5),
                       onTap: () => ontap("1"),
                     ),
