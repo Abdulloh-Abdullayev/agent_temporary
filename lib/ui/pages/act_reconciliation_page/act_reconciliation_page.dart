@@ -72,10 +72,32 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                   ),
                   child: Column(
                     children: [
-                      ActWidget.customDataTableTabs(myTabsList),
+                      ActWidget.customDataTableTabs(
+                        list: myTabsList,
+                        alins: List<Alignment>.generate(
+                          myTabsList.length,
+                          (i) => myTabsList.last == myTabsList[i]
+                              ? Alignment.centerRight
+                              : Alignment.centerLeft,
+                        ),
+                        itemOnTap: (p0) {
+                          print(p0);
+                        },
+                      ),
                       Expanded(
                         child: SingleChildScrollView(
-                          child: ActWidget.customDataTable(myList),
+                          child: ActWidget.customDataTable(
+                            list: myList,
+                            alins: List<List<Alignment>>.generate(
+                              myList.length,
+                              (i) => List<Alignment>.generate(
+                                myList[i].length,
+                                (j) => myList[i].length - 1 == j
+                                    ? Alignment.centerRight
+                                    : Alignment.centerLeft,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ],
@@ -96,7 +118,7 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
   ];
   static List<List<String>> myList = [
     ['21.10.2022', 'Оплата на заказ', '+100 000 000 UZS'],
-    ['21.10.2022', 'Оплата на заказ', '++100 000 000 UZS'],
+    ['21.10.2022', 'Оплата ', '++100 000 000 UZS'],
     ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
     ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
     ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
@@ -108,4 +130,5 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
     ['Оплата на заказ', "", '+100 000 000 UZS'],
     ['Итоговый долг', "", '-0']
   ];
+  
 }

@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart' as myIcon;
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -119,53 +122,108 @@ class ActWidget {
     required String name,
     int flex = 1,
     Alignment alignment = Alignment.center,
+    bool isSpace = false,
   }) {
     return Expanded(
       flex: flex,
-      child: Container(
-        alignment: alignment,
-        child: AppWidgets.text(
-          text: name,
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w400,
-          color: colors[findColor(name)],
-        ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Container(
+              alignment: alignment,
+              // color: Colors.primaries[Random().nextInt(10)],
+              child: AppWidgets.text(
+                text: name,
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w400,
+                color: colors[findColor(name)],
+              ),
+            ),
+          ),
+          isSpace
+              ? Container(
+                  height: 10,
+                  width: 12,
+                  color: Colors.black,
+                )
+              : SizedBox.shrink()
+        ],
       ),
     );
   }
 
-  static Widget customDataTableTabs(List<String> list) {
-    return Row(
+  static Widget customDataTableTabs(
+      {required List<String> list,
+      List<Alignment>? alins,
+      required Function(String) itemOnTap}) {
+    if (alins != null) {
+      if (list.length != alins.length)
+        throw ("list.length != alins.length should be equal");
+    }
+    return Column(
       children: [
-        for (var e in list)
-          Expanded(
-            flex: e == list.last ? 4 : 2,
-            child: Column(
-              children: [
-                Align(
-                  alignment: e == list.last
-                      ? Alignment.centerRight
-                      : Alignment.centerLeft,
-                  child: AppWidgets.text(
-                    text: e,
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w400,
-                    color: ColorName.gray2,
+        Row(
+          children: [
+            for (var i = 0; i < list.length; i++)
+              Expanded(
+                flex: list[i] == list.last ? 3 : 2,
+                child: GestureDetector(
+                  onTap: () => itemOnTap(list[i]),
+                  dragStartBehavior: DragStartBehavior.down,
+                  child: Container(
+                    alignment: Alignment.center,
+                    color: Colors.transparent,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            // color: Colors.primaries[Random().nextInt(10)],
+                            child: Align(
+                              alignment: alins != null
+                                  ? alins[i]
+                                  : list[i] == list.last
+                                      ? Alignment.centerRight
+                                      : list[i] == list.first
+                                          ? Alignment.centerLeft
+                                          : Alignment.center,
+                              child: AppWidgets.text(
+                                text: list[i],
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400,
+                                color: ColorName.gray2,
+                              ),
+                            ),
+                          ),
+                        ),
+                        list[i] == list.last
+                            ? SizedBox.shrink()
+                            : Container(
+                                height: 10,
+                                width: 12,
+                                color: Colors.black,
+                              )
+                      ],
+                    ).marginSymmetric(vertical: 12),
                   ),
-                ).marginSymmetric(vertical: 12, horizontal: 12),
-                Container(
-                  height: 1,
-                  width: double.infinity,
-                  color: Colors.grey,
-                )
-              ],
-            ),
-          ),
+                ),
+              ),
+          ],
+        ).marginSymmetric(horizontal: 12),
+        Container(
+          height: 1,
+          width: double.infinity,
+          color: Colors.grey,
+        )
       ],
     );
   }
 
-  static Widget customDataTable(List<List<String>> list) {
+  static Widget customDataTable(
+      {required List<List<String>> list, List<List<Alignment>>? alins}) {
+    if (alins != null) {
+      if (list.length != alins.length)
+        throw ("list.length != alins.length should be equal");
+    }
     return Column(
       children: [
         for (var i = 0; i < list.length; i++)
@@ -181,10 +239,15 @@ class ActWidget {
                           : list[i][j].isEmpty
                               ? 1
                               : 2,
-                      alignment: list[i][j] == list[i].last
-                          ? Alignment.centerRight
-                          : Alignment.centerLeft,
-                    )
+                      alignment: alins != null
+                          ? alins[i][j]
+                          : list[i][j] == list[i].last
+                              ? Alignment.centerRight
+                              : list[i][j] == list[i].first
+                                  ? Alignment.centerLeft
+                                  : Alignment.center,
+                      isSpace: list[i][j] != list[i].last,
+                    ),
                 ],
               ).marginSymmetric(vertical: 12, horizontal: 12),
               !(i > list.length - 4)
@@ -201,6 +264,9 @@ class ActWidget {
   }
 
   static int findColor(String text) {
+    if (text == "-") {
+      return 2;
+    }
     if (text.contains("-")) {
       return 3;
     } else if (text.contains("+")) {

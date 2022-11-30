@@ -86,13 +86,16 @@ class _actReconciliationOderPageState extends State<actReconciliationOderPage> {
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Container(
-                      width: 1.sw + (1.sw / 2),
+                      width: 1.sw + (1.sw / tabsList.length * 2),
                       child: Column(
                         children: [
-                          ActWidget.customDataTableTabs(tabsList),
+                          ActWidget.customDataTableTabs(
+                            list: tabsList,
+                            itemOnTap: (p0) {},
+                          ),
                           Expanded(
                             child: SingleChildScrollView(
-                              child: ActWidget.customDataTable(childlist),
+                              child: ActWidget.customDataTable(list: childlist),
                             ),
                           ),
                         ],
@@ -117,7 +120,7 @@ class _actReconciliationOderPageState extends State<actReconciliationOderPage> {
   ];
   static List<List<String>> childlist = [
     [
-      "Основной склад",
+      "Основной Долг Долг",
       '21.10.2022',
       "5 000",
       '+50 000',
@@ -176,10 +179,10 @@ class _actReconciliationOderPageState extends State<actReconciliationOderPage> {
       "Основной склад",
       '21.10.2022',
       "5 000",
-      '+50 000',
+      '-',
       '100 000 000 UZS',
     ],
-    ['Оплата на заказ', '', "", '', '100 000 000 UZS'],
+    ['Оплата на за', '', "", '', '100 000 000 UZS'],
     ['Оплата на заказ', '', "", '', '+100 000 000 UZS'],
     ['Итоговый долг', '', "", '', '-0'],
   ];
