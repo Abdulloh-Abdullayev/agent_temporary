@@ -101,13 +101,6 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/box1.svg
   SvgGenImage get box1 => const SvgGenImage('assets/images/icons/box1.svg');
 
-  /// File path: assets/images/icons/box2.svg
-  SvgGenImage get box2 => const SvgGenImage('assets/images/icons/box2.svg');
-
-  /// File path: assets/images/icons/calendar.svg
-  SvgGenImage get calendar =>
-      const SvgGenImage('assets/images/icons/calendar.svg');
-
   /// File path: assets/images/icons/calendar_icon.svg
   SvgGenImage get calendarIcon =>
       const SvgGenImage('assets/images/icons/calendar_icon.svg');
@@ -116,15 +109,9 @@ class $AssetsImagesIconsGen {
   SvgGenImage get calender =>
       const SvgGenImage('assets/images/icons/calender.svg');
 
-  /// File path: assets/images/icons/card.svg
-  SvgGenImage get card => const SvgGenImage('assets/images/icons/card.svg');
-
   /// File path: assets/images/icons/caret_down.svg
   SvgGenImage get caretDown =>
       const SvgGenImage('assets/images/icons/caret_down.svg');
-
-  /// File path: assets/images/icons/caset.svg
-  SvgGenImage get caset => const SvgGenImage('assets/images/icons/caset.svg');
 
   /// File path: assets/images/icons/cash.svg
   SvgGenImage get cash => const SvgGenImage('assets/images/icons/cash.svg');
@@ -159,9 +146,6 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/delete.svg
   SvgGenImage get delete => const SvgGenImage('assets/images/icons/delete.svg');
 
-  /// File path: assets/images/icons/down.svg
-  SvgGenImage get down => const SvgGenImage('assets/images/icons/down.svg');
-
   /// File path: assets/images/icons/down_icon.svg
   SvgGenImage get downIcon =>
       const SvgGenImage('assets/images/icons/down_icon.svg');
@@ -194,10 +178,6 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/filter.svg
   SvgGenImage get filter => const SvgGenImage('assets/images/icons/filter.svg');
 
-  /// File path: assets/images/icons/filtr_icon.svg
-  SvgGenImage get filtrIcon =>
-      const SvgGenImage('assets/images/icons/filtr_icon.svg');
-
   /// File path: assets/images/icons/foto_otchot.svg
   SvgGenImage get fotoOtchot =>
       const SvgGenImage('assets/images/icons/foto_otchot.svg');
@@ -228,22 +208,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/human.svg
   SvgGenImage get human => const SvgGenImage('assets/images/icons/human.svg');
 
-  /// File path: assets/images/icons/infoCircle.svg
+  /// File path: assets/images/icons/info_circle.svg
   SvgGenImage get infoCircle =>
-      const SvgGenImage('assets/images/icons/infoCircle.svg');
-
-
-  /// File path: assets/images/icons/interesting.svg
-  SvgGenImage get interesting =>
-      const SvgGenImage('assets/images/icons/interesting.svg');
-
-  /// File path: assets/images/icons/interesting_active.svg
-  SvgGenImage get interestingActive =>
-      const SvgGenImage('assets/images/icons/interesting_active.svg');
-
-  /// File path: assets/images/icons/invoice.svg
-  SvgGenImage get invoice =>
-      const SvgGenImage('assets/images/icons/invoice.svg');
+      const SvgGenImage('assets/images/icons/info_circle.svg');
 
   /// File path: assets/images/icons/invoise.svg
   SvgGenImage get invoise =>
@@ -279,10 +246,6 @@ class $AssetsImagesIconsGen {
   SvgGenImage get mapArrowIcon =>
       const SvgGenImage('assets/images/icons/map_arrow_icon.svg');
 
-  /// File path: assets/images/icons/map_icon.svg
-  SvgGenImage get mapIcon =>
-      const SvgGenImage('assets/images/icons/map_icon.svg');
-
   /// File path: assets/images/icons/map_location.svg
   SvgGenImage get mapLocation =>
       const SvgGenImage('assets/images/icons/map_location.svg');
@@ -307,9 +270,6 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/obmen.svg
   SvgGenImage get obmen => const SvgGenImage('assets/images/icons/obmen.svg');
 
-  /// File path: assets/images/icons/otkaz.svg
-  SvgGenImage get otkaz => const SvgGenImage('assets/images/icons/otkaz.svg');
-
   /// File path: assets/images/icons/pice_chart.svg
   SvgGenImage get piceChart =>
       const SvgGenImage('assets/images/icons/pice_chart.svg');
@@ -333,14 +293,6 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/pie_icon.svg
   SvgGenImage get pieIcon =>
       const SvgGenImage('assets/images/icons/pie_icon.svg');
-
-  /// File path: assets/images/icons/piechart1.svg
-  SvgGenImage get piechart1 =>
-      const SvgGenImage('assets/images/icons/piechart1.svg');
-
-  /// File path: assets/images/icons/piechart2.svg
-  SvgGenImage get piechart2 =>
-      const SvgGenImage('assets/images/icons/piechart2.svg');
 
   /// File path: assets/images/icons/pin.svg
   SvgGenImage get pin => const SvgGenImage('assets/images/icons/pin.svg');
@@ -407,10 +359,6 @@ class $AssetsImagesIconsGen {
   SvgGenImage get search1 =>
       const SvgGenImage('assets/images/icons/search1.svg');
 
-  /// File path: assets/images/icons/search_active.svg
-  SvgGenImage get searchActive =>
-      const SvgGenImage('assets/images/icons/search_active.svg');
-
   /// File path: assets/images/icons/search_button.svg
   SvgGenImage get searchButton =>
       const SvgGenImage('assets/images/icons/search_button.svg');
@@ -428,10 +376,6 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/shopping.svg
   SvgGenImage get shopping =>
       const SvgGenImage('assets/images/icons/shopping.svg');
-
-  /// File path: assets/images/icons/shoppingCart.svg
-  SvgGenImage get shoppingCart =>
-      const SvgGenImage('assets/images/icons/shoppingCart.svg');
 
   /// File path: assets/images/icons/shopping_card_icon.svg
   SvgGenImage get shoppingCardIcon =>
@@ -472,9 +416,6 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/wallet.svg
   SvgGenImage get wallet => const SvgGenImage('assets/images/icons/wallet.svg');
-
-  /// File path: assets/images/icons/x_icon.svg
-  SvgGenImage get xIcon => const SvgGenImage('assets/images/icons/x_icon.svg');
 
   /// File path: assets/images/icons/zadachi.svg
   SvgGenImage get zadachi =>

@@ -106,11 +106,11 @@ class OutletsPage extends StatelessWidget {
                 children: [
                   AppWidgets.iconButton(
                     onPressed: () {},
-                    icon: Assets.images.icons.searchActive,
+                    icon: Assets.images.icons.search,
                   ),
                   AppWidgets.iconButton(
                     onPressed: () {},
-                    icon: Assets.images.icons.mapIcon,
+                    icon: Assets.images.icons.mapLocation,
                   ).paddingOnly(left: 12.w),
                 ],
               )

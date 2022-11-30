@@ -47,7 +47,7 @@ class ReportsPage extends StatelessWidget {
                       builder: (context) => const ReportsFilterBottomSheet(),
                     );
                   },
-                  icon: Assets.images.icons.filtrIcon,
+                  icon: Assets.images.icons.filter,
                 )
               ],
             ).paddingAll(5),

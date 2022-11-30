@@ -122,7 +122,7 @@ class FilterBottomSheet extends StatelessWidget {
             autofocus: false,
             child: Container(
               padding: EdgeInsets.only(top: 20.w, right: 29.w),
-              child: Assets.images.icons.xIcon.svg(
+              child: Assets.images.icons.remove.svg(
                 fit: BoxFit.cover,
               ),
             ),

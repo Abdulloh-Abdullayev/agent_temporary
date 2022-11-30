@@ -153,7 +153,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
           },
-          child: Assets.images.icons.xIcon.svg(),
+          child: Assets.images.icons.remove.svg(),
         ),
       ],
     ).paddingSymmetric(horizontal: 23.w, vertical: 10.w);

@@ -159,7 +159,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           AppInputTextField(
                             height: 44.h,
                             controller: productionDateController,
-                            prefix: Assets.images.icons.calendar
+                            prefix: Assets.images.icons.calender
                                 .svg(
                                   color: ColorName.gray2,
                                   width: 16,
@@ -252,7 +252,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                                 ),
                               );
                             },
-                            prefix: Assets.images.icons.calendar
+                            prefix: Assets.images.icons.calender
                                 .svg(
                                   color: ColorName.gray2,
                                   width: 16,

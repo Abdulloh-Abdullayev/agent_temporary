@@ -207,7 +207,7 @@ class LeftMenuPage extends StatelessWidget {
             Modular.to.pushNamed(OrderPage.routeName);
           },
           text: "Заказы",
-          icon: Assets.images.icons.card.svg(),
+          icon: Assets.images.icons.shoppingCardIcon.svg(),
         ),
         DrawerItem(
           onTap: () {

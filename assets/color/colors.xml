@@ -46,6 +46,7 @@
     <color name="primary_color">#013636</color>
     <color name="background">#DFDFDF</color>
     <color name="main_color">#336666</color>
+  <color name="button_back-color">#1A4A4A</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>

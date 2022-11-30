@@ -40,7 +40,7 @@ class FloatingShowDialog extends StatelessWidget {
             Assets.images.icons.refresh.svg(),
             Assets.images.icons.exchange.svg(),
             Assets.images.icons.box1.svg(),
-            Assets.images.icons.box2.svg(),
+            Assets.images.icons.box1.svg(),
           ],
           textName:const [
             "Планы",
