@@ -2,10 +2,6 @@ import 'package:agent/core/bloc/language/language_cubit.dart';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
-import 'package:agent/ui/pages/act_reconciliation_oder_page/act_reconciliation_oder_page.dart';
-import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
-import 'package:agent/ui/pages/all_tasks_page/all_tasks_page.dart';
-import 'package:agent/ui/pages/all_tasks_page/widgets/clicked_item.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
@@ -45,7 +41,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(HomePage.routeName);
+    Modular.setInitialRoute(OrderPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]
     );
     return BlocBuilder<LanguageCubit, Locale>(

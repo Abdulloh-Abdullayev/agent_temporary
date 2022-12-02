@@ -16,6 +16,7 @@ class FilterBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height * 0.7,
       decoration: const BoxDecoration(
           color: ColorName.white,
           borderRadius: BorderRadius.only(
@@ -25,99 +26,79 @@ class FilterBottomSheet extends StatelessWidget {
       child: Stack(
         alignment: Alignment.topRight,
         children: [
-          SingleChildScrollView(
-            child: Column(
-              children: [
-
-                InkWell(
-                  autofocus: false,
-                  child: Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.only(top: 26.w),
-                    child: Assets.images.icons.downIcon.svg(
-                      fit: BoxFit.cover,
-                    ),
+          Column(
+            children: [
+              InkWell(
+                autofocus: false,
+                child: Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.only(top: 26.w),
+                  child: Assets.images.icons.downIcon.svg(
+                    fit: BoxFit.cover,
                   ),
-                  onTap: () {
-                    Modular.to.pop(context);
-                  },
                 ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AppWidgets.textLocale(
+                onTap: () {
+                  Modular.to.pop(context);
+                },
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  AppWidgets.textLocale(
                       localeKey: "Фильтр",
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w600,
                       color: ColorName.black,
-                      isRichText: true
-                    ),
-
-                    AppWidgets.textLocale(
-                        localeKey: "Сброс фильтра",
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w600,
-                        color: ColorName.red,
-                        isRichText: true
-                    )
-                  ],
-                ).paddingOnly(top: 28.w),
-
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: AppWidgets.textLocale(
-                      localeKey: "Напитки",
+                      isRichText: true),
+                  AppWidgets.textLocale(
+                      localeKey: "Сброс фильтра",
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
-                      color: ColorName.black,
-                      isRichText: true
-                  ).paddingOnly(top: 24.w,bottom: 17.w),
+                      color: ColorName.red,
+                      isRichText: true)
+                ],
+              ).paddingOnly(top: 28.w),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: AppWidgets.textLocale(
+                                localeKey: "Напитки",
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w600,
+                                color: ColorName.black,
+                                isRichText: true)
+                            .paddingOnly(top: 24.w, bottom: 17.w),
+                      ),
+                      listview_widget(
+                        ChekBoxWidget(
+                          text: "Lorem Ipsum",
+                        ),
+                        5,
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: AppWidgets.textLocale(
+                                localeKey: "Напитки",
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w600,
+                                color: ColorName.black,
+                                isRichText: true)
+                            .paddingOnly(top: 24.w, bottom: 17.w),
+                      ),
+                      listview_widget(
+                          ChekBoxWidget(
+                            text: "Lorem Ipsum",
+                          ),
+                          5),
+                    ],
+                  ),
                 ),
-
-                listview_widget(const ChekBoxWidget(), 5),
-
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: AppWidgets.textLocale(
-                      localeKey: "Напитки",
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ColorName.black,
-                      isRichText: true
-                  ).paddingOnly(top: 24.w,bottom: 17.w),
-                ),
-
-                listview_widget(const ChekBoxWidget(), 5),
-
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: AppWidgets.textLocale(
-                      localeKey: "Напитки",
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ColorName.black,
-                      isRichText: true
-                  ).paddingOnly(top: 24.w,bottom: 17.w),
-                ),
-
-                listview_widget(const ChekBoxWidget(), 5),
-
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: AppWidgets.textLocale(
-                      localeKey: "Напитки",
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ColorName.black,
-                      isRichText: true
-                  ).paddingOnly(top: 24.w,bottom: 17.w),
-                ),
-
-                listview_widget(const ChekBoxWidget(), 5),
-              ],
-            ).paddingSymmetric(horizontal: 20.w),
-          ),
+              )
+            ],
+          ).paddingSymmetric(horizontal: 20.w),
           InkWell(
             autofocus: false,
             child: Container(

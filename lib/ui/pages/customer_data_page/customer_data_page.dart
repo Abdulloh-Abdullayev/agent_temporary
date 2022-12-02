@@ -5,6 +5,8 @@ import 'package:agent/ui/pages/customer_data_page/customer_page_widgets/app_titl
 import 'package:agent/ui/pages/customer_data_page/customer_page_widgets/customer_row_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,6 +39,7 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
   void initState() {
     scrolController = ScrollController();
     scrolController.addListener(scrollListener);
+    appTitle = SizedBox();
     super.initState();
   }
 
@@ -80,9 +83,13 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                           child: PageView.builder(
                             itemCount: 10,
                             itemBuilder: (context, index) {
-                              return Image.network(
-                                "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000",
-                                fit: BoxFit.cover,
+                              return CachedNetworkImage(
+                              fit: BoxFit.cover,
+                              imageUrl: "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000",
+                              placeholder: (context, url) =>
+                              const CupertinoActivityIndicator(),
+                              errorWidget: (context, url, error) =>
+                              const Icon(Icons.person),
                               );
                             },
                           ),

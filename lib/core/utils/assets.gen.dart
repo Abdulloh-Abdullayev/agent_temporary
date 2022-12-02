@@ -338,6 +338,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get refresh =>
       const SvgGenImage('assets/images/icons/refresh.svg');
 
+  /// File path: assets/images/icons/refresh_icon.svg
+  SvgGenImage get refreshIcon =>
+      const SvgGenImage('assets/images/icons/refresh_icon.svg');
+
   /// File path: assets/images/icons/remove.svg
   SvgGenImage get remove => const SvgGenImage('assets/images/icons/remove.svg');
 

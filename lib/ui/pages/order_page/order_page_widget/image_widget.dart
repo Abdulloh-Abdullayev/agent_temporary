@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,9 +25,13 @@ class ImageWidget extends StatelessWidget {
           child: SizedBox(
             height: 104.w,
             width: 104.w,
-            child: Image.network(
-              image,
+            child: CachedNetworkImage(
               fit: BoxFit.cover,
+              imageUrl: image,
+              placeholder: (context, url) =>
+              const CupertinoActivityIndicator(),
+              errorWidget: (context, url, error) =>
+              const Icon(Icons.person),
             ),
           ),
         ),
