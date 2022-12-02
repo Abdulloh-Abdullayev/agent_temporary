@@ -132,6 +132,7 @@ class SelectCategoryWidget extends StatelessWidget {
                 textSize: 14.sp,
                 textColor: ColorName.white,
                 onPressed: () {
+                  Modular.to.pop();
                   showModalBottomSheet(
                       backgroundColor: Colors.transparent,
                       enableDrag: true,
