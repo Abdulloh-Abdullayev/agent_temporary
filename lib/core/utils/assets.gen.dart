@@ -109,6 +109,9 @@ class $AssetsImagesIconsGen {
   SvgGenImage get calender =>
       const SvgGenImage('assets/images/icons/calender.svg');
 
+  /// File path: assets/images/icons/card.svg
+  SvgGenImage get card => const SvgGenImage('assets/images/icons/card.svg');
+
   /// File path: assets/images/icons/caret_down.svg
   SvgGenImage get caretDown =>
       const SvgGenImage('assets/images/icons/caret_down.svg');
@@ -376,6 +379,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/share.svg
   SvgGenImage get share => const SvgGenImage('assets/images/icons/share.svg');
+
+  /// File path: assets/images/icons/shop_menu.svg
+  SvgGenImage get shopMenu =>
+      const SvgGenImage('assets/images/icons/shop_menu.svg');
 
   /// File path: assets/images/icons/shopping.svg
   SvgGenImage get shopping =>

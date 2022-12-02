@@ -58,6 +58,7 @@ class OutletsPage extends StatelessWidget {
                       persent: "60-80",
                       summa: "2000",
                       cp: "cp",
+                      card_onTap: () {},
                     ).paddingOnly(top: 12.w),
                   ),
                 ),
@@ -97,7 +98,7 @@ class OutletsPage extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                   HomePage.globalKey.currentState!.openDrawer();
+                  HomePage.globalKey.currentState!.openDrawer();
                 },
                 child: Assets.images.icons.menu.svg(),
               ),

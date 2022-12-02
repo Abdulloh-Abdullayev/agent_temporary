@@ -20,11 +20,19 @@ class ClickedItemModule extends Module {
           child: (context, args) => ClickedItem(),
         ),
       ];
+
+  @override
+  List<Bind> get binds => [
+        Bind<AllTaskBloc>(
+          (i) => AllTaskBloc(),
+          onDispose: (value) => value.close(),
+        ),
+      ];
 }
 
 class ClickedItem extends StatelessWidget {
   ClickedItem({Key? key}) : super(key: key);
-  static const String routeName = '/clicked-item';
+  static const String routeName = '/clickedItem';
   var bloc = AllTaskBloc.to;
 
   @override
@@ -100,6 +108,8 @@ class ClickedItem extends StatelessWidget {
                       finishTime: "Дата Выполнение",
                       startDate: "12.10.2022",
                       finishDate: "12.10.2022",
+                      context: context,
+                      card_onTap: () {},
                     ).paddingSymmetric(
                       horizontal: 20.w,
                       vertical: 18.w,
@@ -110,6 +120,7 @@ class ClickedItem extends StatelessWidget {
                           "Кола 3 блок,Фанта 3 блок, динай 3 блок, Nestle 3 блок, Qibray 3 блок",
                       foto: "Фото",
                       image: "image",
+                      card_onTap: () {},
                     ).paddingSymmetric(horizontal: 20.w),
                   ],
                 ),

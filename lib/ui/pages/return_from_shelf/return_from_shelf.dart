@@ -1,5 +1,6 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/add_order_page/add_order_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/widget/about_return_widget.dart';
 import 'package:agent/ui/pages/return_from_shelf/widget/app_bar_icon_return.dart';
 import 'package:agent/ui/pages/return_from_shelf/widget/debt_widget.dart';
@@ -28,11 +29,13 @@ class ReturnFromShelf extends StatefulWidget {
   const ReturnFromShelf({Key? key}) : super(key: key);
   static const String routeName = "/returnFromShelf";
   static int tabChange = 0;
+
   @override
   State<ReturnFromShelf> createState() => _ReturnFromShelfState();
 }
 
-class _ReturnFromShelfState extends State<ReturnFromShelf> with TickerProviderStateMixin {
+class _ReturnFromShelfState extends State<ReturnFromShelf>
+    with TickerProviderStateMixin {
   late TabController _controller;
 
   @override
@@ -61,146 +64,145 @@ class _ReturnFromShelfState extends State<ReturnFromShelf> with TickerProviderSt
       child: Stack(
         children: [
           Scaffold(
-            body:
-                SingleChildScrollView(
-                  child: Stack(
+            body: SingleChildScrollView(
+              child: Stack(
+                children: [
+                  Column(
                     children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(12),
+                              bottomLeft: Radius.circular(12),
+                            ),
+                            color: ColorName.primaryColor),
+                        height: 133.h,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppBarIconReturn.backButtonShelf(() {}),
+                            AppBarIconReturn.menuButtonShelf(),
+                          ],
+                        ).paddingSymmetric(horizontal: 20.w),
+                      ),
                       Column(
                         children: [
                           Container(
                             decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(12),
-                                  bottomLeft: Radius.circular(12),
-                                ),
-                                color: ColorName.primaryColor),
-                            height: 133.h,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              color: ColorName.white,
+                              borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(12),
+                                bottomRight: Radius.circular(12),
+                              ),
+                            ),
+                            child: Column(
                               children: [
-                                AppBarIconReturn.backButtonShelf(() {}),
-                                AppBarIconReturn.menuButtonShelf(),
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: AppWidgets.textLocale(
+                                      localeKey: "Osiyo Market",
+                                      fontSize: 24.sp,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600,
+                                      isRichText: true),
+                                ).paddingOnly(top: 50.w),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    AppWidgets.textLocale(
+                                        localeKey: "Supermarket",
+                                        fontSize: 12.sp,
+                                        color: ColorName.gray2,
+                                        fontWeight: FontWeight.w400,
+                                        isRichText: true),
+                                    AppWidgets.textLocale(
+                                        localeKey: "Визиты:  Пн, Ср, Сб",
+                                        fontSize: 12.sp,
+                                        color: ColorName.gray2,
+                                        fontWeight: FontWeight.w400,
+                                        isRichText: true),
+                                  ],
+                                ).paddingOnly(top: 12.w),
+                                Row(
+                                  children: [
+                                    AppWidgets.textLocale(
+                                        localeKey: "Teritoriya  : ",
+                                        fontSize: 12.sp,
+                                        color: ColorName.gray2,
+                                        fontWeight: FontWeight.w400,
+                                        isRichText: true),
+                                    AppWidgets.textLocale(
+                                        localeKey: "Yunusobod rayoni",
+                                        fontSize: 12.sp,
+                                        color: ColorName.black,
+                                        fontWeight: FontWeight.w600,
+                                        isRichText: true),
+                                  ],
+                                ).paddingOnly(top: 12.w, bottom: 18.w),
                               ],
-                            ).paddingSymmetric(horizontal: 20.w),
+                            ).paddingSymmetric(horizontal: 20),
                           ),
-                          Column(
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                decoration: const BoxDecoration(
-                                  color: ColorName.white,
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(12),
-                                    bottomRight: Radius.circular(12),
-                                  ),
-                                ),
-                                child: Column(
-                                  children: [
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: AppWidgets.textLocale(
-                                          localeKey: "Osiyo Market",
-                                          fontSize: 24.sp,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w600,
-                                          isRichText: true),
-                                    ).paddingOnly(top: 50.w),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        AppWidgets.textLocale(
-                                            localeKey: "Supermarket",
-                                            fontSize: 12.sp,
-                                            color: ColorName.gray2,
-                                            fontWeight: FontWeight.w400,
-                                            isRichText: true),
-                                        AppWidgets.textLocale(
-                                            localeKey: "Визиты:  Пн, Ср, Сб",
-                                            fontSize: 12.sp,
-                                            color: ColorName.gray2,
-                                            fontWeight: FontWeight.w400,
-                                            isRichText: true),
-                                      ],
-                                    ).paddingOnly(top: 12.w),
-                                    Row(
-                                      children: [
-                                        AppWidgets.textLocale(
-                                            localeKey: "Teritoriya  : ",
-                                            fontSize: 12.sp,
-                                            color: ColorName.gray2,
-                                            fontWeight: FontWeight.w400,
-                                            isRichText: true),
-                                        AppWidgets.textLocale(
-                                            localeKey: "Yunusobod rayoni",
-                                            fontSize: 12.sp,
-                                            color: ColorName.black,
-                                            fontWeight: FontWeight.w600,
-                                            isRichText: true),
-                                      ],
-                                    ).paddingOnly(top: 12.w, bottom: 18.w),
-                                  ],
-                                ).paddingSymmetric(horizontal: 20),
+                              DebtWidget(
+                                money: 0,
+                                title: 'Задолженности',
+                                width: 163.w,
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  DebtWidget(
-                                    money: 0,
-                                    title: 'Задолженности',
-                                    width: 163.w,
-                                  ),
-                                  PercentWidget(
-                                    width: 163.w,
-                                    forecast: 60,
-                                    fact: 60,
-                                  ),
-                                ],
-                              ).paddingSymmetric(
-                                horizontal: 20.w,
-                                vertical: 12.w,
-                              ),
-                              Container(
-                                decoration: const BoxDecoration(
-                                  color: ColorName.white,
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(8),
-                                    topLeft: Radius.circular(8),
-                                  ),
-                                ),
-                                child: Column(
-                                  children: [
-                                    ReturnFromShelfTabBarWidget(
-                                        _controller,
-                                        "Заказы", "Фото отчёт","Возврат",
-                                            (int i) {
-                                          if (i == 0) {
-                                          } else if (i == 1) {
-                                          } else {}
-                                        }).paddingOnly(right: MediaQuery.of(context).size.width*0.16,),
-                                    Container(
-                                      child: [
-                                        OrderTabBarPage(),
-                                        PhotoInfoPage(),
-                                        AboutReturnWidget()
-                                      ][_controller.index],
-                                    ),
-                                  ],
-                                ),
+                              PercentWidget(
+                                width: 163.w,
+                                forecast: 60,
+                                fact: 60,
                               ),
                             ],
-                          )
+                          ).paddingSymmetric(
+                            horizontal: 20.w,
+                            vertical: 12.w,
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                              color: ColorName.white,
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(8),
+                                topLeft: Radius.circular(8),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                ReturnFromShelfTabBarWidget(_controller,
+                                    "Заказы", "Фото отчёт", "Возврат", (int i) {
+                                  if (i == 0) {
+                                  } else if (i == 1) {
+                                  } else {}
+                                }).paddingOnly(
+                                  right:
+                                      MediaQuery.of(context).size.width * 0.16,
+                                ),
+                                Container(
+                                  child: [
+                                    OrderTabBarPage(),
+                                    PhotoInfoPage(),
+                                    AboutReturnWidget()
+                                  ][_controller.index],
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
-                      ).paddingOnly(bottom: 80.w),
-                      Positioned(
-                          top: 80.w,
-                          left: 0,
-                          right: 0,
-                          child:
-                          const MarketImageReturn(image: "assets/images/market.png")),
+                      )
                     ],
-                  ),
-                ),
-
+                  ).paddingOnly(bottom: 80.w),
+                  Positioned(
+                      top: 80.w,
+                      left: 0,
+                      right: 0,
+                      child: const MarketImageReturn(
+                          image: "assets/images/market.png")),
+                ],
+              ),
+            ),
             floatingActionButton:
                 FloatingDialogReturn().paddingOnly(bottom: 160.w),
           ),
@@ -219,15 +221,17 @@ class _ReturnFromShelfState extends State<ReturnFromShelf> with TickerProviderSt
               height: 80.w,
               width: 1.sw,
               child: AppWidgets.appButton(
-                title: "Добавить заказ", onTap: () {  },
+                title: "Добавить заказ",
+                onTap: () {
 
+
+                },
               ).paddingSymmetric(
                 horizontal: 20.w,
                 vertical: 18.w,
               ),
             ),
           ),
-
         ],
       ),
     );

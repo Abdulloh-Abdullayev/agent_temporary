@@ -10,6 +10,7 @@ import 'package:uikit/uikit.dart';
 import '../../../core/utils/assets.gen.dart';
 import '../../../core/utils/colors.gen.dart';
 import '../../widgets/app_widgets.dart';
+import '../order_page/order_page.dart';
 
 class VisitsPageModule extends Module {
   @override
@@ -116,6 +117,9 @@ class _VisitsPageState extends State<VisitsPage> {
                       vozvrat: 'vozvrat',
                       vozvratTar: 'vozvratTar',
                       plusNumber: '1',
+                      card_onTap: () {
+                        Modular.to.pushNamed(OrderPage.routeName);
+                      },
                     ).marginSymmetric(
                       horizontal: 20,
                       vertical: 10.w,

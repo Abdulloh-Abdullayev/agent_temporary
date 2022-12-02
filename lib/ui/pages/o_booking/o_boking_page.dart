@@ -26,7 +26,7 @@ class OBookingModule extends Module {
 }
 
 class OBookingPage extends StatefulWidget {
-  static const String routeName = "/obookingPage";
+  static const String routeName = "/oBookingPage";
   const OBookingPage({Key? key}) : super(key: key);
 
   @override
