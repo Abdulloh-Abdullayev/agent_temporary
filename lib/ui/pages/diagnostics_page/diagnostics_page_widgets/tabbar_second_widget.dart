@@ -100,7 +100,7 @@ class TabbarSecondWidget extends StatelessWidget {
           width: 76.w,
         ),
          Padding(
-          padding: EdgeInsets.only(top: 112.w),
+          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.17),
           child: const Divider(color: ColorName.gray2,),
         ),
       ],
