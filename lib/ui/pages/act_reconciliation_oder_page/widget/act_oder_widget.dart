@@ -147,13 +147,13 @@ class __actBottomSheetFilterState extends State<_actBottomSheetFilter> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              AppWidgets.text(
-                text: "Фильтр",
+              AppWidgets.textLocale(
+                localeKey: widget.firstItemName!,
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w600,
               ),
-              AppWidgets.text(
-                text: "clear filter",
+              AppWidgets.textLocale(
+                localeKey: widget.secondItemName!,
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w600,
                 color: ColorName.red,

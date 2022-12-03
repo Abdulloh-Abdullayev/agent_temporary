@@ -59,9 +59,12 @@ abstract class  LocaleKeys {
   static const november = 'november';
   static const december = 'december';
   static const act_of_reconciliation = 'act_of_reconciliation';
+  static const order_reconciliation_act = 'order_reconciliation_act';
   static const select_date = 'select_date';
   static const current_month = 'current_month';
   static const request_history = 'request_history';
+  static const filter = 'filter';
+  static const reset_filter = 'reset_filter';
   static const apply = 'apply';
   static const jan_ = 'jan_';
   static const feb_ = 'feb_';

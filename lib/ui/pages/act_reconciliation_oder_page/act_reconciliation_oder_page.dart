@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/act_reconciliation_oder_page/cubit/act_oder_cubit.dart';
 import 'package:agent/ui/pages/act_reconciliation_oder_page/widget/act_oder_widget.dart';
@@ -65,11 +66,13 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
               child: Column(
                 children: [
                   ActWidget.AppBar(
-                    title: "title",
-                    firstText: "firstText",
-                    buttonText: "buttonText",
-                    dropDownText: "dropDownText",
-                    backOnTap: () {},
+                    title: LocaleKeys.order_reconciliation_act,
+                    firstText: LocaleKeys.select_date,
+                    buttonText: LocaleKeys.apply,
+                    dropDownText: LocaleKeys.current_month,
+                    backOnTap: () {
+                      Modular.to.pop();
+                    },
                     firstDataOnTap: () {},
                     secondDataOnTap: () {},
                     buttonOnTap: () {},
@@ -90,14 +93,14 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
                               return Container(
                                 color: Colors.transparent,
                                 child: ActOderWidget.filterWidget(
-                                  firstItemName: "tip",
+                                  firstItemName: LocaleKeys.filter,
                                   item1: list,
                                   item1onTap: (key, index, check) {
                                     print(key);
 
                                     print(check);
                                   },
-                                  secondItemName: "list 2",
+                                  secondItemName: LocaleKeys.reset_filter,
                                   item2: list2,
                                 ),
                               );
@@ -108,7 +111,7 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
                     ],
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Запросить историю",
+                    localeKey: LocaleKeys.request_history,
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: ColorName.button,
