@@ -5,6 +5,7 @@ import 'package:agent/ui/pages/order_page/order_page_widget/market_image_functio
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/pages/order_page/pages/photo_report_page.dart';
 import 'package:agent/ui/pages/order_page/pages/tabbar_order_page.dart';
+import 'package:agent/ui/pages/remains_page/widgets/floating_show_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -236,7 +237,9 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                   const FloatingShowDialog().paddingOnly(bottom: 160.w),
             ),
           ),
-          const BottomButtonWidget(),
+          BottomButtonWidget(
+            onTap: () {},
+          ),
         ],
       ),
     );

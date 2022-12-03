@@ -228,7 +228,7 @@ class AppWidgets {
     double height = 28,
     double width = 28,
     double redius = 28,
-    Color backColor = ColorName.button,
+    Color backColor = ColorName.white,
     Widget? child,
     EdgeInsets padding = EdgeInsets.zero,
     Alignment alignment = Alignment.center,

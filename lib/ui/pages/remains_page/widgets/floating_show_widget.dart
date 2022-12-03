@@ -6,6 +6,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
+import '../../history_orders/history_orders_page.dart';
+
 class FloatingShowDialog extends StatelessWidget {
   const FloatingShowDialog({Key? key}) : super(key: key);
 
@@ -27,32 +29,40 @@ class FloatingShowDialog extends StatelessWidget {
                     bottom: MediaQuery.of(context).size.width * 0.4,
                   ),
                   child: ExchangeTools(
-                    onTap: (p0){
-                        if (p0 == 7) {
-                           Modular.to.pushNamed(RemainsItemPage.routeName);
-                          } 
+                    onTap: (p0) {
+                      switch (p0) {
+                        case 0:
+                          return Modular.to
+                              .pushNamed(RemainsItemPage.routeName);
+                        case 1:
+                          return Modular.to
+                              .pushNamed(HistoryOrdersPage.routeName);
+                        case 7:
+                          return Modular.to
+                              .pushNamed(RemainsItemPage.routeName);
+                      }
                     },
-          icons: [
-            Assets.images.icons.pin.svg(),
-            Assets.images.icons.history.svg(),
-            Assets.images.icons.smartphone.svg(),
-            Assets.images.icons.infoCircle.svg(),
-            Assets.images.icons.refresh.svg(),
-            Assets.images.icons.exchange.svg(),
-            Assets.images.icons.box1.svg(),
-            Assets.images.icons.box1.svg(),
-          ],
-          textName:const [
-            "Планы",
-            'История',
-            'Фото отчёт',
-            'Отказ',
-            'Возврат \nс полки',
-            'Возврат \nтары',
-            'Обмен',
-            'Остатки',
-          ],
-        ),
+                    icons: [
+                      Assets.images.icons.pin.svg(),
+                      Assets.images.icons.history.svg(),
+                      Assets.images.icons.smartphone.svg(),
+                      Assets.images.icons.infoCircle.svg(),
+                      Assets.images.icons.refresh.svg(),
+                      Assets.images.icons.exchange.svg(),
+                      Assets.images.icons.box1.svg(),
+                      Assets.images.icons.box1.svg(),
+                    ],
+                    textName: const [
+                      "Планы",
+                      'История',
+                      'Фото отчёт',
+                      'Отказ',
+                      'Возврат \nс полки',
+                      'Возврат \nтары',
+                      'Обмен',
+                      'Остатки',
+                    ],
+                  ),
                 );
               }),
             );

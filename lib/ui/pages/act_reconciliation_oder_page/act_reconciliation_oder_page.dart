@@ -5,6 +5,7 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:uikit/uikit.dart';
 
 import '../../../core/utils/colors.gen.dart';
 
@@ -62,6 +63,8 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
                     height: 28.w,
                     width: 28.w,
                     redius: 4,
+                    padding: EdgeInsets.all(5.w),
+                    backColor: ColorName.white.withOpacity(0.1),
                     child: Assets.images.icons.filter.svg(),
                     onTap: () {},
                   ),
