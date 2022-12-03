@@ -1,13 +1,13 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-part of 'act_cubit.dart';
+part of 'act_oder_cubit.dart';
 
-class ActState extends Equatable {
+class ActOderState extends Equatable {
   final List<List<String>> baseTableChildren;
   final List<List<String>> tempTableChildren;
   final List<List<String>> allSum;
   final List<String> tableColumns;
   final Map<String, String> actSortStatus;
-  ActState({
+  const ActOderState({
     required this.baseTableChildren,
     required this.tempTableChildren,
     required this.allSum,
@@ -16,21 +16,22 @@ class ActState extends Equatable {
   });
 
   @override
-  List<Object?> get props => [
+  List<Object> get props => [
         baseTableChildren,
         tempTableChildren,
-        tableColumns,
         allSum,
+        tableColumns,
+        actSortStatus,
       ];
 
-  ActState copyWith({
+  ActOderState copyWith({
     List<List<String>>? baseTableChildren,
     List<List<String>>? tempTableChildren,
     List<List<String>>? allSum,
     List<String>? tableColumns,
     Map<String, String>? actSortStatus,
   }) {
-    return ActState(
+    return ActOderState(
       baseTableChildren: baseTableChildren ?? this.baseTableChildren,
       tempTableChildren: tempTableChildren ?? this.tempTableChildren,
       allSum: allSum ?? this.allSum,

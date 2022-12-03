@@ -1,9 +1,13 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
+import 'package:agent/ui/pages/act_reconciliation_oder_page/cubit/act_oder_cubit.dart';
+import 'package:agent/ui/pages/act_reconciliation_oder_page/widget/act_oder_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:uikit/uikit.dart';
 
 import '../../../core/utils/colors.gen.dart';
 import '../act_reconciliation_page/widgets/act_widgets.dart';
@@ -19,10 +23,10 @@ class ActReconciliationOderPageModule extends Module {
 
   @override
   List<Bind<Object>> get binds => [
-        // Bind<AppNavigationBloc>(
-        //   (i) => AppNavigationBloc(),
-        //   onDispose: (value) => value.close(),
-        // ),
+        Bind<ActOderCubit>(
+          (i) => ActOderCubit(),
+          onDispose: (value) => value.close(),
+        ),
       ];
 }
 
@@ -36,154 +40,157 @@ class ActReconciliationOderPage extends StatefulWidget {
 }
 
 class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
-  var columnTitles = ["Склад", "Дата", "Долг", "Оплачено", "Осталось"];
+  // var columnTitles = ["Склад", "Дата", "Долг", "Оплачено", "Осталось"];
+  var _cubit = ActOderCubit.to;
+  var list = <String>[
+    "item1",
+    "item2",
+    "item3",
+    "item4",
+    "item5",
+    "item6",
+    "item7"
+  ];
+  var list2 = <String>["item1", "item2", "item3", "item4", "item5"];
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
-          color: ColorName.bgColor,
-          child: Column(
-            children: [
-              ActWidget.AppBar(
-                title: "title",
-                firstText: "firstText",
-                buttonText: "buttonText",
-                dropDownText: "dropDownText",
-                backOnTap: () {},
-                firstDataOnTap: () {},
-                secondDataOnTap: () {},
-                buttonOnTap: () {},
-                firstDate: "05.05.2022",
-                secondDate: "10.05.2024",
-                actions: [
-                  AppWidgets.buttonBuilder(
-                    height: 28.w,
-                    width: 28.w,
-                    redius: 4,
-                    child: Assets.images.icons.filter.svg(),
-                    onTap: () {},
+    return BlocBuilder<ActOderCubit, ActOderState>(
+      bloc: _cubit,
+      builder: (context, state) {
+        return SafeArea(
+          child: Scaffold(
+            body: Container(
+              color: ColorName.bgColor,
+              child: Column(
+                children: [
+                  ActWidget.AppBar(
+                    title: "title",
+                    firstText: "firstText",
+                    buttonText: "buttonText",
+                    dropDownText: "dropDownText",
+                    backOnTap: () {},
+                    firstDataOnTap: () {},
+                    secondDataOnTap: () {},
+                    buttonOnTap: () {},
+                    firstDate: "05.05.2022",
+                    secondDate: "10.05.2024",
+                    actions: [
+                      AppWidgets.buttonBuilder(
+                        height: 28.w,
+                        width: 28.w,
+                        radius: 4,
+                        child: Assets.images.icons.filter.svg().paddingAll(4),
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            barrierColor: Colors.black.withOpacity(.5),
+                            backgroundColor: Colors.transparent,
+                            builder: (context) {
+                              return Container(
+                                color: Colors.transparent,
+                                child: ActOderWidget.filterWidget(
+                                  firstItemName: "tip",
+                                  item1: list,
+                                  item1onTap: (key, index, check) {
+                                    print(key);
+
+                                    print(check);
+                                  },
+                                  secondItemName: "list 2",
+                                  item2: list2,
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              Text("data"),
-              AppWidgets.textLocale(
-                localeKey: "Запросить историю",
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                color: ColorName.button,
-              ).marginSymmetric(vertical: 18),
-              Expanded(
-                child: Container(
-                  width: 1.sw,
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.fromLTRB(20, 0, 20, 50),
-                  decoration: BoxDecoration(
-                    color: ColorName.white,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
+                  AppWidgets.textLocale(
+                    localeKey: "Запросить историю",
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: ColorName.button,
+                  ).marginSymmetric(vertical: 18),
+                  Expanded(
                     child: Container(
-                      width: 1.sw + (1.sw / tabsList.length * 2),
+                      width: 1.sw,
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.fromLTRB(20, 0, 20, 50),
+                      decoration: BoxDecoration(
+                        color: ColorName.white,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                       child: Column(
                         children: [
-                          ActWidget.customDataTableTabs(
-                            list: tabsList,
-                            itemOnTap: (p0) {},
-                          ),
                           Expanded(
                             child: SingleChildScrollView(
-                              child: ActWidget.customDataTable(list: childlist),
+                              scrollDirection: Axis.horizontal,
+                              child: Container(
+                                width: 1.sw +
+                                    (1.sw / state.tableColumns.length * 2),
+                                child: Column(
+                                  children: [
+                                    ActWidget.customDataTableTabs(
+                                      list: state.tableColumns,
+                                      itemOnTap: (p0) {
+                                        _cubit.baseSort(p0);
+                                      },
+                                      alins: List<Alignment>.generate(
+                                        state.tableColumns.length,
+                                        (i) {
+                                          if (state.tableColumns.length - 1 ==
+                                              i) {
+                                            return Alignment.centerRight;
+                                          } else {
+                                            return Alignment.centerLeft;
+                                          }
+                                        },
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: SingleChildScrollView(
+                                        child: ActWidget.customDataTable(
+                                          list: state.tempTableChildren,
+                                          alins: List<List<Alignment>>.generate(
+                                            state.tempTableChildren.length,
+                                            (index) {
+                                              return List<Alignment>.generate(
+                                                state.tableColumns.length,
+                                                (i) {
+                                                  if (state.tableColumns
+                                                              .length -
+                                                          1 ==
+                                                      i) {
+                                                    return Alignment
+                                                        .centerRight;
+                                                  } else {
+                                                    return Alignment.centerLeft;
+                                                  }
+                                                },
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
+                          ActWidget.sumWidgetBuilder(state.allSum)
                         ],
                       ),
                     ),
                   ),
-                ),
-              )
-            ],
+                ],
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
-
-  static List<String> tabsList = [
-    'Склад',
-    'Дата',
-    'Долг',
-    'Оплачено',
-    'Осталось',
-  ];
-  static List<List<String>> childlist = [
-    [
-      "Основной Долг Долг",
-      '21.10.2022',
-      "5 000",
-      '+50 000',
-      '+100 000 000 UZS',
-    ],
-    [
-      "Основной склад",
-      '21.10.2022',
-      "5 000",
-      '+50 000',
-      '100 000 000 UZS',
-    ],
-    [
-      "Основной склад",
-      '21.10.2022',
-      "5 000",
-      '+50 000',
-      '100 000 000 UZS',
-    ],
-    [
-      "Основной склад",
-      '21.10.2022',
-      "5 000",
-      '+50 000',
-      '100 000 000 UZS',
-    ],
-    [
-      "Основной склад",
-      '21.10.2022',
-      "5 000",
-      '+50 000',
-      '100 000 000 UZS',
-    ],
-    [
-      "Основной склад",
-      '21.10.2022',
-      "5 000",
-      '+50 000',
-      '100 000 000 UZS',
-    ],
-    [
-      "Основной склад",
-      '21.10.2022',
-      "5 000",
-      '+50 000',
-      '100 000 000 UZS',
-    ],
-    [
-      "Основной склад",
-      '21.10.2022',
-      "5 000",
-      '+50 000',
-      '100 000 000 UZS',
-    ],
-    [
-      "Основной склад",
-      '21.10.2022',
-      "5 000",
-      '-',
-      '100 000 000 UZS',
-    ],
-    ['Оплата на за', '', "", '', '100 000 000 UZS'],
-    ['Оплата на заказ', '', "", '', '+100 000 000 UZS'],
-    ['Итоговый долг', '', "", '', '-0'],
-  ];
 }

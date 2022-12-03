@@ -159,13 +159,15 @@ class OrderTabBarPage extends StatelessWidget {
                           ),
                           nalichniy: "nalichniy",
                           bezbonus: "bezbonus",
-                          dostavlen: "dostavlen",
                           obem: "obem",
                           obemNumber: "15",
                           soni: "soni",
                           soniNumber: "15",
                           summa: "summa",
-                          summaNumber: "1000000"));
+                          summaNumber: "1000000",
+                          card_onTap: () {},
+                          status: '',
+                          statusColor: Colors.black));
                       // child: Cards.cards_2(
                       //   name: "name",
                       //   time: "time",

@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart' as myIcon;
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -65,9 +64,9 @@ class ActWidget {
               AppWidgets.buttonBuilder(
                 width: 28,
                 height: 28,
-                redius: 4,
+                radius: 4,
                 child: myIcon.Assets.images.icons.backArrow.svg(),
-                onTap: buttonOnTap,
+                onTap: backOnTap,
               ),
               Row(
                 children: [...actionList],
@@ -83,8 +82,8 @@ class ActWidget {
           ).centerLeft.marginLTRB(20, 0, 20, 18),
           // data
           AppInputDate(
-            firstText: firstText,
-            dropDownText: dropDownText,
+            firstText: firstText.tr(),
+            dropDownText: dropDownText.tr(),
             dropDownTextStyle: GoogleFonts.inter(
               fontSize: 14.sp,
               color: ColorName.white,
@@ -97,8 +96,10 @@ class ActWidget {
             ),
             firstDate: firstDate,
             secondDate: secondDate,
-            firstIcon: myIcon.Assets.images.icons.calender.svg(),
-            secondIcon: myIcon.Assets.images.icons.calender.svg(),
+            firstIcon:
+                myIcon.Assets.images.icons.calender.svg(color: Colors.white),
+            secondIcon:
+                myIcon.Assets.images.icons.calender.svg(color: Colors.white),
             dateBackColor: ColorName.lightBlue.withOpacity(0.15),
             firstDateTextStyle: _fontStyle,
             secondDateTextStyle: _fontStyle,
@@ -107,11 +108,11 @@ class ActWidget {
           ).marginLTRB(20, 0, 20, 18),
           // button text
           AppButton(
-            text: buttonText,
+            text: buttonText.tr(),
             textSize: 16.sp,
             textColor: ColorName.white,
             width: double.infinity,
-            onPressed: () {},
+            onPressed: buttonOnTap,
           ).marginSymmetric(horizontal: 20)
         ],
       ),
@@ -140,13 +141,7 @@ class ActWidget {
               ),
             ),
           ),
-          isSpace
-              ? Container(
-                  height: 10,
-                  width: 12,
-                  color: Colors.black,
-                )
-              : SizedBox.shrink()
+          isSpace ? SizedBox(width: 12) : SizedBox.shrink()
         ],
       ),
     );
@@ -197,11 +192,7 @@ class ActWidget {
                         ),
                         list[i] == list.last
                             ? SizedBox.shrink()
-                            : Container(
-                                height: 10,
-                                width: 12,
-                                color: Colors.black,
-                              )
+                            : SizedBox(width: 12)
                       ],
                     ).marginSymmetric(vertical: 12),
                   ),
@@ -212,7 +203,7 @@ class ActWidget {
         Container(
           height: 1,
           width: double.infinity,
-          color: Colors.grey,
+          color: ColorName.gray,
         )
       ],
     );
@@ -250,16 +241,59 @@ class ActWidget {
                     ),
                 ],
               ).marginSymmetric(vertical: 12, horizontal: 12),
-              !(i > list.length - 4)
+              !(i > list.length - 1)
                   ? Container(
                       height: 1,
                       width: double.infinity,
-                      color: Colors.grey,
+                      color: ColorName.gray,
                     )
                   : SizedBox.shrink()
             ],
           )
       ],
+    );
+  }
+
+  /// sum widget
+  static Widget sumWidgetBuilder(List<List<String>> allSum) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            width: 1.1,
+            color: ColorName.gray,
+          ),
+        ),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          for (var e in allSum)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: AppWidgets.text(
+                    text: e.first,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ).centerLeft,
+                ),
+                Expanded(
+                  flex: 2,
+                  child: AppWidgets.text(
+                    text: e.last,
+                    fontSize: 12.sp,
+                    color: ActWidget.colors[ActWidget.findColor(e.last)],
+                  ).centerRight,
+                ),
+              ],
+            ).marginSymmetric(
+              horizontal: 12,
+              vertical: e == allSum.first || e == allSum.last ? 12 : 0,
+            ),
+        ],
+      ),
     );
   }
 

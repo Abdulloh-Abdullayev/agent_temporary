@@ -51,6 +51,7 @@ extension WidgetPaddingX on Widget {
   }
 }
 
+
 /// Add margin property to widget
 extension WidgetMarginX on Widget {
   Widget marginAll(double margin) =>
@@ -100,6 +101,13 @@ extension WidgetBackground on Widget {
         alignment: Alignment.bottomCenter,
         child: this,
       );
+
+  Widget onTap(Function() ontap) {
+    return GestureDetector(
+      onTap: ontap,
+      child: this,
+    );
+  }    
 }
 
 extension WidgetAlign on Widget {

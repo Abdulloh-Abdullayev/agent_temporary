@@ -56,6 +56,7 @@ class _CustomMapState extends State<CustomMap> {
 
   var zoom = 14.0;
   var bearing = 0.0;
+  var isListen = false;
 
   PolylinePoints polylinePoints = PolylinePoints();
   List<LatLng> cordinates = [];
@@ -84,12 +85,14 @@ class _CustomMapState extends State<CustomMap> {
     } catch (e) {}
   }
 
+  StreamSubscription<LocationData>? sub;
+
   getCurrentLocation() async {
     Location location = new Location();
     currentLocation = await location.getLocation();
     setState(() {});
 
-    location.onLocationChanged.listen((loc) {
+    sub = location.onLocationChanged.listen((loc) {
       setState(() {
         currentLocation = loc;
         sourseLoc = LatLng(loc.latitude!, loc.longitude!);
@@ -145,6 +148,12 @@ class _CustomMapState extends State<CustomMap> {
 
   init() async {
     _googleController = await _mapController.future;
+  }
+
+  @override
+  void dispose() {
+    sub!.cancel();
+    super.dispose();
   }
 
   @override

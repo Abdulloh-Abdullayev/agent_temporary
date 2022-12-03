@@ -1,10 +1,12 @@
 import 'dart:ui';
 
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/ui/pages/map_page/custom_map.dart';
 import 'package:agent/ui/pages/visits_page/widget/visits_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:uikit/uikit.dart';
 
 import '../../../core/utils/assets.gen.dart';
@@ -55,23 +57,54 @@ class _VisitsPageState extends State<VisitsPage> {
                   ontap: (key) {
                     if (key == "0") {
                       print(key);
+                     
                     }
                     if (key == "1") {
+                      print(key);
                       setState(() {
                         textfieldIsOpen = !textfieldIsOpen;
                       });
-                      print(key);
                     }
                     if (key == "2") {
                       print(key);
+                      Modular.to.pushNamed(CustomMap.routeName);
+                    }
+                    if (key == "3") {
                     }
                   }),
               textfieldIsOpen
-                  ? AppInputTextField(
-                      prefix: Center(
-                        child: Assets.images.icons.search.svg(
-                            color: Colors.black, height: 17.4, width: 17.4),
-                      ),
+                  ? Row(
+                      children: [
+                        Expanded(
+                          child: AppInputTextField(
+                            hint: "Искать",
+                            hintStyle: GoogleFonts.inter(
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w400,
+                              color: ColorName.gray,
+                            ),
+                            prefix: Center(
+                              child: Assets.images.icons.search.svg(
+                                color: ColorName.gray2,
+                              ),
+                            ).marginOnly(right: 10),
+                          ),
+                        ),
+                        //// cancle button
+                        SizedBox(width: 10),
+                        Material(
+                          borderRadius: BorderRadius.circular(30),
+                          color: ColorName.background,
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(30),
+                            splashColor: ColorName.primaryColor,
+                            onTap: () {},
+                            child: Assets.images.icons.cencel.svg(
+                              color: ColorName.black,
+                            ),
+                          ),
+                        )
+                      ],
                     ).marginLTRB(20, 18, 20, 0)
                   : SizedBox.shrink(),
               SizedBox(height: 18),
@@ -100,22 +133,29 @@ class _VisitsPageState extends State<VisitsPage> {
               SizedBox(height: 12),
               Expanded(
                 child: ListView.separated(
-                  itemCount: 5,
+                  itemCount: 6,
                   separatorBuilder: (BuildContext context, int index) {
                     return Container(
                       height: 12,
                     );
                   },
+                  keyboardDismissBehavior:
+                      ScrollViewKeyboardDismissBehavior.onDrag,
                   itemBuilder: (BuildContext context, int index) {
                     return VisitWidgets.items(
+                      index: index,
                       url:
                           "https://cdn.pixabay.com/photo/2015/04/24/08/16/supermarket-737418_960_720.jpg",
-                      name: "name",
+                      name: "Osiyo market",
+                      type: "super market",
                       percent: "60-70%",
                       sum: "100 000",
+
+                      /// item ontap
+                      onTap: () {},
                     ).marginSymmetric(horizontal: 20);
                   },
-                ),
+                ).marginSymmetric(vertical: 2),
               ),
             ],
           ),

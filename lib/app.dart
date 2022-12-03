@@ -1,8 +1,7 @@
 import 'package:agent/ui/pages/act_reconciliation_oder_page/act_reconciliation_oder_page.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
+import 'package:agent/ui/pages/map_page/custom_map.dart';
 import 'package:agent/ui/pages/visits_page/visits_page.dart';
-import 'package:agent/ui/pages/all_tasks_page/all_tasks_page.dart';
-import 'package:agent/ui/pages/all_tasks_page/widgets/clicked_item.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
@@ -38,7 +37,7 @@ import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(VisitsPage.routeName);
+    Modular.setInitialRoute(ActReconciliationPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -103,7 +102,9 @@ class AppModule extends Module {
         ModuleRoute("/", module: DebtorsPageModule()),
         ModuleRoute("/", module: RemainStockPageModel()),
         // ModuleRoute("/", module: DebtorsHistoryModule()),
+
         ModuleRoute("/", module: OrderPageModule()),
+        ModuleRoute("/", module: CustomMapPageModule()),
         ModuleRoute("/", module: CustomerDataPageModule()),
         ModuleRoute("/", module: CustomerDataEditingPageModule()),
         ModuleRoute("/", module: DiagnosticsPageModule()),

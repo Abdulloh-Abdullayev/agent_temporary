@@ -163,7 +163,9 @@ class TabbarOrderPage extends StatelessWidget {
                       soniNumber: "325",
                       summa: "summa",
                       summaNumber: "150 000 000",
-                      dostavlen: '',
+                      card_onTap: () {},
+                      status: '',
+                      statusColor: Colors.black,
                     ));
               },
             )

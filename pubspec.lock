@@ -545,7 +545,7 @@ packages:
       name: google_maps_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.1"
+    version: "2.2.0"
   google_maps_flutter_android:
     dependency: transitive
     description:
@@ -1158,7 +1158,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "420cf8b6ef2fb2ad66a25a6f2694a31e907af8b1"
+      resolved-ref: a39ea3a99494c124c62b71586a489251c3c04e17
       url: "https://gitlab.com/tlps-project/ui-kit.git"
     source: git
     version: "1.0.0+1"

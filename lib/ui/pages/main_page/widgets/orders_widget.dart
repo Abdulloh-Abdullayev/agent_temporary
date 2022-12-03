@@ -145,6 +145,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                         summa: 'summa',
                         summaNumber: "150 000 000",
                         context: context,
+                        card_onTap: () {},
                       ).paddingOnly(
                         left: 18.w,
                         right: 18.w,

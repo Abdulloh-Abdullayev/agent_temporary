@@ -132,7 +132,10 @@ class RemainsTabbarPage extends StatelessWidget {
                       soniNumber: "325",
                       summa: "summa",
                       summaNumber: "150 000 000",
-                      dostavlen: '', context: context,
+                context: context,
+                card_onTap: () {},
+                status: '',
+                statusColor: Colors.black,
                     ),),),
         ).paddingSymmetric(horizontal: 20),
       
