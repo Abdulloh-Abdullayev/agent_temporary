@@ -13,11 +13,9 @@ class AllTasksModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           AllTasksPage.routeName,
-          child: (context, args) =>const  AllTasksPage(),
+          child: (context, args) => const AllTasksPage(),
         ),
       ];
-
-
 }
 
 class AllTasksPage extends StatefulWidget {
@@ -55,7 +53,10 @@ class _AllTasksPageState extends State<AllTasksPage>
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           backgroundColor: ColorName.button,
-          child: Assets.images.icons.plusIcon.svg(width: 24.w,height: 24.w,),
+          child: Assets.images.icons.plusIcon.svg(
+            width: 24.w,
+            height: 24.w,
+          ),
         ),
         body: Column(
           children: [
@@ -70,9 +71,11 @@ class _AllTasksPageState extends State<AllTasksPage>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AppWidgets.backButton(() {
-                    Modular.to.pop();
-                  }).paddingSymmetric(
+                  AppWidgets.backButton(
+                    () {
+                      Modular.to.pop();
+                    },
+                  ).paddingSymmetric(
                     horizontal: 20.w,
                     vertical: 18.w,
                   ),
@@ -100,13 +103,14 @@ class _AllTasksPageState extends State<AllTasksPage>
               ),
             ),
             Expanded(
-                child: TabBarView(
-              controller: tabController,
-              children: [
-                active(ColorName.lightBlue),
-                completed(ColorName.lightBlue),
-              ],
-            ))
+              child: TabBarView(
+                controller: tabController,
+                children: [
+                  active(ColorName.lightBlue),
+                  completed(ColorName.lightBlue),
+                ],
+              ),
+            )
           ],
         ),
       ),
@@ -118,10 +122,15 @@ class _AllTasksPageState extends State<AllTasksPage>
       itemCount: 5,
       itemBuilder: ((context, index) {
         return InkWell(
-            onTap: (){
-              Modular.to.pushNamed(ClickedItem.routeName);
-            },
+          onTap: () {
+            Modular.to.pushNamed(ClickedItem.routeName);
+          },
           child: Container(
+            margin: EdgeInsets.only(
+              top: 15.w,
+              right: 15.w,
+              left: 15.w,
+            ),
             decoration: BoxDecoration(
               color: const Color(0xFFE5F3FF),
               borderRadius: BorderRadius.circular(8.r),
@@ -189,24 +198,26 @@ class _AllTasksPageState extends State<AllTasksPage>
                 )
               ],
             ).paddingAll(15.w),
-          ).paddingOnly(
-            top: 15.w,
-            right: 15.w,
-            left: 15.w,
           ),
         );
       }),
     );
   }
+
   Widget completed(Color colorContainer) {
     return ListView.builder(
       itemCount: 5,
       itemBuilder: ((context, index) {
         return InkWell(
-          onTap: (){
+          onTap: () {
             Modular.to.pushNamed(ClickedItem.routeName);
           },
           child: Container(
+            margin: EdgeInsets.only(
+              top: 15.w,
+              right: 15.w,
+              left: 15.w,
+            ),
             decoration: BoxDecoration(
               color: const Color(0xFFE5F3FF),
               borderRadius: BorderRadius.circular(8.r),
@@ -258,10 +269,6 @@ class _AllTasksPageState extends State<AllTasksPage>
                 ),
               ],
             ).paddingAll(15.w),
-          ).paddingOnly(
-            top: 15.w,
-            right: 15.w,
-            left: 15.w,
           ),
         );
       }),

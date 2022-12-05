@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/appbar_main.dart';
-
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
@@ -9,10 +7,8 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.yellow,
-      child:  Column(
-        children: [
-
-        ],
+      child: Column(
+        children: [],
       ),
     );
   }

@@ -15,7 +15,9 @@ class OthersWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         OtherItem1(),
-        SizedBox(height: 12.h,),
+        SizedBox(
+          height: 12.h,
+        ),
         OtherItem2(),
       ],
     );

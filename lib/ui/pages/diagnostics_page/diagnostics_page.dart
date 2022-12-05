@@ -50,7 +50,7 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
   void initState() {
     _controller = TabController(length: 3, vsync: this);
     _controller.addListener(_handleTabSelection);
-    scrollController =ScrollController();
+    scrollController = ScrollController();
     super.initState();
   }
 
@@ -89,8 +89,8 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                           isScrollControlled: true,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.vertical(
-                                top: Radius.circular(12),
-                              )),
+                            top: Radius.circular(12),
+                          )),
                           context: context,
                           builder: (context) {
                             return const FilterBottomSheet();
@@ -144,13 +144,11 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                       ],
                     ).paddingOnly(bottom: 24.w),
                     DiagnosticTabBarWidget(
-                        _controller,
-                        "Объем", "Strike", "Акб",
-                            (int i) {
-                          if (i == 0) {
-                          } else if (i == 1) {
-                          } else {}
-                        }).paddingOnly(bottom: 15.w),
+                        _controller, "Объем", "Strike", "Акб", (int i) {
+                      if (i == 0) {
+                      } else if (i == 1) {
+                      } else {}
+                    }).paddingOnly(bottom: 15.w),
                     Container(
                       child: [
                         const TabbarFirstWidget(),
@@ -159,7 +157,6 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                       ][_controller.index],
                     ).paddingOnly(bottom: 24.w),
                     const TableDio(),
-
                   ],
                 ).paddingSymmetric(horizontal: 20.w),
               ),
@@ -170,4 +167,3 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
     );
   }
 }
-

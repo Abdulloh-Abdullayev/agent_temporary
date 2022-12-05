@@ -84,12 +84,13 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                             itemCount: 10,
                             itemBuilder: (context, index) {
                               return CachedNetworkImage(
-                              fit: BoxFit.cover,
-                              imageUrl: "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000",
-                              placeholder: (context, url) =>
-                              const CupertinoActivityIndicator(),
-                              errorWidget: (context, url, error) =>
-                              const Icon(Icons.person),
+                                fit: BoxFit.cover,
+                                imageUrl:
+                                    "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000",
+                                placeholder: (context, url) =>
+                                    const CupertinoActivityIndicator(),
+                                errorWidget: (context, url, error) =>
+                                    const Icon(Icons.person),
                               );
                             },
                           ),
@@ -160,18 +161,20 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                     ),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: ColorName.white),
+                      borderRadius: BorderRadius.circular(12),
+                      color: ColorName.white,
+                    ),
                     child: Column(
                       children: [
                         Align(
                           alignment: Alignment.centerLeft,
                           child: AppWidgets.textLocale(
-                              localeKey: "Контактные данные",
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w500,
-                              color: ColorName.gray3,
-                              isRichText: true),
+                            localeKey: "Контактные данные",
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w500,
+                            color: ColorName.gray3,
+                            isRichText: true,
+                          ),
                         ).paddingOnly(bottom: 16.w),
                         rowWidget("Адрес", "Toshkent yunusobod")
                             .paddingOnly(bottom: 16.w),
@@ -201,8 +204,9 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                     margin: EdgeInsets.only(bottom: 35.w),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: ColorName.white),
+                      borderRadius: BorderRadius.circular(12),
+                      color: ColorName.white,
+                    ),
                     child: Column(
                       children: [
                         Align(

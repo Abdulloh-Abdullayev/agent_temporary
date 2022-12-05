@@ -263,7 +263,6 @@ class _RemainsPageState extends State<RemainsPage> {
                           ).paddingOnly(bottom: 70),
                         ),
                       ),
-                      
                     ),
                     Container(
                       height: 83.h,
@@ -290,11 +289,9 @@ class _RemainsPageState extends State<RemainsPage> {
               ),
             ],
           ),
-        
-         floatingActionButton:
-                const FloatingShowDialog().paddingOnly(bottom: 160.w),
+          floatingActionButton:
+              const FloatingShowDialog().paddingOnly(bottom: 160.w),
         ),
-        
       ),
     );
   }

@@ -8,6 +8,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
 import 'package:uikit/uikit.dart';
+
 import 'add_category_widget.dart';
 
 class SelectCategoryWidget extends StatelessWidget {
@@ -97,13 +98,14 @@ class SelectCategoryWidget extends StatelessWidget {
                       top: 5.w,
                     ),
                     ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        shrinkWrap: true,
-                        itemCount: 5,
-                        itemBuilder: (context, index) {
-                          return const AddOrderCategoryWidget()
-                              .paddingOnly(bottom: 10.w);
-                        }),
+                      physics: const BouncingScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: 5,
+                      itemBuilder: (context, index) {
+                        return const AddOrderCategoryWidget()
+                            .paddingOnly(bottom: 10.w);
+                      },
+                    ),
                   ],
                 ),
               ],
@@ -134,14 +136,15 @@ class SelectCategoryWidget extends StatelessWidget {
                 onPressed: () {
                   Modular.to.pop();
                   showModalBottomSheet(
-                      backgroundColor: Colors.transparent,
-                      enableDrag: true,
-                      isDismissible: false,
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return const AddBonusLastWidget();
-                      });
+                    backgroundColor: Colors.transparent,
+                    enableDrag: true,
+                    isDismissible: false,
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (context) {
+                      return const AddBonusLastWidget();
+                    },
+                  );
                 },
               ),
             ],
@@ -151,4 +154,3 @@ class SelectCategoryWidget extends StatelessWidget {
     );
   }
 }
-

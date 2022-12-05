@@ -1,4 +1,3 @@
-import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -13,26 +12,26 @@ class AppTitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-         SizedBox(
-           height: 30.w,
-           width: 30.w,
-           child: ClipOval(
-             child: CachedNetworkImage(
-               fit: BoxFit.cover,
-               imageUrl: "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000",
-               placeholder: (context, url) =>
-               const CupertinoActivityIndicator(),
-               errorWidget: (context, url, error) =>
-               const Icon(Icons.person),
-             ),
-           ),
-         )
-            .paddingOnly(right: 8.w),
+        Container(
+          margin: EdgeInsets.only(right: 8.w),
+          height: 30.w,
+          width: 30.w,
+          child: ClipOval(
+            child: CachedNetworkImage(
+              fit: BoxFit.cover,
+              imageUrl:
+                  "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000",
+              placeholder: (context, url) => const CupertinoActivityIndicator(),
+              errorWidget: (context, url, error) => const Icon(Icons.person),
+            ),
+          ),
+        ),
         AppWidgets.textLocale(
-            localeKey: "Osiyo Market",
-            fontWeight: FontWeight.w600,
-            fontSize: 16.sp,
-            color: ColorName.white)
+          localeKey: "Osiyo Market",
+          fontWeight: FontWeight.w600,
+          fontSize: 16.sp,
+          color: ColorName.white,
+        )
       ],
     );
   }

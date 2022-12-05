@@ -13,9 +13,9 @@ class BonusTypeWidget extends StatefulWidget {
   State<BonusTypeWidget> createState() => _BonusTypeWidgetState();
 }
 
-bool isShow = false;
-
 class _BonusTypeWidgetState extends State<BonusTypeWidget> {
+  bool isShow = false;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -64,17 +64,17 @@ class CategoryListWidget extends StatefulWidget {
   State<CategoryListWidget> createState() => _CategoryListWidgetState();
 }
 
-bool isCheck = false;
-
 class _CategoryListWidgetState extends State<CategoryListWidget> {
+  bool isCheck = false;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         InkWell(
-          onTap: (){
+          onTap: () {
             setState(() {
-              isCheck=!isCheck;
+              isCheck = !isCheck;
             });
           },
           child: Row(

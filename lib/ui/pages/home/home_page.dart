@@ -15,7 +15,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../order_page/order_page.dart';
 import '../visits_page/visits_page.dart';
 
 class HomePageModule extends Module {

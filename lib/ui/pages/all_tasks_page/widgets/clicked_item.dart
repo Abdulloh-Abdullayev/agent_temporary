@@ -5,7 +5,6 @@ import 'package:agent/ui/pages/all_tasks_page/bloc/all_task_bloc.dart';
 import 'package:agent/ui/widgets/app_text_field.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -33,13 +32,12 @@ class ClickedItemModule extends Module {
 class ClickedItem extends StatelessWidget {
   ClickedItem({Key? key}) : super(key: key);
   static const String routeName = '/clickedItem';
-  var bloc = AllTaskBloc.to;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: BlocBuilder<AllTaskBloc, AllTaskState>(
-        bloc: bloc,
+        bloc: AllTaskBloc.to,
         builder: (context, state) {
           return Scaffold(
             body: Stack(
@@ -166,7 +164,8 @@ class ClickedItem extends StatelessWidget {
                             !state.completed
                                 ? InkWell(
                                     onTap: () {
-                                      bloc.add(ImageUploaded(state.image));
+                                      AllTaskBloc.to
+                                          .add(ImageUploaded(state.image));
                                     },
                                     child: AppWidgets.textLocale(
                                       localeKey: "Загрузить фото",

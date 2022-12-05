@@ -13,7 +13,6 @@ class ReturnOrderModel {
     this.summa,
     this.blog,
     this.count,
-
   });
 }
 

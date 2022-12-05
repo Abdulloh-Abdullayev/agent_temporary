@@ -7,7 +7,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-import 'customer_data_editing_page_widget/bottom_buttons_widget.dart';
+import 'widgets/bottom_buttons_widget.dart';
 
 class CustomerDataEditingPageModule extends Module {
   @override
@@ -40,11 +40,12 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
               children: [
                 Container(
                   decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(12),
-                        bottomLeft: Radius.circular(12),
-                      ),
-                      color: ColorName.primaryColor),
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(12),
+                      bottomLeft: Radius.circular(12),
+                    ),
+                    color: ColorName.primaryColor,
+                  ),
                   height: 139.h,
                   child: Column(
                     children: [
@@ -72,12 +73,12 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: AppWidgets.textLocale(
-                                localeKey: "Редактрирование заказа",
-                                fontSize: 24.sp,
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.white,
-                                isRichText: true)
-                            .paddingOnly(top: 18.w, left: 20),
+                          localeKey: "Редактрирование заказа",
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.white,
+                          isRichText: true,
+                        ).paddingOnly(top: 18.w, left: 20),
                       )
                     ],
                   ),
@@ -85,68 +86,72 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                 Expanded(
                   child: SingleChildScrollView(
                     child: Container(
-                        margin: EdgeInsets.only(top: 24.w),
-                        color: ColorName.white,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: 7,
-                          itemBuilder: (context, index) {
-                            return Column(
-                              children: [
-                                ExpansionTile(
-                                  collapsedTextColor: ColorName.black,
-                                  title: AppWidgets.textLocale(
-                                      localeKey: "Напитки",
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: ColorName.black,
-                                      isRichText: true),
-                                  children: [
-                                    ListView.builder(
-                                      shrinkWrap: true,
-                                      physics:
-                                      const NeverScrollableScrollPhysics(),
-                                      itemCount: 4,
-                                      itemBuilder: (context, index) {
-                                        return Container(
-                                          margin: EdgeInsets.only(
-                                            top: 12.w,
-                                            bottom: 12.w,
-                                            left: 13.w,
-                                            right: 13.w,
-                                          ),
-                                          child: Cards.cards_7(
-                                            context: context,
-                                            name: "name",
-                                            nalichi: "nalichi",
-                                            nalichiNumber: "20",
-                                            summa: "summa",
-                                            summaNumber: "100 000",
-                                            blok: "blok",
-                                            blokNumber: "1",
-                                            sht: "sht",
-                                            shtNumber: "2",
-                                            image:
-                                            "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg",
-                                            blokRemove: () {},
-                                            blokAdd: () {},
-                                            shtRemove: () {},
-                                            shtAdd: () {},
-                                          ),
-                                        );
-                                      },
-                                    )
-                                  ],
-                                ),
-                                Container(
-                                  color: ColorName.gray.withOpacity(0.1),
-                                  height: 12.w,
-                                )
-                              ],
-                            );
-                          },
-                        )).paddingOnly(bottom: 150.w),
+                      margin: EdgeInsets.only(
+                        top: 24.w,
+                        bottom: 150.w,
+                      ),
+                      color: ColorName.white,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: 7,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            children: [
+                              ExpansionTile(
+                                collapsedTextColor: ColorName.black,
+                                title: AppWidgets.textLocale(
+                                    localeKey: "Напитки",
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: ColorName.black,
+                                    isRichText: true),
+                                children: [
+                                  ListView.builder(
+                                    shrinkWrap: true,
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    itemCount: 4,
+                                    itemBuilder: (context, index) {
+                                      return Container(
+                                        margin: EdgeInsets.only(
+                                          top: 12.w,
+                                          bottom: 12.w,
+                                          left: 13.w,
+                                          right: 13.w,
+                                        ),
+                                        child: Cards.cards_7(
+                                          context: context,
+                                          name: "name",
+                                          nalichi: "nalichi",
+                                          nalichiNumber: "20",
+                                          summa: "summa",
+                                          summaNumber: "100 000",
+                                          blok: "blok",
+                                          blokNumber: "1",
+                                          sht: "sht",
+                                          shtNumber: "2",
+                                          image:
+                                              "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg",
+                                          blokRemove: () {},
+                                          blokAdd: () {},
+                                          shtRemove: () {},
+                                          shtAdd: () {},
+                                        ),
+                                      );
+                                    },
+                                  )
+                                ],
+                              ),
+                              Container(
+                                color: ColorName.gray.withOpacity(0.1),
+                                height: 12.w,
+                              )
+                            ],
+                          );
+                        },
+                      ),
+                    ),
                   ),
                 )
               ],

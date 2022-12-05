@@ -13,11 +13,12 @@ class EditingBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          color: ColorName.white,
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(12),
-            topLeft: Radius.circular(12),
-          )),
+        color: ColorName.white,
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(12),
+          topLeft: Radius.circular(12),
+        ),
+      ),
       child: Stack(
         alignment: Alignment.topRight,
         children: [
