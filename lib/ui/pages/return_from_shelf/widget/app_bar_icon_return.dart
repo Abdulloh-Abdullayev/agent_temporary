@@ -63,6 +63,7 @@ class AppBarIconReturn{
       ),
       child: PopupMenuTools(
         onTap: (index){
+          print(index);
          switch(index){
            case 0:return  Modular.to.pushNamed(CustomerDataPage.routeName);
            case 1:return  Modular.to.pushNamed(BalancePage.routeName);

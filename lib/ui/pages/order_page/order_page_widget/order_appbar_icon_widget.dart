@@ -10,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
 import '../../act_reconciliation_oder_page/act_reconciliation_oder_page.dart';
+import '../../rest_of_container_page/rest_of_container_page.dart';
 
 class AppBarIcon {
   static Widget backButton(VoidCallback onPressed) {
@@ -72,6 +73,8 @@ class AppBarIcon {
                     return Modular.to.pushNamed(ActReconciliationPage.routeName);
                   case 4:
                     return Modular.to.pushNamed(ActReconciliationOderPage.routeName);
+                  case 5:
+                    return Modular.to.pushNamed(RestContainerPage.routeName);
                 }
               },
               textName: const [

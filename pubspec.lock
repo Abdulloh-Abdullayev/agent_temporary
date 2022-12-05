@@ -329,7 +329,7 @@ packages:
       name: dropdown_button2
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.1"
+    version: "1.9.2"
   easy_localization:
     dependency: "direct main"
     description:
@@ -517,7 +517,7 @@ packages:
       name: font_awesome_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "10.2.1"
+    version: "10.3.0"
   frontend_server_client:
     dependency: transitive
     description:
@@ -1068,7 +1068,7 @@ packages:
       name: sqflite
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.1"
+    version: "2.2.2"
   sqflite_common:
     dependency: transitive
     description:
@@ -1158,7 +1158,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: c791217b5fc337db095f88f121df0ae9c7d646dc
+      resolved-ref: "41bde25c8048cc365e6a50b4bb841cc083a32d4f"
       url: "https://gitlab.com/tlps-project/ui-kit.git"
     source: git
     version: "1.0.0+1"
