@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../draft_page/draft_page.dart';
 import '../order_page/order_page.dart';
 import '../visits_page/visits_page.dart';
 
@@ -157,7 +158,7 @@ class HomePage extends StatelessWidget {
       case AppNavigationType.REPORT:
         return ReportsPage();
       case AppNavigationType.DRAFT:
-        return MainPage();
+        return DraftPage();
       case AppNavigationType.POINTS:
         return OutletsPage();
       default:

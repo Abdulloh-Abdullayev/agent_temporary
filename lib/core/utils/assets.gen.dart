@@ -256,6 +256,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/menu.svg
   SvgGenImage get menu => const SvgGenImage('assets/images/icons/menu.svg');
 
+  /// File path: assets/images/icons/menu_icon.svg
+  SvgGenImage get menuIcon =>
+      const SvgGenImage('assets/images/icons/menu_icon.svg');
+
   /// File path: assets/images/icons/minus.svg
   SvgGenImage get minus => const SvgGenImage('assets/images/icons/minus.svg');
 
