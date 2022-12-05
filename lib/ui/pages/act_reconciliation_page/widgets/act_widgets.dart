@@ -63,6 +63,7 @@ class ActWidget {
                 width: 28,
                 height: 28,
                 redius: 4,
+                backColor: ColorName.white.withOpacity(0.1),
                 child: myIcon.Assets.images.icons.backArrow.svg(),
                 onTap: buttonOnTap,
               ),

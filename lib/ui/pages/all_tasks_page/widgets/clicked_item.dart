@@ -19,11 +19,19 @@ class ClickedItemModule extends Module {
           child: (context, args) => ClickedItem(),
         ),
       ];
+
+  @override
+  List<Bind> get binds => [
+        Bind<AllTaskBloc>(
+          (i) => AllTaskBloc(),
+          onDispose: (value) => value.close(),
+        ),
+      ];
 }
 
 class ClickedItem extends StatelessWidget {
   ClickedItem({Key? key}) : super(key: key);
-  static const String routeName = '/clicked-item';
+  static const String routeName = '/clickedItem';
   var bloc = AllTaskBloc.to;
 
   @override
@@ -173,6 +181,11 @@ class ClickedItem extends StatelessWidget {
                                     height: 104.w,
                                     File(state.image!.path),
                                     fit: BoxFit.cover,
+                                    imageUrl: "state.image",
+                                    placeholder: (context, url) =>
+                                        const CircularProgressIndicator(),
+                                    errorWidget: (context, url, error) =>
+                                        const Icon(Icons.person),
                                   ),
                                   borderRadius: BorderRadius.circular(8.r),
                                 ),

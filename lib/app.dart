@@ -8,12 +8,15 @@ import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
+import 'package:agent/ui/pages/equipment_page/equipment_page.dart';
+import 'package:agent/ui/pages/equipment_page/pages/add_equipment_page.dart';
 import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
 import 'package:agent/ui/pages/history_orders/widgets/order_from_widget.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
+import 'package:agent/ui/pages/o_booking/o_boking_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
 import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
@@ -108,6 +111,8 @@ class AppModule extends Module {
         ModuleRoute("/", module: RemainStockPageModel()),
         ModuleRoute("/", module: DebtorsHistoryModule()),
         ModuleRoute("/", module: OrderPageModule()),
+        ModuleRoute("/", module: OBookingModule()),
+        ModuleRoute("/", module: AllTasksModule()),
         ModuleRoute("/", module: CustomerDataPageModule()),
         ModuleRoute("/", module: CustomerDataEditingPageModule()),
         ModuleRoute("/", module: DiagnosticsPageModule()),
@@ -120,12 +125,17 @@ class AppModule extends Module {
         ModuleRoute("/", module: CustomerDataEditingPageModule()),
         ModuleRoute("/", module: DiagnosticsPageModule()),
         ModuleRoute("/", module: OrderPageModule()),
+        ModuleRoute("/", module: EquipmentModule()),
         ModuleRoute("/", module: CustomerDataPageModule()),
         ModuleRoute("/", module: CustomerDataEditingPageModule()),
         ModuleRoute("/", module: DiagnosticsPageModule()),
         ModuleRoute("/", module: HistoryOrdersModule()),
         ModuleRoute("/", module: OrderFromModule()),
         ModuleRoute("/", module: AddOrderPageModule()),
+        ModuleRoute("/", module: ClickedItemModule()),
+        ModuleRoute("/", module: AddEquipmentModule()),
+        ModuleRoute("/", module: ActReconciliationOderPageModule()),
+        ModuleRoute("/", module: ActReconciliationPageModule()),
         ModuleRoute("/", module: AllTasksModule()),
         ModuleRoute("/", module: ClickedItemModule()),
       ];

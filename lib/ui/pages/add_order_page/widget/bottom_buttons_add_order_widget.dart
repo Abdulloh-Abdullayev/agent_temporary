@@ -1,5 +1,4 @@
 import 'package:agent/core/extensions/app_extensions.dart';
-import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page_widget/row_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
@@ -37,11 +36,25 @@ class BottomButtonsAddOrderWidget extends StatelessWidget {
             "Общее кол-во",
             "Общее кол-во",
           ).paddingOnly(bottom: 12.w),
-          CustomerEditingRowWidget(
-            "Общая сумма",
-            "1150 000 000 UZS",
-            ColorName.button,
-          ).paddingOnly(bottom: 16.w),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            AppWidgets.textLocale(
+                localeKey: "Общая сумма",
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w400,
+                color: ColorName.gray2,
+                isRichText: true
+            ),
+            AppWidgets.textLocale(
+                localeKey: "150 000 000 UZS",
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
+                color: ColorName.button,
+                isRichText: true
+            ),
+          ],
+        ).paddingOnly(bottom: 16.w),
           Row(
             children: [
               Expanded(

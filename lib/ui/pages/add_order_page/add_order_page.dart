@@ -14,18 +14,14 @@ import 'widget/bottom_buttons_add_order_widget.dart';
 
 class AddOrderPageModule extends Module {
   @override
-  List<Bind> get binds =>
-      [
+  List<Bind> get binds => [
         Bind<AddOrderCubit>(
-              (i) =>
-          AddOrderCubit()
-            ..load(),
+          (i) => AddOrderCubit()..load(),
         ),
       ];
 
   @override
-  List<ModularRoute> get routes =>
-      [
+  List<ModularRoute> get routes => [
         ChildRoute(
           AddOrderPage.routeName,
           child: (context, args) => const AddOrderPage(),
@@ -66,11 +62,12 @@ class _AddOrderPageState extends State<AddOrderPage> {
                     children: [
                       Container(
                         decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              bottomRight: Radius.circular(12),
-                              bottomLeft: Radius.circular(12),
-                            ),
-                            color: ColorName.primaryColor),
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(12),
+                            bottomLeft: Radius.circular(12),
+                          ),
+                          color: ColorName.primaryColor,
+                        ),
                         height: 139.h,
                         child: Column(
                           children: [
@@ -111,11 +108,11 @@ class _AddOrderPageState extends State<AddOrderPage> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: AppWidgets.textLocale(
-                                  localeKey: "Добавление заказа",
-                                  fontSize: 24.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: ColorName.white,
-                                  isRichText: true)
+                                      localeKey: "Добавление заказа",
+                                      fontSize: 24.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: ColorName.white,
+                                      isRichText: true)
                                   .paddingOnly(top: 18.w, left: 20),
                             )
                           ],
@@ -168,7 +165,8 @@ class ItemAddOrderWidget extends StatelessWidget {
             fontSize: 16.sp,
             fontWeight: FontWeight.w600,
             color: ColorName.black,
-            isRichText: true,),
+            isRichText: true,
+          ),
           children: [
             ListView.builder(
               shrinkWrap: true,
@@ -187,7 +185,7 @@ class ItemAddOrderWidget extends StatelessWidget {
                     name: model.name!,
                     summa: "Summa",
                     summaNumber:
-                    (AddOrderCubit.to.summa(model) * 10000).toString(),
+                        (AddOrderCubit.to.summa(model) * 10000).toString(),
                     blok: "Bloc",
                     blokNumber: model.blog.toString(),
                     sht: "Sht",

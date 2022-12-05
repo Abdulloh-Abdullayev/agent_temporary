@@ -31,7 +31,7 @@ class OrderTabbarWidget extends StatelessWidget {
             height: 46.w,
             child: TabBar(
               controller: _controller,
-              unselectedLabelColor: ColorName.button,
+              unselectedLabelColor: ColorName.gray3,
               labelColor: ColorName.button,
               onTap: (i) {
                 function(i);

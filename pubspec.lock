@@ -776,7 +776,7 @@ packages:
       name: mime
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.2"
+    version: "1.0.3"
   modular_core:
     dependency: transitive
     description:
@@ -1068,7 +1068,7 @@ packages:
       name: sqflite
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.0+3"
+    version: "2.2.1"
   sqflite_common:
     dependency: transitive
     description:
@@ -1158,7 +1158,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "420cf8b6ef2fb2ad66a25a6f2694a31e907af8b1"
+      resolved-ref: c791217b5fc337db095f88f121df0ae9c7d646dc
       url: "https://gitlab.com/tlps-project/ui-kit.git"
     source: git
     version: "1.0.0+1"

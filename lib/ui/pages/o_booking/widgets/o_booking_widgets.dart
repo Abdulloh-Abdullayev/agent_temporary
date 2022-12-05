@@ -43,14 +43,19 @@ class OBookingWidgets {
     );
   }
 
-  static Widget appBar(
-          {required title,
-          required BuildContext context,
-          required Function(String key) ontap}) =>
+  static Widget appBar({
+    required title,
+    required BuildContext context,
+    required Function(String key) ontap,
+  }) =>
       Container(
-        height: 139.h,
+        height: 120.h,
         width: 1.sw,
-        padding: const EdgeInsets.only(top: 19, left: 20, right: 20),
+        padding: const EdgeInsets.only(
+          top: 19,
+          left: 20,
+          right: 20,
+        ),
         decoration: const BoxDecoration(
           color: ColorName.primaryColor,
           borderRadius: BorderRadius.vertical(
@@ -64,8 +69,8 @@ class OBookingWidgets {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  height: 28.h,
-                  width: 28.h,
+                  height: 28.w,
+                  width: 28.w,
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(.10),
                     borderRadius: BorderRadius.circular(4),
