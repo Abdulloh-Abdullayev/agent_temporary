@@ -37,7 +37,7 @@ import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(ActReconciliationOderPage.routeName);
+    Modular.setInitialRoute(VisitsPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,

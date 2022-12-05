@@ -4,6 +4,7 @@ import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/act_reconciliation_oder_page/cubit/act_oder_cubit.dart';
 import 'package:agent/ui/pages/act_reconciliation_oder_page/widget/act_oder_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -73,11 +74,16 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
                     backOnTap: () {
                       Modular.to.pop();
                     },
-                    firstDataOnTap: () {},
-                    secondDataOnTap: () {},
+                    firstDataOnTap: () {
+                      openDatePicker('1');
+                    },
+                    secondDataOnTap: () {
+                      openDatePicker('2');
+                    },
                     buttonOnTap: () {},
-                    firstDate: "05.05.2022",
-                    secondDate: "10.05.2024",
+                    firstDate: DateFormat("dd.MM.yyyy").format(state.firstDate),
+                    secondDate:
+                        DateFormat("dd.MM.yyyy").format(state.secondDate),
                     actions: [
                       AppWidgets.buttonBuilder(
                         height: 28.w,
@@ -193,6 +199,23 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
             ),
           ),
         );
+      },
+    );
+  }
+
+  openDatePicker(String key) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return DateTimeDialog(
+          title: "Sanani tanlang",
+          closeTitle: "cancle",
+          addTitle: "Add",
+          addTap: (DateTime dateTime) {
+            _cubit.changeDate(key, dateTime);
+          },
+        );
+        ;
       },
     );
   }

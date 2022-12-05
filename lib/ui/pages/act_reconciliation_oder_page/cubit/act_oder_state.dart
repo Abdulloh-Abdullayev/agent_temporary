@@ -7,12 +7,16 @@ class ActOderState extends Equatable {
   final List<List<String>> allSum;
   final List<String> tableColumns;
   final Map<String, String> actSortStatus;
+  final DateTime firstDate;
+  final DateTime secondDate;
   const ActOderState({
     required this.baseTableChildren,
     required this.tempTableChildren,
     required this.allSum,
     required this.tableColumns,
     required this.actSortStatus,
+    required this.firstDate,
+    required this.secondDate,
   });
 
   @override
@@ -22,6 +26,8 @@ class ActOderState extends Equatable {
         allSum,
         tableColumns,
         actSortStatus,
+        firstDate,
+        secondDate,
       ];
 
   ActOderState copyWith({
@@ -30,6 +36,8 @@ class ActOderState extends Equatable {
     List<List<String>>? allSum,
     List<String>? tableColumns,
     Map<String, String>? actSortStatus,
+    DateTime? firstDate,
+    DateTime? secondDate,
   }) {
     return ActOderState(
       baseTableChildren: baseTableChildren ?? this.baseTableChildren,
@@ -37,6 +45,8 @@ class ActOderState extends Equatable {
       allSum: allSum ?? this.allSum,
       tableColumns: tableColumns ?? this.tableColumns,
       actSortStatus: actSortStatus ?? this.actSortStatus,
+      firstDate: firstDate ?? this.firstDate,
+      secondDate: secondDate ?? this.secondDate,
     );
   }
 }

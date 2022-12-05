@@ -4,7 +4,6 @@ import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/cubit/act_cubit.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/widgets/act_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';

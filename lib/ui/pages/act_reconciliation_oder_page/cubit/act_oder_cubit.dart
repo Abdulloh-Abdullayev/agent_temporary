@@ -25,6 +25,8 @@ class ActOderCubit extends Cubit<ActOderState> {
               .toList(),
           tableColumns: tabsList,
           actSortStatus: {},
+          firstDate: DateTime.now(),
+          secondDate: DateTime.now()..add(Duration(days: 1)),
         )) {
     initialize();
   }
@@ -41,6 +43,14 @@ class ActOderCubit extends Cubit<ActOderState> {
       tempTableChildren: listDateFormatList(state.baseTableChildren),
       actSortStatus: sort,
     ));
+  }
+
+  changeDate(String key, DateTime dateTime) {
+    if (key == '1') {
+      emit(state.copyWith(firstDate: dateTime));
+    } else {
+      emit(state.copyWith(secondDate: dateTime));
+    }
   }
 
   /// list  items sorter of list date
