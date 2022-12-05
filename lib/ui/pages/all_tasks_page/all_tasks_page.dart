@@ -16,8 +16,6 @@ class AllTasksModule extends Module {
           child: (context, args) =>const  AllTasksPage(),
         ),
       ];
-
-
 }
 
 class AllTasksPage extends StatefulWidget {
@@ -56,7 +54,7 @@ class _AllTasksPageState extends State<AllTasksPage>
           onPressed: () {},
           backgroundColor: ColorName.button,
           child: Assets.images.icons.plusIcon.svg(width: 24.w,height: 24.w,),
-        ),
+        ).paddingOnly(bottom: 140.w),
         body: Column(
           children: [
             Container(

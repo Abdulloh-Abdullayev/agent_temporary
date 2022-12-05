@@ -2,8 +2,6 @@ import 'package:agent/core/bloc/language/language_cubit.dart';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
-import 'package:agent/ui/pages/act_reconciliation_oder_page/act_reconciliation_oder_page.dart';
-import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
 import 'package:agent/ui/pages/all_tasks_page/all_tasks_page.dart';
 import 'package:agent/ui/pages/all_tasks_page/widgets/clicked_item.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page.dart';
@@ -17,8 +15,8 @@ import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
-import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
 import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
+import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -26,14 +24,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'ui/pages/add_order_page/add_order_page.dart';
 import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/debtors_page/widget/deptors_history.dart';
 import 'ui/pages/outlets_page/outlets_map_page.dart';
 import 'ui/pages/refund_page/refund_page.dart';
+import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
 import 'ui/pages/return_about_page/return_about_page.dart';
 import 'ui/pages/return_from_shelf/return_from_shelf.dart';
-import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -127,5 +126,7 @@ class AppModule extends Module {
         ModuleRoute("/", module: HistoryOrdersModule()),
         ModuleRoute("/", module: OrderFromModule()),
         ModuleRoute("/", module: AddOrderPageModule()),
+        ModuleRoute("/", module: AllTasksModule()),
+        ModuleRoute("/", module: ClickedItemModule()),
       ];
 }

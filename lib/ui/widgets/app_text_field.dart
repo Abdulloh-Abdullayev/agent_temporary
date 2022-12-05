@@ -1,6 +1,5 @@
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,6 +23,7 @@ class AppTextField extends StatefulWidget {
   final bool autoFocus;
   final Key? key;
   final bool phoneNumberCode;
+  final bool enablePrefixIcon;
   final int? maxLength;
 
   AppTextField({
@@ -44,6 +44,7 @@ class AppTextField extends StatefulWidget {
     this.autoFocus = false,
     this.phoneNumberCode = false,
     this.maxLength,
+    this.enablePrefixIcon=true,
   });
 
   @override
@@ -86,7 +87,7 @@ class _AppTextFieldState extends State<AppTextField> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Container(
-          height:  widget.height,
+          height: widget.height,
           decoration: BoxDecoration(
             color: ColorName.white,
             borderRadius: BorderRadius.circular(12),
@@ -107,13 +108,13 @@ class _AppTextFieldState extends State<AppTextField> {
               focusedBorder: _border,
               enabledBorder: _border,
               hintText: widget.hintText,
-              contentPadding: EdgeInsets.only(top:20.w),
+              contentPadding: EdgeInsets.only(top: 20.w),
               hintStyle: GoogleFonts.inter(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray3,
               ),
-              prefixIcon: Container(
+              prefixIcon: widget.enablePrefixIcon ? Container(
                 padding: EdgeInsets.only(left: 10),
                 width: 40.w,
                 child: Center(
@@ -122,7 +123,7 @@ class _AppTextFieldState extends State<AppTextField> {
                     height: 16.w,
                   ),
                 ),
-              ).paddingOnly(top: 2),
+              ).paddingOnly(top: 2): const SizedBox(),
             ),
             obscureText: obscureText,
             keyboardType: widget.textInputType,

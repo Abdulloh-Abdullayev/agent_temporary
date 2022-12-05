@@ -21,7 +21,7 @@ class LeftMenuState extends Equatable {
         isLoading,
         hasError,
         reLoad,
-    hideShow,
+        hideShow,
       ];
 
   const LeftMenuState({
