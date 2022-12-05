@@ -59,6 +59,7 @@ class AddBonusWidget extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
+                  Modular.to.pop();
                   showModalBottomSheet(
                     context: context,
                     backgroundColor: Colors.transparent,
