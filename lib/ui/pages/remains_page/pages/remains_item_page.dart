@@ -1,4 +1,3 @@
-import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/remains_page/cubit/remains_cubit.dart';
 import 'package:agent/ui/pages/remains_page/widgets/item_remains_widget.dart';
 import 'package:agent/ui/pages/remains_page/widgets/remains_page_widgets.dart';
@@ -33,15 +32,15 @@ class RemainsItemPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:const Color(0xFFDFDFDF),
+      backgroundColor: const Color(0xFFDFDFDF),
       body: SafeArea(
         child: BlocBuilder<RemainCubit, RemainState>(
           bloc: RemainCubit.to,
           builder: (context, state) {
             return Column(
               children: [
-               RemainsPageWidgets.remainsAppBar().paddingOnly(bottom: 18.w),
-                 buildList(state)
+                RemainsPageWidgets.remainsAppBar().paddingOnly(bottom: 18.w),
+                buildList(state)
               ],
             );
           },
@@ -63,27 +62,22 @@ class RemainsItemPage extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal:20.w),
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
                   itemCount: state.list.length,
                   shrinkWrap: true,
                   itemBuilder: (context, index) => RemainsItemWidget(
-
                     model: state.list[index],
                     index: index,
                   ).paddingOnly(top: 12.w),
                 ),
               ),
             ),
-               RemainsPageWidgets.buildAppButton(),
+            RemainsPageWidgets.buildAppButton(),
           ],
         ),
       ),
     );
   }
-
-  
-
-  
 }

@@ -1,7 +1,5 @@
 part of 'remains_cubit.dart';
 
-
-
 class RemainState extends Equatable {
   final bool loading;
   final List<RemainsCategoryModel> list;
@@ -36,5 +34,3 @@ class RemainState extends Equatable {
         reload,
       ];
 }
-
-

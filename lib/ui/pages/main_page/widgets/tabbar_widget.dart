@@ -3,15 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/utils/colors.gen.dart';
 
-
 class TabBarWidget extends StatelessWidget {
-  TabBarWidget(this._controller,this.title1,this.title2,this.function);
- static int index = 0;
+  TabBarWidget(this._controller, this.title1, this.title2, this.function);
+  static int index = 0;
   TabController _controller;
   String title1;
   String title2;
   Function function;
-
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +31,8 @@ class TabBarWidget extends StatelessWidget {
                 horizontal: 3.w,
               ),
               decoration: BoxDecoration(
-                  color: ColorName.white,
-                  borderRadius: BorderRadius.circular(50.r),
-
+                color: ColorName.white,
+                borderRadius: BorderRadius.circular(50.r),
               ),
               child: TabBar(
                 controller: _controller,
@@ -43,7 +40,6 @@ class TabBarWidget extends StatelessWidget {
                 labelColor: ColorName.white,
                 onTap: (i) {
                   function(i);
-
                 },
                 indicator: BoxDecoration(
                   borderRadius: BorderRadius.circular(50.r),
@@ -61,7 +57,7 @@ class TabBarWidget extends StatelessWidget {
                   ),
                   Tab(
                     child: Text(
-                     title2,
+                      title2,
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 16.sp,

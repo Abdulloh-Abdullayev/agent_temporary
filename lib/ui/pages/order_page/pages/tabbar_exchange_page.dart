@@ -122,75 +122,74 @@ class TabbarExchangePage extends StatelessWidget {
                                     fontSize: 12),
                               ],
                             ),
-                    Container(
-                      width: 20,
-                      height: 20,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(4),
-                        color: ColorName.bgColor,
-                      ),
-                      child:  Center(
-                        child: PopupMenuTools(
-                          onTap: (p0) {
-                            if (p0 == 0) {
-                              Modular.to.pushNamed(EditExchangeWidget.routeName);
-                            } else if (p0 == 1) {
-                              showDialog(
-                                context: context,
-                                builder: (ctx) => Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: DateTimeDialog(
-                                      title: "Добавить дату отгрузки",
-                                      closeTitle: "Закрыть",
-                                      addTitle: "Добавить",
-                                      addTap: () {}),
+                            Container(
+                              width: 20,
+                              height: 20,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                color: ColorName.bgColor,
+                              ),
+                              child: Center(
+                                child: PopupMenuTools(
+                                  onTap: (p0) {
+                                    if (p0 == 0) {
+                                      Modular.to.pushNamed(
+                                          EditExchangeWidget.routeName);
+                                    } else if (p0 == 1) {
+                                      showDialog(
+                                        context: context,
+                                        builder: (ctx) => Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: DateTimeDialog(
+                                              title: "Добавить дату отгрузки",
+                                              closeTitle: "Закрыть",
+                                              addTitle: "Добавить",
+                                              addTap: () {}),
+                                        ),
+                                      );
+                                    } else if (p0 == 2) {
+                                      // showDialog(
+                                      //   context: context,
+                                      //   builder: (ctx) => Padding(
+                                      //     padding: const EdgeInsets.all(4.0),
+                                      //     child: DateTimeDialog(
+                                      //         title: "Добавить консигнация",
+                                      //         closeTitle: "Закрыть",
+                                      //         addTitle: "Добавить",
+                                      //         addTap: () {},
+                                      //     ),
+                                      //   ),
+                                      // );
+                                    }
+                                  },
+                                  textName: const [
+                                    "Редактрировать",
+                                    "Комментария к заказу",
+                                    "Удалить",
+                                  ],
+                                  icons: [
+                                    Assets.images.icons.editeAlt.svg(
+                                      fit: BoxFit.cover,
+                                      color: ColorName.button,
+                                    ),
+                                    Assets.images.icons.chat.svg(
+                                      fit: BoxFit.cover,
+                                      color: ColorName.gray2,
+                                    ),
+                                    Assets.images.icons.trashCan.svg(
+                                      fit: BoxFit.cover,
+                                      color: ColorName.red,
+                                    ),
+                                    const SizedBox.shrink(),
+                                  ],
+                                  textColor: const [
+                                    ColorName.button,
+                                    ColorName.black,
+                                    ColorName.red,
+                                  ],
                                 ),
-                              );
-                            } else if (p0 == 2) {
-                              // showDialog(
-                              //   context: context,
-                              //   builder: (ctx) => Padding(
-                              //     padding: const EdgeInsets.all(4.0),
-                              //     child: DateTimeDialog(
-                              //         title: "Добавить консигнация",
-                              //         closeTitle: "Закрыть",
-                              //         addTitle: "Добавить",
-                              //         addTap: () {},
-                              //     ),
-                              //   ),
-                              // );
-                            }
-                          },
-                          textName: const [
-                            "Редактрировать",
-                            "Комментария к заказу",
-                            "Удалить",
-                          ],
-                          icons: [
-                            Assets.images.icons.editeAlt.svg(
-                              fit: BoxFit.cover,
-                              color: ColorName.button,
+                              ),
                             ),
-                            Assets.images.icons.chat.svg(
-                              fit: BoxFit.cover,
-                              color: ColorName.gray2,
-                            ),
-                            Assets.images.icons.trashCan.svg(
-                              fit: BoxFit.cover,
-                              color: ColorName.red,
-                            ),
-                            const SizedBox.shrink(),
-                          ],
-                          textColor: const [
-                            ColorName.button,
-                            ColorName.black,
-                            ColorName.red,
-                          ],
-                        ),
-                      ),
-                    ),
-
-
                           ],
                         ).paddingOnly(bottom: 15.w),
                         Row(

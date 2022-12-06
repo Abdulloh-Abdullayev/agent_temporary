@@ -5,12 +5,12 @@ import '../../../../core/utils/colors.gen.dart';
 
 class OrderTabbarWidget extends StatelessWidget {
   OrderTabbarWidget(
-      this._controller,
-      this.title1,
-      this.title2,
-      this.title3,
-      this.function,
-      );
+    this._controller,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.function,
+  );
 
   static int index = 0;
   final TabController _controller;
@@ -28,48 +28,47 @@ class OrderTabbarWidget extends StatelessWidget {
           initialIndex: 0,
           length: 3,
           child: SizedBox(
-            height: 46.w,
-            child: TabBar(
-              controller: _controller,
-              unselectedLabelColor: ColorName.gray3,
-              labelColor: ColorName.button,
-              onTap: (i) {
-                function(i);
-              },
-              indicatorColor: ColorName.button,
-              indicatorWeight: 3,
-              indicatorSize: TabBarIndicatorSize.label,
-              tabs: [
-                Tab(
-                  child: Text(
-                    title1,
-                    style: TextStyle(
+              height: 46.w,
+              child: TabBar(
+                controller: _controller,
+                unselectedLabelColor: ColorName.gray3,
+                labelColor: ColorName.button,
+                onTap: (i) {
+                  function(i);
+                },
+                indicatorColor: ColorName.button,
+                indicatorWeight: 3,
+                indicatorSize: TabBarIndicatorSize.label,
+                tabs: [
+                  Tab(
+                    child: Text(
+                      title1,
+                      style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 14.sp,
-                       ),
+                      ),
+                    ),
                   ),
-                ),
-                Tab(
-                  child: Text(
-                    title2,
-                    style: TextStyle(
+                  Tab(
+                    child: Text(
+                      title2,
+                      style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 14.sp,
+                      ),
                     ),
                   ),
-                ),
-                Tab(
-                  child: Text(
-                    title3,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14.sp,
+                  Tab(
+                    child: Text(
+                      title3,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14.sp,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            )
-          ),
+                ],
+              )),
         ),
       ],
     );

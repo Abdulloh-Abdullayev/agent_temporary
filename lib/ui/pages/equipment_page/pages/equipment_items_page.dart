@@ -1,8 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/equipment_page/widgets/equipment_widgets.dart';
 import 'package:agent/ui/pages/equipment_page/pages/equipments_details.dart';
+import 'package:agent/ui/pages/equipment_page/widgets/equipment_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

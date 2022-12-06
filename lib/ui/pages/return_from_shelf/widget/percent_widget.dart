@@ -6,7 +6,10 @@ import 'package:uikit/uikit.dart';
 
 class PercentWidget extends StatelessWidget {
   const PercentWidget({
-    Key? key, required this.width, required this.forecast, required this.fact,
+    Key? key,
+    required this.width,
+    required this.forecast,
+    required this.fact,
   }) : super(key: key);
   final double width;
   final int forecast;

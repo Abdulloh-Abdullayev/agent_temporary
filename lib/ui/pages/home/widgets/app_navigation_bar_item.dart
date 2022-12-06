@@ -14,7 +14,7 @@ class AppNavigationBarItem extends StatelessWidget {
     required this.title,
     this.isActive = false,
     Key? key,
-  }):super(key: key);
+  }) : super(key: key);
 
   final Widget icon;
   final Widget iconOnTap;

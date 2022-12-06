@@ -1,6 +1,6 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page_widget/row_widget.dart';
+import 'package:agent/ui/pages/customer_data_editing_page/widgets/row_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
@@ -81,9 +81,7 @@ class BottomButtonsShelfWidget extends StatelessWidget {
                               title: 'Добавить срок годности',
                               closeTitle: 'Закрыть',
                               addTitle: 'Добавить',
-                              addTap: (){
-
-                              },
+                              addTap: () {},
                             );
                           },
                         );

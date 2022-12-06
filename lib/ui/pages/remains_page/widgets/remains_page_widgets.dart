@@ -372,7 +372,7 @@ class RemainsPageWidgets {
 
   static Widget buildAppButton() {
     return Container(
-      height:141.w,
+      height: 141.w,
       padding: EdgeInsets.all(20.w),
       decoration: const BoxDecoration(
         color: Colors.white,
@@ -389,43 +389,41 @@ class RemainsPageWidgets {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              
               AppWidgets.textLocale(
                 localeKey: "Обший Блок",
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray2,
               ),
-               AppWidgets.textLocale(
+              AppWidgets.textLocale(
                 localeKey: "1365 о",
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
-                    color: ColorName.black,
+                color: ColorName.black,
               ),
             ],
           ),
-         const SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              
               AppWidgets.textLocale(
                 localeKey: "Общее кол-во",
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray2,
               ),
-               AppWidgets.textLocale(
+              AppWidgets.textLocale(
                 localeKey: "1258 шт",
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
-                    color: ColorName.black,
+                color: ColorName.black,
               ),
             ],
           ),
-           const SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Row(

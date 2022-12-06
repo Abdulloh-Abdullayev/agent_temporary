@@ -20,11 +20,13 @@ import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:agent/ui/pages/o_booking/o_boking_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
+import 'package:agent/ui/pages/orders_page/orders_page.dart';
+import 'package:agent/ui/pages/orders_page/pages/order_id_page.dart';
+import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
 import 'package:agent/ui/pages/remains_page/pages/remains_edit_page.dart';
 import 'package:agent/ui/pages/remains_page/pages/remains_item_page.dart';
 import 'package:agent/ui/pages/remains_page/remains_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
-import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -32,14 +34,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'ui/pages/add_order_page/add_order_page.dart';
 import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/debtors_page/widget/deptors_history.dart';
 import 'ui/pages/outlets_page/outlets_map_page.dart';
 import 'ui/pages/refund_page/refund_page.dart';
+import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
 import 'ui/pages/return_about_page/return_about_page.dart';
 import 'ui/pages/return_from_shelf/return_from_shelf.dart';
-import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -51,9 +54,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(HomePage.routeName);
-    Modular.setObservers([BotToastNavigatorObserver()]
-    );
+    Modular.setInitialRoute(OrdersPage.routeName);
+    Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
       buildWhen: (previous, current) {
@@ -75,8 +77,8 @@ class App extends StatelessWidget {
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             theme: ThemeData(
-            androidOverscrollIndicator:androidOverscrollIndicator,
-          ),
+              androidOverscrollIndicator: androidOverscrollIndicator,
+            ),
             routeInformationParser: Modular.routeInformationParser,
             routerDelegate: Modular.routerDelegate,
           ),
@@ -131,5 +133,7 @@ class AppModule extends Module {
         ModuleRoute("/", module: RemainsItemPageModule()),
         ModuleRoute("/", module: ActReconciliationOderPageModule()),
         ModuleRoute("/", module: ActReconciliationPageModule()),
+        ModuleRoute("/", module: OrdersPageModule()),
+        ModuleRoute("/", module: OrderIdPageModule()),
       ];
 }

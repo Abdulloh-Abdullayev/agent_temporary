@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -14,7 +12,7 @@ class AddOutletsCubit extends Cubit<AddOutletsState> {
   static AddOutletsCubit get to => Modular.get<AddOutletsCubit>();
 
   Future uploadImg() async {
-    AppLoggerUtil.w("asdfsdfgd");
+    AppLoggerUtil.d("asdfsdfgd");
     XFile? imagePicker = await ImagePicker().pickImage(
       source: ImageSource.gallery,
     );
@@ -24,7 +22,7 @@ class AddOutletsCubit extends Cubit<AddOutletsState> {
   }
 
   Future deleteImg(int index) async {
-    AppLoggerUtil.w("asdfsdfgd");
+    AppLoggerUtil.d("asdfsdfgd");
     List<XFile> newList = List.from(state.images);
     newList.removeAt(index);
     emit(state.copyWith(images: newList));

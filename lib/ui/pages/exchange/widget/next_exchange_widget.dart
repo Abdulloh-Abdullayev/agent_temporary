@@ -194,10 +194,10 @@ class NextExchangeWidget extends StatelessWidget {
                             "Lorem ipsum",
                             "Lorem ipsum",
                           ],
-                          returnOnTapButton: (){
+                          returnOnTapButton: () {
                             Modular.to.pushNamed(OrderPage.routeName);
                           },
-                          quitOnTapButton: (){
+                          quitOnTapButton: () {
                             Navigator.pop(context);
                           },
                         ),
