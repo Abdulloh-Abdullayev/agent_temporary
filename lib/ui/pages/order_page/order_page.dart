@@ -1,7 +1,6 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/order_page/bloc/order_page_cubit.dart';
-import 'package:agent/ui/pages/exchange/exchange_page.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/market_image_function_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/pages/order_page/pages/photo_report_page.dart';
