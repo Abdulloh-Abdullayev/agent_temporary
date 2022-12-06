@@ -78,16 +78,16 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                               columnSpacing: 24,
                               horizontalMargin: 12,
                               columns: [
-                                for (var e in columnTitles)
+                                for (var columnTitle in columnTitles)
                                   ActWidget.dataColumn(
-                                    e,
-                                    align: e == columnTitles.last
+                                    columnTitle,
+                                    align: columnTitle == columnTitles.last
                                         ? Alignment.centerRight
                                         : Alignment.centerLeft,
                                   ),
                               ],
                               rows: [
-                                for (var e in [
+                                for (var dataRow in [
                                   [
                                     '21.10.2022',
                                     'Оплата на заказ',
@@ -137,7 +137,7 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                                   ['Оплата на заказ', '', '+100 000 000 UZS'],
                                   ['Итоговый долг', '', '-0'],
                                 ])
-                                  ActWidget.dataRow(e),
+                                  ActWidget.dataRow(dataRow),
                               ],
                             ),
                           ),

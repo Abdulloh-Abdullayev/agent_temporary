@@ -28,10 +28,8 @@ class ImageWidget extends StatelessWidget {
             child: CachedNetworkImage(
               fit: BoxFit.cover,
               imageUrl: image,
-              placeholder: (context, url) =>
-              const CupertinoActivityIndicator(),
-              errorWidget: (context, url, error) =>
-              const Icon(Icons.person),
+              placeholder: (context, url) => const CupertinoActivityIndicator(),
+              errorWidget: (context, url, error) => const Icon(Icons.person),
             ),
           ),
         ),

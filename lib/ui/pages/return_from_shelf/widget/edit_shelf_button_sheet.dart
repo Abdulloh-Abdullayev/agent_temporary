@@ -7,7 +7,7 @@ import 'package:uikit/uikit.dart';
 import '../../../../core/utils/colors.gen.dart';
 
 class EditShelfButtonSheet extends StatelessWidget {
-  const  EditShelfButtonSheet({Key? key}) : super(key: key);
+  const EditShelfButtonSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -33,7 +33,6 @@ class AddOrderCubit extends Cubit<AddOrderState> {
 
   Future load() async {
     List<ReturnOrderCategoryModel> list = [
-
       ReturnOrderCategoryModel(
         id: 0,
         name: "Напитки",

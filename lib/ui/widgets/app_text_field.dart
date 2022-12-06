@@ -1,6 +1,5 @@
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -86,7 +85,7 @@ class _AppTextFieldState extends State<AppTextField> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Container(
-          height:  widget.height,
+          height: widget.height,
           decoration: BoxDecoration(
             color: ColorName.white,
             borderRadius: BorderRadius.circular(12),
@@ -107,7 +106,7 @@ class _AppTextFieldState extends State<AppTextField> {
               focusedBorder: _border,
               enabledBorder: _border,
               hintText: widget.hintText,
-              contentPadding: EdgeInsets.only(top:20.w),
+              contentPadding: EdgeInsets.only(top: 20.w),
               hintStyle: GoogleFonts.inter(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,

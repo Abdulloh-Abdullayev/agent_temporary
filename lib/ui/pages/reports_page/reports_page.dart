@@ -35,7 +35,7 @@ class ReportsPage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                     HomePage.globalKey.currentState!.openDrawer();
+                    HomePage.globalKey.currentState!.openDrawer();
                   },
                   child: Assets.images.icons.menu.svg(),
                 ),
@@ -70,7 +70,7 @@ class ReportsPage extends StatelessWidget {
                     const TableFact().paddingOnly(top: 16.w),
                     const SalesTableWidget()
                   ],
-                ).paddingSymmetric(horizontal: 20.w,vertical: 20.w)
+                ).paddingSymmetric(horizontal: 20.w, vertical: 20.w)
               ],
             ),
           ),
@@ -198,9 +198,7 @@ class ReportsPage extends StatelessWidget {
                 ),
               );
             },
-            dropDownOnTap: () {
-
-            },
+            dropDownOnTap: () {},
             SecondDateOnTap: () {
               showDialog(
                 context: context,

@@ -70,9 +70,11 @@ class AppBarIcon {
                   case 2:
                     return Modular.to.pushNamed(EquipmentPage.routeName);
                   case 3:
-                    return Modular.to.pushNamed(ActReconciliationPage.routeName);
+                    return Modular.to
+                        .pushNamed(ActReconciliationPage.routeName);
                   case 4:
-                    return Modular.to.pushNamed(ActReconciliationOderPage.routeName);
+                    return Modular.to
+                        .pushNamed(ActReconciliationOderPage.routeName);
                   case 5:
                     return Modular.to.pushNamed(RestContainerPage.routeName);
                 }

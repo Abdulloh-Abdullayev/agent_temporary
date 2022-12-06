@@ -169,9 +169,7 @@ class TabbarOrderPage extends StatelessWidget {
                   otgruzkiNumber: "1524",
                   status: 'status',
                   statusColor: ColorName.green,
-                  card_onTap: () {
-
-                  },
+                  card_onTap: () {},
                 ),
               );
             },

@@ -257,7 +257,7 @@ class EditExchangeWidget extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: (){},
+                    onTap: () {},
                     child: Assets.images.icons.exchange.svg(),
                   ).paddingSymmetric(horizontal: 8.w),
                   Container(

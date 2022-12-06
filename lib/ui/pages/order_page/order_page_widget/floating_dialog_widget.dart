@@ -296,20 +296,20 @@ class FloatingDialog extends StatelessWidget {
                                   "Тип направления",
                                   "Тип цены",
                                 ],
-                                seeListTextName:const [
-                                    "Основной склад",
-                                    "Направление..",
-                                    "Наличные",
+                                seeListTextName: const [
+                                  "Основной склад",
+                                  "Направление..",
+                                  "Наличные",
                                 ],
                                 icons: [
-                                    Assets.images.icons.stack.svg(),
-                                    Assets.images.icons.shoppingCardIcon.svg(),
-                                    Assets.images.icons.cash.svg(),
+                                  Assets.images.icons.stack.svg(),
+                                  Assets.images.icons.shoppingCardIcon.svg(),
+                                  Assets.images.icons.cash.svg(),
                                 ],
-                                quitOnTapButton: (){
+                                quitOnTapButton: () {
                                   Navigator.pop(context);
                                 },
-                                submitOnTapButton: (){
+                                submitOnTapButton: () {
                                   Modular.to.pushNamed(ExchangePage.routeName);
                                 },
                               );

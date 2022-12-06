@@ -1,8 +1,4 @@
-
-
-
-class AppHelper{
-
+class AppHelper {
   static String numFormat(String n) {
     var numArr = n.split('');
     String revStr = "";
@@ -21,5 +17,4 @@ class AppHelper{
     }
     return revStr.split('').reversed.join('');
   }
-
 }

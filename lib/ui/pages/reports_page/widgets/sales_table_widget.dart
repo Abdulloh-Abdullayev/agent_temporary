@@ -159,4 +159,3 @@ class SalesTableWidget extends StatelessWidget {
     );
   }
 }
-

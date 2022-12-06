@@ -1,7 +1,6 @@
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/remains_page/pages/remains_edit_page.dart';
-import 'package:agent/ui/pages/remains_page/pages/remains_item_page.dart';
 import 'package:agent/ui/pages/remains_page/remains_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_from_shelf.dart';
 import 'package:flutter/material.dart';
@@ -44,8 +43,7 @@ class FloatingShowDialog extends StatelessWidget {
                           return Modular.to
                               .pushNamed(ReturnFromShelf.routeName);
                         case 7:
-                          return Modular.to
-                              .pushNamed(RemainsPage.routeName);
+                          return Modular.to.pushNamed(RemainsPage.routeName);
                       }
                     },
                     icons: [
@@ -55,9 +53,7 @@ class FloatingShowDialog extends StatelessWidget {
                       Assets.images.icons.infoCircle.svg(),
                       Assets.images.icons.refresh.svg(),
                       Assets.images.icons.exchange.svg(),
-                      Assets.images.icons.box1.svg(
-
-                      ),
+                      Assets.images.icons.box1.svg(),
                       Assets.images.icons.box1.svg(),
                     ],
                     textName: const [
