@@ -133,7 +133,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                               const SizedBox(
                                 width: 12,
                               ),
-                              AppBarIcon.menuButtpon()
+                              AppBarIcon.menuButton()
                             ],
                           )
                         ],

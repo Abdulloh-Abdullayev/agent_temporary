@@ -42,7 +42,7 @@ class DraftPage extends StatelessWidget {
                 children: [
                   Align(
                     alignment: Alignment.centerLeft,
-                    child: AppBarIcon.menuButtpon()
+                    child: AppBarIcon.menuButton()
                   ).paddingOnly(top: 20.w),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

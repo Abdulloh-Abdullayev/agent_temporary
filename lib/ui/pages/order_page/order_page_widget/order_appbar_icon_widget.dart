@@ -51,7 +51,7 @@ class AppBarIcon {
     );
   }
 
-  static Widget menuButtpon() {
+  static Widget menuButton() {
     return Container(
       height: 28.w,
       width: 28.w,
