@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
+
 import 'bloc/add_order_cubit.dart';
 import 'bloc/add_order_state.dart';
 import 'widget/app_bar_icon_add_order.dart';
@@ -85,8 +86,9 @@ class _AddOrderPageState extends State<AddOrderPage> {
                                       width: 12,
                                     ),
                                     AppBarIconAddOrder
-                                        .filterAddOrderButtonShelf(() {
-                                      showModalBottomSheet(
+                                        .filterAddOrderButtonShelf(
+                                      () {
+                                        showModalBottomSheet(
                                           backgroundColor: Colors.transparent,
                                           context: context,
                                           builder: (context) {
@@ -95,8 +97,10 @@ class _AddOrderPageState extends State<AddOrderPage> {
                                               text: 'Фильтр',
                                               itemsName: itemsName,
                                             );
-                                          });
-                                    }),
+                                          },
+                                        );
+                                      },
+                                    ),
                                   ],
                                 )
                               ],
@@ -108,30 +112,31 @@ class _AddOrderPageState extends State<AddOrderPage> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: AppWidgets.textLocale(
-                                      localeKey: "Добавление заказа",
-                                      fontSize: 24.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: ColorName.white,
-                                      isRichText: true)
-                                  .paddingOnly(top: 18.w, left: 20),
+                                localeKey: "Добавление заказа",
+                                fontSize: 24.sp,
+                                fontWeight: FontWeight.w600,
+                                color: ColorName.white,
+                                isRichText: true,
+                              ).paddingOnly(top: 18.w, left: 20),
                             )
                           ],
                         ),
                       ),
                       Container(
-                          margin: EdgeInsets.only(top: 24.w),
-                          color: ColorName.white,
-                          child: ListView.builder(
-                            shrinkWrap: true,
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemCount: state.list.length,
-                            itemBuilder: (context, index) {
-                              return ItemAddOrderWidget(
-                                returnOrderModel: state.list[index],
-                                index: index,
-                              );
-                            },
-                          )).paddingOnly(bottom: 150.w)
+                        margin: EdgeInsets.only(top: 24.w),
+                        color: ColorName.white,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: state.list.length,
+                          itemBuilder: (context, index) {
+                            return ItemAddOrderWidget(
+                              returnOrderModel: state.list[index],
+                              index: index,
+                            );
+                          },
+                        ),
+                      ).paddingOnly(bottom: 150.w)
                     ],
                   ),
                 ),

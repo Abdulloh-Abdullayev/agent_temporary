@@ -18,10 +18,9 @@ class TabbarThirdWidget extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: ColorName.gray),
+                    border: Border.all(color: ColorName.gray),
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(12)
-                ),
+                    borderRadius: BorderRadius.circular(12)),
                 child: Column(
                   children: [
                     Column(
@@ -93,9 +92,11 @@ class TabbarThirdWidget extends StatelessWidget {
             ),
           ],
         ),
-         Padding(
+        Padding(
           padding: EdgeInsets.only(top: 52.w),
-          child: const Divider(color: ColorName.gray2,),
+          child: const Divider(
+            color: ColorName.gray2,
+          ),
         ),
         MarkWidget(
           text: "Факт",
@@ -104,15 +105,16 @@ class TabbarThirdWidget extends StatelessWidget {
           width: 76.w,
         ),
         Container(
-          margin: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.17),
+          margin:
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.17),
           width: double.infinity,
           decoration: BoxDecoration(
             border: Border.all(color: ColorName.gray),
-              color: ColorName.white,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(12),
-                bottomRight: Radius.circular(12),
-              ),
+            color: ColorName.white,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(12),
+              bottomRight: Radius.circular(12),
+            ),
           ),
           child: Column(
             children: [
@@ -132,7 +134,6 @@ class TabbarThirdWidget extends StatelessWidget {
             ],
           ).paddingOnly(top: 18.w, bottom: 16.w),
         ),
-
       ],
     );
   }

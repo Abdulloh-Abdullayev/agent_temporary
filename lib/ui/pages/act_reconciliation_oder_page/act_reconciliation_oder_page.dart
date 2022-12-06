@@ -5,7 +5,6 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uikit/uikit.dart';
 
 import '../../../core/utils/colors.gen.dart';
 
@@ -29,6 +28,7 @@ class ActReconciliationOderPageModule extends Module {
 
 class ActReconciliationOderPage extends StatefulWidget {
   static const String routeName = "/act_reconciliation_oder_page";
+
   const ActReconciliationOderPage({super.key});
 
   @override
@@ -94,16 +94,16 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
                               columnSpacing: 24,
                               horizontalMargin: 12,
                               columns: [
-                                for (var e in columnTitles)
+                                for (var columnTitle in columnTitles)
                                   ActWidget.dataColumn(
-                                    e,
-                                    align: e == columnTitles.last
+                                    columnTitle,
+                                    align: columnTitle == columnTitles.last
                                         ? Alignment.centerRight
                                         : Alignment.centerLeft,
                                   ),
                               ],
                               rows: [
-                                for (var e in [
+                                for (var dataRow in [
                                   [
                                     "Основной склад",
                                     '21.10.2022',
@@ -183,7 +183,7 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
                                   ],
                                   ['Итоговый долг', '', "5 000", '', '-0'],
                                 ])
-                                  ActWidget.dataRow(e),
+                                  ActWidget.dataRow(dataRow),
                               ],
                             ),
                           ),

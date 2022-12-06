@@ -6,9 +6,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-class AppBarIconAddOrder{
-
-  static Widget backAddOrderButtonShelf(VoidCallback onPressed){
+class AppBarIconAddOrder {
+  static Widget backAddOrderButtonShelf(VoidCallback onPressed) {
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -27,7 +26,7 @@ class AppBarIconAddOrder{
     );
   }
 
-  static Widget telephoneAddOrderButtonShelf(VoidCallback onPressed){
+  static Widget telephoneAddOrderButtonShelf(VoidCallback onPressed) {
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -38,8 +37,7 @@ class AppBarIconAddOrder{
           color: const Color.fromRGBO(255, 255, 255, 0.1),
         ),
         child: Center(
-          child:
-          Assets.images.icons.telephoneButton.svg(
+          child: Assets.images.icons.telephoneButton.svg(
             fit: BoxFit.cover,
           ),
         ),
@@ -47,7 +45,7 @@ class AppBarIconAddOrder{
     );
   }
 
-  static Widget menuAddOrderButtonShelf(){
+  static Widget menuAddOrderButtonShelf() {
     return Container(
       alignment: Alignment.center,
       height: 28.w,
@@ -56,65 +54,51 @@ class AppBarIconAddOrder{
         borderRadius: BorderRadius.circular(4),
         color: const Color.fromRGBO(255, 255, 255, 0.1),
       ),
-      child: BalancePopupMenu(
-          textName: const [
-            "Данные клиента",
-            "Баланс клиента",
-            "Оборудование",
-            "Акт - сверки",
-            "Акт - сверки по заказам",
-            'Остаток тары',
-          ],
-          icons: [
-            InkWell(
-              onTap: (){
-                Modular.to.pushNamed(CustomerDataPage.routeName);
-              },
-              child:  Assets.images.icons.infoCircle.svg(
-                  fit: BoxFit.cover,
-                  color: ColorName.button
-              ),
-            ),
-            InkWell(
-              onTap: (){},
-              child: Assets.images.icons.wallet.svg(
-                  fit: BoxFit.cover,
-                  color: ColorName.gray2
-              ),
-            ),
-            InkWell(
-              onTap: (){},
-              child: Assets.images.icons.freedge.svg(
-                  fit: BoxFit.cover,
-                  color: ColorName.gray2
-              ),
-            ),
-            InkWell(
-              onTap: (){},
-              child: Assets.images.icons.piceChart.svg(
-                  fit: BoxFit.cover,
-                  color: ColorName.gray2
-              ),
-            ),
-            InkWell(
-              onTap: (){},
-              child: Assets.images.icons.piceChartAlt.svg(
-                  fit: BoxFit.cover,
-                  color: ColorName.gray2
-              ),
-            ),
-            InkWell(
-              onTap: (){},
-              child: Assets.images.icons.invoise.svg(
-                  fit: BoxFit.cover,
-                  color: ColorName.gray2
-              ),
-            ),
-          ]),
+      child: BalancePopupMenu(textName: const [
+        "Данные клиента",
+        "Баланс клиента",
+        "Оборудование",
+        "Акт - сверки",
+        "Акт - сверки по заказам",
+        'Остаток тары',
+      ], icons: [
+        InkWell(
+          onTap: () {
+            Modular.to.pushNamed(CustomerDataPage.routeName);
+          },
+          child: Assets.images.icons.infoCircle
+              .svg(fit: BoxFit.cover, color: ColorName.button),
+        ),
+        InkWell(
+          onTap: () {},
+          child: Assets.images.icons.wallet
+              .svg(fit: BoxFit.cover, color: ColorName.gray2),
+        ),
+        InkWell(
+          onTap: () {},
+          child: Assets.images.icons.freedge
+              .svg(fit: BoxFit.cover, color: ColorName.gray2),
+        ),
+        InkWell(
+          onTap: () {},
+          child: Assets.images.icons.piceChart
+              .svg(fit: BoxFit.cover, color: ColorName.gray2),
+        ),
+        InkWell(
+          onTap: () {},
+          child: Assets.images.icons.piceChartAlt
+              .svg(fit: BoxFit.cover, color: ColorName.gray2),
+        ),
+        InkWell(
+          onTap: () {},
+          child: Assets.images.icons.invoise
+              .svg(fit: BoxFit.cover, color: ColorName.gray2),
+        ),
+      ]),
     );
   }
 
-  static Widget editeAddOrderButtonShelf(VoidCallback onPressed){
+  static Widget editeAddOrderButtonShelf(VoidCallback onPressed) {
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -133,7 +117,7 @@ class AppBarIconAddOrder{
     );
   }
 
-  static Widget searchAddOrderButtonShelf(VoidCallback onPressed){
+  static Widget searchAddOrderButtonShelf(VoidCallback onPressed) {
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -152,7 +136,7 @@ class AppBarIconAddOrder{
     );
   }
 
-  static Widget filterAddOrderButtonShelf(VoidCallback onPressed){
+  static Widget filterAddOrderButtonShelf(VoidCallback onPressed) {
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -170,5 +154,4 @@ class AppBarIconAddOrder{
       ),
     );
   }
-
 }

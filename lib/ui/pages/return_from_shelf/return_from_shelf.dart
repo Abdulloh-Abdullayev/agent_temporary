@@ -1,6 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/add_order_page/add_order_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/widget/about_return_widget.dart';
 import 'package:agent/ui/pages/return_from_shelf/widget/app_bar_icon_return.dart';
 import 'package:agent/ui/pages/return_from_shelf/widget/debt_widget.dart';
@@ -10,6 +9,7 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'widget/floating_dialog_return_widget.dart';
 import 'widget/market_image_return_widget.dart';
 import 'widget/order_tabbar_page.dart';
@@ -222,10 +222,7 @@ class _ReturnFromShelfState extends State<ReturnFromShelf>
               width: 1.sw,
               child: AppWidgets.appButton(
                 title: "Добавить заказ",
-                onTap: () {
-
-
-                },
+                onTap: () {},
               ).paddingSymmetric(
                 horizontal: 20.w,
                 vertical: 18.w,

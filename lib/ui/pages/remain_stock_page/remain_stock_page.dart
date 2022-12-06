@@ -37,14 +37,16 @@ class RemainStockPage extends StatefulWidget {
   State<RemainStockPage> createState() => _RemainStockPageState();
 }
 
-class _RemainStockPageState extends State<RemainStockPage> with TickerProviderStateMixin {
+class _RemainStockPageState extends State<RemainStockPage>
+    with TickerProviderStateMixin {
   PageController pageController = PageController();
   late TabController tabController;
   @override
   void initState() {
-    tabController=TabController(length: 2, vsync: this);
+    tabController = TabController(length: 2, vsync: this);
     super.initState();
   }
+
   @override
   void dispose() {
     tabController.dispose();

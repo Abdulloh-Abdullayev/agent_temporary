@@ -33,7 +33,7 @@ Future<void> main() async {
   // AndroidYandexMap.useAndroidViewSurface = false;
   WidgetsFlutterBinding.ensureInitialized();
   final androidInfo = await DeviceInfoPlugin().androidInfo;
-  final sdkVersion = androidInfo.version.sdkInt ?? 0;
+  final sdkVersion = androidInfo.version.sdkInt;
   final androidOverscrollIndicator = sdkVersion > 30
       ? AndroidOverscrollIndicator.stretch
       : AndroidOverscrollIndicator.glow;
@@ -64,7 +64,9 @@ Future<void> main() async {
             fallbackLocale: const Locale("uz", "UZ"),
             child: ModularApp(
               module: AppModule(),
-              child:  App(androidOverscrollIndicator: androidOverscrollIndicator,),
+              child: App(
+                androidOverscrollIndicator: androidOverscrollIndicator,
+              ),
             ),
           ),
         ),

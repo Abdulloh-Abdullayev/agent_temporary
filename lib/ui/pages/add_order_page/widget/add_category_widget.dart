@@ -15,9 +15,9 @@ class AddOrderCategoryWidget extends StatefulWidget {
   State<AddOrderCategoryWidget> createState() => _AddOrderCategoryWidgetState();
 }
 
-bool isExist = false;
-
 class _AddOrderCategoryWidgetState extends State<AddOrderCategoryWidget> {
+  bool isExist = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -68,12 +68,13 @@ class _AddOrderCategoryWidgetState extends State<AddOrderCategoryWidget> {
             height: isExist ? (4 * 35.w) : 0.w,
             duration: const Duration(milliseconds: 600),
             child: ListView.builder(
-                physics: const ScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: isExist ? 15 : 0,
-                itemBuilder: (context, index) {
-                  return const CategoryListWidget();
-                }),
+              physics: const ScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: isExist ? 15 : 0,
+              itemBuilder: (context, index) {
+                return const CategoryListWidget();
+              },
+            ),
           )
         ],
       ),

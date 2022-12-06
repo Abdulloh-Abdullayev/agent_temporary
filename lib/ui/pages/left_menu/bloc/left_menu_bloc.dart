@@ -7,7 +7,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:meta/meta.dart';
 
 part 'left_menu_event.dart';
-
 part 'left_menu_state.dart';
 
 class LeftMenuBloc extends Bloc<LeftMenuEvent, LeftMenuState> {

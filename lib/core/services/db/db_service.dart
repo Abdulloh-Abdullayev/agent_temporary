@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
+
 class DBService {
   static DBService get to => Modular.get<DBService>();
 

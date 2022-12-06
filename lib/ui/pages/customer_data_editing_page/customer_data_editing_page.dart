@@ -1,5 +1,6 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/customer_data_editing_page/widgets/bottom_buttons_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
 import 'bloc/customer_data_editing_cubit.dart';
-import 'customer_data_editing_page_widget/bottom_buttons_widget.dart';
 
 class CustomerDataEditingPageModule extends Module {
 

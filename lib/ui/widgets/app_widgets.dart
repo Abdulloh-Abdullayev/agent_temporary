@@ -11,10 +11,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:super_rich_text/super_rich_text.dart';
-import 'package:agent/core/utils/colors.gen.dart';
 
 class AppWidgets {
-
   static void showText({
     required String text,
     Duration? duration,
@@ -30,7 +28,6 @@ class AppWidgets {
       duration: duration,
     );
   }
-
 
   static Widget appButton({
     required String title,
@@ -77,6 +74,7 @@ class AppWidgets {
       ),
     );
   }
+
   static Widget text({
     required String text,
     TextStyle? textStyle,
@@ -224,6 +222,7 @@ class AppWidgets {
       ),
     );
   }
+
   static Widget buttonBuilder({
     double height = 28,
     double width = 28,
@@ -281,6 +280,7 @@ class AppWidgets {
           }),
     );
   }
+
   static Widget iconButton({
     required VoidCallback onPressed,
     required SvgGenImage icon,
