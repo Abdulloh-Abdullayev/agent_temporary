@@ -60,15 +60,15 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
               AppBarMain(
                 text: 'Главная',
                 menuTab: () {
-                  showDialog(context: context, builder: (context,) {
-                    return DateTimeDialog(title: "title",
-                      closeTitle: "closeTitle",
-                      addTitle: "addTitle",
-                      addTap: (v) {
-                      print(v);
-                      },);
-                  });
-                  // HomePage.globalKey.currentState!.openDrawer();
+                  // showDialog(context: context, builder: (context,) {
+                  //   return DateTimeDialog(title: "title",
+                  //     closeTitle: "closeTitle",
+                  //     addTitle: "addTitle",
+                  //     addTap: (v) {
+                  //     print(v);
+                  //     },);
+                  // });
+                HomePage.globalKey.currentState!.openDrawer();
                 },
                 locationTab: () {
                   Modular.to.pushNamed(ReturnFromShelf.routeName);
