@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../draft_page/draft_page.dart';
+import '../all_tasks_page/bloc/all_task_bloc.dart';
 import '../order_page/order_page.dart';
 import '../visits_page/visits_page.dart';
 
@@ -42,6 +42,10 @@ class HomePageModule extends Module {
         ),
         Bind<LeftMenuBloc>(
           (i) => LeftMenuBloc(),
+          onDispose: (value) => value.close(),
+        ),
+        Bind<AllTaskBloc>(
+          (i) => AllTaskBloc(),
           onDispose: (value) => value.close(),
         ),
       ];
@@ -158,7 +162,7 @@ class HomePage extends StatelessWidget {
       case AppNavigationType.REPORT:
         return ReportsPage();
       case AppNavigationType.DRAFT:
-        return DraftPage();
+        return MainPage();
       case AppNavigationType.POINTS:
         return OutletsPage();
       default:

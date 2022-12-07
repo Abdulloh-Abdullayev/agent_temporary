@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -27,6 +26,7 @@ class AllTaskBloc extends Bloc<AllTaskEvent, AllTaskState> {
       emit(
         state.copyWith(
           image: imagePicker,
+          completed: true,
         ),
       );
     }
