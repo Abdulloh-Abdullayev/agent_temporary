@@ -30,18 +30,17 @@ class OrderWidget extends StatelessWidget {
             return Container(
               margin: EdgeInsets.only(bottom: 10.w),
               width: double.infinity,
-              height: 112.h,
               decoration: BoxDecoration(
                 color: ColorName.white,
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: ColorName.gray),
               ),
               child: Padding(
-                padding: const EdgeInsets.only(
-                  top: 12,
-                  bottom: 9,
-                  left: 12,
-                  right: 12,
+                padding:  EdgeInsets.only(
+                  top: 12.w,
+                  bottom: 9.w,
+                  left: 12.w,
+                  right: 12.w,
                 ),
                 child: Column(
                   children: [
@@ -77,7 +76,7 @@ class OrderWidget extends StatelessWidget {
                               ],
                             ),
                             SizedBox(
-                              width: 8,
+                              width: 8.w,
                             ),
                             AppWidgets.textLocale(
                               localeKey: "17:18",
@@ -91,7 +90,7 @@ class OrderWidget extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 8.w,
                     ),
                     Row(
                       children: [
@@ -103,7 +102,7 @@ class OrderWidget extends StatelessWidget {
                           isRichText: true,
                         ),
                         SizedBox(
-                          width: 17,
+                          width: 17.w,
                         ),
                         AppWidgets.textLocale(
                           localeKey: "Без бонуса",
@@ -115,7 +114,7 @@ class OrderWidget extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 8.w,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

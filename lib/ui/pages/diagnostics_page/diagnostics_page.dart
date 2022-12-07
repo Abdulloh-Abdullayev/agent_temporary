@@ -61,7 +61,7 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
   void initState() {
     _controller = TabController(length: 3, vsync: this);
     _controller.addListener(_handleTabSelection);
-    scrollController =ScrollController();
+    scrollController = ScrollController();
     super.initState();
   }
 
