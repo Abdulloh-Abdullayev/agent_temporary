@@ -10,6 +10,7 @@ import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
+import 'package:agent/ui/pages/draft_page/draft_page.dart';
 import 'package:agent/ui/pages/equipment_page/equipment_page.dart';
 import 'package:agent/ui/pages/equipment_page/pages/add_equipment_page.dart';
 import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
@@ -52,6 +53,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Modular.setInitialRoute(DraftPage.routeName);
+    Modular.setObservers([BotToastNavigatorObserver()]);
     Modular.setInitialRoute(HomePage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
@@ -131,5 +134,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: RemainsItemPageModule()),
         ModuleRoute("/", module: ActReconciliationOderPageModule()),
         ModuleRoute("/", module: ActReconciliationPageModule()),
+        ModuleRoute("/", module: DraftPageModule()),
       ];
 }
