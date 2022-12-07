@@ -24,7 +24,19 @@ class TabbarFirstItem extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   color: ColorName.black,
                   isRichText: true),
-              SizedBox()
+              DropDown(
+                width: 234.w,
+                items: [
+                  "Все статусы",
+                  "Выполненные",
+                  "Доставленные",
+                  "Возвраты",
+                  "Отмененные",
+                  "Новые"
+                ],
+                title: "Все статусы",
+                onChange: () {},
+              )
             ],
           ).paddingSymmetric(horizontal: 20.w),
           ListView.builder(
@@ -35,9 +47,8 @@ class TabbarFirstItem extends StatelessWidget {
               return Container(
                 margin: EdgeInsets.only(bottom: 18.w),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: ColorName.white
-                ),
+                    borderRadius: BorderRadius.circular(12),
+                    color: ColorName.white),
                 child: Column(
                   children: [
                     Align(

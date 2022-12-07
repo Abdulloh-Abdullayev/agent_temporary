@@ -216,7 +216,9 @@ class LeftMenuPage extends StatelessWidget {
           icon: Assets.images.icons.note.svg(),
         ),
         DrawerItem(
-          onTap: () {},
+          onTap: () {
+            Modular.to.pushNamed(DebtorsPage.routeName);
+          },
           text: "Должники по заказам",
           icon: Assets.images.icons.user.svg(),
         ),

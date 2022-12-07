@@ -1,47 +1,54 @@
 import 'package:agent/core/extensions/app_extensions.dart';
-import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/debtors_page/widget/debtors_filter.dart';
+import 'package:agent/ui/pages/debtors_orders_page/widget/filter_debtors_item/bloc/debtors_bloc.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:animated_digit/animated_digit.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uikit/uikit.dart';
 
-import '../debtors_orders_page/widget/debtors_table.dart';
+import 'widget/debtors_order_filter.dart';
+import 'widget/debtors_order_item.dart';
+import 'widget/filter_debtors_item/bloc/debtors_event.dart';
 
-class DebtorsPageModule extends Module {
+class DebtorsOrdersPageModule extends Module {
   @override
   List<ModularRoute> get routes => [
-        ChildRoute(
-          DebtorsPage.routeName,
-          child: (context, args) => const DebtorsPage(),
-        ),
-      ];
+    ChildRoute(
+      DebtorsOrdersPage.routeName,
+      child: (context, args) => const DebtorsOrdersPage(),
+    ),
+  ];
+
+  @override
+  List<Bind> get binds => [
+  Bind<DebtorsBloc>(
+          (i) => DebtorsBloc()..add(FilterLoad()),
+      onDispose: (value) => value.close(),
+    ),
+  ];
 }
 
-class DebtorsPage extends StatelessWidget {
-  const DebtorsPage({Key? key}) : super(key: key);
-  static const String routeName = '/debtorsPage';
+class DebtorsOrdersPage extends StatelessWidget {
+  const DebtorsOrdersPage({Key? key}) : super(key: key);
+  static const String routeName = '/debtorsOrdersPage';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorName.background,
-      body: SafeArea(
-        child: Column(
-          children: [
-            balanceAppBar(context),
-            buildList(),
-
-          ],
-        ),
-      ),
-    );
+            backgroundColor: ColorName.background,
+            body: SafeArea(
+              child: Column(
+                children: [
+                  balanceAppBar(context),
+                  buildList(),
+                ],
+              ),
+            ),
+          );
+        }
   }
   Widget buildList() {
     return Expanded(
@@ -61,7 +68,7 @@ class DebtorsPage extends StatelessWidget {
               ),
               itemCount: 10,
               itemBuilder: (context, index) {
-                return const DebtorsItem().paddingOnly(bottom: 12.w);
+                return const DebtorsOrderItem().paddingOnly(bottom: 12.w);
               },
             ),
           ],
@@ -86,14 +93,14 @@ class DebtorsPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.backButton(
-                () {
+                    () {
                   Modular.to.pop();
                 },
               ),
               Row(
                 children: [
                   AppWidgets.iconButton(
-                          icon: Assets.images.icons.search1, onPressed: () {})
+                      icon: Assets.images.icons.search1, onPressed: () {})
                       .paddingOnly(
                     right: 10.w,
                   ),
@@ -101,9 +108,10 @@ class DebtorsPage extends StatelessWidget {
                     icon: Assets.images.icons.filter,
                     onPressed: () {
                       showModalBottomSheet(
+                        isScrollControlled: true,
                         context: context,
                         backgroundColor: Colors.transparent,
-                        builder: (context) => const DebtorsFilterBottomSheet(),
+                        builder: (context) => DebtorsOrderFilterBottomSheet(),
                       );
                     },
                   ),
@@ -112,7 +120,7 @@ class DebtorsPage extends StatelessWidget {
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: "Должники",
+            localeKey: "Должники по заказам",
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,
@@ -144,5 +152,4 @@ class DebtorsPage extends StatelessWidget {
       ),
     );
   }
-}
 
