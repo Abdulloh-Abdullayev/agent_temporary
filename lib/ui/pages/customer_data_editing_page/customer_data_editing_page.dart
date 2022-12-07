@@ -23,11 +23,11 @@ class CustomerDataEditingPageModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ChildRoute(
-          CustomerDataEditingPage.routeName,
-          child: (context, args) => const CustomerDataEditingPage(),
-        ),
-      ];
+    ChildRoute(
+      CustomerDataEditingPage.routeName,
+      child: (context, args) => const CustomerDataEditingPage(),
+    ),
+  ];
 }
 
 class CustomerDataEditingPage extends StatefulWidget {
@@ -53,131 +53,131 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
 
   Widget buildStack(BuildContext context) {
     return Stack(
-    alignment: Alignment.bottomCenter,
-    children: [
-      SafeArea(
-        child: Scaffold(
-          body: Column(
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(12),
-                      bottomLeft: Radius.circular(12),
-                    ),
-                    color: ColorName.primaryColor),
-                height: 139.h,
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        AppBarIcon.backButton(() {
-                          Modular.to.pop();
-                        }),
-                        Row(
-                          children: [
-                            AppBarIcon.searchButton(() {}),
-                            const SizedBox(
-                              width: 12,
-                            ),
-                            AppBarIcon.filterButton(() {})
-                          ],
-                        )
-                      ],
-                    ).paddingOnly(
-                      left: 20.w,
-                      right: 20.w,
-                      top: 19.w,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: AppWidgets.textLocale(
-                              localeKey: "Редактрирование заказа",
-                              fontSize: 24.sp,
-                              fontWeight: FontWeight.w600,
-                              color: ColorName.white,
-                              isRichText: true)
-                          .paddingOnly(top: 18.w, left: 20),
-                    )
-                  ],
-                ),
-              ),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Container(
-                      margin: EdgeInsets.only(top: 24.w),
-                      color: ColorName.white,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: 7,
-                        itemBuilder: (context, index) {
-                          return Column(
+      alignment: Alignment.bottomCenter,
+      children: [
+        SafeArea(
+          child: Scaffold(
+            body: Column(
+              children: [
+                Container(
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(12),
+                        bottomLeft: Radius.circular(12),
+                      ),
+                      color: ColorName.primaryColor),
+                  height: 139.h,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          AppBarIcon.backButton(() {
+                            Modular.to.pop();
+                          }),
+                          Row(
                             children: [
-                              ExpansionTile(
-                                collapsedTextColor: ColorName.black,
-                                title: AppWidgets.textLocale(
-                                    localeKey: "Напитки",
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: ColorName.black,
-                                    isRichText: true),
-                                children: [
-                                  ListView.builder(
-                                    shrinkWrap: true,
-                                    physics:
-                                    const NeverScrollableScrollPhysics(),
-                                    itemCount: 4,
-                                    itemBuilder: (context, index) {
-                                      return Container(
-                                        margin: EdgeInsets.only(
-                                          top: 12.w,
-                                          bottom: 12.w,
-                                          left: 13.w,
-                                          right: 13.w,
-                                        ),
-                                        child: Cards.cards_7(
-                                          context: context,
-                                          name: "name",
-                                          nalichi: "nalichi",
-                                          nalichiNumber: "20",
-                                          summa: "summa",
-                                          summaNumber: "100 000",
-                                          blok: "blok",
-                                          blokNumber: "1",
-                                          sht: "sht",
-                                          shtNumber: "2",
-                                          image:
-                                          "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg",
-                                          blokRemove: () {},
-                                          blokAdd: () {
-
-                                          },
-                                          shtRemove: () {},
-                                          shtAdd: () {},
-                                        ),
-                                      );
-                                    },
-                                  )
-                                ],
+                              AppBarIcon.searchButton(() {}),
+                              const SizedBox(
+                                width: 12,
                               ),
-                              Container(
-                                color: ColorName.gray.withOpacity(0.1),
-                                height: 12.w,
-                              )
+                              AppBarIcon.filterButton(() {})
                             ],
-                          );
-                        },
-                      )).paddingOnly(bottom: 150.w),
+                          )
+                        ],
+                      ).paddingOnly(
+                        left: 20.w,
+                        right: 20.w,
+                        top: 19.w,
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: AppWidgets.textLocale(
+                            localeKey: "Редактрирование заказа",
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.w600,
+                            color: ColorName.white,
+                            isRichText: true)
+                            .paddingOnly(top: 18.w, left: 20),
+                      )
+                    ],
+                  ),
                 ),
-              )
-            ],
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Container(
+                        margin: EdgeInsets.only(top: 24.w),
+                        color: ColorName.white,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: 7,
+                          itemBuilder: (context, index) {
+                            return Column(
+                              children: [
+                                ExpansionTile(
+                                  collapsedTextColor: ColorName.black,
+                                  title: AppWidgets.textLocale(
+                                      localeKey: "Напитки",
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: ColorName.black,
+                                      isRichText: true),
+                                  children: [
+                                    ListView.builder(
+                                      shrinkWrap: true,
+                                      physics:
+                                      const NeverScrollableScrollPhysics(),
+                                      itemCount: 4,
+                                      itemBuilder: (context, index) {
+                                        return Container(
+                                          margin: EdgeInsets.only(
+                                            top: 12.w,
+                                            bottom: 12.w,
+                                            left: 13.w,
+                                            right: 13.w,
+                                          ),
+                                          child: Cards.cards_7(
+                                            context: context,
+                                            name: "name",
+                                            nalichi: "nalichi",
+                                            nalichiNumber: "20",
+                                            summa: "summa",
+                                            summaNumber: "100 000",
+                                            blok: "blok",
+                                            blokNumber: "1",
+                                            sht: "sht",
+                                            shtNumber: "2",
+                                            image:
+                                            "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg",
+                                            blokRemove: () {},
+                                            blokAdd: () {
+
+                                            },
+                                            shtRemove: () {},
+                                            shtAdd: () {},
+                                          ),
+                                        );
+                                      },
+                                    )
+                                  ],
+                                ),
+                                Container(
+                                  color: ColorName.gray.withOpacity(0.1),
+                                  height: 12.w,
+                                )
+                              ],
+                            );
+                          },
+                        )).paddingOnly(bottom: 150.w),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
-      ),
-      const BottomButtonsWidget(),
-    ],
-  );
+        const BottomButtonsWidget(),
+      ],
+    );
   }
 }

@@ -32,7 +32,6 @@ class EquipmentWidget extends StatelessWidget {
             return Container(
               margin: EdgeInsets.only(bottom: 10.w),
               width: double.infinity,
-              height: 118.w,
               decoration: BoxDecoration(
                 color: ColorName.white,
                 borderRadius: BorderRadius.circular(12),
@@ -56,8 +55,8 @@ class EquipmentWidget extends StatelessWidget {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(12),
                           child: Container(
-                            height: 67,
-                            width: 72,
+                            height: 67.w,
+                            width: 72.w,
                             child: CachedNetworkImage(
                               imageUrl: "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg",
                               fit: BoxFit.cover,
@@ -69,7 +68,7 @@ class EquipmentWidget extends StatelessWidget {
                           ),
                         ),
 
-                        SizedBox(width: 12,),
+                        SizedBox(width: 12.w,),
 
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,7 +80,7 @@ class EquipmentWidget extends StatelessWidget {
                                 fontSize: 16.sp,
                                 isRichText: true
                             ),
-                            SizedBox(height: 8,),
+                            SizedBox(height: 8.w,),
                             Row(
                               children: [
                                 AppWidgets.textLocale(
@@ -101,7 +100,7 @@ class EquipmentWidget extends StatelessWidget {
 
                               ],
                             ),
-                            SizedBox(height: 8,),
+                            SizedBox(height: 8.w,),
                             Row(
                               children: [
                                 AppWidgets.textLocale(
