@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomButtonWidget extends StatelessWidget {
-  const BottomButtonWidget({Key? key}) : super(key: key);
+  const BottomButtonWidget({Key? key, required Null Function() onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

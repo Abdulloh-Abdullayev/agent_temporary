@@ -88,6 +88,13 @@ class _RemainsEditPageState extends State<RemainsEditPage> {
                 child: AppWidgets.textLocale(localeKey: "Напитки", fontWeight: FontWeight.w600,),
               ),
               remainsItemWidget(),
+              Container(
+                margin:const EdgeInsets.only(top: 24),
+                alignment: Alignment.centerLeft,
+                child: AppWidgets.textLocale(localeKey: "Напитки", fontWeight: FontWeight.w600,),
+              ),
+              remainsItemWidget(),
+             
             ],
           ).paddingOnly( left: 20, right: 20),
           ),

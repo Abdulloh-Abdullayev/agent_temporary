@@ -13,17 +13,17 @@ class EquipmentWidgets {
     var column = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          height: 28.h,
-          width: 28.w,
-          decoration: BoxDecoration(
-            color: Colors.white.withOpacity(.10),
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: GestureDetector(
-            onTap: () {
+        GestureDetector(
+          onTap: () {
               Navigator.pop(context);
             },
+          child: Container(
+            height: 28.h,
+            width: 28.w,
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(.10),
+              borderRadius: BorderRadius.circular(4),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Assets.images.icons.left.svg(),
@@ -40,7 +40,7 @@ class EquipmentWidgets {
       ],
     );
     return Container(
-      height: 139.h,
+      height: 119.h,
       width: 1.sw,
       padding: const EdgeInsets.only(top: 19, left: 20, right: 20),
       decoration: const BoxDecoration(
@@ -162,4 +162,5 @@ class EquipmentWidgets {
       ),
     );
   }
+  
 }

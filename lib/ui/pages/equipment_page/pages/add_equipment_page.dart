@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
@@ -7,6 +9,7 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:uikit/uikit.dart';
 
 class AddEquipmentModule extends Module {
@@ -45,6 +48,22 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
   final stateController = TextEditingController();
   final attachmentDateController = TextEditingController();
   final photoController = TextEditingController();
+  final ImagePicker imgpicker = ImagePicker();
+  List<XFile>? imagefiles;
+
+  openImages() async {
+    try {
+      var pickedfiles = await imgpicker.pickMultiImage();
+      if (pickedfiles != null) {
+        imagefiles = pickedfiles;
+        setState(() {});
+      } else {
+        print("No image is selected.");
+      }
+    } catch (e) {
+      print("error while picking file.");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -196,16 +215,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                             height: 44.h,
                             hint: "Пишите",
                             controller: commitController,
-                            onTap: () {
-                              showDialog(
-                                context: context,
-                                builder: (ctx) => const AlertDialog(
-                                  content: CommitTextField(
-                                    text: "Добавление комментарии",
-                                  ),
-                                ),
-                              );
-                            },
+                            onTap: () {},
                           ),
 
                           // State
@@ -257,12 +267,12 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                                   color: ColorName.gray2,
                                   width: 16,
                                 )
-                                .marginOnly(right: 15),
+                                .marginOnly(right: 15.w),
                           ),
 
                           // Photo Updating
                           SizedBox(
-                            height: 18.h,
+                            height: 18.w,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -274,7 +284,9 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                                 color: ColorName.gray2,
                               ),
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () async {
+                                  openImages();
+                                },
                                 child: AppWidgets.textLocale(
                                   localeKey: "Загрузить фото",
                                   fontSize: 16,
@@ -284,6 +296,24 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                               ),
                             ],
                           ),
+                          imagefiles != null
+                              ? Wrap(
+                                  children: imagefiles!.map((imageone) {
+                                    return Container(
+                                      margin:const EdgeInsets.all(4),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(12),
+                                        child: SizedBox(
+                                          
+                                          height: 104.w,
+                                          width: 100.w,
+                                          child: Image.file(File(imageone.path), fit: BoxFit.cover,),
+                                        ),
+                                      ),
+                                    );
+                                  }).toList(),
+                                )
+                              : Container(),
                           const SizedBox(
                             height: 24,
                           ),
@@ -293,7 +323,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                   ),
                   Container(
                     height: 86.h,
-                    color: ColorName.bgColor,
+                    color: ColorName.background,
                     child: Padding(
                       padding: const EdgeInsets.all(20),
                       child: Row(

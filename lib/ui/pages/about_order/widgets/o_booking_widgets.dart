@@ -7,30 +7,40 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
 class OBookingWidgets {
-  static Widget bookingItems({
+  static Widget bookingTextItems({
     required String firstName,
     required String secondName,
-    TextStyle firstStyle = const TextStyle(
+     TextStyle firstStyle = const TextStyle(
       color: ColorName.gray2,
       fontSize: 14,
       fontWeight: FontWeight.w400,
     ),
-    TextStyle secondStyle = const TextStyle(
+    TextStyle? secondStyle = const TextStyle(
       color: ColorName.black,
       fontSize: 14,
       fontWeight: FontWeight.w600,
     ),
+   
   }) {
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            AppWidgets.text(
-              text: firstName,
+          children:[
+            AppWidgets.textLocale(
+              localeKey: firstName,
               textStyle: firstStyle,
+               color: ColorName.gray2,
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
             ),
-            AppWidgets.text(text: secondName, textStyle: secondStyle),
+            AppWidgets.text(
+              text: secondName,
+              textStyle: secondStyle,
+                color: ColorName.black,
+      fontSize: 14,
+      fontWeight: FontWeight.w600,
+            ),
           ],
         ),
         Container(
@@ -48,7 +58,7 @@ class OBookingWidgets {
           required BuildContext context,
           required Function(String key) ontap}) =>
       Container(
-        height: 139.h,
+        height: 119.h,
         width: 1.sw,
         padding: const EdgeInsets.only(top: 19, left: 20, right: 20),
         decoration: const BoxDecoration(
@@ -224,4 +234,9 @@ class OBookingWidgets {
           ),
         ],
       );
+
+  
 }
+
+ 
+ 

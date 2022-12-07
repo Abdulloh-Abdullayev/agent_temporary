@@ -69,19 +69,8 @@ class _RemainsItemWidgetState extends State<RemainsItemWidget> {
               return Row(
                 children: [
                   
-                  Cards.cards_7(
-                    blok: "Блок",
-                    blokAdd: (){
-                        RemainCubit.to.increment(widget.index, index);
-                    },
-                    blokRemove: (){
-                        RemainCubit.to.decrement(widget.model.id!, model.id!);
-                    },
-                    nalichi: "В наличие: ",
-                    summa: "Сумма:",
-                    summaNumber: "100 000",
-                    blokNumber: "${model.count}",
-                    nalichiNumber: "20",
+                  Cards.cards_9(
+                    width: 335.w,
                     name: model.name ?? '',
                     sht: "Шт",
                     shtNumber: "${model.count}",

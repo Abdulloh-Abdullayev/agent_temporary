@@ -78,62 +78,64 @@ class RemainsTabbarPage extends StatelessWidget {
           ).paddingSymmetric(horizontal: 20.w),
         ),
         Column(
-          children:List.generate(1, (index) => Container(
-                    margin: EdgeInsets.only(bottom: 11.w),
-                    child: Cards.cards_2(
-                      name: "Заказ в",
-                      time: "17:18",
-                      icon: PopupMenuTools(
-                        onTap: (p0) {
-                          if (p0 == 0) {
-                           Modular.to.pushNamed(RemainsEditPage.routeName);
-                          } 
-                         else if (p0 == 1) {
-                            showDialog(
-                              context: context,
-                              builder: (ctx) => const AlertDialog(
-                                content: CommitTextField(
-                                  text: "Добавление комментарии",
+          children:List.generate(20, (index) => SingleChildScrollView(
+            child: Container(
+                      margin: EdgeInsets.only(bottom: 11.w),
+                      child: Cards.cards_2(
+                        name: "Заказ в",
+                        time: "17:18",
+                        icon: PopupMenuTools(
+                          onTap: (p0) {
+                            if (p0 == 0) {
+                             Modular.to.pushNamed(RemainsEditPage.routeName);
+                            } 
+                           else if (p0 == 1) {
+                              showDialog(
+                                context: context,
+                                builder: (ctx) => const AlertDialog(
+                                  content: CommitTextField(
+                                    text: "Добавление комментарии",
+                                  ),
                                 ),
-                              ),
-                            );
-                          } 
-                        },
-                        popupMenuIconColor: ColorName.black,
-                        textName: const [
-                          "Редактрировать",
-                          "Комментария к заказу",
-                          'Отменить',
-                        ],
-                        icons: [
-                          Assets.images.icons.editeAlt
-                              .svg(fit: BoxFit.cover, color: ColorName.button),
-                          Assets.images.icons.chat
-                              .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                          Assets.images.icons.trash
-                              .svg(fit: BoxFit.cover, color: ColorName.red),
-                        
-                         
-                        ],
-                        textColor: const [
-                          ColorName.button,
-                          ColorName.black,
-                         
-                          ColorName.red,
-                        ],
-                      ),
-                     
-                     
-                      nalichniy: "spot",
-                      bezbonus: "noBonus",
-                      obem: "volume",
-                      obemNumber: "15",
-                      soni: "count",
-                      soniNumber: "325",
-                      summa: "summa",
-                      summaNumber: "150 000 000",
-                      dostavlen: '',
-                    ),),),
+                              );
+                            } 
+                          },
+                          popupMenuIconColor: ColorName.black,
+                          textName: const [
+                            "Редактрировать",
+                            "Комментария к заказу",
+                            'Отменить',
+                          ],
+                          icons: [
+                            Assets.images.icons.editeAlt
+                                .svg(fit: BoxFit.cover, color: ColorName.button),
+                            Assets.images.icons.chat
+                                .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                            Assets.images.icons.trash
+                                .svg(fit: BoxFit.cover, color: ColorName.red),
+                          
+                           
+                          ],
+                          textColor: const [
+                            ColorName.button,
+                            ColorName.black,
+                           
+                            ColorName.red,
+                          ],
+                        ),
+                       
+                       
+                        nalichniy: "spot",
+                        bezbonus: "noBonus",
+                        obem: "volume",
+                        obemNumber: "15",
+                        soni: "count",
+                        soniNumber: "325",
+                        summa: "summa",
+                        summaNumber: "150 000 000",
+                        dostavlen: '',
+                      ),),
+          ),),
         ).paddingSymmetric(horizontal: 20),
       
       ],

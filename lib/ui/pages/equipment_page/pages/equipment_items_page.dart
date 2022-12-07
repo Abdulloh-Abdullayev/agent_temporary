@@ -19,7 +19,7 @@ class _EquipmentItemsState extends State<EquipmentItems> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: ColorName.bgColor,
+        backgroundColor: ColorName.background,
         body: Column(
           children: [
             EquipmentWidgets.appBar(

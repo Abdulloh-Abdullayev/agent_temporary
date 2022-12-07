@@ -2,7 +2,7 @@ import 'package:agent/core/bloc/language/language_cubit.dart';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
-import 'package:agent/ui/pages/o_booking/o_boking_page.dart';
+import 'package:agent/ui/pages/about_order/about_order.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
@@ -33,7 +33,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(RemainsPage.routeName);
+    Modular.setInitialRoute(EquipmentPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -85,7 +85,7 @@ class AppModule extends Module {
         ModuleRoute("/", module: LoginPageModule()),
         ModuleRoute("/", module: BalancePageModule()),
         ModuleRoute("/", module: RefundPageModule()),
-        ModuleRoute("/", module: OBookingModule()),
+        ModuleRoute("/", module: AboutOrderModule()),
         ModuleRoute("/", module: EquipmentModule()),
         ModuleRoute("/", module: AddEquipmentModule()),
         ModuleRoute("/", module: OutletsMapModule()),

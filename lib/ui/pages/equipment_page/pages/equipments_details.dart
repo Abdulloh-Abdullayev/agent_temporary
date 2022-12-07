@@ -12,7 +12,7 @@ class EquipmentDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorName.bgColor,
+      backgroundColor: ColorName.background,
       body: SafeArea(
         child: Column(
           children: [
@@ -20,9 +20,8 @@ class EquipmentDetails extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  // First container
                   Container(
-                    height: 243.h,
+                    height: 243.w,
                     margin: const EdgeInsets.only(top: 18),
                     decoration: BoxDecoration(
                       color: ColorName.white,
@@ -68,7 +67,10 @@ class EquipmentDetails extends StatelessWidget {
                           ],
                         ),
                         Container(
-                          margin: const EdgeInsets.only(top: 16, bottom: 16),
+                          margin: const EdgeInsets.only(
+                            top: 16,
+                            bottom: 16,
+                          ),
                           height: 1,
                           color: ColorName.gray,
                         ),
@@ -92,123 +94,8 @@ class EquipmentDetails extends StatelessWidget {
                       right: 20,
                     ),
                   ),
-
                   // Second container
-                  Container(
-                    height: 398.h,
-                    margin: const EdgeInsets.only(top: 18),
-                    decoration: BoxDecoration(
-                      color: ColorName.white,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        AppWidgets.textLocale(
-                          localeKey: "О оборудования",
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        const SizedBox(
-                          height: 18,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            AppWidgets.textLocale(
-                              localeKey: "Серийный номер",
-                              fontSize: 14,
-                              color: ColorName.gray2,
-                            ),
-                            AppWidgets.text(
-                              text: "12365489621321",
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ],
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 16),
-                          height: 1,
-                          color: ColorName.gray,
-                        ),
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            AppWidgets.textLocale(
-                              localeKey: "Инвертарный номер",
-                              fontSize: 14,
-                              color: ColorName.gray2,
-                            ),
-                            AppWidgets.text(
-                              text: "12365489621321",
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ],
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 16, bottom: 16),
-                          height: 1,
-                          color: ColorName.gray,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            AppWidgets.textLocale(
-                              localeKey: "Состояние",
-                              fontSize: 14,
-                              color: ColorName.gray2,
-                            ),
-                            AppWidgets.text(
-                              text: "Новый",
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ],
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 16, bottom: 16),
-                          height: 1,
-                          color: ColorName.gray,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            AppWidgets.textLocale(
-                              localeKey: "Дата производтсво",
-                              fontSize: 14,
-                              color: ColorName.gray2,
-                            ),
-                            AppWidgets.text(
-                              text: "12.10.2022",
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ],
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 16, bottom: 16),
-                          height: 1,
-                          color: ColorName.gray,
-                        ),
-                        AppWidgets.textLocale(
-                          localeKey: "Фото",
-                          fontSize: 14,
-                          color: ColorName.gray2,
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 8),
-                          height: 104,
-                          width: 104.w,
-                          child: Image.asset('assets/images/person.png'),
-                        ),
-                      ],
-                    ).paddingOnly(
-                      top: 18,
-                      left: 20,
-                      right: 20,
-                    ),
-                  ),
+                  obookingDteailsWidget(),
                 ],
               ),
             ),
@@ -218,9 +105,137 @@ class EquipmentDetails extends StatelessWidget {
     );
   }
 
+  Widget obookingDteailsWidget() {
+    return Expanded(
+      child: Column(
+        children: [
+          Container(
+            height: 398.w,
+            padding: const EdgeInsets.only(
+              top: 18,
+              left: 20,
+              right: 20,
+            ),
+            margin: const EdgeInsets.only(top: 18),
+            decoration: BoxDecoration(
+              color: ColorName.white,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AppWidgets.textLocale(
+                  localeKey: "О оборудования",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+                const SizedBox(
+                  height: 18,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppWidgets.textLocale(
+                      localeKey: "Серийный номер",
+                      fontSize: 14,
+                      color: ColorName.gray2,
+                    ),
+                    AppWidgets.text(
+                      text: "12365489621321",
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ],
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 16),
+                  height: 1,
+                  color: ColorName.gray,
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppWidgets.textLocale(
+                      localeKey: "Инвертарный номер",
+                      fontSize: 14,
+                      color: ColorName.gray2,
+                    ),
+                    AppWidgets.text(
+                      text: "12365489621321",
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ],
+                ),
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 16,
+                    bottom: 16,
+                  ),
+                  height: 1,
+                  color: ColorName.gray,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppWidgets.textLocale(
+                      localeKey: "Состояние",
+                      fontSize: 14,
+                      color: ColorName.gray2,
+                    ),
+                    AppWidgets.text(
+                      text: "Новый",
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ],
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 16, bottom: 16),
+                  height: 1,
+                  color: ColorName.gray,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppWidgets.textLocale(
+                      localeKey: "Дата производтсво",
+                      fontSize: 14,
+                      color: ColorName.gray2,
+                    ),
+                    AppWidgets.text(
+                      text: "12.10.2022",
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ],
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 16, bottom: 16),
+                  height: 1,
+                  color: ColorName.gray,
+                ),
+                AppWidgets.textLocale(
+                  localeKey: "Фото",
+                  fontSize: 14.sp,
+                  color: ColorName.gray2,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 8),
+                  height: 104.w,
+                  width: 104.w,
+                  child: Image.asset('assets/images/person.png'),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget appBarWidget(context) {
     return Container(
-      height: 139.h,
+      height: 119.w,
       width: 1.sw,
       padding: const EdgeInsets.only(top: 19, left: 20, right: 20),
       decoration: const BoxDecoration(
@@ -235,17 +250,17 @@ class EquipmentDetails extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                height: 28.h,
-                width: 28.w,
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(.10),
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  height: 28.h,
+                  width: 28.w,
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(.10),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Assets.images.icons.left.svg(),
