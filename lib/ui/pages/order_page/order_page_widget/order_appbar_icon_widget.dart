@@ -1,14 +1,19 @@
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
+import 'package:agent/ui/pages/balance_page/balance_page.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
+import 'package:agent/ui/pages/equipment_page/equipment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-class AppBarIcon{
+import '../../act_reconciliation_oder_page/act_reconciliation_oder_page.dart';
+import '../../rest_of_container_page/rest_of_container_page.dart';
 
-  static Widget backButton(VoidCallback onPressed){
+class AppBarIcon {
+  static Widget backButton(VoidCallback onPressed) {
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -27,7 +32,7 @@ class AppBarIcon{
     );
   }
 
-  static Widget telephoneButton(VoidCallback onPressed){
+  static Widget telephoneButton(VoidCallback onPressed) {
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -38,8 +43,7 @@ class AppBarIcon{
           color: const Color.fromRGBO(255, 255, 255, 0.1),
         ),
         child: Center(
-          child:
-          Assets.images.icons.telephoneButton.svg(
+          child: Assets.images.icons.telephoneButton.svg(
             fit: BoxFit.cover,
           ),
         ),
@@ -47,7 +51,7 @@ class AppBarIcon{
     );
   }
 
-  static Widget menuButtpon(){
+  static Widget menuButton() {
     return Container(
       height: 28.w,
       width: 28.w,
@@ -56,66 +60,51 @@ class AppBarIcon{
         color: const Color.fromRGBO(255, 255, 255, 0.1),
       ),
       child: Center(
-        child: BalancePopupMenu(
-            textName: const [
-              "Данные клиента",
-              "Баланс клиента",
-              "Оборудование",
-              "Акт - сверки",
-              "Акт - сверки по заказам",
-              'Остаток тары',
-        ],
-            icons: [
-             InkWell(
-               onTap: (){
-                 Modular.to.pushNamed(CustomerDataPage.routeName);
-               },
-               child:  Assets.images.icons.infoCircle.svg(
-                   fit: BoxFit.cover,
-                   color: ColorName.button
-               ),
-             ),
-              InkWell(
-                onTap: (){},
-                child: Assets.images.icons.wallet.svg(
-                    fit: BoxFit.cover,
-                    color: ColorName.gray2
-                ),
-              ),
-              InkWell(
-                onTap: (){},
-                child: Assets.images.icons.freedge.svg(
-                    fit: BoxFit.cover,
-                    color: ColorName.gray2
-                ),
-              ),
-              InkWell(
-                onTap: (){},
-                child: Assets.images.icons.piceChart.svg(
-                    fit: BoxFit.cover,
-                    color: ColorName.gray2
-                ),
-              ),
-              InkWell(
-                onTap: (){},
-                child: Assets.images.icons.piceChartAlt.svg(
-                    fit: BoxFit.cover,
-                    color: ColorName.gray2
-                ),
-              ),
-              InkWell(
-                onTap: (){},
-                child: Assets.images.icons.invoise.svg(
-                    fit: BoxFit.cover,
-                    color: ColorName.gray2
-                ),
-              ),
-        ])
-      ),
+          child: PopupMenuTools(
+              onTap: (v) {
+                switch (v) {
+                  case 0:
+                    return Modular.to.pushNamed(CustomerDataPage.routeName);
+                  case 1:
+                    return Modular.to.pushNamed(BalancePage.routeName);
+                  case 2:
+                    return Modular.to.pushNamed(EquipmentPage.routeName);
+                  case 3:
+                    return Modular.to
+                        .pushNamed(ActReconciliationPage.routeName);
+                  case 4:
+                    return Modular.to
+                        .pushNamed(ActReconciliationOderPage.routeName);
+                  case 5:
+                    return Modular.to.pushNamed(RestContainerPage.routeName);
+                }
+              },
+              textName: const [
+            "Данные клиента",
+            "Баланс клиента",
+            "Оборудование",
+            "Акт - сверки",
+            "Акт - сверки по заказам",
+            'Остаток тары',
+          ],
+              icons: [
+            Assets.images.icons.infoCircle
+                .svg(fit: BoxFit.cover, color: ColorName.gray2),
+            Assets.images.icons.wallet
+                .svg(fit: BoxFit.cover, color: ColorName.gray2),
+            Assets.images.icons.freedge
+                .svg(fit: BoxFit.cover, color: ColorName.gray2),
+            Assets.images.icons.piceChart
+                .svg(fit: BoxFit.cover, color: ColorName.gray2),
+            Assets.images.icons.piceChartAlt
+                .svg(fit: BoxFit.cover, color: ColorName.gray2),
+            Assets.images.icons.invoise
+                .svg(fit: BoxFit.cover, color: ColorName.gray2),
+          ])),
     );
   }
 
-  static Widget editeButton(VoidCallback onPressed){
+  static Widget editeButton(VoidCallback onPressed) {
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -134,7 +123,7 @@ class AppBarIcon{
     );
   }
 
-  static Widget searchButton(VoidCallback onPressed){
+  static Widget searchButton(VoidCallback onPressed) {
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -153,7 +142,7 @@ class AppBarIcon{
     );
   }
 
-  static Widget filterButton(VoidCallback onPressed){
+  static Widget filterButton(VoidCallback onPressed) {
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -171,5 +160,4 @@ class AppBarIcon{
       ),
     );
   }
-
 }

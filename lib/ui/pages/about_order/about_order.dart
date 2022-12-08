@@ -1,7 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/about_order/widgets/o_booking_widgets.dart';
+import 'package:agent/ui/pages/about_order/widgets/about_order_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -68,7 +68,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
         backgroundColor: ColorName.background,
         body: Column(
           children: [
-            OBookingWidgets.appBar(
+            AboutOrderWidgets.appBar(
               title: "О заказе",
               ontap: (key) {},
               context: context,
@@ -97,7 +97,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 const SizedBox(height: 21),
-                                OBookingWidgets.bookingTextItems(
+                                AboutOrderWidgets.bookingTextItems(
                                   firstName: firstTextNameItems[i],
                                   secondName: secondTextNameItems[i],
                                 ),
@@ -164,7 +164,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                             children: [
                              isDeleted ? Container(
                                 margin: const EdgeInsets.only(top: 8),
-                                height: 104.h,
+                                height: 104.w,
                                 width: 104.w,
                                 decoration: BoxDecoration(
                                   color: ColorName.white,
@@ -251,14 +251,14 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
           const SizedBox(
             height: 15,
           ),
-          OBookingWidgets.cocaColaItems(),
+          AboutOrderWidgets.cocaColaItems(),
           const SizedBox(
             height: 18,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              OBookingWidgets.textBuilder(
+              AboutOrderWidgets.textBuilder(
                 "Общая объем",
                 "1365 о",
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -266,7 +266,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
               const SizedBox(
                 height: 12,
               ),
-              OBookingWidgets.textBuilder(
+              AboutOrderWidgets.textBuilder(
                 "Общее кол-во",
                 "1258 шт",
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -274,7 +274,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
               const SizedBox(
                 height: 12,
               ),
-              OBookingWidgets.textBuilder(
+              AboutOrderWidgets.textBuilder(
                 "Общая сумма",
                 "150 000 000 UZS",
                 color: ColorName.button,

@@ -1,5 +1,6 @@
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MarketImage extends StatelessWidget {
   const MarketImage({Key? key, required this.image}) : super(key: key);
@@ -9,15 +10,15 @@ class MarketImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 90,
-        width: 90,
+        height: 90.w,
+        width: 90.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: ColorName.primaryDark,
         ),
         child: SizedBox(
-          height: 37,
-          width: 43,
+          height: 37.w,
+          width: 43.w,
           child: Image.asset(image),
         ),
       ),

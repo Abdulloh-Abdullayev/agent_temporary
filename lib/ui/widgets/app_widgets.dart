@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:bot_toast/bot_toast.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -53,7 +54,6 @@ class AppWidgets {
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(borderRadius),
-            border: Border.all(color: borderColor),
           ),
           child: Center(
             child: Row(
@@ -77,6 +77,7 @@ class AppWidgets {
 
   static Widget text({
     required String text,
+    TextStyle? textStyle,
     Color color = ColorName.black,
     double fontSize = 16,
     TextDecoration decoration = TextDecoration.none,
@@ -84,8 +85,8 @@ class AppWidgets {
     EdgeInsets padding = const EdgeInsets.all(0),
     TextAlign textAlign = TextAlign.start,
     int maxLines = 3,
-    TextStyle? textStyle,
     fontStyle = FontStyle.normal,
+    double height = 1.0,
     bool isRichText = false,
     List<MarkerText> othersMarkers = const [],
   }) {
@@ -95,6 +96,7 @@ class AppWidgets {
         child: SuperRichText(
           text: text,
           style: GoogleFonts.inter(
+            textStyle: textStyle,
             color: color,
             fontSize: fontSize.sp,
             decoration: decoration,
@@ -113,6 +115,7 @@ class AppWidgets {
         text,
         style: GoogleFonts.inter(
           color: color,
+          textStyle: textStyle,
           fontSize: fontSize.sp,
           decoration: decoration,
           fontWeight: fontWeight,
@@ -133,6 +136,7 @@ class AppWidgets {
     EdgeInsets padding = const EdgeInsets.all(0),
     TextAlign textAlign = TextAlign.start,
     int maxLines = 3,
+    double height = 1.0,
     bool isRichText = false,
     TextStyle? textStyle,
     List<MarkerText> othersMarkers = const [],
@@ -219,12 +223,71 @@ class AppWidgets {
     );
   }
 
+  static Widget buttonBuilder({
+    double height = 28,
+    double width = 28,
+    double redius = 28,
+    Color backColor = ColorName.white,
+    Widget? child,
+    EdgeInsets padding = EdgeInsets.zero,
+    Alignment alignment = Alignment.center,
+    required Function() onTap,
+  }) =>
+      Container(
+        alignment: alignment,
+        decoration: BoxDecoration(
+          color: backColor,
+          borderRadius: BorderRadius.circular(4),
+        ),
+        child: GestureDetector(
+          child: Container(
+            height: height,
+            width: width,
+            padding: padding,
+            child: child ?? SizedBox.shrink(),
+          ),
+        ),
+      );
+
+  /// set only net image url
+  static Widget networkImage(
+      {required String url,
+      double? height,
+      double? width,
+      Color? color,
+      Widget? errorChild,
+      BoxFit fit = BoxFit.cover,
+      double radius = 14.0,
+      int? scale}) {
+    return ClipRRect(
+      borderRadius: BorderRadius.all(Radius.circular(radius)),
+      child: CachedNetworkImage(
+          imageUrl: url,
+          width: width,
+          height: height,
+          fit: fit,
+          color: color,
+          placeholder: (context, url) {
+            return Center(
+              widthFactor: 20,
+              heightFactor: 20,
+              child: CircularProgressIndicator(),
+            );
+          },
+          errorWidget: (context, url, error) {
+            return errorChild ??
+                Container(color: Colors.black12, child: Container());
+          }),
+    );
+  }
+
   static Widget iconButton({
     required VoidCallback onPressed,
     required SvgGenImage icon,
     Color bgColor = const Color.fromRGBO(255, 255, 255, 0.1),
     double height = 28,
     double width = 28,
+    Color? iconColor,
   }) {
     return InkWell(
       onTap: onPressed,
@@ -238,6 +301,7 @@ class AppWidgets {
         child: Center(
           child: icon.svg(
             fit: BoxFit.cover,
+            color: iconColor,
           ),
         ),
       ),

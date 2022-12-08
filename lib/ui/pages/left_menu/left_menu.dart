@@ -1,12 +1,15 @@
-import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
+import 'package:agent/ui/pages/all_tasks_page/all_tasks_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
-import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
+import 'package:agent/ui/pages/order_page/order_page.dart';
+import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
+import 'package:agent/ui/pages/salary_page/salary_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -15,6 +18,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/bloc/app_navigation/app_navigation_bloc.dart';
+import '../debtors_page/debtors_page.dart';
 import '../settings_page/settings_page.dart';
 
 class LeftMenuModule extends Module {
@@ -101,14 +106,28 @@ class LeftMenuPage extends StatelessWidget {
                             onTap: () {
                               bloc.add(HideShowed(!state.hideShow));
                             },
-                            child: AnimatedRotation(
-                              duration: const Duration(milliseconds: 300),
-                              turns: state.hideShow ? 0.5 : 1,
-                              child: Assets.images.icons.caretDown.svg(
-                                width: 27.w,
-                                height: 27.w,
+
+                            child: Container(
+                              height: 28.w,
+                              width: 28.w,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                color: const Color.fromRGBO(255, 255, 255, 0.1),
+                              ),
+                              child: Center(
+                                child: AnimatedRotation(
+                                  duration: const Duration(milliseconds: 500),
+                                  turns: state.hideShow ? 0.5 : 1,
+                                  child: Assets.images.icons.downIcon.svg(
+                                    // width: 14.w,
+                                    // height: 8.w,
+                                    color: ColorName.white,
+                                  ),
+                                ),
                               ),
                             ),
+
+                            // AppWidgets.iconButton(onPressed: (){}, icon:  Assets.images.icons.downIcon)
                           ),
                         ],
                       ).paddingSymmetric(horizontal: 20.w, vertical: 25.w),
@@ -136,15 +155,15 @@ class LeftMenuPage extends StatelessWidget {
                                   icon: const Icon(
                                     Icons.add,
                                     color: ColorName.textAddAccount,
-                                  ),
-                                ).paddingOnly(left: 20.w),
+                                  ).paddingOnly(left: 20.w),
+                                ),
                               ],
                             )
                           : const SizedBox(),
                     ],
                   ),
                 ),
-                buildMenus().paddingAll(20),
+                buildMenus(context),
                 AppWidgets.textLocale(
                   localeKey: "Версия 12.3.8.7",
                   color: ColorName.white.withOpacity(0.3),
@@ -161,33 +180,39 @@ class LeftMenuPage extends StatelessWidget {
     );
   }
 
-  Column buildMenus() {
+  Column buildMenus(BuildContext context) {
     return Column(
       children: [
         DrawerItem(
-          onTap: () {},
+          onTap: () {
+            AppNavigationBloc.to.add(
+              const AppNavigationChanged(
+                appNavigationType: AppNavigationType.MAIN,
+              ),
+            );
+          },
           text: "Главная",
           icon: Assets.images.icons.homeIcon.svg(),
         ),
         DrawerItem(
           onTap: () {
-            AppNavigationBloc.to.add(
-              const AppNavigationChanged(
-                appNavigationType: AppNavigationType.POINTS,
-              ),
-            );
+            Modular.to.pushNamed(AddOutletsPage.routeName);
           },
-          text: "Торговые точки",
+          text: "Добавить торговую точку",
           icon: Assets.images.icons.homeIcon2.svg(),
         ),
         DrawerItem(
-          onTap: () {},
+          onTap: () {
+            Modular.to.pushNamed(OrderPage.routeName);
+          },
           text: "Заказы",
-          icon: Assets.images.icons.card.svg(),
+          icon: Assets.images.icons.shopMenu.svg(),
         ),
         DrawerItem(
-          onTap: () {},
-          text: "Остатки",
+          onTap: () {
+            Modular.to.pushNamed(RemainStockPage.routeName);
+          },
+          text: "Остатки на складе",
           icon: Assets.images.icons.note.svg(),
         ),
         DrawerItem(
@@ -196,7 +221,9 @@ class LeftMenuPage extends StatelessWidget {
           icon: Assets.images.icons.user.svg(),
         ),
         DrawerItem(
-          onTap: () {},
+          onTap: () {
+            Modular.to.pushNamed(DebtorsPage.routeName);
+          },
           text: "Должники",
           icon: Assets.images.icons.userTimer.svg(),
         ),
@@ -206,12 +233,16 @@ class LeftMenuPage extends StatelessWidget {
           icon: Assets.images.icons.locationIcon.svg(),
         ),
         DrawerItem(
-          onTap: () {},
+          onTap: () {
+            Modular.to.pushNamed(AllTasksPage.routeName);
+          },
           text: "Задачи",
           icon: Assets.images.icons.pinned.svg(),
         ),
         DrawerItem(
-          onTap: () {},
+          onTap: () {
+            Modular.to.pushNamed(SalaryPage.routeName);
+          },
           text: "KPI",
           icon: Assets.images.icons.pieIcon.svg(),
         ),
@@ -317,19 +348,19 @@ class DrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        // HomePage.globalKey.currentState!.closeDrawer();
-        onTap();
-      },
-      child: Row(
-        children: [
-          icon.paddingOnly(right: 15.w),
-          AppWidgets.textLocale(
-            localeKey: text,
-            color: textColor,
-          ),
-        ],
+      onTap: () => onTap(),
+      child: SizedBox(
+        height: 55,
+        child: Row(
+          children: [
+            icon.paddingOnly(right: 15.w),
+            AppWidgets.textLocale(
+              localeKey: text,
+              color: textColor,
+            ),
+          ],
+        ).paddingOnly(left: 20.w),
       ),
-    ).paddingOnly(bottom: 25.w);
+    );
   }
 }

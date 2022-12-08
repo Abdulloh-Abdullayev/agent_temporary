@@ -6,9 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-class EquipmentDetails extends StatelessWidget {
+class EquipmentDetails extends StatefulWidget {
   const EquipmentDetails({super.key});
 
+  @override
+  State<EquipmentDetails> createState() => _EquipmentDetailsState();
+}
+
+class _EquipmentDetailsState extends State<EquipmentDetails> {
+  bool isShow = true;
+  bool isHide = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,8 +28,7 @@ class EquipmentDetails extends StatelessWidget {
               child: ListView(
                 children: [
                   Container(
-                    height: 243.w,
-                    margin: const EdgeInsets.only(top: 18),
+                    margin: const EdgeInsets.only(top: 18,),
                     decoration: BoxDecoration(
                       color: ColorName.white,
                       borderRadius: BorderRadius.circular(12),
@@ -82,11 +88,44 @@ class EquipmentDetails extends StatelessWidget {
                         const SizedBox(
                           height: 12,
                         ),
-                        AppWidgets.text(
-                          text:
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-                          fontSize: 14,
-                        ),
+                        isShow
+                              ? Container(
+                                  child: AppWidgets.textLocale(
+                                      localeKey:
+                                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+                                      maxLines: 3),
+                                )
+                              : Container(
+                                  child: AppWidgets.textLocale(
+                                      localeKey:
+                                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+                                      maxLines: 100),
+                                ),
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                isShow = !isShow;
+                                isHide = !isHide;
+                              });
+                            },
+                            child: isHide
+                                ? const Text("more",
+                                    style: TextStyle(
+                                      color: ColorName.button,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      decoration: TextDecoration.underline,
+                                    ),).paddingOnly(bottom: 18)
+                                : const Text(
+                                    "hide",
+                                    style: TextStyle(
+                                      color: ColorName.button,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                  ).paddingOnly(bottom: 18),
+                          ),
                       ],
                     ).paddingOnly(
                       top: 18,
@@ -239,7 +278,7 @@ class EquipmentDetails extends StatelessWidget {
       width: 1.sw,
       padding: const EdgeInsets.only(top: 19, left: 20, right: 20),
       decoration: const BoxDecoration(
-        color: ColorName.primary,
+        color: ColorName.primaryColor,
         borderRadius: BorderRadius.vertical(
           bottom: Radius.circular(12),
         ),

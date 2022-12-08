@@ -8,7 +8,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-
 class RemainsTabbarPage extends StatelessWidget {
   const RemainsTabbarPage({Key? key}) : super(key: key);
 
@@ -82,6 +81,8 @@ class RemainsTabbarPage extends StatelessWidget {
             child: Container(
                       margin: EdgeInsets.only(bottom: 11.w),
                       child: Cards.cards_2(
+                        status:"",
+                        context: context,
                         name: "Заказ в",
                         time: "17:18",
                         icon: PopupMenuTools(
@@ -133,14 +134,12 @@ class RemainsTabbarPage extends StatelessWidget {
                         soniNumber: "325",
                         summa: "summa",
                         summaNumber: "150 000 000",
-                        dostavlen: '',
+                       card_onTap: () {  }, statusColor: ColorName.blue,
+
                       ),),
           ),),
         ).paddingSymmetric(horizontal: 20),
-      
       ],
     );
   }
-
-  
 }

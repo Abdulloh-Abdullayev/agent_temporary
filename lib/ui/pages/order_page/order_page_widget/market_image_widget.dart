@@ -7,7 +7,8 @@ class MarketImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Center(
+      child: Container(
         height: 90,
         width: 90,
         decoration: BoxDecoration(
@@ -18,6 +19,8 @@ class MarketImage extends StatelessWidget {
           height: 37,
           width: 43,
           child: Image.asset(image),
-        ));
+        ),
+      ),
+    );
   }
 }

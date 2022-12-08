@@ -72,10 +72,7 @@ class _OutletsMapPageState extends State<OutletsMapPage> {
         ).paddingSymmetric(horizontal: 20.w),
       ),
       body: Stack(
-        children: [
-          MapSample(),
-          bottomSection()
-        ],
+        children: [MapSample(), bottomSection()],
       ),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,

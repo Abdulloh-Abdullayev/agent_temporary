@@ -42,9 +42,7 @@
   "category": "Category",
   "salary": "Salary",
   "select": "Select",
-  "write": "Write"
-
-
-
+  "write": "Write",
+  "rest_of_container": "The rest of the container"
 
 }

@@ -2,7 +2,6 @@ import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
-import 'package:agent/ui/pages/communication_page/communication_page.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
@@ -11,18 +10,21 @@ import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
 import 'package:agent/ui/pages/main_page/main_page.dart';
 import 'package:agent/ui/pages/outlets_page/outlets_page.dart';
 import 'package:agent/ui/pages/reports_page/reports_page.dart';
-import 'package:agent/ui/pages/saved_ones_page/saved_ones_page.dart';
 import 'package:agent/ui/pages/settings_page/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
+import '../draft_page/draft_page.dart';
+import '../order_page/order_page.dart';
+import '../visits_page/visits_page.dart';
 
 class HomePageModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
           HomePage.routeName,
-          child: (context, args) => HomePage(),
+          child: (context, args) => const HomePage(),
         ),
         ModuleRoute("/", module: AddOutletsModule()),
         ModuleRoute("/", module: SettingsPageModule()),
@@ -45,17 +47,13 @@ class HomePageModule extends Module {
       ];
 }
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   static const String routeName = "/homePage";
   static final GlobalKey<ScaffoldState> globalKey =
       GlobalKey<ScaffoldState>(debugLabel: "globalKey");
-  HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
+  const HomePage({Key? key}) : super(key: key);
 
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var bloc = Modular.get<AppNavigationBloc>();
@@ -147,24 +145,24 @@ class _HomePageState extends State<HomePage> {
           );
         });
   }
-}
 
-Widget bodyBuilder(
-  AppNavigationType appNavigationType,
-  BuildContext context,
-) {
-  switch (appNavigationType) {
-    case AppNavigationType.MAIN:
-      return MainPage();
-    case AppNavigationType.VISITS:
-      return SavedOnesPage();
-    case AppNavigationType.REPORT:
-      return ReportsPage();
-    case AppNavigationType.DRAFT:
-      return CommunicationPage();
-    case AppNavigationType.POINTS:
-      return OutletsPage();
-    default:
-      return Container();
+  Widget bodyBuilder(
+    AppNavigationType appNavigationType,
+    BuildContext context,
+  ) {
+    switch (appNavigationType) {
+      case AppNavigationType.MAIN:
+        return MainPage();
+      case AppNavigationType.VISITS:
+        return VisitsPage();
+      case AppNavigationType.REPORT:
+        return ReportsPage();
+      case AppNavigationType.DRAFT:
+        return DraftPage();
+      case AppNavigationType.POINTS:
+        return OutletsPage();
+      default:
+        return Container();
+    }
   }
 }

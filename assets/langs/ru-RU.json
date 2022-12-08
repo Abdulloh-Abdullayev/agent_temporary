@@ -41,7 +41,7 @@
   "category": "Категория",
   "salary": "Цена",
   "select": "Выбрать",
-  "write": "Пишите"
-
+  "write": "Пишите",
+  "rest_of_container": "Остаток тары"
 
 }

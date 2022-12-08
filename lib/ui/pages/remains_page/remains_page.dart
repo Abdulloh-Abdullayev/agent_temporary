@@ -206,7 +206,7 @@ class _RemainsPageState extends State<RemainsPage>
                             ),
                             Container(
                               width: 162.w,
-                              height: 75.h,
+                              height: 75.w,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 color: ColorName.white,

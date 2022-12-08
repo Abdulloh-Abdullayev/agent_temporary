@@ -22,7 +22,7 @@ class SettingsSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double opacity = isDisable?0.2:1;
+    double opacity = isDisable ? 0.2 : 1;
     return SizedBox(
       height: 52.w,
       child: Column(

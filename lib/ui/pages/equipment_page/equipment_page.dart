@@ -50,13 +50,13 @@ class EquipmentPage extends StatelessWidget {
                   Column(
                     children: [
                       Container(
-                        height: 40.h,
+                        height: 40.w,
                         width: 40.w,
                         color: ColorName.gray2,
                         child: Assets.images.icons.pin.svg(),
                       ),
                       SizedBox(
-                        height: 18.h,
+                        height: 18.w,
                       ),
                       AppWidgets.textLocale(
                         textAlign: TextAlign.center,

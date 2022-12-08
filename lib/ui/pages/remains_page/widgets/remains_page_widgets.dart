@@ -39,7 +39,7 @@ class RemainsPageWidgets {
         ),
         Container(
           margin: const EdgeInsets.only(top: 16),
-          height: 1.h,
+          height: 1.w,
           width: 1.sw,
           color: ColorName.gray,
         ),
@@ -52,11 +52,11 @@ class RemainsPageWidgets {
           required BuildContext context,
           required Function() ontap}) =>
       Container(
-        height: 113.h,
+        height: 113.w,
         width: 1.sw,
         padding: const EdgeInsets.only(top: 19, left: 20, right: 20),
-        decoration: const BoxDecoration(
-          color: ColorName.primary,
+        decoration:  BoxDecoration(
+           color: ColorName.primaryColor,
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(12),
           ),
@@ -169,11 +169,11 @@ class RemainsPageWidgets {
           required BuildContext context,
           required Function(String key) ontap}) =>
       Container(
-        height: 113.h,
+        height: 113.w,
         width: 1.sw,
         padding: const EdgeInsets.only(top: 19, left: 20, right: 20),
         decoration: const BoxDecoration(
-          color: ColorName.primary,
+          color: ColorName.primaryColor,
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(12),
           ),
@@ -341,13 +341,13 @@ class RemainsPageWidgets {
                     onPressed: () {
                        Modular.to.pushNamed(RemainStockPage.routeName);
                     },
-                    icon: Assets.images.icons.searchActive,
+                    icon: Assets.images.icons.search,
                   ),
                   AppWidgets.iconButton(
                     onPressed: () {
                        Modular.to.pushNamed(SalaryPage.routeName);
                     },
-                    icon: Assets.images.icons.filtrIcon,
+                    icon: Assets.images.icons.filter,
                   ).paddingOnly(left: 12.w),
                 ],
               )

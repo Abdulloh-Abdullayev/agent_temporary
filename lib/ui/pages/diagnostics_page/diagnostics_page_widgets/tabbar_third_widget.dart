@@ -18,6 +18,7 @@ class TabbarThirdWidget extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
+                    border: Border.all(color: ColorName.gray),
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12)),
                 child: Column(
@@ -56,6 +57,7 @@ class TabbarThirdWidget extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
+                    border: Border.all(color: ColorName.gray),
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12)),
                 child: Column(
@@ -90,25 +92,30 @@ class TabbarThirdWidget extends StatelessWidget {
             ),
           ],
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 50),
-          child: Divider(),
+        Padding(
+          padding: EdgeInsets.only(top: 52.w),
+          child: const Divider(
+            color: ColorName.gray2,
+          ),
         ),
         MarkWidget(
           text: "Факт",
           ptop: 60.w,
-          pleft: 120,
+          pleft: 130.w,
           width: 76.w,
         ),
         Container(
-          margin: EdgeInsets.only(top: 113.w),
+          margin:
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.17),
           width: double.infinity,
-          decoration: const BoxDecoration(
-              color: ColorName.white,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(12),
-                bottomRight: Radius.circular(12),
-              )),
+          decoration: BoxDecoration(
+            border: Border.all(color: ColorName.gray),
+            color: ColorName.white,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(12),
+              bottomRight: Radius.circular(12),
+            ),
+          ),
           child: Column(
             children: [
               AppWidgets.textLocale(
@@ -126,10 +133,6 @@ class TabbarThirdWidget extends StatelessWidget {
                   color: ColorName.gray2)
             ],
           ).paddingOnly(top: 18.w, bottom: 16.w),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(top: 101),
-          child: Divider(),
         ),
       ],
     );

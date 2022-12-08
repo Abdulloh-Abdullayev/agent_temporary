@@ -44,7 +44,7 @@ class EquipmentWidgets {
       width: 1.sw,
       padding: const EdgeInsets.only(top: 19, left: 20, right: 20),
       decoration: const BoxDecoration(
-        color: ColorName.primary,
+        color: ColorName.primaryColor,
         borderRadius: BorderRadius.vertical(
           bottom: Radius.circular(12),
         ),
@@ -156,7 +156,7 @@ class EquipmentWidgets {
       child: FittedBox(
         child: FloatingActionButton(
           onPressed: () {},
-          backgroundColor: ColorName.green3,
+          backgroundColor: ColorName.green2,
           child: Assets.images.icons.plus.svg(),
         ),
       ),

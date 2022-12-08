@@ -35,7 +35,7 @@ class ReportsPage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                     HomePage.globalKey.currentState!.openDrawer();
+                    HomePage.globalKey.currentState!.openDrawer();
                   },
                   child: Assets.images.icons.menu.svg(),
                 ),
@@ -47,10 +47,10 @@ class ReportsPage extends StatelessWidget {
                       builder: (context) => const ReportsFilterBottomSheet(),
                     );
                   },
-                  icon: Assets.images.icons.filtrIcon,
+                  icon: Assets.images.icons.filter,
                 )
               ],
-            ),
+            ).paddingAll(5),
             flexibleSpace: FlexibleSpaceBar(
               background: reportsAppBar(context),
               collapseMode: CollapseMode.none,
@@ -70,7 +70,7 @@ class ReportsPage extends StatelessWidget {
                     const TableFact().paddingOnly(top: 16.w),
                     const SalesTableWidget()
                   ],
-                ).paddingSymmetric(horizontal: 20.w,vertical: 20.w)
+                ).paddingSymmetric(horizontal: 20.w, vertical: 20.w)
               ],
             ),
           ),
@@ -198,9 +198,7 @@ class ReportsPage extends StatelessWidget {
                 ),
               );
             },
-            dropDownOnTap: () {
-
-            },
+            dropDownOnTap: () {},
             SecondDateOnTap: () {
               showDialog(
                 context: context,
@@ -222,7 +220,7 @@ class ReportsPage extends StatelessWidget {
             width: 1.sw,
             textColor: Colors.white,
             color: ColorName.buttonColor,
-          ).paddingOnly(top: 18.w)
+          ).paddingOnly(top: 10.w)
         ],
       ),
     );
