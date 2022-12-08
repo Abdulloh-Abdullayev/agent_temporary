@@ -1,23 +1,21 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/balance_page/balance_page.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
-import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
 import 'package:agent/ui/pages/main_page/widgets/orders_widget.dart';
 import 'package:agent/ui/pages/main_page/widgets/others_widget.dart';
-import 'package:agent/ui/pages/refund_page/refund_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_from_shelf.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:agent/ui/widgets/appbar_main.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
+import '../../../core/localization/locale_keys.g.dart';
 import '../../../core/utils/assets.gen.dart';
-import '../left_menu/left_menu.dart';
 import 'widgets/tabbar_widget.dart';
 
 class MainPage extends StatefulWidget {
@@ -62,143 +60,143 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
           child: Column(
             children: [
               AppBarMain(
-                text: 'Главная',
+                text: LocaleKeys.main.tr(),
                 menuTab: () {
-                   HomePage.globalKey.currentState!.openDrawer();
+                  HomePage.globalKey.currentState!.openDrawer();
                 },
-                locationTab: (){
+                locationTab: () {
                   Modular.to.pushNamed(ReturnFromShelf.routeName);
                 },
               ),
-             Expanded(
-               child: SingleChildScrollView(
-                 physics: const BouncingScrollPhysics(),
-                 child: Column(
-                   children: [
-                     Container(
-                       padding: EdgeInsets.all(18.w),
-                       margin: EdgeInsets.all(20.w),
-                       decoration: BoxDecoration(
-                         color: ColorName.white,
-                         borderRadius: BorderRadius.circular(12),
-                       ),
-                       child: Column(
-                         children: [
-                           Widgets.percentIndicator(
-                             percent: 70,
-                             inText: "Успеваемость",
-                             outText: "Дневной отчёт на сегодня",
-                           ),
-                           Row(
-                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                             children: [
-                               Widgets.iconButton(
-                                 height: 67.w,
-                                 width: 144.w,
-                                 count: 125,
-                                 title: "Посещено",
-                               ),
-                               Widgets.iconButton(
-                                 height: 67.w,
-                                 width: 144.w,
-                                 count: 125,
-                                 title: "Посещено",
-                                 icon: Icons.check_box_outlined,
-                                 color: ColorName.red,
-                               ),
-                             ],
-                           ).paddingOnly(top: 20.w),
-                           Row(
-                             children: [
-                               AppWidgets.textLocale(
-                                 localeKey: "Не синхрованно:",
-                                 fontSize: 12.sp,
-                                 fontWeight: FontWeight.w400,
-                                 color: ColorName.gray2,
-                               ),
-                               SizedBox(
-                                 width: 12.w,
-                               ),
-                               Row(
-                                 children: [
-                                   Assets.images.icons.imageIcon.svg(),
-                                   AppWidgets.textLocale(
-                                     localeKey: " : 2",
-                                     fontSize: 12.sp,
-                                     fontWeight: FontWeight.w400,
-                                     color: ColorName.black,
-                                   ),
-                                   SizedBox(
-                                     width: 20.w,
-                                   ),
-                                   Assets.images.icons.shopping.svg(),
-                                   AppWidgets.textLocale(
-                                     localeKey: " : 2",
-                                     fontSize: 12.sp,
-                                     fontWeight: FontWeight.w400,
-                                     color: ColorName.black,
-                                   ),
-                                 ],
-                               )
-                             ],
-                           ).paddingSymmetric(vertical: 14.w),
-                           Row(
-                             children: [
-                               AppWidgets.textLocale(
-                                 localeKey: "Последняя синхронизация:",
-                                 fontSize: 12.sp,
-                                 fontWeight: FontWeight.w400,
-                                 color: ColorName.gray2,
-                               ),
-                               SizedBox(
-                                 width: 12.w,
-                               ),
-                               AppWidgets.text(
-                                 text: "31 - Авг 16:40",
-                                 fontSize: 12.sp,
-                                 fontWeight: FontWeight.w600,
-                                 color: ColorName.mainColor,
-                               ),
-                             ],
-                           ),
-                         ],
-                       ),
-                     ),
-                     Row(
-                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                       children: [
-                         Widgets.showCount(
-                           height: 98.w,
-                           width: 162.w,
-                           count: 10000000,
-                           title: "Сумма заказов за сегодня",
-                           color: ColorName.white,
-                         ),
-                         Widgets.showData(
-                           height: 98.w,
-                           width: 162.w,
-                           count: "135",
-                           title: "По объему продукции за сегодя",
-                           color: ColorName.white,
-                         ),
-                       ],
-                     ).paddingSymmetric(horizontal: 20.w),
-                     TabBarWidget(
-                       _tabController,
-                       "Заказы",
-                       "Другие",
-                           (int i) {},
-                     ).paddingSymmetric(horizontal: 20.w, vertical: 15.w),
-                     Container(
-                       child: [
-                         OrdersWidget(),
-                         OthersWidget()
-                       ][_tabController.index],
-                     )
-                   ],
-                 ),
-               ),
-             )
+              Expanded(
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(18.w),
+                        margin: EdgeInsets.all(20.w),
+                        decoration: BoxDecoration(
+                          color: ColorName.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Column(
+                          children: [
+                            Widgets.percentIndicator(
+                              percent: 70,
+                              inText: LocaleKeys.performance.tr(),
+                              outText: LocaleKeys.daily_report.tr(),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Widgets.iconButton(
+                                  height: 67.w,
+                                  width: 144.w,
+                                  count: 125,
+                                  title: LocaleKeys.visited.tr(),
+                                ),
+                                Widgets.iconButton(
+                                  height: 67.w,
+                                  width: 144.w,
+                                  count: 125,
+                                  title: LocaleKeys.left.tr(),
+                                  icon: Icons.check_box_outlined,
+                                  color: ColorName.red,
+                                ),
+                              ],
+                            ).paddingOnly(top: 20.w),
+                            Row(
+                              children: [
+                                AppWidgets.textLocale(
+                                  localeKey: LocaleKeys.out_of_sync,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorName.gray2,
+                                ),
+                                SizedBox(
+                                  width: 12.w,
+                                ),
+                                Row(
+                                  children: [
+                                    Assets.images.icons.imageIcon.svg(),
+                                    AppWidgets.textLocale(
+                                      localeKey: " : 2",
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w400,
+                                      color: ColorName.black,
+                                    ),
+                                    SizedBox(
+                                      width: 20.w,
+                                    ),
+                                    Assets.images.icons.shopping.svg(),
+                                    AppWidgets.textLocale(
+                                      localeKey: " : 2",
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w400,
+                                      color: ColorName.black,
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ).paddingSymmetric(vertical: 14.w),
+                            Row(
+                              children: [
+                                AppWidgets.textLocale(
+                                  localeKey: LocaleKeys.last_sync,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorName.gray2,
+                                ),
+                                SizedBox(
+                                  width: 12.w,
+                                ),
+                                AppWidgets.text(
+                                  text: "31 - Авг 16:40",
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: ColorName.mainColor,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Widgets.showCount(
+                            height: 98.w,
+                            width: 162.w,
+                            count: 10000000,
+                            title: LocaleKeys.amount_of_orders_today.tr(),
+                            color: ColorName.white,
+                          ),
+                          Widgets.showData(
+                            height: 98.w,
+                            width: 162.w,
+                            count: "135",
+                            title: LocaleKeys.today_production_volume.tr(),
+                            color: ColorName.white,
+                          ),
+                        ],
+                      ).paddingSymmetric(horizontal: 20.w),
+                      TabBarWidget(
+                        _tabController,
+                        LocaleKeys.orders.tr(),
+                        LocaleKeys.other_.tr(),
+                        (int i) {},
+                      ).paddingSymmetric(horizontal: 20.w, vertical: 15.w),
+                      Container(
+                        child: [
+                          OrdersWidget(),
+                          OthersWidget()
+                        ][_tabController.index],
+                      )
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         );

@@ -1,22 +1,59 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
 abstract class  LocaleKeys {
-  static const app_name = 'app_name';
-  static const refund_tara = 'refund_tara';
+  static const welcome = 'welcome';
+  static const enter_username_password = 'enter_username_password';
+  static const server_name = 'server_name';
+  static const password = 'password';
+  static const enter = 'enter';
+  static const main = 'main';
+  static const login = 'login';
+  static const performance = 'performance';
+  static const daily_report = 'daily_report';
+  static const visited = 'visited';
+  static const left = 'left';
+  static const out_of_sync = 'out_of_sync';
+  static const last_sync = 'last_sync';
+  static const amount_of_orders_today = 'amount_of_orders_today';
+  static const today_production_volume = 'today_production_volume';
+  static const other_ = 'other_';
+  static const out_sync_orders = 'out_sync_orders';
+  static const spot = 'spot';
+  static const no_bonus = 'no_bonus';
+  static const volume = 'volume';
+  static const qty = 'qty';
+  static const amount = 'amount';
+  static const visits = 'visits';
+  static const report = 'report';
   static const draft = 'draft';
+  static const app_name = 'app_name';
+  static const along_the_route = 'along_the_route';
+  static const off_route = 'off_route';
+  static const sold_products = 'sold_products';
+  static const product = 'product';
+  static const visited_clients = 'visited_clients';
+  static const name = 'name';
+  static const filter = 'filter';
+  static const all_categories = 'all_categories';
+  static const order = 'order';
+  static const exchange = 'exchange';
+  static const return_ = 'return_';
+  static const return_of_containers = 'return_of_containers';
+  static const refusal = 'refusal';
+  static const search = 'search';
+  static const route_built = 'route_built';
+  static const refund_tara = 'refund_tara';
   static const refund = 'refund';
   static const payment_information = 'payment_information';
   static const client_balance = 'client_balance';
+  static const total_sum = 'total_sum';
   static const dept_amount = 'dept_amount';
   static const no_dept = 'no_dept';
   static const show_on_map = 'show_on_map';
   static const no_show_on_map = 'no_show_on_map';
-  static const visited = 'visited';
   static const inventory = 'inventory';
   static const client_with_dept = 'client_with_dept';
-  static const total_sum = 'total_sum';
   static const add_account = 'add_account';
-  static const main = 'main';
   static const outlets = 'outlets';
   static const orders = 'orders';
   static const remains = 'remains';
@@ -42,9 +79,9 @@ abstract class  LocaleKeys {
   static const remainder = 'remainder';
   static const price = 'price';
   static const category = 'category';
+  static const rest_of_container = 'rest_of_container';
   static const salary = 'salary';
   static const select = 'select';
   static const write = 'write';
-  static const rest_of_container = 'rest_of_container';
 
 }
