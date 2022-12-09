@@ -178,7 +178,6 @@ import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/exchange/exchange_page.dart';
 import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/select_photo_dialog.dart';
-import 'package:agent/ui/pages/remains_page/pages/remains_item_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

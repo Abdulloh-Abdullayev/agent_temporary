@@ -1,10 +1,11 @@
-import 'package:agent/ui/pages/remains_page/widgets/item_remains_widget.dart';
-import 'package:agent/ui/pages/remains_page/widgets/remains_page_widgets.dart';
+
+import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/ui/pages/remain_page/widgets/item_remains_widget.dart';
+import 'package:agent/ui/pages/remain_page/widgets/remains_page_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uikit/extensions/app_extensions.dart';
 
 import '../cubit/remain_cubit.dart';
 

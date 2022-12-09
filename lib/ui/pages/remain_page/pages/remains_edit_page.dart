@@ -1,6 +1,6 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/remains_page/widgets/remains_page_widgets.dart';
+import 'package:agent/ui/pages/remain_page/widgets/remains_page_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';

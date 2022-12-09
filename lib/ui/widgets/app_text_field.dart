@@ -87,7 +87,7 @@ class _AppTextFieldState extends State<AppTextField> {
         Container(
           height: widget.height,
           decoration: BoxDecoration(
-            color: ColorName.white,
+            color: ColorName.background,
             borderRadius: BorderRadius.circular(12),
           ),
           child: TextField(

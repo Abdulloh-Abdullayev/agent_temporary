@@ -11,6 +11,7 @@ import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
+import 'package:agent/ui/pages/draft_page/draft_page.dart';
 import 'package:agent/ui/pages/equipment_page/equipment_page.dart';
 import 'package:agent/ui/pages/equipment_page/pages/add_equipment_page.dart';
 import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
@@ -20,10 +21,10 @@ import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
+import 'package:agent/ui/pages/remain_page/pages/remains_edit_page.dart';
+import 'package:agent/ui/pages/remain_page/pages/remains_item_page.dart';
+import 'package:agent/ui/pages/remain_page/remains_page.dart';
 import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
-import 'package:agent/ui/pages/remains_page/pages/remains_edit_page.dart';
-import 'package:agent/ui/pages/remains_page/pages/remains_item_page.dart';
-import 'package:agent/ui/pages/remains_page/remains_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -32,7 +33,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'ui/pages/add_order_page/add_order_page.dart';
 import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/debtors_page/widget/deptors_history.dart';
@@ -52,7 +52,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(RemainsPage.routeName);
+    Modular.setInitialRoute(EquipmentPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -133,5 +133,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: RemainsItemPageModule()),
         ModuleRoute("/", module: ActReconciliationOderPageModule()),
         ModuleRoute("/", module: ActReconciliationPageModule()),
+        ModuleRoute("/", module: DraftPageModule()),
       ];
 }

@@ -8,7 +8,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 part 'remain_state.dart';
 
 class RemainCubit extends Cubit<RemainState> {
-  RemainCubit() : super(RemainState());
+  RemainCubit() : super(const RemainState(counterValueBlokCola: 0));
 
   static RemainCubit get to => Modular.get<RemainCubit>();
   static String imgUrl =
@@ -59,18 +59,25 @@ class RemainCubit extends Cubit<RemainState> {
     return list;
   }
 
-  Future increment(int categoryId, int id) async {
-    state.list[categoryId].list![id].count =
-        state.list[categoryId].list![id].count! + 1;
-    emit(state.copyWith(list: state.list));
-  }
+  // Future increment(int categoryId, int id) async {
+  //   state.list[categoryId].list![id].count =
+  //       state.list[categoryId].list![id].count! + 1;
+  //   emit(state.copyWith(list: state.list));
+  // }
 
-  Future decrement(int categoryId, int id) async {
-    var category = state.list.firstWhere((element) => element.id == categoryId);
-    var refundModel = category.list!.firstWhere((element) => element.id == id);
-    if (refundModel.count! > 1) {
-      refundModel.count = refundModel.count! - 1;
-      emit(state.copyWith(list: state.list));
-    }
-  }
+  // Future decrement(int categoryId, int id) async {
+  //   var category = state.list.firstWhere((element) => element.id == categoryId);
+  //   var remainsModel = category.list!.firstWhere((element) => element.id == id);
+  //   if (remainsModel.count! > 1) {
+  //     remainsModel.count = remainsModel.count! - 1;
+  //     emit(state.copyWith(list: state.list));
+  //   }
+  // }
+
+  void incrementColaBloc() => emit(
+        RemainState(counterValueBlokCola: state.counterValueBlokCola + 1),
+      );
+  void decrementColaBloc() => emit(
+        RemainState(counterValueBlokCola: state.counterValueBlokCola + 1),
+      );
 }
