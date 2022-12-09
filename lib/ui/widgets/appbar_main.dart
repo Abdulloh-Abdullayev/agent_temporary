@@ -50,7 +50,7 @@ class AppBarMain extends StatelessWidget {
             children: [
               InkWell(
                 onTap: menuTab,
-                child: Assets.images.icons.menu.svg(),
+                child: Assets.images.icons.menuIcon.svg(),
               ),
               Row(
                 children: [

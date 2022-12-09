@@ -31,6 +31,7 @@ class FloatingShowDialog extends StatelessWidget {
                     bottom: MediaQuery.of(context).size.width * 0.4,
                   ),
                   child: ExchangeTools(
+
                     onTap: (p0) {
                       switch (p0) {
                         case 0:
