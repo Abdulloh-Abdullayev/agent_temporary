@@ -2,6 +2,7 @@ import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
+import 'package:agent/ui/pages/draft_page/draft_page.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
@@ -162,7 +163,7 @@ class HomePage extends StatelessWidget {
       case AppNavigationType.REPORT:
         return ReportsPage();
       case AppNavigationType.DRAFT:
-        return MainPage();
+        return DraftPage();
       case AppNavigationType.POINTS:
         return OutletsPage();
       default:
