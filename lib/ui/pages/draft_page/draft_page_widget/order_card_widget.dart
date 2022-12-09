@@ -36,7 +36,7 @@ class OrderWidget extends StatelessWidget {
                 border: Border.all(color: ColorName.gray),
               ),
               child: Padding(
-                padding:  EdgeInsets.only(
+                padding: EdgeInsets.only(
                   top: 12.w,
                   bottom: 9.w,
                   left: 12.w,

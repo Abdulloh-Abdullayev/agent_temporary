@@ -47,11 +47,15 @@ class OrderIdCards {
               borderRadius: BorderRadius.circular(8), color: colorContainer),
           child: Center(
             child: AppWidgets.textLocale(
-                localeKey: text_2,
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w400,
-                color: statusColor,
-                isRichText: true).paddingSymmetric(horizontal: 10.w,vertical: 4.w),
+                    localeKey: text_2,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400,
+                    color: statusColor,
+                    isRichText: true)
+                .paddingSymmetric(
+              horizontal: 10.w,
+              vertical: 4.w,
+            ),
           ),
         ),
       ],

@@ -13,7 +13,7 @@ class VisitWidgets {
   static Widget Appbar(
           {required String title, required Function(String key) ontap}) =>
       Container(
-        height: 107.h,
+        height: 112.h,
         width: 1.sw,
         decoration: BoxDecoration(
           color: ColorName.primaryColor,
