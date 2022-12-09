@@ -39,6 +39,12 @@ class ColorName {
   /// Color: #299B9B
   static const Color buttonColor = Color(0xFF299B9B);
 
+  /// Color: #E3FCF0
+  static const Color cyne = Color(0xFFE3FCF0);
+
+  /// Color: #185C37
+  static const Color darkGreen = Color(0xFF185C37);
+
   /// Color: #B0CCCC
   static const Color defaultIcon = Color(0xFFB0CCCC);
 

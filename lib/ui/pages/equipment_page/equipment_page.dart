@@ -61,7 +61,7 @@ class EquipmentPage extends StatelessWidget {
                       AppWidgets.textLocale(
                         textAlign: TextAlign.center,
                         localeKey: "Пока что ничего не \nнайдено",
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ],
@@ -75,7 +75,7 @@ class EquipmentPage extends StatelessWidget {
                     width: 335.w,
                     textColor: ColorName.white,
                   ).marginOnly(
-                    bottom: 18.h,
+                    bottom: 18.w,
                   ),
                 ],
               ),

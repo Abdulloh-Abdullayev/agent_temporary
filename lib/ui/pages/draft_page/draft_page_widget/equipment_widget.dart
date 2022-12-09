@@ -21,14 +21,13 @@ class EquipmentWidget extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontSize: 18.sp,
               color: ColorName.black,
-              isRichText: true
-          ),
+              isRichText: true),
         ).marginOnly(bottom: 12.w),
         ListView.builder(
           physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: 3,
-          itemBuilder: (context,index){
+          itemBuilder: (context, index) {
             return Container(
               margin: EdgeInsets.only(bottom: 10.w),
               width: double.infinity,
@@ -47,8 +46,7 @@ class EquipmentWidget extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                           fontSize: 16.sp,
                           color: ColorName.black,
-                          isRichText: true
-                      ),
+                          isRichText: true),
                     ).marginOnly(bottom: 8.w),
                     Row(
                       children: [
@@ -58,18 +56,19 @@ class EquipmentWidget extends StatelessWidget {
                             height: 67.w,
                             width: 72.w,
                             child: CachedNetworkImage(
-                              imageUrl: "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg",
+                              imageUrl:
+                                  "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg",
                               fit: BoxFit.cover,
                               placeholder: (context, url) =>
-                              const CupertinoActivityIndicator(),
+                                  const CupertinoActivityIndicator(),
                               errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
+                                  const Icon(Icons.error),
                             ),
                           ),
                         ),
-
-                        SizedBox(width: 12.w,),
-
+                        SizedBox(
+                          width: 12.w,
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -78,29 +77,30 @@ class EquipmentWidget extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 color: ColorName.black,
                                 fontSize: 16.sp,
-                                isRichText: true
+                                isRichText: true),
+                            SizedBox(
+                              height: 8.w,
                             ),
-                            SizedBox(height: 8.w,),
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "Тип: Холодильник",
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorName.gray2,
-                                    fontSize: 12.sp,
-                                    isRichText: true
-                                ).paddingOnly(right: 8.w),
+                                        localeKey: "Тип: Холодильник",
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorName.gray2,
+                                        fontSize: 12.sp,
+                                        isRichText: true)
+                                    .paddingOnly(right: 8.w),
                                 AppWidgets.textLocale(
                                     localeKey: "Черновик",
                                     fontWeight: FontWeight.w400,
                                     color: ColorName.red,
                                     fontSize: 12.sp,
-                                    isRichText: true
-                                ),
-
+                                    isRichText: true),
                               ],
                             ),
-                            SizedBox(height: 8.w,),
+                            SizedBox(
+                              height: 8.w,
+                            ),
                             Row(
                               children: [
                                 AppWidgets.textLocale(
@@ -108,15 +108,13 @@ class EquipmentWidget extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     color: ColorName.gray2,
                                     fontSize: 12.sp,
-                                    isRichText: true
-                                ),
+                                    isRichText: true),
                                 AppWidgets.textLocale(
                                     localeKey: "12.10.2022",
                                     fontWeight: FontWeight.w600,
                                     color: ColorName.black,
                                     fontSize: 12.sp,
-                                    isRichText: true
-                                ),
+                                    isRichText: true),
                               ],
                             )
                           ],

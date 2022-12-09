@@ -5,33 +5,34 @@ import 'package:agent/ui/pages/order_page/order_page_widget/market_image_functio
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/pages/order_page/pages/photo_report_page.dart';
 import 'package:agent/ui/pages/order_page/pages/tabbar_order_page.dart';
-import 'package:agent/ui/pages/remain_page/widgets/floating_show_widget.dart';
+import 'package:agent/ui/pages/remain_page/pages/remains_tabbar_page.dart';
+import 'package:agent/ui/pages/remains_page/widgets/floating_show_widget.dart';
 import 'package:agent/ui/pages/return_from_shelf/widget/about_return_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'order_page_widget/bottom_button_widget.dart';
 import 'order_page_widget/order_tabbar_widget.dart';
 
 class OrderPageModule extends Module {
-
   @override
   List<Bind> get binds => [
-    Bind.singleton<OrderPageCubit>(
+        Bind.singleton<OrderPageCubit>(
           (i) => OrderPageCubit(),
-      onDispose: (v) => v.close(),
-    ),
-  ];
+          onDispose: (v) => v.close(),
+        ),
+      ];
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute(
-      OrderPage.routeName,
-      child: (context, args) => const OrderPage(),
-    ),
-  ];
+        ChildRoute(
+          OrderPage.routeName,
+          child: (context, args) => const OrderPage(),
+        ),
+      ];
 }
 
 class OrderPage extends StatefulWidget {
@@ -97,7 +98,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
           SafeArea(
             child: BlocBuilder<OrderPageCubit, OrderPageState>(
               bloc: Modular.get<OrderPageCubit>(),
-              builder: (context, state){
+              builder: (context, state) {
                 return buildScaffold(context);
               },
             ),
@@ -170,8 +171,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                                   isRichText: true),
                             ).paddingOnly(top: 50.w),
                             Row(
-                              mainAxisAlignment:
-                              MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 AppWidgets.textLocale(
                                     localeKey: "Supermarket",
@@ -240,10 +240,10 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                                 "Возврат тары",
                                 "Обмен",
                                 "Остатки", (int i) {
-                                  if (i == 0) {
-                                  } else if (i == 1) {
-                                  } else {}
-                                }),
+                              if (i == 0) {
+                              } else if (i == 1) {
+                              } else {}
+                            }),
                             Container(
                               child: [
                                 const TabbarOrderPage(),
@@ -251,7 +251,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                                 const AboutReturnWidget(),
                                 Container(),
                                 Container(),
-                                Container(),
+                                   RemainsTabbarPage(),
                               ][_controller.index],
                             ),
                           ],
@@ -267,7 +267,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
         ],
       ),
       floatingActionButton:
-      const FloatingShowDialog().paddingOnly(bottom: 160.w),
+          const FloatingShowDialog().paddingOnly(bottom: 160.w),
     );
   }
 }

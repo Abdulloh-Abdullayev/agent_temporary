@@ -77,69 +77,126 @@ class RemainsTabbarPage extends StatelessWidget {
           ).paddingSymmetric(horizontal: 20.w),
         ),
         Column(
-          children:List.generate(20, (index) => SingleChildScrollView(
-            child: Container(
-                      margin: EdgeInsets.only(bottom: 11.w),
-                      child: Cards.cards_2(
-                        status:"",
-                        context: context,
-                        name: "Заказ в",
-                        time: "17:18",
-                        icon: PopupMenuTools(
-                          onTap: (p0) {
-                            if (p0 == 0) {
-                             Modular.to.pushNamed(RemainsEditPage.routeName);
-                            } 
-                           else if (p0 == 1) {
-                              showDialog(
-                                context: context,
-                                builder: (ctx) => const AlertDialog(
-                                  content: CommitTextField(
-                                    text: "Добавление комментарии",
-                                  ),
-                                ),
-                              );
-                            } 
-                          },
-                          popupMenuIconColor: ColorName.black,
-                          textName: const [
-                            "Редактрировать",
-                            "Комментария к заказу",
-                            'Отменить',
-                          ],
-                          icons: [
-                            Assets.images.icons.editeAlt
-                                .svg(fit: BoxFit.cover, color: ColorName.button),
-                            Assets.images.icons.chat
-                                .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                            Assets.images.icons.trash
-                                .svg(fit: BoxFit.cover, color: ColorName.red),
-                          
-                           
-                          ],
-                          textColor: const [
-                            ColorName.button,
-                            ColorName.black,
-                           
-                            ColorName.red,
-                          ],
-                        ),
-                       
-                       
-                        nalichniy: "spot",
-                        bezbonus: "noBonus",
-                        obem: "volume",
-                        obemNumber: "15",
-                        soni: "count",
-                        soniNumber: "325",
-                        summa: "summa",
-                        summaNumber: "150 000 000",
-                       card_onTap: () {  }, statusColor: ColorName.blue,
-
-                      ),),
-          ),),
-        ).paddingSymmetric(horizontal: 20),
+          children: List.generate(
+            3,
+            (index) => SingleChildScrollView(
+              child: remainsItems(context),
+            ),
+          ),
+        ).marginOnly(
+          bottom: 11,
+        ),
       ],
+    );
+  }
+
+  Widget remainsItems(BuildContext context) {
+    return Container(
+      height: 63.w,
+      padding: EdgeInsets.only(
+        top: 13.w,
+        left: 12.w,
+        right: 12.w,
+      ),
+      margin: EdgeInsets.only(
+        left: 20.w,
+        right: 20.w,
+        bottom: 11.w,
+      ),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: ColorName.gray,
+          )),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  AppWidgets.textLocale(
+                      localeKey: "Остатки",
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600),
+                  SizedBox(
+                    width: 8.w,
+                  ),
+                  AppWidgets.textLocale(
+                      localeKey: "17:18",
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w400),
+                ],
+              ),
+              Container(
+                height: 20.w,
+                width: 20.w,
+                decoration: BoxDecoration(
+                  color: ColorName.background,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: PopupMenuTools(
+                  onTap: (p0) {
+                    if (p0 == 0) {
+                      Modular.to.pushNamed(RemainsEditPage.routeName);
+                    } else if (p0 == 1) {
+                      showDialog(
+                        context: context,
+                        builder: (ctx) => const AlertDialog(
+                          content: CommitTextField(
+                            text: "Добавление комментарии",
+                          ),
+                        ),
+                      );
+                    }
+                  },
+                  popupMenuIconColor: ColorName.black,
+                  textName: const [
+                    "Редактрировать",
+                    "Комментария к заказу",
+                    'Отменить',
+                  ],
+                  icons: [
+                    Assets.images.icons.editeAlt
+                        .svg(fit: BoxFit.cover, color: ColorName.button),
+                    Assets.images.icons.chat
+                        .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                    Assets.images.icons.trash
+                        .svg(fit: BoxFit.cover, color: ColorName.red),
+                  ],
+                  textColor: const [
+                    ColorName.button,
+                    ColorName.black,
+                    ColorName.red,
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 8.w,
+          ),
+          Row(
+            children: [
+              AppWidgets.textLocale(
+                localeKey: "Кол-во",
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
+                color: ColorName.gray2,
+              ),
+              SizedBox(
+                width: 8.w,
+              ),
+              AppWidgets.textLocale(
+                localeKey: " 1259 шт",
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w400,
+                color: ColorName.button,
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

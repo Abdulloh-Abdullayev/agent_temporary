@@ -33,7 +33,7 @@ class _EquipmentItemsState extends State<EquipmentItems> {
         ),
         floatingActionButton:
             EquipmentWidgets.floatingActionButtonWidget(context).marginOnly(
-          bottom: 103.h,
+          bottom: 103.w,
         ),
       ),
     );

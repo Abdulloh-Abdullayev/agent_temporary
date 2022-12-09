@@ -5,15 +5,15 @@ import '../../../../core/utils/colors.gen.dart';
 
 class OrderTabbarWidget extends StatelessWidget {
   OrderTabbarWidget(
-      this._controller,
-      this.title1,
-      this.title2,
-      this.title3,
-      this.title4,
-      this.title5,
-      this.title6,
-      this.function,
-      );
+    this._controller,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.title4,
+    this.title5,
+    this.title6,
+    this.function,
+  );
 
   static int index = 0;
   final TabController _controller;
@@ -47,7 +47,6 @@ class OrderTabbarWidget extends StatelessWidget {
                 indicatorWeight: 3,
                 indicatorSize: TabBarIndicatorSize.label,
                 tabs: [
-
                   Tab(
                     child: Text(
                       title1,

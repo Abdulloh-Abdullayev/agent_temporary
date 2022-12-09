@@ -147,20 +147,7 @@ class TabbarExchangePage extends StatelessWidget {
                                               addTap: () {}),
                                         ),
                                       );
-                                    } else if (p0 == 2) {
-                                      // showDialog(
-                                      //   context: context,
-                                      //   builder: (ctx) => Padding(
-                                      //     padding: const EdgeInsets.all(4.0),
-                                      //     child: DateTimeDialog(
-                                      //         title: "Добавить консигнация",
-                                      //         closeTitle: "Закрыть",
-                                      //         addTitle: "Добавить",
-                                      //         addTap: () {},
-                                      //     ),
-                                      //   ),
-                                      // );
-                                    }
+                                    } else if (p0 == 2) {}
                                   },
                                   textName: const [
                                     "Редактрировать",

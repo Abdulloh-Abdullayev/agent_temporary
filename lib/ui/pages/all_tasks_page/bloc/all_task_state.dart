@@ -7,19 +7,18 @@ class AllTaskState extends Equatable {
 
   const AllTaskState({
     this.image,
-    this.reLoad = false,
     this.completed = false,
+    this.reLoad = false,
   });
 
   AllTaskState copyWith({
     XFile? image,
     bool? completed,
-    bool? reLoad,
   }) {
-    return copyWith(
+    return AllTaskState(
       image: image ?? this.image,
       completed: completed ?? this.completed,
-      reLoad: !reLoad!,
+      reLoad: !reLoad,
     );
   }
 

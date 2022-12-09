@@ -2,9 +2,14 @@
 /// *****************************************************
 ///  FlutterGen
 /// *****************************************************
-import 'package:flutter/services.dart';
+
+// coverage:ignore-file
+// ignore_for_file: type=lint
+// ignore_for_file: directives_ordering,unnecessary_import
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 class $AssetsColorGen {
   const $AssetsColorGen();
@@ -19,6 +24,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/direction.png
   AssetGenImage get direction =>
       const AssetGenImage('assets/images/direction.png');
+
+  /// File path: assets/images/exel.png
+  AssetGenImage get exel => const AssetGenImage('assets/images/exel.png');
 
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
@@ -104,9 +112,6 @@ class $AssetsImagesIconsGen {
   SvgGenImage get calender =>
       const SvgGenImage('assets/images/icons/calender.svg');
 
-  /// File path: assets/images/icons/card.svg
-  SvgGenImage get card => const SvgGenImage('assets/images/icons/card.svg');
-
   /// File path: assets/images/icons/caret_down.svg
   SvgGenImage get caretDown =>
       const SvgGenImage('assets/images/icons/caret_down.svg');
@@ -126,6 +131,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/check.svg
   SvgGenImage get check => const SvgGenImage('assets/images/icons/check.svg');
+
+  /// File path: assets/images/icons/check_icon.svg
+  SvgGenImage get checkIcon =>
+      const SvgGenImage('assets/images/icons/check_icon.svg');
 
   /// File path: assets/images/icons/clock.svg
   SvgGenImage get clock => const SvgGenImage('assets/images/icons/clock.svg');
@@ -164,6 +173,14 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/edite_alt.svg
   SvgGenImage get editeAlt =>
       const SvgGenImage('assets/images/icons/edite_alt.svg');
+
+  /// File path: assets/images/icons/excel_icon.svg
+  SvgGenImage get excelIcon =>
+      const SvgGenImage('assets/images/icons/excel_icon.svg');
+
+  /// File path: assets/images/icons/excel_icon.svg.png
+  AssetGenImage get excelIconSvg =>
+      const AssetGenImage('assets/images/icons/excel_icon.svg.png');
 
   /// File path: assets/images/icons/exchange.svg
   SvgGenImage get exchange =>
@@ -426,6 +443,9 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/wallet.svg
   SvgGenImage get wallet => const SvgGenImage('assets/images/icons/wallet.svg');
+
+  /// File path: assets/images/icons/x_icon.svg
+  SvgGenImage get xIcon => const SvgGenImage('assets/images/icons/x_icon.svg');
 
   /// File path: assets/images/icons/zadachi.svg
   SvgGenImage get zadachi =>

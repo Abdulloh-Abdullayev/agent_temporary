@@ -61,10 +61,10 @@ class AboutOrderWidgets {
       Container(
         height: 119.w,
         width: 1.sw,
-        padding: const EdgeInsets.only(
-          top: 19,
-          left: 20,
-          right: 20,
+        padding:  EdgeInsets.only(
+          top: 19.w,
+          left: 20.w,
+          right: 20.w,
         ),
         decoration: const BoxDecoration(
           color: ColorName.primaryColor,

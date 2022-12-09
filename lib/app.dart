@@ -23,9 +23,9 @@ import 'package:agent/ui/pages/login_page/login_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
 import 'package:agent/ui/pages/remain_page/pages/remains_edit_page.dart';
 import 'package:agent/ui/pages/remain_page/pages/remains_item_page.dart';
-import 'package:agent/ui/pages/remain_page/remains_page.dart';
 import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
+import 'package:agent/ui/pages/salary_page/salary_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +52,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(EquipmentPage.routeName);
+    Modular.setInitialRoute(OrderPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -129,10 +129,10 @@ class AppModule extends Module {
         ModuleRoute("/", module: AddOrderPageModule()),
         ModuleRoute("/", module: ClickedItemModule()),
         ModuleRoute("/", module: AddEquipmentModule()),
-        ModuleRoute("/", module: RemainsPageModule()),
         ModuleRoute("/", module: RemainsItemPageModule()),
         ModuleRoute("/", module: ActReconciliationOderPageModule()),
         ModuleRoute("/", module: ActReconciliationPageModule()),
         ModuleRoute("/", module: DraftPageModule()),
+        ModuleRoute("/", module: SalaryPageModule()),
       ];
 }

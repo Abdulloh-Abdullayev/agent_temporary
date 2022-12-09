@@ -47,123 +47,6 @@ class RemainsPageWidgets {
     );
   }
 
-  static Widget appBar(
-          {required title,
-          required BuildContext context,
-          required Function() ontap}) =>
-      Container(
-        height: 113.w,
-        width: 1.sw,
-        padding: const EdgeInsets.only(top: 19, left: 20, right: 20),
-        decoration:  BoxDecoration(
-           color: ColorName.primaryColor,
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(12),
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 28.h,
-                  width: 28.h,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(.10),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Center(
-                      child: Assets.images.icons.left.svg(height: 9.5),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 28.w,
-                  width: 28.w,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(.10),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: PopupMenuTools(
-                    onTap: (p0) {
-                      if (p0 == 1) {
-                        showDialog(
-                          context: context,
-                          builder: (ctx) => const AlertDialog(
-                            content: CommitTextField(
-                              text: "Добавление комментарии",
-                            ),
-                          ),
-                        );
-                      } else if (p0 == 2) {
-                        showDialog(
-                          context: context,
-                          builder: (ctx) => Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: DateTimeDialog(
-                                title: "Добавить дату отгрузки",
-                                closeTitle: "Закрыть",
-                                addTitle: "Добавить",
-                                addTap: () {}),
-                          ),
-                        );
-                      } else if (p0 == 3) {
-                        showDialog(
-                          context: context,
-                          builder: (ctx) => Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: DateTimeDialog(
-                                title: "Добавить консигнация",
-                                closeTitle: "Закрыть",
-                                addTitle: "Добавить",
-                                addTap: () {}),
-                          ),
-                        );
-                      }
-                    },
-                    textName: const [
-                      "Редактрировать",
-                      "Комментария к заказу",
-                      "Дата отгрузки",
-                      "Срок Консигнация",
-                      "Закрепить фото",
-                      'Отменить',
-                    ],
-                    icons: [
-                      Assets.images.icons.edit.svg(),
-                      Assets.images.icons.chat.svg(),
-                      Assets.images.icons.date.svg(),
-                      Assets.images.icons.clock.svg(),
-                      Assets.images.icons.uploadingFile.svg(),
-                      const SizedBox.shrink(),
-                    ],
-                    textColor: const [
-                      ColorName.button,
-                      ColorName.black,
-                      ColorName.black,
-                      ColorName.black,
-                      ColorName.black,
-                      ColorName.red,
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 18),
-            AppWidgets.textLocale(
-              color: ColorName.white,
-              localeKey: title,
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w500,
-            )
-          ],
-        ),
-      );
   static Widget remainsEditAppBar(
           {required title,
           required BuildContext context,
@@ -171,7 +54,11 @@ class RemainsPageWidgets {
       Container(
         height: 113.w,
         width: 1.sw,
-        padding: const EdgeInsets.only(top: 19, left: 20, right: 20),
+        padding:  EdgeInsets.only(
+          top: 19.w,
+          left: 20.w,
+          right: 20.w,
+        ),
         decoration: const BoxDecoration(
           color: ColorName.primaryColor,
           borderRadius: BorderRadius.vertical(
@@ -185,8 +72,8 @@ class RemainsPageWidgets {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  height: 28.h,
-                  width: 28.h,
+                  height: 28.w,
+                  width: 28.w,
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(.10),
                     borderRadius: BorderRadius.circular(4),
@@ -299,17 +186,17 @@ class RemainsPageWidgets {
         children: [
           AppWidgets.textLocale(
             localeKey: text1,
-            fontSize: 12,
+            fontSize: 12.sp,
             fontWeight: FontWeight.w400,
             color: ColorName.gray2,
           ),
           AppWidgets.text(
             text: text2,
-            fontSize: 12,
+            fontSize: 12.sp,
             fontWeight: FontWeight.w400,
             color: color ?? ColorName.black,
           ).marginOnly(
-            left: 4,
+            left: 4.w,
           ),
         ],
       );
@@ -339,13 +226,13 @@ class RemainsPageWidgets {
                 children: [
                   AppWidgets.iconButton(
                     onPressed: () {
-                       Modular.to.pushNamed(RemainStockPage.routeName);
+                      Modular.to.pushNamed(RemainStockPage.routeName);
                     },
                     icon: Assets.images.icons.search,
                   ),
                   AppWidgets.iconButton(
                     onPressed: () {
-                       Modular.to.pushNamed(SalaryPage.routeName);
+                      Modular.to.pushNamed(SalaryPage.routeName);
                     },
                     icon: Assets.images.icons.filter,
                   ).paddingOnly(left: 12.w),
@@ -385,20 +272,20 @@ class RemainsPageWidgets {
             children: [
               AppWidgets.textLocale(
                 localeKey: "Обший Блок",
-                fontSize: 12,
+                fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray2,
               ),
               AppWidgets.textLocale(
                 localeKey: "1365 о",
-                fontSize: 12,
+                fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
                 color: ColorName.black,
               ),
             ],
           ),
-          const SizedBox(
-            height: 12,
+           SizedBox(
+            height: 12.w,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -411,14 +298,14 @@ class RemainsPageWidgets {
               ),
               AppWidgets.textLocale(
                 localeKey: "1258 шт",
-                fontSize: 12,
+                fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
                 color: ColorName.black,
               ),
             ],
           ),
-          const SizedBox(
-            height: 12,
+           SizedBox(
+            height: 12.w,
           ),
           Row(
             children: [
@@ -443,5 +330,4 @@ class RemainsPageWidgets {
       ),
     );
   }
- 
 }

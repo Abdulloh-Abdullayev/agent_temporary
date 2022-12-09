@@ -12,22 +12,21 @@ import 'package:uikit/uikit.dart';
 import 'bloc/customer_data_editing_cubit.dart';
 
 class CustomerDataEditingPageModule extends Module {
-
   @override
   List<Bind> get binds => [
-    Bind.singleton<CustomerDataEditingCubit>(
+        Bind.singleton<CustomerDataEditingCubit>(
           (i) => CustomerDataEditingCubit(),
-      onDispose: (v) => v.close(),
-    ),
-  ];
+          onDispose: (v) => v.close(),
+        ),
+      ];
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute(
-      CustomerDataEditingPage.routeName,
-      child: (context, args) => const CustomerDataEditingPage(),
-    ),
-  ];
+        ChildRoute(
+          CustomerDataEditingPage.routeName,
+          child: (context, args) => const CustomerDataEditingPage(),
+        ),
+      ];
 }
 
 class CustomerDataEditingPage extends StatefulWidget {
@@ -40,7 +39,6 @@ class CustomerDataEditingPage extends StatefulWidget {
 }
 
 class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CustomerDataEditingCubit, CustomerDataEditingState>(
@@ -66,7 +64,7 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                         bottomLeft: Radius.circular(12),
                       ),
                       color: ColorName.primaryColor),
-                  height: 139.h,
+                  height: 139.w,
                   child: Column(
                     children: [
                       Row(
@@ -93,11 +91,11 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: AppWidgets.textLocale(
-                            localeKey: "Редактрирование заказа",
-                            fontSize: 24.sp,
-                            fontWeight: FontWeight.w600,
-                            color: ColorName.white,
-                            isRichText: true)
+                                localeKey: "Редактрирование заказа",
+                                fontSize: 24.sp,
+                                fontWeight: FontWeight.w600,
+                                color: ColorName.white,
+                                isRichText: true)
                             .paddingOnly(top: 18.w, left: 20),
                       )
                     ],
@@ -127,7 +125,7 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                                     ListView.builder(
                                       shrinkWrap: true,
                                       physics:
-                                      const NeverScrollableScrollPhysics(),
+                                          const NeverScrollableScrollPhysics(),
                                       itemCount: 4,
                                       itemBuilder: (context, index) {
                                         return Container(
@@ -149,11 +147,9 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                                             sht: "sht",
                                             shtNumber: "2",
                                             image:
-                                            "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg",
+                                                "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg",
                                             blokRemove: () {},
-                                            blokAdd: () {
-
-                                            },
+                                            blokAdd: () {},
                                             shtRemove: () {},
                                             shtAdd: () {},
                                           ),

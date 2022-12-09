@@ -85,11 +85,11 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                                 secondDate: '',
                                 firstMoneyStatus: '',
                                 secondMoneyStatus: '',
-                                dropdownText: [],
+                                // dropdownText: [],
                                 save: () {
                                   Modular.to
                                       .pushNamed(OrderFromWidget.routeName);
-                                },
+                                }, dropdownText: [],
                               );
                             },
                           );

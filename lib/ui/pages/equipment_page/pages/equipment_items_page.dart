@@ -37,7 +37,7 @@ class _EquipmentItemsState extends State<EquipmentItems> {
           backgroundColor: ColorName.green2,
           child: Assets.images.icons.plus.svg(),
         ).marginOnly(
-          bottom: 103.h,
+          bottom: 103.w,
         ),
       ),
     );

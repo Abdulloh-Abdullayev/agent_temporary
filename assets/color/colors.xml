@@ -71,6 +71,8 @@
     <color name="light_blue">#FAFDFD</color>
     <color name="blue">#DDF0EF</color>
     <color name="input">#FAFDFD</color>
+    <color name="cyne">#E3FCF0</color>
+    <color name="dark_green">#185C37</color>
 
     <color name="input">#FAFDFD</color>
 </resources>

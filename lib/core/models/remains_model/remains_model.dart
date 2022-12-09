@@ -1,31 +1,29 @@
 class RemainsModel {
   int? id;
-  int? id_blok;
   String? name;
+  String? img;
+  int? summa;
+  int? blog;
   int? count;
-  String? imgUrl;
 
   RemainsModel({
     this.id,
     this.name,
+    this.img,
+    this.summa,
+    this.blog,
     this.count,
-    this.imgUrl,
-    this.id_blok,
   });
 }
 
 class RemainsCategoryModel {
   int? id;
-  int? id_blok;
   String? name;
   List<RemainsModel>? list;
-  List<RemainsModel>? list_blok;
 
   RemainsCategoryModel({
     this.id,
-    this.id_blok,
     this.name,
-    this.list = const [],
-    this.list_blok = const [],
+    this.list,
   });
 }

@@ -1,30 +1,33 @@
-import 'dart:math';
-
 import 'package:agent/core/models/remains_model/remains_model.dart';
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-part 'remain_state.dart';
+import 'remain_state.dart';
 
-class RemainCubit extends Cubit<RemainState> {
-  RemainCubit() : super(const RemainState(counterValueBlokCola: 0));
+class RemainsCubit extends Cubit<RemainState> {
+  RemainsCubit() : super(const RemainState());
 
-  static RemainCubit get to => Modular.get<RemainCubit>();
+  static RemainsCubit get to => Modular.get<RemainsCubit>();
+
   static String imgUrl =
-      'https://web.lebazar.uz/resources/product/2020/3/14/small_1586880212484CocaCola.jpg';
+      "https://www.sciencealert.com/images/2022/08/RidiculouslyDetailedMoonPictureInFull-642x642.jpeg";
+
   List<RemainsModel> list2 = [
     RemainsModel(
       id: 0,
       name: "Coca cola",
+      img: imgUrl,
       count: 1,
-      imgUrl: imgUrl,
+      blog: 0,
+      summa: 100000,
     ),
     RemainsModel(
       id: 1,
       name: "Coca cola",
+      img: imgUrl,
       count: 1,
-      imgUrl: imgUrl,
+      blog: 0,
+      summa: 100000,
     ),
   ];
 
@@ -50,8 +53,10 @@ class RemainCubit extends Cubit<RemainState> {
       list.add(
         RemainsModel(
           name: 'Coca cola',
-          imgUrl: imgUrl,
-          count: Random.secure().nextInt(10),
+          img: imgUrl,
+          blog: 0,
+          summa: 10000,
+          count: 1,
           id: i,
         ),
       );
@@ -59,25 +64,40 @@ class RemainCubit extends Cubit<RemainState> {
     return list;
   }
 
-  // Future increment(int categoryId, int id) async {
-  //   state.list[categoryId].list![id].count =
-  //       state.list[categoryId].list![id].count! + 1;
-  //   emit(state.copyWith(list: state.list));
-  // }
+  int summa(RemainsModel model) {
+    int sum = (model.blog ?? 0) * 8;
+    sum += (model.count ?? 0) ~/ 8;
+    sum += (model.count ?? 0) % 8;
+    return sum;
+  }
 
-  // Future decrement(int categoryId, int id) async {
-  //   var category = state.list.firstWhere((element) => element.id == categoryId);
-  //   var remainsModel = category.list!.firstWhere((element) => element.id == id);
-  //   if (remainsModel.count! > 1) {
-  //     remainsModel.count = remainsModel.count! - 1;
-  //     emit(state.copyWith(list: state.list));
-  //   }
-  // }
+  Future increment(int categoryId, int id) async {
+    state.list[categoryId].list![id].blog =
+        state.list[categoryId].list![id].blog! + 1;
+    emit(state.copyWith(list: state.list));
+  }
 
-  void incrementColaBloc() => emit(
-        RemainState(counterValueBlokCola: state.counterValueBlokCola + 1),
-      );
-  void decrementColaBloc() => emit(
-        RemainState(counterValueBlokCola: state.counterValueBlokCola + 1),
-      );
+  Future decrement(int categoryId, int id) async {
+    var category = state.list.firstWhere((element) => element.id == categoryId);
+    var refundModel = category.list!.firstWhere((element) => element.id == id);
+    if (refundModel.blog! > 0) {
+      refundModel.blog = refundModel.blog! - 1;
+      emit(state.copyWith(list: state.list));
+    }
+  }
+
+  Future incrementSht(int categoryId, int id) async {
+    state.list[categoryId].list![id].count =
+        state.list[categoryId].list![id].count! + 1;
+    emit(state.copyWith(list: state.list));
+  }
+
+  Future decrementSht(int categoryId, int id) async {
+    var category = state.list.firstWhere((element) => element.id == categoryId);
+    var refundModel = category.list!.firstWhere((element) => element.id == id);
+    if (refundModel.count! > 0) {
+      refundModel.count = refundModel.count! - 1;
+      emit(state.copyWith(list: state.list));
+    }
+  }
 }

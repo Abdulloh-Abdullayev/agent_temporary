@@ -85,9 +85,9 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                        left: 20,
-                        right: 20,
+                      padding:  EdgeInsets.only(
+                        left: 20.w,
+                        right: 20.w,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,7 +108,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                             color: ColorName.gray2,
-                          ).marginOnly(top: 16),
+                          ).marginOnly(top: 16.w),
                           isShow
                               ? Container(
                                   child: AppWidgets.textLocale(
@@ -130,18 +130,18 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                               });
                             },
                             child: isHide
-                                ? const Text("more",
+                                ?  Text("more",
                                     style: TextStyle(
                                       color: ColorName.button,
-                                      fontSize: 16,
+                                      fontSize: 16.sp,
                                       fontWeight: FontWeight.w500,
                                       decoration: TextDecoration.underline,
                                     ))
-                                : const Text(
+                                :  Text(
                                     "hide",
                                     style: TextStyle(
                                       color: ColorName.button,
-                                      fontSize: 16,
+                                      fontSize: 16.sp,
                                       fontWeight: FontWeight.w500,
                                       decoration: TextDecoration.underline,
                                     ),
@@ -149,7 +149,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                           ),
                           Container(
                             margin: const EdgeInsets.only(top: 16),
-                            height: 1.h,
+                            height: 1.w,
                             width: 1.sw,
                             color: Colors.grey,
                           ),
@@ -158,7 +158,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
                                   color: ColorName.gray2)
-                              .marginOnly(top: 16),
+                              .marginOnly(top: 16.w),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -176,11 +176,11 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.only(
-                                    top: 72,
-                                    left: 8,
-                                    right: 72,
-                                    bottom: 8,
+                                  padding:  EdgeInsets.only(
+                                    top: 72.w,
+                                    left: 8.w,
+                                    right: 72.w,
+                                    bottom: 8.w,
                                   ),
                                   child: GestureDetector(
                                     onTap: () {
@@ -206,10 +206,10 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                                       );
                                     },
                                     child: SizedBox(
-                                      height: 24.h,
+                                      height: 24.w,
                                       width: 24.w,
                                       child: Assets.images.icons.bin
-                                          .svg(height: 15),
+                                          .svg(height: 15.w),
                                     ),
                                   ),
                                 ),
@@ -238,22 +238,22 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
         children: [
           AppWidgets.textLocale(
                   localeKey: "Заказанные товары",
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   color: ColorName.black)
               .marginOnly(top: 18),
           AppWidgets.textLocale(
                   localeKey: "Напитки",
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: ColorName.black)
               .marginOnly(top: 16),
-          const SizedBox(
-            height: 15,
+           SizedBox(
+            height: 15.w,
           ),
           AboutOrderWidgets.cocaColaItems(),
-          const SizedBox(
-            height: 18,
+           SizedBox(
+            height: 18.w,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -263,16 +263,16 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                 "1365 о",
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
               ),
-              const SizedBox(
-                height: 12,
+               SizedBox(
+                height: 12.w,
               ),
               AboutOrderWidgets.textBuilder(
                 "Общее кол-во",
                 "1258 шт",
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
               ),
-              const SizedBox(
-                height: 12,
+               SizedBox(
+                height: 12.w,
               ),
               AboutOrderWidgets.textBuilder(
                 "Общая сумма",
@@ -282,8 +282,8 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
               ),
             ],
           ),
-          const SizedBox(
-            height: 24,
+           SizedBox(
+            height: 24.w,
           )
         ],
       ),
