@@ -11,6 +11,8 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/material.dart';
 
 class ColorName {
+  static var primary;
+
   ColorName._();
 
   /// Color: #F2F5F5

@@ -1,14 +1,18 @@
 class RemainsModel {
   int? id;
   String? name;
+  String? img;
+  int? summa;
+  int? blog;
   int? count;
-  String? imgUrl;
 
   RemainsModel({
     this.id,
     this.name,
+    this.img,
+    this.summa,
+    this.blog,
     this.count,
-    this.imgUrl,
   });
 }
 
@@ -20,6 +24,6 @@ class RemainsCategoryModel {
   RemainsCategoryModel({
     this.id,
     this.name,
-    this.list = const [],
+    this.list,
   });
 }

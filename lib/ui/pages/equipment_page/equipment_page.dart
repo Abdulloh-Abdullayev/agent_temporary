@@ -50,18 +50,18 @@ class EquipmentPage extends StatelessWidget {
                   Column(
                     children: [
                       Container(
-                        height: 40.h,
+                        height: 40.w,
                         width: 40.w,
                         color: ColorName.gray2,
                         child: Assets.images.icons.pin.svg(),
                       ),
                       SizedBox(
-                        height: 18.h,
+                        height: 18.w,
                       ),
                       AppWidgets.textLocale(
                         textAlign: TextAlign.center,
                         localeKey: "Пока что ничего не \nнайдено",
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ],
@@ -75,7 +75,7 @@ class EquipmentPage extends StatelessWidget {
                     width: 335.w,
                     textColor: ColorName.white,
                   ).marginOnly(
-                    bottom: 18.h,
+                    bottom: 18.w,
                   ),
                 ],
               ),

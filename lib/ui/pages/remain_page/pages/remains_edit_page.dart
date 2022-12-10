@@ -1,6 +1,6 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/remains_page/widgets/remains_page_widgets.dart';
+import 'package:agent/ui/pages/remain_page/widgets/remains_page_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -104,7 +104,7 @@ class _RemainsEditPageState extends State<RemainsEditPage> {
   Widget remainsItemWidget() {
     return Container(
       margin: const EdgeInsets.only(top: 12),
-      height: 200.h,
+      height: 200.w,
       width: 1.sw,
       decoration: BoxDecoration(
         color: ColorName.white,

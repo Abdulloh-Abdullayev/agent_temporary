@@ -1,17 +1,19 @@
-import 'package:agent/ui/pages/remains_page/cubit/remains_cubit.dart';
-import 'package:agent/ui/pages/remains_page/widgets/item_remains_widget.dart';
-import 'package:agent/ui/pages/remains_page/widgets/remains_page_widgets.dart';
+import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/ui/pages/remain_page/cubit/remain_state.dart';
+import 'package:agent/ui/pages/remain_page/widgets/item_remains_widget.dart';
+import 'package:agent/ui/pages/remain_page/widgets/remains_page_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uikit/extensions/app_extensions.dart';
+
+import '../cubit/remain_cubit.dart';
 
 class RemainsItemPageModule extends Module {
   @override
   List<Bind> get binds => [
-        Bind<RemainCubit>(
-          (i) => RemainCubit()..load(),
+        Bind<RemainsCubit>(
+          (i) => RemainsCubit()..load(),
         ),
       ];
 
@@ -32,21 +34,20 @@ class RemainsItemPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFDFDFDF),
-      body: SafeArea(
-        child: BlocBuilder<RemainCubit, RemainState>(
-          bloc: RemainCubit.to,
-          builder: (context, state) {
-            return Column(
-              children: [
-                RemainsPageWidgets.remainsAppBar().paddingOnly(bottom: 18.w),
-                buildList(state)
-              ],
-            );
-          },
-        ),
-      ),
-    );
+        backgroundColor: const Color(0xFFDFDFDF),
+        body: SafeArea(
+          child: BlocBuilder<RemainsCubit, RemainState>(
+              bloc: RemainsCubit.to,
+              builder: (context, state) {
+                return Column(
+                  children: [
+                    RemainsPageWidgets.remainsAppBar()
+                        .paddingOnly(bottom: 18.w),
+                    buildList(state),
+                  ],
+                );
+              }),
+        ));
   }
 
   Widget buildList(RemainState state) {
@@ -65,11 +66,11 @@ class RemainsItemPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
-                  itemCount: state.list.length,
+                  itemCount: 1,
                   shrinkWrap: true,
                   itemBuilder: (context, index) => RemainsItemWidget(
-                    model: state.list[index],
                     index: index,
+                    model: state.list[index],
                   ).paddingOnly(top: 12.w),
                 ),
               ),
