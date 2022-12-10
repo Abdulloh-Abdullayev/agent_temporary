@@ -1,14 +1,11 @@
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/remains_page/pages/remains_edit_page.dart';
-import 'package:agent/ui/pages/remains_page/remains_page.dart';
-import 'package:agent/ui/pages/return_from_shelf/return_from_shelf.dart';
+import 'package:agent/ui/pages/remain_page/pages/remains_item_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-import '../../history_orders/history_orders_page.dart';
 
 class FloatingShowDialog extends StatelessWidget {
   const FloatingShowDialog({Key? key}) : super(key: key);
@@ -27,24 +24,14 @@ class FloatingShowDialog extends StatelessWidget {
               builder: ((context) {
                 return Container(
                   margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.5,
-                    bottom: MediaQuery.of(context).size.width * 0.4,
+                    top: MediaQuery.of(context).size.height * 0.48,
+                    bottom: MediaQuery.of(context).size.width * 0.48,
                   ),
                   child: ExchangeTools(
-
+                    height: 200.h,
                     onTap: (p0) {
-                      switch (p0) {
-                        case 0:
-                          return Modular.to
-                              .pushNamed(RemainsEditPage.routeName);
-                        case 1:
-                          return Modular.to
-                              .pushNamed(HistoryOrdersPage.routeName);
-                        case 4:
-                          return Modular.to
-                              .pushNamed(ReturnFromShelf.routeName);
-                        case 7:
-                          return Modular.to.pushNamed(RemainsPage.routeName);
+                      if (p0 == 7) {
+                        Modular.to.pushNamed(RemainsItemPage.routeName);
                       }
                     },
                     icons: [
@@ -55,7 +42,8 @@ class FloatingShowDialog extends StatelessWidget {
                       Assets.images.icons.refresh.svg(),
                       Assets.images.icons.exchange.svg(),
                       Assets.images.icons.box1.svg(),
-                      Assets.images.icons.box1.svg(),
+                      Icon(Icons.add),
+                      // Assets.images.icons.box2.svg(),
                     ],
                     textName: const [
                       "Планы",

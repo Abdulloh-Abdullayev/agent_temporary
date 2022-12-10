@@ -33,7 +33,7 @@ class _EquipmentItemsState extends State<EquipmentItems> {
         ),
         floatingActionButton:
             EquipmentWidgets.floatingActionButtonWidget(context).marginOnly(
-          bottom: 103.h,
+          bottom: 103.w,
         ),
       ),
     );
@@ -48,7 +48,7 @@ class _EquipmentItemsState extends State<EquipmentItems> {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const EquipmentDetails(),
+                  builder: (context) =>  EquipmentDetails(),
                 ),
               );
             },

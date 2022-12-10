@@ -2,6 +2,7 @@ import 'package:agent/core/bloc/language/language_cubit.dart';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
+import 'package:agent/ui/pages/about_order/about_order.dart';
 import 'package:agent/ui/pages/act_reconciliation_oder_page/act_reconciliation_oder_page.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
 import 'package:agent/ui/pages/all_tasks_page/all_tasks_page.dart';
@@ -19,12 +20,10 @@ import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/left_menu.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/login_page/login_page.dart';
-import 'package:agent/ui/pages/o_booking/o_boking_page.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
+import 'package:agent/ui/pages/remain_page/pages/remains_edit_page.dart';
+import 'package:agent/ui/pages/remain_page/pages/remains_item_page.dart';
 import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
-import 'package:agent/ui/pages/remains_page/pages/remains_edit_page.dart';
-import 'package:agent/ui/pages/remains_page/pages/remains_item_page.dart';
-import 'package:agent/ui/pages/remains_page/remains_page.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_order_page.dart';
 import 'package:agent/ui/pages/salary_page/salary_page.dart';
 import 'package:bot_toast/bot_toast.dart';
@@ -34,7 +33,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'ui/pages/add_order_page/add_order_page.dart';
 import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/debtors_page/widget/deptors_history.dart';
@@ -54,8 +52,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    Modular.setInitialRoute(HomePage.routeName);
+    Modular.setInitialRoute(OrderPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -100,13 +97,16 @@ class AppModule extends Module {
         AsyncBind<HiveService>((i) => HiveService.init()),
         AsyncBind<DBService>((i) => DBService.init()),
       ];
-
+  
   @override
   List<ModularRoute> get routes => [
         ModuleRoute("/", module: HomePageModule()),
         ModuleRoute("/", module: LoginPageModule()),
         ModuleRoute("/", module: BalancePageModule()),
         ModuleRoute("/", module: RefundPageModule()),
+        ModuleRoute("/", module: AboutOrderModule()),
+        ModuleRoute("/", module: EquipmentModule()),
+        ModuleRoute("/", module: AddEquipmentModule()),
         ModuleRoute("/", module: OutletsMapModule()),
         ModuleRoute("/", module: LeftMenuModule()),
         ModuleRoute("/", module: CreateAccountModule()),
@@ -116,7 +116,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: RemainStockPageModel()),
         ModuleRoute("/", module: DebtorsHistoryModule()),
         ModuleRoute("/", module: OrderPageModule()),
-        ModuleRoute("/", module: OBookingModule()),
         ModuleRoute("/", module: AllTasksModule()),
         ModuleRoute("/", module: CustomerDataPageModule()),
         ModuleRoute("/", module: RestContainerPageModule()),
@@ -130,7 +129,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: AddOrderPageModule()),
         ModuleRoute("/", module: ClickedItemModule()),
         ModuleRoute("/", module: AddEquipmentModule()),
-        ModuleRoute("/", module: RemainsPageModule()),
         ModuleRoute("/", module: RemainsItemPageModule()),
         ModuleRoute("/", module: ActReconciliationOderPageModule()),
         ModuleRoute("/", module: ActReconciliationPageModule()),

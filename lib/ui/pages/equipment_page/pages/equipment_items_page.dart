@@ -19,7 +19,7 @@ class _EquipmentItemsState extends State<EquipmentItems> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: ColorName.bgColor,
+        backgroundColor: ColorName.background,
         body: Column(
           children: [
             EquipmentWidgets.appBar(
@@ -37,7 +37,7 @@ class _EquipmentItemsState extends State<EquipmentItems> {
           backgroundColor: ColorName.green2,
           child: Assets.images.icons.plus.svg(),
         ).marginOnly(
-          bottom: 103.h,
+          bottom: 103.w,
         ),
       ),
     );
@@ -52,7 +52,7 @@ class _EquipmentItemsState extends State<EquipmentItems> {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const EquipmentDetails(),
+                  builder: (context) =>  EquipmentDetails(),
                 ),
               );
             },

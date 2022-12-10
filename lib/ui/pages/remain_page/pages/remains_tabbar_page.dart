@@ -1,8 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/o_booking/o_boking_page.dart';
-import 'package:agent/ui/pages/remains_page/pages/remains_edit_page.dart';
+import 'package:agent/ui/pages/remain_page/pages/remains_edit_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -79,13 +78,64 @@ class RemainsTabbarPage extends StatelessWidget {
         ),
         Column(
           children: List.generate(
-            1,
-            (index) => Container(
-              margin: EdgeInsets.only(bottom: 11.w),
-              child: Cards.cards_2(
-                name: "Заказ в",
-                time: "17:18",
-                icon: PopupMenuTools(
+            3,
+            (index) => SingleChildScrollView(
+              child: remainsItems(context),
+            ),
+          ),
+        ).marginOnly(
+          bottom: 11,
+        ),
+      ],
+    );
+  }
+
+  Widget remainsItems(BuildContext context) {
+    return Container(
+      height: 63.w,
+      padding: EdgeInsets.only(
+        top: 13.w,
+        left: 12.w,
+        right: 12.w,
+      ),
+      margin: EdgeInsets.only(
+        left: 20.w,
+        right: 20.w,
+        bottom: 11.w,
+      ),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: ColorName.gray,
+          )),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  AppWidgets.textLocale(
+                      localeKey: "Остатки",
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600),
+                  SizedBox(
+                    width: 8.w,
+                  ),
+                  AppWidgets.textLocale(
+                      localeKey: "17:18",
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w400),
+                ],
+              ),
+              Container(
+                height: 20.w,
+                width: 20.w,
+                decoration: BoxDecoration(
+                  color: ColorName.background,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: PopupMenuTools(
                   onTap: (p0) {
                     if (p0 == 0) {
                       Modular.to.pushNamed(RemainsEditPage.routeName);
@@ -120,25 +170,33 @@ class RemainsTabbarPage extends StatelessWidget {
                     ColorName.red,
                   ],
                 ),
-                nalichniy: "spot",
-                bezbonus: "noBonus",
-                obem: "volume",
-                obemNumber: "15",
-                soni: "count",
-                soniNumber: "325",
-                summa: "summa",
-                summaNumber: "150 000 000",
-                context: context,
-                status: '',
-                statusColor: ColorName.green,
-                card_onTap: () {
-                  Modular.to.pushNamed(OBookingPage.routeName);
-                },
               ),
-            ),
+            ],
           ),
-        ).paddingSymmetric(horizontal: 20),
-      ],
+          SizedBox(
+            height: 8.w,
+          ),
+          Row(
+            children: [
+              AppWidgets.textLocale(
+                localeKey: "Кол-во",
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
+                color: ColorName.gray2,
+              ),
+              SizedBox(
+                width: 8.w,
+              ),
+              AppWidgets.textLocale(
+                localeKey: " 1259 шт",
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w400,
+                color: ColorName.button,
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/about_order/about_order.dart';
+import 'package:agent/ui/pages/about_order/widgets/about_order_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -7,7 +9,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
 import '../../../../core/utils/assets.gen.dart';
-import '../../o_booking/o_boking_page.dart';
 
 class OrderTabBarPage extends StatelessWidget {
   const OrderTabBarPage({Key? key}) : super(key: key);
@@ -168,7 +169,7 @@ class OrderTabBarPage extends StatelessWidget {
                       summa: "summa",
                       summaNumber: "1000000",
                       card_onTap: () {
-                        Modular.to.pushNamed(OBookingPage.routeName);
+                        Modular.to.pushNamed(AboutOrderPage.routeName);
                       },
                       status: 'status',
                       statusColor: ColorName.green,
