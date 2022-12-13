@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/models/return_order_model.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
@@ -91,7 +92,7 @@ class _ReturnOrderDatePageState extends State<ReturnOrderDatePage> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: AppWidgets.textLocale(
-                                  localeKey: "Возврат заказа",
+                                  localeKey: LocaleKeys.order_return,
                                   fontSize: 24.sp,
                                   fontWeight: FontWeight.w600,
                                   color: ColorName.white,

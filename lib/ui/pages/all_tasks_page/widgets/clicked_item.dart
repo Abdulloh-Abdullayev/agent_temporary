@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/all_tasks_page/bloc/all_task_bloc.dart';
@@ -83,7 +84,7 @@ class ClickedItem extends StatelessWidget {
                             vertical: 18.w,
                           ),
                           AppWidgets.textLocale(
-                            localeKey: "Задачи",
+                            localeKey: LocaleKeys.tasks,
                             color: ColorName.white,
                             fontSize: 24.sp,
                             fontWeight: FontWeight.w600,

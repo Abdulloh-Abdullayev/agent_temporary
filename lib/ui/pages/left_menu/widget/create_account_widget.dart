@@ -1,11 +1,13 @@
 import 'dart:io';
 
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -237,7 +239,7 @@ class CreateAccountWidget extends StatelessWidget {
                   ),
                 ).paddingSymmetric(vertical: 18.w),
                 AppWidgets.appButton(
-                  title: "Сохранить",
+                  title: LocaleKeys.save.tr(),
                   onTap: () {},
                 ).paddingSymmetric(
                   horizontal: 20.w,

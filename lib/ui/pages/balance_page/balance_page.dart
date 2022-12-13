@@ -122,7 +122,7 @@ class BalancePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: LocaleKeys.total_sum,
+                localeKey: LocaleKeys.total_volume,
                 fontWeight: FontWeight.w400,
                 fontSize: 14.sp,
                 color: Colors.white.withOpacity(0.6),

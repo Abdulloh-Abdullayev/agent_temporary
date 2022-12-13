@@ -55,7 +55,7 @@ class AddOutletsPage extends StatelessWidget {
                     buildContactDetail(),
                     buildClientDetail(),
                     AppWidgets.appButton(
-                      title: "Сохранить",
+                      title: LocaleKeys.save.tr(),
                       onTap: () {},
                     ).paddingSymmetric(
                       horizontal: 20.w,

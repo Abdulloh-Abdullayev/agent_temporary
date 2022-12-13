@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/floating_dialog_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/market_image_widget.dart';
@@ -6,6 +7,7 @@ import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_wi
 import 'package:agent/ui/pages/order_page/pages/photo_report_page.dart';
 import 'package:agent/ui/pages/order_page/pages/tabbar_order_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -54,6 +56,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
       setState(() {});
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -163,7 +166,6 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                           ],
                         ).paddingSymmetric(horizontal: 20),
                       ),
-
                       Container(
                         decoration: const BoxDecoration(
                           color: Colors.white,
@@ -176,12 +178,15 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                           children: [
                             OrderTabbarWidget(
                                 _controller,
-                                "Заказы", "Фото отчёт","Возврат",
-                                    (int i) {
-                                  if (i == 0) {
-                                  } else if (i == 1) {
-                                  } else {}
-                                }).paddingOnly(right: MediaQuery.of(context).size.width*0.2,),
+                                "Заказы",
+                                LocaleKeys.photo_report.tr(),
+                                "Возврат", (int i) {
+                              if (i == 0) {
+                              } else if (i == 1) {
+                              } else {}
+                            }).paddingOnly(
+                              right: MediaQuery.of(context).size.width * 0.2,
+                            ),
                             Container(
                               child: [
                                 const TabbarOrderPage(),
@@ -198,18 +203,16 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                       top: 70.w,
                       right: 0,
                       left: 0,
-                      child: MarketImage(image: "assets/images/market.png")
-                  ),
+                      child: MarketImage(image: "assets/images/market.png")),
                 ],
               ),
             ),
             floatingActionButton:
-            const FloatingDialog().paddingOnly(bottom: 160.w),
+                const FloatingDialog().paddingOnly(bottom: 160.w),
           ),
           const BottomButtonWidget(),
         ],
       ),
     );
   }
-
 }

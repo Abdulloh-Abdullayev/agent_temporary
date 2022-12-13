@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
@@ -93,9 +95,9 @@ class TabbarOrderPage extends StatelessWidget {
                           if (p0 == 1) {
                             showDialog(
                               context: context,
-                              builder: (ctx) => const AlertDialog(
+                              builder: (ctx) =>  AlertDialog(
                                 content: CommitTextField(
-                                  text: "Добавление комментарии",
+                                  text: LocaleKeys.adding_comments.tr(),
                                 ),
                               ),
                             );
@@ -105,9 +107,9 @@ class TabbarOrderPage extends StatelessWidget {
                               builder: (ctx) => Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: DateTimeDialog(
-                                    title: "Добавить дату отгрузки",
-                                    closeTitle: "Закрыть",
-                                    addTitle: "Добавить",
+                                    title: LocaleKeys.add_shipping_date.tr(),
+                                    closeTitle: LocaleKeys.close.tr(),
+                                    addTitle: LocaleKeys.add.tr(),
                                     addTap: () {}),
                               ),
                             );
@@ -117,9 +119,9 @@ class TabbarOrderPage extends StatelessWidget {
                               builder: (ctx) => Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: DateTimeDialog(
-                                    title: "Добавить консигнация",
-                                    closeTitle: "Закрыть",
-                                    addTitle: "Добавить",
+                                    title: LocaleKeys.add_consignment.tr(),
+                                    closeTitle: LocaleKeys.close.tr(),
+                                    addTitle: LocaleKeys.add.tr(),
                                     addTap: () {}),
                               ),
                             );

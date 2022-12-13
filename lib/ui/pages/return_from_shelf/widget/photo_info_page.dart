@@ -6,6 +6,8 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/localization/locale_keys.g.dart';
+
 class PhotoInfoPage extends StatelessWidget {
   const PhotoInfoPage({Key? key}) : super(key: key);
 
@@ -17,14 +19,14 @@ class PhotoInfoPage extends StatelessWidget {
         child: Column(
           children: [
             Align(
-                    alignment: Alignment.centerLeft,
-                    child: AppWidgets.textLocale(
-                        localeKey: "Не синхрозированные",
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16.sp,
-                        color: ColorName.black,
-                        isRichText: true))
-                .paddingOnly(bottom: 12.w),
+              alignment: Alignment.centerLeft,
+              child: AppWidgets.textLocale(
+                  localeKey: LocaleKeys.out_of_sync_,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16.sp,
+                  color: ColorName.black,
+                  isRichText: true),
+            ).paddingOnly(bottom: 12.w),
             SizedBox(
               height: 104.w,
               child: ListView.builder(
@@ -45,7 +47,7 @@ class PhotoInfoPage extends StatelessWidget {
             Align(
                 alignment: Alignment.centerLeft,
                 child: AppWidgets.textLocale(
-                    localeKey: "Синхрозированные",
+                    localeKey: LocaleKeys.synchronized,
                     fontWeight: FontWeight.w600,
                     fontSize: 16.sp,
                     color: ColorName.black,

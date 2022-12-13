@@ -43,22 +43,67 @@
   "refund_tara": "Возврат тары",
   "refund": "Возврат",
   "payment_information": "Информация оплаты",
-  "client_balance": "Баланс клиента",
+  "client_balance": "Client balance",
   "dept_amount": "Dept: {} uzs",
   "no_dept": "No dept",
   "show_on_map": "Show on the map",
   "no_show_on_map": "No show on the map",
   "inventory": "Inventory",
   "client_with_dept": "Client with dept",
-  "total_sum": "Общая сумма",
   "add_account": "Добавить аккаунт",
   "outlets": "Outlets",
   "orders": "Orders",
-  "remains": "Остатки",
+  "territory": "Territory",
+  "debts": "Debts",
+  "photo_report": "Photo report",
+  "add_order": "Add order",
+  "forecast": "Forecast",
+  "fact": "Fact",
+  "total_volume": "Total volume",
+  "total_qty": "Total qty",
+  "total_amount": "Total amount",
+  "adding_comments": "Adding comments",
+  "close": "Close",
+  "add": "Add",
+  "add_shipping_date": "Add shipping date",
+  "add_consignment": "Add consignment",
+  "edit": "Edit",
+  "comments_to_order": "Comments to the order",
+  "shipping_date": "Shipping date",
+  "term_consignment": "Term consignment",
+  "pin_photo": "Pin a photo",
+  "cancel": "Cancel",
+  "out_of_sync_": "Out of sync",
+  "synchronized": "Synchronized",
+  "order_return": "Order return",
+  "direction_type": "Direction type",
+  "price_type":"Price type",
+  "history":"History",
+  "customer_date":"Customer date",
+  "equipment":"Equipment",
+  "act_of_reconciliation":"Act of reconciliation",
+  "act_reconciliations_on_orders":"Act - reconciliations on orders",
+  "return_from_shelf":"Return \nfrom shelf",
+  "return_package":"Return \npackage",
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+  "remains": "Remains",
   "debtors_on_orders": "Должники по заказам",
   "debtors": "Должники",
   "my_location": "Моя локация",
-  "tasks": "Задачи",
+  "tasks": "Tasks",
   "kpi": "KPI",
   "diagnostics": "Diagnostics",
   "settings": "Настройки",
@@ -70,7 +115,7 @@
   "old_password": "Старый пароль",
   "new_password": "Новый пароль",
   "repeat_new_password": "Повторите новый пароль",
-  "save": "Сохранить",
+  "save": "Save",
   "main_warehouse": "Main warehouse",
   "stock": "Warehouse",
   "remain_stock": "Remaining stock",

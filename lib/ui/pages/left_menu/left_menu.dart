@@ -239,7 +239,7 @@ class LeftMenuPage extends StatelessWidget {
           onTap: () {
             Modular.to.pushNamed(AllTasksPage.routeName);
           },
-          text: "Задачи",
+          text: LocaleKeys.tasks.tr(),
           icon: Assets.images.icons.pinned.svg(),
         ),
         DrawerItem(

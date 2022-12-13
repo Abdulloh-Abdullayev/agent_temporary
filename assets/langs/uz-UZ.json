@@ -43,8 +43,7 @@
   "refund_tara": "Возврат тары",
   "refund": "Возврат",
   "payment_information": "Информация оплаты",
-  "client_balance": "Баланс клиента",
-  "total_sum": "Общая сумма",
+  "client_balance": "Mijoz balansi",
   "dept_amount": "Qarz: {} so'm",
   "no_dept": "Qarz yo'q",
   "show_on_map": "Xaritada bor",
@@ -52,13 +51,58 @@
   "inventory": "Inventarizatsiya",
   "client_with_dept": "Qarzdor klentlar",
   "add_account": "Добавить аккаунт",
-  "outlets": "Savdo nuqtalari",
+  "outlets": "Sav. nuq.",
   "orders": "Buyurtmalar",
-  "remains": "Остатки",
+  "territory": "Hudud",
+  "debts": "Qarzlar",
+  "photo_report": "Fotoreportaj",
+  "add_order": "Buyurtma qo'shish",
+  "forecast": "Prognoz",
+  "fact": "Fakt",
+  "total_volume": "Umumiy hajm",
+  "total_qty": "Jami miqdor",
+  "total_amount": "Umumiy hisob",
+  "adding_comments": "Fikrlar qo'shish",
+  "close": "Yopish",
+  "add": "Qo'shish",
+  "add_shipping_date": "Yetkazib berish sanasini qo'shing",
+  "add_consignment": "Konsignatsiya qo'shing",
+  "edit": "Tahrirlash",
+  "comments_to_order": "Buyurtmaga sharhlar",
+  "shipping_date": "Yetkazib berish sanasi",
+  "term_consignment": "Muddatli konsignatsiya",
+  "pin_photo": "Suratni mahkamlang",
+  "cancel": "Bekor qilish",
+  "out_of_sync_": "Sinxron emas",
+  "synchronized": "Sinxronlashtirilgan",
+  "order_return": "Buyurtmani qaytarish",
+  "direction_type": "Yo'nalish turi",
+  "price_type":"Narx turi",
+  "history":"Tarix",
+  "customer_date":"Xaridor sanasi",
+  "equipment":"Uskunalar",
+  "act_of_reconciliation":"Kelishuv akti",
+  "act_reconciliations_on_orders":"Akt - buyurtmalar bo'yicha solishtirish",
+  "return_from_shelf":"Javondan \nqaytish",
+  "return_package":"Paketni \nqaytarish",
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+  "remains": "Qolgan",
   "debtors_on_orders": "Должники по заказам",
   "debtors": "Должники",
   "my_location": "Моя локация",
-  "tasks": "Задачи",
+  "tasks": "Vazifalar",
   "kpi": "KPI",
   "diagnostics": "Diagnostics",
   "settings": "Настройки",
@@ -70,7 +114,7 @@
   "old_password": "Старый пароль",
   "new_password": "Новый пароль",
   "repeat_new_password": "Повторите новый пароль",
-  "save": "Сохранить",
+  "save": "Saqlash",
   "main_warehouse": "Asosiy ombor",
   "stock": "Ombor",
   "remain_stock": "Omborxona zaxirasi",

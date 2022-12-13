@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/return_about_page/return_about_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +19,7 @@ class ReturnItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         Modular.to.pushNamed(ReturnAboutPage.routeName);
       },
       child: Container(
@@ -64,9 +66,9 @@ class ReturnItemWidget extends StatelessWidget {
                         if (p0 == 1) {
                           showDialog(
                             context: context,
-                            builder: (ctx) => const AlertDialog(
+                            builder: (ctx) => AlertDialog(
                               content: CommitTextField(
-                                text: "Добавление комментарии",
+                                text: LocaleKeys.adding_comments.tr(),
                               ),
                             ),
                           );
@@ -76,9 +78,9 @@ class ReturnItemWidget extends StatelessWidget {
                             builder: (ctx) => Padding(
                               padding: const EdgeInsets.all(4.0),
                               child: DateTimeDialog(
-                                  title: "Добавить дату отгрузки",
-                                  closeTitle: "Закрыть",
-                                  addTitle: "Добавить",
+                                  title: LocaleKeys.add_shipping_date.tr(),
+                                  closeTitle: LocaleKeys.close.tr(),
+                                  addTitle: LocaleKeys.add.tr(),
                                   addTap: () {}),
                             ),
                           );
@@ -88,9 +90,9 @@ class ReturnItemWidget extends StatelessWidget {
                             builder: (ctx) => Padding(
                               padding: const EdgeInsets.all(4.0),
                               child: DateTimeDialog(
-                                  title: "Добавить консигнация",
-                                  closeTitle: "Закрыть",
-                                  addTitle: "Добавить",
+                                  title: LocaleKeys.add_consignment.tr(),
+                                  closeTitle: LocaleKeys.close.tr(),
+                                  addTitle: LocaleKeys.add.tr(),
                                   addTap: () {}),
                             ),
                           );
@@ -105,21 +107,16 @@ class ReturnItemWidget extends StatelessWidget {
                         'Отменить',
                       ],
                       icons: [
-                        Assets.images.icons.editeAlt.svg(
-                            fit: BoxFit.cover,
-                            color: ColorName.button),
-                        Assets.images.icons.chat.svg(
-                            fit: BoxFit.cover,
-                            color: ColorName.gray2),
-                        Assets.images.icons.calender.svg(
-                            fit: BoxFit.cover,
-                            color: ColorName.gray2),
-                        Assets.images.icons.clock.svg(
-                            fit: BoxFit.cover,
-                            color: ColorName.gray2),
-                        Assets.images.icons.fileUpload.svg(
-                            fit: BoxFit.cover,
-                            color: ColorName.gray2),
+                        Assets.images.icons.editeAlt
+                            .svg(fit: BoxFit.cover, color: ColorName.button),
+                        Assets.images.icons.chat
+                            .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                        Assets.images.icons.calender
+                            .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                        Assets.images.icons.clock
+                            .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                        Assets.images.icons.fileUpload
+                            .svg(fit: BoxFit.cover, color: ColorName.gray2),
                         const SizedBox.shrink(),
                       ],
                       textColor: const [
@@ -132,7 +129,8 @@ class ReturnItemWidget extends StatelessWidget {
                       ],
                     ),
                   ).paddingOnly(
-                    top: 10.w, bottom: 5.w,
+                    top: 10.w,
+                    bottom: 5.w,
                   ),
                 ],
               ),
@@ -148,8 +146,7 @@ class ReturnItemWidget extends StatelessWidget {
                     othersMarkers: [
                       MarkerText(
                         marker: "//",
-                        style:
-                        const TextStyle(color: ColorName.black),
+                        style: const TextStyle(color: ColorName.black),
                       )
                     ],
                   ),
@@ -162,8 +159,7 @@ class ReturnItemWidget extends StatelessWidget {
                     othersMarkers: [
                       MarkerText(
                         marker: "//",
-                        style:
-                        const TextStyle(color: ColorName.black),
+                        style: const TextStyle(color: ColorName.black),
                       )
                     ],
                   ),
@@ -196,8 +192,7 @@ class ReturnItemWidget extends StatelessWidget {
                     othersMarkers: [
                       MarkerText(
                         marker: "//",
-                        style:
-                        const TextStyle(color: ColorName.black),
+                        style: const TextStyle(color: ColorName.black),
                       )
                     ],
                   ),
@@ -215,14 +210,12 @@ class ReturnItemWidget extends StatelessWidget {
                     othersMarkers: [
                       MarkerText(
                         marker: "//",
-                        style:
-                        const TextStyle(color: ColorName.black),
+                        style: const TextStyle(color: ColorName.black),
                       )
                     ],
                   ),
                 ],
               ).paddingOnly(bottom: 10.w),
-
             ],
           ),
         ),

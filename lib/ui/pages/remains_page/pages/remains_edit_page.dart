@@ -1,7 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/remains_page/widgets/remains_page_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,125 +39,134 @@ class _RemainsEditPageState extends State<RemainsEditPage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          backgroundColor: ColorName.background,
+      backgroundColor: ColorName.background,
       body: Column(
         children: [
           Stack(
-           children: [
-            RemainsPageWidgets.remainsEditAppBar(
-              title: "Остатки",
-              ontap: (key) {},
-              context: context,
-            ),
-           ],
+            children: [
+              RemainsPageWidgets.remainsEditAppBar(
+                title: LocaleKeys.remains.tr(),
+                ontap: (key) {},
+                context: context,
+              ),
+            ],
           ),
           Expanded(
-              child: Column(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 18,),
-                width: 1.sw,
-                height: 101.w,
-                decoration: BoxDecoration(
-                  color: ColorName.input,
-                  border: Border.all(color: ColorName.button),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      AppWidgets.textLocale(
-                        localeKey: "20",
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600,
-                      ),
-                     const SizedBox(
-                        height: 8,
-                      ),
-                      AppWidgets.textLocale(
-                        localeKey: "Общее количество продуктов",
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ],
+            child: Column(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 18,
+                  ),
+                  width: 1.sw,
+                  height: 101.w,
+                  decoration: BoxDecoration(
+                    color: ColorName.input,
+                    border: Border.all(color: ColorName.button),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AppWidgets.textLocale(
+                          localeKey: "20",
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        AppWidgets.textLocale(
+                          localeKey: "Общее количество продуктов",
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                margin:const EdgeInsets.only(top: 24),
-                alignment: Alignment.centerLeft,
-                child: AppWidgets.textLocale(localeKey: "Напитки", fontWeight: FontWeight.w600,),
-              ),
-              remainsItemWidget(),
-            ],
-          ).paddingOnly( left: 20, right: 20),
+                Container(
+                  margin: const EdgeInsets.only(top: 24),
+                  alignment: Alignment.centerLeft,
+                  child: AppWidgets.textLocale(
+                    localeKey: "Напитки",
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                remainsItemWidget(),
+              ],
+            ).paddingOnly(left: 20, right: 20),
           ),
         ],
       ),
     ));
   }
-  Widget remainsItemWidget(){
+
+  Widget remainsItemWidget() {
     return Container(
-      margin:const EdgeInsets.only(top: 12),
+      margin: const EdgeInsets.only(top: 12),
       height: 200.h,
       width: 1.sw,
       decoration: BoxDecoration(
-      color: ColorName.white,
+        color: ColorName.white,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(
         children: [
-           Container(
+          Container(
             height: 39.w,
-            padding:const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
             decoration: BoxDecoration(
-            color: ColorName.input,
-               borderRadius: BorderRadius.circular(8),
+              color: ColorName.input,
+              borderRadius: BorderRadius.circular(8),
             ),
-             child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          AppWidgets.textLocale(localeKey: "Продукт", fontSize: 12, color: ColorName.gray2),
-          AppWidgets.textLocale(localeKey: "Кол-во",fontSize: 12, color: ColorName.gray2),
-        ],
-       ),
-           ),
-           Container(
-                  height: 1.w,
-                  width: 1.sw,
-                  color: ColorName.gray,
-                ),
-         Expanded(
-           child: ListView.builder(
-            itemCount: 6,
-            itemBuilder: (BuildContext context , int index){
-            return  Column(
-               children: [
-                 Container(
-                   height: 39.w,
-                  padding:const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                  decoration: BoxDecoration(
-                  color: ColorName.white,
-                       borderRadius: BorderRadius.circular(8),
-                  ),
-                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppWidgets.textLocale(
+                    localeKey: "Продукт", fontSize: 12, color: ColorName.gray2),
+                AppWidgets.textLocale(
+                    localeKey: "Кол-во", fontSize: 12, color: ColorName.gray2),
+              ],
+            ),
+          ),
+          Container(
+            height: 1.w,
+            width: 1.sw,
+            color: ColorName.gray,
+          ),
+          Expanded(
+            child: ListView.builder(
+                itemCount: 6,
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
                     children: [
-                      AppWidgets.textLocale(localeKey: "Coca cola"),
-                      AppWidgets.textLocale(localeKey: "5"),
+                      Container(
+                        height: 39.w,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 12),
+                        decoration: BoxDecoration(
+                          color: ColorName.white,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppWidgets.textLocale(localeKey: "Coca cola"),
+                            AppWidgets.textLocale(localeKey: "5"),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 1.w,
+                        width: 1.sw,
+                        color: ColorName.gray,
+                      ),
                     ],
-                   ),
-                 ),
-                   Container(
-                    height: 1.w,
-                    width: 1.sw,
-                    color: ColorName.gray,
-                  ),
-               ],
-             );
-           }),
-         ),
+                  );
+                }),
+          ),
         ],
       ),
     );

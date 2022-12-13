@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/order_page/pages/photo_report_page.dart';
 import 'package:agent/ui/pages/order_page/pages/tabbar_order_page.dart';
@@ -228,7 +229,7 @@ class _RemainsPageState extends State<RemainsPage> {
                                   ),
                                   Tab(
                                     child: AppWidgets.textLocale(
-                                        localeKey: "Фото отчёт",
+                                        localeKey: LocaleKeys.photo_report,
                                         fontWeight: FontWeight.w600,
                                         fontSize: 14.sp,
                                         color: ColorName.button,
@@ -236,7 +237,7 @@ class _RemainsPageState extends State<RemainsPage> {
                                   ),
                                   Tab(
                                     child: AppWidgets.textLocale(
-                                        localeKey: "Остатки",
+                                        localeKey: LocaleKeys.remains,
                                         fontWeight: FontWeight.w600,
                                         fontSize: 14.sp,
                                         color: ColorName.button,
@@ -263,7 +264,6 @@ class _RemainsPageState extends State<RemainsPage> {
                           ).paddingOnly(bottom: 70),
                         ),
                       ),
-                      
                     ),
                     Container(
                       height: 83.h,
@@ -290,11 +290,9 @@ class _RemainsPageState extends State<RemainsPage> {
               ),
             ],
           ),
-        
-         floatingActionButton:
-                const FloatingShowDialog().paddingOnly(bottom: 160.w),
+          floatingActionButton:
+              const FloatingShowDialog().paddingOnly(bottom: 160.w),
         ),
-        
       ),
     );
   }

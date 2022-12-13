@@ -1,10 +1,12 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/models/enums/shipping_type.dart';
 import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_radio_button.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
@@ -81,7 +83,7 @@ class ReportsFilterBottomSheet extends StatelessWidget {
             ),
           ),
           AppWidgets.appButton(
-            title: "Сохранить",
+            title: LocaleKeys.save.tr(),
             onTap: () {},
           ).paddingSymmetric(horizontal: 20.w, vertical: 23.w)
         ],

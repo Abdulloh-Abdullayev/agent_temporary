@@ -1,6 +1,8 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/remains_page/pages/remains_item_page.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -42,9 +44,9 @@ class FloatingShowDialog extends StatelessWidget {
             Assets.images.icons.box1.svg(),
             Assets.images.icons.box1.svg(),
           ],
-          textName:const [
+          textName: [
             "Планы",
-            'История',
+            LocaleKeys.history.tr(),
             'Фото отчёт',
             'Отказ',
             'Возврат \nс полки',

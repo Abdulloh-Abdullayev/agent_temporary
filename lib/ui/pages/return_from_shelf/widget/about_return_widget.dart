@@ -3,6 +3,7 @@ import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/localization/locale_keys.g.dart';
 import 'return_item_widget.dart';
 
 class AboutReturnWidget extends StatelessWidget {
@@ -23,7 +24,7 @@ class AboutReturnWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: "Общая объем",
+                        localeKey: LocaleKeys.total_volume,
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
                         color: ColorName.gray2,
@@ -40,7 +41,7 @@ class AboutReturnWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: "Общее кол-во",
+                        localeKey: LocaleKeys.total_qty,
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
                         color: ColorName.gray2,
@@ -57,7 +58,7 @@ class AboutReturnWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: "Общее summa",
+                        localeKey: LocaleKeys.total_amount,
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
                         color: ColorName.gray2,

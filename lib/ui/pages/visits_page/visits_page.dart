@@ -2,11 +2,13 @@ import 'dart:ui';
 
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/ui/pages/visits_page/widget/visits_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
+import '../../../core/localization/locale_keys.g.dart';
 import '../../../core/utils/assets.gen.dart';
 import '../../../core/utils/colors.gen.dart';
 import '../../widgets/app_widgets.dart';
@@ -51,7 +53,7 @@ class _VisitsPageState extends State<VisitsPage> {
           child: Column(
             children: [
               VisitWidgets.Appbar(
-                  title: "Визиты",
+                  title: LocaleKeys.visits.tr(),
                   ontap: (key) {
                     if (key == "0") {
                       print(key);
@@ -79,7 +81,7 @@ class _VisitsPageState extends State<VisitsPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Фильтр",
+                    localeKey: LocaleKeys.filter,
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w400,
                   ),
@@ -92,7 +94,7 @@ class _VisitsPageState extends State<VisitsPage> {
                       "date5",
                     ],
                     width: 184.w,
-                    title: "Все категории",
+                    title: LocaleKeys.all_categories.tr(),
                     onChange: (v) {},
                   ),
                 ],

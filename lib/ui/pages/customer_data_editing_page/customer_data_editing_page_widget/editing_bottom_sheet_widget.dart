@@ -1,4 +1,6 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,15 +40,15 @@ class EditingBottomSheet extends StatelessWidget {
               ),
               AddingAnOrderSheet(
                 text: "Редактрирование",
-                listTextName: const [
-                  "Склад",
-                  "Тип направления",
-                  "Тип цены",
+                listTextName: [
+                  LocaleKeys.stock.tr(),
+                  LocaleKeys.direction_type.tr(),
+                  LocaleKeys.price_type.tr(),
                 ],
-                seeListTextName: const [
-                  "Основной склад",
+                seeListTextName: [
+                  LocaleKeys.main_warehouse.tr(),
                   "Направление...",
-                  "Наличные",
+                  LocaleKeys.spot.tr(),
                 ],
                 icons: [
                   Assets.images.icons.stack.svg(

@@ -1,8 +1,10 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/add_order_page/widget/add_bonus_last_widget.dart';
 import 'package:agent/ui/pages/add_order_page/widget/bonus_type_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -120,7 +122,7 @@ class SelectCategoryWidget extends StatelessWidget {
               AppButton(
                 width: 165.w,
                 color: ColorName.gray,
-                text: "Закрыть",
+                text: LocaleKeys.close.tr(),
                 textSize: 14.sp,
                 textColor: ColorName.mainColor,
                 onPressed: () {},
@@ -128,7 +130,7 @@ class SelectCategoryWidget extends StatelessWidget {
               AppButton(
                 width: 165.w,
                 color: ColorName.buttonColor,
-                text: "Добавить",
+                text: LocaleKeys.add.tr(),
                 textSize: 14.sp,
                 textColor: ColorName.white,
                 onPressed: () {
@@ -150,4 +152,3 @@ class SelectCategoryWidget extends StatelessWidget {
     );
   }
 }
-

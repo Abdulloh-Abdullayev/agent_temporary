@@ -1,10 +1,12 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
+import '../../../../core/localization/locale_keys.g.dart';
 import '../../../../core/utils/assets.gen.dart';
 
 class OrderTabBarPage extends StatelessWidget {
@@ -25,7 +27,7 @@ class OrderTabBarPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: "Общая объем",
+                        localeKey: LocaleKeys.total_volume,
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
                         color: ColorName.gray2,
@@ -42,7 +44,7 @@ class OrderTabBarPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: "Общее кол-во",
+                        localeKey: LocaleKeys.total_qty,
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
                         color: ColorName.gray2,
@@ -59,7 +61,7 @@ class OrderTabBarPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: "Общее summa",
+                        localeKey: LocaleKeys.total_amount,
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
                         color: ColorName.gray2,
@@ -85,168 +87,88 @@ class OrderTabBarPage extends StatelessWidget {
                 itemCount: 20,
                 itemBuilder: (context, index) {
                   return Container(
-                      margin: EdgeInsets.only(bottom: 11.w),
-                      child: Cards.cards_2(
-                          context: context,
-                          name: "name",
-                          time: "time",
-                          icon: PopupMenuTools(
-                            onTap: (p0) {
-                              if (p0 == 1) {
-                                showDialog(
-                                  context: context,
-                                  builder: (ctx) => const AlertDialog(
-                                    content: CommitTextField(
-                                      text: "Добавление комментарии",
-                                    ),
+                    margin: EdgeInsets.only(bottom: 11.w),
+                    child: Cards.cards_2(
+                        context: context,
+                        name: "name",
+                        time: "time",
+                        icon: PopupMenuTools(
+                          onTap: (p0) {
+                            if (p0 == 1) {
+                              showDialog(
+                                context: context,
+                                builder: (ctx) => const AlertDialog(
+                                  content: CommitTextField(
+                                    text: LocaleKeys.adding_comments,
                                   ),
-                                );
-                              } else if (p0 == 2) {
-                                showDialog(
-                                  context: context,
-                                  builder: (ctx) => Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: DateTimeDialog(
-                                        title: "Добавить дату отгрузки",
-                                        closeTitle: "Закрыть",
-                                        addTitle: "Добавить",
-                                        addTap: () {}),
-                                  ),
-                                );
-                              } else if (p0 == 3) {
-                                showDialog(
-                                  context: context,
-                                  builder: (ctx) => Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: DateTimeDialog(
-                                        title: "Добавить консигнация",
-                                        closeTitle: "Закрыть",
-                                        addTitle: "Добавить",
-                                        addTap: () {}),
-                                  ),
-                                );
-                              }
-                            },
-                            textName: const [
-                              "Редактрировать",
-                              "Комментария к заказу",
-                              "Дата отгрузки",
-                              "Срок Консигнация",
-                              "Закрепить фото",
-                              'Отменить',
-                            ],
-                            icons: [
-                              Assets.images.icons.editeAlt.svg(
-                                  fit: BoxFit.cover, color: ColorName.button),
-                              Assets.images.icons.chat.svg(
-                                  fit: BoxFit.cover, color: ColorName.gray2),
-                              Assets.images.icons.calender.svg(
-                                  fit: BoxFit.cover, color: ColorName.gray2),
-                              Assets.images.icons.clock.svg(
-                                  fit: BoxFit.cover, color: ColorName.gray2),
-                              Assets.images.icons.fileUpload.svg(
-                                  fit: BoxFit.cover, color: ColorName.gray2),
-                              const SizedBox.shrink(),
-                            ],
-                            textColor: const [
-                              ColorName.button,
-                              ColorName.black,
-                              ColorName.black,
-                              ColorName.black,
-                              ColorName.black,
-                              ColorName.red,
-                            ],
-                          ),
-                          nalichniy: "nalichniy",
-                          bezbonus: "bezbonus",
-                          dostavlen: "dostavlen",
-                          obem: "obem",
-                          obemNumber: "15",
-                          soni: "soni",
-                          soniNumber: "15",
-                          summa: "summa",
-                          summaNumber: "1000000"));
-                      // child: Cards.cards_2(
-                      //   name: "name",
-                      //   time: "time",
-                      //   icon: PopupMenuTools(
-                      //     onTap: (p0) {
-                      //       if (p0 == 1) {
-                      //         showDialog(
-                      //           context: context,
-                      //           builder: (ctx) => const AlertDialog(
-                      //             content: CommitTextField(
-                      //               text: "Добавление комментарии",
-                      //             ),
-                      //           ),
-                      //         );
-                      //       } else if (p0 == 2) {
-                      //         showDialog(
-                      //           context: context,
-                      //           builder: (ctx) => Padding(
-                      //             padding: const EdgeInsets.all(4.0),
-                      //             child: DateTimeDialog(
-                      //                 title: "Добавить дату отгрузки",
-                      //                 closeTitle: "Закрыть",
-                      //                 addTitle: "Добавить",
-                      //                 addTap: () {}),
-                      //           ),
-                      //         );
-                      //       } else if (p0 == 3) {
-                      //         showDialog(
-                      //           context: context,
-                      //           builder: (ctx) => Padding(
-                      //             padding: const EdgeInsets.all(4.0),
-                      //             child: DateTimeDialog(
-                      //                 title: "Добавить консигнация",
-                      //                 closeTitle: "Закрыть",
-                      //                 addTitle: "Добавить",
-                      //                 addTap: () {}),
-                      //           ),
-                      //         );
-                      //       }
-                      //     },
-                      //     textName: const [
-                      //       "Редактрировать",
-                      //       "Комментария к заказу",
-                      //       "Дата отгрузки",
-                      //       "Срок Консигнация",
-                      //       "Закрепить фото",
-                      //       'Отменить',
-                      //     ],
-                      //     icons: [
-                      //       Assets.images.icons.editeAlt.svg(
-                      //           fit: BoxFit.cover, color: ColorName.button),
-                      //       Assets.images.icons.chat
-                      //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                      //       Assets.images.icons.calender
-                      //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                      //       Assets.images.icons.clock
-                      //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                      //       Assets.images.icons.fileUpload
-                      //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                      //       const SizedBox.shrink(),
-                      //     ],
-                      //     textColor: const [
-                      //       ColorName.button,
-                      //       ColorName.black,
-                      //       ColorName.black,
-                      //       ColorName.black,
-                      //       ColorName.black,
-                      //       ColorName.red,
-                      //     ],
-                      //   ),
-                      //   nalichniy: "nalichniy",
-                      //   bezbonus: "bezbonus",
-                      //   dostavlen: "dostavlen",
-                      //   obem: "obem",
-                      //   obemNumber: "15",
-                      //   soni: "soni",
-                      //   soniNumber: "15",
-                      //   summa: "summa",
-                      //   summaNumber: "1000000",
-                      //   context: context,
-                      // );
+                                ),
+                              );
+                            } else if (p0 == 2) {
+                              showDialog(
+                                context: context,
+                                builder: (ctx) => Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: DateTimeDialog(
+                                      title: LocaleKeys.add_shipping_date.tr(),
+                                      closeTitle: LocaleKeys.close.tr(),
+                                      addTitle: LocaleKeys.add.tr(),
+                                      addTap: () {}),
+                                ),
+                              );
+                            } else if (p0 == 3) {
+                              showDialog(
+                                context: context,
+                                builder: (ctx) => Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: DateTimeDialog(
+                                      title: LocaleKeys.add_consignment.tr(),
+                                      closeTitle: LocaleKeys.close.tr(),
+                                      addTitle: LocaleKeys.add.tr(),
+                                      addTap: () {}),
+                                ),
+                              );
+                            }
+                          },
+                          textName:  [
+                            LocaleKeys.edit.tr(),
+                            LocaleKeys.comments_to_order.tr(),
+                            LocaleKeys.shipping_date.tr(),
+                            LocaleKeys.term_consignment.tr(),
+                            LocaleKeys.pin_photo.tr(),
+                            LocaleKeys.cancel.tr(),
+                          ],
+                          icons: [
+                            Assets.images.icons.editeAlt.svg(
+                                fit: BoxFit.cover, color: ColorName.button),
+                            Assets.images.icons.chat
+                                .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                            Assets.images.icons.calender
+                                .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                            Assets.images.icons.clock
+                                .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                            Assets.images.icons.fileUpload
+                                .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                            const SizedBox.shrink(),
+                          ],
+                          textColor: const [
+                            ColorName.button,
+                            ColorName.black,
+                            ColorName.black,
+                            ColorName.black,
+                            ColorName.black,
+                            ColorName.red,
+                          ],
+                        ),
+                        nalichniy: "nalichniy",
+                        bezbonus: "bezbonus",
+                        dostavlen: "dostavlen",
+                        obem: "obem",
+                        obemNumber: "15",
+                        soni: "soni",
+                        soniNumber: "15",
+                        summa: "summa",
+                        summaNumber: "1000000"),
+                  );
                 },
               )
             ],

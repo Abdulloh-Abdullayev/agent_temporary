@@ -1,8 +1,10 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/exchange/exchange_page.dart';
 import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/select_photo_dialog.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -115,25 +117,25 @@ class FloatingDialog extends StatelessWidget {
                             builder: (context) {
                               return AddingAnOrderSheet(
                                 text: 'Обмен товара',
-                                listTextName: const [
-                                  "Склад",
-                                  "Тип направления",
-                                  "Тип цены",
+                                listTextName: [
+                                  LocaleKeys.stock.tr(),
+                                  LocaleKeys.direction_type.tr(),
+                                  LocaleKeys.price_type.tr(),
                                 ],
-                                seeListTextName:const [
-                                    "Основной склад",
-                                    "Направление..",
-                                    "Наличные",
+                                seeListTextName: [
+                                  LocaleKeys.main_warehouse.tr(),
+                                  "Направление..",
+                                  LocaleKeys.spot.tr(),
                                 ],
                                 icons: [
-                                    Assets.images.icons.stack.svg(),
-                                    Assets.images.icons.shoppingCardIcon.svg(),
-                                    Assets.images.icons.cash.svg(),
+                                  Assets.images.icons.stack.svg(),
+                                  Assets.images.icons.shoppingCardIcon.svg(),
+                                  Assets.images.icons.cash.svg(),
                                 ],
-                                quitOnTapButton: (){
+                                quitOnTapButton: () {
                                   Navigator.pop(context);
                                 },
-                                submitOnTapButton: (){
+                                submitOnTapButton: () {
                                   Modular.to.pushNamed(ExchangePage.routeName);
                                 },
                               );
@@ -152,15 +154,15 @@ class FloatingDialog extends StatelessWidget {
                         onTap: () {},
                       ),
                     ],
-                    textName: const [
-                      "Задачи",
-                      "История",
-                      "Фото отчёт",
-                      "Отказ",
-                      "Возврат \nс полки",
-                      "Возврат \nтары",
-                      "Обмен",
-                      "Остатки",
+                    textName: [
+                      LocaleKeys.tasks.tr(),
+                      LocaleKeys.history.tr(),
+                      LocaleKeys.photo_report.tr(),
+                      LocaleKeys.refusal.tr(),
+                      LocaleKeys.return_from_shelf.tr(),
+                      LocaleKeys.return_package.tr(),
+                      LocaleKeys.exchange.tr(),
+                      LocaleKeys.remains.tr(),
                     ],
                   ),
                 );

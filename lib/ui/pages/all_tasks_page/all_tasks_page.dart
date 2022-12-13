@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/all_tasks_page/widgets/clicked_item.dart';
@@ -13,11 +14,9 @@ class AllTasksModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           AllTasksPage.routeName,
-          child: (context, args) =>const  AllTasksPage(),
+          child: (context, args) => const AllTasksPage(),
         ),
       ];
-
-
 }
 
 class AllTasksPage extends StatefulWidget {
@@ -55,7 +54,10 @@ class _AllTasksPageState extends State<AllTasksPage>
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           backgroundColor: ColorName.button,
-          child: Assets.images.icons.plusIcon.svg(width: 24.w,height: 24.w,),
+          child: Assets.images.icons.plusIcon.svg(
+            width: 24.w,
+            height: 24.w,
+          ),
         ),
         body: Column(
           children: [
@@ -77,7 +79,7 @@ class _AllTasksPageState extends State<AllTasksPage>
                     vertical: 18.w,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Задачи",
+                    localeKey: LocaleKeys.tasks,
                     color: ColorName.white,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w500,
@@ -118,9 +120,9 @@ class _AllTasksPageState extends State<AllTasksPage>
       itemCount: 5,
       itemBuilder: ((context, index) {
         return InkWell(
-            onTap: (){
-              Modular.to.pushNamed(ClickedItem.routeName);
-            },
+          onTap: () {
+            Modular.to.pushNamed(ClickedItem.routeName);
+          },
           child: Container(
             decoration: BoxDecoration(
               color: const Color(0xFFE5F3FF),
@@ -198,12 +200,13 @@ class _AllTasksPageState extends State<AllTasksPage>
       }),
     );
   }
+
   Widget completed(Color colorContainer) {
     return ListView.builder(
       itemCount: 5,
       itemBuilder: ((context, index) {
         return InkWell(
-          onTap: (){
+          onTap: () {
             Modular.to.pushNamed(ClickedItem.routeName);
           },
           child: Container(
