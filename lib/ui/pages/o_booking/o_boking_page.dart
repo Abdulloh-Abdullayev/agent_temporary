@@ -37,14 +37,14 @@ class OBookingPage extends StatefulWidget {
 
 class _OBookingPageState extends State<OBookingPage> {
   final List<String> firstTextNameItems = [
-    "Скидка",
+    LocaleKeys.discount.tr(),
     LocaleKeys.direction_type.tr(),
     LocaleKeys.price_type.tr(),
     LocaleKeys.stock.tr(),
-    "Бонус",
-    "Заказ добавлен",
-    "Дата отгрузки",
-    "Срок консигнации",
+    LocaleKeys.bonus.tr(),
+    LocaleKeys.order_added.tr(),
+    LocaleKeys.shipping_date.tr(),
+    LocaleKeys.term_consignment.tr(),
   ];
   final List<String> secondTextNameItems = [
     "Без скидки",
@@ -101,7 +101,7 @@ class _OBookingPageState extends State<OBookingPage> {
                               ],
                             ),
                           AppWidgets.textLocale(
-                            localeKey: "Комментарии к заказу",
+                            localeKey: LocaleKeys.order_comments,
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                             color: ColorName.gray2,
@@ -196,7 +196,7 @@ class _OBookingPageState extends State<OBookingPage> {
                               height: 12,
                             ),
                             OBookingWidgets.textBuilder(
-                              "Общее кол-во",
+                              LocaleKeys.total_qty.tr(),
                               "1258 шт",
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             ),
@@ -204,7 +204,7 @@ class _OBookingPageState extends State<OBookingPage> {
                               height: 12,
                             ),
                             OBookingWidgets.textBuilder(
-                              "Общая сумма",
+                              LocaleKeys.total_amount.tr(),
                               "150 000 000 UZS",
                               color: ColorName.button,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,

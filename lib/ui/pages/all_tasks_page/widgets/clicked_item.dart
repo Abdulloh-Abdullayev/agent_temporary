@@ -6,6 +6,7 @@ import 'package:agent/ui/pages/all_tasks_page/bloc/all_task_bloc.dart';
 import 'package:agent/ui/widgets/app_text_field.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -64,8 +65,8 @@ class ClickedItem extends StatelessWidget {
                                   color: ColorName.white.withOpacity(0.1),
                                 ),
                                 child: PopupMenu(
-                                  textName: const [
-                                    "Редактрировать",
+                                  textName: [
+                                    LocaleKeys.edit.tr(),
                                     'Удалить',
                                   ],
                                   icons: [
@@ -109,7 +110,7 @@ class ClickedItem extends StatelessWidget {
                       primicheniya: "Примечание",
                       product:
                           "Кола 3 блок,Фанта 3 блок, динай 3 блок, Nestle 3 блок, Qibray 3 блок",
-                      foto: "Фото",
+                      foto: LocaleKeys.photo,
                       image: "image",
                     ).paddingSymmetric(horizontal: 20.w),
                   ],
@@ -141,7 +142,7 @@ class ClickedItem extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ).paddingSymmetric(vertical: 12.w),
                         AppTextField(
-                          hintText: "Пишите",
+                          hintText: LocaleKeys.write.tr(),
                           onChanged: (v) {},
                           title: "",
                         ),
@@ -149,7 +150,7 @@ class ClickedItem extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "Фото",
+                              localeKey: LocaleKeys.photo,
                               fontSize: 14.sp,
                               color: ColorName.gray2,
                             ),

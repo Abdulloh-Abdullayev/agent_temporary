@@ -138,11 +138,11 @@ class ReturnWidget {
                         );
                       }
                     },
-                    textName: const [
-                      "Редактрировать",
-                      "Комментария к заказу",
-                      "Дата отгрузки",
-                      "Удалить"
+                    textName: [
+                      LocaleKeys.edit.tr(),
+                      LocaleKeys.comments_to_order.tr(),
+                      LocaleKeys.shipping_date.tr(),
+                      LocaleKeys.delete.tr()
                     ],
                     icons: [
                       Assets.images.icons.edit.svg(),

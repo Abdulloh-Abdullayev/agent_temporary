@@ -85,7 +85,7 @@ class CreateAccountWidget extends StatelessWidget {
                         ).paddingSymmetric(vertical: 20.w),
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Личные данные",
+                        localeKey: LocaleKeys.personal_data.tr(),
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w500,
                         color: ColorName.white,
@@ -152,7 +152,7 @@ class CreateAccountWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Ф.И.О",
+                        localeKey: LocaleKeys.full_name,
                         fontSize: 14.sp,
                         color: ColorName.gray3,
                       ),
@@ -165,7 +165,7 @@ class CreateAccountWidget extends StatelessWidget {
                         bottom: 18,
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Номер телефона",
+                        localeKey: LocaleKeys.phone_number,
                         fontSize: 14.sp,
                         color: ColorName.gray3,
                       ),
@@ -192,12 +192,12 @@ class CreateAccountWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Изменить пароль",
+                        localeKey: LocaleKeys.change_password,
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w600,
                       ).paddingOnly(bottom: 18.w),
                       AppWidgets.textLocale(
-                        localeKey: "Старый пароль",
+                        localeKey: LocaleKeys.old_password,
                         fontSize: 14.sp,
                         color: ColorName.gray3,
                       ),
@@ -210,7 +210,7 @@ class CreateAccountWidget extends StatelessWidget {
                         bottom: 18,
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Новый пароль",
+                        localeKey: LocaleKeys.new_password,
                         fontSize: 14.sp,
                         color: ColorName.gray3,
                       ),
@@ -223,7 +223,7 @@ class CreateAccountWidget extends StatelessWidget {
                         bottom: 18.w,
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Повторите новый пароль",
+                        localeKey: LocaleKeys.repeat_new_password,
                         fontSize: 14.sp,
                         color: ColorName.gray3,
                       ),

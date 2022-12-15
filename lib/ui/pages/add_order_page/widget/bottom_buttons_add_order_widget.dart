@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page_widget/row_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
@@ -34,11 +36,11 @@ class BottomButtonsAddOrderWidget extends StatelessWidget {
             "1365 о",
           ).paddingOnly(bottom: 12.w),
           CustomerEditingRowWidget(
-            "Общее кол-во",
-            "Общее кол-во",
+            LocaleKeys.total_qty.tr(),
+            LocaleKeys.total_qty.tr(),
           ).paddingOnly(bottom: 12.w),
           CustomerEditingRowWidget(
-            "Общая сумма",
+            LocaleKeys.total_amount.tr(),
             "1150 000 000 UZS",
             ColorName.button,
           ).paddingOnly(bottom: 16.w),
@@ -98,4 +100,3 @@ class BottomButtonsAddOrderWidget extends StatelessWidget {
     );
   }
 }
-

@@ -38,13 +38,13 @@ class ReturnAboutPage extends StatefulWidget {
 
 class _ReturnAboutPageState extends State<ReturnAboutPage> {
   final List<String> firstTextNameItems = [
-    "Скидка",
+    LocaleKeys.discount.tr(),
     LocaleKeys.direction_type.tr(),
     LocaleKeys.price_type.tr(),
     LocaleKeys.stock.tr(),
-    "Бонус",
-    "Заказ добавлен",
-    "Дата отгрузки",
+    LocaleKeys.bonus.tr(),
+    LocaleKeys.order_added.tr(),
+    LocaleKeys.shipping_date.tr(),
     "Срок консигнации",
   ];
   final List<String> secondTextNameItems = [
@@ -102,7 +102,7 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
                               ],
                             ),
                           AppWidgets.text(
-                            text: "Комментарии к заказу",
+                            text: LocaleKeys.order_comments.tr(),
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                             color: ColorName.gray2,
@@ -160,7 +160,7 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
                               height: 12,
                             ),
                             ReturnWidget.textBuilder(
-                              "Общее кол-во",
+                              LocaleKeys.total_qty.tr(),
                               "1258 шт",
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             ),
@@ -168,7 +168,7 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
                               height: 12,
                             ),
                             ReturnWidget.textBuilder(
-                              "Общая сумма",
+                              LocaleKeys.total_amount.tr(),
                               "150 000 000 UZS",
                               color: ColorName.button,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,

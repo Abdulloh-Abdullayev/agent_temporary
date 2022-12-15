@@ -1,3 +1,4 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
@@ -5,6 +6,7 @@ import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/outlets_page/outlets_map_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -97,7 +99,7 @@ class OutletsPage extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                   HomePage.globalKey.currentState!.openDrawer();
+                  HomePage.globalKey.currentState!.openDrawer();
                 },
                 child: Assets.images.icons.menu.svg(),
               ),
@@ -117,7 +119,7 @@ class OutletsPage extends StatelessWidget {
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: "Торговые точки",
+            localeKey: LocaleKeys.outlets_full.tr(),
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,

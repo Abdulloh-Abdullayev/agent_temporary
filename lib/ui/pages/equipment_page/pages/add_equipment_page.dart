@@ -95,7 +95,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                                 "Супермаркеты",
                                 "Lorem ipsum",
                               ],
-                              title: "Выбрать",
+                              title: LocaleKeys.select.tr(),
                               onChange: (value) => typeController).marginOnly(
                             top: 12,
                           ),
@@ -112,7 +112,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ),
                           AppInputTextField(
                             height: 44.h,
-                            hint: "Пишите",
+                            hint: LocaleKeys.write.tr(),
                             controller: typeController,
                           ),
 
@@ -128,7 +128,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ),
                           AppInputTextField(
                             height: 44.h,
-                            hint: "Пишите",
+                            hint: LocaleKeys.write.tr(),
                             controller: serialNumberController,
                           ),
 
@@ -144,7 +144,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ),
                           AppInputTextField(
                             height: 44.h,
-                            hint: "Пишите",
+                            hint: LocaleKeys.write.tr(),
                             controller: inventNumberController,
                           ),
 
@@ -181,7 +181,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                                 ),
                               );
                             },
-                            hint: "Выбрать",
+                            hint: LocaleKeys.select.tr(),
                           ),
 
                           // Commit
@@ -196,12 +196,12 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ),
                           AppInputTextField(
                             height: 44.h,
-                            hint: "Пишите",
+                            hint: LocaleKeys.write.tr(),
                             controller: commitController,
                             onTap: () {
                               showDialog(
                                 context: context,
-                                builder: (ctx) =>  AlertDialog(
+                                builder: (ctx) => AlertDialog(
                                   content: CommitTextField(
                                     text: LocaleKeys.adding_comments.tr(),
                                   ),
@@ -222,7 +222,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ),
                           AppInputTextField(
                             height: 44.h,
-                            hint: "Пишите",
+                            hint: LocaleKeys.write.tr(),
                             controller: stateController,
                           ),
 
@@ -238,7 +238,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ),
                           AppInputTextField(
                             height: 44.h,
-                            hint: "Пишите",
+                            hint: LocaleKeys.write.tr(),
                             controller: attachmentDateController,
                             onTap: () {
                               showDialog(
@@ -270,7 +270,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               AppWidgets.textLocale(
-                                localeKey: "Фото",
+                                localeKey: LocaleKeys.photo,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                                 color: ColorName.gray2,

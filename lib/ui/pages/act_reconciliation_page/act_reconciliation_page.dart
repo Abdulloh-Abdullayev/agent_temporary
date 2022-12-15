@@ -1,8 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/widgets/act_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -56,7 +56,7 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                 secondDate: "18.02.2022",
               ),
               AppWidgets.textLocale(
-                localeKey: "Запросить историю",
+                localeKey: LocaleKeys.request_history,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
                 color: ColorName.black,
@@ -134,9 +134,21 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                                     'Оплата на заказ',
                                     '100 000 000 UZS'
                                   ],
-                                  ['Заказ на сумму', '', '100 000 000 UZS'],
-                                  ['Оплата на заказ', '', '+100 000 000 UZS'],
-                                  ['Итоговый долг', '', '-0'],
+                                  [
+                                    'Заказ на сумму',
+                                    '',
+                                    '100 000 000 UZS',
+                                  ],
+                                  [
+                                    'Оплата на заказ',
+                                    '',
+                                    '+100 000 000 UZS',
+                                  ],
+                                  [
+                                    'Итоговый долг',
+                                    '',
+                                    '-0',
+                                  ],
                                 ])
                                   ActWidget.dataRow(e),
                               ],

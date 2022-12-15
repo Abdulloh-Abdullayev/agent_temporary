@@ -1,7 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
@@ -192,7 +194,7 @@ class EquipmentDetails extends StatelessWidget {
                           color: ColorName.gray,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: "Фото",
+                          localeKey: LocaleKeys.photo,
                           fontSize: 14,
                           color: ColorName.gray2,
                         ),
@@ -262,8 +264,8 @@ class EquipmentDetails extends StatelessWidget {
                 ),
                 child: PopupMenuTools(
                   onTap: (p0) {},
-                  textName: const [
-                    "Редактрировать",
+                  textName: [
+                    LocaleKeys.edit.tr(),
                     'Удалить',
                   ],
                   icons: [

@@ -106,7 +106,7 @@ class AddOutletsPage extends StatelessWidget {
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: "Добавить торговую точку",
+            localeKey: LocaleKeys.add_outlet,
             fontWeight: FontWeight.w500,
             fontSize: 20.sp,
             color: Colors.white,

@@ -38,7 +38,13 @@ class ActReconciliationOderPage extends StatefulWidget {
 }
 
 class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
-  var columnTitles = [LocaleKeys.stock.tr(), "Дата", "Долг", "Оплачено", "Осталось"];
+  var columnTitles = [
+    LocaleKeys.stock.tr(),
+    "Дата",
+    "Долг",
+    "Оплачено",
+    "Осталось"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +76,7 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
                 ],
               ),
               AppWidgets.textLocale(
-                localeKey: "Запросить историю",
+                localeKey: LocaleKeys.request_history,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
                 color: ColorName.button,
@@ -180,7 +186,13 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
                                     '',
                                     '+100 000 000 UZS'
                                   ],
-                                  ['Итоговый долг', '', "5 000", '', '-0'],
+                                  [
+                                    'Итоговый долг',
+                                    '',
+                                    "5 000",
+                                    '',
+                                    '-0',
+                                  ],
                                 ])
                                   ActWidget.dataRow(e),
                               ],

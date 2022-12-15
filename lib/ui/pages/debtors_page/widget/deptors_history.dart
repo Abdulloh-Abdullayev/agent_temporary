@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/debtors_page/widget/debtors_table.dart';
@@ -8,7 +9,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-import '../../reports_page/widgets/sales_table_widget.dart';
 
 class DebtorsHistoryModule extends Module {
   @override
@@ -63,7 +63,7 @@ class DebtorsHistory extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     AppWidgets.textLocale(
-                      localeKey: "Запросить историю",
+                      localeKey: LocaleKeys.request_history,
                       color: ColorName.button,
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
@@ -71,7 +71,7 @@ class DebtorsHistory extends StatelessWidget {
                     // dataPanel(),
                     // planFactBuild(),
                     // const TableFact().paddingOnly(top: 16.w),
-                     const DebtorsTable(),
+                    const DebtorsTable(),
                   ],
                 ).paddingSymmetric(horizontal: 20.w, vertical: 20.w)
               ],

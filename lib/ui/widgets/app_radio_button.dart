@@ -1,6 +1,8 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/models/enums/shipping_type.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
@@ -60,7 +62,7 @@ class _AppRadioButtonState extends State<AppRadioButton> {
             ),
             buildRadioButton(
               value: 2,
-              text: "Дата отгрузки",
+              text: LocaleKeys.shipping_date.tr(),
               onTap: () {
                 setState(() {
                   _selection = 2;

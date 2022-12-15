@@ -43,7 +43,7 @@ class TabbarOrderPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общее кол-во",
+                      localeKey: LocaleKeys.total_qty,
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
                       color: ColorName.gray2,
@@ -95,7 +95,7 @@ class TabbarOrderPage extends StatelessWidget {
                           if (p0 == 1) {
                             showDialog(
                               context: context,
-                              builder: (ctx) =>  AlertDialog(
+                              builder: (ctx) => AlertDialog(
                                 content: CommitTextField(
                                   text: LocaleKeys.adding_comments.tr(),
                                 ),
@@ -127,13 +127,13 @@ class TabbarOrderPage extends StatelessWidget {
                             );
                           }
                         },
-                        textName: const [
-                          "Редактрировать",
-                          "Комментария к заказу",
-                          "Дата отгрузки",
+                        textName: [
+                          LocaleKeys.edit.tr(),
+                          LocaleKeys.comments_to_order.tr(),
+                          LocaleKeys.shipping_date.tr(),
                           "Срок Консигнация",
                           "Закрепить фото",
-                          'Отменить',
+                          LocaleKeys.cancel.tr(),
                         ],
                         icons: [
                           Assets.images.icons.editeAlt

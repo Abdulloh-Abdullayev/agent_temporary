@@ -1,3 +1,5 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'settings_content.dart';
@@ -60,7 +62,7 @@ class GeneralSettingsWidget extends StatelessWidget {
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Категория",
+                title: LocaleKeys.category.tr(),
                 initial: true,
               ),
               SettingsSwitch(
@@ -92,58 +94,58 @@ class GeneralSettingsWidget extends StatelessWidget {
             items: [
               SettingsSwitch(
                 isDisable: isDisable,
-                title: "Минимальные уровень заряда",
+                title: LocaleKeys.minimum_battery_level.tr(),
                 onChanged: (bool value) {},
               ),
               SettingsSwitch(
                 isDisable: isDisable,
-                title: "Всегда включен",
+                title: LocaleKeys.always_on.tr(),
                 onChanged: (bool value) {},
               ),
               SettingsSwitch(
                 isDisable: isDisable,
-                title: "Всегда прикрепить местоположения при добавления заказа",
+                title: LocaleKeys.always_attach_location_adding.tr(),
                 onChanged: (bool value) {},
               ),
               SettingsSwitch(
                 isDisable: isDisable,
-                title: "Отслеживать местоположений",
+                title: LocaleKeys.track_locations.tr(),
                 onChanged: (bool value) {},
               ),
-              const SettingsTextItem(
-                title: "Интервал отслеживания местоположений",
+              SettingsTextItem(
+                title: LocaleKeys.location_tracking_interval.tr(),
                 text: "131",
               ),
-              const SettingsTextItem(
-                title: "Мин растояния (Метр)",
+              SettingsTextItem(
+                title: LocaleKeys.min_distance_meter.tr(),
                 text: "131",
               ),
-              const SettingsTextItem(
-                title: "Точность данных GPS (метр)",
+              SettingsTextItem(
+                title: LocaleKeys.gps_data_accuracy.tr(),
                 text: "131",
                 isLast: true,
               )
             ],
           ),
           SettingsContent(
-            title: "Обязательные действие",
+            title: LocaleKeys.required_action.tr(),
             isDisable: isDisable,
             items: [
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Фото",
+                title: LocaleKeys.photo.tr(),
                 initial: true,
                 isDisable: isDisable,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Остаток",
+                title: LocaleKeys.remainder.tr(),
                 initial: false,
                 isDisable: isDisable,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Дата отгрузки",
+                title: LocaleKeys.shipping_date.tr(),
                 initial: true,
                 isLast: true,
                 isDisable: isDisable,
@@ -156,13 +158,13 @@ class GeneralSettingsWidget extends StatelessWidget {
             items: [
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Включено",
+                title: LocaleKeys.enable.tr(),
                 initial: true,
                 isDisable: isDisable,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Версия",
+                title: LocaleKeys.version.tr(),
                 initial: true,
                 isDisable: isDisable,
                 isLast: true,
@@ -170,12 +172,12 @@ class GeneralSettingsWidget extends StatelessWidget {
             ],
           ),
           SettingsContent(
-            title: "Настройка списка товаров",
+            title: LocaleKeys.product_list_set_up.tr(),
             isDisable: isDisable,
             items: [
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Показать товары которые  нет на складе",
+                title: LocaleKeys.show_products_out_of_stock.tr(),
                 initial: true,
                 isLast: true,
                 isDisable: isDisable,
@@ -183,12 +185,12 @@ class GeneralSettingsWidget extends StatelessWidget {
             ],
           ),
           SettingsContent(
-            title: "торговые точки",
+            title: LocaleKeys.outlets_full.tr(),
             isDisable: isDisable,
             items: [
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Показать главную фотографию",
+                title: LocaleKeys.show_main_photo.tr(),
                 initial: true,
                 isLast: true,
                 isDisable: isDisable,

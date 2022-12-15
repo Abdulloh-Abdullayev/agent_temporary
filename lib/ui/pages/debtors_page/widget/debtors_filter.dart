@@ -1,13 +1,12 @@
 import 'package:agent/core/extensions/app_extensions.dart';
-import 'package:agent/core/models/enums/shipping_type.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/debtors_page/widget/deptors_history.dart';
-import 'package:agent/ui/widgets/app_radio_button.dart';
 import 'package:agent/ui/widgets/app_text_field.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -78,7 +77,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     bottom: 10.w,
                   ),
                   AppTextField(
-                    hintText: "Выбрать",
+                    hintText: LocaleKeys.select.tr(),
                     onChanged: (v) {},
                     title: "",
                     hasTitle: false,

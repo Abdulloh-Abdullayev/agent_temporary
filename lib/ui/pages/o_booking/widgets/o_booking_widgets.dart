@@ -124,13 +124,13 @@ class OBookingWidgets {
                         );
                       }
                     },
-                    textName: const [
-                      "Редактрировать",
-                      "Комментария к заказу",
-                      "Дата отгрузки",
+                    textName: [
+                      LocaleKeys.edit.tr(),
+                      LocaleKeys.comments_to_order.tr(),
+                      LocaleKeys.shipping_date.tr(),
                       "Срок Консигнация",
                       "Закрепить фото",
-                      'Отменить',
+                      LocaleKeys.cancel.tr(),
                     ],
                     icons: [
                       Assets.images.icons.edit.svg(),

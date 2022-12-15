@@ -33,11 +33,11 @@ class BottomButtonsWidget extends StatelessWidget {
             "1365 о",
           ).paddingOnly(bottom: 12.w),
           CustomerEditingRowWidget(
-            "Общее кол-во",
-            "Общее кол-во",
+            LocaleKeys.total_qty.tr(),
+            LocaleKeys.total_qty.tr(),
           ).paddingOnly(bottom: 12.w),
           CustomerEditingRowWidget(
-            "Общая сумма",
+            LocaleKeys.total_amount.tr(),
             "1150 000 000 UZS",
             ColorName.button,
           ).paddingOnly(bottom: 16.w),

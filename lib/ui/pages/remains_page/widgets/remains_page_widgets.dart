@@ -97,7 +97,7 @@ class RemainsPageWidgets {
                           if (p0 == 1) {
                             showDialog(
                               context: context,
-                              builder: (ctx) =>  AlertDialog(
+                              builder: (ctx) => AlertDialog(
                                 content: CommitTextField(
                                   text: LocaleKeys.adding_comments.tr(),
                                 ),
@@ -129,13 +129,13 @@ class RemainsPageWidgets {
                             );
                           }
                         },
-                        textName: const [
-                          "Редактрировать",
-                          "Комментария к заказу",
-                          "Дата отгрузки",
+                        textName: [
+                          LocaleKeys.edit.tr(),
+                          LocaleKeys.comments_to_order.tr(),
+                          LocaleKeys.shipping_date.tr(),
                           "Срок Консигнация",
                           "Закрепить фото",
-                          'Отменить',
+                          LocaleKeys.cancel.tr(),
                         ],
                         icons: [
                           Assets.images.icons.edit.svg(),
@@ -220,7 +220,7 @@ class RemainsPageWidgets {
                       if (p0 == 1) {
                         showDialog(
                           context: context,
-                          builder: (ctx) =>  AlertDialog(
+                          builder: (ctx) => AlertDialog(
                             content: CommitTextField(
                               text: LocaleKeys.adding_comments.tr(),
                             ),
@@ -252,13 +252,13 @@ class RemainsPageWidgets {
                         );
                       }
                     },
-                    textName: const [
-                      "Редактрировать",
-                      "Комментария к заказу",
-                      "Дата отгрузки",
+                    textName: [
+                      LocaleKeys.edit.tr(),
+                      LocaleKeys.comments_to_order.tr(),
+                      LocaleKeys.shipping_date.tr(),
                       "Срок Консигнация",
                       "Закрепить фото",
-                      'Отменить',
+                      LocaleKeys.cancel.tr(),
                     ],
                     icons: [
                       Assets.images.icons.edit.svg(),
@@ -411,7 +411,7 @@ class RemainsPageWidgets {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: "Общее кол-во",
+                localeKey: LocaleKeys.total_qty,
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray2,

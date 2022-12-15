@@ -1,8 +1,10 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/reports_page/widgets/reports_filter_bottomsheet.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
@@ -35,7 +37,7 @@ class ReportsPage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                     HomePage.globalKey.currentState!.openDrawer();
+                    HomePage.globalKey.currentState!.openDrawer();
                   },
                   child: Assets.images.icons.menu.svg(),
                 ),
@@ -70,7 +72,7 @@ class ReportsPage extends StatelessWidget {
                     const TableFact().paddingOnly(top: 16.w),
                     const SalesTableWidget()
                   ],
-                ).paddingSymmetric(horizontal: 20.w,vertical: 20.w)
+                ).paddingSymmetric(horizontal: 20.w, vertical: 20.w)
               ],
             ),
           ),
@@ -117,7 +119,7 @@ class ReportsPage extends StatelessWidget {
             Expanded(
               child: Widgets.showCount(
                 count: 120000,
-                title: "Общая сумма",
+                title: LocaleKeys.total_amount.tr(),
                 withOpacity: 0.1,
                 color: ColorName.green2,
               ),
@@ -198,9 +200,7 @@ class ReportsPage extends StatelessWidget {
                 ),
               );
             },
-            dropDownOnTap: () {
-
-            },
+            dropDownOnTap: () {},
             SecondDateOnTap: () {
               showDialog(
                 context: context,

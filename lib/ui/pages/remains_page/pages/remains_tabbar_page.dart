@@ -45,7 +45,7 @@ class RemainsTabbarPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общее кол-во",
+                      localeKey: LocaleKeys.total_qty,
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
                       color: ColorName.gray2,
@@ -62,7 +62,7 @@ class RemainsTabbarPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общая сумма",
+                      localeKey: LocaleKeys.total_amount,
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
                       color: ColorName.gray2,
@@ -93,7 +93,7 @@ class RemainsTabbarPage extends StatelessWidget {
                     } else if (p0 == 1) {
                       showDialog(
                         context: context,
-                        builder: (ctx) =>  AlertDialog(
+                        builder: (ctx) => AlertDialog(
                           content: CommitTextField(
                             text: LocaleKeys.adding_comments.tr(),
                           ),
@@ -102,10 +102,10 @@ class RemainsTabbarPage extends StatelessWidget {
                     }
                   },
                   popupMenuIconColor: ColorName.black,
-                  textName: const [
-                    "Редактрировать",
-                    "Комментария к заказу",
-                    'Отменить',
+                  textName: [
+                    LocaleKeys.edit.tr(),
+                    LocaleKeys.comments_to_order.tr(),
+                    LocaleKeys.cancel.tr(),
                   ],
                   icons: [
                     Assets.images.icons.editeAlt

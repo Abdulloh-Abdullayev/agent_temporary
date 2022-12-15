@@ -45,7 +45,7 @@ class TabbarExchangePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общее кол-во",
+                      localeKey: LocaleKeys.total_qty,
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
                       color: ColorName.gray2,
@@ -166,10 +166,10 @@ class TabbarExchangePage extends StatelessWidget {
                                       // );
                                     }
                                   },
-                                  textName: const [
-                                    "Редактрировать",
-                                    "Комментария к заказу",
-                                    "Удалить",
+                                  textName: [
+                                    LocaleKeys.edit.tr(),
+                                    LocaleKeys.comments_to_order.tr(),
+                                    LocaleKeys.delete.tr(),
                                   ],
                                   icons: [
                                     Assets.images.icons.editeAlt.svg(

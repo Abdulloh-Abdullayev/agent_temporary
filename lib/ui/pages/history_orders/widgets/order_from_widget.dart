@@ -152,9 +152,7 @@ class OrderFromWidget extends StatelessWidget {
                 horizontal: 12.w,
                 vertical: 18.w,
               ),
-            ).paddingOnly(
-              top: 15.w
-            );
+            ).paddingOnly(top: 15.w);
           }),
         ),
         Row(
@@ -170,14 +168,12 @@ class OrderFromWidget extends StatelessWidget {
               fontSize: 12.sp,
             ),
           ],
-        ).paddingOnly(
-            top: 25.w
-        ),
+        ).paddingOnly(top: 25.w),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AppWidgets.textLocale(
-              localeKey: "Общее кол-во",
+              localeKey: LocaleKeys.total_qty,
               color: ColorName.gray2,
               fontSize: 12.sp,
             ).paddingOnly(right: 17.w),
@@ -186,14 +182,12 @@ class OrderFromWidget extends StatelessWidget {
               fontSize: 12.sp,
             ),
           ],
-        ).paddingSymmetric(
-            vertical: 15.w
-        ),
+        ).paddingSymmetric(vertical: 15.w),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AppWidgets.textLocale(
-              localeKey: "Общая сумма",
+              localeKey: LocaleKeys.total_amount,
               color: ColorName.gray2,
               fontSize: 12.sp,
             ).paddingOnly(right: 17.w),
