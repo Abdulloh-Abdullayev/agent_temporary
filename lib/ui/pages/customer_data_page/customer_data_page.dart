@@ -126,25 +126,26 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: AppWidgets.textLocale(
-                              localeKey: "Общие данные",
+                              localeKey: LocaleKeys.general_information,
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               color: ColorName.gray3,
                               isRichText: true),
                         ).paddingOnly(bottom: 16.w),
-                        rowWidget("Наз. торговой точки", "Osiyo market")
+                        rowWidget(LocaleKeys.outlet_name.tr(), "Osiyo markeet")
                             .paddingOnly(bottom: 16.w),
                         const Divider(),
                         rowWidget(LocaleKeys.category.tr(), "Розница")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("Территория", "Toshkent, Yunusobod")
+                        rowWidget(LocaleKeys.territory.tr(),
+                                "Toshkent, Yunusobod")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("Тип клиента", "Lorem ipsum")
+                        rowWidget(LocaleKeys.client_type.tr(), "Lorem ipsum")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("Канал сбыта", "Lorem ipsum")
+                        rowWidget(LocaleKeys.sales_channel.tr(), "Lorem ipsum")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                       ],
                     ).paddingSymmetric(horizontal: 20.w, vertical: 18.w),
@@ -162,32 +163,35 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: AppWidgets.textLocale(
-                              localeKey: "Контактные данные",
+                              localeKey: LocaleKeys.contact_details,
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               color: ColorName.gray3,
                               isRichText: true),
                         ).paddingOnly(bottom: 16.w),
-                        rowWidget("Адрес", "Toshkent yunusobod")
+                        rowWidget(LocaleKeys.address.tr(), "Toshkent yunusobod")
                             .paddingOnly(bottom: 16.w),
                         const Divider(),
-                        rowWidget("Ориентир", "64-avtobaza")
+                        rowWidget(
+                                LocaleKeys.reference_point.tr(), "64-avtobaza")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("Контактное лицо", "Faxxriyorbek")
+                        rowWidget(
+                                LocaleKeys.contact_person.tr(), "Faxxriyorbek")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("Примечание", "Lorem ipsum")
+                        rowWidget(LocaleKeys.note.tr(), "Lorem ipsum")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("Номер телефона", "+998 97 628 28 82")
+                        rowWidget(LocaleKeys.phone_number.tr(),
+                                "+998 97 628 28 82")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("Дни посещения", "ПН. ВТ. СР")
+                        rowWidget(LocaleKeys.visit_days.tr(), "ПН. ВТ. СР")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("Местоположения", "Посмотреть на карте",
-                                ColorName.button)
+                        rowWidget(LocaleKeys.locations.tr(),
+                                LocaleKeys.view_on_map.tr(), ColorName.button)
                             .paddingOnly(bottom: 16.w, top: 16.w),
                       ],
                     ).paddingSymmetric(horizontal: 20.w, vertical: 18.w),
@@ -203,24 +207,25 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: AppWidgets.textLocale(
-                              localeKey: "Реквизиты клиента",
+                              localeKey: LocaleKeys.customer_details,
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               color: ColorName.gray3,
                               isRichText: true),
                         ).paddingOnly(bottom: 16.w),
-                        rowWidget("ИНН", "465894132").paddingOnly(bottom: 16.w),
+                        rowWidget(LocaleKeys.inn.tr(), "465894132")
+                            .paddingOnly(bottom: 16.w),
                         const Divider(),
-                        rowWidget("Р/C", "465894132")
+                        rowWidget(LocaleKeys.rs.tr(), "465894132")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("Банк", "Hamkorbank")
+                        rowWidget(LocaleKeys.bank.tr(), "Hamkorbank")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("МФО", "Lorem ipsum")
+                        rowWidget(LocaleKeys.mfo.tr(), "Lorem ipsum")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("ОКЕД", "465894132")
+                        rowWidget(LocaleKeys.oked.tr(), "465894132")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                       ],
                     ).paddingSymmetric(horizontal: 20.w, vertical: 18.w),

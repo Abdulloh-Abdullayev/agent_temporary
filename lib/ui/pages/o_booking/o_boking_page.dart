@@ -188,7 +188,7 @@ class _OBookingPageState extends State<OBookingPage> {
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             OBookingWidgets.textBuilder(
-                              "Общая объем",
+                              LocaleKeys.total_volume.tr(),
                               "1365 о",
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             ),

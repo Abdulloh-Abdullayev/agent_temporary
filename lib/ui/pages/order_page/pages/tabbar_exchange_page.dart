@@ -118,7 +118,7 @@ class TabbarExchangePage extends StatelessWidget {
                                         fontSize: 12)
                                     .paddingSymmetric(horizontal: 8.w),
                                 AppWidgets.textLocale(
-                                    localeKey: "Выполнен",
+                                    localeKey: LocaleKeys.completed,
                                     fontWeight: FontWeight.w400,
                                     color: ColorName.green,
                                     fontSize: 12),
@@ -202,7 +202,7 @@ class TabbarExchangePage extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                  localeKey: "Сумма",
+                                  localeKey: LocaleKeys.amount,
                                   fontWeight: FontWeight.w400,
                                   color: ColorName.gray2,
                                   fontSize: 12,

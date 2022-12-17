@@ -67,12 +67,12 @@ class GeneralSettingsWidget extends StatelessWidget {
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Территория",
+                title: LocaleKeys.territory.tr(),
                 initial: false,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "ИНН",
+                title: LocaleKeys.inn.tr(),
                 initial: false,
               ),
               SettingsSwitch(

@@ -51,7 +51,7 @@ class AddBonusLastWidget extends StatelessWidget {
                 ],
               ),
               AppWidgets.textLocale(
-                localeKey: "Добавление бонуса",
+                localeKey: LocaleKeys.add_bonus,
                 fontWeight: FontWeight.w600,
                 fontSize: 24.sp,
               ).paddingOnly(
@@ -94,7 +94,7 @@ class AddBonusLastWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           AppWidgets.textLocale(
-                            localeKey: "Бонус 1+5",
+                            localeKey: LocaleKeys.bonus_15.tr(),
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                           ).paddingOnly(
@@ -103,7 +103,7 @@ class AddBonusLastWidget extends StatelessWidget {
                           Row(
                             children: [
                               AppWidgets.textLocale(
-                                localeKey: "Категория: ",
+                                localeKey: "${LocaleKeys.category.tr()}: ",
                                 color: ColorName.gray2,
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w400,
@@ -144,7 +144,7 @@ class AddBonusLastWidget extends StatelessWidget {
               AppButton(
                 height: 45.w,
                 width: 200.w,
-                text: "Завершить",
+                text: LocaleKeys.complete.tr(),
                 textSize: 14.sp,
                 textColor: ColorName.white,
                 color: ColorName.button,

@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -135,7 +137,7 @@ class NextExchangeWidget extends StatelessWidget {
                         return Cards.cards_7(
                           name: "Coca cola 1.5",
                           context: context,
-                          summa: "Сумма",
+                          summa: LocaleKeys.amount.tr(),
                           summaNumber: "100 000",
                           blok: "Блок",
                           blokNumber: "1",
@@ -175,7 +177,7 @@ class NextExchangeWidget extends StatelessWidget {
                 children: [
                   AppWidgets.appButton(
                     width: 150,
-                    title: "Черновик",
+                    title: LocaleKeys.draft.tr(),
                     onTap: () {},
                     color: ColorName.gray,
                     textColor: ColorName.mainColor,
@@ -194,10 +196,10 @@ class NextExchangeWidget extends StatelessWidget {
                             "Lorem ipsum",
                             "Lorem ipsum",
                           ],
-                          returnOnTapButton: (){
+                          returnOnTapButton: () {
                             Modular.to.pushNamed(OrderPage.routeName);
                           },
-                          quitOnTapButton: (){
+                          quitOnTapButton: () {
                             Navigator.pop(context);
                           },
                         ),

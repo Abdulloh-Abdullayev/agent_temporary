@@ -152,7 +152,7 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             ReturnWidget.textBuilder(
-                              "Общая объем",
+                              LocaleKeys.total_volume.tr(),
                               "1365 о",
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             ),

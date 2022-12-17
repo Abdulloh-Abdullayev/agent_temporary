@@ -1,7 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/models/return_order_model.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -95,7 +97,7 @@ class _AddOrderPageState extends State<AddOrderPage> {
                                           builder: (context) {
                                             return OrderReconciliationActSheet(
                                               onTap: () {},
-                                              text: 'Фильтр',
+                                              text: LocaleKeys.filter.tr(),
                                               itemsName: itemsName,
                                             );
                                           });
@@ -111,7 +113,7 @@ class _AddOrderPageState extends State<AddOrderPage> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: AppWidgets.textLocale(
-                                  localeKey: "Добавление заказа",
+                                  localeKey: LocaleKeys.add_order.tr(),
                                   fontSize: 24.sp,
                                   fontWeight: FontWeight.w600,
                                   color: ColorName.white,
@@ -209,7 +211,7 @@ class ItemAddOrderWidget extends StatelessWidget {
                       AddOrderCubit.to
                           .incrementSht(returnOrderModel.id!, model.id!);
                     },
-                    nalichi: 'В наличие:',
+                    nalichi: '${LocaleKeys.spot.tr()}:',
                     nalichiNumber: "22",
                   ),
                 );

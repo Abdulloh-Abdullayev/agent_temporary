@@ -124,7 +124,7 @@ class FloatingDialog extends StatelessWidget {
                                 ],
                                 seeListTextName: [
                                   LocaleKeys.main_warehouse.tr(),
-                                  "Направление..",
+                                  LocaleKeys.direction.tr(),
                                   LocaleKeys.spot.tr(),
                                 ],
                                 icons: [

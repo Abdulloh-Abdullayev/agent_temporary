@@ -266,7 +266,7 @@ class EquipmentDetails extends StatelessWidget {
                   onTap: (p0) {},
                   textName: [
                     LocaleKeys.edit.tr(),
-                    'Удалить',
+                    LocaleKeys.delete.tr(),
                   ],
                   icons: [
                     Assets.images.icons.edit.svg(),

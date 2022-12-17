@@ -53,7 +53,7 @@ class AddBonusWidget extends StatelessWidget {
                 ],
               ),
               AppWidgets.textLocale(
-                localeKey: "Добавление бонуса",
+                localeKey: LocaleKeys.add_bonus,
                 fontWeight: FontWeight.w600,
                 fontSize: 24.sp,
               ).paddingOnly(
@@ -92,7 +92,7 @@ class AddBonusWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Выбрать бонус",
+                        localeKey: LocaleKeys.select_bonus.tr(),
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                       ),
@@ -122,7 +122,7 @@ class AddBonusWidget extends StatelessWidget {
               AppButton(
                 height: 45.w,
                 width: 200.w,
-                text: "Завершить без бонуса",
+                text: LocaleKeys.complete_without_bonus.tr(),
                 textSize: 14.sp,
                 textColor: ColorName.white,
                 color: ColorName.button,

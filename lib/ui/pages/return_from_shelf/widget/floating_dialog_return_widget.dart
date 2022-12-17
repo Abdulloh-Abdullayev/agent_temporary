@@ -18,7 +18,7 @@ class FloatingDialogReturn extends StatelessWidget {
   ];
   final seeListTextName = <String>[
     LocaleKeys.main_warehouse.tr(),
-    "Направление..",
+    LocaleKeys.direction.tr(),
     LocaleKeys.spot.tr(),
   ];
 

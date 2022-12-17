@@ -278,7 +278,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                               TextButton(
                                 onPressed: () {},
                                 child: AppWidgets.textLocale(
-                                  localeKey: "Загрузить фото",
+                                  localeKey: LocaleKeys.upload_photo,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                   color: ColorName.button,
@@ -303,7 +303,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                         children: [
                           AppButton(
                             width: 162.w,
-                            text: "Черновик",
+                            text: LocaleKeys.draft.tr(),
                             color: ColorName.gray,
                             textColor: ColorName.mainColor,
                             splashColor: ColorName.white,

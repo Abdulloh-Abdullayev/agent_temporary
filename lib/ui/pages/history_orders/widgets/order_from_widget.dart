@@ -48,7 +48,7 @@ class OrderFromWidget extends StatelessWidget {
                     vertical: 20,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Заказ от 12.08.2022",
+                    localeKey: "${LocaleKeys.order_from.tr()} 12.08.2022",
                     fontSize: 24.sp,
                     color: ColorName.white,
                     fontWeight: FontWeight.w600,
@@ -134,7 +134,7 @@ class OrderFromWidget extends StatelessWidget {
                       Row(
                         children: [
                           AppWidgets.textLocale(
-                            localeKey: "Сумма",
+                            localeKey: LocaleKeys.amount,
                             color: ColorName.gray2,
                             fontSize: 12.sp,
                           ).paddingOnly(right: 3.w),
@@ -159,7 +159,7 @@ class OrderFromWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AppWidgets.textLocale(
-              localeKey: "Общая объем",
+              localeKey: LocaleKeys.total_volume.tr(),
               color: ColorName.gray2,
               fontSize: 12.sp,
             ).paddingOnly(right: 17.w),

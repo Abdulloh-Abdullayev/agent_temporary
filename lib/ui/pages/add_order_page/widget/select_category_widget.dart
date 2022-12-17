@@ -59,7 +59,7 @@ class SelectCategoryWidget extends StatelessWidget {
                       ],
                     ),
                     AppWidgets.textLocale(
-                      localeKey: "Выберите категорию",
+                      localeKey: LocaleKeys.select_category,
                       fontWeight: FontWeight.w600,
                       fontSize: 24.sp,
                     ).paddingOnly(
@@ -67,7 +67,7 @@ class SelectCategoryWidget extends StatelessWidget {
                       bottom: 24.w,
                     ),
                     AppWidgets.textLocale(
-                      localeKey: "Тип бонуса",
+                      localeKey: LocaleKeys.bonus_type,
                       color: ColorName.black,
                       fontWeight: FontWeight.w600,
                       fontSize: 18.sp,
@@ -90,7 +90,7 @@ class SelectCategoryWidget extends StatelessWidget {
                       itemCount: 3,
                     ),
                     AppWidgets.textLocale(
-                      localeKey: "Категории",
+                      localeKey: LocaleKeys.category,
                       color: ColorName.black,
                       fontWeight: FontWeight.w600,
                       fontSize: 18.sp,

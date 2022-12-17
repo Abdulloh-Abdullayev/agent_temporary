@@ -103,7 +103,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     height: 38.w,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Дни посещения",
+                    localeKey: LocaleKeys.visit_days,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: ColorName.gray3,

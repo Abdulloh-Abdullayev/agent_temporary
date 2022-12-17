@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,7 +30,7 @@ class _BonusTypeWidgetState extends State<BonusTypeWidget> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           AppWidgets.text(
-            text: "Бонус 1+5",
+            text: LocaleKeys.bonus_15.tr(),
             fontSize: 14.sp,
             fontWeight: FontWeight.w400,
           ),
@@ -72,9 +74,9 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
     return Column(
       children: [
         InkWell(
-          onTap: (){
+          onTap: () {
             setState(() {
-              isCheck=!isCheck;
+              isCheck = !isCheck;
             });
           },
           child: Row(

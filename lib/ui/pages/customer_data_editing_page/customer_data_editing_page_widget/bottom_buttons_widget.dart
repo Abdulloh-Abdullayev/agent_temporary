@@ -29,7 +29,7 @@ class BottomButtonsWidget extends StatelessWidget {
       child: Column(
         children: [
           CustomerEditingRowWidget(
-            "Общая объем",
+            LocaleKeys.total_volume.tr(),
             "1365 о",
           ).paddingOnly(bottom: 12.w),
           CustomerEditingRowWidget(
@@ -48,7 +48,7 @@ class BottomButtonsWidget extends StatelessWidget {
                     height: 45.w,
                     // padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: AppButton(
-                      text: "Черновик",
+                      text: LocaleKeys.draft.tr(),
                       textSize: 14,
                       textColor: ColorName.mainColor,
                       color: ColorName.gray,

@@ -1,11 +1,12 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
 
 import '../../reports_page/widgets/sales_table_item.dart';
-
 
 class DebtorsTable extends StatelessWidget {
   const DebtorsTable({
@@ -77,7 +78,7 @@ class DebtorsTable extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "Сумма",
+              text: LocaleKeys.amount.tr(),
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,
@@ -103,23 +104,26 @@ class DebtorsTable extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.text(
-                  text: "Заказ на сумму",
-                  maxLines: 1,
-                  color: ColorName.gray2,
-                  fontSize: 12.sp,
-                  textAlign: TextAlign.center,
-                  fontWeight: FontWeight.w400,
+                text: "Заказ на сумму",
+                maxLines: 1,
+                color: ColorName.gray2,
+                fontSize: 12.sp,
+                textAlign: TextAlign.center,
+                fontWeight: FontWeight.w400,
               ),
               AppWidgets.text(
-                  text: "100 000 000 UZS",
-                  maxLines: 1,
-                  color: ColorName.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12.sp,
-                  textAlign: TextAlign.center,
-                ),
+                text: "100 000 000 UZS",
+                maxLines: 1,
+                color: ColorName.black,
+                fontWeight: FontWeight.w400,
+                fontSize: 12.sp,
+                textAlign: TextAlign.center,
+              ),
             ],
-          ).paddingSymmetric(horizontal: 15.w, vertical: 10.w,),
+          ).paddingSymmetric(
+            horizontal: 15.w,
+            vertical: 10.w,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -140,7 +144,9 @@ class DebtorsTable extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ],
-          ).paddingSymmetric(horizontal: 15.w,),
+          ).paddingSymmetric(
+            horizontal: 15.w,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -161,8 +167,10 @@ class DebtorsTable extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ],
-          ).paddingSymmetric(horizontal: 15.w, vertical: 10.w,),
-
+          ).paddingSymmetric(
+            horizontal: 15.w,
+            vertical: 10.w,
+          ),
         ],
       ),
     );
@@ -177,7 +185,7 @@ class DebtorsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 15.w,horizontal: 15.w),
+      padding: EdgeInsets.symmetric(vertical: 15.w, horizontal: 15.w),
       color: ColorName.white,
       child: Row(
         children: [
@@ -220,4 +228,3 @@ class DebtorsItem extends StatelessWidget {
     );
   }
 }
-

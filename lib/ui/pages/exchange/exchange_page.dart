@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/exchange/widget/next_exchange_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -111,7 +113,7 @@ class ExchangePage extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return Cards.cards_8(
                           name: "Coca cola 1.5",
-                          summa: "Сумма",
+                          summa: LocaleKeys.amount.tr(),
                           summaNumber: "100 000",
                           blok: "Блок",
                           blokNumber: "1",
@@ -155,7 +157,7 @@ class ExchangePage extends StatelessWidget {
                 children: [
                   AppWidgets.appButton(
                     width: 150,
-                    title: "Черновик",
+                    title: LocaleKeys.draft.tr(),
                     onTap: () {},
                     color: ColorName.gray,
                     textColor: ColorName.mainColor,

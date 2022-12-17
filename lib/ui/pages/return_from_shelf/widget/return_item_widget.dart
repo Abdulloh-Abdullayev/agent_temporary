@@ -48,7 +48,7 @@ class ReturnItemWidget extends StatelessWidget {
                         fontSize: 12.sp,
                       ).paddingOnly(right: 8.w),
                       AppWidgets.textLocale(
-                        localeKey: "Выполнен",
+                        localeKey: LocaleKeys.completed,
                         fontSize: 12.sp,
                         color: ColorName.green,
                       ).paddingOnly(right: 8.w),

@@ -39,7 +39,7 @@ class EditShelfButtonSheet extends StatelessWidget {
                 },
               ),
               AddingAnOrderSheet(
-                text: "Редактрирование",
+                text: LocaleKeys.editing.tr(),
                 listTextName: [
                   LocaleKeys.stock.tr(),
                   LocaleKeys.direction_type.tr(),
@@ -47,7 +47,7 @@ class EditShelfButtonSheet extends StatelessWidget {
                 ],
                 seeListTextName: [
                   LocaleKeys.main_warehouse.tr(),
-                  "Направление...",
+                  LocaleKeys.direction.tr(),
                   LocaleKeys.spot.tr(),
                 ],
                 icons: [

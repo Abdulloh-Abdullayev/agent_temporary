@@ -7,6 +7,7 @@ import 'package:agent/ui/pages/remains_page/pages/remains_tabbar_page.dart';
 import 'package:agent/ui/pages/remains_page/widgets/floating_show_widget.dart';
 import 'package:agent/ui/pages/remains_page/widgets/remains_page_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -101,7 +102,7 @@ class _RemainsPageState extends State<RemainsPage> {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "Территория : ",
+                                    localeKey: "${LocaleKeys.territory.tr()} : ",
                                     fontSize: 12.sp,
                                     color: ColorName.gray2,
                                     fontWeight: FontWeight.w400,

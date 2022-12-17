@@ -212,7 +212,7 @@ class EditExchangeWidget extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: AppWidgets.textLocale(
-                                        localeKey: "Сумма",
+                                        localeKey: LocaleKeys.amount,
                                         color: ColorName.gray2,
                                         fontSize: 12.sp,
                                         textAlign: TextAlign.end),
@@ -259,7 +259,7 @@ class EditExchangeWidget extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: (){},
+                    onTap: () {},
                     child: Assets.images.icons.exchange.svg(),
                   ).paddingSymmetric(horizontal: 8.w),
                   Container(
@@ -303,7 +303,7 @@ class EditExchangeWidget extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: AppWidgets.textLocale(
-                                        localeKey: "Сумма",
+                                        localeKey: LocaleKeys.amount,
                                         color: ColorName.gray2,
                                         fontSize: 12.sp,
                                         textAlign: TextAlign.end),

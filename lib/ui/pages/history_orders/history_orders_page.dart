@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/history_orders/widgets/order_from_widget.dart';
@@ -171,7 +172,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                   Row(
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Заказ от",
+                        localeKey: LocaleKeys.order_from,
                         color: ColorName.gray2,
                         fontSize: 12.sp,
                       ).paddingOnly(right: 2.w),
@@ -203,7 +204,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                   Row(
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Сумма",
+                        localeKey: LocaleKeys.amount,
                         color: ColorName.gray2,
                         fontSize: 12.sp,
                       ).paddingOnly(right: 2.w),
