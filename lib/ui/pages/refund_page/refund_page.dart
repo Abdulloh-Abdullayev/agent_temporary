@@ -150,13 +150,13 @@ class RefundPage extends StatelessWidget {
                     onPressed: () {
                       Modular.to.pushNamed(RemainStockPage.routeName);
                     },
-                    icon: Assets.images.icons.searchActive,
+                    icon: Assets.images.icons.search,
                   ),
                   AppWidgets.iconButton(
                     onPressed: () {
                       Modular.to.pushNamed(SalaryPage.routeName);
                     },
-                    icon: Assets.images.icons.filtrIcon,
+                    icon: Assets.images.icons.filter,
                   ).paddingOnly(left: 12.w),
                 ],
               )

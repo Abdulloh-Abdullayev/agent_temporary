@@ -38,7 +38,7 @@ class SelectPhotoDialaog extends StatelessWidget {
                   onTap: () {
                     Modular.to.pop();
                   },
-                  child: Assets.images.icons.xIcon.svg(
+                  child: Assets.images.icons.remove.svg(
                     fit: BoxFit.cover,
                   ),
                 )

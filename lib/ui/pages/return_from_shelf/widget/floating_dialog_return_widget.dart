@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
+
 import '../return_order_page.dart';
 
 class FloatingDialogReturn extends StatelessWidget {
@@ -22,7 +23,7 @@ class FloatingDialogReturn extends StatelessWidget {
 
   final List<Widget> icons = [
     Assets.images.icons.stack.svg(),
-    Assets.images.icons.shoppingCart .svg(),
+    Assets.images.icons.shoppingCardIcon.svg(),
     Assets.images.icons.box.svg(),
   ];
   @override
@@ -86,7 +87,7 @@ class FloatingDialogReturn extends StatelessWidget {
                         child: SizedBox(
                           height: 17,
                           width: 17,
-                          child: Assets.images.icons.otkaz.svg(
+                          child: Assets.images.icons.infoCircle.svg(
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -107,10 +108,11 @@ class FloatingDialogReturn extends StatelessWidget {
                               enableDrag: false,
                               builder: (context) {
                                 return AddingAnOrderSheet(
-                                  submit: (){
-                                    Modular.to.pushNamed(ReturnOrderDatePage.routeName);
+                                  submitOnTapButton: () {
+                                    Modular.to.pushNamed(
+                                        ReturnOrderDatePage.routeName);
                                   },
-                                  quit: (){
+                                  quitOnTapButton: () {
                                     Modular.to.pop(context);
                                   },
                                   text: 'Возврат заказа',
@@ -139,11 +141,10 @@ class FloatingDialogReturn extends StatelessWidget {
                                   text: 'Возврат заказа',
                                   textItemsName: [
                                     "Не получается продать",
-                                      "Не получается продать",
-                                      "Не получается продать",
-                                      "Не получается продать",
+                                    "Не получается продать",
+                                    "Не получается продать",
+                                    "Не получается продать",
                                   ],
-
                                 );
                               });
                         },
@@ -179,7 +180,7 @@ class FloatingDialogReturn extends StatelessWidget {
                       "Обмен",
                       "Остатки",
                     ],
-                    cencel: (){
+                    cencelButton: () {
                       Modular.to.pop(context);
                     },
                   ),
@@ -188,10 +189,10 @@ class FloatingDialogReturn extends StatelessWidget {
             );
           },
           backgroundColor: ColorName.lightGreen,
-            child: const Icon(
-              Icons.more_vert,
-              color: ColorName.white,
-              size: 30,
+          child: const Icon(
+            Icons.more_vert,
+            color: ColorName.white,
+            size: 30,
           ),
         ),
       ),

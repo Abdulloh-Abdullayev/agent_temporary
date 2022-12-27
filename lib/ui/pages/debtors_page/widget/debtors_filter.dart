@@ -1,11 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
-import 'package:agent/core/models/enums/shipping_type.dart';
 import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/debtors_page/widget/deptors_history.dart';
-import 'package:agent/ui/widgets/app_radio_button.dart';
 import 'package:agent/ui/widgets/app_text_field.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
@@ -91,6 +88,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     color: ColorName.gray3,
                   ).paddingOnly(top: 24.w, bottom: 12.w),
                   DropDown(
+                    color: ColorName.background,
                     items: const [
                       'dcsdvsd',
                       'sddf',
@@ -110,6 +108,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     color: ColorName.gray3,
                   ).paddingOnly(top: 24.w, bottom: 12.w),
                   DropDown(
+                    color: ColorName.background,
                     items: const [
                       'dcsdvsd',
                       'sddf',
@@ -153,7 +152,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
           },
-          child: Assets.images.icons.xIcon.svg(),
+          child: Assets.images.icons.remove.svg(),
         ),
       ],
     ).paddingSymmetric(horizontal: 23.w, vertical: 10.w);

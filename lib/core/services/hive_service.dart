@@ -1,8 +1,8 @@
 import 'dart:ui';
 
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:hive/hive.dart';
-import 'package:agent/core/localization/locale_keys.g.dart';
 
 class HiveService {
   static HiveService get to => Modular.get<HiveService>();

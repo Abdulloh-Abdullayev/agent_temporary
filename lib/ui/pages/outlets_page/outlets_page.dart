@@ -3,7 +3,6 @@ import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
-import 'package:agent/ui/pages/outlets_page/outlets_map_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -47,7 +46,7 @@ class OutletsPage extends StatelessWidget {
                   itemCount: 10,
                   itemBuilder: (context, index) => GestureDetector(
                     onTap: () {
-                      Modular.to.pushNamed(OutletsMapPage.routeName);
+                      // Modular.to.pushNamed(OutletsMapPage.routeName);
                     },
                     child: Cards.cards_11(
                       name: "name",
@@ -58,6 +57,7 @@ class OutletsPage extends StatelessWidget {
                       persent: "60-80",
                       summa: "2000",
                       cp: "cp",
+                      card_onTap: () {},
                     ).paddingOnly(top: 12.w),
                   ),
                 ),
@@ -106,11 +106,11 @@ class OutletsPage extends StatelessWidget {
                 children: [
                   AppWidgets.iconButton(
                     onPressed: () {},
-                    icon: Assets.images.icons.searchActive,
+                    icon: Assets.images.icons.search,
                   ),
                   AppWidgets.iconButton(
                     onPressed: () {},
-                    icon: Assets.images.icons.mapIcon,
+                    icon: Assets.images.icons.mapLocation,
                   ).paddingOnly(left: 12.w),
                 ],
               )

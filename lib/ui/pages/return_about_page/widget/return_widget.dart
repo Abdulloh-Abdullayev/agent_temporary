@@ -35,12 +35,13 @@ class ReturnWidget {
                 fontWeight: FontWeight.w400,
               ),
             ),
-            AppWidgets.text(text: secondName,
-                textStyle: const TextStyle(
-                  color: ColorName.black,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
+            AppWidgets.text(
+              text: secondName,
+              textStyle: const TextStyle(
+                color: ColorName.black,
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ],
         ),
@@ -55,9 +56,9 @@ class ReturnWidget {
   }
 
   static Widget appBar(
-      {required String title,
-        required BuildContext context,
-        required Function(String key) ontap}) =>
+          {required String title,
+          required BuildContext context,
+          required Function(String key) ontap}) =>
       Container(
         height: 139.h,
         width: 1.sw,
@@ -86,8 +87,7 @@ class ReturnWidget {
                       Modular.to.pop();
                     },
                     child: Center(
-                      child:
-                      Assets.images.icons.backIcon.svg(height: 9.5),
+                      child: Assets.images.icons.backIcon.svg(height: 9.5),
                     ),
                   ),
                 ),
@@ -182,10 +182,10 @@ class ReturnWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppWidgets.text(
-              text: "Coca cola 1.5",
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              color: ColorName.black)
+                  text: "Coca cola 1.5",
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: ColorName.black)
               .marginOnly(top: 14, left: 12),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -205,13 +205,13 @@ class ReturnWidget {
   }
 
   static Widget textBuilder(
-      String text1,
-      String text2, {
-        Color? color,
-        TextStyle? textStyle,
-        MainAxisAlignment? mainAxisAlignment,
-        CrossAxisAlignment? crossAxisAlignment,
-      }) =>
+    String text1,
+    String text2, {
+    Color? color,
+    TextStyle? textStyle,
+    MainAxisAlignment? mainAxisAlignment,
+    CrossAxisAlignment? crossAxisAlignment,
+  }) =>
       Row(
         mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
         crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,

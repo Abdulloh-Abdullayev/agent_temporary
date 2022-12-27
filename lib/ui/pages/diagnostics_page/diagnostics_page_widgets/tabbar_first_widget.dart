@@ -106,24 +106,30 @@ class TabbarFirstWidget extends StatelessWidget {
             ),
           ],
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 50),
-          child: Divider(),
+        Padding(
+          padding:
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.082),
+          child: const Divider(
+            color: ColorName.gray2,
+          ),
         ),
         MarkWidget(
           text: "Факт",
-          ptop: 60.w,
-          pleft: 120,
+          ptop: MediaQuery.of(context).size.height * 0.095,
+          pleft: 130.w,
           width: 76.w,
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 105),
-          child: Divider(),
+        Padding(
+          padding:
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.172),
+          child: const Divider(
+            color: ColorName.gray2,
+          ),
         ),
         MarkWidget(
           text: "Прогноз",
-          ptop: 118.w,
-          pleft: 105,
+          ptop: MediaQuery.of(context).size.height * 0.185,
+          pleft: 115.w,
           width: 108.w,
         )
       ],

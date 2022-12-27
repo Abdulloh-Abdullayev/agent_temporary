@@ -1,5 +1,4 @@
 import 'package:agent/core/extensions/app_extensions.dart';
-import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/salary_page/widget/plan_salary_widget.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../widgets/app_widgets.dart';
 import 'widget/working_day_widget.dart';
 
-class SalaryPageModel extends Module {
+class SalaryPageModule extends Module {
   @override
   List<Bind> get binds => [];
 
@@ -103,7 +102,7 @@ class SalaryPage extends StatelessWidget {
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: LocaleKeys.salary,
+            localeKey: "LocaleKeys.salary",
             fontWeight: FontWeight.w500,
             fontSize: 20.sp,
             color: Colors.white,

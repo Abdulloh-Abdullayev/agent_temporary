@@ -66,9 +66,7 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
           children: [
             ReturnWidget.appBar(
               title: "О Возврате",
-              ontap: (key) {
-
-              },
+              ontap: (key) {},
               context: context,
             ),
             Expanded(

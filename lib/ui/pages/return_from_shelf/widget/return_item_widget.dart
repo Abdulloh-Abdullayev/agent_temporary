@@ -17,7 +17,7 @@ class ReturnItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         Modular.to.pushNamed(ReturnAboutPage.routeName);
       },
       child: Container(
@@ -105,21 +105,16 @@ class ReturnItemWidget extends StatelessWidget {
                         'Отменить',
                       ],
                       icons: [
-                        Assets.images.icons.editeAlt.svg(
-                            fit: BoxFit.cover,
-                            color: ColorName.button),
-                        Assets.images.icons.chat.svg(
-                            fit: BoxFit.cover,
-                            color: ColorName.gray2),
-                        Assets.images.icons.calender.svg(
-                            fit: BoxFit.cover,
-                            color: ColorName.gray2),
-                        Assets.images.icons.clock.svg(
-                            fit: BoxFit.cover,
-                            color: ColorName.gray2),
-                        Assets.images.icons.fileUpload.svg(
-                            fit: BoxFit.cover,
-                            color: ColorName.gray2),
+                        Assets.images.icons.editeAlt
+                            .svg(fit: BoxFit.cover, color: ColorName.button),
+                        Assets.images.icons.chat
+                            .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                        Assets.images.icons.calender
+                            .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                        Assets.images.icons.clock
+                            .svg(fit: BoxFit.cover, color: ColorName.gray2),
+                        Assets.images.icons.fileUpload
+                            .svg(fit: BoxFit.cover, color: ColorName.gray2),
                         const SizedBox.shrink(),
                       ],
                       textColor: const [
@@ -132,7 +127,8 @@ class ReturnItemWidget extends StatelessWidget {
                       ],
                     ),
                   ).paddingOnly(
-                    top: 10.w, bottom: 5.w,
+                    top: 10.w,
+                    bottom: 5.w,
                   ),
                 ],
               ),
@@ -148,8 +144,7 @@ class ReturnItemWidget extends StatelessWidget {
                     othersMarkers: [
                       MarkerText(
                         marker: "//",
-                        style:
-                        const TextStyle(color: ColorName.black),
+                        style: const TextStyle(color: ColorName.black),
                       )
                     ],
                   ),
@@ -162,8 +157,7 @@ class ReturnItemWidget extends StatelessWidget {
                     othersMarkers: [
                       MarkerText(
                         marker: "//",
-                        style:
-                        const TextStyle(color: ColorName.black),
+                        style: const TextStyle(color: ColorName.black),
                       )
                     ],
                   ),
@@ -196,8 +190,7 @@ class ReturnItemWidget extends StatelessWidget {
                     othersMarkers: [
                       MarkerText(
                         marker: "//",
-                        style:
-                        const TextStyle(color: ColorName.black),
+                        style: const TextStyle(color: ColorName.black),
                       )
                     ],
                   ),
@@ -215,14 +208,12 @@ class ReturnItemWidget extends StatelessWidget {
                     othersMarkers: [
                       MarkerText(
                         marker: "//",
-                        style:
-                        const TextStyle(color: ColorName.black),
+                        style: const TextStyle(color: ColorName.black),
                       )
                     ],
                   ),
                 ],
               ).paddingOnly(bottom: 10.w),
-
             ],
           ),
         ),
