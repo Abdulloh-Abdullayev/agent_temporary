@@ -7,7 +7,7 @@ import 'package:uikit/uikit.dart';
 import '../../../../core/utils/colors.gen.dart';
 
 class EditShelfButtonSheet extends StatelessWidget {
-  const  EditShelfButtonSheet({Key? key}) : super(key: key);
+  const EditShelfButtonSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class EditShelfButtonSheet extends StatelessWidget {
                   Assets.images.icons.shoppingCardIcon.svg(
                     fit: BoxFit.cover,
                   ),
-                  Assets.images.icons.caset.svg(
+                  Assets.images.icons.cash.svg(
                     fit: BoxFit.cover,
                   ),
                 ],
@@ -66,7 +66,7 @@ class EditShelfButtonSheet extends StatelessWidget {
             autofocus: false,
             child: Container(
               padding: EdgeInsets.only(top: 20.w, right: 29.w),
-              child: Assets.images.icons.xIcon.svg(
+              child: Assets.images.icons.remove.svg(
                 fit: BoxFit.cover,
               ),
             ),

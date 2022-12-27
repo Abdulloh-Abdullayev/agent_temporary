@@ -5,12 +5,12 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class HistoryOrdersBottomSheet extends StatefulWidget {
   const HistoryOrdersBottomSheet({Key? key}) : super(key: key);
 
   @override
-  State<HistoryOrdersBottomSheet> createState() => _HistoryOrdersBottomSheetState();
+  State<HistoryOrdersBottomSheet> createState() =>
+      _HistoryOrdersBottomSheetState();
 }
 
 class _HistoryOrdersBottomSheetState extends State<HistoryOrdersBottomSheet> {
@@ -33,7 +33,7 @@ class _HistoryOrdersBottomSheetState extends State<HistoryOrdersBottomSheet> {
               Assets.images.icons.downIcon.svg(
                 color: ColorName.gray2,
               ),
-              Assets.images.icons.xIcon.svg(
+              Assets.images.icons.remove.svg(
                 color: ColorName.gray2,
               )
             ],

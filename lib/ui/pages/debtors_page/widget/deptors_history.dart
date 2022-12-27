@@ -8,8 +8,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-import '../../reports_page/widgets/sales_table_widget.dart';
-
 class DebtorsHistoryModule extends Module {
   @override
   List<ModularRoute> get routes => [
@@ -71,7 +69,7 @@ class DebtorsHistory extends StatelessWidget {
                     // dataPanel(),
                     // planFactBuild(),
                     // const TableFact().paddingOnly(top: 16.w),
-                     const DebtorsTable(),
+                    const DebtorsTable(),
                   ],
                 ).paddingSymmetric(horizontal: 20.w, vertical: 20.w)
               ],

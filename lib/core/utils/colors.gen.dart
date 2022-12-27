@@ -5,12 +5,14 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
+// ignore_for_file: directives_ordering,unnecessary_import
 
 import 'package:flutter/painting.dart';
 import 'package:flutter/material.dart';
 
 class ColorName {
+  static var primary;
+
   ColorName._();
 
   /// Color: #F2F5F5
@@ -31,8 +33,17 @@ class ColorName {
   /// Color: #299B9B
   static const Color button = Color(0xFF299B9B);
 
+  /// Color: #1A4A4A
+  static const Color buttonBackColor = Color(0xFF1A4A4A);
+
   /// Color: #299B9B
   static const Color buttonColor = Color(0xFF299B9B);
+
+  /// Color: #E3FCF0
+  static const Color cyne = Color(0xFFE3FCF0);
+
+  /// Color: #185C37
+  static const Color darkGreen = Color(0xFF185C37);
 
   /// Color: #B0CCCC
   static const Color defaultIcon = Color(0xFFB0CCCC);
@@ -42,6 +53,9 @@ class ColorName {
 
   /// Color: #E1E4E4
   static const Color gray = Color(0xFFE1E4E4);
+
+  /// Color: #D2D7D7
+  static const Color gray1 = Color(0xFFD2D7D7);
 
   /// Color: #8FA0A0
   static const Color gray2 = Color(0xFF8FA0A0);
@@ -54,6 +68,9 @@ class ColorName {
 
   /// Color: #00A000
   static const Color green = Color(0xFF00A000);
+
+  /// Color: #1DBE03
+  static const Color green1 = Color(0xFF1DBE03);
 
   /// Color: #1DBE03
   static const Color green2 = Color(0xFF1DBE03);

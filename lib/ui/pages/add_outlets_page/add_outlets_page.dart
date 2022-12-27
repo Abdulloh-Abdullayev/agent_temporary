@@ -8,7 +8,6 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:agent/ui/widgets/img_container_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

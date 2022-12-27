@@ -2,6 +2,7 @@ import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
+import 'package:agent/ui/pages/draft_page/draft_page.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
@@ -15,7 +16,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../all_tasks_page/bloc/all_task_bloc.dart';
 import '../order_page/order_page.dart';
+import '../visits_page/visits_page.dart';
 
 class HomePageModule extends Module {
   @override
@@ -34,24 +37,25 @@ class HomePageModule extends Module {
           (i) => AppNavigationBloc(),
           onDispose: (value) => value.close(),
         ),
-
-    Bind<MainCubit>(
+        Bind<MainCubit>(
           (i) => MainCubit(),
-      onDispose: (value) => value.close(),
-    ),
-    Bind<LeftMenuBloc>(
+          onDispose: (value) => value.close(),
+        ),
+        Bind<LeftMenuBloc>(
           (i) => LeftMenuBloc(),
-      onDispose: (value) => value.close(),
-    ),
-
-
-  ];
+          onDispose: (value) => value.close(),
+        ),
+        Bind<AllTaskBloc>(
+          (i) => AllTaskBloc(),
+          onDispose: (value) => value.close(),
+        ),
+      ];
 }
 
 class HomePage extends StatelessWidget {
   static const String routeName = "/homePage";
   static final GlobalKey<ScaffoldState> globalKey =
-  GlobalKey<ScaffoldState>(debugLabel: "globalKey");
+      GlobalKey<ScaffoldState>(debugLabel: "globalKey");
 
   const HomePage({Key? key}) : super(key: key);
 
@@ -63,10 +67,12 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           return SafeArea(
             child: Scaffold(
-              drawer: LeftMenuPage(),
               key: HomePage.globalKey,
+              drawer: LeftMenuPage(),
               extendBody: true,
-              body: bodyBuilder(state.appNavigationType, context).paddingOnly(bottom: 70,),
+              body: bodyBuilder(state.appNavigationType, context).paddingOnly(
+                bottom: 70,
+              ),
               bottomNavigationBar: AppNavigationBar(
                 children: [
                   AppNavigationBarItem(
@@ -93,8 +99,8 @@ class HomePage extends StatelessWidget {
                     icon: Assets.images.icons.location.svg(),
                     iconOnTap: Assets.images.icons.locationActive.svg(),
                     title: "Визиты",
-                    isActive: state.appNavigationType == AppNavigationType.VISITS,
-
+                    isActive:
+                        state.appNavigationType == AppNavigationType.VISITS,
                   ),
                   AppNavigationBarItem(
                     onPressed: () {
@@ -121,8 +127,8 @@ class HomePage extends StatelessWidget {
                     icon: Assets.images.icons.draft.svg(),
                     iconOnTap: Assets.images.icons.draftActive.svg(),
                     title: "Черновик",
-                    isActive: state.appNavigationType ==
-                        AppNavigationType.DRAFT,
+                    isActive:
+                        state.appNavigationType == AppNavigationType.DRAFT,
                   ),
                   AppNavigationBarItem(
                     onPressed: () {
@@ -153,11 +159,11 @@ class HomePage extends StatelessWidget {
       case AppNavigationType.MAIN:
         return MainPage();
       case AppNavigationType.VISITS:
-        return MainPage();
+        return VisitsPage();
       case AppNavigationType.REPORT:
         return ReportsPage();
       case AppNavigationType.DRAFT:
-        return MainPage();
+        return DraftPage();
       case AppNavigationType.POINTS:
         return OutletsPage();
       default:

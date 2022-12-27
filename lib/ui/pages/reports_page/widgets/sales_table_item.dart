@@ -89,7 +89,7 @@ class _SaleTableItemState extends State<SaleTableItem> {
               ],
             ),
             AnimatedContainer(
-              height: isOpen?24*4:0,
+              height: isOpen ? 24 * 4 : 0,
               duration: const Duration(milliseconds: 500),
               curve: Curves.linearToEaseOut,
               child: ListView.builder(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'settings_content.dart';
 import 'settings_switch.dart';
+import 'settings_text_item.dart';
 
 class GeneralSettingsWidget extends StatelessWidget {
   const GeneralSettingsWidget({Key? key}) : super(key: key);
@@ -39,7 +40,7 @@ class GeneralSettingsWidget extends StatelessWidget {
                 onChanged: (bool v) {},
                 title: "Префикс номера телефона",
                 initial: false,
-                isLast:true,
+                isLast: true,
                 isDisable: isDisable,
               ),
             ],
@@ -109,7 +110,19 @@ class GeneralSettingsWidget extends StatelessWidget {
                 title: "Отслеживать местоположений",
                 onChanged: (bool value) {},
               ),
-              //todo Интервал отслеживания местоположений
+              const SettingsTextItem(
+                title: "Интервал отслеживания местоположений",
+                text: "131",
+              ),
+              const SettingsTextItem(
+                title: "Мин растояния (Метр)",
+                text: "131",
+              ),
+              const SettingsTextItem(
+                title: "Точность данных GPS (метр)",
+                text: "131",
+                isLast: true,
+              )
             ],
           ),
           SettingsContent(

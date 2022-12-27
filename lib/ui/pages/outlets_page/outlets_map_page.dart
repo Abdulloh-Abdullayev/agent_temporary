@@ -74,7 +74,7 @@ class _OutletsMapPageState extends State<OutletsMapPage> {
       body: Stack(
         children: [
           MapSample(),
-          bottomSection()
+          bottomSection(),
         ],
       ),
       floatingActionButton: Column(
