@@ -79,17 +79,23 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                             backgroundColor: Colors.transparent,
                             builder: (context) {
                               return PurchaseHistorySheet(
-                                text: 'Фильтр',
-                                height: 900,
-                                firstDate: '',
-                                secondDate: '',
-                                firstMoneyStatus: '',
-                                secondMoneyStatus: '',
-                                // dropdownText: [],
+                                fromDate: "1212",
+                                firstDateOnTap: () {},
+                                secondDateOnTap: () {},
+                                iconDown: Assets.images.icons.downIcon.svg(),
+                                sheetOnTap: () {
+                                  Navigator.pop(context);
+                                },
+                                iconCencel: Assets.images.icons.cencel.svg(),
+                                firstDate: "12",
+                                secondDate: "До",
+                                firstMoneyStatus: "Статус",
+                                secondMoneyStatus: "secondMoneyStatus",
+                                text: "Фильтр",
+                                dropdownText: ["dropdownText"],
                                 save: () {
-                                  Modular.to
-                                      .pushNamed(OrderFromWidget.routeName);
-                                }, dropdownText: [],
+                                  Navigator.pop(context);
+                                },
                               );
                             },
                           );
@@ -157,75 +163,16 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
     return ListView.builder(
       itemCount: 5,
       itemBuilder: ((context, index) {
-        return Container(
-          width: 1.sw,
-          decoration: BoxDecoration(
-            color: ColorName.white,
-            borderRadius: BorderRadius.circular(8.r),
-          ),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      AppWidgets.textLocale(
-                        localeKey: "Заказ от",
-                        color: ColorName.gray2,
-                        fontSize: 12.sp,
-                      ).paddingOnly(right: 2.w),
-                      AppWidgets.textLocale(
-                        localeKey: "12.08.2022",
-                        fontSize: 12.sp,
-                      ),
-                    ],
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: ColorName.green.withOpacity(0.18),
-                      borderRadius: BorderRadius.circular(8.r),
-                    ),
-                    child: AppWidgets.textLocale(
-                      localeKey: "Доставлен",
-                      color: ColorName.green,
-                      fontSize: 12.sp,
-                    ).paddingSymmetric(
-                      vertical: 4.w,
-                      horizontal: 10.w,
-                    ),
-                  )
-                ],
-              ).paddingOnly(bottom: 15.w),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      AppWidgets.textLocale(
-                        localeKey: "Сумма",
-                        color: ColorName.gray2,
-                        fontSize: 12.sp,
-                      ).paddingOnly(right: 2.w),
-                      AppWidgets.textLocale(
-                        localeKey: "150 000 000",
-                        color: ColorName.buttonColor,
-                        fontSize: 12.sp,
-                      ),
-                    ],
-                  ),
-                  AppWidgets.textLocale(
-                    localeKey: "Начисления",
-                    color: ColorName.gray2,
-                    fontSize: 12.sp,
-                  ),
-                ],
-              ),
-            ],
-          ).paddingSymmetric(
-            horizontal: 12.w,
-            vertical: 18.w,
-          ),
+        return Cards.cards_6(
+          zakaz: "Заказ от",
+          date: "12.08.2022",
+          status: "Доставлен",
+          nachisleniya: "Начисления",
+          summa: "Сумма",
+          summaNumber: "150 000 000",
+          onTap: () {
+            Modular.to.pushNamed(OrderFromWidget.routeName);
+          },
         ).paddingOnly(
           top: 15.w,
           left: 20.w,
