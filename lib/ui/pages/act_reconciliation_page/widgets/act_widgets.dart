@@ -31,7 +31,7 @@ class ActWidget {
   ];
 
   /// appbar
-  static Widget AppBar({
+  static Widget appBar({
     required String title,
     required String firstText,
     required String buttonText,

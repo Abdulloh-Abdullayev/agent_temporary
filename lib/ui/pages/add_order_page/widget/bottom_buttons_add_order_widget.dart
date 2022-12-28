@@ -44,13 +44,13 @@ class BottomButtonsAddOrderWidget extends StatelessWidget {
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w400,
                   color: ColorName.gray2,
-                  isRichText: true),
+                  isRichText: true,),
               AppWidgets.textLocale(
                   localeKey: "150 000 000 UZS",
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w600,
                   color: ColorName.button,
-                  isRichText: true),
+                  isRichText: true,),
             ],
           ).paddingOnly(bottom: 16.w),
           Row(
@@ -58,7 +58,6 @@ class BottomButtonsAddOrderWidget extends StatelessWidget {
               Expanded(
                 child: SizedBox(
                   height: 45.w,
-                  // padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: AppButton(
                     text: "Черновик",
                     textSize: 14,

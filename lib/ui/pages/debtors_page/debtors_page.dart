@@ -1,16 +1,12 @@
 import 'package:agent/core/extensions/app_extensions.dart';
-import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/debtors_page/widget/debtors_filter.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:animated_digit/animated_digit.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uikit/uikit.dart';
 
 import '../debtors_orders_page/widget/debtors_table.dart';
 
@@ -37,12 +33,12 @@ class DebtorsPage extends StatelessWidget {
           children: [
             balanceAppBar(context),
             buildList(),
-
           ],
         ),
       ),
     );
   }
+
   Widget buildList() {
     return Expanded(
       child: SingleChildScrollView(
@@ -145,4 +141,3 @@ class DebtorsPage extends StatelessWidget {
     );
   }
 }
-

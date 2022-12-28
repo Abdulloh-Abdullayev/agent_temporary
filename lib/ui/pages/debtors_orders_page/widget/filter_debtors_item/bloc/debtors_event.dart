@@ -9,11 +9,8 @@ abstract class DebtorsEvent extends Equatable {
 }
 
 class FilterLoad extends DebtorsEvent {
-
-
   @override
-  List<Object> get props => [
-  ];
+  List<Object> get props => [];
 }
 
 class PayslipsFilterRegionChanged extends DebtorsEvent {

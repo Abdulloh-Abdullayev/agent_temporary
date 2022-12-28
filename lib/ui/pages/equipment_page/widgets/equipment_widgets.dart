@@ -42,7 +42,7 @@ class EquipmentWidgets {
     return Container(
       height: 119.w,
       width: 1.sw,
-      padding:  EdgeInsets.only(
+      padding: EdgeInsets.only(
         top: 19.w,
         left: 20.w,
         right: 20.w,
@@ -63,7 +63,7 @@ class EquipmentWidgets {
     return Column(
       children: [
         Padding(
-          padding:  EdgeInsets.only(
+          padding: EdgeInsets.only(
             top: 12.w,
             left: 20.w,
             right: 20.w,

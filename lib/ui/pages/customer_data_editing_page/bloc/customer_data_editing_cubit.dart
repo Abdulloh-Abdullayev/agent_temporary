@@ -8,14 +8,13 @@ class CustomerDataEditingCubit extends Cubit<CustomerDataEditingState> {
 
   int counter = 0;
 
-  void plus(){
-    counter+=1;
+  void plus() {
+    counter += 1;
     emit(CounterState());
   }
 
-  void minus(){
-    counter-=1;
+  void minus() {
+    counter -= 1;
     emit(CounterState());
   }
-
 }

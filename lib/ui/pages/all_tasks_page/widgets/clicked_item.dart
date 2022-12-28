@@ -105,18 +105,20 @@ class ClickedItem extends StatelessWidget {
                     startTime: "Дата создание",
                     finishTime: "Дата Выполнение",
                     startDate: "12.10.2022",
-                    finishDate: "12.10.2022", context: context, card_onTap: () {  },
+                    finishDate: "12.10.2022",
+                    context: context,
+                    card_onTap: () {},
                   ).paddingSymmetric(
                     horizontal: 20.w,
                     vertical: 18.w,
                   ),
                   Cards.cards_14(
-
                     primicheniya: "Примечание",
                     product:
                         "Кола 3 блок,Фанта 3 блок, динай 3 блок, Nestle 3 блок, Qibray 3 блок",
                     foto: "Фото",
-                    image: "image", card_onTap: () {  },
+                    image: "image",
+                    card_onTap: () {},
                   ).paddingAll(20.w),
                   Container(
                     width: 1.sw,

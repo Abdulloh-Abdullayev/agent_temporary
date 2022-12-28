@@ -52,7 +52,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(OrderPage.routeName);
+    Modular.setInitialRoute(HomePage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -97,7 +97,7 @@ class AppModule extends Module {
         AsyncBind<HiveService>((i) => HiveService.init()),
         AsyncBind<DBService>((i) => DBService.init()),
       ];
-  
+
   @override
   List<ModularRoute> get routes => [
         ModuleRoute("/", module: HomePageModule()),

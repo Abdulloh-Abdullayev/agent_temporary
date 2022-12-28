@@ -10,7 +10,7 @@ class AboutOrderWidgets {
   static Widget bookingTextItems({
     required String firstName,
     required String secondName,
-     TextStyle firstStyle = const TextStyle(
+    TextStyle firstStyle = const TextStyle(
       color: ColorName.gray2,
       fontSize: 14,
       fontWeight: FontWeight.w400,
@@ -20,26 +20,25 @@ class AboutOrderWidgets {
       fontSize: 14,
       fontWeight: FontWeight.w600,
     ),
-   
   }) {
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children:[
+          children: [
             AppWidgets.textLocale(
               localeKey: firstName,
               textStyle: firstStyle,
-               color: ColorName.gray2,
-      fontSize: 14,
-      fontWeight: FontWeight.w400,
+              color: ColorName.gray2,
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
             ),
             AppWidgets.text(
               text: secondName,
               textStyle: secondStyle,
-                color: ColorName.black,
-      fontSize: 14,
-      fontWeight: FontWeight.w600,
+              color: ColorName.black,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
             ),
           ],
         ),
@@ -61,7 +60,7 @@ class AboutOrderWidgets {
       Container(
         height: 119.w,
         width: 1.sw,
-        padding:  EdgeInsets.only(
+        padding: EdgeInsets.only(
           top: 19.w,
           left: 20.w,
           right: 20.w,
@@ -238,9 +237,4 @@ class AboutOrderWidgets {
           ),
         ],
       );
-
-  
 }
-
- 
- 

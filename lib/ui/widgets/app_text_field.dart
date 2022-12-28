@@ -44,7 +44,7 @@ class AppTextField extends StatefulWidget {
     this.autoFocus = false,
     this.phoneNumberCode = false,
     this.maxLength,
-    this.enablePrefixIcon=true,
+    this.enablePrefixIcon = true,
   });
 
   @override
@@ -114,16 +114,18 @@ class _AppTextFieldState extends State<AppTextField> {
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray3,
               ),
-              prefixIcon: widget.enablePrefixIcon ? Container(
-                padding: EdgeInsets.only(left: 10),
-                width: 40.w,
-                child: Center(
-                  child: Assets.images.icons.calendarIcon.svg(
-                    color: ColorName.gray2,
-                    height: 16.w,
-                  ),
-                ),
-              ).paddingOnly(top: 2): const SizedBox(),
+              prefixIcon: widget.enablePrefixIcon
+                  ? Container(
+                      padding: EdgeInsets.only(left: 10),
+                      width: 40.w,
+                      child: Center(
+                        child: Assets.images.icons.calendarIcon.svg(
+                          color: ColorName.gray2,
+                          height: 16.w,
+                        ),
+                      ),
+                    ).paddingOnly(top: 2)
+                  : const SizedBox(),
             ),
             obscureText: obscureText,
             keyboardType: widget.textInputType,

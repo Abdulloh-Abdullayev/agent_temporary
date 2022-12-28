@@ -54,7 +54,7 @@ class RemainsPageWidgets {
       Container(
         height: 113.w,
         width: 1.sw,
-        padding:  EdgeInsets.only(
+        padding: EdgeInsets.only(
           top: 19.w,
           left: 20.w,
           right: 20.w,
@@ -284,7 +284,7 @@ class RemainsPageWidgets {
               ),
             ],
           ),
-           SizedBox(
+          SizedBox(
             height: 12.w,
           ),
           Row(
@@ -304,7 +304,7 @@ class RemainsPageWidgets {
               ),
             ],
           ),
-           SizedBox(
+          SizedBox(
             height: 12.w,
           ),
           Row(

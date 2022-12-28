@@ -89,7 +89,8 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                                 save: () {
                                   Modular.to
                                       .pushNamed(OrderFromWidget.routeName);
-                                }, dropdownText: [],
+                                },
+                                dropdownText: [],
                               );
                             },
                           );

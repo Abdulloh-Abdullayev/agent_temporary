@@ -47,7 +47,7 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
           color: ColorName.bgColor,
           child: Column(
             children: [
-              ActWidget.AppBar(
+              ActWidget.appBar(
                 title: "title",
                 firstText: "firstText",
                 buttonText: "buttonText",
@@ -76,125 +76,129 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
                 fontWeight: FontWeight.w600,
                 color: ColorName.button,
               ).marginSymmetric(vertical: 18),
-              Expanded(
-                child: Container(
-                  width: 1.sw,
-                  margin: EdgeInsets.fromLTRB(20, 0, 20, 50),
-                  decoration: BoxDecoration(
-                    color: ColorName.white,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: SingleChildScrollView(
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: DataTable(
-                              columnSpacing: 24,
-                              horizontalMargin: 12,
-                              columns: [
-                                for (var columnTitle in columnTitles)
-                                  ActWidget.dataColumn(
-                                    columnTitle,
-                                    align: columnTitle == columnTitles.last
-                                        ? Alignment.centerRight
-                                        : Alignment.centerLeft,
-                                  ),
-                              ],
-                              rows: [
-                                for (var dataRow in [
-                                  [
-                                    "Основной склад",
-                                    '21.10.2022',
-                                    "5 000",
-                                    'Оплата на заказ',
-                                    '+100 000 000 UZS',
-                                  ],
-                                  [
-                                    "Основной склад",
-                                    '21.10.2022',
-                                    "5 000",
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS',
-                                  ],
-                                  [
-                                    "Основной склад",
-                                    '21.10.2022',
-                                    "5 000",
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS',
-                                  ],
-                                  [
-                                    "Основной склад",
-                                    '21.10.2022',
-                                    "5 000",
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS',
-                                  ],
-                                  [
-                                    "Основной склад",
-                                    '21.10.2022',
-                                    "5 000",
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS',
-                                  ],
-                                  [
-                                    "Основной склад",
-                                    '21.10.2022',
-                                    "5 000",
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS',
-                                  ],
-                                  [
-                                    "Основной склад",
-                                    '21.10.2022',
-                                    "5 000",
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS',
-                                  ],
-                                  [
-                                    "Основной склад",
-                                    '21.10.2022',
-                                    "5 000",
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS',
-                                  ],
-                                  [
-                                    "Основной склад",
-                                    '21.10.2022',
-                                    "5 000",
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS',
-                                  ],
-                                  [
-                                    'Заказ на сумму',
-                                    '',
-                                    "5 000",
-                                    "",
-                                    '100 000 000 UZS',
-                                  ],
-                                  [
-                                    'Оплата на заказ',
-                                    '',
-                                    "5 000",
-                                    '',
-                                    '+100 000 000 UZS'
-                                  ],
-                                  ['Итоговый долг', '', "5 000", '', '-0'],
-                                ])
-                                  ActWidget.dataRow(dataRow),
-                              ],
-                            ),
-                          ),
+              buildTable()
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildTable() {
+    return Expanded(
+      child: Container(
+        width: 1.sw,
+        margin: EdgeInsets.fromLTRB(20, 0, 20, 50),
+        decoration: BoxDecoration(
+          color: ColorName.white,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: DataTable(
+                    columnSpacing: 24,
+                    horizontalMargin: 12,
+                    columns: [
+                      for (var columnTitle in columnTitles)
+                        ActWidget.dataColumn(
+                          columnTitle,
+                          align: columnTitle == columnTitles.last
+                              ? Alignment.centerRight
+                              : Alignment.centerLeft,
                         ),
-                      ),
+                    ],
+                    rows: [
+                      for (var dataRow in [
+                        [
+                          "Основной склад",
+                          '21.10.2022',
+                          "5 000",
+                          'Оплата на заказ',
+                          '+100 000 000 UZS',
+                        ],
+                        [
+                          "Основной склад",
+                          '21.10.2022',
+                          "5 000",
+                          'Оплата на заказ',
+                          '100 000 000 UZS',
+                        ],
+                        [
+                          "Основной склад",
+                          '21.10.2022',
+                          "5 000",
+                          'Оплата на заказ',
+                          '100 000 000 UZS',
+                        ],
+                        [
+                          "Основной склад",
+                          '21.10.2022',
+                          "5 000",
+                          'Оплата на заказ',
+                          '100 000 000 UZS',
+                        ],
+                        [
+                          "Основной склад",
+                          '21.10.2022',
+                          "5 000",
+                          'Оплата на заказ',
+                          '100 000 000 UZS',
+                        ],
+                        [
+                          "Основной склад",
+                          '21.10.2022',
+                          "5 000",
+                          'Оплата на заказ',
+                          '100 000 000 UZS',
+                        ],
+                        [
+                          "Основной склад",
+                          '21.10.2022',
+                          "5 000",
+                          'Оплата на заказ',
+                          '100 000 000 UZS',
+                        ],
+                        [
+                          "Основной склад",
+                          '21.10.2022',
+                          "5 000",
+                          'Оплата на заказ',
+                          '100 000 000 UZS',
+                        ],
+                        [
+                          "Основной склад",
+                          '21.10.2022',
+                          "5 000",
+                          'Оплата на заказ',
+                          '100 000 000 UZS',
+                        ],
+                        [
+                          'Заказ на сумму',
+                          '',
+                          "5 000",
+                          "",
+                          '100 000 000 UZS',
+                        ],
+                        [
+                          'Оплата на заказ',
+                          '',
+                          "5 000",
+                          '',
+                          '+100 000 000 UZS'
+                        ],
+                        ['Итоговый долг', '', "5 000", '', '-0'],
+                      ])
+                        ActWidget.dataRow(dataRow),
                     ],
                   ),
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+          ],
         ),
       ),
     );

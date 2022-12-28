@@ -28,7 +28,9 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
               child: ListView(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(top: 18,),
+                    margin: const EdgeInsets.only(
+                      top: 18,
+                    ),
                     decoration: BoxDecoration(
                       color: ColorName.white,
                       borderRadius: BorderRadius.circular(12),
@@ -89,43 +91,45 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
                           height: 12,
                         ),
                         isShow
-                              ? Container(
-                                  child: AppWidgets.textLocale(
-                                      localeKey:
-                                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-                                      maxLines: 3),
-                                )
-                              : Container(
-                                  child: AppWidgets.textLocale(
-                                      localeKey:
-                                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-                                      maxLines: 100),
-                                ),
-                          GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                isShow = !isShow;
-                                isHide = !isHide;
-                              });
-                            },
-                            child: isHide
-                                ? const Text("more",
-                                    style: TextStyle(
-                                      color: ColorName.button,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      decoration: TextDecoration.underline,
-                                    ),).paddingOnly(bottom: 18)
-                                : const Text(
-                                    "hide",
-                                    style: TextStyle(
-                                      color: ColorName.button,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      decoration: TextDecoration.underline,
-                                    ),
-                                  ).paddingOnly(bottom: 18),
-                          ),
+                            ? Container(
+                                child: AppWidgets.textLocale(
+                                    localeKey:
+                                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+                                    maxLines: 3),
+                              )
+                            : Container(
+                                child: AppWidgets.textLocale(
+                                    localeKey:
+                                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+                                    maxLines: 100),
+                              ),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isShow = !isShow;
+                              isHide = !isHide;
+                            });
+                          },
+                          child: isHide
+                              ? const Text(
+                                  "more",
+                                  style: TextStyle(
+                                    color: ColorName.button,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                ).paddingOnly(bottom: 18)
+                              : const Text(
+                                  "hide",
+                                  style: TextStyle(
+                                    color: ColorName.button,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                ).paddingOnly(bottom: 18),
+                        ),
                       ],
                     ).paddingOnly(
                       top: 18,

@@ -37,10 +37,10 @@ class FilterDebtorsItem extends StatelessWidget {
                 ),
                 child: user.isSelected!
                     ? const Icon(
-                  Icons.check,
-                  color: ColorName.black,
-                  size: 18,
-                )
+                        Icons.check,
+                        color: ColorName.black,
+                        size: 18,
+                      )
                     : const SizedBox(),
               ),
               AppWidgets.textLocale(

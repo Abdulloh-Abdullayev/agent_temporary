@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class DebtorsWidget {
   /// TextStyle
-  static final TextStyle _fontStyle = GoogleFonts.inter(
+  static final TextStyle fontStyle = GoogleFonts.inter(
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
     color: ColorName.white,
@@ -64,7 +64,7 @@ class DebtorsWidget {
     } else if (text.contains("+")) {
       return 1;
     } else if (int.tryParse(
-        text.replaceAll(RegExp(r'([a-z]|[A-Z])|\ *'), "")) !=
+            text.replaceAll(RegExp(r'([a-z]|[A-Z])|\ *'), "")) !=
         null) {
       return 2;
     } else {

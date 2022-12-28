@@ -6,7 +6,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-
 class FloatingShowDialog extends StatelessWidget {
   const FloatingShowDialog({Key? key}) : super(key: key);
 

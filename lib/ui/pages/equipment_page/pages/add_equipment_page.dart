@@ -90,7 +90,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                       ),
                     ),
                     child: Padding(
-                      padding:  EdgeInsets.only(
+                      padding: EdgeInsets.only(
                         top: 24.w,
                         left: 20.w,
                         right: 20.w,
@@ -124,7 +124,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ).marginOnly(
                             top: 18.w,
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 12.w,
                           ),
                           AppInputTextField(
@@ -140,7 +140,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ).marginOnly(
                             top: 18.w,
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 12.w,
                           ),
                           AppInputTextField(
@@ -156,7 +156,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ).marginOnly(
                             top: 18.w,
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 12.w,
                           ),
                           AppInputTextField(
@@ -172,7 +172,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ).marginOnly(
                             top: 18.w,
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 12.w,
                           ),
                           AppInputTextField(
@@ -208,7 +208,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ).marginOnly(
                             top: 18.w,
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 12.w,
                           ),
                           AppInputTextField(
@@ -225,7 +225,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ).marginOnly(
                             top: 18.w,
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 12.w,
                           ),
                           AppInputTextField(
@@ -241,7 +241,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                           ).marginOnly(
                             top: 18.w,
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 12.w,
                           ),
                           AppInputTextField(
@@ -300,21 +300,23 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                               ? Wrap(
                                   children: imagefiles!.map((imageone) {
                                     return Container(
-                                      margin:const EdgeInsets.all(4),
+                                      margin: const EdgeInsets.all(4),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(12),
                                         child: SizedBox(
-                                          
                                           height: 104.w,
                                           width: 100.w,
-                                          child: Image.file(File(imageone.path), fit: BoxFit.cover,),
+                                          child: Image.file(
+                                            File(imageone.path),
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
                                     );
                                   }).toList(),
                                 )
                               : Container(),
-                           SizedBox(
+                          SizedBox(
                             height: 24.w,
                           ),
                         ],

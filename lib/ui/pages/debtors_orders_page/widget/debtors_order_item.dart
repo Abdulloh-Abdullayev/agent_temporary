@@ -15,7 +15,7 @@ class DebtorsOrderItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: () {},
       child: Container(
         decoration: BoxDecoration(
           color: ColorName.white,
@@ -33,12 +33,13 @@ class DebtorsOrderItem extends StatelessWidget {
                       height: 40,
                       width: 40,
                       child: CachedNetworkImage(
-                        imageUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+                        imageUrl:
+                            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
                         fit: BoxFit.cover,
                         placeholder: (context, url) =>
-                        const CupertinoActivityIndicator(),
+                            const CupertinoActivityIndicator(),
                         errorWidget: (context, url, error) =>
-                        const Icon(Icons.error),
+                            const Icon(Icons.error),
                       ),
                     ),
                   ).paddingOnly(right: 12.w),
@@ -46,25 +47,19 @@ class DebtorsOrderItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AppWidgets.textLocale(
-                          localeKey: "Osiyo market",
-                          fontWeight: FontWeight.w400,
-                          color: ColorName.black,
-                          fontSize: 16
-                      ).paddingOnly(bottom: 4.w),
+                              localeKey: "Osiyo market",
+                              fontWeight: FontWeight.w400,
+                              color: ColorName.black,
+                              fontSize: 16)
+                          .paddingOnly(bottom: 4.w),
                       Row(
                         children: [
                           AppWidgets.textLocale(
                               localeKey: "Balance:",
                               fontWeight: FontWeight.w400,
                               color: ColorName.black,
-                              fontSize: 12
-                          ),
-                          false?AppWidgets.textLocale(
-                            localeKey: "+ ${"100 000 000"} USZ",
-                            fontWeight: FontWeight.w400,
-                            color: ColorName.green,
-                            fontSize: 12,
-                          ):AppWidgets.textLocale(
+                              fontSize: 12),
+                          AppWidgets.textLocale(
                             localeKey: " 0",
                             fontWeight: FontWeight.w400,
                             color: ColorName.red,
@@ -74,21 +69,23 @@ class DebtorsOrderItem extends StatelessWidget {
                       )
                     ],
                   ),
-
                 ],
               ),
-              SizedBox(height: 11,),
+              SizedBox(
+                height: 11,
+              ),
               Row(
                 children: [
                   Row(
                     children: [
-                      Assets.images.icons.calendarIcon.svg(color: ColorName.gray, height: 13.w),
+                      Assets.images.icons.calendarIcon
+                          .svg(color: ColorName.gray, height: 13.w),
                       AppWidgets.textLocale(
-                          localeKey: "20.10.2022",
-                          fontWeight: FontWeight.w400,
-                          color: ColorName.black,
-                          fontSize: 12.sp
-                      ).paddingOnly(left: 8.w),
+                              localeKey: "20.10.2022",
+                              fontWeight: FontWeight.w400,
+                              color: ColorName.black,
+                              fontSize: 12.sp)
+                          .paddingOnly(left: 8.w),
                     ],
                   ),
                 ],

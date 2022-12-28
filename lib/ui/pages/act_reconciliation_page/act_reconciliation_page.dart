@@ -26,6 +26,7 @@ class ActReconciliationPageModule extends Module {
 
 class ActReconciliationPage extends StatefulWidget {
   static const String routeName = "/act_reconciliation_page";
+
   const ActReconciliationPage({super.key});
 
   @override
@@ -34,6 +35,7 @@ class ActReconciliationPage extends StatefulWidget {
 
 class _ActReconciliationPageState extends State<ActReconciliationPage> {
   var columnTitles = ["Дата", "Тип", "Сумма"];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -42,9 +44,11 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
           color: ColorName.bgColor,
           child: Column(
             children: [
-              ActWidget.AppBar(
+              ActWidget.appBar(
                 title: "booking",
-                backOnTap: () {},
+                backOnTap: () {
+                  Modular.to.pop();
+                },
                 buttonOnTap: () {},
                 firstDataOnTap: () {},
                 secondDataOnTap: () {},
@@ -60,95 +64,63 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                 fontWeight: FontWeight.w600,
                 color: ColorName.black,
               ).marginSymmetric(vertical: 18),
-              Expanded(
-                child: Container(
-                  width: 1.sw,
-                  margin: EdgeInsets.fromLTRB(20, 0, 20, 50),
-                  decoration: BoxDecoration(
-                    color: ColorName.white,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: SingleChildScrollView(
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: DataTable(
-                              columnSpacing: 24,
-                              horizontalMargin: 12,
-                              columns: [
-                                for (var columnTitle in columnTitles)
-                                  ActWidget.dataColumn(
-                                    columnTitle,
-                                    align: columnTitle == columnTitles.last
-                                        ? Alignment.centerRight
-                                        : Alignment.centerLeft,
-                                  ),
-                              ],
-                              rows: [
-                                for (var dataRow in [
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '+100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  ['Заказ на сумму', '', '100 000 000 UZS'],
-                                  ['Оплата на заказ', '', '+100 000 000 UZS'],
-                                  ['Итоговый долг', '', '-0'],
-                                ])
-                                  ActWidget.dataRow(dataRow),
-                              ],
-                            ),
-                          ),
+              buildTable()
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildTable() {
+    return Expanded(
+      child: Container(
+        width: 1.sw,
+        margin: EdgeInsets.fromLTRB(20, 0, 20, 50),
+        decoration: BoxDecoration(
+          color: ColorName.white,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: DataTable(
+                    columnSpacing: 24,
+                    horizontalMargin: 12,
+                    columns: [
+                      for (var columnTitle in columnTitles)
+                        ActWidget.dataColumn(
+                          columnTitle,
+                          align: columnTitle == columnTitles.last
+                              ? Alignment.centerRight
+                              : Alignment.centerLeft,
                         ),
-                      ),
+                    ],
+                    rows: [
+                      for (var dataRow in [
+                        ['21.10.2022', 'Оплата на заказ', '+100 000 000 UZS'],
+                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
+                        ['Заказ на сумму', '', '100 000 000 UZS'],
+                        ['Оплата на заказ', '', '+100 000 000 UZS'],
+                        ['Итоговый долг', '', '-0'],
+                      ])
+                        ActWidget.dataRow(dataRow),
                     ],
                   ),
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+          ],
         ),
       ),
     );
