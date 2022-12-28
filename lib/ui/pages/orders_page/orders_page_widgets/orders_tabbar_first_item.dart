@@ -72,7 +72,6 @@ class TabbarFirstItem extends StatelessWidget {
                           status: "Новый",
                           bonus: "Бонус",
                           bonusNumber: "8",
-                          statusButtonWidth: 59.w,
                           icon_1: Assets.images.icons.checkIcon
                               .svg(fit: BoxFit.cover, color: ColorName.green),
                           statusColor: Colors.deepPurple.withOpacity(0.2),
@@ -89,7 +88,6 @@ class TabbarFirstItem extends StatelessWidget {
                           status: "Новый",
                           bonus: "Бонус",
                           bonusNumber: "8",
-                          statusButtonWidth: 59.w,
                           icon_1: Assets.images.icons.xIcon
                               .svg(fit: BoxFit.cover, color: ColorName.red),
                           statusColor: Colors.deepPurple.withOpacity(0.2),
