@@ -76,7 +76,7 @@ class TabbarFirstItem extends StatelessWidget {
                               .svg(fit: BoxFit.cover, color: ColorName.green),
                           statusColor: Colors.deepPurple.withOpacity(0.2),
                           statusTextColor: Colors.deepPurple,
-                          card_onTap: () {},
+                          card_onTap: () {}, statusButtonWidth: 100,
                         ).paddingOnly(bottom: 12.w),
                         Cards.cards_4_5(
                           cardId: "ID 1535",
@@ -92,7 +92,7 @@ class TabbarFirstItem extends StatelessWidget {
                               .svg(fit: BoxFit.cover, color: ColorName.red),
                           statusColor: Colors.deepPurple.withOpacity(0.2),
                           statusTextColor: Colors.deepPurple,
-                          card_onTap: () {},
+                          card_onTap: () {}, statusButtonWidth: 100,
                         ),
                       ],
                     )
