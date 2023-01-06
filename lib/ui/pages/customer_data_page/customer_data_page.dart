@@ -128,11 +128,12 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                         ),
                         child: Center(
                           child: AppWidgets.textLocale(
-                              localeKey: "1/10",
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              isRichText: true,
-                              color: ColorName.white),
+                            localeKey: "1/10",
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            isRichText: true,
+                            color: ColorName.white,
+                          ),
                         ),
                       )
                     ],
@@ -144,18 +145,20 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                     ),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: ColorName.white),
+                      borderRadius: BorderRadius.circular(12),
+                      color: ColorName.white,
+                    ),
                     child: Column(
                       children: [
                         Align(
                           alignment: Alignment.centerLeft,
                           child: AppWidgets.textLocale(
-                              localeKey: "Общие данные",
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w500,
-                              color: ColorName.gray3,
-                              isRichText: true),
+                            localeKey: "Общие данные",
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w500,
+                            color: ColorName.gray3,
+                            isRichText: true,
+                          ),
                         ).paddingOnly(bottom: 16.w),
                         rowWidget("Наз. торговой точки", "Osiyo market")
                             .paddingOnly(bottom: 16.w),
@@ -180,18 +183,20 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                     ),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: ColorName.white),
+                      borderRadius: BorderRadius.circular(12),
+                      color: ColorName.white,
+                    ),
                     child: Column(
                       children: [
                         Align(
                           alignment: Alignment.centerLeft,
                           child: AppWidgets.textLocale(
-                              localeKey: "Контактные данные",
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w500,
-                              color: ColorName.gray3,
-                              isRichText: true),
+                            localeKey: "Контактные данные",
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w500,
+                            color: ColorName.gray3,
+                            isRichText: true,
+                          ),
                         ).paddingOnly(bottom: 16.w),
                         rowWidget("Адрес", "Toshkent yunusobod")
                             .paddingOnly(bottom: 16.w),
@@ -211,9 +216,11 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                         rowWidget("Дни посещения", "ПН. ВТ. СР")
                             .paddingOnly(bottom: 16.w, top: 16.w),
                         const Divider(),
-                        rowWidget("Местоположения", "Посмотреть на карте",
-                                ColorName.button)
-                            .paddingOnly(bottom: 16.w, top: 16.w),
+                        rowWidget(
+                          "Местоположения",
+                          "Посмотреть на карте",
+                          ColorName.button,
+                        ).paddingOnly(bottom: 16.w, top: 16.w),
                       ],
                     ).paddingSymmetric(horizontal: 20.w, vertical: 18.w),
                   ),

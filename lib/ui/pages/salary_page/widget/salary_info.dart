@@ -31,7 +31,7 @@ class SalaryInfoWidget extends StatelessWidget {
           border: Border.all(
             color: ColorName.gray,
             width: 1.w,
-          )),
+          ),),
       child: Column(
         children: [
           Text(

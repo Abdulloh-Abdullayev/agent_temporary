@@ -91,12 +91,12 @@ class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: AppWidgets.textLocale(
-                                localeKey: "Редактрирование заказа",
-                                fontSize: 24.sp,
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.white,
-                                isRichText: true)
-                            .paddingOnly(top: 18.w, left: 20),
+                          localeKey: "Редактрирование заказа",
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.white,
+                          isRichText: true,
+                        ).paddingOnly(top: 18.w, left: 20),
                       )
                     ],
                   ),
