@@ -85,7 +85,7 @@ class ReportsPage extends StatelessWidget {
     return Column(
       children: [
         AppWidgets.textLocale(
-          localeKey: "План факт прогноз",
+          localeKey: LocaleKeys.plan_fact_forecast,
           fontWeight: FontWeight.w500,
           fontSize: 20.sp,
         ).paddingOnly(top: 24.w, bottom: 16.w),
@@ -95,14 +95,14 @@ class ReportsPage extends StatelessWidget {
             Widgets.showData(
               width: 104.w,
               count: "143%",
-              title: "Факт",
+              title: LocaleKeys.fact.tr(),
               color: ColorName.white,
             ),
             const SizedBox(width: 8),
             Widgets.showData(
               width: 104.w,
               count: "143%",
-              title: "Прогноз",
+              title: LocaleKeys.forecast.tr(),
               color: ColorName.white,
             ),
           ],
@@ -128,7 +128,7 @@ class ReportsPage extends StatelessWidget {
             Expanded(
               child: Widgets.showCount(
                 count: 120000,
-                title: "АКБ",
+                title: LocaleKeys.akb.tr(),
                 color: ColorName.blue,
               ),
             ),
@@ -140,7 +140,7 @@ class ReportsPage extends StatelessWidget {
             Expanded(
               child: Widgets.showCount(
                 count: 120000,
-                title: "Общее кол-во ",
+                title: LocaleKeys.total_qty.tr(),
                 withOpacity: 0.1,
                 color: ColorName.green2,
               ),
@@ -149,7 +149,7 @@ class ReportsPage extends StatelessWidget {
             Expanded(
               child: Widgets.showCount(
                 count: 120000,
-                title: "Общий обьем",
+                title: LocaleKeys.total_volume.tr(),
                 color: ColorName.blue,
               ),
             ),
@@ -172,14 +172,14 @@ class ReportsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppWidgets.textLocale(
-            localeKey: "Отчёты",
+            localeKey: LocaleKeys.reports,
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,
           ).paddingOnly(top: 30.w, bottom: 18.w),
           AppInputDate(
-            firstText: "Выберите дату",
-            dropDownText: "Текущий месяц >",
+            firstText: LocaleKeys.select_date.tr(),
+            dropDownText: LocaleKeys.current_month.tr(),
             firstDate: "С",
             secondDate: "По",
             dateBackColor: ColorName.gray.withOpacity(0.15),
@@ -191,9 +191,9 @@ class ReportsPage extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (context) => DateTimeDialog(
-                  title: 'Выбрать',
-                  closeTitle: 'Закрыть',
-                  addTitle: 'Добавить',
+                  title: LocaleKeys.select.tr(),
+                  closeTitle: LocaleKeys.close.tr(),
+                  addTitle: LocaleKeys.add.tr(),
                   addTap: (DateTime time) {
                     // print("time");
                   },
@@ -205,9 +205,9 @@ class ReportsPage extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (context) => DateTimeDialog(
-                  title: 'Выбрать',
-                  closeTitle: 'Закрыть',
-                  addTitle: 'Добавить',
+                  title: LocaleKeys.select.tr(),
+                  closeTitle: LocaleKeys.close.tr(),
+                  addTitle: LocaleKeys.add.tr(),
                   addTap: (DateTime time) {
                     // print("time");
                   },
@@ -217,7 +217,7 @@ class ReportsPage extends StatelessWidget {
             iconColor: Colors.white,
           ),
           AppButton(
-            text: "Применить",
+            text: LocaleKeys.apply.tr(),
             onPressed: () {},
             width: 1.sw,
             textColor: Colors.white,

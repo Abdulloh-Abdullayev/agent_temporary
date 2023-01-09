@@ -102,8 +102,8 @@ class ReturnItemWidget extends StatelessWidget {
                         LocaleKeys.edit.tr(),
                         LocaleKeys.comments_to_order.tr(),
                         LocaleKeys.shipping_date.tr(),
-                        "Срок Консигнация",
-                        "Закрепить фото",
+                        LocaleKeys.term_consignment.tr(),
+                        LocaleKeys.pin_photo.tr(),
                         LocaleKeys.cancel.tr(),
                       ],
                       icons: [
@@ -138,7 +138,7 @@ class ReturnItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Обьем  //15//",
+                    localeKey: "${LocaleKeys.volume.tr()}  //15//",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
@@ -151,7 +151,7 @@ class ReturnItemWidget extends StatelessWidget {
                     ],
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Обьем  //15//",
+                    localeKey: "${LocaleKeys.volume.tr()}  //15//",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
@@ -164,7 +164,7 @@ class ReturnItemWidget extends StatelessWidget {
                     ],
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Сумма  //150 000 000//",
+                    localeKey: "${LocaleKeys.amount.tr()}  //150 000 000//",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w500,
@@ -184,7 +184,7 @@ class ReturnItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Причина  //Товар не продается //",
+                    localeKey: "${LocaleKeys.cause.tr()}  //Товар не продается //",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
@@ -202,7 +202,7 @@ class ReturnItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Дата отгрузки //15.10.2022//",
+                    localeKey: "${LocaleKeys.shipping_date.tr()} //15.10.2022//",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,

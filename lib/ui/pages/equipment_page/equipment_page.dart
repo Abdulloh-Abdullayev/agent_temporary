@@ -62,14 +62,14 @@ class EquipmentPage extends StatelessWidget {
                       ),
                       AppWidgets.textLocale(
                         textAlign: TextAlign.center,
-                        localeKey: "Пока что ничего не \nнайдено",
+                        localeKey: LocaleKeys.nothing_found_yet,
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       ),
                     ],
                   ),
                   AppButton(
-                    text: "Добавить оборудование",
+                    text: LocaleKeys.adding_hardware,
                     splashColor: ColorName.button,
                     onPressed: () {
                       Modular.to.pushNamed(AddEquipmentPage.routeName);

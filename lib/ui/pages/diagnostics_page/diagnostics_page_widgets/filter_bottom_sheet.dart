@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/chekbox_widget.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/listview_widget.dart';
@@ -28,7 +29,6 @@ class FilterBottomSheet extends StatelessWidget {
           SingleChildScrollView(
             child: Column(
               children: [
-
                 InkWell(
                   autofocus: false,
                   child: Container(
@@ -42,78 +42,66 @@ class FilterBottomSheet extends StatelessWidget {
                     Modular.to.pop(context);
                   },
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                      localeKey: "Фильтр",
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ColorName.black,
-                      isRichText: true
-                    ),
-
+                        localeKey: LocaleKeys.debtors,
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w600,
+                        color: ColorName.black,
+                        isRichText: true),
                     AppWidgets.textLocale(
-                        localeKey: "Сброс фильтра",
+                        localeKey: LocaleKeys.reset_filter,
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
                         color: ColorName.red,
-                        isRichText: true
-                    )
+                        isRichText: true)
                   ],
                 ).paddingOnly(top: 28.w),
-
                 Align(
                   alignment: Alignment.centerLeft,
                   child: AppWidgets.textLocale(
-                      localeKey: "Напитки",
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ColorName.black,
-                      isRichText: true
-                  ).paddingOnly(top: 24.w,bottom: 17.w),
+                          localeKey: "Напитки",
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                          isRichText: true)
+                      .paddingOnly(top: 24.w, bottom: 17.w),
                 ),
-
                 listview_widget(const ChekBoxWidget(), 5),
-
                 Align(
                   alignment: Alignment.centerLeft,
                   child: AppWidgets.textLocale(
-                      localeKey: "Напитки",
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ColorName.black,
-                      isRichText: true
-                  ).paddingOnly(top: 24.w,bottom: 17.w),
+                          localeKey: "Напитки",
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                          isRichText: true)
+                      .paddingOnly(top: 24.w, bottom: 17.w),
                 ),
-
                 listview_widget(const ChekBoxWidget(), 5),
-
                 Align(
                   alignment: Alignment.centerLeft,
                   child: AppWidgets.textLocale(
-                      localeKey: "Напитки",
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ColorName.black,
-                      isRichText: true
-                  ).paddingOnly(top: 24.w,bottom: 17.w),
+                          localeKey: "Напитки",
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                          isRichText: true)
+                      .paddingOnly(top: 24.w, bottom: 17.w),
                 ),
-
                 listview_widget(const ChekBoxWidget(), 5),
-
                 Align(
                   alignment: Alignment.centerLeft,
                   child: AppWidgets.textLocale(
-                      localeKey: "Напитки",
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ColorName.black,
-                      isRichText: true
-                  ).paddingOnly(top: 24.w,bottom: 17.w),
+                          localeKey: "Напитки",
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                          isRichText: true)
+                      .paddingOnly(top: 24.w, bottom: 17.w),
                 ),
-
                 listview_widget(const ChekBoxWidget(), 5),
               ],
             ).paddingSymmetric(horizontal: 20.w),

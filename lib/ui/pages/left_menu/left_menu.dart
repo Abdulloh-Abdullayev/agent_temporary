@@ -93,7 +93,7 @@ class LeftMenuPage extends StatelessWidget {
                                     color: ColorName.white,
                                   ).paddingOnly(bottom: 4.w),
                                   AppWidgets.text(
-                                    text: "Сервер: Distr",
+                                    text: "${LocaleKeys.server.tr()}: Distr",
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.w400,
                                     color: ColorName.white.withOpacity(0.5),
@@ -165,7 +165,7 @@ class LeftMenuPage extends StatelessWidget {
                 ),
                 buildMenus(context),
                 AppWidgets.textLocale(
-                  localeKey: "Версия 12.3.8.7",
+                  localeKey: "${LocaleKeys.version.tr()} 12.3.8.7",
                   color: ColorName.white.withOpacity(0.3),
                 ).paddingOnly(
                   top: 30.w,

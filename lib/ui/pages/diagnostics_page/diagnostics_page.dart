@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/tabbar_third_widget.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/table_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -50,7 +52,7 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
   void initState() {
     _controller = TabController(length: 3, vsync: this);
     _controller.addListener(_handleTabSelection);
-    scrollController =ScrollController();
+    scrollController = ScrollController();
     super.initState();
   }
 
@@ -89,9 +91,10 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                             isDismissible: false,
                             isScrollControlled: true,
                             shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.vertical(
-                                  top: Radius.circular(12),
-                                )),
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(12),
+                              ),
+                            ),
                             context: context,
                             builder: (context) {
                               return const FilterBottomSheet();
@@ -107,7 +110,7 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                     Align(
                       alignment: Alignment.centerLeft,
                       child: AppWidgets.textLocale(
-                              localeKey: "Диагностика",
+                              localeKey: LocaleKeys.diagnostics,
                               fontSize: 20.sp,
                               fontWeight: FontWeight.w500,
                               color: ColorName.white,
@@ -122,30 +125,30 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                   Row(
                     children: [
                       Widgets.showData(
-                          count: "28",
-                          title: "Всего дней",
-                          color: ColorName.white),
-                      SizedBox(
-                        width: 12.w,
+                        count: "28",
+                        title: LocaleKeys.total_days,
+                        color: ColorName.white,
                       ),
-                      Widgets.showData(
-                          count: "28",
-                          title: "Отработано",
-                          color: ColorName.white),
                       SizedBox(
                         width: 12.w,
                       ),
                       Widgets.showData(
                         count: "28",
-                        title: "Осталось",
+                        title: LocaleKeys.worked_out,
+                        color: ColorName.white,
+                      ),
+                      SizedBox(
+                        width: 12.w,
+                      ),
+                      Widgets.showData(
+                        count: "28",
+                        title: LocaleKeys.left,
                         color: ColorName.white,
                       ),
                     ],
                   ).paddingOnly(bottom: 24.w),
-                  DiagnosticTabBarWidget(
-                      _controller,
-                      "Объем", "Strike", "Акб",
-                          (int i) {
+                  DiagnosticTabBarWidget(_controller, LocaleKeys.size.tr(),
+                      LocaleKeys.strike.tr(), LocaleKeys.akb.tr(), (int i) {
                     if (i == 0) {
                     } else if (i == 1) {
                     } else {}
@@ -158,7 +161,6 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                     ][_controller.index],
                   ).paddingOnly(bottom: 24.w),
                   const TableDio(),
-
                 ],
               ).paddingSymmetric(horizontal: 20.w)
             ],
@@ -168,4 +170,3 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
     );
   }
 }
-

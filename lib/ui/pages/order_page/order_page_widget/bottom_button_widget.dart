@@ -1,3 +1,4 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class BottomButtonWidget extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8)),
               child: AppWidgets.textLocale(
-                  localeKey: "Добавить заказ",
+                  localeKey: LocaleKeys.add_order,
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   color: ColorName.white,

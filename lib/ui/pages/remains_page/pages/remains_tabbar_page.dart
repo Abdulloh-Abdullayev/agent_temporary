@@ -28,7 +28,7 @@ class RemainsTabbarPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общая объем",
+                      localeKey: LocaleKeys.total_volume,
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
                       color: ColorName.gray2,
@@ -84,7 +84,7 @@ class RemainsTabbarPage extends StatelessWidget {
             (index) => Container(
               margin: EdgeInsets.only(bottom: 11.w),
               child: Cards.cards_2(
-                name: "Заказ в",
+                name: LocaleKeys.order_in.tr(),
                 time: "17:18",
                 icon: PopupMenuTools(
                   onTap: (p0) {
@@ -121,13 +121,13 @@ class RemainsTabbarPage extends StatelessWidget {
                     ColorName.red,
                   ],
                 ),
-                nalichniy: "spot",
+                nalichniy: LocaleKeys.spot.tr(),
                 bezbonus: "noBonus",
-                obem: "volume",
+                obem: LocaleKeys.volume,
                 obemNumber: "15",
-                soni: "count",
+                soni: LocaleKeys.qty.tr(),
                 soniNumber: "325",
-                summa: "summa",
+                summa: LocaleKeys.amount.tr(),
                 summaNumber: "150 000 000",
                 dostavlen: '',
                 context: context,

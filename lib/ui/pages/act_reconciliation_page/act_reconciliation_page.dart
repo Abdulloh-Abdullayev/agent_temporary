@@ -35,7 +35,11 @@ class ActReconciliationPage extends StatefulWidget {
 }
 
 class _ActReconciliationPageState extends State<ActReconciliationPage> {
-  var columnTitles = ["Дата", "Тип", LocaleKeys.amount.tr()];
+  var columnTitles = [
+    LocaleKeys.data.tr(),
+    LocaleKeys.type.tr(),
+    LocaleKeys.amount.tr()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +57,7 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                 secondDataOnTap: () {},
                 dropDownText: "dropDownText",
                 firstText: "firstText",
-                buttonText: "Применить",
+                buttonText: LocaleKeys.apply.tr(),
                 firstDate: "01.02.2022",
                 secondDate: "18.02.2022",
               ),

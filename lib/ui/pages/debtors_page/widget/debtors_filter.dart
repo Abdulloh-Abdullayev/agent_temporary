@@ -41,14 +41,14 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Фильтр",
+                        localeKey: LocaleKeys.debtors,
                         fontWeight: FontWeight.w600,
                         fontSize: 20.sp,
                       ),
                       TextButton(
                         onPressed: () {},
                         child: AppWidgets.textLocale(
-                          localeKey: "Сброс фильтра",
+                          localeKey: LocaleKeys.reset_filter,
                           color: ColorName.red,
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
@@ -60,13 +60,13 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Выберите дату",
+                        localeKey: LocaleKeys.select_date,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: ColorName.gray3,
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Текущий месяц",
+                        localeKey: LocaleKeys.current_month,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: ColorName.button,
@@ -84,7 +84,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     height: 40.w,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Выберите территорию",
+                    localeKey: LocaleKeys.choose_territory,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: ColorName.gray3,
@@ -95,7 +95,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                       'sddf',
                       'dcsdfsdvsd',
                     ],
-                    title: "Доставлён",
+                    title: LocaleKeys.delivered.tr(),
                     onChange: (s) {
                       AppLoggerUtil.w("$s");
                     },
@@ -114,7 +114,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                       'sddf',
                       'dcsdfsdvsd',
                     ],
-                    title: "Доставлён",
+                    title: LocaleKeys.delivered.tr(),
                     onChange: (s) {
                       AppLoggerUtil.w("$s");
                     },
@@ -126,7 +126,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
             ),
           ),
           AppWidgets.appButton(
-            title: "Применить",
+            title: LocaleKeys.apply.tr(),
             onTap: () {
               Modular.to.pushNamed(DebtorsHistory.routeName);
             },

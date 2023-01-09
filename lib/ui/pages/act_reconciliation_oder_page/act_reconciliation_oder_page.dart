@@ -7,6 +7,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:logger/logger.dart';
 
 import '../../../core/utils/colors.gen.dart';
 
@@ -40,10 +41,10 @@ class ActReconciliationOderPage extends StatefulWidget {
 class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
   var columnTitles = [
     LocaleKeys.stock.tr(),
-    "Дата",
+    LocaleKeys.data.tr(),
     "Долг",
     "Оплачено",
-    "Осталось"
+    LocaleKeys.left.tr()
   ];
 
   @override

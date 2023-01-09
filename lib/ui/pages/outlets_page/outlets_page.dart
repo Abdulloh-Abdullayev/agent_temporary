@@ -4,7 +4,6 @@ import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
-import 'package:agent/ui/pages/outlets_page/outlets_map_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +27,9 @@ class OutletsPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppWidgets.textLocale(localeKey: "Фильтр"),
+                  AppWidgets.textLocale(
+                    localeKey: LocaleKeys.debtors,
+                  ),
                   DropDown(
                     items: const [
                       'dcsdvsd',

@@ -29,155 +29,156 @@ class ExchangePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-      backgroundColor: ColorName.bgColor,
-      body: Stack(
-        children: [
-          ListView(
-            // crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 1.sw,
-                decoration: BoxDecoration(
-                  color: ColorName.primaryColor,
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(12.r),
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        AppWidgets.backButton(
-                          () {
-                            Modular.to.pop();
-                          },
-                        ),
-                        Row(
-                          children: [
-                            AppWidgets.iconButton(
-                              onPressed: () {},
-                              icon: Assets.images.icons.search1,
-                            ).paddingOnly(right: 12.w),
-                            AppWidgets.iconButton(
-                              onPressed: () {},
-                              icon: Assets.images.icons.filter,
-                            )
-                          ],
-                        ),
-                      ],
+      child: Scaffold(
+        backgroundColor: ColorName.bgColor,
+        body: Stack(
+          children: [
+            ListView(
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 1.sw,
+                  decoration: BoxDecoration(
+                    color: ColorName.primaryColor,
+                    borderRadius: BorderRadius.vertical(
+                      bottom: Radius.circular(12.r),
                     ),
-                    AppWidgets.textLocale(
-                      localeKey: "Обмен товара",
-                      color: ColorName.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 24.sp,
-                    ).paddingOnly(
-                      top: 18.w,
-                      bottom: 4.w,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          AppWidgets.backButton(
+                            () {
+                              Modular.to.pop();
+                            },
+                          ),
+                          Row(
+                            children: [
+                              AppWidgets.iconButton(
+                                onPressed: () {},
+                                icon: Assets.images.icons.search1,
+                              ).paddingOnly(right: 12.w),
+                              AppWidgets.iconButton(
+                                onPressed: () {},
+                                icon: Assets.images.icons.filter,
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      AppWidgets.textLocale(
+                        localeKey: LocaleKeys.product_exchange,
+                        color: ColorName.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 24.sp,
+                      ).paddingOnly(
+                        top: 18.w,
+                        bottom: 4.w,
+                      ),
+                    ],
+                  ).paddingAll(20.w),
+                ),
+                Container(
+                  width: 1.sw,
+                  decoration: BoxDecoration(
+                    color: ColorName.white,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(8.r),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          AppWidgets.textLocale(
+                            localeKey: "Напитки",
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          Assets.images.icons.arrowDown.svg(),
+                        ],
+                      ).paddingOnly(
+                        top: 20.w,
+                        bottom: 15.w,
+                      ),
+                      ListView.builder(
+                        physics: const BouncingScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: 8,
+                        controller: controller,
+                        itemBuilder: (context, index) {
+                          return Cards.cards_8(
+                            name: "Coca cola 1.5",
+                            summa: LocaleKeys.amount.tr(),
+                            summaNumber: "100 000",
+                            blok: LocaleKeys.block.tr(),
+                            blokNumber: "1",
+                            sht: LocaleKeys.pc.tr(),
+                            context: context,
+                            shtNumber: "1",
+                            image: "image",
+                            blokRemove: () {},
+                            blokAdd: () {},
+                            shtRemove: () {},
+                            shtAdd: () {},
+                            icon: Assets.images.icons.clock
+                                .svg(color: ColorName.button),
+                          ).paddingOnly(bottom: 12.w);
+                        },
+                      ),
+                    ],
+                  ).paddingSymmetric(horizontal: 20.w),
+                ).paddingOnly(
+                  top: 18.w,
+                  bottom: 80.w,
+                ),
+              ],
+            ),
+            Positioned(
+              bottom: 0,
+              child: Container(
+                width: 1.sw,
+                decoration: const BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0, -4),
+                      blurRadius: 4,
+                      color: Color(0x0A000000),
                     ),
                   ],
-                ).paddingAll(20.w),
-              ),
-              Container(
-                width: 1.sw,
-                decoration: BoxDecoration(
                   color: ColorName.white,
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(8.r),
-                  ),
                 ),
-                child: Column(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        AppWidgets.textLocale(
-                          localeKey: "Напитки",
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        Assets.images.icons.arrowDown.svg(),
-                      ],
-                    ).paddingOnly(
-                      top: 20.w,
-                      bottom: 15.w,
+                    AppWidgets.appButton(
+                      width: 150,
+                      title: LocaleKeys.draft.tr(),
+                      onTap: () {},
+                      color: ColorName.gray,
+                      textColor: ColorName.mainColor,
                     ),
-                    ListView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: 8,
-                      controller: controller,
-                      itemBuilder: (context, index) {
-                        return Cards.cards_8(
-                          name: "Coca cola 1.5",
-                          summa: LocaleKeys.amount.tr(),
-                          summaNumber: "100 000",
-                          blok: "Блок",
-                          blokNumber: "1",
-                          sht: "Шт",
-                          context: context,
-                          shtNumber: "1",
-                          image: "image",
-                          blokRemove: () {},
-                          blokAdd: () {},
-                          shtRemove: () {},
-                          shtAdd: () {},
-                          icon: Assets.images.icons.clock
-                              .svg(color: ColorName.button),
-                        ).paddingOnly(bottom: 12.w);
+                    AppWidgets.appButton(
+                      width: 150,
+                      title: LocaleKeys.continue_c.tr(),
+                      onTap: () {
+                        Modular.to.pushNamed(NextExchangeWidget.routeName);
                       },
                     ),
                   ],
-                ).paddingSymmetric(horizontal: 20.w),
-              ).paddingOnly(
-                top: 18.w,
-                bottom: 80.w,
-              ),
-            ],
-          ),
-          Positioned(
-            bottom: 0,
-            child: Container(
-              width: 1.sw,
-              decoration: const BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, -4),
-                    blurRadius: 4,
-                    color: Color(0x0A000000),
-                  ),
-                ],
-                color: ColorName.white,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  AppWidgets.appButton(
-                    width: 150,
-                    title: LocaleKeys.draft.tr(),
-                    onTap: () {},
-                    color: ColorName.gray,
-                    textColor: ColorName.mainColor,
-                  ),
-                  AppWidgets.appButton(
-                    width: 150,
-                    title: "Продолжить",
-                    onTap: () {
-                      Modular.to.pushNamed(NextExchangeWidget.routeName);
-                    },
-                  ),
-                ],
-              ).paddingSymmetric(
-                horizontal: 20.w,
-                vertical: 15.w,
+                ).paddingSymmetric(
+                  horizontal: 20.w,
+                  vertical: 15.w,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

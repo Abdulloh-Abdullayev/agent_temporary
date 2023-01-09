@@ -1,5 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/mark_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,7 +35,7 @@ class TabbarFirstWidget extends StatelessWidget {
                                 color: ColorName.black)
                             .paddingOnly(bottom: 4.w),
                         AppWidgets.textLocale(
-                            localeKey: "План",
+                            localeKey: LocaleKeys.plan,
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                             isRichText: true,
@@ -79,7 +81,7 @@ class TabbarFirstWidget extends StatelessWidget {
                                 color: ColorName.black)
                             .paddingOnly(bottom: 4.w),
                         AppWidgets.textLocale(
-                            localeKey: "В день",
+                            localeKey: LocaleKeys.in_a_day,
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                             isRichText: true,
@@ -106,22 +108,26 @@ class TabbarFirstWidget extends StatelessWidget {
             ),
           ],
         ),
-         Padding(
+        Padding(
           padding: EdgeInsets.only(top: 52.w),
-          child: const Divider(color: ColorName.gray2,),
+          child: const Divider(
+            color: ColorName.gray2,
+          ),
         ),
         MarkWidget(
-          text: "Факт",
+          text: LocaleKeys.fact.tr(),
           ptop: 60.w,
           pleft: 120,
           width: 76.w,
         ),
-         Padding(
+        Padding(
           padding: EdgeInsets.only(top: 110.w),
-          child: const Divider(color: ColorName.gray2,),
+          child: const Divider(
+            color: ColorName.gray2,
+          ),
         ),
         MarkWidget(
-          text: "Прогноз",
+          text: LocaleKeys.forecast.tr(),
           ptop: 118.w,
           pleft: 105,
           width: 108.w,

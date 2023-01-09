@@ -63,7 +63,7 @@ class BottomButtonsShelfWidget extends StatelessWidget {
                     height: 45.w,
                     //padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: AppButton(
-                      text: "Продолжить",
+                      text: LocaleKeys.continue_c.tr(),
                       textSize: 14,
                       textColor: ColorName.white,
                       color: ColorName.button,
@@ -80,9 +80,9 @@ class BottomButtonsShelfWidget extends StatelessWidget {
                           context: context,
                           builder: (context) {
                             return DateTimeDialog(
-                              title: 'Добавить срок годности',
-                              closeTitle: 'Закрыть',
-                              addTitle: 'Добавить',
+                              title: LocaleKeys.add_expiration_date.tr(),
+                              closeTitle: LocaleKeys.close.tr(),
+                              addTitle: LocaleKeys.add.tr(),
                               addTap: () {},
                             );
                           },

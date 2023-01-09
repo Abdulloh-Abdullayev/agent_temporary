@@ -37,7 +37,7 @@ class EquipmentDetails extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "Тип",
+                              localeKey: LocaleKeys.type,
                               fontSize: 14,
                               color: ColorName.gray2,
                             ),
@@ -59,7 +59,7 @@ class EquipmentDetails extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "Дата прикрепления",
+                              localeKey: LocaleKeys.attachment_date,
                               fontSize: 14,
                               color: ColorName.gray2,
                             ),
@@ -75,7 +75,7 @@ class EquipmentDetails extends StatelessWidget {
                           color: ColorName.gray,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: "Комментарии",
+                          localeKey: LocaleKeys.comment,
                           fontSize: 14,
                           color: ColorName.gray2,
                         ),
@@ -107,7 +107,7 @@ class EquipmentDetails extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AppWidgets.textLocale(
-                          localeKey: "О оборудования",
+                          localeKey: LocaleKeys.about_equipment,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
@@ -118,7 +118,7 @@ class EquipmentDetails extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "Серийный номер",
+                              localeKey: LocaleKeys.serial_number,
                               fontSize: 14,
                               color: ColorName.gray2,
                             ),
@@ -140,7 +140,7 @@ class EquipmentDetails extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "Инвертарный номер",
+                              localeKey: LocaleKeys.invert_number,
                               fontSize: 14,
                               color: ColorName.gray2,
                             ),
@@ -159,7 +159,7 @@ class EquipmentDetails extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "Состояние",
+                              localeKey: LocaleKeys.state,
                               fontSize: 14,
                               color: ColorName.gray2,
                             ),
@@ -178,7 +178,7 @@ class EquipmentDetails extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "Дата производтсво",
+                              localeKey: LocaleKeys.production_date,
                               fontSize: 14,
                               color: ColorName.gray2,
                             ),

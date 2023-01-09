@@ -4,6 +4,7 @@ import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/history_orders/widgets/order_from_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,18 +80,20 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                             context: context,
                             backgroundColor: Colors.transparent,
                             builder: (context) {
-                              return PurchaseHistorySheet(
-                                text: 'Фильтр',
-                                height: 900,
-                                firstDate: '',
-                                secondDate: '',
-                                firstMoneyStatus: '',
-                                secondMoneyStatus: '',
-                                dropdownText: [],
-                                save: () {
-                                  Modular.to
-                                      .pushNamed(OrderFromWidget.routeName);
-                                },
+                              return SingleChildScrollView(
+                                child: PurchaseHistorySheet(
+                                  text: LocaleKeys.filter.tr(),
+                                  height: 900,
+                                  firstDate: '',
+                                  secondDate: '',
+                                  firstMoneyStatus: '',
+                                  secondMoneyStatus: '',
+                                  dropdownText: [],
+                                  save: () {
+                                    Modular.to
+                                        .pushNamed(OrderFromWidget.routeName);
+                                  },
+                                ),
                               );
                             },
                           );
@@ -116,7 +119,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                     vertical: 20,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "История заказов",
+                    localeKey: LocaleKeys.history_of_orders,
                     fontSize: 24.sp,
                     color: ColorName.white,
                     fontWeight: FontWeight.w600,
@@ -127,7 +130,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                   AppTabBar(
                     tabController: tabController,
                     isScrollable: true,
-                    tabTitle: const ["Заказы", "Топ"],
+                    tabTitle:  [LocaleKeys.orders.tr(), LocaleKeys.top.tr()],
                     onTap: (i) {
                       pageController.animateToPage(
                         i,
@@ -188,7 +191,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                       borderRadius: BorderRadius.circular(8.r),
                     ),
                     child: AppWidgets.textLocale(
-                      localeKey: "Доставлен",
+                      localeKey: LocaleKeys.delivered,
                       color: ColorName.green,
                       fontSize: 12.sp,
                     ).paddingSymmetric(
@@ -216,7 +219,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                     ],
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Начисления",
+                    localeKey: LocaleKeys.accruals,
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                   ),

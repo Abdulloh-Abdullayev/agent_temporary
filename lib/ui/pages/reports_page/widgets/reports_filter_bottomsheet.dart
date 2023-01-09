@@ -40,14 +40,14 @@ class ReportsFilterBottomSheet extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Фильтр",
+                        localeKey: LocaleKeys.debtors,
                         fontWeight: FontWeight.w600,
                         fontSize: 20.sp,
                       ),
                       TextButton(
                         onPressed: () {},
                         child: AppWidgets.textLocale(
-                          localeKey: "Сброс фильтра",
+                          localeKey: LocaleKeys.reset_filter,
                           color: ColorName.red,
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
@@ -60,7 +60,7 @@ class ReportsFilterBottomSheet extends StatelessWidget {
                     onChanged: (int v) {},
                   ).paddingOnly(top: 12.w),
                   AppWidgets.textLocale(
-                    localeKey: "Статус заказа",
+                    localeKey: LocaleKeys.order_status,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: ColorName.gray3,
@@ -71,7 +71,7 @@ class ReportsFilterBottomSheet extends StatelessWidget {
                       'sddf',
                       'dcsdfsdvsd',
                     ],
-                    title: "Доставлён",
+                    title: LocaleKeys.delivered.tr(),
                     onChange: (s) {
                       AppLoggerUtil.w("$s");
                     },

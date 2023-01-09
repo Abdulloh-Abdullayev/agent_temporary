@@ -124,7 +124,8 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                                     fontWeight: FontWeight.w400,
                                     isRichText: true),
                                 AppWidgets.textLocale(
-                                    localeKey: "Визиты:  Пн, Ср, Сб",
+                                    localeKey:
+                                        "${LocaleKeys.visits.tr()}:  Пн, Ср, Сб",
                                     fontSize: 12.sp,
                                     color: ColorName.gray2,
                                     fontWeight: FontWeight.w400,
@@ -134,7 +135,8 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "Teritoriya  : ",
+                                    localeKey:
+                                        "${LocaleKeys.territory.tr()} : ",
                                     fontSize: 12.sp,
                                     color: ColorName.gray2,
                                     fontWeight: FontWeight.w400,
@@ -150,7 +152,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "Задолженности : ",
+                                    localeKey: "${LocaleKeys.debts.tr()} : ",
                                     fontSize: 12.sp,
                                     color: ColorName.gray2,
                                     fontWeight: FontWeight.w400,
@@ -178,9 +180,9 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                           children: [
                             OrderTabbarWidget(
                                 _controller,
-                                "Заказы",
+                                LocaleKeys.orders.tr(),
                                 LocaleKeys.photo_report.tr(),
-                                "Возврат", (int i) {
+                                LocaleKeys.return_.tr(), (int i) {
                               if (i == 0) {
                               } else if (i == 1) {
                               } else {}
@@ -200,10 +202,11 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                     ],
                   ).paddingOnly(bottom: 60.w),
                   Positioned(
-                      top: 70.w,
-                      right: 0,
-                      left: 0,
-                      child: MarketImage(image: "assets/images/market.png")),
+                    top: 70.w,
+                    right: 0,
+                    left: 0,
+                    child: MarketImage(image: "assets/images/market.png"),
+                  ),
                 ],
               ),
             ),

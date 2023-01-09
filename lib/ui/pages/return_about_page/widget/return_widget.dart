@@ -192,10 +192,10 @@ class ReturnWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              textBuilder("Обьем", "15"),
-              textBuilder("Обьем", "15"),
+              textBuilder(LocaleKeys.volume.tr(), "15"),
+              textBuilder(LocaleKeys.volume.tr(), "15"),
               textBuilder(
-                "Обьем",
+                LocaleKeys.volume.tr(),
                 "100 000 00",
                 color: ColorName.button,
               ),

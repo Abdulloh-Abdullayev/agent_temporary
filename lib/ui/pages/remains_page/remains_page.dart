@@ -92,7 +92,8 @@ class _RemainsPageState extends State<RemainsPage> {
                                     fontWeight: FontWeight.w400,
                                     isRichText: true),
                                 AppWidgets.textLocale(
-                                    localeKey: "Визиты:  Пн, Ср, Сб",
+                                    localeKey:
+                                        "${LocaleKeys.visits.tr()}:  Пн, Ср, Сб",
                                     fontSize: 12.sp,
                                     color: ColorName.gray2,
                                     fontWeight: FontWeight.w400,
@@ -102,7 +103,8 @@ class _RemainsPageState extends State<RemainsPage> {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "${LocaleKeys.territory.tr()} : ",
+                                    localeKey:
+                                        "${LocaleKeys.territory.tr()} : ",
                                     fontSize: 12.sp,
                                     color: ColorName.gray2,
                                     fontWeight: FontWeight.w400,
@@ -140,7 +142,7 @@ class _RemainsPageState extends State<RemainsPage> {
                                 height: 8,
                               ),
                               AppWidgets.textLocale(
-                                localeKey: "Задолженности",
+                                localeKey: LocaleKeys.debts,
                                 color: ColorName.gray2,
                                 fontSize: 12,
                               ),
@@ -170,7 +172,7 @@ class _RemainsPageState extends State<RemainsPage> {
                                     height: 8,
                                   ),
                                   AppWidgets.textLocale(
-                                    localeKey: "Прогноз",
+                                    localeKey: LocaleKeys.forecast,
                                     color: ColorName.gray2,
                                     fontSize: 12,
                                   ),
@@ -195,7 +197,7 @@ class _RemainsPageState extends State<RemainsPage> {
                                     height: 8,
                                   ),
                                   AppWidgets.textLocale(
-                                    localeKey: "Факт",
+                                    localeKey: LocaleKeys.fact,
                                     color: ColorName.gray2,
                                     fontSize: 12,
                                   ),
@@ -222,7 +224,7 @@ class _RemainsPageState extends State<RemainsPage> {
                                 tabs: [
                                   Tab(
                                     child: AppWidgets.textLocale(
-                                        localeKey: "Заказы",
+                                        localeKey: LocaleKeys.orders.tr(),
                                         fontWeight: FontWeight.w600,
                                         fontSize: 14.sp,
                                         color: ColorName.button,
@@ -280,7 +282,7 @@ class _RemainsPageState extends State<RemainsPage> {
                       ),
                       child: AppButton(
                         onPressed: () {},
-                        text: "Добавить заказ",
+                        text: LocaleKeys.add_order.tr(),
                         width: 338.w,
                         textColor: ColorName.white,
                         height: 47,

@@ -18,7 +18,7 @@ class SalesTableWidget extends StatelessWidget {
     return Column(
       children: [
         AppWidgets.textLocale(
-          localeKey: "Продажи",
+          localeKey: LocaleKeys.sales,
           fontSize: 20.sp,
           fontWeight: FontWeight.w500,
           color: Colors.black,
@@ -69,7 +69,7 @@ class SalesTableWidget extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "План",
+              text: LocaleKeys.plan.tr(),
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,
@@ -79,7 +79,7 @@ class SalesTableWidget extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "Факт",
+              text: LocaleKeys.fact.tr(),
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,
@@ -89,7 +89,7 @@ class SalesTableWidget extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "Прогноз",
+              text: LocaleKeys.forecast.tr(),
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,

@@ -6,6 +6,7 @@ import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/return_from_shelf/bloc/return_order_cubit.dart';
 import 'package:agent/ui/pages/return_from_shelf/bloc/return_order_state.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -166,12 +167,12 @@ class ItemOrderWidget extends StatelessWidget {
                   child: Cards.cards_8(
                     context: context,
                     name: model.name!,
-                    summa: "Summa",
+                    summa: LocaleKeys.amount.tr(),
                     summaNumber: (ReturnOrderCubit.to.summa(model) * 10000)
                         .toString(),
-                    blok: "Bloc",
+                    blok: LocaleKeys.block.tr(),
                     blokNumber: model.blog.toString(),
-                    sht: "Sht",
+                    sht: LocaleKeys.pc.tr(),
                     shtNumber: model.count.toString(),
                     image: model.img!,
                     blokRemove: () {

@@ -53,7 +53,7 @@ class TableFact extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "План",
+              text: LocaleKeys.plan.tr(),
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,
@@ -63,7 +63,7 @@ class TableFact extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "Факт",
+              text: LocaleKeys.fact.tr(),
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,
@@ -73,7 +73,7 @@ class TableFact extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "Прогноз",
+              text: LocaleKeys.forecast.tr(),
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,

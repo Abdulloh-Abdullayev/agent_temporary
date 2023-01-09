@@ -28,7 +28,7 @@ class TabbarExchangePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общая объем",
+                      localeKey: LocaleKeys.total_volume,
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
                       color: ColorName.gray2,
@@ -62,7 +62,7 @@ class TabbarExchangePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общее summa",
+                      localeKey: LocaleKeys.total_amount,
                       fontWeight: FontWeight.w400,
                       fontSize: 12.sp,
                       color: ColorName.gray2,
@@ -107,7 +107,7 @@ class TabbarExchangePage extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "Заказ в",
+                                    localeKey: LocaleKeys.order_in,
                                     fontWeight: FontWeight.w600,
                                     color: ColorName.black,
                                     fontSize: 12),
@@ -218,7 +218,7 @@ class TabbarExchangePage extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                        localeKey: "Причина",
+                                        localeKey: LocaleKeys.cause,
                                         fontWeight: FontWeight.w400,
                                         color: ColorName.gray2,
                                         fontSize: 12)

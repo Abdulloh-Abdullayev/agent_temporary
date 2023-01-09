@@ -55,7 +55,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
         body: Column(
           children: [
             EquipmentWidgets.appBar(
-              title: "Добавление Оборудование",
+              title: LocaleKeys.adding_hardware.tr(),
               context: context,
               ontap: () {
                 Navigator.pop(context);
@@ -83,7 +83,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           AppWidgets.textLocale(
-                            localeKey: "Тип оборудование ",
+                            localeKey: LocaleKeys.equipment_type,
                             fontSize: 14,
                           ),
                           DropDown(
@@ -102,7 +102,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
 
                           // Equipment Type
                           AppWidgets.textLocale(
-                            localeKey: "Название оборудования",
+                            localeKey: LocaleKeys.equipment_name,
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -118,7 +118,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
 
                           // Serial Number
                           AppWidgets.textLocale(
-                            localeKey: "Серийный номер",
+                            localeKey: LocaleKeys.serial_number,
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -134,7 +134,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
 
                           // Invent number
                           AppWidgets.textLocale(
-                            localeKey: "Инвертарный номер",
+                            localeKey: LocaleKeys.invert_number,
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -150,7 +150,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
 
                           // Production Date
                           AppWidgets.textLocale(
-                            localeKey: "Дата производство",
+                            localeKey: LocaleKeys.production_date,
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -186,7 +186,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
 
                           // Commit
                           AppWidgets.textLocale(
-                            localeKey: "Комментарий",
+                            localeKey: LocaleKeys.comment,
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -212,7 +212,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
 
                           // State
                           AppWidgets.textLocale(
-                            localeKey: "Состояние",
+                            localeKey: LocaleKeys.state,
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,
@@ -228,7 +228,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
 
                           // Attachment Date
                           AppWidgets.textLocale(
-                            localeKey: "Дата прикрепления",
+                            localeKey: LocaleKeys.attachment_date,
                             fontSize: 14,
                           ).marginOnly(
                             top: 18,

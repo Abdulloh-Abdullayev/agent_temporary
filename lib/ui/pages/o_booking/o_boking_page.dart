@@ -47,9 +47,9 @@ class _OBookingPageState extends State<OBookingPage> {
     LocaleKeys.term_consignment.tr(),
   ];
   final List<String> secondTextNameItems = [
-    "Без скидки",
-    "Торговое направления",
-    "Перечисления",
+    LocaleKeys.without_discount.tr(),
+    LocaleKeys.trade_directions.tr(),
+    LocaleKeys.enumerations.tr(),
     LocaleKeys.main_warehouse.tr(),
     "10%",
     "16 окт, 1:43",
@@ -66,7 +66,7 @@ class _OBookingPageState extends State<OBookingPage> {
         body: Column(
           children: [
             OBookingWidgets.appBar(
-              title: "О заказе",
+              title: LocaleKeys.about_order.tr(),
               ontap: (key) {},
               context: context,
             ),
@@ -118,7 +118,7 @@ class _OBookingPageState extends State<OBookingPage> {
                             color: Colors.grey,
                           ),
                           AppWidgets.textLocale(
-                                  localeKey: "Закрепленные файлы",
+                                  localeKey: LocaleKeys.fixed_files,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
                                   color: ColorName.gray2)
@@ -135,7 +135,8 @@ class _OBookingPageState extends State<OBookingPage> {
                                   borderRadius: BorderRadius.circular(8),
                                   image: const DecorationImage(
                                     image: AssetImage(
-                                        "assets/images/reportImage.png"),
+                                      "assets/images/reportImage.png",
+                                    ),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -166,7 +167,7 @@ class _OBookingPageState extends State<OBookingPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AppWidgets.textLocale(
-                                localeKey: "Заказанные товары",
+                                localeKey: LocaleKeys.ordered_goods,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
                                 color: ColorName.black)

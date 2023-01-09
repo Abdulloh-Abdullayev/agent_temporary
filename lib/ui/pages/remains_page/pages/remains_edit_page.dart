@@ -78,7 +78,7 @@ class _RemainsEditPageState extends State<RemainsEditPage> {
                           height: 8,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: "Общее количество продуктов",
+                          localeKey: LocaleKeys.total_number_of_products,
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
                         ),
@@ -125,9 +125,11 @@ class _RemainsEditPageState extends State<RemainsEditPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AppWidgets.textLocale(
-                    localeKey: "Продукт", fontSize: 12, color: ColorName.gray2),
+                    localeKey: LocaleKeys.product, fontSize: 12, color: ColorName.gray2),
                 AppWidgets.textLocale(
-                    localeKey: "Кол-во", fontSize: 12, color: ColorName.gray2),
+                    localeKey: LocaleKeys.qty,
+                    fontSize: 12,
+                    color: ColorName.gray2),
               ],
             ),
           ),

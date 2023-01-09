@@ -1,4 +1,3 @@
-import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/remains_page/cubit/remains_cubit.dart';
 import 'package:agent/ui/pages/remains_page/widgets/item_remains_widget.dart';
 import 'package:agent/ui/pages/remains_page/widgets/remains_page_widgets.dart';

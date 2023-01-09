@@ -9,7 +9,10 @@ import '../../../../core/localization/locale_keys.g.dart';
 
 class PercentWidget extends StatelessWidget {
   const PercentWidget({
-    Key? key, required this.width, required this.forecast, required this.fact,
+    Key? key,
+    required this.width,
+    required this.forecast,
+    required this.fact,
   }) : super(key: key);
   final double width;
   final int forecast;
@@ -42,7 +45,7 @@ class PercentWidget extends StatelessWidget {
                 ),
                 Text(
                   textAlign: TextAlign.center,
-                  LocaleKeys.forecast.tr(),
+                  LocaleKeys.forecast.tr().tr(),
                   style: TextStyle(
                     color: ColorName.gray2,
                     fontSize: 12.sp,

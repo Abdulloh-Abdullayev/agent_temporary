@@ -133,8 +133,8 @@ class RemainsPageWidgets {
                           LocaleKeys.edit.tr(),
                           LocaleKeys.comments_to_order.tr(),
                           LocaleKeys.shipping_date.tr(),
-                          "Срок Консигнация",
-                          "Закрепить фото",
+                          LocaleKeys.term_consignment.tr(),
+                          LocaleKeys.pin_photo.tr(),
                           LocaleKeys.cancel.tr(),
                         ],
                         icons: [
@@ -256,8 +256,8 @@ class RemainsPageWidgets {
                       LocaleKeys.edit.tr(),
                       LocaleKeys.comments_to_order.tr(),
                       LocaleKeys.shipping_date.tr(),
-                      "Срок Консигнация",
-                      "Закрепить фото",
+                      LocaleKeys.term_consignment.tr(),
+                      LocaleKeys.pin_photo.tr(),
                       LocaleKeys.cancel.tr(),
                     ],
                     icons: [
@@ -391,7 +391,7 @@ class RemainsPageWidgets {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: "Обший Блок",
+                localeKey: LocaleKeys.common_block,
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray2,

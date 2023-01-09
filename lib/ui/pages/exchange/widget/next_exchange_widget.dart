@@ -70,7 +70,7 @@ class NextExchangeWidget extends StatelessWidget {
                       ],
                     ),
                     AppWidgets.textLocale(
-                      localeKey: "Обмен товара",
+                      localeKey: LocaleKeys.product_exchange,
                       color: ColorName.white,
                       fontWeight: FontWeight.w600,
                       fontSize: 24.sp,
@@ -93,7 +93,7 @@ class NextExchangeWidget extends StatelessWidget {
                     iconColor: ColorName.black,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Обменять на",
+                    localeKey: LocaleKeys.exchange_for,
                     color: ColorName.gray3,
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w500,
@@ -139,16 +139,16 @@ class NextExchangeWidget extends StatelessWidget {
                           context: context,
                           summa: LocaleKeys.amount.tr(),
                           summaNumber: "100 000",
-                          blok: "Блок",
+                          blok: LocaleKeys.block.tr(),
                           blokNumber: "1",
-                          sht: "Шт",
+                          sht: LocaleKeys.pc.tr(),
                           shtNumber: "1",
                           image: "image",
                           blokRemove: () {},
                           blokAdd: () {},
                           shtRemove: () {},
                           shtAdd: () {},
-                          nalichi: 'В наличие',
+                          nalichi: '${LocaleKeys.available.tr()}',
                           nalichiNumber: '20',
                         ).paddingOnly(bottom: 12.w);
                       },
@@ -184,13 +184,13 @@ class NextExchangeWidget extends StatelessWidget {
                   ),
                   AppWidgets.appButton(
                     width: 150,
-                    title: "Продолжить",
+                    title: LocaleKeys.continue_c.tr(),
                     onTap: () {
                       showModalBottomSheet(
                         backgroundColor: Colors.transparent,
                         context: context,
                         builder: (context) => ReasomnForReturnSheet(
-                          text: 'Причина обмена',
+                          text: LocaleKeys.reason_for_exchange.tr(),
                           textItemsName: const [
                             "Не получается продать",
                             "Lorem ipsum",

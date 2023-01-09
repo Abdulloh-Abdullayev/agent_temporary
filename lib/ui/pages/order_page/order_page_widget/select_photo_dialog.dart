@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -28,7 +29,7 @@ class SelectPhotoDialaog extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: AppWidgets.textLocale(
-                        localeKey: "Выберите тип фото",
+                        localeKey: LocaleKeys.select_photo_type,
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
                         isRichText: true),

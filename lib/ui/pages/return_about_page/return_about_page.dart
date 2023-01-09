@@ -45,12 +45,12 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
     LocaleKeys.bonus.tr(),
     LocaleKeys.order_added.tr(),
     LocaleKeys.shipping_date.tr(),
-    "Срок консигнации",
+    LocaleKeys.term_consignment.tr(),
   ];
   final List<String> secondTextNameItems = [
-    "Без скидки",
-    "Торговое направления",
-    "Перечисления",
+    LocaleKeys.without_discount.tr(),
+    LocaleKeys.trade_directions.tr(),
+    LocaleKeys.enumerations.tr(),
     LocaleKeys.main_warehouse.tr(),
     "10%",
     "16 окт, 1:43",
@@ -67,7 +67,7 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
         body: Column(
           children: [
             ReturnWidget.appBar(
-              title: "О Возврате",
+              title: LocaleKeys.about_return.tr(),
               ontap: (key) {},
               context: context,
             ),
@@ -122,7 +122,7 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AppWidgets.text(
-                                text: "Возвращенные товары",
+                                text: LocaleKeys.returned_goods.tr(),
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
                                 color: ColorName.black)

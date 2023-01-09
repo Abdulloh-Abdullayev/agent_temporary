@@ -128,8 +128,8 @@ class OBookingWidgets {
                       LocaleKeys.edit.tr(),
                       LocaleKeys.comments_to_order.tr(),
                       LocaleKeys.shipping_date.tr(),
-                      "Срок Консигнация",
-                      "Закрепить фото",
+                      LocaleKeys.term_consignment.tr(),
+                      LocaleKeys.pin_photo.tr(),
                       LocaleKeys.cancel.tr(),
                     ],
                     icons: [
@@ -183,10 +183,10 @@ class OBookingWidgets {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              textBuilder("Обьем", "15"),
-              textBuilder("Обьем", "15"),
+              textBuilder(LocaleKeys.volume.tr(), "15"),
+              textBuilder(LocaleKeys.volume.tr(), "15"),
               textBuilder(
-                "Обьем",
+                LocaleKeys.volume.tr(),
                 "100 000 00",
                 color: ColorName.button,
               ),

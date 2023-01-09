@@ -41,7 +41,7 @@ class _AppRadioButtonState extends State<AppRadioButton> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AppWidgets.text(
-          text: "Дата",
+          text: LocaleKeys.data.tr(),
           fontSize: 14.sp,
           fontWeight: FontWeight.w400,
           color: ColorName.gray3,

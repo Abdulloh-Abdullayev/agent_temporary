@@ -1,6 +1,8 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/models/remains_model.dart/remains_model.dart';
 import 'package:agent/ui/pages/remains_page/cubit/remains_cubit.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
@@ -68,23 +70,22 @@ class _RemainsItemWidgetState extends State<RemainsItemWidget> {
               var model = widget.model.list![index];
               return Row(
                 children: [
-                  
                   Cards.cards_7(
                     context: context,
-                    blok: "Блок",
-                    blokAdd: (){
-                        RemainCubit.to.increment(widget.index, index);
+                    blok: LocaleKeys.block.tr(),
+                    blokAdd: () {
+                      RemainCubit.to.increment(widget.index, index);
                     },
-                    blokRemove: (){
-                        RemainCubit.to.decrement(widget.model.id!, model.id!);
+                    blokRemove: () {
+                      RemainCubit.to.decrement(widget.model.id!, model.id!);
                     },
-                    nalichi: "В наличие: ",
-                    summa: "Сумма:",
+                    nalichi: "${LocaleKeys.available.tr()}: ",
+                    summa: "${LocaleKeys.amount.tr()}:",
                     summaNumber: "100 000",
                     blokNumber: "${model.count}",
                     nalichiNumber: "20",
                     name: model.name ?? '',
-                    sht: "Шт",
+                    sht: LocaleKeys.pc.tr(),
                     shtNumber: "${model.count}",
                     image: model.imgUrl!,
                     shtRemove: () {

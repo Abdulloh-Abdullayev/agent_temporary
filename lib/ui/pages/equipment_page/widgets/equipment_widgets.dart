@@ -97,7 +97,7 @@ class EquipmentWidgets {
                           LocaleKeys.draft.tr(),
                         ),
                         textBuilder(
-                          "Дата прикрепления",
+                          LocaleKeys.attachment_date.tr(),
                           "",
                           "12.10.2022",
                           color: ColorName.black,

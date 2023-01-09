@@ -116,7 +116,7 @@ class FloatingDialog extends StatelessWidget {
                             context: context,
                             builder: (context) {
                               return AddingAnOrderSheet(
-                                text: 'Обмен товара',
+                                text: LocaleKeys.product_exchange.tr(),
                                 listTextName: [
                                   LocaleKeys.stock.tr(),
                                   LocaleKeys.direction_type.tr(),

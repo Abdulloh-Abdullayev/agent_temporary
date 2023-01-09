@@ -1,16 +1,17 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class HistoryOrdersBottomSheet extends StatefulWidget {
   const HistoryOrdersBottomSheet({Key? key}) : super(key: key);
 
   @override
-  State<HistoryOrdersBottomSheet> createState() => _HistoryOrdersBottomSheetState();
+  State<HistoryOrdersBottomSheet> createState() =>
+      _HistoryOrdersBottomSheetState();
 }
 
 class _HistoryOrdersBottomSheetState extends State<HistoryOrdersBottomSheet> {
@@ -42,14 +43,14 @@ class _HistoryOrdersBottomSheetState extends State<HistoryOrdersBottomSheet> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: "Фильтр",
+                localeKey: LocaleKeys.debtors,
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w600,
               ),
               InkWell(
                 onTap: () {},
                 child: AppWidgets.textLocale(
-                  localeKey: "Сброс фильтра",
+                  localeKey: LocaleKeys.reset_filter,
                   color: ColorName.red,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
@@ -61,7 +62,7 @@ class _HistoryOrdersBottomSheetState extends State<HistoryOrdersBottomSheet> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: "Выберите дату",
+                localeKey: LocaleKeys.select_date,
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray3,
@@ -69,7 +70,7 @@ class _HistoryOrdersBottomSheetState extends State<HistoryOrdersBottomSheet> {
               InkWell(
                 onTap: () {},
                 child: AppWidgets.textLocale(
-                  localeKey: "Текущий месяц",
+                  localeKey: LocaleKeys.current_month,
                   color: ColorName.button,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
