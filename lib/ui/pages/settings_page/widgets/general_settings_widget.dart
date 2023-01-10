@@ -17,30 +17,30 @@ class GeneralSettingsWidget extends StatelessWidget {
       child: Column(
         children: [
           SettingsContent(
-            title: "ОСНОВНЫЕ НАСТРОЙКИ",
+            title: LocaleKeys.main_settings.tr().toUpperCase(),
             isDisable: isDisable,
             items: [
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Добавить новую торговую точку",
+                title: LocaleKeys.add_new_outlet,
                 initial: true,
                 isDisable: isDisable,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Разрещить новому клиенту использовать консигнацию",
+                title: LocaleKeys.allow_new_customer_consign.tr(),
                 initial: false,
                 isDisable: isDisable,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Показать баланс клиента",
+                title: LocaleKeys.show_customer_balance.tr(),
                 initial: false,
                 isDisable: isDisable,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Префикс номера телефона",
+                title: LocaleKeys.phone_number_prefix.tr(),
                 initial: false,
                 isLast: true,
                 isDisable: isDisable,
@@ -48,16 +48,16 @@ class GeneralSettingsWidget extends StatelessWidget {
             ],
           ),
           SettingsContent(
-            title: "ДОСТУПНЫЕ ПОЛЯ ДЛЯ РЕДАКТРИРОВАНИЕ",
+            title: LocaleKeys.availabe_fields_for_editing.tr(),
             items: [
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Название",
+                title: LocaleKeys.name.tr(),
                 initial: true,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Название фирмы",
+                title: LocaleKeys.company_name.tr(),
                 initial: true,
               ),
               SettingsSwitch(
@@ -77,19 +77,19 @@ class GeneralSettingsWidget extends StatelessWidget {
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Телефон",
+                title: LocaleKeys.phone.tr(),
                 initial: false,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Дни посещений",
+                title: LocaleKeys.visit_days.tr(),
                 initial: false,
                 isLast: true,
               ),
             ],
           ),
           SettingsContent(
-            title: "GPS",
+            title: LocaleKeys.gps.tr(),
             isDisable: isDisable,
             items: [
               SettingsSwitch(
@@ -153,7 +153,7 @@ class GeneralSettingsWidget extends StatelessWidget {
             ],
           ),
           SettingsContent(
-            title: "OULET",
+            title:  LocaleKeys.outlet.tr().toUpperCase(),
             isDisable: isDisable,
             items: [
               SettingsSwitch(
@@ -198,18 +198,18 @@ class GeneralSettingsWidget extends StatelessWidget {
             ],
           ),
           SettingsContent(
-            title: "Прочие",
+            title: LocaleKeys.other_.tr(),
             isDisable: isDisable,
             items: [
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "При добавление заказа требуется фото отёт",
+                title: LocaleKeys.when_adding_order_photo_not_required.tr(),
                 initial: true,
                 isDisable: isDisable,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Показать товары которые  нет на складе",
+                title: LocaleKeys.show_products_out_of_stock.tr(),
                 initial: true,
                 isLast: true,
                 isDisable: isDisable,

@@ -51,7 +51,7 @@ class _AppRadioButtonState extends State<AppRadioButton> {
           children: [
             buildRadioButton(
               value: 1,
-              text: "Дата Заявки",
+              text: LocaleKeys.application_date.tr(),
               onTap: () {
                 setState(() {
                   _selection = 1;

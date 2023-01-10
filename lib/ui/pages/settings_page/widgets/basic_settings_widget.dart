@@ -23,13 +23,13 @@ class BasicSettingsWidget extends StatelessWidget {
       child: Column(
         children: [
           SettingsContent(
-            title: "ОСНОВНЫЕ НАСТРОЙКИ",
+            title: LocaleKeys.main_settings.tr().toUpperCase(),
             items: [
               BlocBuilder<LanguageCubit, Locale>(
                 bloc: LanguageCubit.to,
                 builder: (context, state) {
                   return SettingsItem(
-                    title: "Язык приложении",
+                    title: LocaleKeys.app_language.tr(),
                     text: LanguageCubit.to.title,
                     onTap: () {
                       showModalBottomSheet(
@@ -44,56 +44,56 @@ class BasicSettingsWidget extends StatelessWidget {
                 },
               ),
               SettingsItem(
-                title: "Тип клавиатуры",
-                text: 'Маленький',
+                title: LocaleKeys.keyboard_type.tr(),
+                text: LocaleKeys.small.tr(),
                 onTap: () {},
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Полная синхоризация с фото",
+                title: LocaleKeys.full_sync_with_photo.tr(),
                 initial: false,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Печать с логотипом",
+                title: LocaleKeys.print_with_logo.tr(),
                 initial: false,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Использовать новое окно заказа",
+                title: LocaleKeys.use_new_order_window.tr(),
                 initial: false,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Использовать Bluetooth - принтер",
+                title: LocaleKeys.use_bluetooth_printer.tr(),
                 initial: false,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Использование календарного режима",
+                title: LocaleKeys.using_calendar_mode.tr(),
                 initial: false,
               ),
               SettingsSwitch(
                 onChanged: (bool v) {},
-                title: "Использование скидки",
+                title: LocaleKeys.use_discount.tr(),
                 initial: false,
                 isLast: true,
               ),
             ],
           ),
           SettingsContent(
-            title: "Натройки фильтра",
+            title: LocaleKeys.filter_settings.tr(),
             items: [
               SettingsSwitch(
-                title: "Показать товары которые  нет на складе",
+                title: LocaleKeys.show_products_out_of_stock.tr(),
                 onChanged: (bool v) {},
               ),
               SettingsSwitch(
-                title: "Сортировка клиентов в альфавитном порядке",
+                title: LocaleKeys.sort_clients_alphabetic_order.tr(),
                 onChanged: (bool v) {},
               ),
               SettingsSwitch(
-                title: "Сортировка продуктов в альфавитном порядке",
+                title: LocaleKeys.sort_products_alphabetic_order.tr(),
                 onChanged: (bool v) {},
                 isLast: true,
               ),
