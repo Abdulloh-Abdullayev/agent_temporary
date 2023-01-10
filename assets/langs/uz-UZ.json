@@ -279,5 +279,13 @@
   "availabe_fields_for_editing": "MAVJUD TAHRIRLASH MAYDONLARI",
   "company_name": "Kompaniya nomi",
   "when_adding_order_photo_not_required": "Buyurtmani qo'shishda fotosuratga eslatma kerak",
-  "application_date": "Ariza sanasi"
+  "application_date": "Ariza sanasi",
+  "all": "Barchasi",
+  "mon": "Du",
+  "tue":"Se",
+  "wed": "Chor",
+  "thu":"Pay",
+  "fri":"Ju",
+  "sat":"Sha",
+  "sun":"Yak"
 }

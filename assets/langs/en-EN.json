@@ -277,5 +277,13 @@
   "availabe_fields_for_editing": "AVAILABLE FIELDS FOR EDITING",
   "company_name": "Company name",
   "when_adding_order_photo_not_required": "When adding an order, a photo note is required",
-  "application_date": "Application date"
+  "application_date": "Application date",
+  "all": "All",
+  "mon": "Mon",
+  "tue":"Tue",
+  "wed": "Wed",
+  "thu":"Thu",
+  "fri":"Fri",
+  "sat":"Sat",
+  "sun":"Sun"
 }

@@ -282,5 +282,13 @@ abstract class  LocaleKeys {
   static const company_name = 'company_name';
   static const when_adding_order_photo_not_required = 'when_adding_order_photo_not_required';
   static const application_date = 'application_date';
+  static const all = 'all';
+  static const mon = 'mon';
+  static const tue = 'tue';
+  static const wed = 'wed';
+  static const thu = 'thu';
+  static const fri = 'fri';
+  static const sat = 'sat';
+  static const sun = 'sun';
 
 }

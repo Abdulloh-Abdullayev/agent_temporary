@@ -277,5 +277,13 @@
   "availabe_fields_for_editing": "ДОСТУПНЫЕ ПОЛЯ ДЛЯ РЕДАКТИРОВАНИЯ",
   "company_name": "Название компании",
   "when_adding_order_photo_not_required": "При добавлении заказа требуется фото-примечание",
-  "application_date": "Дата заявки"
+  "application_date": "Дата заявки",
+  "all": "Все",
+  "mon": "ПН",
+  "tue": "ВТ",
+  "wed": "СР",
+  "thu": "ЧТ",
+  "fri": "ПТ",
+  "sat": "СБ",
+  "sun": "ВС"
 }

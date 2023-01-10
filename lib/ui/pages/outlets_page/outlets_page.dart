@@ -126,15 +126,15 @@ class OutletsPage extends StatelessWidget {
             color: Colors.white,
           ).paddingOnly(top: 20.w, bottom: 18.w),
           AppSelectTabBar(
-            tabs: const [
-              'Все',
-              'ПН',
-              'ВТ',
-              'СР',
-              'ЧТ',
-              'ПТ',
-              'СБ',
-              'ВС',
+            tabs:  [
+              LocaleKeys.all.tr(),
+              LocaleKeys.mon.tr(),
+              LocaleKeys.tue.tr(),
+              LocaleKeys.wed.tr(),
+              LocaleKeys.thu.tr(),
+              LocaleKeys.fri.tr(),
+              LocaleKeys.sat.tr(),
+              LocaleKeys.sun.tr(),
             ],
             onTap: () {},
           )
