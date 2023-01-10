@@ -134,7 +134,7 @@ class OutletsPage extends StatelessWidget {
               LocaleKeys.thu.tr(),
               LocaleKeys.fri.tr(),
               LocaleKeys.sat.tr(),
-              LocaleKeys.sun.tr(),
+              LocaleKeys.sun.tr()
             ],
             onTap: () {},
           )
