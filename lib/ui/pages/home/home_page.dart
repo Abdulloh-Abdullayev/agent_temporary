@@ -3,6 +3,7 @@ import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
+import 'package:agent/ui/pages/draft_page/draft_page.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
@@ -17,6 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../all_tasks_page/bloc/all_task_bloc.dart';
 import '../visits_page/visits_page.dart';
 
 class HomePageModule extends Module {
@@ -42,6 +44,10 @@ class HomePageModule extends Module {
         ),
         Bind<LeftMenuBloc>(
           (i) => LeftMenuBloc(),
+          onDispose: (value) => value.close(),
+        ),
+        Bind<AllTaskBloc>(
+          (i) => AllTaskBloc(),
           onDispose: (value) => value.close(),
         ),
       ];
@@ -155,7 +161,7 @@ class HomePage extends StatelessWidget {
       case AppNavigationType.REPORT:
         return ReportsPage();
       case AppNavigationType.DRAFT:
-        return MainPage();
+        return DraftPage();
       case AppNavigationType.POINTS:
         return OutletsPage();
       default:

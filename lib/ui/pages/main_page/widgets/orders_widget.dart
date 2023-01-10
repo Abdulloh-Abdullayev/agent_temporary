@@ -134,6 +134,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                     (index) {
                       return Cards.cards_1(
                         height: 85.w,
+                        context: context,
                         width: 1.sw,
                         name: "name",
                         time: "17:18",
@@ -145,7 +146,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                         countNumber: '15',
                         summa: LocaleKeys.amount.tr(),
                         summaNumber: "150 000 000",
-                        context: context,
+                        card_onTap: () {},
                       ).paddingOnly(
                         left: 18.w,
                         right: 18.w,

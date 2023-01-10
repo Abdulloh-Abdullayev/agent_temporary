@@ -10,7 +10,7 @@ class SalaryInfoWidget extends StatelessWidget {
     required this.width,
     required this.titleFirst,
     required this.titleSecond,
-    this.isPercent=false,
+    this.isPercent = false,
     Key? key,
   }) : super(key: key);
   final double width;
@@ -35,7 +35,9 @@ class SalaryInfoWidget extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            !isPercent?"${Widgets().num(titleFirst)} sum":"${(titleFirst)} %",
+            !isPercent
+                ? "${Widgets().num(titleFirst)} sum"
+                : "${(titleFirst)} %",
             textAlign: TextAlign.center,
             style: TextStyle(
               color: ColorName.primaryColor,

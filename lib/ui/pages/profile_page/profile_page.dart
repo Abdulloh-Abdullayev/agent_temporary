@@ -7,10 +7,8 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.yellow,
-      child:  Column(
-        children: [
-
-        ],
+      child: Column(
+        children: [],
       ),
     );
   }

@@ -27,8 +27,8 @@ class FloatingDialog extends StatelessWidget {
               builder: ((context) {
                 return Container(
                   margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.5,
-                    bottom: MediaQuery.of(context).size.width * 0.4,
+                    top: MediaQuery.of(context).size.height * 0.45,
+                    bottom: MediaQuery.of(context).size.width * 0.45,
                   ),
                   child: ExchangeTools(
                     icons: [

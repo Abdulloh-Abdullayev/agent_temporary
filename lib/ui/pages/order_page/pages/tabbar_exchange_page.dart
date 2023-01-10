@@ -151,22 +151,9 @@ class TabbarExchangePage extends StatelessWidget {
                                               addTap: () {}),
                                         ),
                                       );
-                                    } else if (p0 == 2) {
-                                      // showDialog(
-                                      //   context: context,
-                                      //   builder: (ctx) => Padding(
-                                      //     padding: const EdgeInsets.all(4.0),
-                                      //     child: DateTimeDialog(
-                                      //         title: LocaleKeys.add_consignment.tr(),
-                                      //         closeTitle: LocaleKeys.close.tr(),
-                                      //         addTitle: LocaleKeys.add.tr(),
-                                      //         addTap: () {},
-                                      //     ),
-                                      //   ),
-                                      // );
-                                    }
+                                    } else if (p0 == 2) {}
                                   },
-                                  textName: [
+                                  textName:  [
                                     LocaleKeys.edit.tr(),
                                     LocaleKeys.comments_to_order.tr(),
                                     LocaleKeys.delete.tr(),

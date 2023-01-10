@@ -6,7 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/colors.gen.dart';
 
 class ChekBoxWidget extends StatefulWidget {
-  const ChekBoxWidget({super.key});
+  const ChekBoxWidget({super.key, required this.text});
+
+  final String text;
 
   @override
   _ChekBoxWidgetState createState() => _ChekBoxWidgetState();
@@ -41,17 +43,14 @@ class _ChekBoxWidgetState extends State<ChekBoxWidget> {
               ),
             ).paddingOnly(right: 10.w),
             AppWidgets.textLocale(
-                localeKey: "Lorem Ipsum is simply dummy",
+                localeKey: widget.text,
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray3,
-                isRichText: true
-            )
+                isRichText: true)
           ],
         ),
-
         const Divider().paddingOnly(top: 5.w)
-
       ],
     );
   }

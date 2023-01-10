@@ -12,6 +12,7 @@ import '../../../core/localization/locale_keys.g.dart';
 import '../../../core/utils/assets.gen.dart';
 import '../../../core/utils/colors.gen.dart';
 import '../../widgets/app_widgets.dart';
+import '../order_page/order_page.dart';
 
 class VisitsPageModule extends Module {
   @override
@@ -118,6 +119,9 @@ class _VisitsPageState extends State<VisitsPage> {
                       vozvrat: LocaleKeys.return_.tr(),
                       vozvratTar: LocaleKeys.return_of_containers.tr(),
                       plusNumber: '1',
+                      card_onTap: () {
+                        Modular.to.pushNamed(OrderPage.routeName);
+                      },
                     ).marginSymmetric(
                       horizontal: 20,
                       vertical: 10.w,

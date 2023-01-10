@@ -1,9 +1,11 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
+import 'package:agent/ui/pages/diagnostics_page/bloc/diagnostic_page_cubit.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/tabbar_third_widget.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/table_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
@@ -17,6 +19,14 @@ import 'diagnostics_page_widgets/tabbar_second_widget.dart';
 import 'diagnostics_page_widgets/tabbar_widget.dart';
 
 class DiagnosticsPageModule extends Module {
+  @override
+  List<Bind> get binds => [
+        Bind.singleton<DiagnosticPageCubit>(
+          (i) => DiagnosticPageCubit(),
+          onDispose: (v) => v.close(),
+        ),
+      ];
+
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
@@ -64,6 +74,15 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
 
   @override
   Widget build(BuildContext context) {
+    return BlocBuilder<DiagnosticPageCubit, DiagnosticPageState>(
+      bloc: Modular.get<DiagnosticPageCubit>(),
+      builder: (context, state) {
+        return buildSafeArea(context);
+      },
+    );
+  }
+
+  Widget buildSafeArea(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(

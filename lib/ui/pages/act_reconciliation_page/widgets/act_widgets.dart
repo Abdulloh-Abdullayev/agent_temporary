@@ -36,10 +36,10 @@ class ActWidget {
     required String firstText,
     required String buttonText,
     required String dropDownText,
-    required Function() backOnTap,
-    required Function() firstDataOnTap,
-    required Function() secondDataOnTap,
-    required Function() buttonOnTap,
+    required VoidCallback backOnTap,
+    required VoidCallback firstDataOnTap,
+    required VoidCallback secondDataOnTap,
+    required VoidCallback buttonOnTap,
     required String firstDate,
     required String secondDate,
     List<Widget>? actions,
@@ -63,11 +63,12 @@ class ActWidget {
                 width: 28,
                 height: 28,
                 redius: 4,
+                backColor: ColorName.white.withOpacity(0.1),
                 child: myIcon.Assets.images.icons.backArrow.svg(),
                 onTap: buttonOnTap,
               ),
               Row(
-                children: [...actionList],
+                children: actionList,
               )
             ],
           ).marginLTRB(20, 19, 20, 18),
@@ -129,15 +130,15 @@ class ActWidget {
   static dataRow(List<String> names, {TextStyle? style}) {
     return DataRow(
       cells: [
-        for (var e in names)
+        for (var name in names)
           DataCell(
             Align(
-              alignment: e == names.last
+              alignment: name == names.last
                   ? Alignment.centerRight
                   : Alignment.centerLeft,
               child: Text(
-                e,
-                style: TextStyle(color: colors[findColor(e)]),
+                name,
+                style: TextStyle(color: colors[findColor(name)]),
               ),
             ),
           ),
@@ -151,7 +152,7 @@ class ActWidget {
     } else if (text.contains("+")) {
       return 1;
     } else if (int.tryParse(
-            text.replaceAll(RegExp(r'([a-z]|[A-Z])|\ *'), "")) !=
+            text.replaceAll(RegExp(r'([a-z]|[A-Z])|\*'), "")) !=
         null) {
       return 2;
     } else {

@@ -64,7 +64,9 @@ Future<void> main() async {
             fallbackLocale: const Locale("uz", "UZ"),
             child: ModularApp(
               module: AppModule(),
-              child:  App(androidOverscrollIndicator: androidOverscrollIndicator,),
+              child: App(
+                androidOverscrollIndicator: androidOverscrollIndicator,
+              ),
             ),
           ),
         ),

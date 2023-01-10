@@ -1,17 +1,27 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/customer_data_editing_page/widgets/bottom_buttons_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-import 'customer_data_editing_page_widget/bottom_buttons_widget.dart';
+import 'bloc/customer_data_editing_cubit.dart';
 
 class CustomerDataEditingPageModule extends Module {
+  @override
+  List<Bind> get binds => [
+        Bind.singleton<CustomerDataEditingCubit>(
+          (i) => CustomerDataEditingCubit(),
+          onDispose: (v) => v.close(),
+        ),
+      ];
+
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
@@ -33,6 +43,15 @@ class CustomerDataEditingPage extends StatefulWidget {
 class _CustomerDataEditingPageState extends State<CustomerDataEditingPage> {
   @override
   Widget build(BuildContext context) {
+    return BlocBuilder<CustomerDataEditingCubit, CustomerDataEditingState>(
+      bloc: Modular.get<CustomerDataEditingCubit>(),
+      builder: (context, state) {
+        return buildStack(context);
+      },
+    );
+  }
+
+  Widget buildStack(BuildContext context) {
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [

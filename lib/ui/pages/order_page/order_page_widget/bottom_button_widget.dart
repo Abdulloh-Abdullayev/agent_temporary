@@ -5,7 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomButtonWidget extends StatelessWidget {
-  const BottomButtonWidget({Key? key}) : super(key: key);
+  const BottomButtonWidget({
+    required this.onTap,
+    Key? key,
+  }) : super(key: key);
+
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +33,7 @@ class BottomButtonWidget extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: onTap,
               color: ColorName.button,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8)),
@@ -37,7 +42,8 @@ class BottomButtonWidget extends StatelessWidget {
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   color: ColorName.white,
-                  isRichText: true),
+                  isRichText: true,
+              ),
             )),
       ),
     );

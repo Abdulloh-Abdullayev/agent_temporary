@@ -90,6 +90,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     color: ColorName.gray3,
                   ).paddingOnly(top: 24.w, bottom: 12.w),
                   DropDown(
+                    color: ColorName.background,
                     items: const [
                       'dcsdvsd',
                       'sddf',
@@ -109,6 +110,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     color: ColorName.gray3,
                   ).paddingOnly(top: 24.w, bottom: 12.w),
                   DropDown(
+                    color: ColorName.background,
                     items: const [
                       'dcsdvsd',
                       'sddf',

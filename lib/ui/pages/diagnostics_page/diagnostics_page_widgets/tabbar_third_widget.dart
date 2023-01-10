@@ -20,6 +20,7 @@ class TabbarThirdWidget extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
+                    border: Border.all(color: ColorName.gray),
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12)),
                 child: Column(
@@ -58,6 +59,7 @@ class TabbarThirdWidget extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
+                    border: Border.all(color: ColorName.gray),
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12)),
                 child: Column(
@@ -101,18 +103,21 @@ class TabbarThirdWidget extends StatelessWidget {
         MarkWidget(
           text: LocaleKeys.fact.tr(),
           ptop: 60.w,
-          pleft: 120,
+          pleft: 130.w,
           width: 76.w,
         ),
         Container(
-          margin: EdgeInsets.only(top: 113.w),
+          margin:
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.17),
           width: double.infinity,
-          decoration: const BoxDecoration(
-              color: ColorName.white,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(12),
-                bottomRight: Radius.circular(12),
-              )),
+          decoration: BoxDecoration(
+            border: Border.all(color: ColorName.gray),
+            color: ColorName.white,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(12),
+              bottomRight: Radius.circular(12),
+            ),
+          ),
           child: Column(
             children: [
               AppWidgets.textLocale(

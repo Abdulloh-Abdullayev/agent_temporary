@@ -61,6 +61,7 @@ class OutletsPage extends StatelessWidget {
                       persent: "60-80",
                       summa: "2000",
                       cp: "cp",
+                      card_onTap: () {},
                     ).paddingOnly(top: 12.w),
                   ),
                 ),

@@ -5,12 +5,12 @@ import '../../../../core/utils/colors.gen.dart';
 
 class ReturnFromShelfTabBarWidget extends StatelessWidget {
   ReturnFromShelfTabBarWidget(
-      this._controller,
-      this.title1,
-      this.title2,
-      this.title3,
-      this.function,
-      );
+    this._controller,
+    this.title1,
+    this.title2,
+    this.title3,
+    this.function,
+  );
 
   static int index = 0;
   final TabController _controller;
@@ -68,8 +68,7 @@ class ReturnFromShelfTabBarWidget extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
-          ),
+              )),
         ),
       ],
     );

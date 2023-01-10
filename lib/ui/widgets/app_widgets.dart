@@ -13,7 +13,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:super_rich_text/super_rich_text.dart';
 
 class AppWidgets {
-
   static void showText({
     required String text,
     Duration? duration,
@@ -29,7 +28,6 @@ class AppWidgets {
       duration: duration,
     );
   }
-
 
   static Widget appButton({
     required String title,
@@ -76,6 +74,7 @@ class AppWidgets {
       ),
     );
   }
+
   static Widget text({
     required String text,
     TextStyle? textStyle,
@@ -223,11 +222,12 @@ class AppWidgets {
       ),
     );
   }
+
   static Widget buttonBuilder({
     double height = 28,
     double width = 28,
     double redius = 28,
-    Color backColor = ColorName.button,
+    Color backColor = ColorName.white,
     Widget? child,
     EdgeInsets padding = EdgeInsets.zero,
     Alignment alignment = Alignment.center,
@@ -280,6 +280,7 @@ class AppWidgets {
           }),
     );
   }
+
   static Widget iconButton({
     required VoidCallback onPressed,
     required SvgGenImage icon,

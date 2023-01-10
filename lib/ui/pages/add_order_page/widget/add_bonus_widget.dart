@@ -36,11 +36,12 @@ class AddBonusWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                      child: Icon(
-                    Icons.keyboard_arrow_down_sharp,
-                    size: 25.w,
-                    color: ColorName.gray2,
-                  )),
+                    child: Icon(
+                      Icons.keyboard_arrow_down_sharp,
+                      size: 25.w,
+                      color: ColorName.gray2,
+                    ),
+                  ),
                   InkWell(
                     onTap: () {
                       Modular.to.pop();
@@ -61,6 +62,7 @@ class AddBonusWidget extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
+                  Modular.to.pop();
                   showModalBottomSheet(
                     context: context,
                     backgroundColor: Colors.transparent,
@@ -68,9 +70,10 @@ class AddBonusWidget extends StatelessWidget {
                     isDismissible: false,
                     isScrollControlled: true,
                     shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(12),
-                    )),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(12),
+                      ),
+                    ),
                     builder: (context) {
                       return const SelectCategoryWidget();
                     },
@@ -81,6 +84,7 @@ class AddBonusWidget extends StatelessWidget {
                     horizontal: 15.w,
                     vertical: 12.w,
                   ),
+                  margin: EdgeInsets.only(top: 18.w),
                   width: 1.sw,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.w),
@@ -102,7 +106,7 @@ class AddBonusWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                ).paddingOnly(top: 18.w),
+                ),
               ),
             ],
           ),

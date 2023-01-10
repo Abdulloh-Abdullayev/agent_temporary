@@ -1,4 +1,3 @@
-import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/act_reconciliation_oder_page/act_reconciliation_oder_page.dart';
@@ -12,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
+
+import '../../../../core/localization/locale_keys.g.dart';
 
 class AppBarIconReturn {
   static Widget backButtonShelf(VoidCallback onPressed) {
@@ -63,6 +64,7 @@ class AppBarIconReturn {
       ),
       child: PopupMenuTools(
           onTap: (index) {
+            print(index);
             switch (index) {
               case 0:
                 return Modular.to.pushNamed(CustomerDataPage.routeName);
@@ -160,4 +162,5 @@ class AppBarIconReturn {
       ),
     );
   }
+
 }

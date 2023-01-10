@@ -2,16 +2,29 @@ import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page.dart';
+import 'package:agent/ui/pages/customer_data_page/bloc/customer_data_page_cubit.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_page_widgets/app_title_widget.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_page_widgets/customer_row_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomerDataPageModule extends Module {
+  @override
+  List<Bind> get binds => [
+        Bind.singleton<CustomerDataPageCubit>(
+          (i) => CustomerDataPageCubit(),
+          onDispose: (v) => v.close(),
+        ),
+      ];
+
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
@@ -39,6 +52,7 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
   void initState() {
     scrolController = ScrollController();
     scrolController.addListener(scrollListener);
+    appTitle = SizedBox();
     super.initState();
   }
 
@@ -61,6 +75,15 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
 
   @override
   Widget build(BuildContext context) {
+    return BlocBuilder<CustomerDataPageCubit, CustomerDataPageState>(
+      bloc: Modular.get<CustomerDataPageCubit>(),
+      builder: (context, state) {
+        return buildSafeArea(context);
+      },
+    );
+  }
+
+  Widget buildSafeArea(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -82,9 +105,14 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                           child: PageView.builder(
                             itemCount: 10,
                             itemBuilder: (context, index) {
-                              return Image.network(
-                                "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000",
+                              return CachedNetworkImage(
                                 fit: BoxFit.cover,
+                                imageUrl:
+                                    "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000",
+                                placeholder: (context, url) =>
+                                    const CupertinoActivityIndicator(),
+                                errorWidget: (context, url, error) =>
+                                    const Icon(Icons.person),
                               );
                             },
                           ),

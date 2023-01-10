@@ -20,10 +20,10 @@ class RemainStockState extends Equatable {
     List<RemainStockModel>? list,
   }) {
     return RemainStockState(
-        loading: loading ?? this.loading,
-        hasError: hasError ?? this.hasError,
-        list: list ?? this.list,
-        reload: !reload,
+      loading: loading ?? this.loading,
+      hasError: hasError ?? this.hasError,
+      list: list ?? this.list,
+      reload: !reload,
     );
   }
 

@@ -8,6 +8,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 import '../../../core/localization/locale_keys.g.dart';
+
 import 'bloc/auth/auth_cubit.dart';
 
 class LoginPageModule extends Module {
@@ -74,7 +75,6 @@ class LoginPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AppWidgets.text(
-                          // text: "Имя сервера!",
                           text: LocaleKeys.server_name,
                           color: ColorName.gray3,
                           fontSize: 14.sp,

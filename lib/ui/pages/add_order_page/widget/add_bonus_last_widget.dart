@@ -1,4 +1,3 @@
-import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
@@ -8,6 +7,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
 import 'package:uikit/uikit.dart';
+
+import '../../../../core/localization/locale_keys.g.dart';
 
 class AddBonusLastWidget extends StatelessWidget {
   const AddBonusLastWidget({
@@ -34,11 +35,12 @@ class AddBonusLastWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                      child: Icon(
-                    Icons.keyboard_arrow_down_sharp,
-                    size: 25.w,
-                    color: ColorName.gray2,
-                  )),
+                    child: Icon(
+                      Icons.keyboard_arrow_down_sharp,
+                      size: 25.w,
+                      color: ColorName.gray2,
+                    ),
+                  ),
                   InkWell(
                     onTap: () {
                       Modular.to.pop();
@@ -79,6 +81,7 @@ class AddBonusLastWidget extends StatelessWidget {
                     horizontal: 15.w,
                     vertical: 12.w,
                   ),
+                  margin: EdgeInsets.only(top: 18.w),
                   width: 1.sw,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.w),
@@ -124,7 +127,7 @@ class AddBonusLastWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                ).paddingOnly(top: 18.w),
+                ),
               ),
             ],
           ),

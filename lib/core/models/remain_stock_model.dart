@@ -4,10 +4,5 @@ class RemainStockModel {
   int? price;
   int? remain;
 
-  RemainStockModel({
-    this.id,
-    this.category,
-    this.price,
-    this.remain
-});
+  RemainStockModel({this.id, this.category, this.price, this.remain});
 }

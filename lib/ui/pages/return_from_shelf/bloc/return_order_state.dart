@@ -29,9 +29,9 @@ class ReturnOrderState extends Equatable {
 
   @override
   List<Object?> get props => [
-    loading,
-    list,
-    hasError,
-    reload,
-  ];
+        loading,
+        list,
+        hasError,
+        reload,
+      ];
 }

@@ -76,16 +76,14 @@ class TabbarOrderPage extends StatelessWidget {
             ],
           ).paddingSymmetric(horizontal: 20.w),
         ),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListView.builder(
+        SizedBox(
+          child: ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: 10,
               itemBuilder: (context, index) {
                 return Container(
-                    margin: EdgeInsets.only(bottom: 11.w),
+                    margin: EdgeInsets.only(top: 11.w),
                     child: Cards.cards_2(
                       context: context,
                       name: "name",
@@ -165,12 +163,20 @@ class TabbarOrderPage extends StatelessWidget {
                       soniNumber: "325",
                       summa: "summa",
                       summaNumber: "150 000 000",
-                      dostavlen: '',
-                    ));
+                      fayl: "kostignatsiNumber",
+                      komentariya: "komentariya",
+                      kostignatsi: "kostignatsi",
+                      kostignatsiNumber: "5465",
+                      otgruzki: "otgruzki",
+                      otgruzkiNumber: "1524",
+                      status: 'status',
+                      statusColor: ColorName.green,
+                      card_onTap: () {},
+                    ),
+                );
               },
-            )
-          ],
         ).paddingSymmetric(horizontal: 20.w),
+        ).paddingOnly(bottom: 10.w),
       ],
     );
   }

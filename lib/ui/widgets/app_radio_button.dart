@@ -88,6 +88,7 @@ class _AppRadioButtonState extends State<AppRadioButton> {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 18),
         height: 50.w,
+        width: 162.w,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
@@ -109,9 +110,9 @@ class _AppRadioButtonState extends State<AppRadioButton> {
             AppWidgets.textLocale(
               localeKey: text,
               color: ColorName.gray3,
-              fontSize: 16.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-            ).paddingOnly(left: 8),
+            ).paddingOnly(left: 8.w),
           ],
         ),
       ),

@@ -71,7 +71,6 @@ class ReturnOrderCubit extends Cubit<ReturnOrderState> {
     return sum;
   }
 
-
   Future increment(int categoryId, int id) async {
     state.list[categoryId].list![id].blog =
         state.list[categoryId].list![id].blog! + 1;
