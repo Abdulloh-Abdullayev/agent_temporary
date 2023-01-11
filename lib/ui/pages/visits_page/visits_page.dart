@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:agent/core/extensions/app_extensions.dart';
-import 'package:agent/core/utils/app_logger_util.dart';
+
 import 'package:agent/ui/pages/visits_page/widget/visits_widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ import '../../../core/localization/locale_keys.g.dart';
 import '../../../core/utils/assets.gen.dart';
 import '../../../core/utils/colors.gen.dart';
 import '../../widgets/app_widgets.dart';
-import '../home/home_page.dart';
+
 import '../order_page/order_page.dart';
 
 class VisitsPageModule extends Module {
@@ -58,6 +58,7 @@ class _VisitsPageState extends State<VisitsPage> {
               VisitWidgets.Appbar(
                   title: LocaleKeys.visits.tr(),
                   ontap: (key) {
+
                     if (key == "0") {
                       print(key);
                     }
