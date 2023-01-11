@@ -292,5 +292,7 @@ abstract class  LocaleKeys {
   static const sun = 'sun';
   static const clear_draft = 'clear_draft';
   static const draft_at = 'draft_at';
+  static const from = 'from';
+  static const by = 'by';
 
 }

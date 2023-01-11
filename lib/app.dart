@@ -52,7 +52,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(HomePage.routeName);
+    // Modular.setInitialRoute(HomePage.routeName);
+    Modular.setInitialRoute(LoginPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]
     );
     return BlocBuilder<LanguageCubit, Locale>(

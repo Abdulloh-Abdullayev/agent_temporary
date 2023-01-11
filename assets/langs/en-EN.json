@@ -287,7 +287,9 @@
   "sat":"Sat",
   "sun":"Sun",
   "clear_draft": "Clear draft",
-  "draft_at": "//Draft// at"
+  "draft_at": "//Draft// at",
+  "from": "Dan",
+  "by": "Gacha"
 
 
 }

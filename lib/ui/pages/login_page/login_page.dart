@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 import '../../../core/localization/locale_keys.g.dart';
 
+import '../home/home_page.dart';
 import 'bloc/auth/auth_cubit.dart';
 
 class LoginPageModule extends Module {
@@ -53,13 +54,13 @@ class LoginPage extends StatelessWidget {
                     vertical: 60.w,
                   ),
                   AppWidgets.text(
-                    text: LocaleKeys.welcome,
+                    text: LocaleKeys.welcome.tr(),
                     color: ColorName.black,
                     fontSize: 32.sp,
                     fontWeight: FontWeight.w500,
                   ),
                   AppWidgets.text(
-                    text: LocaleKeys.enter_username_password,
+                    text: LocaleKeys.enter_username_password.tr(),
                     color: ColorName.gray2,
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w400,
@@ -75,7 +76,7 @@ class LoginPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AppWidgets.text(
-                          text: LocaleKeys.server_name,
+                          text: LocaleKeys.server_name.tr(),
                           color: ColorName.gray3,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -89,7 +90,7 @@ class LoginPage extends StatelessWidget {
                           bottom: 24,
                         ),
                         AppWidgets.text(
-                          text: LocaleKeys.enter,
+                          text: LocaleKeys.enter.tr(),
                           color: ColorName.gray3,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -103,7 +104,7 @@ class LoginPage extends StatelessWidget {
                           bottom: 24,
                         ),
                         AppWidgets.text(
-                          text: LocaleKeys.password,
+                          text: LocaleKeys.password.tr(),
                           color: ColorName.gray3,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -120,7 +121,9 @@ class LoginPage extends StatelessWidget {
                         AppButton(
                           width: 1.sw,
                           text: LocaleKeys.enter.tr(),
-                          onPressed: () {},
+                          onPressed: () {
+                            Modular.to.pushReplacementNamed(HomePage.routeName);
+                          },
                           textColor: ColorName.white,
                         )
                       ],

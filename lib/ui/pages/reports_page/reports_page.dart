@@ -180,8 +180,8 @@ class ReportsPage extends StatelessWidget {
           AppInputDate(
             firstText: LocaleKeys.select_date.tr(),
             dropDownText: LocaleKeys.current_month.tr(),
-            firstDate: "С",
-            secondDate: "По",
+            firstDate: LocaleKeys.from.tr(),
+            secondDate: LocaleKeys.by.tr(),
             dateBackColor: ColorName.gray.withOpacity(0.15),
             firstIcon: Assets.images.icons.calendarIcon.svg(),
             secondIcon: Assets.images.icons.calendarIcon.svg(),

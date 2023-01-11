@@ -82,7 +82,9 @@ class _ReturnFromShelfState extends State<ReturnFromShelf>
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            AppBarIconReturn.backButtonShelf(() {}),
+                            AppBarIconReturn.backButtonShelf(() {
+                              Modular.to.pop();
+                            }),
                             AppBarIconReturn.menuButtonShelf(),
                           ],
                         ).paddingSymmetric(horizontal: 20.w),
