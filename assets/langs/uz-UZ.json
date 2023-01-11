@@ -287,5 +287,8 @@
   "thu":"Pay",
   "fri":"Ju",
   "sat":"Sha",
-  "sun":"Yak"
+  "sun":"Yak",
+  "clear_draft": "Qoralamani tozalash",
+  "draft_at": "//Qoralama// da"
+
 }

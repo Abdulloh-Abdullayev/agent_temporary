@@ -285,5 +285,9 @@
   "thu":"Thu",
   "fri":"Fri",
   "sat":"Sat",
-  "sun":"Sun"
+  "sun":"Sun",
+  "clear_draft": "Clear draft",
+  "draft_at": "//Draft// at"
+
+
 }
