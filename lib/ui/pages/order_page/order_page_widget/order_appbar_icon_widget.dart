@@ -1,8 +1,10 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
 import 'package:agent/ui/pages/balance_page/balance_page.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:agent/ui/pages/equipment_page/equipment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -98,13 +100,13 @@ class AppBarIcon {
                     return Modular.to.pushNamed(RestContainerPage.routeName);
                 }
               },
-              textName: const [
-            "Данные клиента",
-            "Баланс клиента",
-            "Оборудование",
-            "Акт - сверки",
-            "Акт - сверки по заказам",
-            'Остаток тары',
+              textName:  [
+                LocaleKeys.customer_date.tr(),
+                LocaleKeys.client_balance.tr(),
+                LocaleKeys.equipment.tr(),
+                LocaleKeys.act_of_reconciliation.tr(),
+                LocaleKeys.act_reconciliations_on_orders.tr(),
+                LocaleKeys.rest_of_container.tr(),
           ],
               icons: [
             Assets.images.icons.infoCircle

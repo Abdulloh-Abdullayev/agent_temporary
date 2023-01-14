@@ -1,5 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/helpers/app_helper.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -41,7 +43,7 @@ class OtherItem1 extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppWidgets.text(
-            text: "Проданные товары",
+            text: LocaleKeys.sold_products.tr(),
             color: ColorName.gray3,
             fontSize: 16.sp,
             fontWeight: FontWeight.w600,
@@ -59,13 +61,13 @@ class OtherItem1 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.text(
-                      text: "Товар  ",
+                      text: LocaleKeys.product.tr(),
                       color: ColorName.gray2,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
                     ),
                     AppWidgets.text(
-                      text: "Кол-во",
+                      text: LocaleKeys.qty.tr(),
                       color: ColorName.gray2,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
@@ -81,13 +83,13 @@ class OtherItem1 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.text(
-                      text: "Объем",
+                      text: LocaleKeys.volume.tr(),
                       color: ColorName.gray2,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
                     ),
                     AppWidgets.text(
-                      text: "Сумма",
+                      text: LocaleKeys.amount.tr(),
                       color: ColorName.gray2,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
@@ -180,7 +182,7 @@ class OtherItem2 extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppWidgets.text(
-            text: "Посещенные клиенты",
+            text: LocaleKeys.visited_clients.tr(),
             color: ColorName.gray3,
             fontSize: 16.sp,
             fontWeight: FontWeight.w600,
@@ -194,19 +196,19 @@ class OtherItem2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.text(
-                text: "Название",
+                text: LocaleKeys.name.tr(),
                 color: ColorName.gray2,
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
               ),
               AppWidgets.text(
-                text: "Кол-во",
+                text: LocaleKeys.qty.tr(),
                 color: ColorName.gray2,
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
               ),
               AppWidgets.text(
-                text: "Сумма",
+                text: LocaleKeys.amount.tr(),
                 color: ColorName.gray2,
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w400,

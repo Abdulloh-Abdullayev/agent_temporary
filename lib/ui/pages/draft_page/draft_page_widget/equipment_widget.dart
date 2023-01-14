@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/localization/locale_keys.g.dart';
 import '../../../../core/utils/colors.gen.dart';
 import '../../../widgets/app_widgets.dart';
 
@@ -17,7 +18,7 @@ class EquipmentWidget extends StatelessWidget {
         Align(
           alignment: Alignment.centerLeft,
           child: AppWidgets.textLocale(
-              localeKey: "Оборудование",
+              localeKey: LocaleKeys.equipment,
               fontWeight: FontWeight.w600,
               fontSize: 18.sp,
               color: ColorName.black,
@@ -91,7 +92,7 @@ class EquipmentWidget extends StatelessWidget {
                                         isRichText: true)
                                     .paddingOnly(right: 8.w),
                                 AppWidgets.textLocale(
-                                    localeKey: "Черновик",
+                                    localeKey: LocaleKeys.draft,
                                     fontWeight: FontWeight.w400,
                                     color: ColorName.red,
                                     fontSize: 12.sp,
@@ -104,13 +105,13 @@ class EquipmentWidget extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "Дата прикрепления ",
+                                    localeKey: LocaleKeys.attachment_date,
                                     fontWeight: FontWeight.w400,
                                     color: ColorName.gray2,
                                     fontSize: 12.sp,
                                     isRichText: true),
                                 AppWidgets.textLocale(
-                                    localeKey: "12.10.2022",
+                                    localeKey: " 12.10.2022",
                                     fontWeight: FontWeight.w600,
                                     color: ColorName.black,
                                     fontSize: 12.sp,

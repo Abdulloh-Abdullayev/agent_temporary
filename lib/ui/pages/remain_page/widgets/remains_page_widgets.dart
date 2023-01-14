@@ -1,14 +1,15 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/remain_stock_page/remain_stock_page.dart';
-import 'package:agent/ui/pages/salary_page/salary_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 import '../../../../core/localization/locale_keys.g.dart';
+import '../../remain_stock_page/remain_stock_page.dart';
+import '../../salary_page/salary_page.dart';
 
 class RemainsPageWidgets {
   static Widget bookingItems({
@@ -100,9 +101,9 @@ class RemainsPageWidgets {
                       if (p0 == 1) {
                         showDialog(
                           context: context,
-                          builder: (ctx) => const AlertDialog(
+                          builder: (ctx) => AlertDialog(
                             content: CommitTextField(
-                              text: "Добавление комментарии",
+                              text: LocaleKeys.adding_comments.tr(),
                             ),
                           ),
                         );
@@ -112,9 +113,9 @@ class RemainsPageWidgets {
                           builder: (ctx) => Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DateTimeDialog(
-                                title: "Добавить дату отгрузки",
-                                closeTitle: "Закрыть",
-                                addTitle: "Добавить",
+                                title: LocaleKeys.add_shipping_date.tr(),
+                                closeTitle: LocaleKeys.close.tr(),
+                                addTitle: LocaleKeys.add.tr(),
                                 addTap: () {}),
                           ),
                         );
@@ -124,21 +125,21 @@ class RemainsPageWidgets {
                           builder: (ctx) => Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DateTimeDialog(
-                                title: "Добавить консигнация",
-                                closeTitle: "Закрыть",
-                                addTitle: "Добавить",
+                                title: LocaleKeys.add_consignment.tr(),
+                                closeTitle: LocaleKeys.close.tr(),
+                                addTitle: LocaleKeys.add.tr(),
                                 addTap: () {}),
                           ),
                         );
                       }
                     },
-                    textName: const [
-                      "Редактрировать",
-                      "Комментария к заказу",
-                      "Дата отгрузки",
-                      "Срок Консигнация",
-                      "Закрепить фото",
-                      'Отменить',
+                    textName: [
+                      LocaleKeys.edit.tr(),
+                      LocaleKeys.comments_to_order.tr(),
+                      LocaleKeys.shipping_date.tr(),
+                      LocaleKeys.term_consignment.tr(),
+                      LocaleKeys.pin_photo.tr(),
+                      LocaleKeys.cancel.tr(),
                     ],
                     icons: [
                       Assets.images.icons.edit.svg(),
@@ -241,7 +242,7 @@ class RemainsPageWidgets {
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: "Остатки",
+            localeKey: LocaleKeys.remains,
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,
@@ -271,7 +272,7 @@ class RemainsPageWidgets {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: "Обший Блок",
+                localeKey: LocaleKeys.common_block,
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray2,
@@ -291,7 +292,7 @@ class RemainsPageWidgets {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: "Общее кол-во",
+                localeKey: LocaleKeys.total_qty,
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray2,
@@ -320,7 +321,7 @@ class RemainsPageWidgets {
               SizedBox(width: 12.w),
               Expanded(
                 child: AppWidgets.appButton(
-                  title: "Добавить",
+                  title: LocaleKeys.add.tr(),
                   onTap: () {},
                 ),
               ),

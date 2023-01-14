@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/salary_page/widget/plan_salary_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,7 +49,7 @@ class SalaryPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Plan",
+                    localeKey: LocaleKeys.plan,
                     fontWeight: FontWeight.w600,
                   ).paddingOnly(bottom: 12.w),
                   Row(
@@ -55,19 +57,19 @@ class SalaryPage extends StatelessWidget {
                     children: [
                       PlanSalaryWidget(
                         width: 162.w,
-                        titleFirst: 'Сумма плана',
+                        titleFirst: LocaleKeys.amount_of_plan.tr(),
                         titleSecond: '100000000',
                       ),
                       PlanSalaryWidget(
                         width: 162.w,
-                        titleFirst: 'Фикс. зарплата',
+                        titleFirst: LocaleKeys.fixed_salary.tr(),
                         titleSecond: '100000000',
                       ),
                     ],
                   ).paddingOnly(bottom: 12.w),
                   PlanSalaryWidget(
                     width: 1.sw,
-                    titleFirst: 'Сумма плана',
+                    titleFirst: LocaleKeys.amount_of_plan.tr(),
                     titleSecond: '100000000',
                   ),
                 ],
@@ -102,7 +104,7 @@ class SalaryPage extends StatelessWidget {
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: "LocaleKeys.salary",
+            localeKey: LocaleKeys.salary,
             fontWeight: FontWeight.w500,
             fontSize: 20.sp,
             color: Colors.white,

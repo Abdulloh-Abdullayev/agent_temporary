@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/debtors_page/widget/debtors_table.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -61,7 +63,7 @@ class DebtorsHistory extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     AppWidgets.textLocale(
-                      localeKey: "Запросить историю",
+                      localeKey: LocaleKeys.request_history,
                       color: ColorName.button,
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
@@ -93,14 +95,14 @@ class DebtorsHistory extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppWidgets.textLocale(
-            localeKey: "Баланс: ${"Osiyo market"}",
+            localeKey: "${LocaleKeys.balance.tr()}: ${"Osiyo market"}",
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,
           ).paddingOnly(top: 30.w, bottom: 18.w),
           AppInputDate(
-            firstText: "Выберите дату",
-            dropDownText: "Текущий месяц >",
+            firstText: LocaleKeys.select_date.tr(),
+            dropDownText: LocaleKeys.current_month.tr(),
             firstDate: "С",
             secondDate: "По",
             dateBackColor: ColorName.gray.withOpacity(0.15),
@@ -112,9 +114,9 @@ class DebtorsHistory extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (context) => DateTimeDialog(
-                  title: 'Выбрать',
-                  closeTitle: 'Закрыть',
-                  addTitle: 'Добавить',
+                  title: LocaleKeys.select.tr(),
+                  closeTitle: LocaleKeys.close.tr(),
+                  addTitle: LocaleKeys.add.tr(),
                   addTap: (DateTime time) {
                     // print("time");
                   },
@@ -126,9 +128,9 @@ class DebtorsHistory extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (context) => DateTimeDialog(
-                  title: 'Выбрать',
-                  closeTitle: 'Закрыть',
-                  addTitle: 'Добавить',
+                  title: LocaleKeys.select.tr(),
+                  closeTitle: LocaleKeys.close.tr(),
+                  addTitle: LocaleKeys.add.tr(),
                   addTap: (DateTime time) {
                     // print("time");
                   },
@@ -138,7 +140,7 @@ class DebtorsHistory extends StatelessWidget {
             iconColor: Colors.white,
           ),
           AppButton(
-            text: "Применить",
+            text: LocaleKeys.apply.tr(),
             onPressed: () {},
             width: 1.sw,
             textColor: Colors.white,

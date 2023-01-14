@@ -5,6 +5,7 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../core/localization/locale_keys.g.dart';
 import '../../../core/utils/colors.gen.dart';
 import '../order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'draft_page_widget/equipment_widget.dart';
@@ -61,13 +62,13 @@ class DraftPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                          localeKey: "Черновик",
+                          localeKey: LocaleKeys.draft,
                           fontWeight: FontWeight.w500,
                           fontSize: 20.sp,
                           color: ColorName.white,
                           isRichText: true),
                       AppWidgets.textLocale(
-                          localeKey: "Очистить черновик",
+                          localeKey: LocaleKeys.clear_draft,
                           fontWeight: FontWeight.w600,
                           fontSize: 14.sp,
                           color: ColorName.red,

@@ -152,7 +152,7 @@ class ActWidget {
     } else if (text.contains("+")) {
       return 1;
     } else if (int.tryParse(
-            text.replaceAll(RegExp(r'([a-z]|[A-Z])|\ *'), "")) !=
+            text.replaceAll(RegExp(r'([a-z]|[A-Z])|\*'), "")) !=
         null) {
       return 2;
     } else {

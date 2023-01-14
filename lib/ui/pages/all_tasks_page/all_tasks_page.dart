@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/all_tasks_page/widgets/clicked_item.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -78,16 +80,16 @@ class _AllTasksPageState extends State<AllTasksPage>
                     vertical: 18.w,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Задачи",
+                    localeKey: LocaleKeys.tasks,
                     color: ColorName.white,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w500,
                   ).paddingSymmetric(horizontal: 20.w),
                   AppTabBar(
                     tabController: tabController,
-                    tabTitle: const [
-                      "Активные",
-                      "Выполненные",
+                    tabTitle: [
+                      LocaleKeys.active.tr(),
+                      LocaleKeys.completed.tr()
                     ],
                     onTap: (i) {
                       pageController.animateToPage(
@@ -155,12 +157,12 @@ class _AllTasksPageState extends State<AllTasksPage>
           },
           child: Cards.cards_15(
             name: "Osiyo market",
-            dobavlen: "Добавлен",
+            dobavlen: LocaleKeys.added.tr(),
             date: "13 окт",
-            primicheniya: "Примечание:",
+            primicheniya: "${LocaleKeys.note}:",
             product: "Кола 3 блок,Фанта 3 блок, дина...",
             vipolneniya: "Выполнение до",
-            status: "Выполнен",
+            status: LocaleKeys.completed,
             statusColor: Colors.green,
             cardColor: const Color(0xFFE5F3FF),
             card_onTap: (){

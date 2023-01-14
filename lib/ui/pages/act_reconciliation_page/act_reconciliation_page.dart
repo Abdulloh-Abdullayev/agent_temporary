@@ -1,7 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/widgets/act_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +35,12 @@ class ActReconciliationPage extends StatefulWidget {
 }
 
 class _ActReconciliationPageState extends State<ActReconciliationPage> {
-  var columnTitles = ["Дата", "Тип", "Сумма"];
+  var columnTitles = [
+    LocaleKeys.data.tr(),
+    LocaleKeys.type.tr(),
+    LocaleKeys.amount.tr()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -50,12 +57,12 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                 secondDataOnTap: () {},
                 dropDownText: "dropDownText",
                 firstText: "firstText",
-                buttonText: "Применить",
+                buttonText: LocaleKeys.apply.tr(),
                 firstDate: "01.02.2022",
                 secondDate: "18.02.2022",
               ),
               AppWidgets.textLocale(
-                localeKey: "Запросить историю",
+                localeKey: LocaleKeys.request_history,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
                 color: ColorName.black,
@@ -72,74 +79,84 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                     children: [
                       Expanded(
                         child: SingleChildScrollView(
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: DataTable(
-                              columnSpacing: 24,
-                              horizontalMargin: 12,
-                              columns: [
-                                for (var columnTitle in columnTitles)
-                                  ActWidget.dataColumn(
-                                    columnTitle,
-                                    align: columnTitle == columnTitles.last
-                                        ? Alignment.centerRight
-                                        : Alignment.centerLeft,
-                                  ),
-                              ],
-                              rows: [
-                                for (var dataRow in [
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '+100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  [
-                                    '21.10.2022',
-                                    'Оплата на заказ',
-                                    '100 000 000 UZS'
-                                  ],
-                                  ['Заказ на сумму', '', '100 000 000 UZS'],
-                                  ['Оплата на заказ', '', '+100 000 000 UZS'],
-                                  ['Итоговый долг', '', '-0'],
-                                ])
-                                  ActWidget.dataRow(dataRow),
-                              ],
-                            ),
+                          scrollDirection: Axis.horizontal,
+                          child: DataTable(
+                            columnSpacing: 24,
+                            horizontalMargin: 12,
+                            columns: [
+                              for (var e in columnTitles)
+                                ActWidget.dataColumn(
+                                  e,
+                                  align: e == columnTitles.last
+                                      ? Alignment.centerRight
+                                      : Alignment.centerLeft,
+                                ),
+                            ],
+                            rows: [
+                              for (var e in [
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '+100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  'Заказ на сумму',
+                                  '',
+                                  '100 000 000 UZS',
+                                ],
+                                [
+                                  'Оплата на заказ',
+                                  '',
+                                  '+100 000 000 UZS',
+                                ],
+                                [
+                                  'Итоговый долг',
+                                  '',
+                                  '-0',
+                                ],
+                              ])
+                                ActWidget.dataRow(e),
+                            ],
                           ),
                         ),
                       ),

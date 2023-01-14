@@ -2,6 +2,7 @@ import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -57,7 +58,7 @@ class RestContainerPage extends StatelessWidget {
               Widgets.showData(
                 height: 100.w,
                 count: "20",
-                title: "Количество тары",
+                title: LocaleKeys.number_of_containers.tr(),
                 color: ColorName.white,
                 hasBorder: true,
                 width: 1.sw,
@@ -87,14 +88,14 @@ class RestContainerPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           AppWidgets.text(
-            text: "Дата",
+            text: LocaleKeys.data.tr(),
             maxLines: 1,
             color: ColorName.gray2,
             fontSize: 12.sp,
             textAlign: TextAlign.center,
           ),
           AppWidgets.text(
-            text: "Кол-во",
+            text: LocaleKeys.qty.tr(),
             maxLines: 1,
             color: ColorName.gray2,
             fontSize: 12.sp,

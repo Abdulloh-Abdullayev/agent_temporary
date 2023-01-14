@@ -1,7 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/salary_page/widget/salary_info.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -25,13 +27,13 @@ class WorkingDayWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: "Полный раб. день",
+                localeKey: LocaleKeys.full_time,
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray2,
               ),
               AppWidgets.textLocale(
-                localeKey: "Факт день",
+                localeKey: LocaleKeys.fact_day,
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
                 color: ColorName.gray2,
@@ -74,12 +76,12 @@ class WorkingDayWidget extends StatelessWidget {
               SalaryInfoWidget(
                 width: 142.w,
                 titleFirst: '100000000',
-                titleSecond: "Фикс. зарплата",
+                titleSecond: LocaleKeys.fixed_salary.tr(),
               ).paddingOnly(right: 10.w),
               SalaryInfoWidget(
                 width: 142.w,
                 titleFirst: '79',
-                titleSecond: "Фикс. зарплата",
+                titleSecond: LocaleKeys.fixed_salary.tr(),
                 isPercent: true,
               ),
             ],
@@ -89,23 +91,23 @@ class WorkingDayWidget extends StatelessWidget {
           SalaryInfoWidget(
             width: 1.sw,
             titleFirst: '100000000',
-            titleSecond: "Начислено",
+            titleSecond: LocaleKeys.accrued.tr(),
           ),
           SummaWidget(
-            titleFirst: 'Общая сумма зарплаты',
+            titleFirst: LocaleKeys.total_salary.tr(),
             titleSecond: '10000000',
           ).paddingOnly(top: 25.w),
           SummaWidget(
-            titleFirst: 'Сумма за Авто',
+            titleFirst: LocaleKeys.amount_for_car.tr(),
             titleSecond: '+5000000',
           ).paddingOnly(top: 15.w),
           SummaWidget(
-            titleFirst: 'Cумма KPI',
+            titleFirst: LocaleKeys.kpi_amount.tr(),
             titleSecond: '15000000',
             color: ColorName.buttonColor,
           ).paddingOnly(top: 15.w),
           SummaWidget(
-            titleFirst: 'Итого',
+            titleFirst: LocaleKeys.total.tr(),
             titleSecond: '15000000',
             color: ColorName.buttonColor,
           ).paddingOnly(top: 15.w),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:super_rich_text/super_rich_text.dart';
 
+import '../../../../core/localization/locale_keys.g.dart';
 import '../../../../core/utils/colors.gen.dart';
 import '../../../widgets/app_widgets.dart';
 
@@ -16,7 +17,7 @@ class OrderWidget extends StatelessWidget {
         Align(
           alignment: Alignment.centerLeft,
           child: AppWidgets.textLocale(
-              localeKey: "Заказы",
+              localeKey: LocaleKeys.orders,
               fontWeight: FontWeight.w600,
               fontSize: 18.sp,
               color: ColorName.black,
@@ -59,7 +60,7 @@ class OrderWidget extends StatelessWidget {
                         Row(
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "//Черновик// в",
+                              localeKey: LocaleKeys.draft_at,
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w600,
                               color: ColorName.black,
@@ -95,7 +96,7 @@ class OrderWidget extends StatelessWidget {
                     Row(
                       children: [
                         AppWidgets.textLocale(
-                          localeKey: "Наличный",
+                          localeKey: LocaleKeys.spot,
                           fontWeight: FontWeight.w400,
                           fontSize: 12.sp,
                           color: ColorName.gray3,
@@ -105,7 +106,7 @@ class OrderWidget extends StatelessWidget {
                           width: 17.w,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: "Без бонуса",
+                          localeKey: LocaleKeys.no_bonus,
                           fontWeight: FontWeight.w400,
                           fontSize: 12.sp,
                           color: ColorName.gray3,
@@ -124,7 +125,7 @@ class OrderWidget extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                  localeKey: "obem ",
+                                  localeKey: LocaleKeys.volume,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12.sp,
                                   color: ColorName.gray2,
@@ -145,7 +146,7 @@ class OrderWidget extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                  localeKey: "kolva ",
+                                  localeKey: LocaleKeys.qty,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12.sp,
                                   color: ColorName.gray2,
@@ -165,7 +166,7 @@ class OrderWidget extends StatelessWidget {
                         Row(
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "summa ",
+                              localeKey: LocaleKeys.amount,
                               fontWeight: FontWeight.w400,
                               fontSize: 12.sp,
                               color: ColorName.gray2,

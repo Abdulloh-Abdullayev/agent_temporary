@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
-import 'package:uikit/uikit.dart';
+
 
 class RemainsItemWidget extends StatefulWidget {
   final int index;

@@ -1,10 +1,12 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/models/return_order_model.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/return_from_shelf/bloc/return_order_cubit.dart';
 import 'package:agent/ui/pages/return_from_shelf/bloc/return_order_state.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -87,11 +89,11 @@ class _ReturnOrderDatePageState extends State<ReturnOrderDatePage> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: AppWidgets.textLocale(
-                                      localeKey: "Возврат заказа",
-                                      fontSize: 24.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: ColorName.white,
-                                      isRichText: true)
+                                  localeKey: LocaleKeys.order_return,
+                                  fontSize: 24.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: ColorName.white,
+                                  isRichText: true)
                                   .paddingOnly(top: 18.w, left: 20),
                             )
                           ],
@@ -161,12 +163,12 @@ class ItemOrderWidget extends StatelessWidget {
                   child: Cards.cards_8(
                     context: context,
                     name: model.name!,
-                    summa: "Summa",
+                    summa: LocaleKeys.amount.tr(),
                     summaNumber:
-                        (ReturnOrderCubit.to.summa(model) * 10000).toString(),
-                    blok: "Bloc",
+                    (ReturnOrderCubit.to.summa(model) * 10000).toString(),
+                    blok: LocaleKeys.block.tr(),
                     blokNumber: model.blog.toString(),
-                    sht: "Sht",
+                    sht: LocaleKeys.pc.tr(),
                     shtNumber: model.count.toString(),
                     image: model.img!,
                     blokRemove: () {

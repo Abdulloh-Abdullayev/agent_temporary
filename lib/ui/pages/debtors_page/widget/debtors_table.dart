@@ -1,5 +1,7 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
@@ -52,7 +54,7 @@ class DebtorsTable extends StatelessWidget {
             child: Row(
               children: [
                 AppWidgets.text(
-                  text: "Дата",
+                  text: LocaleKeys.data.tr(),
                   maxLines: 1,
                   color: ColorName.gray2,
                   fontSize: 12.sp,
@@ -64,7 +66,7 @@ class DebtorsTable extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "Тип",
+              text: LocaleKeys.type.tr(),
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,
@@ -74,7 +76,7 @@ class DebtorsTable extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "Сумма",
+              text: LocaleKeys.amount.tr(),
               maxLines: 1,
               color: ColorName.gray2,
               fontSize: 12.sp,
@@ -100,7 +102,7 @@ class DebtorsTable extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.text(
-                text: "Заказ на сумму",
+                text: LocaleKeys.order_for_amount.tr(),
                 maxLines: 1,
                 color: ColorName.gray2,
                 fontSize: 12.sp,
@@ -124,7 +126,7 @@ class DebtorsTable extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.text(
-                text: "Оплата на заказ",
+                text: LocaleKeys.pay_to_order.tr(),
                 maxLines: 1,
                 color: ColorName.gray2,
                 fontSize: 12.sp,
@@ -147,7 +149,7 @@ class DebtorsTable extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.text(
-                text: "Итоговый долг",
+                text: LocaleKeys.total_debt.tr(),
                 maxLines: 1,
                 color: ColorName.gray2,
                 fontSize: 12.sp,
@@ -202,7 +204,7 @@ class DebtorsItem extends StatelessWidget {
           Expanded(
             flex: 1,
             child: AppWidgets.text(
-              text: "Оплата на заказ",
+              text: LocaleKeys.pay_to_order.tr(),
               maxLines: 1,
               color: ColorName.gray3,
               fontSize: 12.sp,

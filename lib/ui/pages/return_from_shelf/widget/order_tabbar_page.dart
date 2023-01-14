@@ -1,13 +1,14 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/about_order/about_order.dart';
-import 'package:agent/ui/pages/about_order/widgets/about_order_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
+import '../../../../core/localization/locale_keys.g.dart';
 import '../../../../core/utils/assets.gen.dart';
 
 class OrderTabBarPage extends StatelessWidget {
@@ -28,7 +29,7 @@ class OrderTabBarPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: "Общая объем",
+                        localeKey: LocaleKeys.total_volume,
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
                         color: ColorName.gray2,
@@ -45,7 +46,7 @@ class OrderTabBarPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: "Общее кол-во",
+                        localeKey: LocaleKeys.total_qty,
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
                         color: ColorName.gray2,
@@ -62,7 +63,7 @@ class OrderTabBarPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: "Общее summa",
+                        localeKey: LocaleKeys.total_amount,
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
                         color: ColorName.gray2,
@@ -100,7 +101,7 @@ class OrderTabBarPage extends StatelessWidget {
                               context: context,
                               builder: (ctx) => const AlertDialog(
                                 content: CommitTextField(
-                                  text: "Добавление комментарии",
+                                  text: LocaleKeys.adding_comments,
                                 ),
                               ),
                             );
@@ -110,9 +111,9 @@ class OrderTabBarPage extends StatelessWidget {
                               builder: (ctx) => Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: DateTimeDialog(
-                                    title: "Добавить дату отгрузки",
-                                    closeTitle: "Закрыть",
-                                    addTitle: "Добавить",
+                                    title: LocaleKeys.add_shipping_date.tr(),
+                                    closeTitle: LocaleKeys.close.tr(),
+                                    addTitle: LocaleKeys.add.tr(),
                                     addTap: () {}),
                               ),
                             );
@@ -122,21 +123,21 @@ class OrderTabBarPage extends StatelessWidget {
                               builder: (ctx) => Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: DateTimeDialog(
-                                    title: "Добавить консигнация",
-                                    closeTitle: "Закрыть",
-                                    addTitle: "Добавить",
+                                    title: LocaleKeys.add_consignment.tr(),
+                                    closeTitle: LocaleKeys.close.tr(),
+                                    addTitle: LocaleKeys.add.tr(),
                                     addTap: () {}),
                               ),
                             );
                           }
                         },
-                        textName: const [
-                          "Редактрировать",
-                          "Комментария к заказу",
-                          "Дата отгрузки",
-                          "Срок Консигнация",
-                          "Закрепить фото",
-                          'Отменить',
+                        textName: [
+                          LocaleKeys.edit.tr(),
+                          LocaleKeys.comments_to_order.tr(),
+                          LocaleKeys.shipping_date.tr(),
+                          LocaleKeys.term_consignment.tr(),
+                          LocaleKeys.pin_photo.tr(),
+                          LocaleKeys.cancel.tr(),
                         ],
                         icons: [
                           Assets.images.icons.editeAlt
@@ -160,18 +161,18 @@ class OrderTabBarPage extends StatelessWidget {
                           ColorName.red,
                         ],
                       ),
-                      nalichniy: "nalichniy",
-                      bezbonus: "bezbonus",
-                      obem: "obem",
+                      nalichniy: LocaleKeys.spot.tr(),
+                      bezbonus: LocaleKeys.no_bonus.tr(),
+                      obem: LocaleKeys.volume.tr(),
                       obemNumber: "15",
-                      soni: "soni",
+                      soni: LocaleKeys.pc.tr(),
                       soniNumber: "15",
-                      summa: "summa",
+                      summa: LocaleKeys.amount.tr(),
                       summaNumber: "1000000",
                       card_onTap: () {
                         Modular.to.pushNamed(AboutOrderPage.routeName);
                       },
-                      status: 'status',
+                      status: LocaleKeys.delivered.tr(),
                       statusColor: ColorName.green,
                     ),
                   );
@@ -265,3 +266,4 @@ class OrderTabBarPage extends StatelessWidget {
     );
   }
 }
+

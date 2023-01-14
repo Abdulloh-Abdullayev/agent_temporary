@@ -1,5 +1,4 @@
 import 'package:agent/core/models/remains_model/remains_model.dart';
-import 'package:agent/core/models/return_order_model.dart';
 import 'package:equatable/equatable.dart';
 
 class RemainState extends Equatable {

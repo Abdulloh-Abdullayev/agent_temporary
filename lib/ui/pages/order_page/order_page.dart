@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/order_page/bloc/order_page_cubit.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/market_image_function_widget.dart';
@@ -10,6 +11,7 @@ import 'package:agent/ui/pages/remain_page/widgets/floating_show_widget.dart';
 
 import 'package:agent/ui/pages/return_from_shelf/widget/about_return_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -181,7 +183,8 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                                     fontWeight: FontWeight.w400,
                                     isRichText: true),
                                 AppWidgets.textLocale(
-                                    localeKey: "Визиты:  Пн, Ср, Сб",
+                                    localeKey:
+                                        "${LocaleKeys.visits.tr()}:  Пн, Ср, Сб",
                                     fontSize: 12.sp,
                                     color: ColorName.gray2,
                                     fontWeight: FontWeight.w400,
@@ -191,7 +194,8 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "Teritoriya  : ",
+                                    localeKey:
+                                        "${LocaleKeys.territory.tr()} : ",
                                     fontSize: 12.sp,
                                     color: ColorName.gray2,
                                     fontWeight: FontWeight.w400,
@@ -207,7 +211,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "Задолженности : ",
+                                    localeKey: "${LocaleKeys.debts.tr()} : ",
                                     fontSize: 12.sp,
                                     color: ColorName.gray2,
                                     fontWeight: FontWeight.w400,
@@ -235,12 +239,12 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                           children: [
                             OrderTabbarWidget(
                                 _controller,
-                                "Заказы",
-                                "Фото отчёт",
-                                "Возврат",
-                                "Возврат тары",
-                                "Обмен",
-                                "Остатки", (int i) {
+                                LocaleKeys.orders.tr(),
+                                LocaleKeys.photo_report.tr(),
+                                LocaleKeys.return_.tr(),
+                                LocaleKeys.return_of_containers,
+                                LocaleKeys.exchange.tr(),
+                                LocaleKeys.remains.tr(), (int i) {
                               if (i == 0) {
                               } else if (i == 1) {
                               } else {}

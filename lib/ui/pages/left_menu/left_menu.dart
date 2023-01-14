@@ -93,7 +93,7 @@ class LeftMenuPage extends StatelessWidget {
                                     color: ColorName.white,
                                   ).paddingOnly(bottom: 4.w),
                                   AppWidgets.text(
-                                    text: "Сервер: Distr",
+                                    text: "${LocaleKeys.server.tr()}: Distr",
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.w400,
                                     color: ColorName.white.withOpacity(0.5),
@@ -165,7 +165,7 @@ class LeftMenuPage extends StatelessWidget {
                 ),
                 buildMenus(context),
                 AppWidgets.textLocale(
-                  localeKey: "Версия 12.3.8.7",
+                  localeKey: "${LocaleKeys.version.tr()} 12.3.8.7",
                   color: ColorName.white.withOpacity(0.3),
                 ).paddingOnly(
                   top: 30.w,
@@ -191,80 +191,80 @@ class LeftMenuPage extends StatelessWidget {
               ),
             );
           },
-          text: "Главная",
+          text: LocaleKeys.main.tr(),
           icon: Assets.images.icons.homeIcon.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(AddOutletsPage.routeName);
           },
-          text: "Добавить торговую точку",
+          text: LocaleKeys.add_outlet.tr(),
           icon: Assets.images.icons.homeIcon2.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(OrderPage.routeName);
           },
-          text: "Заказы",
+          text: LocaleKeys.orders.tr(),
           icon: Assets.images.icons.shopMenu.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(RemainStockPage.routeName);
           },
-          text: "Остатки на складе",
+          text: LocaleKeys.leftovers_warehouse.tr(),
           icon: Assets.images.icons.note.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(DebtorsPage.routeName);
           },
-          text: "Должники по заказам",
+          text: LocaleKeys.debtors_on_orders.tr(),
           icon: Assets.images.icons.user.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(DebtorsPage.routeName);
           },
-          text: "Должники",
+          text: LocaleKeys.debtors.tr(),
           icon: Assets.images.icons.userTimer.svg(),
         ),
         DrawerItem(
           onTap: () {},
-          text: "Моя локация",
+          text: LocaleKeys.my_location.tr(),
           icon: Assets.images.icons.locationIcon.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(AllTasksPage.routeName);
           },
-          text: "Задачи",
+          text: LocaleKeys.tasks.tr(),
           icon: Assets.images.icons.pinned.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(SalaryPage.routeName);
           },
-          text: "KPI",
+          text: LocaleKeys.kpi.tr(),
           icon: Assets.images.icons.pieIcon.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(DiagnosticsPage.routeName);
           },
-          text: "Диагностика",
+          text: LocaleKeys.diagnostics.tr(),
           icon: Assets.images.icons.pie2Chart.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(SettingsPage.routeName);
           },
-          text: "Настройки",
+          text: LocaleKeys.settings.tr(),
           icon: Assets.images.icons.setting.svg(),
         ),
         DrawerItem(
           onTap: () {},
-          text: "Поделиться",
+          text: LocaleKeys.share.tr(),
           icon: Assets.images.icons.share.svg(),
         ),
       ],

@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/history_orders/widgets/order_from_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -121,7 +123,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                     vertical: 20,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "История заказов",
+                    localeKey: LocaleKeys.history_of_orders,
                     fontSize: 24.sp,
                     color: ColorName.white,
                     fontWeight: FontWeight.w600,
@@ -132,7 +134,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                   AppTabBar(
                     tabController: tabController,
                     isScrollable: true,
-                    tabTitle: const ["Заказы", "Топ"],
+                    tabTitle:  [LocaleKeys.orders.tr(), LocaleKeys.top.tr()],
                     onTap: (i) {
                       pageController.animateToPage(
                         i,
@@ -164,11 +166,11 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
       itemCount: 5,
       itemBuilder: ((context, index) {
         return Cards.cards_6(
-          zakaz: "Заказ от",
+          zakaz: LocaleKeys.order_from.tr(),
           date: "12.08.2022",
-          status: "Доставлен",
-          nachisleniya: "Начисления",
-          summa: "Сумма",
+          status: LocaleKeys.delivered.tr(),
+          nachisleniya: LocaleKeys.accruals.tr(),
+          summa: LocaleKeys.amount.tr(),
           summaNumber: "150 000 000",
           onTap: () {
             Modular.to.pushNamed(OrderFromWidget.routeName);

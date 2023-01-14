@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/chekbox_widget.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/listview_widget.dart';
@@ -44,13 +45,13 @@ class FilterBottomSheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Фильтр",
+                      localeKey: LocaleKeys.debtors,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w600,
                       color: ColorName.black,
                       isRichText: true),
                   AppWidgets.textLocale(
-                      localeKey: "Сброс фильтра",
+                      localeKey: LocaleKeys.reset_filter,
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       color: ColorName.red,

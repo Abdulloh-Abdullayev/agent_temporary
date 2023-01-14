@@ -1,5 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/mark_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,7 +35,7 @@ class TabbarFirstWidget extends StatelessWidget {
                                 color: ColorName.black)
                             .paddingOnly(bottom: 4.w),
                         AppWidgets.textLocale(
-                            localeKey: "План",
+                            localeKey: LocaleKeys.plan,
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                             isRichText: true,
@@ -79,7 +81,7 @@ class TabbarFirstWidget extends StatelessWidget {
                                 color: ColorName.black)
                             .paddingOnly(bottom: 4.w),
                         AppWidgets.textLocale(
-                            localeKey: "В день",
+                            localeKey: LocaleKeys.in_a_day,
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                             isRichText: true,
@@ -114,7 +116,7 @@ class TabbarFirstWidget extends StatelessWidget {
           ),
         ),
         MarkWidget(
-          text: "Факт",
+          text: LocaleKeys.fact.tr(),
           ptop: MediaQuery.of(context).size.height * 0.095,
           pleft: 130.w,
           width: 76.w,
@@ -127,7 +129,7 @@ class TabbarFirstWidget extends StatelessWidget {
           ),
         ),
         MarkWidget(
-          text: "Прогноз",
+          text: LocaleKeys.forecast.tr(),
           ptop: MediaQuery.of(context).size.height * 0.185,
           pleft: 115.w,
           width: 108.w,

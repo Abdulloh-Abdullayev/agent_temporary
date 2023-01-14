@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/return_about_page/return_about_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -46,7 +48,7 @@ class ReturnItemWidget extends StatelessWidget {
                         fontSize: 12.sp,
                       ).paddingOnly(right: 8.w),
                       AppWidgets.textLocale(
-                        localeKey: "Выполнен",
+                        localeKey: LocaleKeys.completed,
                         fontSize: 12.sp,
                         color: ColorName.green,
                       ).paddingOnly(right: 8.w),
@@ -64,9 +66,9 @@ class ReturnItemWidget extends StatelessWidget {
                         if (p0 == 1) {
                           showDialog(
                             context: context,
-                            builder: (ctx) => const AlertDialog(
+                            builder: (ctx) => AlertDialog(
                               content: CommitTextField(
-                                text: "Добавление комментарии",
+                                text: LocaleKeys.adding_comments.tr(),
                               ),
                             ),
                           );
@@ -76,9 +78,9 @@ class ReturnItemWidget extends StatelessWidget {
                             builder: (ctx) => Padding(
                               padding: const EdgeInsets.all(4.0),
                               child: DateTimeDialog(
-                                  title: "Добавить дату отгрузки",
-                                  closeTitle: "Закрыть",
-                                  addTitle: "Добавить",
+                                  title: LocaleKeys.add_shipping_date.tr(),
+                                  closeTitle: LocaleKeys.close.tr(),
+                                  addTitle: LocaleKeys.add.tr(),
                                   addTap: () {}),
                             ),
                           );
@@ -88,21 +90,21 @@ class ReturnItemWidget extends StatelessWidget {
                             builder: (ctx) => Padding(
                               padding: const EdgeInsets.all(4.0),
                               child: DateTimeDialog(
-                                  title: "Добавить консигнация",
-                                  closeTitle: "Закрыть",
-                                  addTitle: "Добавить",
+                                  title: LocaleKeys.add_consignment.tr(),
+                                  closeTitle: LocaleKeys.close.tr(),
+                                  addTitle: LocaleKeys.add.tr(),
                                   addTap: () {}),
                             ),
                           );
                         }
                       },
-                      textName: const [
-                        "Редактрировать",
-                        "Комментария к заказу",
-                        "Дата отгрузки",
-                        "Срок Консигнация",
-                        "Закрепить фото",
-                        'Отменить',
+                      textName: [
+                        LocaleKeys.edit.tr(),
+                        LocaleKeys.comments_to_order.tr(),
+                        LocaleKeys.shipping_date.tr(),
+                        LocaleKeys.term_consignment.tr(),
+                        LocaleKeys.pin_photo.tr(),
+                        LocaleKeys.cancel.tr(),
                       ],
                       icons: [
                         Assets.images.icons.editeAlt
@@ -136,7 +138,7 @@ class ReturnItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Обьем  //15//",
+                    localeKey: "${LocaleKeys.volume.tr()}  //15//",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
@@ -149,7 +151,7 @@ class ReturnItemWidget extends StatelessWidget {
                     ],
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Обьем  //15//",
+                    localeKey: "${LocaleKeys.volume.tr()}  //15//",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
@@ -162,7 +164,7 @@ class ReturnItemWidget extends StatelessWidget {
                     ],
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Сумма  //150 000 000//",
+                    localeKey: "${LocaleKeys.amount.tr()}  //150 000 000//",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w500,
@@ -182,7 +184,7 @@ class ReturnItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Причина  //Товар не продается //",
+                    localeKey: "${LocaleKeys.cause.tr()}  //Товар не продается //",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
@@ -200,7 +202,7 @@ class ReturnItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Дата отгрузки //15.10.2022//",
+                    localeKey: "${LocaleKeys.shipping_date.tr()} //15.10.2022//",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,

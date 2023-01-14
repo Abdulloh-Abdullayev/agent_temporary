@@ -7,12 +7,14 @@ import 'package:agent/ui/pages/main_page/widgets/others_widget.dart';
 import 'package:agent/ui/pages/return_from_shelf/return_from_shelf.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:agent/ui/widgets/appbar_main.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
+import '../../../core/localization/locale_keys.g.dart';
 import '../../../core/utils/assets.gen.dart';
 import 'widgets/tabbar_widget.dart';
 
@@ -58,7 +60,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
           child: Column(
             children: [
               AppBarMain(
-                text: 'Главная',
+                text: LocaleKeys.main.tr(),
                 menuTab: () {
                   HomePage.globalKey.currentState!.openDrawer();
                 },
@@ -82,8 +84,8 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                           children: [
                             Widgets.percentIndicator(
                               percent: 70,
-                              inText: "Успеваемость",
-                              outText: "Дневной отчёт на сегодня",
+                              inText: LocaleKeys.performance.tr(),
+                              outText: LocaleKeys.daily_report.tr(),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,13 +94,13 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                                   height: 67.w,
                                   width: 144.w,
                                   count: 125,
-                                  title: "Посещено",
+                                  title: LocaleKeys.visited.tr(),
                                 ),
                                 Widgets.iconButton(
                                   height: 67.w,
                                   width: 144.w,
                                   count: 125,
-                                  title: "Посещено",
+                                  title: LocaleKeys.left.tr(),
                                   icon: Icons.check_box_outlined,
                                   color: ColorName.red,
                                 ),
@@ -107,7 +109,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                  localeKey: "Не синхрованно:",
+                                  localeKey: LocaleKeys.out_of_sync,
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w400,
                                   color: ColorName.gray2,
@@ -141,7 +143,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                  localeKey: "Последняя синхронизация:",
+                                  localeKey: LocaleKeys.last_sync,
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w400,
                                   color: ColorName.gray2,
@@ -167,23 +169,23 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                             height: 98.w,
                             width: 162.w,
                             count: 10000000,
-                            title: "Сумма заказов за сегодня",
+                            title: LocaleKeys.amount_of_orders_today.tr(),
                             color: ColorName.white,
                           ),
                           Widgets.showData(
                             height: 98.w,
                             width: 162.w,
                             count: "135",
-                            title: "По объему продукции за сегодя",
+                            title: LocaleKeys.today_production_volume.tr(),
                             color: ColorName.white,
                           ),
                         ],
                       ).paddingSymmetric(horizontal: 20.w),
                       TabBarWidget(
                         _tabController,
-                        "Заказы",
-                        "Другие",
-                            (int i) {},
+                        LocaleKeys.orders.tr(),
+                        LocaleKeys.other_.tr(),
+                        (int i) {},
                       ).paddingSymmetric(horizontal: 20.w, vertical: 15.w),
                       Container(
                         child: [

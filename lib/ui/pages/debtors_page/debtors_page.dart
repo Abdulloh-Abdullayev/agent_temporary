@@ -5,12 +5,11 @@ import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/debtors_page/widget/debtors_filter.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:animated_digit/animated_digit.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uikit/uikit.dart';
 
 import '../debtors_orders_page/widget/debtors_table.dart';
 
@@ -112,7 +111,7 @@ class DebtorsPage extends StatelessWidget {
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: "Должники",
+            localeKey: LocaleKeys.debtors.tr(),
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,
@@ -121,7 +120,7 @@ class DebtorsPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: "Общий баланс",
+                localeKey: LocaleKeys.overall_balance,
                 fontWeight: FontWeight.w400,
                 fontSize: 14.sp,
                 color: Colors.white.withOpacity(0.6),
