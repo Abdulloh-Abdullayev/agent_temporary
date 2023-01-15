@@ -89,11 +89,11 @@ class _ReturnOrderDatePageState extends State<ReturnOrderDatePage> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: AppWidgets.textLocale(
-                                  localeKey: LocaleKeys.order_return,
-                                  fontSize: 24.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: ColorName.white,
-                                  isRichText: true)
+                                      localeKey: LocaleKeys.order_return,
+                                      fontSize: 24.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: ColorName.white,
+                                      isRichText: true)
                                   .paddingOnly(top: 18.w, left: 20),
                             )
                           ],
@@ -165,7 +165,7 @@ class ItemOrderWidget extends StatelessWidget {
                     name: model.name!,
                     summa: LocaleKeys.amount.tr(),
                     summaNumber:
-                    (ReturnOrderCubit.to.summa(model) * 10000).toString(),
+                        (ReturnOrderCubit.to.summa(model) * 10000).toString(),
                     blok: LocaleKeys.block.tr(),
                     blokNumber: model.blog.toString(),
                     sht: LocaleKeys.pc.tr(),

@@ -5,6 +5,6 @@ abstract class CustomerDataEditingState {}
 
 class CustomerDataEditingInitial extends CustomerDataEditingState {}
 
-class CounterState extends CustomerDataEditingState{
+class CounterState extends CustomerDataEditingState {
   CounterState();
 }

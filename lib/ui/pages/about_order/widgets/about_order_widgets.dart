@@ -5,6 +5,7 @@ import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
@@ -12,7 +13,7 @@ class AboutOrderWidgets {
   static Widget bookingTextItems({
     required String firstName,
     required String secondName,
-     TextStyle firstStyle = const TextStyle(
+    TextStyle firstStyle = const TextStyle(
       color: ColorName.gray2,
       fontSize: 14,
       fontWeight: FontWeight.w400,
@@ -22,26 +23,25 @@ class AboutOrderWidgets {
       fontSize: 14,
       fontWeight: FontWeight.w600,
     ),
-   
   }) {
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children:[
+          children: [
             AppWidgets.textLocale(
               localeKey: firstName,
               textStyle: firstStyle,
-               color: ColorName.gray2,
-      fontSize: 14,
-      fontWeight: FontWeight.w400,
+              color: ColorName.gray2,
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
             ),
             AppWidgets.text(
               text: secondName,
               textStyle: secondStyle,
-                color: ColorName.black,
-      fontSize: 14,
-      fontWeight: FontWeight.w600,
+              color: ColorName.black,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
             ),
           ],
         ),
@@ -63,7 +63,7 @@ class AboutOrderWidgets {
       Container(
         height: 119.w,
         width: 1.sw,
-        padding:  EdgeInsets.only(
+        padding: EdgeInsets.only(
           top: 19.w,
           left: 20.w,
           right: 20.w,
@@ -80,19 +80,10 @@ class AboutOrderWidgets {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  height: 28.w,
-                  width: 28.w,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(.10),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Center(
-                      child: Assets.images.icons.left.svg(height: 9.5),
-                    ),
-                  ),
+                AppWidgets.backButton(
+                  () {
+                    Modular.to.pop();
+                  },
                 ),
                 Container(
                   height: 28.w,
@@ -131,10 +122,11 @@ class AboutOrderWidgets {
                           builder: (ctx) => Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DateTimeDialog(
-                                title: LocaleKeys.add_consignment.tr(),
-                                closeTitle: LocaleKeys.close.tr(),
-                                addTitle: LocaleKeys.add.tr(),
-                                addTap: () {}),
+                              title: LocaleKeys.add_consignment.tr(),
+                              closeTitle: LocaleKeys.close.tr(),
+                              addTitle: LocaleKeys.add.tr(),
+                              addTap: () {},
+                            ),
                           ),
                         );
                       }
@@ -240,9 +232,4 @@ class AboutOrderWidgets {
           ),
         ],
       );
-
-  
 }
-
- 
- 

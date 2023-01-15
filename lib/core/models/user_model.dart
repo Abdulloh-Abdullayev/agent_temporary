@@ -1,4 +1,4 @@
-class Region{
+class Region {
   final int? id;
   final String? name;
   bool? isSelected;

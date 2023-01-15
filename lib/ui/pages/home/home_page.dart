@@ -1,5 +1,4 @@
 import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
-import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
@@ -71,9 +70,7 @@ class HomePage extends StatelessWidget {
             key: HomePage.globalKey,
             drawer: LeftMenuPage(),
             extendBody: true,
-            body: bodyBuilder(state.appNavigationType, context).paddingOnly(
-              bottom: 70,
-            ),
+            body: bodyBuilder(state.appNavigationType, context),
             bottomNavigationBar: AppNavigationBar(
               children: [
                 AppNavigationBarItem(

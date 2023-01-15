@@ -71,85 +71,10 @@ class _ReturnFromShelfState extends State<ReturnFromShelf>
                 children: [
                   Column(
                     children: [
-                      Container(
-                        decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              bottomRight: Radius.circular(12),
-                              bottomLeft: Radius.circular(12),
-                            ),
-                            color: ColorName.primaryColor),
-                        height: 133.h,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            AppBarIconReturn.backButtonShelf(() {
-                              Modular.to.pop();
-                            }),
-                            AppBarIconReturn.menuButtonShelf(),
-                          ],
-                        ).paddingSymmetric(horizontal: 20.w),
-                      ),
+                      buildAppBar(),
                       Column(
                         children: [
-                          Container(
-                            decoration: const BoxDecoration(
-                              color: ColorName.white,
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(12),
-                                bottomRight: Radius.circular(12),
-                              ),
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: AppWidgets.textLocale(
-                                      localeKey: "Osiyo Market",
-                                      fontSize: 24.sp,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w600,
-                                      isRichText: true),
-                                ).paddingOnly(top: 50.w),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    AppWidgets.textLocale(
-                                        localeKey: "Supermarket",
-                                        fontSize: 12.sp,
-                                        color: ColorName.gray2,
-                                        fontWeight: FontWeight.w400,
-                                        isRichText: true),
-                                    AppWidgets.textLocale(
-                                        localeKey:
-                                            "${LocaleKeys.visits.tr()}:  Пн, Ср, Сб",
-                                        fontSize: 12.sp,
-                                        color: ColorName.gray2,
-                                        fontWeight: FontWeight.w400,
-                                        isRichText: true),
-                                  ],
-                                ).paddingOnly(top: 12.w),
-                                Row(
-                                  children: [
-                                    AppWidgets.textLocale(
-                                        localeKey:
-                                            "${LocaleKeys.territory.tr()}  : ",
-                                        fontSize: 12.sp,
-                                        color: ColorName.gray2,
-                                        fontWeight: FontWeight.w400,
-                                        isRichText: true),
-                                    AppWidgets.textLocale(
-                                      localeKey: "Yunusobod rayoni",
-                                      fontSize: 12.sp,
-                                      color: ColorName.black,
-                                      fontWeight: FontWeight.w600,
-                                      isRichText: true,
-                                    ),
-                                  ],
-                                ).paddingOnly(top: 12.w, bottom: 18.w),
-                              ],
-                            ).paddingSymmetric(horizontal: 20),
-                          ),
+                          buildHeader(),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -171,19 +96,19 @@ class _ReturnFromShelfState extends State<ReturnFromShelf>
                           Container(
                             decoration: const BoxDecoration(
                               color: ColorName.white,
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(8),
-                                topLeft: Radius.circular(8),
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(8),
                               ),
                             ),
                             child: Column(
                               children: [
                                 ReturnFromShelfTabBarWidget(
-                                    _controller,
-                                    LocaleKeys.orders.tr(),
-                                    LocaleKeys.photo_report.tr(),
-                                    LocaleKeys.return_.tr(), (int i) {
-                                }).paddingOnly(
+                                  _controller,
+                                  LocaleKeys.orders.tr(),
+                                  LocaleKeys.photo_report.tr(),
+                                  LocaleKeys.return_.tr(),
+                                  (int i) {},
+                                ).paddingOnly(
                                   right:
                                       MediaQuery.of(context).size.width * 0.16,
                                 ),
@@ -240,6 +165,92 @@ class _ReturnFromShelfState extends State<ReturnFromShelf>
           ),
         ],
       ),
+    );
+  }
+
+  Container buildHeader() {
+    return Container(
+                          decoration: const BoxDecoration(
+                            color: ColorName.white,
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(12),
+                              bottomRight: Radius.circular(12),
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: AppWidgets.textLocale(
+                                  localeKey: "Osiyo Market",
+                                  fontSize: 24.sp,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ).paddingOnly(top: 50.w),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  AppWidgets.textLocale(
+                                    localeKey: "Supermarket",
+                                    fontSize: 12.sp,
+                                    color: ColorName.gray2,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                  AppWidgets.textLocale(
+                                    localeKey:
+                                        "${LocaleKeys.visits.tr()}:  Пн, Ср, Сб",
+                                    fontSize: 12.sp,
+                                    color: ColorName.gray2,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ],
+                              ).paddingOnly(top: 12.w),
+                              Row(
+                                children: [
+                                  AppWidgets.textLocale(
+                                    localeKey:
+                                        "${LocaleKeys.territory.tr()}  : ",
+                                    fontSize: 12.sp,
+                                    color: ColorName.gray2,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                  AppWidgets.textLocale(
+                                    localeKey: "Yunusobod rayoni",
+                                    fontSize: 12.sp,
+                                    color: ColorName.black,
+                                    fontWeight: FontWeight.w600,
+                                    isRichText: true,
+                                  ),
+                                ],
+                              ).paddingOnly(top: 12.w, bottom: 18.w),
+                            ],
+                          ).paddingSymmetric(horizontal: 20),
+                        );
+  }
+
+  Widget buildAppBar() {
+    return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(12),
+          bottomLeft: Radius.circular(12),
+        ),
+        color: ColorName.primaryColor,
+      ),
+      height: 133.h,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          AppBarIconReturn.backButtonShelf(
+            () {
+              Modular.to.pop();
+            },
+          ),
+          AppBarIconReturn.menuButtonShelf(),
+        ],
+      ).paddingSymmetric(horizontal: 20.w),
     );
   }
 }

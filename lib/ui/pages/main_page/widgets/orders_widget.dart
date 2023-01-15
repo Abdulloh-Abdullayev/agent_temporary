@@ -2,6 +2,7 @@ import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
+import 'package:agent/ui/pages/return_from_shelf/return_from_shelf.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -146,7 +147,9 @@ class _OrdersWidgetState extends State<OrdersWidget>
                         countNumber: '15',
                         summa: LocaleKeys.amount.tr(),
                         summaNumber: "150 000 000",
-                        card_onTap: () {},
+                        card_onTap: () {
+                          Modular.to.pushNamed(ReturnFromShelf.routeName);
+                        },
                       ).paddingOnly(
                         left: 18.w,
                         right: 18.w,

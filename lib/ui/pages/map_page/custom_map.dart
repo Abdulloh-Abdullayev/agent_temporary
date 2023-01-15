@@ -229,8 +229,7 @@ class _CustomMapState extends State<CustomMap> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       AppWidgets.textLocale(
-                                        localeKey:
-                                     LocaleKeys.route_built,
+                                        localeKey: LocaleKeys.route_built,
                                         fontSize: 16.sp,
                                         fontWeight: FontWeight.w400,
                                         maxLines: 1,

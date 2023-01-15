@@ -359,7 +359,7 @@ class AddOutletsPage extends StatelessWidget {
             onChanged: (v) {},
           ).paddingOnly(top: 18.w),
           inputWithTitle(
-            title:  LocaleKeys.bank.tr(),
+            title: LocaleKeys.bank.tr(),
             onChanged: (v) {},
           ).paddingOnly(top: 18.w),
           inputWithTitle(

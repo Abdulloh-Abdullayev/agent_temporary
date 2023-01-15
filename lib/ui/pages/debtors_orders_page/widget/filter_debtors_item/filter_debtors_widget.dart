@@ -139,8 +139,7 @@ class FilterDebtorsWidget extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return FilterDebtorsItem(
                         onTap: (int id) {
-                          DebtorsBloc.to
-                              .add(CheckRegion(id));
+                          DebtorsBloc.to.add(CheckRegion(id));
                         },
                         user: listModel![index],
                       );

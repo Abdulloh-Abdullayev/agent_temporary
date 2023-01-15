@@ -184,7 +184,8 @@ class ReturnItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "${LocaleKeys.cause.tr()}  //Товар не продается //",
+                    localeKey:
+                        "${LocaleKeys.cause.tr()}  //Товар не продается //",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
@@ -202,7 +203,8 @@ class ReturnItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "${LocaleKeys.shipping_date.tr()} //15.10.2022//",
+                    localeKey:
+                        "${LocaleKeys.shipping_date.tr()} //15.10.2022//",
                     color: ColorName.gray2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,

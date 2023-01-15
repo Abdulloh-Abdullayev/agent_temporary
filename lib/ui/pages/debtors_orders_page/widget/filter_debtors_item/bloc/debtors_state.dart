@@ -31,8 +31,7 @@ class DebtorsState extends Equatable {
     return DebtorsState(
       isLoading: isLoading ?? this.isLoading,
       reload: !reload,
-      isAllSelectedRegion:
-      isAllSelectedRegion ?? this.isAllSelectedRegion,
+      isAllSelectedRegion: isAllSelectedRegion ?? this.isAllSelectedRegion,
       regionFilterList: regionFilterList ?? this.regionFilterList,
       openRegion: openRegion ?? this.openRegion,
     );
@@ -40,13 +39,12 @@ class DebtorsState extends Equatable {
 
   @override
   List<Object?> get props => [
-    region,
-    reload,
-    isAllSelectedRegion,
-    isLoading,
-    hasError,
-    regionFilterList,
-    openRegion,
-  ];
-
+        region,
+        reload,
+        isAllSelectedRegion,
+        isLoading,
+        hasError,
+        regionFilterList,
+        openRegion,
+      ];
 }

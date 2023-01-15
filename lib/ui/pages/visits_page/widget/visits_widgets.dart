@@ -15,8 +15,7 @@ class VisitWidgets {
   static Widget Appbar(
           {required String title, required Function(String key) ontap}) =>
       Container(
-        height: 112.h,
-        width: 1.sw,
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: ColorName.primaryColor,
           borderRadius: BorderRadius.vertical(
@@ -62,7 +61,7 @@ class VisitWidgets {
               fontWeight: FontWeight.w500,
             )
           ],
-        ).paddingLTRB(20, 19, 20, 0),
+        ),
       );
 
   static Widget items({
@@ -109,7 +108,8 @@ class VisitWidgets {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppWidgets.text(text: LocaleKeys.return_.tr()),
-                            AppWidgets.text(text: LocaleKeys.return_of_containers.tr())
+                            AppWidgets.text(
+                                text: LocaleKeys.return_of_containers.tr())
                           ],
                         )
                       ],

@@ -54,7 +54,7 @@ class _EquipmentItemsState extends State<EquipmentItems> {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) =>  EquipmentDetails(),
+                  builder: (context) => EquipmentDetails(),
                 ),
               );
             },

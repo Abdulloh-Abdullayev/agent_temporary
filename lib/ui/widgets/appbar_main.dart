@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/utils/assets.gen.dart';
 import '../../core/utils/colors.gen.dart';
+import '../pages/home/home_page.dart';
 import 'app_widgets.dart';
 
 class AppBarMain extends StatelessWidget {
@@ -29,12 +30,7 @@ class AppBarMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(
-        top: 20,
-        left: 20,
-        right: 20,
-      ),
-      height: 100.w,
+      padding: const EdgeInsets.all(20),
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(12),
@@ -48,9 +44,11 @@ class AppBarMain extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InkWell(
-                onTap: menuTab,
-                child: Assets.images.icons.menuIcon.svg(),
+              AppWidgets.iconButton(
+                onPressed: () {
+                  HomePage.globalKey.currentState!.openDrawer();
+                },
+                icon: Assets.images.icons.menu,
               ),
               Row(
                 children: [
@@ -79,7 +77,7 @@ class AppBarMain extends StatelessWidget {
             color: ColorName.white,
             fontSize: 20.sp,
             fontWeight: FontWeight.w500,
-            padding: EdgeInsets.only(top: 12.w),
+            padding: EdgeInsets.only(top: 15.w),
           )
         ],
       ),

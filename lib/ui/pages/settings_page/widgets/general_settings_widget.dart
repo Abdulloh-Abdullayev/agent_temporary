@@ -153,7 +153,7 @@ class GeneralSettingsWidget extends StatelessWidget {
             ],
           ),
           SettingsContent(
-            title:  LocaleKeys.outlet.tr().toUpperCase(),
+            title: LocaleKeys.outlet.tr().toUpperCase(),
             isDisable: isDisable,
             items: [
               SettingsSwitch(

@@ -121,28 +121,28 @@ class _AllTasksPageState extends State<AllTasksPage>
       itemCount: 5,
       itemBuilder: ((context, index) {
         return InkWell(
-            onTap: () {
+          onTap: () {
+            Modular.to.pushNamed(ClickedItem.routeName);
+          },
+          child: Cards.cards_15(
+            name: "Osiyo market",
+            dobavlen: "Добавлен",
+            date: "13 окт",
+            primicheniya: "Примечание:",
+            product: "Кола 3 блок,Фанта 3 блок, дина...",
+            vipolneniya: "Выполнение до",
+            status: "Просрочено!",
+            statusColor: Colors.red,
+            cardColor: const Color(0xFFE5F3FF),
+            card_onTap: () {
               Modular.to.pushNamed(ClickedItem.routeName);
             },
-            child: Cards.cards_15(
-              name: "Osiyo market",
-              dobavlen: "Добавлен",
-              date: "13 окт",
-              primicheniya: "Примечание:",
-              product: "Кола 3 блок,Фанта 3 блок, дина...",
-              vipolneniya: "Выполнение до",
-              status: "Просрочено!",
-              statusColor: Colors.red,
-              cardColor: const Color(0xFFE5F3FF),
-              card_onTap: (){
-                Modular.to.pushNamed(ClickedItem.routeName);
-              },
-            ).paddingOnly(
+          ).paddingOnly(
             top: 15.w,
             right: 15.w,
             left: 15.w,
           ),
-            );
+        );
       }),
     );
   }
@@ -165,7 +165,7 @@ class _AllTasksPageState extends State<AllTasksPage>
             status: LocaleKeys.completed,
             statusColor: Colors.green,
             cardColor: const Color(0xFFE5F3FF),
-            card_onTap: (){
+            card_onTap: () {
               Modular.to.pushNamed(ClickedItem.routeName);
             },
           ).paddingOnly(

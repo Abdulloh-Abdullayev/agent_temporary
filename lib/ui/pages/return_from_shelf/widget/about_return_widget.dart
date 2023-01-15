@@ -93,4 +93,3 @@ class AboutReturnWidget extends StatelessWidget {
     );
   }
 }
-

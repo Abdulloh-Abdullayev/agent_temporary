@@ -100,13 +100,13 @@ class AppBarIcon {
                     return Modular.to.pushNamed(RestContainerPage.routeName);
                 }
               },
-              textName:  [
-                LocaleKeys.customer_date.tr(),
-                LocaleKeys.client_balance.tr(),
-                LocaleKeys.equipment.tr(),
-                LocaleKeys.act_of_reconciliation.tr(),
-                LocaleKeys.act_reconciliations_on_orders.tr(),
-                LocaleKeys.rest_of_container.tr(),
+              textName: [
+            LocaleKeys.customer_date.tr(),
+            LocaleKeys.client_balance.tr(),
+            LocaleKeys.equipment.tr(),
+            LocaleKeys.act_of_reconciliation.tr(),
+            LocaleKeys.act_reconciliations_on_orders.tr(),
+            LocaleKeys.rest_of_container.tr(),
           ],
               icons: [
             Assets.images.icons.infoCircle

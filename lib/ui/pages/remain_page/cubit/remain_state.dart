@@ -35,4 +35,3 @@ class RemainState extends Equatable {
         reload,
       ];
 }
-

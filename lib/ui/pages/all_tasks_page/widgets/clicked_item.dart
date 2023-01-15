@@ -71,7 +71,7 @@ class ClickedItem extends StatelessWidget {
                                 color: ColorName.white.withOpacity(0.1),
                               ),
                               child: PopupMenu(
-                                textName:  [
+                                textName: [
                                   LocaleKeys.edit.tr(),
                                   LocaleKeys.delete.tr(),
                                 ],
@@ -109,19 +109,18 @@ class ClickedItem extends StatelessWidget {
                     startDate: "12.10.2022",
                     finishDate: "12.10.2022",
                     context: context,
-                    card_onTap: () {  },
+                    card_onTap: () {},
                   ).paddingSymmetric(
                     horizontal: 20.w,
                     vertical: 18.w,
                   ),
                   Cards.cards_14(
-
                     primicheniya: LocaleKeys.note.tr(),
                     product:
                         "Кола 3 блок,Фанта 3 блок, динай 3 блок, Nestle 3 блок, Qibray 3 блок",
                     foto: LocaleKeys.photo,
                     image: "image",
-                    card_onTap: () {  },
+                    card_onTap: () {},
                   ).paddingAll(20.w),
                   Container(
                     width: 1.sw,

@@ -1,12 +1,11 @@
 import 'package:agent/core/extensions/app_extensions.dart';
-import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/about_order/widgets/about_order_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:agent/ui/widgets/img_container_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uikit/uikit.dart';
 
 class AboutOrderModule extends Module {
   @override
@@ -17,17 +16,18 @@ class AboutOrderModule extends Module {
         ),
       ];
 
-  // @override
-  // List<Bind<Object>> get binds => [
-  //       Bind<AppNavigationBloc>(
-  //         (i) => AppNavigationBloc(),
-  //         onDispose: (value) => value.close(),
-  //       ),
-  //     ];
+// @override
+// List<Bind<Object>> get binds => [
+//       Bind<AppNavigationBloc>(
+//         (i) => AppNavigationBloc(),
+//         onDispose: (value) => value.close(),
+//       ),
+//     ];
 }
 
 class AboutOrderPage extends StatefulWidget {
   static const String routeName = "/about-order-page";
+
   const AboutOrderPage({Key? key}) : super(key: key);
 
   @override
@@ -61,6 +61,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
   bool isShow = true;
   bool isHide = true;
   bool isDeleted = true;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -79,13 +80,12 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                   Container(
                     decoration: const BoxDecoration(
                       color: ColorName.white,
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(12),
-                        bottomRight: Radius.circular(12),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(8),
                       ),
                     ),
                     child: Padding(
-                      padding:  EdgeInsets.only(
+                      padding: EdgeInsets.only(
                         left: 20.w,
                         right: 20.w,
                       ),
@@ -109,43 +109,26 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                             fontWeight: FontWeight.w400,
                             color: ColorName.gray2,
                           ).marginOnly(top: 16.w),
-                          isShow
-                              ? Container(
-                                  child: AppWidgets.textLocale(
-                                      localeKey:
-                                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-                                      maxLines: 3),
-                                )
-                              : Container(
-                                  child: AppWidgets.textLocale(
-                                      localeKey:
-                                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-                                      maxLines: 100),
-                                ),
+                          Container(
+                            child: AppWidgets.textLocale(
+                              localeKey:
+                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+                              maxLines: isShow ? 100 : 3,
+                            ),
+                          ),
                           GestureDetector(
                             onTap: () {
                               setState(() {
                                 isShow = !isShow;
-                                isHide = !isHide;
                               });
                             },
-                            child: isHide
-                                ?  Text("more",
-                                    style: TextStyle(
-                                      color: ColorName.button,
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w500,
-                                      decoration: TextDecoration.underline,
-                                    ))
-                                :  Text(
-                                    "hide",
-                                    style: TextStyle(
-                                      color: ColorName.button,
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w500,
-                                      decoration: TextDecoration.underline,
-                                    ),
-                                  ),
+                            child: AppWidgets.text(
+                              text: isShow ? "hide" : 'more',
+                              color: ColorName.button,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                              decoration: TextDecoration.underline,
+                            ),
                           ),
                           Container(
                             margin: const EdgeInsets.only(top: 16),
@@ -154,66 +137,20 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                             color: Colors.grey,
                           ),
                           AppWidgets.textLocale(
-                                  localeKey: "Закрепленные файлы",
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  color: ColorName.gray2)
-                              .marginOnly(top: 16.w),
+                            localeKey: "Закрепленные файлы",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: ColorName.gray2,
+                          ).marginOnly(top: 16.w),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                             isDeleted ? Container(
-                                margin: const EdgeInsets.only(top: 8),
-                                height: 104.w,
-                                width: 104.w,
-                                decoration: BoxDecoration(
-                                  color: ColorName.white,
-                                  borderRadius: BorderRadius.circular(8),
-                                  image: const DecorationImage(
-                                    image: AssetImage(
-                                        "assets/images/reportImage.png"),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding:  EdgeInsets.only(
-                                    top: 72.w,
-                                    left: 8.w,
-                                    right: 72.w,
-                                    bottom: 8.w,
-                                  ),
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      showDialog(
-                                        context: context,
-                                        builder: (ctx) =>  AlertDialog(
-                                          content: PhotoReport(
-                                            padding:const EdgeInsets.all(0),
-                                            image: "assets/images/reportImage.png",
-                                            text:
-                                                "Вы дейтвительно хотите удалить данное фото?",
-                                            submit: (){
-                                              setState(() {
-                                                isDeleted = !isDeleted;
-                                                Modular.to.pop();
-                                              });
-                                            } ,  
-                                            quit: (){
-                                              Modular.to.pop();
-                                            },  
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    child: SizedBox(
-                                      height: 24.w,
-                                      width: 24.w,
-                                      child: Assets.images.icons.bin
-                                          .svg(height: 15.w),
-                                    ),
-                                  ),
-                                ),
-                              ) : const SizedBox(),
+                              ImageContainer(
+                                path: '',
+                                url: "1234567890",
+                                onTap: () {},
+                                delete: () {},
+                              )
                             ],
                           ).marginOnly(bottom: 100),
                         ],
@@ -237,22 +174,22 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppWidgets.textLocale(
-                  localeKey: "Заказанные товары",
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w600,
-                  color: ColorName.black)
-              .marginOnly(top: 18),
+            localeKey: "Заказанные товары",
+            fontSize: 20.sp,
+            fontWeight: FontWeight.w600,
+            color: ColorName.black,
+          ).marginOnly(top: 18),
           AppWidgets.textLocale(
-                  localeKey: "Напитки",
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: ColorName.black)
-              .marginOnly(top: 16),
-           SizedBox(
+            localeKey: "Напитки",
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w600,
+            color: ColorName.black,
+          ).marginOnly(top: 16),
+          SizedBox(
             height: 15.w,
           ),
           AboutOrderWidgets.cocaColaItems(),
-           SizedBox(
+          SizedBox(
             height: 18.w,
           ),
           Column(
@@ -263,7 +200,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                 "1365 о",
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
               ),
-               SizedBox(
+              SizedBox(
                 height: 12.w,
               ),
               AboutOrderWidgets.textBuilder(
@@ -271,7 +208,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
                 "1258 шт",
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
               ),
-               SizedBox(
+              SizedBox(
                 height: 12.w,
               ),
               AboutOrderWidgets.textBuilder(
@@ -282,7 +219,7 @@ class _AboutOrderPageState extends State<AboutOrderPage> {
               ),
             ],
           ),
-           SizedBox(
+          SizedBox(
             height: 24.w,
           )
         ],

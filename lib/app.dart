@@ -54,8 +54,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     // Modular.setInitialRoute(HomePage.routeName);
     Modular.setInitialRoute(LoginPage.routeName);
-    Modular.setObservers([BotToastNavigatorObserver()]
-    );
+    Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
       buildWhen: (previous, current) {

@@ -32,14 +32,16 @@ class ReportsPage extends StatelessWidget {
             ),
             automaticallyImplyLeading: false,
             leadingWidth: 0,
+            titleSpacing: 0,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                InkWell(
-                  onTap: () {
+                AppWidgets.iconButton(
+                  onPressed: () {
                     HomePage.globalKey.currentState!.openDrawer();
                   },
-                  child: Assets.images.icons.menu.svg(),
+                  icon: Assets.images.icons.menu,
                 ),
                 AppWidgets.iconButton(
                   onPressed: () {
@@ -52,13 +54,13 @@ class ReportsPage extends StatelessWidget {
                   icon: Assets.images.icons.filter,
                 )
               ],
-            ).paddingAll(5),
+            ).paddingOnly(left: 20, right: 20, top: 12),
             flexibleSpace: FlexibleSpaceBar(
               background: reportsAppBar(context),
               collapseMode: CollapseMode.none,
             ),
             pinned: true,
-            expandedHeight: 258,
+            expandedHeight: 270,
           ),
           SliverList(
             delegate: SliverChildListDelegate(
@@ -176,7 +178,7 @@ class ReportsPage extends StatelessWidget {
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,
-          ).paddingOnly(top: 30.w, bottom: 18.w),
+          ).paddingOnly(top: 42.w, bottom: 18.w),
           AppInputDate(
             firstText: LocaleKeys.select_date.tr(),
             dropDownText: LocaleKeys.current_month.tr(),
@@ -222,7 +224,7 @@ class ReportsPage extends StatelessWidget {
             width: 1.sw,
             textColor: Colors.white,
             color: ColorName.buttonColor,
-          ).paddingOnly(top: 10.w)
+          ).paddingOnly(top: 18.w)
         ],
       ),
     );

@@ -99,11 +99,11 @@ class OutletsPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InkWell(
-                onTap: () {
+              AppWidgets.iconButton(
+                onPressed: () {
                   HomePage.globalKey.currentState!.openDrawer();
                 },
-                child: Assets.images.icons.menu.svg(),
+                icon: Assets.images.icons.menu,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -127,7 +127,7 @@ class OutletsPage extends StatelessWidget {
             color: Colors.white,
           ).paddingOnly(top: 20.w, bottom: 18.w),
           AppSelectTabBar(
-            tabs:  [
+            tabs: [
               LocaleKeys.all.tr(),
               LocaleKeys.mon.tr(),
               LocaleKeys.tue.tr(),
@@ -137,7 +137,9 @@ class OutletsPage extends StatelessWidget {
               LocaleKeys.sat.tr(),
               LocaleKeys.sun.tr()
             ],
-            onTap: () {},
+            onTap: (int i) {
+              print(i);
+            },
           )
         ],
       ),

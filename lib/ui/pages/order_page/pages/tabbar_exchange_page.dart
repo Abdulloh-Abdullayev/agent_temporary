@@ -153,7 +153,7 @@ class TabbarExchangePage extends StatelessWidget {
                                       );
                                     } else if (p0 == 2) {}
                                   },
-                                  textName:  [
+                                  textName: [
                                     LocaleKeys.edit.tr(),
                                     LocaleKeys.comments_to_order.tr(),
                                     LocaleKeys.delete.tr(),

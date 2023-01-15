@@ -256,7 +256,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                                 const AboutReturnWidget(),
                                 Container(),
                                 Container(),
-                                   RemainsTabbarPage(),
+                                RemainsTabbarPage(),
                               ][_controller.index],
                             ),
                           ],
@@ -271,8 +271,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
           appTitle
         ],
       ),
-      floatingActionButton:
-           FloatingShowDialog().paddingOnly(bottom: 160.w),
+      floatingActionButton: FloatingShowDialog().paddingOnly(bottom: 160.w),
     );
   }
 }

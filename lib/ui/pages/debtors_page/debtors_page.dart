@@ -36,12 +36,12 @@ class DebtorsPage extends StatelessWidget {
           children: [
             balanceAppBar(context),
             buildList(),
-
           ],
         ),
       ),
     );
   }
+
   Widget buildList() {
     return Expanded(
       child: SingleChildScrollView(
@@ -144,4 +144,3 @@ class DebtorsPage extends StatelessWidget {
     );
   }
 }
-

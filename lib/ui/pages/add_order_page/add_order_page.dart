@@ -114,11 +114,11 @@ class _AddOrderPageState extends State<AddOrderPage> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: AppWidgets.textLocale(
-                                  localeKey: LocaleKeys.add_order.tr(),
-                                  fontSize: 24.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: ColorName.white,
-                                  isRichText: true,
+                                localeKey: LocaleKeys.add_order.tr(),
+                                fontSize: 24.sp,
+                                fontWeight: FontWeight.w600,
+                                color: ColorName.white,
+                                isRichText: true,
                               ).paddingOnly(top: 18.w, left: 20),
                             )
                           ],

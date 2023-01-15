@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class  LocaleKeys {
+abstract class LocaleKeys {
   static const welcome = 'welcome';
   static const enter_username_password = 'enter_username_password';
   static const server_name = 'server_name';
@@ -271,7 +271,8 @@ abstract class  LocaleKeys {
   static const use_discount = 'use_discount';
   static const filter_settings = 'filter_settings';
   static const sort_clients_alphabetic_order = 'sort_clients_alphabetic_order';
-  static const sort_products_alphabetic_order = 'sort_products_alphabetic_order';
+  static const sort_products_alphabetic_order =
+      'sort_products_alphabetic_order';
   static const phone = 'phone';
   static const gps = 'gps';
   static const add_new_outlet = 'add_new_outlet';
@@ -280,7 +281,8 @@ abstract class  LocaleKeys {
   static const phone_number_prefix = 'phone_number_prefix';
   static const availabe_fields_for_editing = 'availabe_fields_for_editing';
   static const company_name = 'company_name';
-  static const when_adding_order_photo_not_required = 'when_adding_order_photo_not_required';
+  static const when_adding_order_photo_not_required =
+      'when_adding_order_photo_not_required';
   static const application_date = 'application_date';
   static const all = 'all';
   static const mon = 'mon';
@@ -294,5 +296,4 @@ abstract class  LocaleKeys {
   static const draft_at = 'draft_at';
   static const from = 'from';
   static const by = 'by';
-
 }

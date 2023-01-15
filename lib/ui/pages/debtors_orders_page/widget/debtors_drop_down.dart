@@ -85,24 +85,26 @@ class _DebtorsDropDownState extends State<DebtorsDropDown> {
                     child: Row(
                       children: [
                         selectedValue == item
-                            ? AppCheckBox(onTap: () {  }, isCheck: iconChange,)
-                        // Container(
-                        //         height: 20.w,
-                        //         width: 20.w,
-                        //         decoration: BoxDecoration(
-                        //           color: ColorName.background,
-                        //             border: Border.all(color: ColorName.gray),
-                        //             borderRadius: BorderRadius.circular(4.r)),
-                        //         padding: const EdgeInsets.all(2),
-                        //         child: const Icon(
-                        //           Icons.keyboard_arrow_down,
-                        //           size: 16,
-                        //         ),
-                        //       ).paddingSymmetric(horizontal: 10)
-                            :
-                        Container(
-                          height: 20.w,
-                          width: 20.w,
+                            ? AppCheckBox(
+                                onTap: () {},
+                                isCheck: iconChange,
+                              )
+                            // Container(
+                            //         height: 20.w,
+                            //         width: 20.w,
+                            //         decoration: BoxDecoration(
+                            //           color: ColorName.background,
+                            //             border: Border.all(color: ColorName.gray),
+                            //             borderRadius: BorderRadius.circular(4.r)),
+                            //         padding: const EdgeInsets.all(2),
+                            //         child: const Icon(
+                            //           Icons.keyboard_arrow_down,
+                            //           size: 16,
+                            //         ),
+                            //       ).paddingSymmetric(horizontal: 10)
+                            : Container(
+                                height: 20.w,
+                                width: 20.w,
                                 decoration: BoxDecoration(
                                     color: ColorName.background,
                                     border: Border.all(color: ColorName.gray),

@@ -11,18 +11,18 @@ import 'package:uikit/uikit.dart';
 class DebtorsOrdersReportPageModule extends Module {
   @override
   List<ModularRoute> get routes => [
-    ChildRoute(
-      DebtorsOrdersReportPage.routeName,
-      child: (context, args) => const DebtorsOrdersReportPage(),
-    ),
-  ];
-
+        ChildRoute(
+          DebtorsOrdersReportPage.routeName,
+          child: (context, args) => const DebtorsOrdersReportPage(),
+        ),
+      ];
 }
+
 var columnTitles = ["Склад", "Дата", "Долг", "Оплачено", "Осталось"];
 
 class DebtorsOrdersReportPage extends StatelessWidget {
   const DebtorsOrdersReportPage({Key? key}) : super(key: key);
-  static const String routeName="/debtorsOrdersReportPage";
+  static const String routeName = "/debtorsOrdersReportPage";
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class DebtorsOrdersReportPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AppWidgets.backButton(
-                      () {
+                  () {
                     Modular.to.pop();
                   },
                 ),
@@ -53,14 +53,17 @@ class DebtorsOrdersReportPage extends StatelessWidget {
                     showModalBottomSheet(
                       context: context,
                       backgroundColor: Colors.transparent,
-                      builder: (context) => const OrderReconciliationActSheet(text: 'Фильтр', itemsName: [
-                        "Выбрать все",
-                        "Напитки",
-                        "Печенье",
-                        "Шоколад",
-                        "Шоколад",
-                        "Печенье",
-                      ],),
+                      builder: (context) => const OrderReconciliationActSheet(
+                        text: 'Фильтр',
+                        itemsName: [
+                          "Выбрать все",
+                          "Напитки",
+                          "Печенье",
+                          "Шоколад",
+                          "Шоколад",
+                          "Печенье",
+                        ],
+                      ),
                     );
                   },
                   icon: Assets.images.icons.filter,
@@ -68,7 +71,6 @@ class DebtorsOrdersReportPage extends StatelessWidget {
               ],
             ),
             flexibleSpace: FlexibleSpaceBar(
-
               background: reportsAppBar(context),
               collapseMode: CollapseMode.none,
             ),
@@ -101,8 +103,12 @@ class DebtorsOrdersReportPage extends StatelessWidget {
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: DataTable(
-                                border: TableBorder.all(color: ColorName.gray, borderRadius: BorderRadius.circular(8)),
-                                headingRowColor: MaterialStateProperty.all<Color>(ColorName.lightBlue),
+                                border: TableBorder.all(
+                                    color: ColorName.gray,
+                                    borderRadius: BorderRadius.circular(8)),
+                                headingRowColor:
+                                    MaterialStateProperty.all<Color>(
+                                        ColorName.lightBlue),
                                 columnSpacing: 24,
                                 horizontalMargin: 12,
                                 columns: [
@@ -213,7 +219,6 @@ class DebtorsOrdersReportPage extends StatelessWidget {
     );
   }
 
-
   Widget reportsAppBar(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(20),
@@ -255,9 +260,7 @@ class DebtorsOrdersReportPage extends StatelessWidget {
                 ),
               );
             },
-            dropDownOnTap: () {
-
-            },
+            dropDownOnTap: () {},
             SecondDateOnTap: () {
               showDialog(
                 context: context,

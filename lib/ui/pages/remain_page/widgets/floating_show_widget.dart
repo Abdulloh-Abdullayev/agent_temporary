@@ -8,7 +8,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-
 class FloatingShowDialog extends StatelessWidget {
   const FloatingShowDialog({Key? key}) : super(key: key);
 
@@ -36,28 +35,28 @@ class FloatingShowDialog extends StatelessWidget {
                         Modular.to.pushNamed(RemainsItemPage.routeName);
                       }
                     },
-          icons: [
-            Assets.images.icons.pin.svg(),
-            Assets.images.icons.history.svg(),
-            Assets.images.icons.smartphone.svg(),
-            Assets.images.icons.infoCircle.svg(),
-            Assets.images.icons.refresh.svg(),
-            Assets.images.icons.exchange.svg(),
-            Assets.images.icons.box1.svg(),
-            Icon(Icons.add),
-            // Assets.images.icons.box1.svg(),
-          ],
-          textName: [
-            LocaleKeys.plans.tr(),
-            LocaleKeys.history.tr(),
-            LocaleKeys.photo_report.tr(),
-            LocaleKeys.refusal.tr(),
-            LocaleKeys.return_from_shelf.tr(),
-            LocaleKeys.return_package.tr(),
-            LocaleKeys.exchange.tr(),
-            LocaleKeys.remains.tr(),
-          ],
-        ),
+                    icons: [
+                      Assets.images.icons.pin.svg(),
+                      Assets.images.icons.history.svg(),
+                      Assets.images.icons.smartphone.svg(),
+                      Assets.images.icons.infoCircle.svg(),
+                      Assets.images.icons.refresh.svg(),
+                      Assets.images.icons.exchange.svg(),
+                      Assets.images.icons.box1.svg(),
+                      Icon(Icons.add),
+                      // Assets.images.icons.box1.svg(),
+                    ],
+                    textName: [
+                      LocaleKeys.plans.tr(),
+                      LocaleKeys.history.tr(),
+                      LocaleKeys.photo_report.tr(),
+                      LocaleKeys.refusal.tr(),
+                      LocaleKeys.return_from_shelf.tr(),
+                      LocaleKeys.return_package.tr(),
+                      LocaleKeys.exchange.tr(),
+                      LocaleKeys.remains.tr(),
+                    ],
+                  ),
                 );
               }),
             );

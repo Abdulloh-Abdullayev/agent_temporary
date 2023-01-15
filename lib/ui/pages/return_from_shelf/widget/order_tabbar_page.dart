@@ -29,51 +29,51 @@ class OrderTabBarPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: LocaleKeys.total_volume,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12.sp,
-                        color: ColorName.gray2,
-                        isRichText: true),
+                      localeKey: LocaleKeys.total_volume,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12.sp,
+                      color: ColorName.gray2,
+                    ),
                     AppWidgets.textLocale(
-                        localeKey: "1365 о",
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12.sp,
-                        color: ColorName.black,
-                        isRichText: true),
+                      localeKey: "1365 о",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12.sp,
+                      color: ColorName.black,
+                    ),
                   ],
                 ).paddingSymmetric(vertical: 12.w),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: LocaleKeys.total_qty,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12.sp,
-                        color: ColorName.gray2,
-                        isRichText: true),
+                      localeKey: LocaleKeys.total_qty,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12.sp,
+                      color: ColorName.gray2,
+                    ),
                     AppWidgets.textLocale(
-                        localeKey: "1365 sht",
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12.sp,
-                        color: ColorName.black,
-                        isRichText: true),
+                      localeKey: "1365 sht",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12.sp,
+                      color: ColorName.black,
+                    ),
                   ],
                 ).paddingOnly(bottom: 12.w),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: LocaleKeys.total_amount,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12.sp,
-                        color: ColorName.gray2,
-                        isRichText: true),
+                      localeKey: LocaleKeys.total_amount,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12.sp,
+                      color: ColorName.gray2,
+                    ),
                     AppWidgets.textLocale(
-                        localeKey: "150 000 000 UZS",
-                        fontWeight: FontWeight.w600,
-                        fontSize: 12.sp,
-                        color: ColorName.button,
-                        isRichText: true),
+                      localeKey: "150 000 000 UZS",
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12.sp,
+                      color: ColorName.button,
+                    ),
                   ],
                 ).paddingOnly(bottom: 12.w),
               ],
@@ -111,10 +111,11 @@ class OrderTabBarPage extends StatelessWidget {
                               builder: (ctx) => Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: DateTimeDialog(
-                                    title: LocaleKeys.add_shipping_date.tr(),
-                                    closeTitle: LocaleKeys.close.tr(),
-                                    addTitle: LocaleKeys.add.tr(),
-                                    addTap: () {}),
+                                  title: LocaleKeys.add_shipping_date.tr(),
+                                  closeTitle: LocaleKeys.close.tr(),
+                                  addTitle: LocaleKeys.add.tr(),
+                                  addTap: () {},
+                                ),
                               ),
                             );
                           } else if (p0 == 3) {
@@ -123,10 +124,11 @@ class OrderTabBarPage extends StatelessWidget {
                               builder: (ctx) => Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: DateTimeDialog(
-                                    title: LocaleKeys.add_consignment.tr(),
-                                    closeTitle: LocaleKeys.close.tr(),
-                                    addTitle: LocaleKeys.add.tr(),
-                                    addTap: () {}),
+                                  title: LocaleKeys.add_consignment.tr(),
+                                  closeTitle: LocaleKeys.close.tr(),
+                                  addTitle: LocaleKeys.add.tr(),
+                                  addTap: () {},
+                                ),
                               ),
                             );
                           }
@@ -176,87 +178,6 @@ class OrderTabBarPage extends StatelessWidget {
                       statusColor: ColorName.green,
                     ),
                   );
-                  // child: Cards.cards_2(
-                  //   name: "name",
-                  //   time: "time",
-                  //   icon: PopupMenuTools(
-                  //     onTap: (p0) {
-                  //       if (p0 == 1) {
-                  //         showDialog(
-                  //           context: context,
-                  //           builder: (ctx) => const AlertDialog(
-                  //             content: CommitTextField(
-                  //               text: "Добавление комментарии",
-                  //             ),
-                  //           ),
-                  //         );
-                  //       } else if (p0 == 2) {
-                  //         showDialog(
-                  //           context: context,
-                  //           builder: (ctx) => Padding(
-                  //             padding: const EdgeInsets.all(4.0),
-                  //             child: DateTimeDialog(
-                  //                 title: "Добавить дату отгрузки",
-                  //                 closeTitle: "Закрыть",
-                  //                 addTitle: "Добавить",
-                  //                 addTap: () {}),
-                  //           ),
-                  //         );
-                  //       } else if (p0 == 3) {
-                  //         showDialog(
-                  //           context: context,
-                  //           builder: (ctx) => Padding(
-                  //             padding: const EdgeInsets.all(4.0),
-                  //             child: DateTimeDialog(
-                  //                 title: "Добавить консигнация",
-                  //                 closeTitle: "Закрыть",
-                  //                 addTitle: "Добавить",
-                  //                 addTap: () {}),
-                  //           ),
-                  //         );
-                  //       }
-                  //     },
-                  //     textName: const [
-                  //       "Редактрировать",
-                  //       "Комментария к заказу",
-                  //       "Дата отгрузки",
-                  //       "Срок Консигнация",
-                  //       "Закрепить фото",
-                  //       'Отменить',
-                  //     ],
-                  //     icons: [
-                  //       Assets.images.icons.editeAlt.svg(
-                  //           fit: BoxFit.cover, color: ColorName.button),
-                  //       Assets.images.icons.chat
-                  //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                  //       Assets.images.icons.calender
-                  //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                  //       Assets.images.icons.clock
-                  //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                  //       Assets.images.icons.fileUpload
-                  //           .svg(fit: BoxFit.cover, color: ColorName.gray2),
-                  //       const SizedBox.shrink(),
-                  //     ],
-                  //     textColor: const [
-                  //       ColorName.button,
-                  //       ColorName.black,
-                  //       ColorName.black,
-                  //       ColorName.black,
-                  //       ColorName.black,
-                  //       ColorName.red,
-                  //     ],
-                  //   ),
-                  //   nalichniy: "nalichniy",
-                  //   bezbonus: "bezbonus",
-                  //   dostavlen: "dostavlen",
-                  //   obem: "obem",
-                  //   obemNumber: "15",
-                  //   soni: "soni",
-                  //   soniNumber: "15",
-                  //   summa: "summa",
-                  //   summaNumber: "1000000",
-                  //   context: context,
-                  // );
                 },
               )
             ],
@@ -266,4 +187,3 @@ class OrderTabBarPage extends StatelessWidget {
     );
   }
 }
-

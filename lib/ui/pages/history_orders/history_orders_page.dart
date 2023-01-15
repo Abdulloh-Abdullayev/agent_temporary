@@ -134,7 +134,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                   AppTabBar(
                     tabController: tabController,
                     isScrollable: true,
-                    tabTitle:  [LocaleKeys.orders.tr(), LocaleKeys.top.tr()],
+                    tabTitle: [LocaleKeys.orders.tr(), LocaleKeys.top.tr()],
                     onTap: (i) {
                       pageController.animateToPage(
                         i,

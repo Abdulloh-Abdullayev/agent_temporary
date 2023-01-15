@@ -69,7 +69,7 @@ class DebtorsHistory extends StatelessWidget {
                     // dataPanel(),
                     // planFactBuild(),
                     // const TableFact().paddingOnly(top: 16.w),
-                     const DebtorsTable(),
+                    const DebtorsTable(),
                   ],
                 ).paddingSymmetric(horizontal: 20.w, vertical: 20.w)
               ],
