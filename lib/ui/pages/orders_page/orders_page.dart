@@ -55,76 +55,78 @@ class _OrdersPageState extends State<OrdersPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-      body: Column(
-        children: [
-          Container(
-            decoration: const BoxDecoration(
+      child: Scaffold(
+        body: Column(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(12),
                   bottomLeft: Radius.circular(12),
                 ),
-                color: ColorName.primaryColor),
-            height: 149.h,
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: AppBarIcon.backButton(() {
-                    Modular.to.pop();
-                  }).paddingOnly(
-                    left: 20.w,
-                    right: 20.w,
-                    top: 19.w,
+                color: ColorName.primaryColor,
+              ),
+              height: 149.h,
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: AppBarIcon.backButton(() {
+                      Modular.to.pop();
+                    }).paddingOnly(
+                      left: 20.w,
+                      right: 20.w,
+                      top: 19.w,
+                    ),
                   ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: AppWidgets.textLocale(
-                          localeKey: "Заказы",
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w500,
-                          color: ColorName.white,
-                          isRichText: true)
-                      .paddingOnly(top: 18.w, left: 20),
-                ),
-                AppTabBar(
-                  // labelStyle: TextStyle(fontSize: 16.w),
-                  tabController: tabController,
-                  tabTitle: [
-                    "Все заказы",
-                    "Синхронированные",
-                    "Не Синхронированные",
-                  ],
-                  onTap: (i) {
-                    pageController.animateToPage(
-                      i,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.linear,
-                    );
-                  },
-                ),
-              ],
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: AppWidgets.textLocale(
+                            localeKey: "Заказы",
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w500,
+                            color: ColorName.white,
+                            isRichText: true)
+                        .paddingOnly(top: 18.w, left: 20),
+                  ),
+                  AppTabBar(
+                    // labelStyle: TextStyle(fontSize: 16.w),
+                    tabController: tabController,
+                    tabTitle: [
+                      "Все заказы",
+                      "Синхронированные",
+                      "Не Синхронированные",
+                    ],
+                    onTap: (i) {
+                      pageController.animateToPage(
+                        i,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.linear,
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ).paddingOnly(bottom: 18.w),
+            Expanded(
+              child: TabBarView(
+                controller: tabController,
+                children: [
+                  TabbarFirstItem(),
+                  Container(
+                    color: Colors.deepPurple,
+                    child: Text("Omborxona Zaxirasi"),
+                  ),
+                  Container(
+                    color: Colors.yellow,
+                    child: Text("Omborxona Zaxirasi"),
+                  ),
+                ],
+              ),
             ),
-          ).paddingOnly(bottom: 18.w),
-          Expanded(
-            child: TabBarView(
-              controller: tabController,
-              children: [
-                TabbarFirstItem(),
-                Container(
-                  color: Colors.deepPurple,
-                  child: Text("Omborxona Zaxirasi"),
-                ),
-                Container(
-                  color: Colors.yellow,
-                  child: Text("Omborxona Zaxirasi"),
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

@@ -87,11 +87,12 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
           children: [
             Container(
               decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(12),
-                    bottomLeft: Radius.circular(12),
-                  ),
-                  color: ColorName.primaryColor),
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(12),
+                  bottomLeft: Radius.circular(12),
+                ),
+                color: ColorName.primaryColor,
+              ),
               height: 133.h,
               child: Column(
                 children: [
@@ -101,21 +102,23 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                       AppBarIcon.backButton(() {
                         Modular.to.pop();
                       }),
-                      AppBarIcon.filterButton(() {
-                        showModalBottomSheet(
-                          enableDrag: true,
-                          isDismissible: false,
-                          isScrollControlled: true,
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(12),
-                          )),
-                          context: context,
-                          builder: (context) {
-                            return const FilterBottomSheet();
-                          },
-                        );
-                      })
+                      AppBarIcon.filterButton(
+                        () {
+                          showModalBottomSheet(
+                            enableDrag: true,
+                            isDismissible: false,
+                            isScrollControlled: true,
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(12),
+                            )),
+                            context: context,
+                            builder: (context) {
+                              return const FilterBottomSheet();
+                            },
+                          );
+                        },
+                      )
                     ],
                   ).paddingOnly(
                     left: 20.w,
@@ -125,12 +128,12 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                   Align(
                     alignment: Alignment.centerLeft,
                     child: AppWidgets.textLocale(
-                            localeKey: "Диагностика",
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w500,
-                            color: ColorName.white,
-                            isRichText: true)
-                        .paddingOnly(top: 18.w, left: 20),
+                      localeKey: "Диагностика",
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w500,
+                      color: ColorName.white,
+                      isRichText: true,
+                    ).paddingOnly(top: 18.w, left: 20),
                   )
                 ],
               ),

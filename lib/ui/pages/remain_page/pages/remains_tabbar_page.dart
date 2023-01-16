@@ -107,7 +107,7 @@ class RemainsTabbarPage extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: ColorName.gray,
-          )),
+          ),),
       child: Column(
         children: [
           Row(

@@ -46,32 +46,35 @@ class DraftPage extends StatelessWidget {
             Container(
               height: 112.h,
               decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(12),
-                    bottomLeft: Radius.circular(12),
-                  ),
-                  color: ColorName.primaryColor),
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(12),
+                  bottomLeft: Radius.circular(12),
+                ),
+                color: ColorName.primaryColor,
+              ),
               child: Column(
                 children: [
                   Align(
-                          alignment: Alignment.centerLeft,
-                          child: AppBarIcon.menu_icon(() {}))
-                      .paddingOnly(top: 20.w),
+                    alignment: Alignment.centerLeft,
+                    child: AppBarIcon.menu_icon(() {}),
+                  ).paddingOnly(top: 20.w),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                          localeKey: "Черновик",
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20.sp,
-                          color: ColorName.white,
-                          isRichText: true),
+                        localeKey: "Черновик",
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20.sp,
+                        color: ColorName.white,
+                        isRichText: true,
+                      ),
                       AppWidgets.textLocale(
-                          localeKey: "Очистить черновик",
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14.sp,
-                          color: ColorName.red,
-                          isRichText: true),
+                        localeKey: "Очистить черновик",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14.sp,
+                        color: ColorName.red,
+                        isRichText: true,
+                      ),
                     ],
                   ).paddingOnly(top: 20.w),
                 ],

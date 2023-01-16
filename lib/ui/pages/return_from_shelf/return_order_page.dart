@@ -55,11 +55,12 @@ class _ReturnOrderDatePageState extends State<ReturnOrderDatePage> {
                     children: [
                       Container(
                         decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              bottomRight: Radius.circular(12),
-                              bottomLeft: Radius.circular(12),
-                            ),
-                            color: ColorName.primaryColor),
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(12),
+                            bottomLeft: Radius.circular(12),
+                          ),
+                          color: ColorName.primaryColor,
+                        ),
                         height: 139.h,
                         child: Column(
                           children: [
@@ -98,19 +99,20 @@ class _ReturnOrderDatePageState extends State<ReturnOrderDatePage> {
                         ),
                       ),
                       Container(
-                          margin: EdgeInsets.only(top: 24.w),
-                          color: ColorName.white,
-                          child: ListView.builder(
-                            shrinkWrap: true,
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemCount: state.list.length,
-                            itemBuilder: (context, index) {
-                              return ItemOrderWidget(
-                                returnOrderModel: state.list[index],
-                                index: index,
-                              );
-                            },
-                          )).paddingOnly(bottom: 150.w)
+                        margin: EdgeInsets.only(top: 24.w),
+                        color: ColorName.white,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: state.list.length,
+                          itemBuilder: (context, index) {
+                            return ItemOrderWidget(
+                              returnOrderModel: state.list[index],
+                              index: index,
+                            );
+                          },
+                        ),
+                      ).paddingOnly(bottom: 150.w)
                     ],
                   ),
                 ),
@@ -140,11 +142,12 @@ class ItemOrderWidget extends StatelessWidget {
         ExpansionTile(
           collapsedTextColor: ColorName.black,
           title: AppWidgets.textLocale(
-              localeKey: returnOrderModel.name!,
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w600,
-              color: ColorName.black,
-              isRichText: true),
+            localeKey: returnOrderModel.name!,
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w600,
+            color: ColorName.black,
+            isRichText: true,
+          ),
           children: [
             ListView.builder(
               shrinkWrap: true,
