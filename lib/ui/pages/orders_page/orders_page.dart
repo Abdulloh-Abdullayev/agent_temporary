@@ -81,12 +81,11 @@ class _OrdersPageState extends State<OrdersPage> with TickerProviderStateMixin {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: AppWidgets.textLocale(
-                          localeKey: "Заказы",
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w500,
-                          color: ColorName.white,
-                          isRichText: true)
-                      .paddingOnly(top: 18.w, left: 20),
+                    localeKey: "Заказы",
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w500,
+                    color: ColorName.white,
+                  ).paddingOnly(top: 18.w, left: 20),
                 ),
                 AppTabBar(
                   // labelStyle: TextStyle(fontSize: 16.w),

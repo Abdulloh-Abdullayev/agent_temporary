@@ -62,46 +62,7 @@ class LeftMenuPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 27.r,
-                                child: CachedNetworkImage(
-                                  width: 54,
-                                  height: 54,
-                                  imageUrl: "",
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) =>
-                                      const CircularProgressIndicator(),
-                                  errorWidget: (context, url, error) => Icon(
-                                    Icons.person,
-                                    color: ColorName.white,
-                                    size: 50.w,
-                                  ),
-                                ),
-                              ).paddingOnly(right: 10.w),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  AppWidgets.text(
-                                    text: "Agent 007",
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: ColorName.white,
-                                  ).paddingOnly(bottom: 4.w),
-                                  AppWidgets.text(
-                                    text: "${LocaleKeys.server.tr()}: Distr",
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorName.white.withOpacity(0.5),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
+                          buildCurrentUser(),
                           InkWell(
                             onTap: () {
                               bloc.add(HideShowed(!state.hideShow));
@@ -177,6 +138,48 @@ class LeftMenuPage extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+
+  Row buildCurrentUser() {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        CircleAvatar(
+          radius: 27.r,
+          child: CachedNetworkImage(
+            width: 54,
+            height: 54,
+            imageUrl: "",
+            fit: BoxFit.cover,
+            placeholder: (context, url) => const CircularProgressIndicator(),
+            errorWidget: (context, url, error) => Icon(
+              Icons.person,
+              color: ColorName.white,
+              size: 50.w,
+            ),
+          ),
+        ).paddingOnly(right: 10.w),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AppWidgets.text(
+              text: "Agent 007",
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w600,
+              color: ColorName.white,
+            ).paddingOnly(bottom: 4.w),
+            AppWidgets.text(
+              text: "${LocaleKeys.server.tr()}: Distr",
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w400,
+              color: ColorName.white.withOpacity(0.5),
+            ),
+          ],
+        )
+      ],
     );
   }
 

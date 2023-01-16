@@ -154,6 +154,7 @@ class VisitWidgets {
         width: 1.sw,
         color: ColorName.gray,
       );
+
   static Widget dot() => Container(
         height: 5.w,
         width: 5.w,

@@ -122,17 +122,17 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AppWidgets.text(
-                                text: LocaleKeys.returned_goods.tr(),
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.black)
-                            .marginOnly(top: 18),
+                          text: LocaleKeys.returned_goods.tr(),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).marginOnly(top: 18),
                         AppWidgets.text(
-                                text: "Напитки",
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.black)
-                            .marginOnly(top: 16),
+                          text: "Напитки",
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).marginOnly(top: 16),
                         const SizedBox(
                           height: 15,
                         ),

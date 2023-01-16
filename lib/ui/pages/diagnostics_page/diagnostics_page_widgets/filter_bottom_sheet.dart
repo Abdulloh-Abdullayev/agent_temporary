@@ -45,17 +45,17 @@ class FilterBottomSheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: LocaleKeys.debtors,
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ColorName.black,
-                      isRichText: true),
+                    localeKey: LocaleKeys.debtors,
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w600,
+                    color: ColorName.black,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: LocaleKeys.reset_filter,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ColorName.red,
-                      isRichText: true)
+                    localeKey: LocaleKeys.reset_filter,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: ColorName.red,
+                  )
                 ],
               ).paddingOnly(top: 28.w),
               Expanded(
@@ -65,12 +65,11 @@ class FilterBottomSheet extends StatelessWidget {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: AppWidgets.textLocale(
-                                localeKey: "Напитки",
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.black,
-                                isRichText: true)
-                            .paddingOnly(top: 24.w, bottom: 17.w),
+                          localeKey: "Напитки",
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).paddingOnly(top: 24.w, bottom: 17.w),
                       ),
                       listview_widget(
                         ChekBoxWidget(
@@ -81,12 +80,11 @@ class FilterBottomSheet extends StatelessWidget {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: AppWidgets.textLocale(
-                                localeKey: "Напитки",
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.black,
-                                isRichText: true)
-                            .paddingOnly(top: 24.w, bottom: 17.w),
+                          localeKey: "Напитки",
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).paddingOnly(top: 24.w, bottom: 17.w),
                       ),
                       listview_widget(
                           ChekBoxWidget(

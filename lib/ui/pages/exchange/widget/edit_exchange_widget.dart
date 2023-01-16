@@ -22,7 +22,7 @@ class EditExchangeWidget extends StatelessWidget {
   EditExchangeWidget({Key? key}) : super(key: key);
 
   static String routeName = "/edit-exchange";
-  ScrollController controller = ScrollController();
+  final ScrollController controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {

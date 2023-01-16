@@ -20,14 +20,14 @@ class PhotoReportPage extends StatelessWidget {
         child: Column(
           children: [
             Align(
-                    alignment: Alignment.centerLeft,
-                    child: AppWidgets.textLocale(
-                        localeKey: LocaleKeys.out_of_sync,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16.sp,
-                        color: ColorName.black,
-                        isRichText: true))
-                .paddingOnly(bottom: 12.w),
+              alignment: Alignment.centerLeft,
+              child: AppWidgets.textLocale(
+                localeKey: LocaleKeys.out_of_sync,
+                fontWeight: FontWeight.w600,
+                fontSize: 16.sp,
+                color: ColorName.black,
+              ),
+            ).paddingOnly(bottom: 12.w),
             SizedBox(
               height: 104.w,
               child: ListView.builder(
@@ -48,11 +48,11 @@ class PhotoReportPage extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: AppWidgets.textLocale(
-                  localeKey: LocaleKeys.synchronized,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16.sp,
-                  color: ColorName.black,
-                  isRichText: true),
+                localeKey: LocaleKeys.synchronized,
+                fontWeight: FontWeight.w600,
+                fontSize: 16.sp,
+                color: ColorName.black,
+              ),
             ).paddingOnly(bottom: 12.w),
             GridView.builder(
                 shrinkWrap: true,

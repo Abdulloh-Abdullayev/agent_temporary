@@ -8,8 +8,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'category_remain.dart';
 
 class RemainStockItem extends StatefulWidget {
-  RemainStockItem({required this.index, Key? key}) : super(key: key);
-  int index;
+  const RemainStockItem({
+    required this.index,
+    Key? key,
+  }) : super(key: key);
+  final int index;
 
   @override
   State<RemainStockItem> createState() => _RemainStockItemState();

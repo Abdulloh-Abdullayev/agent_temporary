@@ -28,27 +28,25 @@ class TabbarThirdWidget extends StatelessWidget {
                     Column(
                       children: [
                         AppWidgets.textLocale(
-                                localeKey: "5",
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
-                                isRichText: true,
-                                color: ColorName.black)
-                            .paddingOnly(bottom: 4.w),
+                          localeKey: "5",
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).paddingOnly(bottom: 4.w),
                         AppWidgets.textLocale(
-                            localeKey: LocaleKeys.plan,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.gray2)
+                          localeKey: LocaleKeys.plan,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.gray2,
+                        )
                       ],
                     ).paddingOnly(top: 15.w, bottom: 39.w),
                     AppWidgets.textLocale(
-                            localeKey: "${"10"}%",
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.black)
-                        .paddingOnly(bottom: 40.w),
+                      localeKey: "${"10"}%",
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                      color: ColorName.black,
+                    ).paddingOnly(bottom: 40.w),
                   ],
                 ),
               ),
@@ -67,27 +65,25 @@ class TabbarThirdWidget extends StatelessWidget {
                     Column(
                       children: [
                         AppWidgets.textLocale(
-                                localeKey: "0",
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
-                                isRichText: true,
-                                color: ColorName.black)
-                            .paddingOnly(bottom: 4.w),
+                          localeKey: "0",
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).paddingOnly(bottom: 4.w),
                         AppWidgets.textLocale(
-                            localeKey: LocaleKeys.ucb,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.gray2)
+                          localeKey: LocaleKeys.ucb,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.gray2,
+                        )
                       ],
                     ).paddingOnly(top: 15.w, bottom: 39.w),
                     AppWidgets.textLocale(
-                            localeKey: "${"10"}%",
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.black)
-                        .paddingOnly(bottom: 40.w),
+                      localeKey: "${"10"}%",
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                      color: ColorName.black,
+                    ).paddingOnly(bottom: 40.w),
                   ],
                 ),
               ),
@@ -121,18 +117,17 @@ class TabbarThirdWidget extends StatelessWidget {
           child: Column(
             children: [
               AppWidgets.textLocale(
-                      localeKey: "5",
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
-                      isRichText: true,
-                      color: ColorName.black)
-                  .paddingOnly(bottom: 4.w),
+                localeKey: "5",
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w600,
+                color: ColorName.black,
+              ).paddingOnly(bottom: 4.w),
               AppWidgets.textLocale(
-                  localeKey: LocaleKeys.total_number_of_orders,
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w400,
-                  isRichText: true,
-                  color: ColorName.gray2)
+                localeKey: LocaleKeys.total_number_of_orders,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w400,
+                color: ColorName.gray2,
+              )
             ],
           ).paddingOnly(top: 18.w, bottom: 16.w),
         ),

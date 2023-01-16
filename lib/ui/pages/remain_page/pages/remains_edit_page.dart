@@ -15,17 +15,18 @@ class RemainsEditPageModule extends Module {
         ),
       ];
 
-  // @override
-  // List<Bind<Object>> get binds => [
-  //       Bind<AppNavigationBloc>(
-  //         (i) => AppNavigationBloc(),
-  //         onDispose: (value) => value.close(),
-  //       ),
-  //     ];
+// @override
+// List<Bind<Object>> get binds => [
+//       Bind<AppNavigationBloc>(
+//         (i) => AppNavigationBloc(),
+//         onDispose: (value) => value.close(),
+//       ),
+//     ];
 }
 
 class RemainsEditPage extends StatefulWidget {
   static const String routeName = "/remains-edit-page";
+
   const RemainsEditPage({super.key});
 
   @override
@@ -136,34 +137,35 @@ class _RemainsEditPageState extends State<RemainsEditPage> {
           ),
           Expanded(
             child: ListView.builder(
-                itemCount: 6,
-                itemBuilder: (BuildContext context, int index) {
-                  return Column(
-                    children: [
-                      Container(
-                        height: 39.w,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 12),
-                        decoration: BoxDecoration(
-                          color: ColorName.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            AppWidgets.textLocale(localeKey: "Coca cola"),
-                            AppWidgets.textLocale(localeKey: "5"),
-                          ],
-                        ),
+              itemCount: 6,
+              itemBuilder: (BuildContext context, int index) {
+                return Column(
+                  children: [
+                    Container(
+                      height: 39.w,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 12),
+                      decoration: BoxDecoration(
+                        color: ColorName.white,
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                      Container(
-                        height: 1.w,
-                        width: 1.sw,
-                        color: ColorName.gray,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          AppWidgets.textLocale(localeKey: "Coca cola"),
+                          AppWidgets.textLocale(localeKey: "5"),
+                        ],
                       ),
-                    ],
-                  );
-                }),
+                    ),
+                    Container(
+                      height: 1.w,
+                      width: 1.sw,
+                      color: ColorName.gray,
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ],
       ),

@@ -20,42 +20,40 @@ class TabbarFirstWidget extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: ColorName.gray),
-                    borderRadius: BorderRadius.circular(12)),
+                  color: Colors.white,
+                  border: Border.all(color: ColorName.gray),
+                  borderRadius: BorderRadius.circular(12),
+                ),
                 child: Column(
                   children: [
                     Column(
                       children: [
                         AppWidgets.textLocale(
-                                localeKey: "5",
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
-                                isRichText: true,
-                                color: ColorName.black)
-                            .paddingOnly(bottom: 4.w),
+                          localeKey: "5",
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).paddingOnly(bottom: 4.w),
                         AppWidgets.textLocale(
-                            localeKey: LocaleKeys.plan,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.gray2)
+                          localeKey: LocaleKeys.plan,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.gray2,
+                        )
                       ],
                     ).paddingOnly(top: 15.w, bottom: 39.w),
                     AppWidgets.textLocale(
-                            localeKey: "${"10"}%",
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.black)
-                        .paddingOnly(bottom: 40.w),
+                      localeKey: "${"10"}%",
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                      color: ColorName.black,
+                    ).paddingOnly(bottom: 40.w),
                     AppWidgets.textLocale(
-                            localeKey: "${"10"}%",
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.black)
-                        .paddingOnly(bottom: 23.w)
+                      localeKey: "${"10"}%",
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                      color: ColorName.black,
+                    ).paddingOnly(bottom: 23.w)
                   ],
                 ),
               ),
@@ -74,34 +72,31 @@ class TabbarFirstWidget extends StatelessWidget {
                     Column(
                       children: [
                         AppWidgets.textLocale(
-                                localeKey: "5",
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
-                                isRichText: true,
-                                color: ColorName.black)
-                            .paddingOnly(bottom: 4.w),
+                          localeKey: "5",
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).paddingOnly(bottom: 4.w),
                         AppWidgets.textLocale(
-                            localeKey: LocaleKeys.in_a_day,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.gray2)
+                          localeKey: LocaleKeys.in_a_day,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.gray2,
+                        )
                       ],
                     ).paddingOnly(top: 15.w, bottom: 39.w),
                     AppWidgets.textLocale(
-                            localeKey: "${"10"}%",
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.black)
-                        .paddingOnly(bottom: 40.w),
+                      localeKey: "${"10"}%",
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                      color: ColorName.black,
+                    ).paddingOnly(bottom: 40.w),
                     AppWidgets.textLocale(
-                            localeKey: "${"10"}%",
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.black)
-                        .paddingOnly(bottom: 23.w)
+                      localeKey: "${"10"}%",
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                      color: ColorName.black,
+                    ).paddingOnly(bottom: 23.w)
                   ],
                 ),
               ),

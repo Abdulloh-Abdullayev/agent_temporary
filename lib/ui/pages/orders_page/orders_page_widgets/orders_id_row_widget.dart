@@ -12,17 +12,17 @@ class OrderIdCards {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         AppWidgets.textLocale(
-            localeKey: text_1,
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w400,
-            color: ColorName.gray2,
-            isRichText: true),
+          localeKey: text_1,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w400,
+          color: ColorName.gray2,
+        ),
         AppWidgets.textLocale(
-            localeKey: text_2,
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w600,
-            color: color,
-            isRichText: true),
+          localeKey: text_2,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w600,
+          color: color,
+        ),
       ],
     );
   }
@@ -37,22 +37,21 @@ class OrderIdCards {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         AppWidgets.textLocale(
-            localeKey: text_1,
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w400,
-            color: ColorName.gray2,
-            isRichText: true),
+          localeKey: text_1,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w400,
+          color: ColorName.gray2,
+        ),
         Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8), color: colorContainer),
           child: Center(
             child: AppWidgets.textLocale(
-                    localeKey: text_2,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: statusColor,
-                    isRichText: true)
-                .paddingSymmetric(
+              localeKey: text_2,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w400,
+              color: statusColor,
+            ).paddingSymmetric(
               horizontal: 10.w,
               vertical: 4.w,
             ),

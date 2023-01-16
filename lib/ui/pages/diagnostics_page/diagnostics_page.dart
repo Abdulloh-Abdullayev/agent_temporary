@@ -90,11 +90,12 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
             children: [
               Container(
                 decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(12),
-                      bottomLeft: Radius.circular(12),
-                    ),
-                    color: ColorName.primaryColor),
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(12),
+                    bottomLeft: Radius.circular(12),
+                  ),
+                  color: ColorName.primaryColor,
+                ),
                 height: 133.h,
                 child: Column(
                   children: [
@@ -129,12 +130,11 @@ class _DiagnosticsPageState extends State<DiagnosticsPage>
                     Align(
                       alignment: Alignment.centerLeft,
                       child: AppWidgets.textLocale(
-                              localeKey: LocaleKeys.diagnostics,
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w500,
-                              color: ColorName.white,
-                              isRichText: true)
-                          .paddingOnly(top: 18.w, left: 20),
+                        localeKey: LocaleKeys.diagnostics,
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w500,
+                        color: ColorName.white,
+                      ).paddingOnly(top: 18.w, left: 20),
                     )
                   ],
                 ),

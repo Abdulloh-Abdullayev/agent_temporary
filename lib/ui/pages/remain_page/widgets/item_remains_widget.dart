@@ -174,14 +174,16 @@ class _RemainsItemWidgetState extends State<RemainsItemWidget> {
                                       ),
                                     ),
                                     SizedBox(
-                                        width: 30.w,
-                                        child: Center(
-                                          child: AppWidgets.textLocale(
-                                              localeKey: "${model.count}",
-                                              fontWeight: FontWeight.w400,
-                                              color: ColorName.black,
-                                              fontSize: 12.sp),
-                                        )),
+                                      width: 30.w,
+                                      child: Center(
+                                        child: AppWidgets.textLocale(
+                                          localeKey: "${model.count}",
+                                          fontWeight: FontWeight.w400,
+                                          color: ColorName.black,
+                                          fontSize: 12.sp,
+                                        ),
+                                      ),
+                                    ),
                                     InkWell(
                                       onTap: () {
                                         RemainsCubit.to.incrementSht(

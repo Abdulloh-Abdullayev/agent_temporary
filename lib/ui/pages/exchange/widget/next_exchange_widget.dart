@@ -24,7 +24,7 @@ class NextExchangeWidget extends StatelessWidget {
   NextExchangeWidget({Key? key}) : super(key: key);
 
   static String routeName = "/exchange-widget";
-  ScrollController controller = ScrollController();
+ final ScrollController controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
