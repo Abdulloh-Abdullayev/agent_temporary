@@ -28,6 +28,7 @@ class ActReconciliationPageModule extends Module {
 
 class ActReconciliationPage extends StatefulWidget {
   static const String routeName = "/act_reconciliation_page";
+
   const ActReconciliationPage({super.key});
 
   @override
@@ -46,13 +47,16 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          color: ColorName.bgColor,
+          color: ColorName.background,
           child: Column(
             children: [
               ActWidget.AppBar(
                 title: "booking",
-                backOnTap: () {},
-                buttonOnTap: () {},
+                backOnTap: () {
+                },
+                buttonOnTap: () {
+                  Modular.to.pop();
+                },
                 firstDataOnTap: () {},
                 secondDataOnTap: () {},
                 dropDownText: "dropDownText",
