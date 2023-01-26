@@ -94,7 +94,9 @@ class OrderTabBarPage extends StatelessWidget {
                       context: context,
                       name: "name",
                       time: "time",
-                      icon: PopupMenuTools(
+                      icon: PopupMenu(
+                        popupMenuIconSize: 14,
+                        popupMenuIconColor: Colors.red,
                         onTap: (p0) {
                           if (p0 == 1) {
                             showDialog(

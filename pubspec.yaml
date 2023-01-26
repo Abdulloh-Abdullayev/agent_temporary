@@ -53,6 +53,7 @@ dependencies:
   flutter_polyline_points: ^1.0.0
   location: ^4.4.0
   data_table_2: ^2.3.8
+  flutter_launcher_icons: ^0.11.0
 
 
 dev_dependencies:
@@ -75,6 +76,10 @@ flutter:
     - family: Gilroy
       fonts:
         - asset: assets/fonts/Gilroy-Light.otf
+flutter_icons:
+  image_path: "assets/images/agent_icon.png"
+  android: true
+  ios: true
 
 flutter_gen:
   output: lib/core/utils/ # Optional (default: lib/gen/)
