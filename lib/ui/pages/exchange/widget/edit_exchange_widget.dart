@@ -1,10 +1,9 @@
-import 'dart:ui';
-
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,7 +22,7 @@ class EditExchangeWidget extends StatelessWidget {
   EditExchangeWidget({Key? key}) : super(key: key);
 
   static String routeName = "/edit-exchange";
-  ScrollController controller = ScrollController();
+  final ScrollController controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +60,7 @@ class EditExchangeWidget extends StatelessWidget {
                       ],
                     ),
                     AppWidgets.textLocale(
-                      localeKey: "О Обмене",
+                      localeKey: LocaleKeys.about_exchange,
                       color: ColorName.white,
                       fontWeight: FontWeight.w600,
                       fontSize: 24.sp,
@@ -89,11 +88,11 @@ class EditExchangeWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Тип направления",
+                        localeKey: LocaleKeys.direction_type.tr(),
                         color: ColorName.gray2,
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Торговое направления",
+                        localeKey: LocaleKeys.trade_directions,
                         fontWeight: FontWeight.w600,
                       ),
                     ],
@@ -103,11 +102,11 @@ class EditExchangeWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Тип цены",
+                        localeKey: LocaleKeys.price_type,
                         color: ColorName.gray2,
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Перечисления",
+                        localeKey: LocaleKeys.enumerations,
                         fontWeight: FontWeight.w600,
                       ),
                     ],
@@ -117,7 +116,7 @@ class EditExchangeWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Обмен добавлен",
+                        localeKey: LocaleKeys.exchange_added,
                         color: ColorName.gray2,
                       ),
                       AppWidgets.textLocale(
@@ -128,7 +127,7 @@ class EditExchangeWidget extends StatelessWidget {
                   ),
                   const Divider(),
                   AppWidgets.textLocale(
-                    localeKey: "Комментарии к возврату",
+                    localeKey: LocaleKeys.return_comments,
                     color: ColorName.gray2,
                   ).paddingSymmetric(vertical: 12.w),
                   AppWidgets.textLocale(
@@ -145,7 +144,7 @@ class EditExchangeWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AppWidgets.textLocale(
-                  localeKey: "Обмененные товары",
+                  localeKey: LocaleKeys.exchanged_goods,
                   fontWeight: FontWeight.w600,
                   fontSize: 20.sp,
                 ),
@@ -188,21 +187,21 @@ class EditExchangeWidget extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               AppWidgets.textLocale(
-                                localeKey: "Возврат",
+                                localeKey: LocaleKeys.return_,
                                 fontWeight: FontWeight.w600,
                               ),
                               Row(
                                 children: [
                                   Expanded(
                                     child: AppWidgets.textLocale(
-                                      localeKey: "Дата",
+                                      localeKey: LocaleKeys.data,
                                       color: ColorName.gray2,
                                       fontSize: 12.sp,
                                     ),
                                   ),
                                   Expanded(
                                     child: AppWidgets.textLocale(
-                                      localeKey: "Кол-во",
+                                      localeKey: LocaleKeys.qty,
                                       color: ColorName.gray2,
                                       fontSize: 12.sp,
                                       textAlign: TextAlign.center,
@@ -210,7 +209,7 @@ class EditExchangeWidget extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: AppWidgets.textLocale(
-                                        localeKey: "Сумма",
+                                        localeKey: LocaleKeys.amount,
                                         color: ColorName.gray2,
                                         fontSize: 12.sp,
                                         textAlign: TextAlign.end),
@@ -279,21 +278,21 @@ class EditExchangeWidget extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               AppWidgets.textLocale(
-                                localeKey: "Возврат",
+                                localeKey: LocaleKeys.return_,
                                 fontWeight: FontWeight.w600,
                               ),
                               Row(
                                 children: [
                                   Expanded(
                                     child: AppWidgets.textLocale(
-                                      localeKey: "Дата",
+                                      localeKey: LocaleKeys.data,
                                       color: ColorName.gray2,
                                       fontSize: 12.sp,
                                     ),
                                   ),
                                   Expanded(
                                     child: AppWidgets.textLocale(
-                                      localeKey: "Кол-во",
+                                      localeKey: LocaleKeys.qty,
                                       color: ColorName.gray2,
                                       fontSize: 12.sp,
                                       textAlign: TextAlign.center,
@@ -301,7 +300,7 @@ class EditExchangeWidget extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: AppWidgets.textLocale(
-                                        localeKey: "Сумма",
+                                        localeKey: LocaleKeys.amount,
                                         color: ColorName.gray2,
                                         fontSize: 12.sp,
                                         textAlign: TextAlign.end),

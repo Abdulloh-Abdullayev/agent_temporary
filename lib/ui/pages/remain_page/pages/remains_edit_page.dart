@@ -37,70 +37,69 @@ class _RemainsEditPageState extends State<RemainsEditPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        backgroundColor: ColorName.background,
-        body: Column(
-          children: [
-            Stack(
+        child: Scaffold(
+      backgroundColor: ColorName.background,
+      body: Column(
+        children: [
+          Stack(
+            children: [
+              RemainsPageWidgets.remainsEditAppBar(
+                title: "Остатки",
+                ontap: (key) {},
+                context: context,
+              ),
+            ],
+          ),
+          Expanded(
+            child: Column(
               children: [
-                RemainsPageWidgets.remainsEditAppBar(
-                  title: "Остатки",
-                  ontap: (key) {},
-                  context: context,
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 18,
+                  ),
+                  width: 1.sw,
+                  height: 101.w,
+                  decoration: BoxDecoration(
+                    color: ColorName.input,
+                    border: Border.all(color: ColorName.button),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AppWidgets.textLocale(
+                          localeKey: "20",
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        AppWidgets.textLocale(
+                          localeKey: "Общее количество продуктов",
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
+                Container(
+                  margin: const EdgeInsets.only(top: 24),
+                  alignment: Alignment.centerLeft,
+                  child: AppWidgets.textLocale(
+                    localeKey: "Напитки",
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                remainsItemWidget(),
               ],
-            ),
-            Expanded(
-              child: Column(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(
-                      top: 18,
-                    ),
-                    width: 1.sw,
-                    height: 101.w,
-                    decoration: BoxDecoration(
-                      color: ColorName.input,
-                      border: Border.all(color: ColorName.button),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          AppWidgets.textLocale(
-                            localeKey: "20",
-                            fontSize: 24,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          AppWidgets.textLocale(
-                            localeKey: "Общее количество продуктов",
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 24),
-                    alignment: Alignment.centerLeft,
-                    child: AppWidgets.textLocale(
-                      localeKey: "Напитки",
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  remainsItemWidget(),
-                ],
-              ).paddingOnly(left: 20, right: 20),
-            ),
-          ],
-        ),
+            ).paddingOnly(left: 20, right: 20),
+          ),
+        ],
       ),
-    );
+    ));
   }
 
   Widget remainsItemWidget() {

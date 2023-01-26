@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -92,7 +94,7 @@ class _SettingsPageState extends State<SettingsPage>
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: "Настройки",
+            localeKey: LocaleKeys.settings,
             fontWeight: FontWeight.w500,
             fontSize: 20.sp,
             color: Colors.white,
@@ -101,9 +103,9 @@ class _SettingsPageState extends State<SettingsPage>
             tabController: _tabController,
             onTap: (int index) {},
             disable: false,
-            tabTitle: const [
-              'Основные настройки',
-              'Общие настройки',
+            tabTitle: [
+              LocaleKeys.main_settings.tr(),
+              LocaleKeys.all_settings.tr(),
             ],
           )
         ],

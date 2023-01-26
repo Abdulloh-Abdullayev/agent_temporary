@@ -1,12 +1,15 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
+import '../../../core/localization/locale_keys.g.dart';
 
+import '../home/home_page.dart';
 import 'bloc/auth/auth_cubit.dart';
 
 class LoginPageModule extends Module {
@@ -51,13 +54,13 @@ class LoginPage extends StatelessWidget {
                     vertical: 60.w,
                   ),
                   AppWidgets.text(
-                    text: "Добро пожаловать!",
+                    text: LocaleKeys.welcome.tr(),
                     color: ColorName.black,
                     fontSize: 32.sp,
                     fontWeight: FontWeight.w500,
                   ),
                   AppWidgets.text(
-                    text: "Пожалуйста чтобы войти введите логин и пароль!",
+                    text: LocaleKeys.enter_username_password.tr(),
                     color: ColorName.gray2,
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w400,
@@ -73,35 +76,35 @@ class LoginPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AppWidgets.text(
-                          text: "Имя сервера!",
+                          text: LocaleKeys.server_name.tr(),
                           color: ColorName.gray3,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
                           textAlign: TextAlign.start,
                         ),
                         AppInputTextField(
-                          hint: "Пишите",
+                          hint: LocaleKeys.write.tr(),
                           onChanged: (v) {},
                         ).paddingOnly(
                           top: 12,
                           bottom: 24,
                         ),
                         AppWidgets.text(
-                          text: "Войти",
+                          text: LocaleKeys.enter.tr(),
                           color: ColorName.gray3,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
                           textAlign: TextAlign.start,
                         ),
                         AppInputTextField(
-                          hint: "Пишите",
+                          hint: LocaleKeys.write.tr(),
                           onChanged: (v) {},
                         ).paddingOnly(
                           top: 12,
                           bottom: 24,
                         ),
                         AppWidgets.text(
-                          text: "Пароль",
+                          text: LocaleKeys.password.tr(),
                           color: ColorName.gray3,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -117,8 +120,10 @@ class LoginPage extends StatelessWidget {
                         ),
                         AppButton(
                           width: 1.sw,
-                          text: "Войти",
-                          onPressed: () {},
+                          text: LocaleKeys.enter.tr(),
+                          onPressed: () {
+                            Modular.to.pushReplacementNamed(HomePage.routeName);
+                          },
                           textColor: ColorName.white,
                         )
                       ],

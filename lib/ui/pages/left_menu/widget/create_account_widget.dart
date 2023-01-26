@@ -1,11 +1,13 @@
 import 'dart:io';
 
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -83,7 +85,7 @@ class CreateAccountWidget extends StatelessWidget {
                         ).paddingSymmetric(vertical: 20.w),
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Личные данные",
+                        localeKey: LocaleKeys.personal_data.tr(),
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w500,
                         color: ColorName.white,
@@ -150,7 +152,7 @@ class CreateAccountWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Ф.И.О",
+                        localeKey: LocaleKeys.full_name,
                         fontSize: 14.sp,
                         color: ColorName.gray3,
                       ),
@@ -163,7 +165,7 @@ class CreateAccountWidget extends StatelessWidget {
                         bottom: 18,
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Номер телефона",
+                        localeKey: LocaleKeys.phone_number,
                         fontSize: 14.sp,
                         color: ColorName.gray3,
                       ),
@@ -190,12 +192,12 @@ class CreateAccountWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Изменить пароль",
+                        localeKey: LocaleKeys.change_password,
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w600,
                       ).paddingOnly(bottom: 18.w),
                       AppWidgets.textLocale(
-                        localeKey: "Старый пароль",
+                        localeKey: LocaleKeys.old_password,
                         fontSize: 14.sp,
                         color: ColorName.gray3,
                       ),
@@ -208,7 +210,7 @@ class CreateAccountWidget extends StatelessWidget {
                         bottom: 18,
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Новый пароль",
+                        localeKey: LocaleKeys.new_password,
                         fontSize: 14.sp,
                         color: ColorName.gray3,
                       ),
@@ -221,7 +223,7 @@ class CreateAccountWidget extends StatelessWidget {
                         bottom: 18.w,
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Повторите новый пароль",
+                        localeKey: LocaleKeys.repeat_new_password,
                         fontSize: 14.sp,
                         color: ColorName.gray3,
                       ),
@@ -237,7 +239,7 @@ class CreateAccountWidget extends StatelessWidget {
                   ),
                 ).paddingSymmetric(vertical: 18.w),
                 AppWidgets.appButton(
-                  title: "Сохранить",
+                  title: LocaleKeys.save.tr(),
                   onTap: () {},
                 ).paddingSymmetric(
                   horizontal: 20.w,

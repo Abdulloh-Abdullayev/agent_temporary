@@ -55,10 +55,11 @@ class DebtorsOrderItem extends StatelessWidget {
                       Row(
                         children: [
                           AppWidgets.textLocale(
-                              localeKey: "Balance:",
-                              fontWeight: FontWeight.w400,
-                              color: ColorName.black,
-                              fontSize: 12),
+                            localeKey: "Balance:",
+                            fontWeight: FontWeight.w400,
+                            color: ColorName.black,
+                            fontSize: 12,
+                          ),
                           AppWidgets.textLocale(
                             localeKey: " 0",
                             fontWeight: FontWeight.w400,

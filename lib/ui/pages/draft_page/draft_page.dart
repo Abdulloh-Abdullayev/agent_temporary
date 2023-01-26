@@ -1,12 +1,14 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/draft_page/bloc/draft_page_cubit.dart';
 import 'package:agent/ui/pages/draft_page/draft_page_widget/order_card_widget.dart';
+import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../core/localization/locale_keys.g.dart';
 import '../../../core/utils/colors.gen.dart';
-import '../order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'draft_page_widget/equipment_widget.dart';
 
 class DraftPageModule extends Module {
@@ -43,44 +45,7 @@ class DraftPage extends StatelessWidget {
         body: Column(
           children: [
             // AppBar Container
-            Container(
-              height: 112.h,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(12),
-                  bottomLeft: Radius.circular(12),
-                ),
-                color: ColorName.primaryColor,
-              ),
-              child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: AppBarIcon.menu_icon(() {}),
-                  ).paddingOnly(top: 20.w),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      AppWidgets.textLocale(
-                        localeKey: "Черновик",
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20.sp,
-                        color: ColorName.white,
-                        isRichText: true,
-                      ),
-                      AppWidgets.textLocale(
-                        localeKey: "Очистить черновик",
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
-                        color: ColorName.red,
-                        isRichText: true,
-                      ),
-                    ],
-                  ).paddingOnly(top: 20.w),
-                ],
-              ).paddingSymmetric(horizontal: 20.w),
-            ),
-
+            buildAppBar(),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -93,6 +58,46 @@ class DraftPage extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+
+  Widget buildAppBar() {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: ColorName.primaryColor,
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(12.r),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          AppWidgets.iconButton(
+            onPressed: () {
+              HomePage.globalKey.currentState!.openDrawer();
+            },
+            icon: Assets.images.icons.menu,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              AppWidgets.textLocale(
+                localeKey: LocaleKeys.draft,
+                fontWeight: FontWeight.w500,
+                fontSize: 20.sp,
+                color: ColorName.white,
+              ),
+              AppWidgets.textLocale(
+                localeKey: LocaleKeys.clear_draft,
+                fontWeight: FontWeight.w600,
+                fontSize: 14.sp,
+                color: ColorName.red,
+              ),
+            ],
+          ).paddingOnly(top: 20.w),
+        ],
       ),
     );
   }

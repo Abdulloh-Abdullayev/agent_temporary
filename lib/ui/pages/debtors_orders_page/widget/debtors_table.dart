@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
 
-
 class DebtorsTable extends StatelessWidget {
   const DebtorsTable({
     Key? key,

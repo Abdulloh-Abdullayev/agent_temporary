@@ -1,5 +1,7 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:agent/ui/pages/remain_page/pages/remains_item_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -42,17 +44,17 @@ class FloatingShowDialog extends StatelessWidget {
                       Assets.images.icons.exchange.svg(),
                       Assets.images.icons.box1.svg(),
                       Icon(Icons.add),
-                      // Assets.images.icons.box2.svg(),
+                      // Assets.images.icons.box1.svg(),
                     ],
-                    textName: const [
-                      "Планы",
-                      'История',
-                      'Фото отчёт',
-                      'Отказ',
-                      'Возврат \nс полки',
-                      'Возврат \nтары',
-                      'Обмен',
-                      'Остатки',
+                    textName: [
+                      LocaleKeys.plans.tr(),
+                      LocaleKeys.history.tr(),
+                      LocaleKeys.photo_report.tr(),
+                      LocaleKeys.refusal.tr(),
+                      LocaleKeys.return_from_shelf.tr(),
+                      LocaleKeys.return_package.tr(),
+                      LocaleKeys.exchange.tr(),
+                      LocaleKeys.remains.tr(),
                     ],
                   ),
                 );

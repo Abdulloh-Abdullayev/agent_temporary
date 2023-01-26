@@ -1,7 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
@@ -42,7 +44,7 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "Тип",
+                              localeKey: LocaleKeys.type,
                               fontSize: 14,
                               color: ColorName.gray2,
                             ),
@@ -64,7 +66,7 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "Дата прикрепления",
+                              localeKey: LocaleKeys.attachment_date,
                               fontSize: 14,
                               color: ColorName.gray2,
                             ),
@@ -83,7 +85,7 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
                           color: ColorName.gray,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: "Комментарии",
+                          localeKey: LocaleKeys.comment,
                           fontSize: 14,
                           color: ColorName.gray2,
                         ),
@@ -167,7 +169,7 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AppWidgets.textLocale(
-                localeKey: "О оборудования",
+                localeKey: LocaleKeys.about_equipment,
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
               ),
@@ -178,7 +180,7 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Серийный номер",
+                    localeKey: LocaleKeys.serial_number,
                     fontSize: 14,
                     color: ColorName.gray2,
                   ),
@@ -200,7 +202,7 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Инвертарный номер",
+                    localeKey: LocaleKeys.invert_number,
                     fontSize: 14,
                     color: ColorName.gray2,
                   ),
@@ -222,7 +224,7 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Состояние",
+                    localeKey: LocaleKeys.state,
                     fontSize: 14,
                     color: ColorName.gray2,
                   ),
@@ -241,7 +243,7 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                    localeKey: "Дата производтсво",
+                    localeKey: LocaleKeys.production_date,
                     fontSize: 14,
                     color: ColorName.gray2,
                   ),
@@ -257,7 +259,7 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
                 color: ColorName.gray,
               ),
               AppWidgets.textLocale(
-                localeKey: "Фото",
+                localeKey: LocaleKeys.photo,
                 fontSize: 14.sp,
                 color: ColorName.gray2,
               ),
@@ -318,9 +320,9 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
                 ),
                 child: PopupMenuTools(
                   onTap: (p0) {},
-                  textName: const [
-                    "Редактрировать",
-                    'Удалить',
+                  textName: [
+                    LocaleKeys.edit.tr(),
+                    LocaleKeys.delete.tr(),
                   ],
                   icons: [
                     Assets.images.icons.edit.svg(),

@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,7 +24,7 @@ class NextExchangeWidget extends StatelessWidget {
   NextExchangeWidget({Key? key}) : super(key: key);
 
   static String routeName = "/exchange-widget";
-  ScrollController controller = ScrollController();
+ final ScrollController controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +70,7 @@ class NextExchangeWidget extends StatelessWidget {
                       ],
                     ),
                     AppWidgets.textLocale(
-                      localeKey: "Обмен товара",
+                      localeKey: LocaleKeys.product_exchange,
                       color: ColorName.white,
                       fontWeight: FontWeight.w600,
                       fontSize: 24.sp,
@@ -91,7 +93,7 @@ class NextExchangeWidget extends StatelessWidget {
                     iconColor: ColorName.black,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Обменять на",
+                    localeKey: LocaleKeys.exchange_for,
                     color: ColorName.gray3,
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w500,
@@ -135,18 +137,18 @@ class NextExchangeWidget extends StatelessWidget {
                         return Cards.cards_7(
                           name: "Coca cola 1.5",
                           context: context,
-                          summa: "Сумма",
+                          summa: LocaleKeys.amount.tr(),
                           summaNumber: "100 000",
-                          blok: "Блок",
+                          blok: LocaleKeys.block.tr(),
                           blokNumber: "1",
-                          sht: "Шт",
+                          sht: LocaleKeys.pc.tr(),
                           shtNumber: "1",
                           image: "image",
                           blokRemove: () {},
                           blokAdd: () {},
                           shtRemove: () {},
                           shtAdd: () {},
-                          nalichi: 'В наличие',
+                          nalichi: '${LocaleKeys.available.tr()}',
                           nalichiNumber: '20',
                         ).paddingOnly(bottom: 12.w);
                       },
@@ -175,20 +177,20 @@ class NextExchangeWidget extends StatelessWidget {
                 children: [
                   AppWidgets.appButton(
                     width: 150,
-                    title: "Черновик",
+                    title: LocaleKeys.draft.tr(),
                     onTap: () {},
                     color: ColorName.gray,
                     textColor: ColorName.mainColor,
                   ),
                   AppWidgets.appButton(
                     width: 150,
-                    title: "Продолжить",
+                    title: LocaleKeys.continue_c.tr(),
                     onTap: () {
                       showModalBottomSheet(
                         backgroundColor: Colors.transparent,
                         context: context,
                         builder: (context) => ReasomnForReturnSheet(
-                          text: 'Причина обмена',
+                          text: LocaleKeys.reason_for_exchange.tr(),
                           textItemsName: const [
                             "Не получается продать",
                             "Lorem ipsum",

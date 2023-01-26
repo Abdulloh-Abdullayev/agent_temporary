@@ -1,7 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -46,7 +47,7 @@ class OrderFromWidget extends StatelessWidget {
                     vertical: 20,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Заказ от 12.08.2022",
+                    localeKey: "${LocaleKeys.order_from.tr()} 12.08.2022",
                     fontSize: 24.sp,
                     color: ColorName.white,
                     fontWeight: FontWeight.w600,
@@ -90,12 +91,12 @@ class OrderFromWidget extends StatelessWidget {
                   Row(
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Наличный",
+                        localeKey: LocaleKeys.spot,
                         color: ColorName.gray2,
                         fontSize: 12.sp,
                       ).paddingOnly(right: 17.w),
                       AppWidgets.textLocale(
-                        localeKey: "Без бонуса",
+                        localeKey: LocaleKeys.no_bonus,
                         fontSize: 12.sp,
                       ),
                     ],
@@ -106,7 +107,7 @@ class OrderFromWidget extends StatelessWidget {
                       Row(
                         children: [
                           AppWidgets.textLocale(
-                            localeKey: "Обьем",
+                            localeKey: LocaleKeys.volume,
                             color: ColorName.gray2,
                             fontSize: 12.sp,
                           ).paddingOnly(right: 3.w),
@@ -119,7 +120,7 @@ class OrderFromWidget extends StatelessWidget {
                       Row(
                         children: [
                           AppWidgets.textLocale(
-                            localeKey: "Кол-во",
+                            localeKey: LocaleKeys.qty,
                             color: ColorName.gray2,
                             fontSize: 12.sp,
                           ).paddingOnly(right: 3.w),
@@ -132,7 +133,7 @@ class OrderFromWidget extends StatelessWidget {
                       Row(
                         children: [
                           AppWidgets.textLocale(
-                            localeKey: "Сумма",
+                            localeKey: LocaleKeys.amount,
                             color: ColorName.gray2,
                             fontSize: 12.sp,
                           ).paddingOnly(right: 3.w),
@@ -157,7 +158,7 @@ class OrderFromWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AppWidgets.textLocale(
-              localeKey: "Общая объем",
+              localeKey: LocaleKeys.total_volume.tr(),
               color: ColorName.gray2,
               fontSize: 12.sp,
             ).paddingOnly(right: 17.w),
@@ -171,7 +172,7 @@ class OrderFromWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AppWidgets.textLocale(
-              localeKey: "Общее кол-во",
+              localeKey: LocaleKeys.total_qty,
               color: ColorName.gray2,
               fontSize: 12.sp,
             ).paddingOnly(right: 17.w),
@@ -185,7 +186,7 @@ class OrderFromWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AppWidgets.textLocale(
-              localeKey: "Общая сумма",
+              localeKey: LocaleKeys.total_amount,
               color: ColorName.gray2,
               fontSize: 12.sp,
             ).paddingOnly(right: 17.w),

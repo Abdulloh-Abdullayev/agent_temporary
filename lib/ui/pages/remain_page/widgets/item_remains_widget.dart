@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
-import 'package:uikit/uikit.dart';
 
 class RemainsItemWidget extends StatefulWidget {
   final int index;
@@ -175,14 +174,16 @@ class _RemainsItemWidgetState extends State<RemainsItemWidget> {
                                       ),
                                     ),
                                     SizedBox(
-                                        width: 30.w,
-                                        child: Center(
-                                          child: AppWidgets.textLocale(
-                                              localeKey: "${model.count}",
-                                              fontWeight: FontWeight.w400,
-                                              color: ColorName.black,
-                                              fontSize: 12.sp),
-                                        )),
+                                      width: 30.w,
+                                      child: Center(
+                                        child: AppWidgets.textLocale(
+                                          localeKey: "${model.count}",
+                                          fontWeight: FontWeight.w400,
+                                          color: ColorName.black,
+                                          fontSize: 12.sp,
+                                        ),
+                                      ),
+                                    ),
                                     InkWell(
                                       onTap: () {
                                         RemainsCubit.to.incrementSht(

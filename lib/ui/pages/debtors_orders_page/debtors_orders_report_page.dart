@@ -8,7 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
 import 'package:uikit/uikit.dart';
 
-
 class DebtorsOrdersReportPageModule extends Module {
   @override
   List<ModularRoute> get routes => [

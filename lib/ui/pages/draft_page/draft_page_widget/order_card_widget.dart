@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:super_rich_text/super_rich_text.dart';
 
+import '../../../../core/localization/locale_keys.g.dart';
 import '../../../../core/utils/colors.gen.dart';
 import '../../../widgets/app_widgets.dart';
 
@@ -16,11 +17,11 @@ class OrderWidget extends StatelessWidget {
         Align(
           alignment: Alignment.centerLeft,
           child: AppWidgets.textLocale(
-              localeKey: "Заказы",
-              fontWeight: FontWeight.w600,
-              fontSize: 18.sp,
-              color: ColorName.black,
-              isRichText: true),
+            localeKey: LocaleKeys.orders,
+            fontWeight: FontWeight.w600,
+            fontSize: 18.sp,
+            color: ColorName.black,
+          ),
         ).marginOnly(bottom: 12.w),
         ListView.builder(
           physics: NeverScrollableScrollPhysics(),
@@ -51,7 +52,6 @@ class OrderWidget extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         fontSize: 16.sp,
                         color: ColorName.black,
-                        isRichText: true,
                       ),
                     ).marginOnly(bottom: 8.w),
                     Row(
@@ -59,11 +59,10 @@ class OrderWidget extends StatelessWidget {
                         Row(
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "//Черновик// в",
+                              localeKey: LocaleKeys.draft_at,
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w600,
                               color: ColorName.black,
-                              isRichText: true,
                               othersMarkers: [
                                 MarkerText(
                                   marker: "//",
@@ -83,7 +82,6 @@ class OrderWidget extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                               fontSize: 12.sp,
                               color: ColorName.black,
-                              isRichText: true,
                             ),
                           ],
                         ),
@@ -95,21 +93,19 @@ class OrderWidget extends StatelessWidget {
                     Row(
                       children: [
                         AppWidgets.textLocale(
-                          localeKey: "Наличный",
+                          localeKey: LocaleKeys.spot,
                           fontWeight: FontWeight.w400,
                           fontSize: 12.sp,
                           color: ColorName.gray3,
-                          isRichText: true,
                         ),
                         SizedBox(
                           width: 17.w,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: "Без бонуса",
+                          localeKey: LocaleKeys.no_bonus,
                           fontWeight: FontWeight.w400,
                           fontSize: 12.sp,
                           color: ColorName.gray3,
-                          isRichText: true,
                         ),
                       ],
                     ),
@@ -124,18 +120,16 @@ class OrderWidget extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                  localeKey: "obem ",
+                                  localeKey: LocaleKeys.volume,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12.sp,
                                   color: ColorName.gray2,
-                                  isRichText: true,
                                 ),
                                 AppWidgets.textLocale(
                                   localeKey: "15",
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12.sp,
                                   color: ColorName.gray2,
-                                  isRichText: true,
                                 ),
                               ],
                             ),
@@ -145,18 +139,16 @@ class OrderWidget extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                  localeKey: "kolva ",
+                                  localeKey: LocaleKeys.qty,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12.sp,
                                   color: ColorName.gray2,
-                                  isRichText: true,
                                 ),
                                 AppWidgets.textLocale(
                                   localeKey: "15",
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12.sp,
                                   color: ColorName.black,
-                                  isRichText: true,
                                 ),
                               ],
                             ),
@@ -165,18 +157,16 @@ class OrderWidget extends StatelessWidget {
                         Row(
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "summa ",
+                              localeKey: LocaleKeys.amount,
                               fontWeight: FontWeight.w400,
                               fontSize: 12.sp,
                               color: ColorName.gray2,
-                              isRichText: true,
                             ),
                             AppWidgets.textLocale(
                               localeKey: "150 000 000",
                               fontWeight: FontWeight.w400,
                               fontSize: 12.sp,
                               color: ColorName.button,
-                              isRichText: true,
                             ),
                           ],
                         )

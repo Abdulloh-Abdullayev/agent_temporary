@@ -1,8 +1,11 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
@@ -77,19 +80,10 @@ class AboutOrderWidgets {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  height: 28.w,
-                  width: 28.w,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(.10),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Center(
-                      child: Assets.images.icons.left.svg(height: 9.5),
-                    ),
-                  ),
+                AppWidgets.backButton(
+                  () {
+                    Modular.to.pop();
+                  },
                 ),
                 Container(
                   height: 28.w,
@@ -104,9 +98,9 @@ class AboutOrderWidgets {
                       if (p0 == 1) {
                         showDialog(
                           context: context,
-                          builder: (ctx) => const AlertDialog(
+                          builder: (ctx) => AlertDialog(
                             content: CommitTextField(
-                              text: "Добавление комментарии",
+                              text: LocaleKeys.adding_comments.tr(),
                             ),
                           ),
                         );
@@ -116,9 +110,9 @@ class AboutOrderWidgets {
                           builder: (ctx) => Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DateTimeDialog(
-                                title: "Добавить дату отгрузки",
-                                closeTitle: "Закрыть",
-                                addTitle: "Добавить",
+                                title: LocaleKeys.add_shipping_date.tr(),
+                                closeTitle: LocaleKeys.close.tr(),
+                                addTitle: LocaleKeys.add.tr(),
                                 addTap: () {}),
                           ),
                         );
@@ -128,21 +122,22 @@ class AboutOrderWidgets {
                           builder: (ctx) => Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DateTimeDialog(
-                                title: "Добавить консигнация",
-                                closeTitle: "Закрыть",
-                                addTitle: "Добавить",
-                                addTap: () {}),
+                              title: LocaleKeys.add_consignment.tr(),
+                              closeTitle: LocaleKeys.close.tr(),
+                              addTitle: LocaleKeys.add.tr(),
+                              addTap: () {},
+                            ),
                           ),
                         );
                       }
                     },
-                    textName: const [
-                      "Редактрировать",
-                      "Комментария к заказу",
-                      "Дата отгрузки",
-                      "Срок Консигнация",
-                      "Закрепить фото",
-                      'Отменить',
+                    textName: [
+                      LocaleKeys.edit.tr(),
+                      LocaleKeys.comments_to_order.tr(),
+                      LocaleKeys.shipping_date.tr(),
+                      LocaleKeys.term_consignment.tr(),
+                      LocaleKeys.pin_photo.tr(),
+                      LocaleKeys.cancel.tr(),
                     ],
                     icons: [
                       Assets.images.icons.edit.svg(),
@@ -194,10 +189,10 @@ class AboutOrderWidgets {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              textBuilder("Обьем", "15"),
-              textBuilder("Обьем", "15"),
+              textBuilder(LocaleKeys.volume.tr(), "15"),
+              textBuilder(LocaleKeys.volume.tr(), "15"),
               textBuilder(
-                "Обьем",
+                LocaleKeys.volume.tr(),
                 "100 000 00",
                 color: ColorName.button,
               ),

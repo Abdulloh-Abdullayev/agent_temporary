@@ -152,12 +152,11 @@ class AppWidgets {
             args: args,
             namedArgs: namedArgs,
           ),
-          style: TextStyle(
+          style: GoogleFonts.inter(
             color: color,
             fontSize: fontSize.sp,
             decoration: decoration,
             fontWeight: fontWeight,
-            fontFamily: "Gilroy",
           ),
           textAlign: textAlign,
           maxLines: maxLines,
@@ -233,18 +232,21 @@ class AppWidgets {
     Alignment alignment = Alignment.center,
     required Function() onTap,
   }) =>
-      Container(
-        alignment: alignment,
-        decoration: BoxDecoration(
-          color: backColor,
-          borderRadius: BorderRadius.circular(4),
-        ),
-        child: GestureDetector(
-          child: Container(
-            height: height,
-            width: width,
-            padding: padding,
-            child: child ?? SizedBox.shrink(),
+      GestureDetector(
+        onTap: onTap,
+        child: Container(
+          alignment: alignment,
+          decoration: BoxDecoration(
+            color: backColor,
+            borderRadius: BorderRadius.circular(4),
+          ),
+          child: GestureDetector(
+            child: Container(
+              height: height,
+              width: width,
+              padding: padding,
+              child: child ?? SizedBox.shrink(),
+            ),
           ),
         ),
       );
@@ -359,6 +361,7 @@ class AppWidgets {
   static void openImgDialog({
     required BuildContext context,
     required String imgPath,
+    String? url,
   }) {
     Navigator.push(
       context,
@@ -391,13 +394,19 @@ class AppWidgets {
                     left: 50,
                     right: 50,
                     child: Hero(
-                      tag: imgPath,
+                      tag: url ?? imgPath,
                       child: Container(
-                        child: AppWidgets.imageFile(
-                          height: 300,
-                          width: 300,
-                          path: imgPath,
-                        ),
+                        child: url != null
+                            ? AppWidgets.networkImage(
+                                url: url,
+                                height: 300,
+                                width: 300,
+                              )
+                            : AppWidgets.imageFile(
+                                height: 300,
+                                width: 300,
+                                path: imgPath,
+                              ),
                       ),
                     ),
                   )

@@ -1,8 +1,11 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
+
+import '../../../../core/localization/locale_keys.g.dart';
 
 class PercentWidget extends StatelessWidget {
   const PercentWidget({
@@ -42,7 +45,7 @@ class PercentWidget extends StatelessWidget {
                 ),
                 Text(
                   textAlign: TextAlign.center,
-                  "Прогноз",
+                  LocaleKeys.forecast.tr().tr(),
                   style: TextStyle(
                     color: ColorName.gray2,
                     fontSize: 12.sp,
@@ -76,7 +79,7 @@ class PercentWidget extends StatelessWidget {
                 ),
                 Text(
                   textAlign: TextAlign.center,
-                  "Факт",
+                  LocaleKeys.fact.tr(),
                   style: TextStyle(
                     color: ColorName.gray2,
                     fontSize: 12.sp,

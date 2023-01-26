@@ -1,7 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/exchange/widget/edit_exchange_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,8 +11,8 @@ import 'package:uikit/uikit.dart';
 
 import '../../../../core/utils/assets.gen.dart';
 
-class TabbarExchangePage extends StatelessWidget {
-  const TabbarExchangePage({Key? key}) : super(key: key);
+class TabBarExchangePage extends StatelessWidget {
+  const TabBarExchangePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,51 +28,51 @@ class TabbarExchangePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общая объем",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_volume,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "1365 о",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.black,
-                      isRichText: true),
+                    localeKey: "1365 о",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.black,
+                  ),
                 ],
               ).paddingSymmetric(vertical: 12.w),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общее кол-во",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_qty,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "1365 sht",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.black,
-                      isRichText: true),
+                    localeKey: "1365 sht",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.black,
+                  ),
                 ],
               ).paddingOnly(bottom: 12.w),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общее summa",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_amount,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "150 000 000 UZS",
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
-                      color: ColorName.button,
-                      isRichText: true),
+                    localeKey: "150 000 000 UZS",
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12.sp,
+                    color: ColorName.button,
+                  ),
                 ],
               ).paddingOnly(bottom: 12.w),
             ],
@@ -105,7 +107,7 @@ class TabbarExchangePage extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "Заказ в",
+                                    localeKey: LocaleKeys.order_in,
                                     fontWeight: FontWeight.w600,
                                     color: ColorName.black,
                                     fontSize: 12),
@@ -116,7 +118,7 @@ class TabbarExchangePage extends StatelessWidget {
                                         fontSize: 12)
                                     .paddingSymmetric(horizontal: 8.w),
                                 AppWidgets.textLocale(
-                                    localeKey: "Выполнен",
+                                    localeKey: LocaleKeys.completed,
                                     fontWeight: FontWeight.w400,
                                     color: ColorName.green,
                                     fontSize: 12),
@@ -141,18 +143,20 @@ class TabbarExchangePage extends StatelessWidget {
                                         builder: (ctx) => Padding(
                                           padding: const EdgeInsets.all(4.0),
                                           child: DateTimeDialog(
-                                              title: "Добавить дату отгрузки",
-                                              closeTitle: "Закрыть",
-                                              addTitle: "Добавить",
+                                              title: LocaleKeys
+                                                  .add_shipping_date
+                                                  .tr(),
+                                              closeTitle: LocaleKeys.close.tr(),
+                                              addTitle: LocaleKeys.add.tr(),
                                               addTap: () {}),
                                         ),
                                       );
                                     } else if (p0 == 2) {}
                                   },
-                                  textName: const [
-                                    "Редактрировать",
-                                    "Комментария к заказу",
-                                    "Удалить",
+                                  textName: [
+                                    LocaleKeys.edit.tr(),
+                                    LocaleKeys.comments_to_order.tr(),
+                                    LocaleKeys.delete.tr(),
                                   ],
                                   icons: [
                                     Assets.images.icons.editeAlt.svg(
@@ -185,7 +189,7 @@ class TabbarExchangePage extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                  localeKey: "Сумма",
+                                  localeKey: LocaleKeys.amount,
                                   fontWeight: FontWeight.w400,
                                   color: ColorName.gray2,
                                   fontSize: 12,
@@ -201,7 +205,7 @@ class TabbarExchangePage extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                        localeKey: "Причина",
+                                        localeKey: LocaleKeys.cause,
                                         fontWeight: FontWeight.w400,
                                         color: ColorName.gray2,
                                         fontSize: 12)

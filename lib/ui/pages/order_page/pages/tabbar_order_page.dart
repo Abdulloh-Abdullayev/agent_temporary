@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
@@ -24,51 +26,51 @@ class TabbarOrderPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общая объем",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_volume,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "1365 о",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.black,
-                      isRichText: true),
+                    localeKey: "1365 о",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.black,
+                  ),
                 ],
               ).paddingSymmetric(vertical: 12.w),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общее кол-во",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_qty,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "1365 sht",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.black,
-                      isRichText: true),
+                    localeKey: "1365 sht",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.black,
+                  ),
                 ],
               ).paddingOnly(bottom: 12.w),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: "Общее summa",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_amount,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "150 000 000 UZS",
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
-                      color: ColorName.button,
-                      isRichText: true),
+                    localeKey: "150 000 000 UZS",
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12.sp,
+                    color: ColorName.button,
+                  ),
                 ],
               ).paddingOnly(bottom: 12.w),
             ],
@@ -91,9 +93,9 @@ class TabbarOrderPage extends StatelessWidget {
                       if (p0 == 1) {
                         showDialog(
                           context: context,
-                          builder: (ctx) => const AlertDialog(
+                          builder: (ctx) => AlertDialog(
                             content: CommitTextField(
-                              text: "Добавление комментарии",
+                              text: LocaleKeys.adding_comments.tr(),
                             ),
                           ),
                         );
@@ -103,10 +105,11 @@ class TabbarOrderPage extends StatelessWidget {
                           builder: (ctx) => Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DateTimeDialog(
-                                title: "Добавить дату отгрузки",
-                                closeTitle: "Закрыть",
-                                addTitle: "Добавить",
-                                addTap: () {}),
+                              title: LocaleKeys.add_shipping_date.tr(),
+                              closeTitle: LocaleKeys.close.tr(),
+                              addTitle: LocaleKeys.add.tr(),
+                              addTap: () {},
+                            ),
                           ),
                         );
                       } else if (p0 == 3) {
@@ -115,21 +118,22 @@ class TabbarOrderPage extends StatelessWidget {
                           builder: (ctx) => Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DateTimeDialog(
-                                title: "Добавить консигнация",
-                                closeTitle: "Закрыть",
-                                addTitle: "Добавить",
-                                addTap: () {}),
+                              title: LocaleKeys.add_consignment.tr(),
+                              closeTitle: LocaleKeys.close.tr(),
+                              addTitle: LocaleKeys.add.tr(),
+                              addTap: () {},
+                            ),
                           ),
                         );
                       }
                     },
-                    textName: const [
-                      "Редактрировать",
-                      "Комментария к заказу",
-                      "Дата отгрузки",
-                      "Срок Консигнация",
-                      "Закрепить фото",
-                      'Отменить',
+                    textName: [
+                      LocaleKeys.edit.tr(),
+                      LocaleKeys.comments_to_order.tr(),
+                      LocaleKeys.shipping_date.tr(),
+                      LocaleKeys.term_consignment.tr(),
+                      LocaleKeys.pin_photo.tr(),
+                      LocaleKeys.cancel.tr(),
                     ],
                     icons: [
                       Assets.images.icons.editeAlt
@@ -157,7 +161,7 @@ class TabbarOrderPage extends StatelessWidget {
                   bezbonus: "noBonus",
                   obem: "volume",
                   obemNumber: "15",
-                  soni: "count",
+                  soni: LocaleKeys.qty.tr(),
                   soniNumber: "325",
                   summa: "summa",
                   summaNumber: "150 000 000",

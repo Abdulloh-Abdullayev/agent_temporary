@@ -1,11 +1,13 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/widgets/row_widget.dart';
-import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
+import '../../../widgets/app_widgets.dart';
 import 'add_bonus_widget.dart';
 
 class BottomButtonsAddOrderWidget extends StatelessWidget {
@@ -29,28 +31,28 @@ class BottomButtonsAddOrderWidget extends StatelessWidget {
       child: Column(
         children: [
           CustomerEditingRowWidget(
-            "Общая объем",
+            LocaleKeys.total_volume.tr(),
             "1365 о",
           ).paddingOnly(bottom: 12.w),
           CustomerEditingRowWidget(
-            "Общее кол-во",
-            "Общее кол-во",
+            LocaleKeys.total_qty.tr(),
+            LocaleKeys.total_qty.tr(),
           ).paddingOnly(bottom: 12.w),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                  localeKey: "Общая сумма",
+                  localeKey: LocaleKeys.total_amount.tr(),
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w400,
                   color: ColorName.gray2,
-                  isRichText: true,),
+                  isRichText: true),
               AppWidgets.textLocale(
                   localeKey: "150 000 000 UZS",
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w600,
                   color: ColorName.button,
-                  isRichText: true,),
+                  isRichText: true),
             ],
           ).paddingOnly(bottom: 16.w),
           Row(
@@ -58,8 +60,9 @@ class BottomButtonsAddOrderWidget extends StatelessWidget {
               Expanded(
                 child: SizedBox(
                   height: 45.w,
+                  // padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: AppButton(
-                    text: "Черновик",
+                    text: LocaleKeys.draft.tr(),
                     textSize: 14,
                     textColor: ColorName.mainColor,
                     color: ColorName.gray,
@@ -76,7 +79,7 @@ class BottomButtonsAddOrderWidget extends StatelessWidget {
                   height: 45.w,
                   //padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: AppButton(
-                    text: "Далее",
+                    text: LocaleKeys.next.tr(),
                     textSize: 14,
                     textColor: ColorName.white,
                     color: ColorName.button,

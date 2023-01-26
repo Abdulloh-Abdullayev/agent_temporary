@@ -1,7 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/widgets/act_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +28,6 @@ class ActReconciliationPageModule extends Module {
 
 class ActReconciliationPage extends StatefulWidget {
   static const String routeName = "/act_reconciliation_page";
-
   const ActReconciliationPage({super.key});
 
   @override
@@ -34,7 +35,11 @@ class ActReconciliationPage extends StatefulWidget {
 }
 
 class _ActReconciliationPageState extends State<ActReconciliationPage> {
-  var columnTitles = ["Дата", "Тип", "Сумма"];
+  var columnTitles = [
+    LocaleKeys.data.tr(),
+    LocaleKeys.type.tr(),
+    LocaleKeys.amount.tr()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -44,83 +49,123 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
           color: ColorName.bgColor,
           child: Column(
             children: [
-              ActWidget.appBar(
+              ActWidget.AppBar(
                 title: "booking",
-                backOnTap: () {
-                  Modular.to.pop();
-                },
+                backOnTap: () {},
                 buttonOnTap: () {},
                 firstDataOnTap: () {},
                 secondDataOnTap: () {},
                 dropDownText: "dropDownText",
                 firstText: "firstText",
-                buttonText: "Применить",
+                buttonText: LocaleKeys.apply.tr(),
                 firstDate: "01.02.2022",
                 secondDate: "18.02.2022",
               ),
               AppWidgets.textLocale(
-                localeKey: "Запросить историю",
+                localeKey: LocaleKeys.request_history,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
                 color: ColorName.black,
               ).marginSymmetric(vertical: 18),
-              buildTable()
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget buildTable() {
-    return Expanded(
-      child: Container(
-        width: 1.sw,
-        margin: EdgeInsets.fromLTRB(20, 0, 20, 50),
-        decoration: BoxDecoration(
-          color: ColorName.white,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Column(
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: DataTable(
-                    columnSpacing: 24,
-                    horizontalMargin: 12,
-                    columns: [
-                      for (var columnTitle in columnTitles)
-                        ActWidget.dataColumn(
-                          columnTitle,
-                          align: columnTitle == columnTitles.last
-                              ? Alignment.centerRight
-                              : Alignment.centerLeft,
+              Expanded(
+                child: Container(
+                  width: 1.sw,
+                  margin: EdgeInsets.fromLTRB(20, 0, 20, 50),
+                  decoration: BoxDecoration(
+                    color: ColorName.white,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: DataTable(
+                            columnSpacing: 24,
+                            horizontalMargin: 12,
+                            columns: [
+                              for (var e in columnTitles)
+                                ActWidget.dataColumn(
+                                  e,
+                                  align: e == columnTitles.last
+                                      ? Alignment.centerRight
+                                      : Alignment.centerLeft,
+                                ),
+                            ],
+                            rows: [
+                              for (var e in [
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '+100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  '21.10.2022',
+                                  'Оплата на заказ',
+                                  '100 000 000 UZS'
+                                ],
+                                [
+                                  'Заказ на сумму',
+                                  '',
+                                  '100 000 000 UZS',
+                                ],
+                                [
+                                  'Оплата на заказ',
+                                  '',
+                                  '+100 000 000 UZS',
+                                ],
+                                [
+                                  'Итоговый долг',
+                                  '',
+                                  '-0',
+                                ],
+                              ])
+                                ActWidget.dataRow(e),
+                            ],
+                          ),
                         ),
-                    ],
-                    rows: [
-                      for (var dataRow in [
-                        ['21.10.2022', 'Оплата на заказ', '+100 000 000 UZS'],
-                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
-                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
-                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
-                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
-                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
-                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
-                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
-                        ['21.10.2022', 'Оплата на заказ', '100 000 000 UZS'],
-                        ['Заказ на сумму', '', '100 000 000 UZS'],
-                        ['Оплата на заказ', '', '+100 000 000 UZS'],
-                        ['Итоговый долг', '', '-0'],
-                      ])
-                        ActWidget.dataRow(dataRow),
+                      ),
                     ],
                   ),
                 ),
-              ),
-            ),
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

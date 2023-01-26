@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page.dart';
 import 'package:agent/ui/pages/customer_data_page/bloc/customer_data_page_cubit.dart';
@@ -7,6 +8,7 @@ import 'package:agent/ui/pages/customer_data_page/customer_page_widgets/customer
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -128,135 +130,18 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                         ),
                         child: Center(
                           child: AppWidgets.textLocale(
-                            localeKey: "1/10",
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            isRichText: true,
-                            color: ColorName.white,
-                          ),
+                              localeKey: "1/10",
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              isRichText: true,
+                              color: ColorName.white),
                         ),
                       )
                     ],
                   ),
-                  Container(
-                    margin: EdgeInsets.only(
-                      bottom: 12.w,
-                      top: 18.w,
-                    ),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: ColorName.white,
-                    ),
-                    child: Column(
-                      children: [
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: AppWidgets.textLocale(
-                            localeKey: "Общие данные",
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w500,
-                            color: ColorName.gray3,
-                            isRichText: true,
-                          ),
-                        ).paddingOnly(bottom: 16.w),
-                        rowWidget("Наз. торговой точки", "Osiyo market")
-                            .paddingOnly(bottom: 16.w),
-                        const Divider(),
-                        rowWidget("Категория", "Розница")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                        const Divider(),
-                        rowWidget("Территория", "Toshkent, Yunusobod")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                        const Divider(),
-                        rowWidget("Тип клиента", "Lorem ipsum")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                        const Divider(),
-                        rowWidget("Канал сбыта", "Lorem ipsum")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                      ],
-                    ).paddingSymmetric(horizontal: 20.w, vertical: 18.w),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(
-                      bottom: 12.w,
-                    ),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: ColorName.white,
-                    ),
-                    child: Column(
-                      children: [
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: AppWidgets.textLocale(
-                            localeKey: "Контактные данные",
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w500,
-                            color: ColorName.gray3,
-                            isRichText: true,
-                          ),
-                        ).paddingOnly(bottom: 16.w),
-                        rowWidget("Адрес", "Toshkent yunusobod")
-                            .paddingOnly(bottom: 16.w),
-                        const Divider(),
-                        rowWidget("Ориентир", "64-avtobaza")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                        const Divider(),
-                        rowWidget("Контактное лицо", "Faxxriyorbek")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                        const Divider(),
-                        rowWidget("Примечание", "Lorem ipsum")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                        const Divider(),
-                        rowWidget("Номер телефона", "+998 97 628 28 82")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                        const Divider(),
-                        rowWidget("Дни посещения", "ПН. ВТ. СР")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                        const Divider(),
-                        rowWidget(
-                          "Местоположения",
-                          "Посмотреть на карте",
-                          ColorName.button,
-                        ).paddingOnly(bottom: 16.w, top: 16.w),
-                      ],
-                    ).paddingSymmetric(horizontal: 20.w, vertical: 18.w),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(bottom: 35.w),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: ColorName.white),
-                    child: Column(
-                      children: [
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: AppWidgets.textLocale(
-                              localeKey: "Реквизиты клиента",
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w500,
-                              color: ColorName.gray3,
-                              isRichText: true),
-                        ).paddingOnly(bottom: 16.w),
-                        rowWidget("ИНН", "465894132").paddingOnly(bottom: 16.w),
-                        const Divider(),
-                        rowWidget("Р/C", "465894132")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                        const Divider(),
-                        rowWidget("Банк", "Hamkorbank")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                        const Divider(),
-                        rowWidget("МФО", "Lorem ipsum")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                        const Divider(),
-                        rowWidget("ОКЕД", "465894132")
-                            .paddingOnly(bottom: 16.w, top: 16.w),
-                      ],
-                    ).paddingSymmetric(horizontal: 20.w, vertical: 18.w),
-                  ),
+                  buildGeneralInfo(),
+                  builContactDetail(),
+                  buildCustomerDetail(),
                 ],
               ),
             ),
@@ -289,6 +174,125 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
           ],
         ),
       ),
+    );
+  }
+
+  Container buildCustomerDetail() {
+    return Container(
+      margin: EdgeInsets.only(bottom: 35.w),
+      width: double.infinity,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12), color: ColorName.white),
+      child: Column(
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: AppWidgets.textLocale(
+                localeKey: LocaleKeys.customer_details,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+                color: ColorName.gray3,
+                isRichText: true),
+          ).paddingOnly(bottom: 16.w),
+          rowWidget(LocaleKeys.inn.tr(), "465894132").paddingOnly(bottom: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.rs.tr(), "465894132")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.bank.tr(), "Hamkorbank")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.mfo.tr(), "Lorem ipsum")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.oked.tr(), "465894132")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+        ],
+      ).paddingSymmetric(horizontal: 20.w, vertical: 18.w),
+    );
+  }
+
+  Container builContactDetail() {
+    return Container(
+      margin: EdgeInsets.only(
+        bottom: 12.w,
+      ),
+      width: double.infinity,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12), color: ColorName.white),
+      child: Column(
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: AppWidgets.textLocale(
+                localeKey: LocaleKeys.contact_details,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+                color: ColorName.gray3,
+                isRichText: true),
+          ).paddingOnly(bottom: 16.w),
+          rowWidget(LocaleKeys.address.tr(), "Toshkent yunusobod")
+              .paddingOnly(bottom: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.reference_point.tr(), "64-avtobaza")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.contact_person.tr(), "Faxxriyorbek")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.note.tr(), "Lorem ipsum")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.phone_number.tr(), "+998 97 628 28 82")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.visit_days.tr(), "ПН. ВТ. СР")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.locations.tr(), LocaleKeys.view_on_map.tr(),
+                  ColorName.button)
+              .paddingOnly(bottom: 16.w, top: 16.w),
+        ],
+      ).paddingSymmetric(horizontal: 20.w, vertical: 18.w),
+    );
+  }
+
+  Container buildGeneralInfo() {
+    return Container(
+      margin: EdgeInsets.only(
+        bottom: 12.w,
+        top: 18.w,
+      ),
+      width: double.infinity,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12), color: ColorName.white),
+      child: Column(
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: AppWidgets.textLocale(
+                localeKey: LocaleKeys.general_information,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+                color: ColorName.gray3,
+                isRichText: true),
+          ).paddingOnly(bottom: 16.w),
+          rowWidget(LocaleKeys.outlet_name.tr(), "Osiyo markeet")
+              .paddingOnly(bottom: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.category.tr(), "Розница")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.territory.tr(), "Toshkent, Yunusobod")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.client_type.tr(), "Lorem ipsum")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+          const Divider(),
+          rowWidget(LocaleKeys.sales_channel.tr(), "Lorem ipsum")
+              .paddingOnly(bottom: 16.w, top: 16.w),
+        ],
+      ).paddingSymmetric(horizontal: 20.w, vertical: 18.w),
     );
   }
 }

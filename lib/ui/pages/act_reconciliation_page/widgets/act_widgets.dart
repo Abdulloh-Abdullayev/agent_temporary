@@ -31,7 +31,7 @@ class ActWidget {
   ];
 
   /// appbar
-  static Widget appBar({
+  static Widget AppBar({
     required String title,
     required String firstText,
     required String buttonText,
@@ -151,8 +151,7 @@ class ActWidget {
       return 3;
     } else if (text.contains("+")) {
       return 1;
-    } else if (int.tryParse(
-            text.replaceAll(RegExp(r'([a-z]|[A-Z])|\ *'), "")) !=
+    } else if (int.tryParse(text.replaceAll(RegExp(r'([a-z]|[A-Z])|\*'), "")) !=
         null) {
       return 2;
     } else {

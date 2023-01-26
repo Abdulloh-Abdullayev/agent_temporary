@@ -19,11 +19,11 @@ class TabbarFirstItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                  localeKey: "Заказы",
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w500,
-                  color: ColorName.black,
-                  isRichText: true),
+                localeKey: "Заказы",
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+                color: ColorName.black,
+              ),
               DropDown(
                 width: 234.w,
                 items: [
@@ -54,11 +54,11 @@ class TabbarFirstItem extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: AppWidgets.textLocale(
-                          localeKey: "Заказы",
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                          color: ColorName.black,
-                          isRichText: true),
+                        localeKey: "Заказы",
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500,
+                        color: ColorName.black,
+                      ),
                     ).paddingOnly(bottom: 18.w),
                     Column(
                       children: [
@@ -72,7 +72,6 @@ class TabbarFirstItem extends StatelessWidget {
                           status: "Новый",
                           bonus: "Бонус",
                           bonusNumber: "8",
-                          statusButtonWidth: 59.w,
                           icon_1: Assets.images.icons.checkIcon
                               .svg(fit: BoxFit.cover, color: ColorName.green),
                           statusColor: Colors.deepPurple.withOpacity(0.2),
@@ -89,7 +88,6 @@ class TabbarFirstItem extends StatelessWidget {
                           status: "Новый",
                           bonus: "Бонус",
                           bonusNumber: "8",
-                          statusButtonWidth: 59.w,
                           icon_1: Assets.images.icons.xIcon
                               .svg(fit: BoxFit.cover, color: ColorName.red),
                           statusColor: Colors.deepPurple.withOpacity(0.2),

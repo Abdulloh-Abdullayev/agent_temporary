@@ -60,11 +60,11 @@ class DebtorsItem extends StatelessWidget {
                               color: ColorName.black,
                               fontSize: 12),
                           AppWidgets.textLocale(
-                                  localeKey: " 0",
-                                  fontWeight: FontWeight.w400,
-                                  color: ColorName.red,
-                                  fontSize: 12,
-                                ),
+                            localeKey: " 0",
+                            fontWeight: FontWeight.w400,
+                            color: ColorName.red,
+                            fontSize: 12,
+                          ),
                         ],
                       )
                     ],

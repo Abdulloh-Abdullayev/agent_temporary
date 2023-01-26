@@ -54,7 +54,7 @@ class AddOutletsPage extends StatelessWidget {
                     buildContactDetail(),
                     buildClientDetail(),
                     AppWidgets.appButton(
-                      title: "Сохранить",
+                      title: LocaleKeys.save.tr(),
                       onTap: () {},
                     ).paddingSymmetric(
                       horizontal: 20.w,
@@ -105,7 +105,7 @@ class AddOutletsPage extends StatelessWidget {
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: "Добавить торговую точку",
+            localeKey: LocaleKeys.add_outlet,
             fontWeight: FontWeight.w500,
             fontSize: 20.sp,
             color: Colors.white,
@@ -131,7 +131,7 @@ class AddOutletsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppWidgets.textLocale(
-            localeKey: "Фотографии торговой точки",
+            localeKey: LocaleKeys.photos_of_outlets,
             fontWeight: FontWeight.w500,
             fontSize: 18.sp,
             color: ColorName.gray3,
@@ -176,10 +176,10 @@ class AddOutletsPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          title(title: "Данные торговой точки"),
+          title(title: LocaleKeys.data_outlets.tr()),
           //Название торговой точки
           inputWithTitle(
-            title: "Название торговой точки",
+            title: LocaleKeys.name_of_outlets.tr(),
             onChanged: (v) {},
           ),
           // Категория
@@ -193,7 +193,7 @@ class AddOutletsPage extends StatelessWidget {
             onChange: (v) {
               print(v);
             },
-            title: 'Категория',
+            title: LocaleKeys.category.tr(),
           ),
           // Территория
           dropDownWithTitle(
@@ -206,7 +206,7 @@ class AddOutletsPage extends StatelessWidget {
             onChange: (v) {
               print(v);
             },
-            title: 'Территория',
+            title: LocaleKeys.territory.tr(),
           ),
           // Тип клиента
           dropDownWithTitle(
@@ -219,7 +219,7 @@ class AddOutletsPage extends StatelessWidget {
             onChange: (v) {
               print(v);
             },
-            title: 'Тип клиента',
+            title: LocaleKeys.client_type.tr(),
           ),
           // Канал сбыта
           dropDownWithTitle(
@@ -232,7 +232,7 @@ class AddOutletsPage extends StatelessWidget {
             onChange: (v) {
               print(v);
             },
-            title: 'Канал сбыта',
+            title: LocaleKeys.sales_channel.tr(),
           ),
         ],
       ),
@@ -251,24 +251,24 @@ class AddOutletsPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          title(title: "Контактные данные"),
+          title(title: LocaleKeys.contact_details.tr()),
           inputWithTitle(
-            title: "Адрес",
+            title: LocaleKeys.address.tr(),
             onChanged: (v) {},
           ),
           inputWithTitle(
-            title: "Ориентир",
+            title: LocaleKeys.reference_point.tr(),
             onChanged: (v) {},
           ).paddingOnly(top: 18.w),
           inputWithTitle(
-            title: "Контактное лицо",
+            title: LocaleKeys.contact_person.tr(),
             onChanged: (v) {},
           ).paddingOnly(top: 18.w),
           //todo qr code
           Row(
             children: [
               AppWidgets.textLocale(
-                localeKey: "QR Код",
+                localeKey: LocaleKeys.qr_code.tr(),
                 fontSize: 14.sp,
                 color: ColorName.gray3,
               ),
@@ -279,12 +279,12 @@ class AddOutletsPage extends StatelessWidget {
             ],
           ),
           inputWithTitle(
-            title: "Примечание",
+            title: LocaleKeys.note.tr(),
             onChanged: (v) {},
           ).paddingOnly(top: 18.w),
 
           AppWidgets.textLocale(
-            localeKey: "Номер телефона",
+            localeKey: LocaleKeys.phone_number,
             fontWeight: FontWeight.w400,
             fontSize: 14.sp,
             color: ColorName.gray3,
@@ -308,13 +308,13 @@ class AddOutletsPage extends StatelessWidget {
               'text 4',
             ],
             onChange: (v) {},
-            title: "Дни посещения",
+            title: LocaleKeys.visit_days.tr(),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: "Местоположения",
+                localeKey: LocaleKeys.locations,
                 fontWeight: FontWeight.w400,
                 fontSize: 14.sp,
                 color: ColorName.gray3,
@@ -327,7 +327,7 @@ class AddOutletsPage extends StatelessWidget {
                 textColor: ColorName.black,
                 fontWeight: FontWeight.w400,
                 fontSize: 14.sp,
-                title: "Указать на карте",
+                title: LocaleKeys.point_on_the_map.tr(),
                 onTap: () {},
               )
             ],
@@ -349,25 +349,25 @@ class AddOutletsPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          title(title: "Реквизиты клиента"),
+          title(title: LocaleKeys.customer_details.tr()),
           inputWithTitle(
-            title: "ИНН",
+            title: LocaleKeys.inn.tr(),
             onChanged: (v) {},
           ),
           inputWithTitle(
-            title: "Р/C",
+            title: LocaleKeys.rs.tr(),
             onChanged: (v) {},
           ).paddingOnly(top: 18.w),
           inputWithTitle(
-            title: "Банк",
+            title: LocaleKeys.bank.tr(),
             onChanged: (v) {},
           ).paddingOnly(top: 18.w),
           inputWithTitle(
-            title: "МФО",
+            title: LocaleKeys.mfo.tr(),
             onChanged: (v) {},
           ).paddingOnly(top: 18.w),
           inputWithTitle(
-            title: "ОКЕД",
+            title: LocaleKeys.oked.tr(),
             onChanged: (v) {},
           ).paddingOnly(top: 18.w),
         ],

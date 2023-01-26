@@ -1,5 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/mark_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -26,27 +28,25 @@ class TabbarThirdWidget extends StatelessWidget {
                     Column(
                       children: [
                         AppWidgets.textLocale(
-                                localeKey: "5",
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
-                                isRichText: true,
-                                color: ColorName.black)
-                            .paddingOnly(bottom: 4.w),
+                          localeKey: "5",
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).paddingOnly(bottom: 4.w),
                         AppWidgets.textLocale(
-                            localeKey: "План",
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.gray2)
+                          localeKey: LocaleKeys.plan,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.gray2,
+                        )
                       ],
                     ).paddingOnly(top: 15.w, bottom: 39.w),
                     AppWidgets.textLocale(
-                            localeKey: "${"10"}%",
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.black)
-                        .paddingOnly(bottom: 40.w),
+                      localeKey: "${"10"}%",
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                      color: ColorName.black,
+                    ).paddingOnly(bottom: 40.w),
                   ],
                 ),
               ),
@@ -65,27 +65,25 @@ class TabbarThirdWidget extends StatelessWidget {
                     Column(
                       children: [
                         AppWidgets.textLocale(
-                                localeKey: "0",
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
-                                isRichText: true,
-                                color: ColorName.black)
-                            .paddingOnly(bottom: 4.w),
+                          localeKey: "0",
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).paddingOnly(bottom: 4.w),
                         AppWidgets.textLocale(
-                            localeKey: "ОКБ",
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.gray2)
+                          localeKey: LocaleKeys.ucb,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.gray2,
+                        )
                       ],
                     ).paddingOnly(top: 15.w, bottom: 39.w),
                     AppWidgets.textLocale(
-                            localeKey: "${"10"}%",
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w400,
-                            isRichText: true,
-                            color: ColorName.black)
-                        .paddingOnly(bottom: 40.w),
+                      localeKey: "${"10"}%",
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                      color: ColorName.black,
+                    ).paddingOnly(bottom: 40.w),
                   ],
                 ),
               ),
@@ -99,7 +97,7 @@ class TabbarThirdWidget extends StatelessWidget {
           ),
         ),
         MarkWidget(
-          text: "Факт",
+          text: LocaleKeys.fact.tr(),
           ptop: 60.w,
           pleft: 130.w,
           width: 76.w,
@@ -119,20 +117,25 @@ class TabbarThirdWidget extends StatelessWidget {
           child: Column(
             children: [
               AppWidgets.textLocale(
-                      localeKey: "5",
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
-                      isRichText: true,
-                      color: ColorName.black)
-                  .paddingOnly(bottom: 4.w),
+                localeKey: "5",
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w600,
+                color: ColorName.black,
+              ).paddingOnly(bottom: 4.w),
               AppWidgets.textLocale(
-                  localeKey: "Общее количество заказов",
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w400,
-                  isRichText: true,
-                  color: ColorName.gray2)
+                localeKey: LocaleKeys.total_number_of_orders,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w400,
+                color: ColorName.gray2,
+              )
             ],
           ).paddingOnly(top: 18.w, bottom: 16.w),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 105.w),
+          child: const Divider(
+            color: ColorName.gray2,
+          ),
         ),
       ],
     );

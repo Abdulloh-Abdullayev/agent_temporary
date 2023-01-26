@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/history_orders/widgets/order_from_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,18 +81,23 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                             backgroundColor: Colors.transparent,
                             builder: (context) {
                               return PurchaseHistorySheet(
-                                text: 'Фильтр',
-                                height: 900,
-                                firstDate: '',
-                                secondDate: '',
-                                firstMoneyStatus: '',
-                                secondMoneyStatus: '',
-                                // dropdownText: [],
-                                save: () {
-                                  Modular.to
-                                      .pushNamed(OrderFromWidget.routeName);
+                                fromDate: "1212",
+                                firstDateOnTap: () {},
+                                secondDateOnTap: () {},
+                                iconDown: Assets.images.icons.downIcon.svg(),
+                                sheetOnTap: () {
+                                  Navigator.pop(context);
                                 },
-                                dropdownText: [],
+                                iconCencel: Assets.images.icons.cencel.svg(),
+                                firstDate: "12",
+                                secondDate: "До",
+                                firstMoneyStatus: "Статус",
+                                secondMoneyStatus: "secondMoneyStatus",
+                                text: "Фильтр",
+                                dropdownText: ["dropdownText"],
+                                save: () {
+                                  Navigator.pop(context);
+                                },
                               );
                             },
                           );
@@ -116,7 +123,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                     vertical: 20,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "История заказов",
+                    localeKey: LocaleKeys.history_of_orders,
                     fontSize: 24.sp,
                     color: ColorName.white,
                     fontWeight: FontWeight.w600,
@@ -127,7 +134,7 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                   AppTabBar(
                     tabController: tabController,
                     isScrollable: true,
-                    tabTitle: const ["Заказы", "Топ"],
+                    tabTitle: [LocaleKeys.orders.tr(), LocaleKeys.top.tr()],
                     onTap: (i) {
                       pageController.animateToPage(
                         i,
@@ -158,75 +165,16 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
     return ListView.builder(
       itemCount: 5,
       itemBuilder: ((context, index) {
-        return Container(
-          width: 1.sw,
-          decoration: BoxDecoration(
-            color: ColorName.white,
-            borderRadius: BorderRadius.circular(8.r),
-          ),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      AppWidgets.textLocale(
-                        localeKey: "Заказ от",
-                        color: ColorName.gray2,
-                        fontSize: 12.sp,
-                      ).paddingOnly(right: 2.w),
-                      AppWidgets.textLocale(
-                        localeKey: "12.08.2022",
-                        fontSize: 12.sp,
-                      ),
-                    ],
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: ColorName.green.withOpacity(0.18),
-                      borderRadius: BorderRadius.circular(8.r),
-                    ),
-                    child: AppWidgets.textLocale(
-                      localeKey: "Доставлен",
-                      color: ColorName.green,
-                      fontSize: 12.sp,
-                    ).paddingSymmetric(
-                      vertical: 4.w,
-                      horizontal: 10.w,
-                    ),
-                  )
-                ],
-              ).paddingOnly(bottom: 15.w),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      AppWidgets.textLocale(
-                        localeKey: "Сумма",
-                        color: ColorName.gray2,
-                        fontSize: 12.sp,
-                      ).paddingOnly(right: 2.w),
-                      AppWidgets.textLocale(
-                        localeKey: "150 000 000",
-                        color: ColorName.buttonColor,
-                        fontSize: 12.sp,
-                      ),
-                    ],
-                  ),
-                  AppWidgets.textLocale(
-                    localeKey: "Начисления",
-                    color: ColorName.gray2,
-                    fontSize: 12.sp,
-                  ),
-                ],
-              ),
-            ],
-          ).paddingSymmetric(
-            horizontal: 12.w,
-            vertical: 18.w,
-          ),
+        return Cards.cards_6(
+          zakaz: LocaleKeys.order_from.tr(),
+          date: "12.08.2022",
+          status: LocaleKeys.delivered.tr(),
+          nachisleniya: LocaleKeys.accruals.tr(),
+          summa: LocaleKeys.amount.tr(),
+          summaNumber: "150 000 000",
+          onTap: () {
+            Modular.to.pushNamed(OrderFromWidget.routeName);
+          },
         ).paddingOnly(
           top: 15.w,
           left: 20.w,

@@ -1,5 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page_widgets/mark_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,18 +26,18 @@ class TabbarSecondWidget extends StatelessWidget {
               Column(
                 children: [
                   AppWidgets.textLocale(
-                          localeKey: "5",
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w600,
-                          isRichText: true,
-                          color: ColorName.black)
-                      .paddingOnly(bottom: 4.w),
+                    localeKey: "5",
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w600,
+                    isRichText: true,
+                    color: ColorName.black,
+                  ).paddingOnly(bottom: 4.w),
                   AppWidgets.textLocale(
-                      localeKey: "План",
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
-                      isRichText: true,
-                      color: ColorName.gray2)
+                    localeKey: LocaleKeys.plan,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400,
+                    color: ColorName.gray2,
+                  )
                 ],
               ).paddingOnly(top: 14.w, bottom: 20.w),
               Row(
@@ -44,11 +46,11 @@ class TabbarSecondWidget extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.center,
                       child: AppWidgets.textLocale(
-                          localeKey: "${"10"}%",
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w400,
-                          isRichText: true,
-                          color: ColorName.black),
+                        localeKey: "${"10"}%",
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w400,
+                        color: ColorName.black,
+                      ),
                     ),
                   ),
                   Container(
@@ -60,11 +62,11 @@ class TabbarSecondWidget extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.center,
                       child: AppWidgets.textLocale(
-                          localeKey: "${"10"}%",
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w400,
-                          isRichText: true,
-                          color: ColorName.black),
+                        localeKey: "${"10"}%",
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w400,
+                        color: ColorName.black,
+                      ),
                     ),
                   ),
                 ],
@@ -72,18 +74,17 @@ class TabbarSecondWidget extends StatelessWidget {
               Column(
                 children: [
                   AppWidgets.textLocale(
-                          localeKey: "5",
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w600,
-                          isRichText: true,
-                          color: ColorName.black)
-                      .paddingOnly(bottom: 4.w),
+                    localeKey: "5",
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w600,
+                    color: ColorName.black,
+                  ).paddingOnly(bottom: 4.w),
                   AppWidgets.textLocale(
-                      localeKey: "Общее количество заказов",
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
-                      isRichText: true,
-                      color: ColorName.gray2)
+                    localeKey: LocaleKeys.total_number_of_orders,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400,
+                    color: ColorName.gray2,
+                  )
                 ],
               ).paddingOnly(top: 18.w, bottom: 16.w),
             ],
@@ -96,7 +97,7 @@ class TabbarSecondWidget extends StatelessWidget {
           ),
         ),
         MarkWidget(
-          text: "Факт",
+          text: LocaleKeys.fact.tr(),
           ptop: 60.w,
           pleft: 125,
           width: 76.w,

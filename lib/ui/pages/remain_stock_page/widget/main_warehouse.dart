@@ -14,14 +14,15 @@ class MainWarehouse extends StatelessWidget {
       child: Column(
         children: [
           ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return RemainStockItem(index: index).paddingOnly(
-                  bottom: 8.w,
-                );
-              }),
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return RemainStockItem(index: index).paddingOnly(
+                bottom: 8.w,
+              );
+            },
+          ),
         ],
       ),
     );

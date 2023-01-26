@@ -8,7 +8,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
-
 class DebtorsHistoryModule extends Module {
   @override
   List<ModularRoute> get routes => [

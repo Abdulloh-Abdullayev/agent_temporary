@@ -1,3 +1,4 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
@@ -28,22 +29,23 @@ class BottomButtonWidget extends StatelessWidget {
       height: 83.w,
       child: Center(
         child: Container(
-            height: 47.w,
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: MaterialButton(
-              onPressed: onTap,
-              color: ColorName.button,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8)),
-              child: AppWidgets.textLocale(
-                localeKey: "Добавить заказ",
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: ColorName.white,
-                isRichText: true,
-              ),
-            )),
+          height: 47.w,
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: MaterialButton(
+            onPressed: onTap,
+            color: ColorName.button,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            child: AppWidgets.textLocale(
+              localeKey: LocaleKeys.add_order,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: ColorName.white,
+              isRichText: true,
+            ),
+          ),
+        ),
       ),
     );
   }

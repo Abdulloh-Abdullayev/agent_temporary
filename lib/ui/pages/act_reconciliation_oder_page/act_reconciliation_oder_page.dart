@@ -1,7 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/widgets/act_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,7 +39,13 @@ class ActReconciliationOderPage extends StatefulWidget {
 }
 
 class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
-  var columnTitles = ["Склад", "Дата", "Долг", "Оплачено", "Осталось"];
+  var columnTitles = [
+    LocaleKeys.stock.tr(),
+    LocaleKeys.data.tr(),
+    "Долг",
+    "Оплачено",
+    LocaleKeys.left.tr()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +55,7 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
           color: ColorName.bgColor,
           child: Column(
             children: [
-              ActWidget.appBar(
+              ActWidget.AppBar(
                 title: "title",
                 firstText: "firstText",
                 buttonText: "buttonText",
@@ -71,134 +79,136 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
                 ],
               ),
               AppWidgets.textLocale(
-                localeKey: "Запросить историю",
+                localeKey: LocaleKeys.request_history,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
                 color: ColorName.button,
               ).marginSymmetric(vertical: 18),
-              buildTable()
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget buildTable() {
-    return Expanded(
-      child: Container(
-        width: 1.sw,
-        margin: EdgeInsets.fromLTRB(20, 0, 20, 50),
-        decoration: BoxDecoration(
-          color: ColorName.white,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Column(
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: DataTable(
-                    columnSpacing: 24,
-                    horizontalMargin: 12,
-                    columns: [
-                      for (var columnTitle in columnTitles)
-                        ActWidget.dataColumn(
-                          columnTitle,
-                          align: columnTitle == columnTitles.last
-                              ? Alignment.centerRight
-                              : Alignment.centerLeft,
+              Expanded(
+                child: Container(
+                  width: 1.sw,
+                  margin: EdgeInsets.fromLTRB(20, 0, 20, 50),
+                  decoration: BoxDecoration(
+                    color: ColorName.white,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: DataTable(
+                              columnSpacing: 24,
+                              horizontalMargin: 12,
+                              columns: [
+                                for (var columnTitle in columnTitles)
+                                  ActWidget.dataColumn(
+                                    columnTitle,
+                                    align: columnTitle == columnTitles.last
+                                        ? Alignment.centerRight
+                                        : Alignment.centerLeft,
+                                  ),
+                              ],
+                              rows: [
+                                for (var dataRow in [
+                                  [
+                                    "Основной склад",
+                                    '21.10.2022',
+                                    "5 000",
+                                    'Оплата на заказ',
+                                    '+100 000 000 UZS',
+                                  ],
+                                  [
+                                    "Основной склад",
+                                    '21.10.2022',
+                                    "5 000",
+                                    'Оплата на заказ',
+                                    '100 000 000 UZS',
+                                  ],
+                                  [
+                                    "Основной склад",
+                                    '21.10.2022',
+                                    "5 000",
+                                    'Оплата на заказ',
+                                    '100 000 000 UZS',
+                                  ],
+                                  [
+                                    "Основной склад",
+                                    '21.10.2022',
+                                    "5 000",
+                                    'Оплата на заказ',
+                                    '100 000 000 UZS',
+                                  ],
+                                  [
+                                    "Основной склад",
+                                    '21.10.2022',
+                                    "5 000",
+                                    'Оплата на заказ',
+                                    '100 000 000 UZS',
+                                  ],
+                                  [
+                                    "Основной склад",
+                                    '21.10.2022',
+                                    "5 000",
+                                    'Оплата на заказ',
+                                    '100 000 000 UZS',
+                                  ],
+                                  [
+                                    "Основной склад",
+                                    '21.10.2022',
+                                    "5 000",
+                                    'Оплата на заказ',
+                                    '100 000 000 UZS',
+                                  ],
+                                  [
+                                    "Основной склад",
+                                    '21.10.2022',
+                                    "5 000",
+                                    'Оплата на заказ',
+                                    '100 000 000 UZS',
+                                  ],
+                                  [
+                                    "Основной склад",
+                                    '21.10.2022',
+                                    "5 000",
+                                    'Оплата на заказ',
+                                    '100 000 000 UZS',
+                                  ],
+                                  [
+                                    'Заказ на сумму',
+                                    '',
+                                    "5 000",
+                                    "",
+                                    '100 000 000 UZS',
+                                  ],
+                                  [
+                                    'Оплата на заказ',
+                                    '',
+                                    "5 000",
+                                    '',
+                                    '+100 000 000 UZS'
+                                  ],
+                                  [
+                                    'Итоговый долг',
+                                    '',
+                                    "5 000",
+                                    '',
+                                    '-0',
+                                  ],
+                                ])
+                                  ActWidget.dataRow(dataRow),
+                              ],
+                            ),
+                          ),
                         ),
-                    ],
-                    rows: [
-                      for (var dataRow in [
-                        [
-                          "Основной склад",
-                          '21.10.2022',
-                          "5 000",
-                          'Оплата на заказ',
-                          '+100 000 000 UZS',
-                        ],
-                        [
-                          "Основной склад",
-                          '21.10.2022',
-                          "5 000",
-                          'Оплата на заказ',
-                          '100 000 000 UZS',
-                        ],
-                        [
-                          "Основной склад",
-                          '21.10.2022',
-                          "5 000",
-                          'Оплата на заказ',
-                          '100 000 000 UZS',
-                        ],
-                        [
-                          "Основной склад",
-                          '21.10.2022',
-                          "5 000",
-                          'Оплата на заказ',
-                          '100 000 000 UZS',
-                        ],
-                        [
-                          "Основной склад",
-                          '21.10.2022',
-                          "5 000",
-                          'Оплата на заказ',
-                          '100 000 000 UZS',
-                        ],
-                        [
-                          "Основной склад",
-                          '21.10.2022',
-                          "5 000",
-                          'Оплата на заказ',
-                          '100 000 000 UZS',
-                        ],
-                        [
-                          "Основной склад",
-                          '21.10.2022',
-                          "5 000",
-                          'Оплата на заказ',
-                          '100 000 000 UZS',
-                        ],
-                        [
-                          "Основной склад",
-                          '21.10.2022',
-                          "5 000",
-                          'Оплата на заказ',
-                          '100 000 000 UZS',
-                        ],
-                        [
-                          "Основной склад",
-                          '21.10.2022',
-                          "5 000",
-                          'Оплата на заказ',
-                          '100 000 000 UZS',
-                        ],
-                        [
-                          'Заказ на сумму',
-                          '',
-                          "5 000",
-                          "",
-                          '100 000 000 UZS',
-                        ],
-                        [
-                          'Оплата на заказ',
-                          '',
-                          "5 000",
-                          '',
-                          '+100 000 000 UZS'
-                        ],
-                        ['Итоговый долг', '', "5 000", '', '-0'],
-                      ])
-                        ActWidget.dataRow(dataRow),
+                      ),
                     ],
                   ),
                 ),
-              ),
-            ),
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

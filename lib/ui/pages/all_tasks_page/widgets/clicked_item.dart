@@ -1,10 +1,12 @@
 import 'dart:io';
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/all_tasks_page/bloc/all_task_bloc.dart';
 import 'package:agent/ui/widgets/app_text_field.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -69,9 +71,9 @@ class ClickedItem extends StatelessWidget {
                                 color: ColorName.white.withOpacity(0.1),
                               ),
                               child: PopupMenu(
-                                textName: const [
-                                  "Редактрировать",
-                                  'Удалить',
+                                textName: [
+                                  LocaleKeys.edit.tr(),
+                                  LocaleKeys.delete.tr(),
                                 ],
                                 icons: [
                                   Assets.images.icons.edit.svg(),
@@ -89,7 +91,7 @@ class ClickedItem extends StatelessWidget {
                           vertical: 18.w,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: "Задачи",
+                          localeKey: LocaleKeys.tasks,
                           color: ColorName.white,
                           fontSize: 24.sp,
                           fontWeight: FontWeight.w600,
@@ -101,9 +103,9 @@ class ClickedItem extends StatelessWidget {
                   ),
                   Cards.cards_13(
                     name: "Osiyo market",
-                    torgoviyTochka: "Торговая точка",
-                    startTime: "Дата создание",
-                    finishTime: "Дата Выполнение",
+                    torgoviyTochka: LocaleKeys.outlet.tr(),
+                    startTime: LocaleKeys.creation_date.tr(),
+                    finishTime: LocaleKeys.due_date.tr(),
                     startDate: "12.10.2022",
                     finishDate: "12.10.2022",
                     context: context,
@@ -113,10 +115,10 @@ class ClickedItem extends StatelessWidget {
                     vertical: 18.w,
                   ),
                   Cards.cards_14(
-                    primicheniya: "Примечание",
+                    primicheniya: LocaleKeys.note.tr(),
                     product:
                         "Кола 3 блок,Фанта 3 блок, динай 3 блок, Nestle 3 блок, Qibray 3 блок",
-                    foto: "Фото",
+                    foto: LocaleKeys.photo,
                     image: "image",
                     card_onTap: () {},
                   ).paddingAll(20.w),
@@ -134,19 +136,19 @@ class ClickedItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AppWidgets.textLocale(
-                          localeKey: "План выполнен?",
+                          localeKey: LocaleKeys.plan_fulfilled,
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                         ).paddingOnly(top: 25.w),
                         AppWidgets.textLocale(
-                          localeKey: "Примечание",
+                          localeKey: LocaleKeys.note,
                           fontSize: 14.sp,
                           color: ColorName.gray2,
                           fontWeight: FontWeight.w400,
                         ).paddingSymmetric(vertical: 12.w),
                         AppTextField(
                           enablePrefixIcon: false,
-                          hintText: "Пишите",
+                          hintText: LocaleKeys.write.tr(),
                           onChanged: (v) {},
                           title: "",
                         ),
@@ -154,7 +156,7 @@ class ClickedItem extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AppWidgets.textLocale(
-                              localeKey: "Фото",
+                              localeKey: LocaleKeys.photo,
                               fontSize: 14.sp,
                               color: ColorName.gray2,
                             ),
@@ -164,7 +166,7 @@ class ClickedItem extends StatelessWidget {
                                       bloc.add(ImageUploaded(state.image));
                                     },
                                     child: AppWidgets.textLocale(
-                                      localeKey: "Загрузить фото",
+                                      localeKey: LocaleKeys.upload_photo,
                                       fontSize: 16.sp,
                                       color: ColorName.button,
                                       fontWeight: FontWeight.w600,
@@ -215,7 +217,7 @@ class ClickedItem extends StatelessWidget {
                                   ).paddingAll(3.w),
                                   AppWidgets.textLocale(
                                     textAlign: TextAlign.center,
-                                    localeKey: "Заказ выполнен",
+                                    localeKey: LocaleKeys.order_completed,
                                     color: ColorName.gray2,
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.w400,

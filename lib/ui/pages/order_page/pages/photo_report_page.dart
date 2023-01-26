@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/delete_dilaog_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/image_widget.dart';
@@ -19,14 +20,14 @@ class PhotoReportPage extends StatelessWidget {
         child: Column(
           children: [
             Align(
-                    alignment: Alignment.centerLeft,
-                    child: AppWidgets.textLocale(
-                        localeKey: "Не синхрозированные",
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16.sp,
-                        color: ColorName.black,
-                        isRichText: true))
-                .paddingOnly(bottom: 12.w),
+              alignment: Alignment.centerLeft,
+              child: AppWidgets.textLocale(
+                localeKey: LocaleKeys.out_of_sync,
+                fontWeight: FontWeight.w600,
+                fontSize: 16.sp,
+                color: ColorName.black,
+              ),
+            ).paddingOnly(bottom: 12.w),
             SizedBox(
               height: 104.w,
               child: ListView.builder(
@@ -45,14 +46,14 @@ class PhotoReportPage extends StatelessWidget {
               ),
             ).paddingOnly(bottom: 24.w),
             Align(
-                    alignment: Alignment.centerLeft,
-                    child: AppWidgets.textLocale(
-                        localeKey: "Синхрозированные",
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16.sp,
-                        color: ColorName.black,
-                        isRichText: true))
-                .paddingOnly(bottom: 12.w),
+              alignment: Alignment.centerLeft,
+              child: AppWidgets.textLocale(
+                localeKey: LocaleKeys.synchronized,
+                fontWeight: FontWeight.w600,
+                fontSize: 16.sp,
+                color: ColorName.black,
+              ),
+            ).paddingOnly(bottom: 12.w),
             GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
