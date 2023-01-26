@@ -4,6 +4,7 @@ import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
+import 'package:agent/ui/pages/outlets_page/outlets_map_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -48,22 +49,19 @@ class OutletsPage extends StatelessWidget {
                 child: ListView.builder(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                   itemCount: 10,
-                  itemBuilder: (context, index) => GestureDetector(
-                    onTap: () {
-                      // Modular.to.pushNamed(OutletsMapPage.routeName);
+                  itemBuilder: (context, index) => Cards.cards_11(
+                    name: "name",
+                    supermarket: "supermarket",
+                    uzs: "uzs",
+                    image:
+                        "https://podrobno.uz/upload/iblock/b24/1212121212.jpg",
+                    persent: "60-80",
+                    summa: "2000",
+                    cp: "cp",
+                    card_onTap: () {
+                      Modular.to.pushNamed(OutletsMapPage.routeName);
                     },
-                    child: Cards.cards_11(
-                      name: "name",
-                      supermarket: "supermarket",
-                      uzs: "uzs",
-                      image:
-                          "https://podrobno.uz/upload/iblock/b24/1212121212.jpg",
-                      persent: "60-80",
-                      summa: "2000",
-                      cp: "cp",
-                      card_onTap: () {},
-                    ).paddingOnly(top: 12.w),
-                  ),
+                  ).paddingOnly(top: 12.w),
                 ),
               )
             ],

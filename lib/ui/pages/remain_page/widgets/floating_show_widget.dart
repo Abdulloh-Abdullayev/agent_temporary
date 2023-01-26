@@ -29,11 +29,15 @@ class FloatingShowDialog extends StatelessWidget {
                     bottom: MediaQuery.of(context).size.width * 0.48,
                   ),
                   child: ExchangeTools(
-                    height: 200.h,
+                    height: 150.h,
+                    cencelButton: (){
+                      Navigator.pop(context);
+                    },
                     onTap: (p0) {
                       if (p0 == 7) {
                         Modular.to.pushNamed(RemainsItemPage.routeName);
                       }
+                      Navigator.pop(context);
                     },
                     icons: [
                       Assets.images.icons.pin.svg(),

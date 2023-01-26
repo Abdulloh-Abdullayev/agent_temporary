@@ -116,6 +116,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
 
   Widget buildScaffold(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorName.background,
       body: Stack(
         children: [
           Column(
@@ -131,7 +132,9 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    AppBarIcon.backButton(() {}),
+                    AppBarIcon.backButton(() {
+                      Modular.to.pop();
+                    }),
                     Row(
                       children: [
                         AppBarIcon.telephoneButton(() {}),

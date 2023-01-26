@@ -28,6 +28,7 @@ class FloatingDialogReturn extends StatelessWidget {
     Assets.images.icons.shoppingCardIcon.svg(),
     Assets.images.icons.box.svg(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -46,6 +47,9 @@ class FloatingDialogReturn extends StatelessWidget {
                     bottom: MediaQuery.of(context).size.width * 0.4,
                   ),
                   child: ExchangeTools(
+                    onTap: (i) {
+                      Navigator.pop(context);
+                    },
                     icons: [
                       InkWell(
                         child: SizedBox(

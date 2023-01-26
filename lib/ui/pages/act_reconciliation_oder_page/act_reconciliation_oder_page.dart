@@ -52,7 +52,7 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          color: ColorName.bgColor,
+          color: ColorName.background,
           child: Column(
             children: [
               ActWidget.AppBar(
@@ -60,10 +60,13 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
                 firstText: "firstText",
                 buttonText: "buttonText",
                 dropDownText: "dropDownText",
-                backOnTap: () {},
+                backOnTap: () {
+                },
                 firstDataOnTap: () {},
                 secondDataOnTap: () {},
-                buttonOnTap: () {},
+                buttonOnTap: () {
+                  Modular.to.pop();
+                },
                 firstDate: "05.05.2022",
                 secondDate: "10.05.2023",
                 actions: [

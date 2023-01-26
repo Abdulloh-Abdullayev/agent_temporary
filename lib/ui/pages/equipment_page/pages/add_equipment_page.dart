@@ -78,7 +78,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
               title: LocaleKeys.adding_hardware.tr(),
               context: context,
               ontap: () {
-                Navigator.pop(context);
+                Modular.to.pop();
               },
             ),
             Expanded(
