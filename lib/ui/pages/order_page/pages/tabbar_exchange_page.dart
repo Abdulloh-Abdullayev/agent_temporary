@@ -11,8 +11,8 @@ import 'package:uikit/uikit.dart';
 
 import '../../../../core/utils/assets.gen.dart';
 
-class TabbarExchangePage extends StatelessWidget {
-  const TabbarExchangePage({Key? key}) : super(key: key);
+class TabBarExchangePage extends StatelessWidget {
+  const TabBarExchangePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,51 +28,51 @@ class TabbarExchangePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: LocaleKeys.total_volume,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_volume,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "1365 о",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.black,
-                      isRichText: true),
+                    localeKey: "1365 о",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.black,
+                  ),
                 ],
               ).paddingSymmetric(vertical: 12.w),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: LocaleKeys.total_qty,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_qty,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "1365 sht",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.black,
-                      isRichText: true),
+                    localeKey: "1365 sht",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.black,
+                  ),
                 ],
               ).paddingOnly(bottom: 12.w),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: LocaleKeys.total_amount,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_amount,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "150 000 000 UZS",
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
-                      color: ColorName.button,
-                      isRichText: true),
+                    localeKey: "150 000 000 UZS",
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12.sp,
+                    color: ColorName.button,
+                  ),
                 ],
               ).paddingOnly(bottom: 12.w),
             ],

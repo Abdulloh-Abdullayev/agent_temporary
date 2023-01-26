@@ -8,7 +8,6 @@ import 'package:agent/ui/pages/order_page/pages/photo_report_page.dart';
 import 'package:agent/ui/pages/order_page/pages/tabbar_order_page.dart';
 import 'package:agent/ui/pages/remain_page/pages/remains_tabbar_page.dart';
 import 'package:agent/ui/pages/remain_page/widgets/floating_show_widget.dart';
-
 import 'package:agent/ui/pages/return_from_shelf/widget/about_return_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -67,6 +66,7 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
   @override
   void dispose() {
     _controller.dispose();
+    scrolController.dispose();
     super.dispose();
   }
 
@@ -167,61 +167,60 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: AppWidgets.textLocale(
-                                  localeKey: "Osiyo Market",
-                                  fontSize: 24.sp,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w600,
-                                  isRichText: true),
+                                localeKey: "Osiyo Market",
+                                fontSize: 24.sp,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ).paddingOnly(top: 50.w),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "Supermarket",
-                                    fontSize: 12.sp,
-                                    color: ColorName.gray2,
-                                    fontWeight: FontWeight.w400,
-                                    isRichText: true),
+                                  localeKey: "Supermarket",
+                                  fontSize: 12.sp,
+                                  color: ColorName.gray2,
+                                  fontWeight: FontWeight.w400,
+                                ),
                                 AppWidgets.textLocale(
-                                    localeKey:
-                                        "${LocaleKeys.visits.tr()}:  Пн, Ср, Сб",
-                                    fontSize: 12.sp,
-                                    color: ColorName.gray2,
-                                    fontWeight: FontWeight.w400,
-                                    isRichText: true),
+                                  localeKey:
+                                      "${LocaleKeys.visits.tr()}:  Пн, Ср, Сб",
+                                  fontSize: 12.sp,
+                                  color: ColorName.gray2,
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ],
                             ).paddingOnly(top: 12.w),
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey:
-                                        "${LocaleKeys.territory.tr()} : ",
-                                    fontSize: 12.sp,
-                                    color: ColorName.gray2,
-                                    fontWeight: FontWeight.w400,
-                                    isRichText: true),
+                                  localeKey: "${LocaleKeys.territory.tr()} : ",
+                                  fontSize: 12.sp,
+                                  color: ColorName.gray2,
+                                  fontWeight: FontWeight.w400,
+                                ),
                                 AppWidgets.textLocale(
-                                    localeKey: "Yunusobod rayoni",
-                                    fontSize: 12.sp,
-                                    color: ColorName.black,
-                                    fontWeight: FontWeight.w600,
-                                    isRichText: true),
+                                  localeKey: "Yunusobod rayoni",
+                                  fontSize: 12.sp,
+                                  color: ColorName.black,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ],
                             ).paddingOnly(top: 12.w),
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: "${LocaleKeys.debts.tr()} : ",
-                                    fontSize: 12.sp,
-                                    color: ColorName.gray2,
-                                    fontWeight: FontWeight.w400,
-                                    isRichText: true),
+                                  localeKey: "${LocaleKeys.debts.tr()} : ",
+                                  fontSize: 12.sp,
+                                  color: ColorName.gray2,
+                                  fontWeight: FontWeight.w400,
+                                ),
                                 AppWidgets.textLocale(
-                                    localeKey: "0 UZS",
-                                    fontSize: 12.sp,
-                                    color: ColorName.green,
-                                    fontWeight: FontWeight.w700,
-                                    isRichText: true),
+                                  localeKey: "0 UZS",
+                                  fontSize: 12.sp,
+                                  color: ColorName.green,
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ],
                             ).paddingOnly(top: 12.w, bottom: 18.w),
                           ],

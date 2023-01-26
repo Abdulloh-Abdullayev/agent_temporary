@@ -79,7 +79,7 @@ class FloatingDialogReturn extends StatelessWidget {
                             barrierDismissible: true,
                             builder: ((context) {
                               return const Center(
-                                child: SelectPhotoDialaog(),
+                                child: SelectPhotoDialog(),
                               );
                             }),
                           );

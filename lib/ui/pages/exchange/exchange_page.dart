@@ -24,7 +24,7 @@ class ExchangePage extends StatelessWidget {
   ExchangePage({Key? key}) : super(key: key);
 
   static String routeName = "/exchange";
-  ScrollController controller = ScrollController();
+  final ScrollController controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {

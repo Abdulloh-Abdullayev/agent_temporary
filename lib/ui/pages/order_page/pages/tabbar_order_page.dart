@@ -26,51 +26,51 @@ class TabbarOrderPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: LocaleKeys.total_volume,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_volume,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "1365 о",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.black,
-                      isRichText: true),
+                    localeKey: "1365 о",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.black,
+                  ),
                 ],
               ).paddingSymmetric(vertical: 12.w),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: LocaleKeys.total_qty,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_qty,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "1365 sht",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.black,
-                      isRichText: true),
+                    localeKey: "1365 sht",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.black,
+                  ),
                 ],
               ).paddingOnly(bottom: 12.w),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppWidgets.textLocale(
-                      localeKey: LocaleKeys.total_amount,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: ColorName.gray2,
-                      isRichText: true),
+                    localeKey: LocaleKeys.total_amount,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: ColorName.gray2,
+                  ),
                   AppWidgets.textLocale(
-                      localeKey: "150 000 000 UZS",
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
-                      color: ColorName.button,
-                      isRichText: true),
+                    localeKey: "150 000 000 UZS",
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12.sp,
+                    color: ColorName.button,
+                  ),
                 ],
               ).paddingOnly(bottom: 12.w),
             ],
@@ -105,10 +105,11 @@ class TabbarOrderPage extends StatelessWidget {
                           builder: (ctx) => Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DateTimeDialog(
-                                title: LocaleKeys.add_shipping_date.tr(),
-                                closeTitle: LocaleKeys.close.tr(),
-                                addTitle: LocaleKeys.add.tr(),
-                                addTap: () {}),
+                              title: LocaleKeys.add_shipping_date.tr(),
+                              closeTitle: LocaleKeys.close.tr(),
+                              addTitle: LocaleKeys.add.tr(),
+                              addTap: () {},
+                            ),
                           ),
                         );
                       } else if (p0 == 3) {
@@ -117,10 +118,11 @@ class TabbarOrderPage extends StatelessWidget {
                           builder: (ctx) => Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DateTimeDialog(
-                                title: LocaleKeys.add_consignment.tr(),
-                                closeTitle: LocaleKeys.close.tr(),
-                                addTitle: LocaleKeys.add.tr(),
-                                addTap: () {}),
+                              title: LocaleKeys.add_consignment.tr(),
+                              closeTitle: LocaleKeys.close.tr(),
+                              addTitle: LocaleKeys.add.tr(),
+                              addTap: () {},
+                            ),
                           ),
                         );
                       }

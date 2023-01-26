@@ -43,11 +43,12 @@ class _ChekBoxWidgetState extends State<ChekBoxWidget> {
               ),
             ).paddingOnly(right: 10.w),
             AppWidgets.textLocale(
-                localeKey: widget.text,
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w400,
-                color: ColorName.gray3,
-                isRichText: true)
+              localeKey: widget.text,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w400,
+              color: ColorName.gray3,
+              isRichText: true,
+            )
           ],
         ),
         const Divider().paddingOnly(top: 5.w)

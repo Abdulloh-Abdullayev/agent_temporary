@@ -19,11 +19,11 @@ class TabbarFirstItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                  localeKey: "Заказы",
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w500,
-                  color: ColorName.black,
-                  isRichText: true),
+                localeKey: "Заказы",
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+                color: ColorName.black,
+              ),
               DropDown(
                 width: 234.w,
                 items: [
@@ -54,11 +54,11 @@ class TabbarFirstItem extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: AppWidgets.textLocale(
-                          localeKey: "Заказы",
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                          color: ColorName.black,
-                          isRichText: true),
+                        localeKey: "Заказы",
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500,
+                        color: ColorName.black,
+                      ),
                     ).paddingOnly(bottom: 18.w),
                     Column(
                       children: [

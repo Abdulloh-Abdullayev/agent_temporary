@@ -5,8 +5,9 @@ import 'market_image_widget.dart';
 
 Widget marketImage() {
   return Positioned(
-      top: 50.w,
-      right: 0,
-      left: 0,
-      child: MarketImage(image: "assets/images/market.png"));
+    top: 50.w,
+    right: 0,
+    left: 0,
+    child: MarketImage(image: "assets/images/market.png"),
+  );
 }

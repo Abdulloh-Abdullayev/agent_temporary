@@ -49,15 +49,17 @@ Widget order_id_card(
                     Row(
                       children: [
                         AppWidgets.textLocale(
-                            localeKey: "${volume}: ",
-                            fontWeight: FontWeight.w400,
-                            color: ColorName.gray2,
-                            fontSize: 12.sp),
+                          localeKey: "${volume}: ",
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.gray2,
+                          fontSize: 12.sp,
+                        ),
                         AppWidgets.textLocale(
-                            localeKey: volumeNumber,
-                            fontWeight: FontWeight.w400,
-                            color: ColorName.black,
-                            fontSize: 12.sp),
+                          localeKey: volumeNumber,
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.black,
+                          fontSize: 12.sp,
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -66,15 +68,17 @@ Widget order_id_card(
                     Row(
                       children: [
                         AppWidgets.textLocale(
-                            localeKey: "${count}: ",
-                            fontWeight: FontWeight.w400,
-                            color: ColorName.gray2,
-                            fontSize: 12.sp),
+                          localeKey: "${count}: ",
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.gray2,
+                          fontSize: 12.sp,
+                        ),
                         AppWidgets.textLocale(
-                            localeKey: countNumber,
-                            fontWeight: FontWeight.w400,
-                            color: ColorName.black,
-                            fontSize: 12.sp),
+                          localeKey: countNumber,
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.black,
+                          fontSize: 12.sp,
+                        ),
                       ],
                     ),
                   ],
@@ -82,15 +86,17 @@ Widget order_id_card(
                 Row(
                   children: [
                     AppWidgets.textLocale(
-                        localeKey: "${summa}: ",
-                        fontWeight: FontWeight.w400,
-                        color: ColorName.gray2,
-                        fontSize: 12.sp),
+                      localeKey: "${summa}: ",
+                      fontWeight: FontWeight.w400,
+                      color: ColorName.gray2,
+                      fontSize: 12.sp,
+                    ),
                     AppWidgets.textLocale(
-                        localeKey: summaNumber,
-                        fontWeight: FontWeight.w400,
-                        color: ColorName.button,
-                        fontSize: 12.sp),
+                      localeKey: summaNumber,
+                      fontWeight: FontWeight.w400,
+                      color: ColorName.button,
+                      fontSize: 12.sp,
+                    ),
                   ],
                 )
               ],

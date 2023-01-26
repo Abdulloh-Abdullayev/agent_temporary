@@ -34,75 +34,76 @@ class OrderTabbarWidget extends StatelessWidget {
           initialIndex: 0,
           length: 6,
           child: SizedBox(
-              height: 46.w,
-              child: TabBar(
-                isScrollable: true,
-                controller: _controller,
-                unselectedLabelColor: ColorName.gray3,
-                labelColor: ColorName.button,
-                onTap: (i) {
-                  function(i);
-                },
-                indicatorColor: ColorName.button,
-                indicatorWeight: 3,
-                indicatorSize: TabBarIndicatorSize.label,
-                tabs: [
-                  Tab(
-                    child: Text(
-                      title1,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
-                      ),
+            height: 46.w,
+            child: TabBar(
+              isScrollable: true,
+              controller: _controller,
+              unselectedLabelColor: ColorName.gray3,
+              labelColor: ColorName.button,
+              onTap: (i) {
+                function(i);
+              },
+              indicatorColor: ColorName.button,
+              indicatorWeight: 3,
+              indicatorSize: TabBarIndicatorSize.label,
+              tabs: [
+                Tab(
+                  child: Text(
+                    title1,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14.sp,
                     ),
                   ),
-                  Tab(
-                    child: Text(
-                      title2,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
-                      ),
+                ),
+                Tab(
+                  child: Text(
+                    title2,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14.sp,
                     ),
                   ),
-                  Tab(
-                    child: Text(
-                      title3,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
-                      ),
+                ),
+                Tab(
+                  child: Text(
+                    title3,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14.sp,
                     ),
                   ),
-                  Tab(
-                    child: Text(
-                      title4,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
-                      ),
+                ),
+                Tab(
+                  child: Text(
+                    title4,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14.sp,
                     ),
                   ),
-                  Tab(
-                    child: Text(
-                      title5,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
-                      ),
+                ),
+                Tab(
+                  child: Text(
+                    title5,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14.sp,
                     ),
                   ),
-                  Tab(
-                    child: Text(
-                      title6,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
-                      ),
+                ),
+                Tab(
+                  child: Text(
+                    title6,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14.sp,
                     ),
                   ),
-                ],
-              )),
+                ),
+              ],
+            ),
+          ),
         ),
       ],
     );

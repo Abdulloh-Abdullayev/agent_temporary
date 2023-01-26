@@ -18,11 +18,11 @@ class EquipmentWidget extends StatelessWidget {
         Align(
           alignment: Alignment.centerLeft,
           child: AppWidgets.textLocale(
-              localeKey: LocaleKeys.equipment,
-              fontWeight: FontWeight.w600,
-              fontSize: 18.sp,
-              color: ColorName.black,
-              isRichText: true),
+            localeKey: LocaleKeys.equipment,
+            fontWeight: FontWeight.w600,
+            fontSize: 18.sp,
+            color: ColorName.black,
+          ),
         ).marginOnly(bottom: 12.w),
         ListView.builder(
           physics: NeverScrollableScrollPhysics(),
@@ -43,11 +43,11 @@ class EquipmentWidget extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: AppWidgets.textLocale(
-                          localeKey: "Osiyo market",
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16.sp,
-                          color: ColorName.black,
-                          isRichText: true),
+                        localeKey: "Osiyo market",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16.sp,
+                        color: ColorName.black,
+                      ),
                     ).marginOnly(bottom: 8.w),
                     Row(
                       children: [
@@ -74,29 +74,29 @@ class EquipmentWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             AppWidgets.textLocale(
-                                localeKey: "Artel холодильник",
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.black,
-                                fontSize: 16.sp,
-                                isRichText: true),
+                              localeKey: "Artel холодильник",
+                              fontWeight: FontWeight.w600,
+                              color: ColorName.black,
+                              fontSize: 16.sp,
+                              isRichText: true,
+                            ),
                             SizedBox(
                               height: 8.w,
                             ),
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                        localeKey: "Тип: Холодильник",
-                                        fontWeight: FontWeight.w400,
-                                        color: ColorName.gray2,
-                                        fontSize: 12.sp,
-                                        isRichText: true)
-                                    .paddingOnly(right: 8.w),
+                                  localeKey: "Тип: Холодильник",
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorName.gray2,
+                                  fontSize: 12.sp,
+                                ).paddingOnly(right: 8.w),
                                 AppWidgets.textLocale(
-                                    localeKey: LocaleKeys.draft,
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorName.red,
-                                    fontSize: 12.sp,
-                                    isRichText: true),
+                                  localeKey: LocaleKeys.draft,
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorName.red,
+                                  fontSize: 12.sp,
+                                ),
                               ],
                             ),
                             SizedBox(
@@ -105,17 +105,17 @@ class EquipmentWidget extends StatelessWidget {
                             Row(
                               children: [
                                 AppWidgets.textLocale(
-                                    localeKey: LocaleKeys.attachment_date,
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorName.gray2,
-                                    fontSize: 12.sp,
-                                    isRichText: true),
+                                  localeKey: LocaleKeys.attachment_date,
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorName.gray2,
+                                  fontSize: 12.sp,
+                                ),
                                 AppWidgets.textLocale(
-                                    localeKey: " 12.10.2022",
-                                    fontWeight: FontWeight.w600,
-                                    color: ColorName.black,
-                                    fontSize: 12.sp,
-                                    isRichText: true),
+                                  localeKey: " 12.10.2022",
+                                  fontWeight: FontWeight.w600,
+                                  color: ColorName.black,
+                                  fontSize: 12.sp,
+                                ),
                               ],
                             )
                           ],
