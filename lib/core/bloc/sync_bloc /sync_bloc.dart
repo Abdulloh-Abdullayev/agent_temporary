@@ -10,6 +10,7 @@ import 'package:isar/isar.dart';
 
 import '../../models/product/product.dart';
 
+
 part 'sync_event.dart';
 
 part 'sync_state.dart';

@@ -4,6 +4,7 @@ abstract class SyncEvent extends Equatable {
   const SyncEvent();
 }
 
+
 class SyncLoaded extends SyncEvent {
   final String dbName;
 
