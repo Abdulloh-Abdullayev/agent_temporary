@@ -48,7 +48,6 @@ class ActWidget {
   }) {
     var actionList = actions == null ? const [SizedBox.shrink()] : actions;
     return Container(
-      height: 267.h,
       width: 1.sw,
       decoration: BoxDecoration(
         color: ColorName.primaryColor,
@@ -113,7 +112,7 @@ class ActWidget {
             textColor: ColorName.white,
             width: double.infinity,
             onPressed: buttonOnTap,
-          ).marginSymmetric(horizontal: 20)
+          ).marginLTRB(20, 0, 20, 19)
         ],
       ),
     );
