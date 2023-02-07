@@ -1,6 +1,7 @@
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/add_order_page/add_order_page.dart';
 import 'package:agent/ui/pages/order_page/bloc/order_page_cubit.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/market_image_function_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/order_appbar_icon_widget.dart';
@@ -107,7 +108,9 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
             ),
           ),
           BottomButtonWidget(
-            onTap: () {},
+            onTap: () {
+              Modular.to.pushNamed(AddOrderPage.routeName);
+            },
           ),
         ],
       ),

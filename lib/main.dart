@@ -52,26 +52,24 @@ Future<void> main() async {
 
   await runZonedGuarded(
     () async {
-      await HydratedBlocOverrides.runZoned(
-        () async => runApp(
-          EasyLocalization(
-            path: "assets/langs",
-            supportedLocales: const [
-              Locale("uz", "UZ"),
-              Locale("ru", "RU"),
-              Locale("en", "EN"),
-            ],
-            fallbackLocale: const Locale("uz", "UZ"),
-            child: ModularApp(
-              module: AppModule(),
-              child: App(
-                androidOverscrollIndicator: androidOverscrollIndicator,
-              ),
+      HydratedBloc.storage = storage;
+      Bloc.observer = AppBlocObserver();
+      runApp(
+        EasyLocalization(
+          path: "assets/langs",
+          supportedLocales: const [
+            Locale("uz", "UZ"),
+            Locale("ru", "RU"),
+            Locale("en", "EN"),
+          ],
+          fallbackLocale: const Locale("ru", "RU"),
+          child: ModularApp(
+            module: AppModule(),
+            child: App(
+              androidOverscrollIndicator: androidOverscrollIndicator,
             ),
           ),
         ),
-        blocObserver: AppBlocObserver(),
-        storage: storage,
       );
     },
     (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),

@@ -1,4 +1,6 @@
 import 'package:agent/core/bloc/language/language_cubit.dart';
+import 'package:agent/core/bloc/loader/loader_cubit.dart';
+import 'package:agent/core/bloc/sync_bloc%20/sync_bloc.dart';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
@@ -52,8 +54,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Modular.setInitialRoute(HomePage.routeName);
-    Modular.setInitialRoute(LoginPage.routeName);
+    Modular.setInitialRoute(HomePage.routeName);
+    // Modular.setInitialRoute(LoginPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -67,7 +69,7 @@ class App extends StatelessWidget {
           minTextAdapt: true,
           splitScreenMode: true,
           builder: (context, child) => MaterialApp.router(
-            title: "ThinkBooking",
+            title: "PS Agent",
             debugShowCheckedModeBanner: false,
             locale: context.locale,
             builder: EasyLoading.init(
@@ -78,6 +80,7 @@ class App extends StatelessWidget {
             theme: ThemeData(
               androidOverscrollIndicator: androidOverscrollIndicator,
             ),
+
             routeInformationParser: Modular.routeInformationParser,
             routerDelegate: Modular.routerDelegate,
           ),
@@ -97,6 +100,8 @@ class AppModule extends Module {
         ),
         AsyncBind<HiveService>((i) => HiveService.init()),
         AsyncBind<DBService>((i) => DBService.init()),
+        Bind<LoaderCubit>((i) => LoaderCubit(), onDispose: (v) => v.close()),
+        Bind<SyncBloc>((i) => SyncBloc(), onDispose: (v) => v.close())
       ];
 
   @override

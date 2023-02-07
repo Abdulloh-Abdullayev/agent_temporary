@@ -35,14 +35,14 @@ class BottomButtonWidget extends StatelessWidget {
           child: MaterialButton(
             onPressed: onTap,
             color: ColorName.button,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
             child: AppWidgets.textLocale(
               localeKey: LocaleKeys.add_order,
               fontSize: 16,
               fontWeight: FontWeight.w600,
               color: ColorName.white,
-              isRichText: true,
             ),
           ),
         ),
