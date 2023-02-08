@@ -1,6 +1,5 @@
 import 'package:agent/core/bloc/language/language_cubit.dart';
 import 'package:agent/core/bloc/loader/loader_cubit.dart';
-import 'package:agent/core/bloc/sync_bloc%20/sync_bloc.dart';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
@@ -101,7 +100,7 @@ class AppModule extends Module {
         AsyncBind<HiveService>((i) => HiveService.init()),
         AsyncBind<DBService>((i) => DBService.init()),
         Bind<LoaderCubit>((i) => LoaderCubit(), onDispose: (v) => v.close()),
-        Bind<SyncBloc>((i) => SyncBloc(), onDispose: (v) => v.close())
+        // Bind<SyncBloc>((i) => SyncBloc(), onDispose: (v) => v.close())
       ];
 
   @override

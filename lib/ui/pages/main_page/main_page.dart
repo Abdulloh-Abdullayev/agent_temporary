@@ -1,4 +1,3 @@
-import 'package:agent/core/bloc/sync_bloc%20/sync_bloc.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
@@ -207,28 +206,13 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
             Positioned(
               bottom: 180,
               right: 20,
-              child: Column(
-                children: [
-                  FloatingActionButton(
-                    onPressed: () async {
-                      SyncBloc.to.add(SyncLoaded(dbName: 'db1'));
-                    },
-                    backgroundColor: ColorName.bluePercent,
-                    child: Text('1'),
-                    heroTag: "1",
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  FloatingActionButton(
-                    onPressed: () async {
-                      SyncBloc.to.add(SyncLoaded(dbName: 'db2'));
-                    },
-                    backgroundColor: ColorName.bluePercent,
-                    child: Text('2'),
-                    heroTag: "2",
-                  ),
-                ],
+              child: FloatingActionButton(
+                onPressed: () async {
+                  // SyncBloc.to.add(SyncLoaded(dbName: 'db2'));
+                },
+                backgroundColor: ColorName.bluePercent,
+                child: Text('2'),
+                heroTag: "2",
               ),
             )
           ],
