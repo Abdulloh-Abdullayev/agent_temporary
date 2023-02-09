@@ -1,5 +1,7 @@
 import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
+import 'package:agent/core/routes/auth_guard.dart';
+import 'package:agent/core/routes/module_init_guard.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/draft_page/draft_page.dart';
@@ -26,6 +28,10 @@ class HomePageModule extends Module {
         ChildRoute(
           HomePage.routeName,
           child: (context, args) => const HomePage(),
+          guards: [
+            ModuleInitGuard(),
+            AuthGuard(),
+          ],
         ),
         ModuleRoute("/", module: AddOutletsModule()),
         ModuleRoute("/", module: SettingsPageModule()),

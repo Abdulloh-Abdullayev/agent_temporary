@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class LocaleKeys {
+abstract class  LocaleKeys {
   static const welcome = 'welcome';
   static const enter_username_password = 'enter_username_password';
   static const server_name = 'server_name';
@@ -131,10 +131,46 @@ abstract class LocaleKeys {
   static const remainder = 'remainder';
   static const price = 'price';
   static const category = 'category';
-  static const rest_of_container = 'rest_of_container';
   static const salary = 'salary';
   static const select = 'select';
   static const write = 'write';
+  static const rest_of_container = 'rest_of_container';
+  static const january = 'january';
+  static const february = 'february';
+  static const march = 'march';
+  static const april = 'april';
+  static const may = 'may';
+  static const june = 'june';
+  static const july = 'july';
+  static const august = 'august';
+  static const september = 'september';
+  static const october = 'october';
+  static const november = 'november';
+  static const december = 'december';
+  static const order_reconciliation_act = 'order_reconciliation_act';
+  static const select_date = 'select_date';
+  static const current_month = 'current_month';
+  static const reset_filter = 'reset_filter';
+  static const apply = 'apply';
+  static const jan_ = 'jan_';
+  static const feb_ = 'feb_';
+  static const mar_ = 'mar_';
+  static const apr_ = 'apr_';
+  static const may_ = 'may_';
+  static const jun_ = 'jun_';
+  static const jul_ = 'jul_';
+  static const aug_ = 'aug_';
+  static const sep_ = 'sep_';
+  static const oct_ = 'oct_';
+  static const nov_ = 'nov_';
+  static const dec_ = 'dec_';
+  static const w_mon = 'w_mon';
+  static const w_tue = 'w_tue';
+  static const w_wed = 'w_wed';
+  static const w_thu = 'w_thu';
+  static const w_fri = 'w_fri';
+  static const w_sat = 'w_sat';
+  static const w_sun = 'w_sun';
   static const add_bonus = 'add_bonus';
   static const main_warehouse = 'main_warehouse';
   static const editing = 'editing';
@@ -182,12 +218,8 @@ abstract class LocaleKeys {
   static const view_on_map = 'view_on_map';
   static const balance = 'balance';
   static const overall_balance = 'overall_balance';
-  static const reset_filter = 'reset_filter';
-  static const select_date = 'select_date';
-  static const current_month = 'current_month';
   static const choose_territory = 'choose_territory';
   static const delivered = 'delivered';
-  static const apply = 'apply';
   static const type = 'type';
   static const data = 'data';
   static const order_for_amount = 'order_for_amount';
@@ -208,7 +240,7 @@ abstract class LocaleKeys {
   static const serial_number = 'serial_number';
   static const invert_number = 'invert_number';
   static const production_date = 'production_date';
-  static const comment = 'comment';
+  static const commment = 'commment';
   static const state = 'state';
   static const attachment_date = 'attachment_date';
   static const about_equipment = 'about_equipment';
@@ -249,7 +281,6 @@ abstract class LocaleKeys {
   static const returned_goods = 'returned_goods';
   static const without_discount = 'without_discount';
   static const add_expiration_date = 'add_expiration_date';
-  static const amount_of_plan = 'amount_of_plan';
   static const fixed_salary = 'fixed_salary';
   static const full_time = 'full_time';
   static const fact_day = 'fact_day';
@@ -271,8 +302,7 @@ abstract class LocaleKeys {
   static const use_discount = 'use_discount';
   static const filter_settings = 'filter_settings';
   static const sort_clients_alphabetic_order = 'sort_clients_alphabetic_order';
-  static const sort_products_alphabetic_order =
-      'sort_products_alphabetic_order';
+  static const sort_products_alphabetic_order = 'sort_products_alphabetic_order';
   static const phone = 'phone';
   static const gps = 'gps';
   static const add_new_outlet = 'add_new_outlet';
@@ -281,8 +311,7 @@ abstract class LocaleKeys {
   static const phone_number_prefix = 'phone_number_prefix';
   static const availabe_fields_for_editing = 'availabe_fields_for_editing';
   static const company_name = 'company_name';
-  static const when_adding_order_photo_not_required =
-      'when_adding_order_photo_not_required';
+  static const when_adding_order_photo_not_required = 'when_adding_order_photo_not_required';
   static const application_date = 'application_date';
   static const all = 'all';
   static const mon = 'mon';
@@ -296,4 +325,5 @@ abstract class LocaleKeys {
   static const draft_at = 'draft_at';
   static const from = 'from';
   static const by = 'by';
+
 }

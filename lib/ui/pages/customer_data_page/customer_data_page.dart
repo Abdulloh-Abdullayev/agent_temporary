@@ -130,11 +130,12 @@ class _CustomerDataPageState extends State<CustomerDataPage> {
                         ),
                         child: Center(
                           child: AppWidgets.textLocale(
-                              localeKey: "1/10",
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              isRichText: true,
-                              color: ColorName.white),
+                            localeKey: "1/10",
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            isRichText: true,
+                            color: ColorName.white,
+                          ),
                         ),
                       )
                     ],

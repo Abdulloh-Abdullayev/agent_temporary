@@ -1,4 +1,5 @@
 import 'package:agent/core/bloc/language/language_cubit.dart';
+import 'package:agent/core/bloc/loader/loader_cubit.dart';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
@@ -7,6 +8,7 @@ import 'package:agent/ui/pages/act_reconciliation_oder_page/act_reconciliation_o
 import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
 import 'package:agent/ui/pages/all_tasks_page/all_tasks_page.dart';
 import 'package:agent/ui/pages/all_tasks_page/widgets/clicked_item.dart';
+import 'package:agent/ui/pages/visits_page/visits_page.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
@@ -35,7 +37,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'ui/pages/add_order_page/add_order_page.dart';
 import 'ui/pages/balance_page/balance_page.dart';
-import 'ui/pages/debtors_page/widget/deptors_history.dart';
 import 'ui/pages/outlets_page/outlets_map_page.dart';
 import 'ui/pages/refund_page/refund_page.dart';
 import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
@@ -43,17 +44,10 @@ import 'ui/pages/return_about_page/return_about_page.dart';
 import 'ui/pages/return_from_shelf/return_from_shelf.dart';
 
 class App extends StatelessWidget {
-  const App({
-    Key? key,
-    this.androidOverscrollIndicator = AndroidOverscrollIndicator.glow,
-  }) : super(key: key);
-
-  final AndroidOverscrollIndicator androidOverscrollIndicator;
-
   @override
   Widget build(BuildContext context) {
-    // Modular.setInitialRoute(HomePage.routeName);
-    Modular.setInitialRoute(LoginPage.routeName);
+    Modular.setInitialRoute(HomePage.routeName);
+    // Modular.setInitialRoute(LoginPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
       bloc: LanguageCubit.to,
@@ -67,7 +61,7 @@ class App extends StatelessWidget {
           minTextAdapt: true,
           splitScreenMode: true,
           builder: (context, child) => MaterialApp.router(
-            title: "ThinkBooking",
+            title: "PS Agent",
             debugShowCheckedModeBanner: false,
             locale: context.locale,
             builder: EasyLoading.init(
@@ -76,7 +70,7 @@ class App extends StatelessWidget {
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             theme: ThemeData(
-              androidOverscrollIndicator: androidOverscrollIndicator,
+              primarySwatch: Colors.blue,
             ),
             routeInformationParser: Modular.routeInformationParser,
             routerDelegate: Modular.routerDelegate,
@@ -97,10 +91,15 @@ class AppModule extends Module {
         ),
         AsyncBind<HiveService>((i) => HiveService.init()),
         AsyncBind<DBService>((i) => DBService.init()),
+        Bind<LoaderCubit>((i) => LoaderCubit(), onDispose: (v) => v.close()),
+        // Bind<SyncBloc>((i) => SyncBloc(), onDispose: (v) => v.close())
       ];
 
   @override
   List<ModularRoute> get routes => [
+        ModuleRoute("/", module: VisitsPageModule()),
+        ModuleRoute("/", module: ActReconciliationOderPageModule()),
+        ModuleRoute("/", module: ActReconciliationPageModule()),
         ModuleRoute("/", module: HomePageModule()),
         ModuleRoute("/", module: LoginPageModule()),
         ModuleRoute("/", module: BalancePageModule()),
@@ -115,7 +114,8 @@ class AppModule extends Module {
         ModuleRoute("/", module: DiagnosticsPageModule()),
         ModuleRoute("/", module: DebtorsPageModule()),
         ModuleRoute("/", module: RemainStockPageModel()),
-        ModuleRoute("/", module: DebtorsHistoryModule()),
+        // ModuleRoute("/", module: DebtorsHistoryModule()),
+
         ModuleRoute("/", module: OrderPageModule()),
         ModuleRoute("/", module: AllTasksModule()),
         ModuleRoute("/", module: CustomerDataPageModule()),

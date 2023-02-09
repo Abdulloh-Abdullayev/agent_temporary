@@ -176,7 +176,7 @@ class HttpService {
         response = await _dio!.get(url, queryParameters: parameters);
         return response;
       }
-    } catch (e) {
+    }catch (e) {
       AppLoggerUtil.e(e.toString());
       rethrow;
     }

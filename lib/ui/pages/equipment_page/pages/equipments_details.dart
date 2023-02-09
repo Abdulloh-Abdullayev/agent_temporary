@@ -85,7 +85,7 @@ class _EquipmentDetailsState extends State<EquipmentDetails> {
                           color: ColorName.gray,
                         ),
                         AppWidgets.textLocale(
-                          localeKey: LocaleKeys.comment,
+                          localeKey: "LocaleKeys.comment",
                           fontSize: 14,
                           color: ColorName.gray2,
                         ),

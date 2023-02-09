@@ -21,6 +21,10 @@ class $AssetsColorGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/agent_icon.png
+  AssetGenImage get agentIcon =>
+      const AssetGenImage('assets/images/agent_icon.png');
+
   /// File path: assets/images/direction.png
   AssetGenImage get direction =>
       const AssetGenImage('assets/images/direction.png');
@@ -67,6 +71,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/add.svg
   SvgGenImage get add => const SvgGenImage('assets/images/icons/add.svg');
+
+  /// File path: assets/images/icons/agent_icon.png
+  AssetGenImage get agentIcon =>
+      const AssetGenImage('assets/images/icons/agent_icon.png');
 
   /// File path: assets/images/icons/arrow_down.svg
   SvgGenImage get arrowDown =>
@@ -316,9 +324,20 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/pin.svg
   SvgGenImage get pin => const SvgGenImage('assets/images/icons/pin.svg');
 
+  /// File path: assets/images/icons/pin_accros.svg
+  SvgGenImage get pinAccros =>
+      const SvgGenImage('assets/images/icons/pin_accros.svg');
+
   /// File path: assets/images/icons/pin_button.svg
   SvgGenImage get pinButton =>
       const SvgGenImage('assets/images/icons/pin_button.svg');
+
+  /// File path: assets/images/icons/pin_left.svg
+  SvgGenImage get pinLeft =>
+      const SvgGenImage('assets/images/icons/pin_left.svg');
+
+  /// File path: assets/images/icons/ping.svg
+  SvgGenImage get ping => const SvgGenImage('assets/images/icons/ping.svg');
 
   /// File path: assets/images/icons/pinned.svg
   SvgGenImage get pinned => const SvgGenImage('assets/images/icons/pinned.svg');

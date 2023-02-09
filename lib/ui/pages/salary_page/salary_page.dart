@@ -57,7 +57,7 @@ class SalaryPage extends StatelessWidget {
                     children: [
                       PlanSalaryWidget(
                         width: 162.w,
-                        titleFirst: LocaleKeys.amount_of_plan.tr(),
+                        titleFirst: "LocaleKeys.amount_of_plan".tr(),
                         titleSecond: '100000000',
                       ),
                       PlanSalaryWidget(
@@ -69,7 +69,7 @@ class SalaryPage extends StatelessWidget {
                   ).paddingOnly(bottom: 12.w),
                   PlanSalaryWidget(
                     width: 1.sw,
-                    titleFirst: LocaleKeys.amount_of_plan.tr(),
+                    titleFirst: "LocaleKeys.amount_of_plan".tr(),
                     titleSecond: '100000000',
                   ),
                 ],
