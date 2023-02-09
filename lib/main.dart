@@ -63,12 +63,7 @@ Future<void> main() async {
             Locale("en", "EN"),
           ],
           fallbackLocale: const Locale("ru", "RU"),
-          child: ModularApp(
-            module: AppModule(),
-            child: App(
-              androidOverscrollIndicator: androidOverscrollIndicator,
-            ),
-          ),
+          child: ModularApp(module: AppModule(), child: SizedBox()),
         ),
       );
     },

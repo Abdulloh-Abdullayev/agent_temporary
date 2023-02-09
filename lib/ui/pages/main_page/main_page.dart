@@ -4,6 +4,7 @@ import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
 import 'package:agent/ui/pages/main_page/widgets/orders_widget.dart';
 import 'package:agent/ui/pages/main_page/widgets/others_widget.dart';
+import 'package:agent/ui/pages/return_from_shelf/return_from_shelf.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:agent/ui/widgets/appbar_main.dart';
 import 'package:easy_localization/easy_localization.dart';

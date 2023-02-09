@@ -206,7 +206,7 @@ class _AddEquipmentPageState extends State<AddEquipmentPage> {
 
                           // Commit
                           AppWidgets.textLocale(
-                            localeKey: LocaleKeys.comment,
+                            localeKey: " LocaleKeys.comment,",
                             fontSize: 14,
                           ).marginOnly(
                             top: 18.w,
