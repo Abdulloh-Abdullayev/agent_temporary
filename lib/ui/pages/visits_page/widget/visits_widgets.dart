@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,8 +17,7 @@ class VisitWidgets {
     required Function(String key) ontap,
   }) =>
       Container(
-        height: 107.h,
-        width: 1.sw,
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: ColorName.primaryColor,
           borderRadius: BorderRadius.vertical(
@@ -72,7 +73,7 @@ class VisitWidgets {
               fontWeight: FontWeight.w500,
             )
           ],
-        ).paddingLTRB(20, 19, 20, 0),
+        ),
       );
 
   static Widget items({
@@ -188,6 +189,7 @@ class VisitWidgets {
         width: 1.sw,
         color: ColorName.gray,
       );
+
   static Widget dot() => Container(
         height: 5.w,
         width: 5.w,

@@ -1,4 +1,6 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,7 +9,7 @@ import 'package:uikit/uikit.dart';
 import '../../../../core/utils/colors.gen.dart';
 
 class EditShelfButtonSheet extends StatelessWidget {
-  const  EditShelfButtonSheet({Key? key}) : super(key: key);
+  const EditShelfButtonSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,16 +39,16 @@ class EditShelfButtonSheet extends StatelessWidget {
                 },
               ),
               AddingAnOrderSheet(
-                text: "Редактрирование",
-                listTextName: const [
-                  "Склад",
-                  "Тип направления",
-                  "Тип цены",
+                text: LocaleKeys.editing.tr(),
+                listTextName: [
+                  LocaleKeys.stock.tr(),
+                  LocaleKeys.direction_type.tr(),
+                  LocaleKeys.price_type.tr(),
                 ],
-                seeListTextName: const [
-                  "Основной склад",
-                  "Направление...",
-                  "Наличные",
+                seeListTextName: [
+                  LocaleKeys.main_warehouse.tr(),
+                  LocaleKeys.direction.tr(),
+                  LocaleKeys.spot.tr(),
                 ],
                 icons: [
                   Assets.images.icons.stack.svg(

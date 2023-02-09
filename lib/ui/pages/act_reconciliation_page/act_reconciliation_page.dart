@@ -29,6 +29,7 @@ class ActReconciliationPageModule extends Module {
 
 class ActReconciliationPage extends StatefulWidget {
   static const String routeName = "/act_reconciliation_page";
+
   const ActReconciliationPage({super.key});
 
   @override
@@ -55,9 +56,7 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                     backOnTap: () {
                       Modular.to.pop();
                     },
-                    buttonOnTap: () {
-                      
-                    },
+                    buttonOnTap: () {},
                     firstDataOnTap: () {},
                     secondDataOnTap: () {},
                     firstText: LocaleKeys.select_date,

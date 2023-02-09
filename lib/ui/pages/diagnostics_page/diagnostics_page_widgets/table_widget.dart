@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/utils/colors.gen.dart';
 import '../../../widgets/app_widgets.dart';
 
@@ -91,7 +93,7 @@ class _TableDioState extends State<TableDio> {
                     Expanded(
                       flex: 3,
                       child: AppWidgets.textLocale(
-                              localeKey: "Объем",
+                              localeKey: LocaleKeys.size,
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w400,
                               color: ColorName.gray2,
@@ -103,7 +105,7 @@ class _TableDioState extends State<TableDio> {
                     Expanded(
                       flex: 3,
                       child: AppWidgets.textLocale(
-                              localeKey: "Strike",
+                              localeKey: LocaleKeys.strike,
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w400,
                               color: ColorName.gray2,
@@ -115,7 +117,7 @@ class _TableDioState extends State<TableDio> {
                     Expanded(
                       flex: 3,
                       child: AppWidgets.textLocale(
-                        localeKey: "АКБ",
+                        localeKey: LocaleKeys.akb,
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w400,
                         color: ColorName.gray2,

@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -6,8 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/utils/assets.gen.dart';
 
-class SelectPhotoDialaog extends StatelessWidget {
-  const SelectPhotoDialaog({Key? key}) : super(key: key);
+class SelectPhotoDialog extends StatelessWidget {
+  const SelectPhotoDialog({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +29,10 @@ class SelectPhotoDialaog extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: AppWidgets.textLocale(
-                        localeKey: "Выберите тип фото",
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w600,
-                        isRichText: true),
+                      localeKey: LocaleKeys.select_photo_type,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ).paddingOnly(bottom: 4.w),
                 ),
                 InkWell(
@@ -53,10 +54,10 @@ class SelectPhotoDialaog extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: AppWidgets.textLocale(
-                          localeKey: "Lorem Ipsum",
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
-                          isRichText: true),
+                        localeKey: "Lorem Ipsum",
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ).paddingOnly(bottom: 14.w, top: 14.w),
                     const Divider()
                   ],

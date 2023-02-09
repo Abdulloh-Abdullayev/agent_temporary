@@ -35,11 +35,11 @@ class MarkWidget extends StatelessWidget {
         ),
         child: Center(
           child: AppWidgets.textLocale(
-              localeKey: text,
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w400,
-              isRichText: true,
-              color: ColorName.gray2),
+            localeKey: text,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w400,
+            color: ColorName.gray2,
+          ),
         ),
       ),
     );

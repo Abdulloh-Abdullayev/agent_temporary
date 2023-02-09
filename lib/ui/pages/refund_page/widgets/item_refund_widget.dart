@@ -1,6 +1,8 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/models/refund_model.dart';
 import 'package:agent/ui/pages/refund_page/bloc/refund_cubit.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
@@ -69,7 +71,7 @@ class _ItemRefundWidgetState extends State<ItemRefundWidget> {
               return Cards.cards_9(
                 context: context,
                 name: model.name ?? '',
-                sht: "Шт",
+                sht: LocaleKeys.pc.tr(),
                 shtNumber: "${model.count}",
                 image: model.imgUrl!,
                 shtRemove: () {

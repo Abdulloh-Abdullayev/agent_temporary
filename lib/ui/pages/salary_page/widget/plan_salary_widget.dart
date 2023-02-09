@@ -25,7 +25,7 @@ class PlanSalaryWidget extends StatelessWidget {
         horizontal: 10.w,
       ),
       decoration: BoxDecoration(
-        color: ColorName.white,
+          color: ColorName.white,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: ColorName.gray,
@@ -48,7 +48,6 @@ class PlanSalaryWidget extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-
         ],
       ),
     );

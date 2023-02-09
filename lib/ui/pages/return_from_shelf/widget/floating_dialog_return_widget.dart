@@ -1,30 +1,34 @@
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/select_photo_dialog.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
+import '../../../../core/localization/locale_keys.g.dart';
+
 import '../return_order_page.dart';
 
 class FloatingDialogReturn extends StatelessWidget {
   FloatingDialogReturn({Key? key}) : super(key: key);
   final listTextName = <String>[
-    "Склад",
-    "Тип направления",
-    "Тип цены",
+    LocaleKeys.stock.tr(),
+    LocaleKeys.direction_type.tr(),
+    LocaleKeys.price_type.tr(),
   ];
   final seeListTextName = <String>[
-    "Основной склад",
-    "Направление..",
-    "Наличные",
+    LocaleKeys.main_warehouse.tr(),
+    LocaleKeys.direction.tr(),
+    LocaleKeys.spot.tr(),
   ];
 
   final List<Widget> icons = [
     Assets.images.icons.stack.svg(),
-    Assets.images.icons.shoppingCardIcon .svg(),
+    Assets.images.icons.shoppingCardIcon.svg(),
     Assets.images.icons.box.svg(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -43,6 +47,9 @@ class FloatingDialogReturn extends StatelessWidget {
                     bottom: MediaQuery.of(context).size.width * 0.4,
                   ),
                   child: ExchangeTools(
+                    onTap: (i) {
+                      Navigator.pop(context);
+                    },
                     icons: [
                       InkWell(
                         child: SizedBox(
@@ -76,7 +83,7 @@ class FloatingDialogReturn extends StatelessWidget {
                             barrierDismissible: true,
                             builder: ((context) {
                               return const Center(
-                                child: SelectPhotoDialaog(),
+                                child: SelectPhotoDialog(),
                               );
                             }),
                           );
@@ -107,13 +114,14 @@ class FloatingDialogReturn extends StatelessWidget {
                               enableDrag: false,
                               builder: (context) {
                                 return AddingAnOrderSheet(
-                                  submitOnTapButton:  (){
-                                    Modular.to.pushNamed(ReturnOrderDatePage.routeName);
+                                  submitOnTapButton: () {
+                                    Modular.to.pushNamed(
+                                        ReturnOrderDatePage.routeName);
                                   },
-                                  quitOnTapButton: (){
+                                  quitOnTapButton: () {
                                     Modular.to.pop(context);
                                   },
-                                  text: 'Возврат заказа',
+                                  text: LocaleKeys.order_return.tr(),
                                   listTextName: listTextName,
                                   seeListTextName: seeListTextName,
                                   icons: icons,
@@ -135,15 +143,14 @@ class FloatingDialogReturn extends StatelessWidget {
                               context: context,
                               enableDrag: false,
                               builder: (context) {
-                                return const ReasomnForReturnSheet(
-                                  text: 'Возврат заказа',
+                                return ReasomnForReturnSheet(
+                                  text: LocaleKeys.order_return.tr(),
                                   textItemsName: [
                                     "Не получается продать",
-                                      "Не получается продать",
-                                      "Не получается продать",
-                                      "Не получается продать",
+                                    "Не получается продать",
+                                    "Не получается продать",
+                                    "Не получается продать",
                                   ],
-
                                 );
                               });
                         },
@@ -169,17 +176,17 @@ class FloatingDialogReturn extends StatelessWidget {
                         onTap: () {},
                       ),
                     ],
-                    textName: const [
-                      "Задачи",
-                      "История",
-                      "Фото отчёт",
-                      "Отказ",
-                      "Возврат \nс полки",
-                      "Возврат \nтары",
-                      "Обмен",
-                      "Остатки",
+                    textName: [
+                      LocaleKeys.tasks.tr(),
+                      LocaleKeys.history.tr(),
+                      LocaleKeys.photo_report.tr(),
+                      LocaleKeys.refusal.tr(),
+                      LocaleKeys.return_from_shelf.tr(),
+                      LocaleKeys.return_package.tr(),
+                      LocaleKeys.exchange.tr(),
+                      LocaleKeys.remains.tr(),
                     ],
-                    cencelButton: (){
+                    cencelButton: () {
                       Modular.to.pop(context);
                     },
                   ),
@@ -188,10 +195,10 @@ class FloatingDialogReturn extends StatelessWidget {
             );
           },
           backgroundColor: ColorName.lightGreen,
-            child: const Icon(
-              Icons.more_vert,
-              color: ColorName.white,
-              size: 30,
+          child: const Icon(
+            Icons.more_vert,
+            color: ColorName.white,
+            size: 30,
           ),
         ),
       ),

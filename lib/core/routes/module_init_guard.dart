@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:agent/app.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class ModuleInitGuard extends RouteGuard {
   @override

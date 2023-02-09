@@ -1,6 +1,8 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/models/enums/shipping_type.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
@@ -39,7 +41,7 @@ class _AppRadioButtonState extends State<AppRadioButton> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AppWidgets.text(
-          text: "Дата",
+          text: LocaleKeys.data.tr(),
           fontSize: 14.sp,
           fontWeight: FontWeight.w400,
           color: ColorName.gray3,
@@ -49,7 +51,7 @@ class _AppRadioButtonState extends State<AppRadioButton> {
           children: [
             buildRadioButton(
               value: 1,
-              text: "Дата Заявки",
+              text: LocaleKeys.application_date.tr(),
               onTap: () {
                 setState(() {
                   _selection = 1;
@@ -60,7 +62,7 @@ class _AppRadioButtonState extends State<AppRadioButton> {
             ),
             buildRadioButton(
               value: 2,
-              text: "Дата отгрузки",
+              text: LocaleKeys.shipping_date.tr(),
               onTap: () {
                 setState(() {
                   _selection = 2;
@@ -86,6 +88,7 @@ class _AppRadioButtonState extends State<AppRadioButton> {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 18),
         height: 50.w,
+        width: 162.w,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
@@ -107,9 +110,9 @@ class _AppRadioButtonState extends State<AppRadioButton> {
             AppWidgets.textLocale(
               localeKey: text,
               color: ColorName.gray3,
-              fontSize: 16.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-            ).paddingOnly(left: 8),
+            ).paddingOnly(left: 8.w),
           ],
         ),
       ),

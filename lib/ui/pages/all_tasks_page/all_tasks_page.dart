@@ -1,8 +1,10 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/all_tasks_page/widgets/clicked_item.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,11 +15,9 @@ class AllTasksModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           AllTasksPage.routeName,
-          child: (context, args) =>const  AllTasksPage(),
+          child: (context, args) => const AllTasksPage(),
         ),
       ];
-
-
 }
 
 class AllTasksPage extends StatefulWidget {
@@ -55,8 +55,11 @@ class _AllTasksPageState extends State<AllTasksPage>
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           backgroundColor: ColorName.button,
-          child: Assets.images.icons.plusIcon.svg(width: 24.w,height: 24.w,),
-        ),
+          child: Assets.images.icons.plusIcon.svg(
+            width: 24.w,
+            height: 24.w,
+          ),
+        ).paddingOnly(bottom: 140.w),
         body: Column(
           children: [
             Container(
@@ -77,16 +80,16 @@ class _AllTasksPageState extends State<AllTasksPage>
                     vertical: 18.w,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Задачи",
+                    localeKey: LocaleKeys.tasks,
                     color: ColorName.white,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w500,
                   ).paddingSymmetric(horizontal: 20.w),
                   AppTabBar(
                     tabController: tabController,
-                    tabTitle: const [
-                      "Активные",
-                      "Выполненные",
+                    tabTitle: [
+                      LocaleKeys.active.tr(),
+                      LocaleKeys.completed.tr()
                     ],
                     onTap: (i) {
                       pageController.animateToPage(
@@ -118,77 +121,22 @@ class _AllTasksPageState extends State<AllTasksPage>
       itemCount: 5,
       itemBuilder: ((context, index) {
         return InkWell(
-            onTap: (){
+          onTap: () {
+            Modular.to.pushNamed(ClickedItem.routeName);
+          },
+          child: Cards.cards_15(
+            name: "Osiyo market",
+            dobavlen: "Добавлен",
+            date: "13 окт",
+            primicheniya: "Примечание:",
+            product: "Кола 3 блок,Фанта 3 блок, дина...",
+            vipolneniya: "Выполнение до",
+            status: "Просрочено!",
+            statusColor: Colors.red,
+            cardColor: const Color(0xFFE5F3FF),
+            card_onTap: () {
               Modular.to.pushNamed(ClickedItem.routeName);
             },
-          child: Container(
-            decoration: BoxDecoration(
-              color: const Color(0xFFE5F3FF),
-              borderRadius: BorderRadius.circular(8.r),
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AppWidgets.textLocale(
-                      localeKey: "Osiyo market",
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
-                    ),
-                    Row(
-                      children: [
-                        AppWidgets.textLocale(
-                          localeKey: "Добавлен",
-                          color: ColorName.gray2,
-                          fontSize: 12.sp,
-                        ).paddingOnly(right: 4),
-                        AppWidgets.textLocale(
-                          localeKey: "13 окт",
-                          fontSize: 12.sp,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                Wrap(
-                  children: [
-                    AppWidgets.textLocale(
-                      localeKey: "Примечание:",
-                      color: ColorName.gray2,
-                      fontSize: 12.sp,
-                    ),
-                    AppWidgets.textLocale(
-                      localeKey: "Кола 3 блок,Фанта 3 блок, дина...",
-                      fontSize: 12.sp,
-                    ),
-                  ],
-                ).paddingSymmetric(vertical: 8.w),
-                Row(
-                  children: [
-                    AppWidgets.textLocale(
-                      localeKey: "Выполнение до",
-                      color: ColorName.gray2,
-                      fontSize: 12.sp,
-                    ),
-                    AppWidgets.textLocale(
-                      localeKey: "13 окт",
-                      fontSize: 12.sp,
-                    ).paddingOnly(
-                      left: 4.w,
-                      right: 10.w,
-                    ),
-                    AppWidgets.textLocale(
-                      localeKey: "Просрочено!",
-                      color: ColorName.red,
-                      fontSize: 12.sp,
-                    ),
-                  ],
-                )
-              ],
-            ).paddingAll(15.w),
           ).paddingOnly(
             top: 15.w,
             right: 15.w,
@@ -198,66 +146,28 @@ class _AllTasksPageState extends State<AllTasksPage>
       }),
     );
   }
+
   Widget completed(Color colorContainer) {
     return ListView.builder(
       itemCount: 5,
       itemBuilder: ((context, index) {
         return InkWell(
-          onTap: (){
+          onTap: () {
             Modular.to.pushNamed(ClickedItem.routeName);
           },
-          child: Container(
-            decoration: BoxDecoration(
-              color: const Color(0xFFE5F3FF),
-              borderRadius: BorderRadius.circular(8.r),
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AppWidgets.textLocale(
-                      localeKey: "Osiyo market",
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
-                    ),
-                    Row(
-                      children: [
-                        AppWidgets.textLocale(
-                          localeKey: "Добавлен",
-                          color: ColorName.gray2,
-                          fontSize: 12.sp,
-                        ).paddingOnly(right: 4),
-                        AppWidgets.textLocale(
-                          localeKey: "13 окт",
-                          fontSize: 12.sp,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                Wrap(
-                  children: [
-                    AppWidgets.textLocale(
-                      localeKey: "Примечание:",
-                      color: ColorName.gray2,
-                      fontSize: 12.sp,
-                    ),
-                    AppWidgets.textLocale(
-                      localeKey: "Кола 3 блок,Фанта 3 блок, дина...",
-                      fontSize: 12.sp,
-                    ),
-                  ],
-                ).paddingSymmetric(vertical: 8.w),
-                AppWidgets.textLocale(
-                  localeKey: "Выполнен",
-                  color: ColorName.green,
-                  fontSize: 12.sp,
-                ),
-              ],
-            ).paddingAll(15.w),
+          child: Cards.cards_15(
+            name: "Osiyo market",
+            dobavlen: LocaleKeys.added.tr(),
+            date: "13 окт",
+            primicheniya: "${LocaleKeys.note}:",
+            product: "Кола 3 блок,Фанта 3 блок, дина...",
+            vipolneniya: "Выполнение до",
+            status: LocaleKeys.completed,
+            statusColor: Colors.green,
+            cardColor: const Color(0xFFE5F3FF),
+            card_onTap: () {
+              Modular.to.pushNamed(ClickedItem.routeName);
+            },
           ).paddingOnly(
             top: 15.w,
             right: 15.w,

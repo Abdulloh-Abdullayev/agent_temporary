@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,20 +38,20 @@ class ReturnAboutPage extends StatefulWidget {
 
 class _ReturnAboutPageState extends State<ReturnAboutPage> {
   final List<String> firstTextNameItems = [
-    "Скидка",
-    "Тип направления",
-    "Тип цены",
-    "Склад",
-    "Бонус",
-    "Заказ добавлен",
-    "Дата отгрузки",
-    "Срок консигнации",
+    LocaleKeys.discount.tr(),
+    LocaleKeys.direction_type.tr(),
+    LocaleKeys.price_type.tr(),
+    LocaleKeys.stock.tr(),
+    LocaleKeys.bonus.tr(),
+    LocaleKeys.order_added.tr(),
+    LocaleKeys.shipping_date.tr(),
+    LocaleKeys.term_consignment.tr(),
   ];
   final List<String> secondTextNameItems = [
-    "Без скидки",
-    "Торговое направления",
-    "Перечисления",
-    "Основной склад",
+    LocaleKeys.without_discount.tr(),
+    LocaleKeys.trade_directions.tr(),
+    LocaleKeys.enumerations.tr(),
+    LocaleKeys.main_warehouse.tr(),
     "10%",
     "16 окт, 1:43",
     "12.10.2022",
@@ -65,10 +67,8 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
         body: Column(
           children: [
             ReturnWidget.appBar(
-              title: "О Возврате",
-              ontap: (key) {
-
-              },
+              title: LocaleKeys.about_return.tr(),
+              ontap: (key) {},
               context: context,
             ),
             Expanded(
@@ -102,7 +102,7 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
                               ],
                             ),
                           AppWidgets.text(
-                            text: "Комментарии к заказу",
+                            text: LocaleKeys.order_comments.tr(),
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                             color: ColorName.gray2,
@@ -122,17 +122,17 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AppWidgets.text(
-                                text: "Возвращенные товары",
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.black)
-                            .marginOnly(top: 18),
+                          text: LocaleKeys.returned_goods.tr(),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).marginOnly(top: 18),
                         AppWidgets.text(
-                                text: "Напитки",
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.black)
-                            .marginOnly(top: 16),
+                          text: "Напитки",
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.black,
+                        ).marginOnly(top: 16),
                         const SizedBox(
                           height: 15,
                         ),
@@ -152,7 +152,7 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             ReturnWidget.textBuilder(
-                              "Общая объем",
+                              LocaleKeys.total_volume.tr(),
                               "1365 о",
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             ),
@@ -160,7 +160,7 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
                               height: 12,
                             ),
                             ReturnWidget.textBuilder(
-                              "Общее кол-во",
+                              LocaleKeys.total_qty.tr(),
                               "1258 шт",
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             ),
@@ -168,7 +168,7 @@ class _ReturnAboutPageState extends State<ReturnAboutPage> {
                               height: 12,
                             ),
                             ReturnWidget.textBuilder(
-                              "Общая сумма",
+                              LocaleKeys.total_amount.tr(),
                               "150 000 000 UZS",
                               color: ColorName.button,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,

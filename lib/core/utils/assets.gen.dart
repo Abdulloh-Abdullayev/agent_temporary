@@ -24,9 +24,16 @@ class $AssetsColorGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/agent_icon.png
+  AssetGenImage get agentIcon =>
+      const AssetGenImage('assets/images/agent_icon.png');
+
   /// File path: assets/images/direction.png
   AssetGenImage get direction =>
       const AssetGenImage('assets/images/direction.png');
+
+  /// File path: assets/images/exel.png
+  AssetGenImage get exel => const AssetGenImage('assets/images/exel.png');
 
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
@@ -46,7 +53,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [direction, location, market, person, reportImage];
+      [agentIcon, direction, exel, location, market, person, reportImage];
 }
 
 class $AssetsLangsGen {
@@ -74,6 +81,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/add.svg
   SvgGenImage get add => const SvgGenImage('assets/images/icons/add.svg');
+
+  /// File path: assets/images/icons/agent_icon.png
+  AssetGenImage get agentIcon =>
+      const AssetGenImage('assets/images/icons/agent_icon.png');
 
   /// File path: assets/images/icons/arrow_down.svg
   SvgGenImage get arrowDown =>
@@ -139,6 +150,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/check.svg
   SvgGenImage get check => const SvgGenImage('assets/images/icons/check.svg');
 
+  /// File path: assets/images/icons/check_icon.svg
+  SvgGenImage get checkIcon =>
+      const SvgGenImage('assets/images/icons/check_icon.svg');
+
   /// File path: assets/images/icons/clock.svg
   SvgGenImage get clock => const SvgGenImage('assets/images/icons/clock.svg');
 
@@ -176,6 +191,14 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/edite_alt.svg
   SvgGenImage get editeAlt =>
       const SvgGenImage('assets/images/icons/edite_alt.svg');
+
+  /// File path: assets/images/icons/excel_icon.svg
+  SvgGenImage get excelIcon =>
+      const SvgGenImage('assets/images/icons/excel_icon.svg');
+
+  /// File path: assets/images/icons/excel_icon.svg.png
+  AssetGenImage get excelIconSvg =>
+      const AssetGenImage('assets/images/icons/excel_icon.svg.png');
 
   /// File path: assets/images/icons/exchange.svg
   SvgGenImage get exchange =>
@@ -262,6 +285,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/menu.svg
   SvgGenImage get menu => const SvgGenImage('assets/images/icons/menu.svg');
+
+  /// File path: assets/images/icons/menu_icon.svg
+  SvgGenImage get menuIcon =>
+      const SvgGenImage('assets/images/icons/menu_icon.svg');
 
   /// File path: assets/images/icons/minus.svg
   SvgGenImage get minus => const SvgGenImage('assets/images/icons/minus.svg');
@@ -351,6 +378,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get refresh =>
       const SvgGenImage('assets/images/icons/refresh.svg');
 
+  /// File path: assets/images/icons/refresh_icon.svg
+  SvgGenImage get refreshIcon =>
+      const SvgGenImage('assets/images/icons/refresh_icon.svg');
+
   /// File path: assets/images/icons/remove.svg
   SvgGenImage get remove => const SvgGenImage('assets/images/icons/remove.svg');
 
@@ -385,6 +416,10 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/share.svg
   SvgGenImage get share => const SvgGenImage('assets/images/icons/share.svg');
+
+  /// File path: assets/images/icons/shop_menu.svg
+  SvgGenImage get shopMenu =>
+      const SvgGenImage('assets/images/icons/shop_menu.svg');
 
   /// File path: assets/images/icons/shopping.svg
   SvgGenImage get shopping =>
@@ -430,6 +465,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/wallet.svg
   SvgGenImage get wallet => const SvgGenImage('assets/images/icons/wallet.svg');
 
+  /// File path: assets/images/icons/x_icon.svg
+  SvgGenImage get xIcon => const SvgGenImage('assets/images/icons/x_icon.svg');
+
   /// File path: assets/images/icons/zadachi.svg
   SvgGenImage get zadachi =>
       const SvgGenImage('assets/images/icons/zadachi.svg');
@@ -438,6 +476,7 @@ class $AssetsImagesIconsGen {
   List<dynamic> get values => [
         imageIcon,
         add,
+        agentIcon,
         arrowDown,
         arrowRight,
         backArrow,
@@ -456,6 +495,7 @@ class $AssetsImagesIconsGen {
         cencelIcon,
         chat,
         check,
+        checkIcon,
         clock,
         communication,
         communicationActive,
@@ -467,6 +507,8 @@ class $AssetsImagesIconsGen {
         edit,
         edite,
         editeAlt,
+        excelIcon,
+        excelIconSvg,
         exchange,
         fileUpload,
         filter,
@@ -490,6 +532,7 @@ class $AssetsImagesIconsGen {
         mapArrowIcon,
         mapLocation,
         menu,
+        menuIcon,
         minus,
         moreButton,
         note,
@@ -503,7 +546,6 @@ class $AssetsImagesIconsGen {
         pieIcon,
         pin,
         pinButton,
-        ping,
         pinned,
         place,
         placeActive,
@@ -514,6 +556,7 @@ class $AssetsImagesIconsGen {
         profileActive,
         qrCode,
         refresh,
+        refreshIcon,
         remove,
         right,
         savedOnes,
@@ -524,6 +567,7 @@ class $AssetsImagesIconsGen {
         send,
         setting,
         share,
+        shopMenu,
         shopping,
         shoppingCardIcon,
         smaller,
@@ -536,6 +580,7 @@ class $AssetsImagesIconsGen {
         user,
         userTimer,
         wallet,
+        xIcon,
         zadachi
       ];
 }

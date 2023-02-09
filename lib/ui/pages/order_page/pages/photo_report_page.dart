@@ -1,8 +1,11 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/delete_dilaog_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page_widget/image_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,14 +20,14 @@ class PhotoReportPage extends StatelessWidget {
         child: Column(
           children: [
             Align(
-                    alignment: Alignment.centerLeft,
-                    child: AppWidgets.textLocale(
-                        localeKey: "Не синхрозированные",
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16.sp,
-                        color: ColorName.black,
-                        isRichText: true))
-                .paddingOnly(bottom: 12.w),
+              alignment: Alignment.centerLeft,
+              child: AppWidgets.textLocale(
+                localeKey: LocaleKeys.out_of_sync,
+                fontWeight: FontWeight.w600,
+                fontSize: 16.sp,
+                color: ColorName.black,
+              ),
+            ).paddingOnly(bottom: 12.w),
             SizedBox(
               height: 104.w,
               child: ListView.builder(
@@ -43,13 +46,14 @@ class PhotoReportPage extends StatelessWidget {
               ),
             ).paddingOnly(bottom: 24.w),
             Align(
-                alignment: Alignment.centerLeft,
-                child: AppWidgets.textLocale(
-                    localeKey: "Синхрозированные",
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16.sp,
-                    color: ColorName.black,
-                    isRichText: true)),
+              alignment: Alignment.centerLeft,
+              child: AppWidgets.textLocale(
+                localeKey: LocaleKeys.synchronized,
+                fontWeight: FontWeight.w600,
+                fontSize: 16.sp,
+                color: ColorName.black,
+              ),
+            ).paddingOnly(bottom: 12.w),
             GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -65,9 +69,14 @@ class PhotoReportPage extends StatelessWidget {
                     child: SizedBox(
                       height: 104.w,
                       width: 104.w,
-                      child: Image.network(
-                        "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000",
+                      child: CachedNetworkImage(
                         fit: BoxFit.cover,
+                        imageUrl:
+                            "https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=2000",
+                        placeholder: (context, url) =>
+                            const CupertinoActivityIndicator(),
+                        errorWidget: (context, url, error) =>
+                            const Icon(Icons.person),
                       ),
                     ),
                   );

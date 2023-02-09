@@ -1,8 +1,10 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/reports_page/widgets/reports_filter_bottomsheet.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
@@ -30,14 +32,16 @@ class ReportsPage extends StatelessWidget {
             ),
             automaticallyImplyLeading: false,
             leadingWidth: 0,
+            titleSpacing: 0,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                InkWell(
-                  onTap: () {
-                     HomePage.globalKey.currentState!.openDrawer();
+                AppWidgets.iconButton(
+                  onPressed: () {
+                    HomePage.globalKey.currentState!.openDrawer();
                   },
-                  child: Assets.images.icons.menu.svg(),
+                  icon: Assets.images.icons.menu,
                 ),
                 AppWidgets.iconButton(
                   onPressed: () {
@@ -50,13 +54,13 @@ class ReportsPage extends StatelessWidget {
                   icon: Assets.images.icons.filter,
                 )
               ],
-            ).paddingAll(5),
+            ).paddingOnly(left: 20, right: 20, top: 12),
             flexibleSpace: FlexibleSpaceBar(
               background: reportsAppBar(context),
               collapseMode: CollapseMode.none,
             ),
             pinned: true,
-            expandedHeight: 258,
+            expandedHeight: 270,
           ),
           SliverList(
             delegate: SliverChildListDelegate(
@@ -70,7 +74,7 @@ class ReportsPage extends StatelessWidget {
                     const TableFact().paddingOnly(top: 16.w),
                     const SalesTableWidget()
                   ],
-                ).paddingSymmetric(horizontal: 20.w,vertical: 20.w)
+                ).paddingSymmetric(horizontal: 20.w, vertical: 20.w)
               ],
             ),
           ),
@@ -83,7 +87,7 @@ class ReportsPage extends StatelessWidget {
     return Column(
       children: [
         AppWidgets.textLocale(
-          localeKey: "План факт прогноз",
+          localeKey: LocaleKeys.plan_fact_forecast,
           fontWeight: FontWeight.w500,
           fontSize: 20.sp,
         ).paddingOnly(top: 24.w, bottom: 16.w),
@@ -93,14 +97,14 @@ class ReportsPage extends StatelessWidget {
             Widgets.showData(
               width: 104.w,
               count: "143%",
-              title: "Факт",
+              title: LocaleKeys.fact.tr(),
               color: ColorName.white,
             ),
             const SizedBox(width: 8),
             Widgets.showData(
               width: 104.w,
               count: "143%",
-              title: "Прогноз",
+              title: LocaleKeys.forecast.tr(),
               color: ColorName.white,
             ),
           ],
@@ -117,7 +121,7 @@ class ReportsPage extends StatelessWidget {
             Expanded(
               child: Widgets.showCount(
                 count: 120000,
-                title: "Общая сумма",
+                title: LocaleKeys.total_amount.tr(),
                 withOpacity: 0.1,
                 color: ColorName.green2,
               ),
@@ -126,7 +130,7 @@ class ReportsPage extends StatelessWidget {
             Expanded(
               child: Widgets.showCount(
                 count: 120000,
-                title: "АКБ",
+                title: LocaleKeys.akb.tr(),
                 color: ColorName.blue,
               ),
             ),
@@ -138,7 +142,7 @@ class ReportsPage extends StatelessWidget {
             Expanded(
               child: Widgets.showCount(
                 count: 120000,
-                title: "Общее кол-во ",
+                title: LocaleKeys.total_qty.tr(),
                 withOpacity: 0.1,
                 color: ColorName.green2,
               ),
@@ -147,7 +151,7 @@ class ReportsPage extends StatelessWidget {
             Expanded(
               child: Widgets.showCount(
                 count: 120000,
-                title: "Общий обьем",
+                title: LocaleKeys.total_volume.tr(),
                 color: ColorName.blue,
               ),
             ),
@@ -170,16 +174,16 @@ class ReportsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppWidgets.textLocale(
-            localeKey: "Отчёты",
+            localeKey: LocaleKeys.reports,
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,
-          ).paddingOnly(top: 30.w, bottom: 18.w),
+          ).paddingOnly(top: 42.w, bottom: 18.w),
           AppInputDate(
-            firstText: "Выберите дату",
-            dropDownText: "Текущий месяц >",
-            firstDate: "С",
-            secondDate: "По",
+            firstText: LocaleKeys.select_date.tr(),
+            dropDownText: LocaleKeys.current_month.tr(),
+            firstDate: LocaleKeys.from.tr(),
+            secondDate: LocaleKeys.by.tr(),
             dateBackColor: ColorName.gray.withOpacity(0.15),
             firstIcon: Assets.images.icons.calendarIcon.svg(),
             secondIcon: Assets.images.icons.calendarIcon.svg(),
@@ -189,25 +193,23 @@ class ReportsPage extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (context) => DateTimeDialog(
-                  title: 'Выбрать',
-                  closeTitle: 'Закрыть',
-                  addTitle: 'Добавить',
+                  title: LocaleKeys.select.tr(),
+                  closeTitle: LocaleKeys.close.tr(),
+                  addTitle: LocaleKeys.add.tr(),
                   addTap: (DateTime time) {
                     // print("time");
                   },
                 ),
               );
             },
-            dropDownOnTap: () {
-
-            },
+            dropDownOnTap: () {},
             SecondDateOnTap: () {
               showDialog(
                 context: context,
                 builder: (context) => DateTimeDialog(
-                  title: 'Выбрать',
-                  closeTitle: 'Закрыть',
-                  addTitle: 'Добавить',
+                  title: LocaleKeys.select.tr(),
+                  closeTitle: LocaleKeys.close.tr(),
+                  addTitle: LocaleKeys.add.tr(),
                   addTap: (DateTime time) {
                     // print("time");
                   },
@@ -217,12 +219,12 @@ class ReportsPage extends StatelessWidget {
             iconColor: Colors.white,
           ),
           AppButton(
-            text: "Применить",
+            text: LocaleKeys.apply.tr(),
             onPressed: () {},
             width: 1.sw,
             textColor: Colors.white,
             color: ColorName.buttonColor,
-          ).paddingOnly(top: 10.w)
+          ).paddingOnly(top: 18.w)
         ],
       ),
     );

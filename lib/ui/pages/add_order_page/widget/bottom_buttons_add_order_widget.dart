@@ -1,12 +1,13 @@
 import 'package:agent/core/extensions/app_extensions.dart';
-import 'package:agent/core/utils/assets.gen.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page_widget/row_widget.dart';
-import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:agent/ui/pages/customer_data_editing_page/widgets/row_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
 
+import '../../../widgets/app_widgets.dart';
 import 'add_bonus_widget.dart';
 
 class BottomButtonsAddOrderWidget extends StatelessWidget {
@@ -30,62 +31,76 @@ class BottomButtonsAddOrderWidget extends StatelessWidget {
       child: Column(
         children: [
           CustomerEditingRowWidget(
-            "Общая объем",
+            LocaleKeys.total_volume.tr(),
             "1365 о",
           ).paddingOnly(bottom: 12.w),
           CustomerEditingRowWidget(
-            "Общее кол-во",
-            "Общее кол-во",
+            LocaleKeys.total_qty.tr(),
+            LocaleKeys.total_qty.tr(),
           ).paddingOnly(bottom: 12.w),
-          CustomerEditingRowWidget(
-            "Общая сумма",
-            "1150 000 000 UZS",
-            ColorName.button,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              AppWidgets.textLocale(
+                  localeKey: LocaleKeys.total_amount.tr(),
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w400,
+                  color: ColorName.gray2,
+                  isRichText: true),
+              AppWidgets.textLocale(
+                  localeKey: "150 000 000 UZS",
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w600,
+                  color: ColorName.button,
+                  isRichText: true),
+            ],
           ).paddingOnly(bottom: 16.w),
           Row(
             children: [
               Expanded(
                 child: SizedBox(
-                    height: 45.w,
-                    // padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: AppButton(
-                      text: "Черновик",
-                      textSize: 14,
-                      textColor: ColorName.mainColor,
-                      color: ColorName.gray,
-                      splashColor: ColorName.black.withOpacity(0.2),
-                      onPressed: () {},
-                    )),
+                  height: 45.w,
+                  // padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: AppButton(
+                    text: LocaleKeys.draft.tr(),
+                    textSize: 14,
+                    textColor: ColorName.mainColor,
+                    color: ColorName.gray,
+                    splashColor: ColorName.black.withOpacity(0.2),
+                    onPressed: () {},
+                  ),
+                ),
               ),
               SizedBox(
                 width: 12.w,
               ),
               Expanded(
                 child: SizedBox(
-                    height: 45.w,
-                    //padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: AppButton(
-                      text: "Далее",
-                      textSize: 14,
-                      textColor: ColorName.white,
-                      color: ColorName.button,
-                      onPressed: () {
-                        showModalBottomSheet(
-                          backgroundColor: Colors.transparent,
-                          enableDrag: true,
-                          isDismissible: false,
-                          isScrollControlled: true,
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(12),
-                          )),
-                          context: context,
-                          builder: (context) {
-                            return const AddBonusWidget();
-                          },
-                        );
-                      },
-                    )),
+                  height: 45.w,
+                  //padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: AppButton(
+                    text: LocaleKeys.next.tr(),
+                    textSize: 14,
+                    textColor: ColorName.white,
+                    color: ColorName.button,
+                    onPressed: () {
+                      showModalBottomSheet(
+                        backgroundColor: Colors.transparent,
+                        enableDrag: true,
+                        isDismissible: false,
+                        isScrollControlled: true,
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(12),
+                        )),
+                        context: context,
+                        builder: (context) {
+                          return const AddBonusWidget();
+                        },
+                      );
+                    },
+                  ),
+                ),
               ),
             ],
           )
@@ -98,4 +113,3 @@ class BottomButtonsAddOrderWidget extends StatelessWidget {
     );
   }
 }
-

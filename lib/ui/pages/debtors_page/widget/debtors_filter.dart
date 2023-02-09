@@ -1,13 +1,12 @@
 import 'package:agent/core/extensions/app_extensions.dart';
-import 'package:agent/core/models/enums/shipping_type.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/debtors_page/widget/deptors_history.dart';
-import 'package:agent/ui/widgets/app_radio_button.dart';
 import 'package:agent/ui/widgets/app_text_field.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -42,14 +41,14 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Фильтр",
+                        localeKey: LocaleKeys.debtors,
                         fontWeight: FontWeight.w600,
                         fontSize: 20.sp,
                       ),
                       TextButton(
                         onPressed: () {},
                         child: AppWidgets.textLocale(
-                          localeKey: "Сброс фильтра",
+                          localeKey: LocaleKeys.reset_filter,
                           color: ColorName.red,
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
@@ -61,13 +60,13 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Выберите дату",
+                        localeKey: LocaleKeys.select_date,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: ColorName.gray3,
                       ),
                       AppWidgets.textLocale(
-                        localeKey: "Текущий месяц",
+                        localeKey: LocaleKeys.current_month,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: ColorName.button,
@@ -78,25 +77,26 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     bottom: 10.w,
                   ),
                   AppTextField(
-                    hintText: "Выбрать",
+                    hintText: LocaleKeys.select.tr(),
                     onChanged: (v) {},
                     title: "",
                     hasTitle: false,
                     height: 40.w,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Выберите территорию",
+                    localeKey: LocaleKeys.choose_territory,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: ColorName.gray3,
                   ).paddingOnly(top: 24.w, bottom: 12.w),
                   DropDown(
+                    color: ColorName.background,
                     items: const [
                       'dcsdvsd',
                       'sddf',
                       'dcsdfsdvsd',
                     ],
-                    title: "Доставлён",
+                    title: LocaleKeys.delivered.tr(),
                     onChange: (s) {
                       AppLoggerUtil.w("$s");
                     },
@@ -104,18 +104,19 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
                     height: 38.w,
                   ),
                   AppWidgets.textLocale(
-                    localeKey: "Дни посещения",
+                    localeKey: LocaleKeys.visit_days,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: ColorName.gray3,
                   ).paddingOnly(top: 24.w, bottom: 12.w),
                   DropDown(
+                    color: ColorName.background,
                     items: const [
                       'dcsdvsd',
                       'sddf',
                       'dcsdfsdvsd',
                     ],
-                    title: "Доставлён",
+                    title: LocaleKeys.delivered.tr(),
                     onChange: (s) {
                       AppLoggerUtil.w("$s");
                     },
@@ -127,7 +128,7 @@ class DebtorsFilterBottomSheet extends StatelessWidget {
             ),
           ),
           AppWidgets.appButton(
-            title: "Применить",
+            title: LocaleKeys.apply.tr(),
             onTap: () {
               Modular.to.pushNamed(DebtorsHistory.routeName);
             },

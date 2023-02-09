@@ -11,7 +11,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:super_rich_text/super_rich_text.dart';
-import 'package:agent/core/utils/colors.gen.dart';
 
 class AppWidgets {
   static void showText({
@@ -153,12 +152,11 @@ class AppWidgets {
             args: args,
             namedArgs: namedArgs,
           ),
-          style: TextStyle(
+          style: GoogleFonts.inter(
             color: color,
             fontSize: fontSize.sp,
             decoration: decoration,
             fontWeight: fontWeight,
-            fontFamily: "Gilroy",
           ),
           textAlign: textAlign,
           maxLines: maxLines,
@@ -370,6 +368,7 @@ class AppWidgets {
   static void openImgDialog({
     required BuildContext context,
     required String imgPath,
+    String? url,
   }) {
     Navigator.push(
       context,
@@ -402,13 +401,19 @@ class AppWidgets {
                     left: 50,
                     right: 50,
                     child: Hero(
-                      tag: imgPath,
+                      tag: url ?? imgPath,
                       child: Container(
-                        child: AppWidgets.imageFile(
-                          height: 300,
-                          width: 300,
-                          path: imgPath,
-                        ),
+                        child: url != null
+                            ? AppWidgets.networkImage(
+                                url: url,
+                                height: 300,
+                                width: 300,
+                              )
+                            : AppWidgets.imageFile(
+                                height: 300,
+                                width: 300,
+                                path: imgPath,
+                              ),
                       ),
                     ),
                   )

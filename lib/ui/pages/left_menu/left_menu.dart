@@ -3,9 +3,9 @@ import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
-import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
 import 'package:agent/ui/pages/all_tasks_page/all_tasks_page.dart';
-import 'package:agent/ui/pages/history_orders/history_orders_page.dart';
+import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
+import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/pages/left_menu/widget/create_account_widget.dart';
 import 'package:agent/ui/pages/order_page/order_page.dart';
@@ -63,46 +63,7 @@ class LeftMenuPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 27.r,
-                                child: CachedNetworkImage(
-                                  width: 54,
-                                  height: 54,
-                                  imageUrl: "",
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) =>
-                                      const CircularProgressIndicator(),
-                                  errorWidget: (context, url, error) => Icon(
-                                    Icons.person,
-                                    color: ColorName.white,
-                                    size: 50.w,
-                                  ),
-                                ),
-                              ).paddingOnly(right: 10.w),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  AppWidgets.text(
-                                    text: "Agent 007",
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: ColorName.white,
-                                  ).paddingOnly(bottom: 4.w),
-                                  AppWidgets.text(
-                                    text: "Сервер: Distr",
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorName.white.withOpacity(0.5),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
+                          buildCurrentUser(),
                           InkWell(
                             onTap: () {
                               bloc.add(HideShowed(!state.hideShow));
@@ -166,7 +127,7 @@ class LeftMenuPage extends StatelessWidget {
                 ),
                 buildMenus(context),
                 AppWidgets.textLocale(
-                  localeKey: "Версия 12.3.8.7",
+                  localeKey: "${LocaleKeys.version.tr()} 12.3.8.7",
                   color: ColorName.white.withOpacity(0.3),
                 ).paddingOnly(
                   top: 30.w,
@@ -181,6 +142,48 @@ class LeftMenuPage extends StatelessWidget {
     );
   }
 
+  Row buildCurrentUser() {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        CircleAvatar(
+          radius: 27.r,
+          child: CachedNetworkImage(
+            width: 54,
+            height: 54,
+            imageUrl: "",
+            fit: BoxFit.cover,
+            placeholder: (context, url) => const CircularProgressIndicator(),
+            errorWidget: (context, url, error) => Icon(
+              Icons.person,
+              color: ColorName.white,
+              size: 50.w,
+            ),
+          ),
+        ).paddingOnly(right: 10.w),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AppWidgets.text(
+              text: "Agent 007",
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w600,
+              color: ColorName.white,
+            ).paddingOnly(bottom: 4.w),
+            AppWidgets.text(
+              text: "${LocaleKeys.server.tr()}: Distr",
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w400,
+              color: ColorName.white.withOpacity(0.5),
+            ),
+          ],
+        )
+      ],
+    );
+  }
+
   Column buildMenus(BuildContext context) {
     return Column(
       children: [
@@ -192,80 +195,80 @@ class LeftMenuPage extends StatelessWidget {
               ),
             );
           },
-          text: "Главная",
+          text: LocaleKeys.main.tr(),
           icon: Assets.images.icons.homeIcon.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(AddOutletsPage.routeName);
           },
-          text: "Добавить торговую точку",
+          text: LocaleKeys.add_outlet.tr(),
           icon: Assets.images.icons.homeIcon2.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(OrderPage.routeName);
           },
-          text: "Заказы",
-          icon: Assets.images.icons.shoppingCardIcon.svg(),
+          text: LocaleKeys.orders.tr(),
+          icon: Assets.images.icons.shopMenu.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(RemainStockPage.routeName);
           },
-          text: "Остатки на складе",
+          text: LocaleKeys.leftovers_warehouse.tr(),
           icon: Assets.images.icons.note.svg(),
         ),
         DrawerItem(
           onTap: () {
-
+            Modular.to.pushNamed(DebtorsPage.routeName);
           },
-          text: "Должники по заказам",
+          text: LocaleKeys.debtors_on_orders.tr(),
           icon: Assets.images.icons.user.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(DebtorsPage.routeName);
           },
-          text: "Должники",
+          text: LocaleKeys.debtors.tr(),
           icon: Assets.images.icons.userTimer.svg(),
         ),
         DrawerItem(
           onTap: () {},
-          text: "Моя локация",
+          text: LocaleKeys.my_location.tr(),
           icon: Assets.images.icons.locationIcon.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(AllTasksPage.routeName);
           },
-          text: "Задачи",
+          text: LocaleKeys.tasks.tr(),
           icon: Assets.images.icons.pinned.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(SalaryPage.routeName);
           },
-          text: "KPI",
+          text: LocaleKeys.kpi.tr(),
           icon: Assets.images.icons.pieIcon.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(DiagnosticsPage.routeName);
           },
-          text: "Диагностика",
+          text: LocaleKeys.diagnostics.tr(),
           icon: Assets.images.icons.pie2Chart.svg(),
         ),
         DrawerItem(
           onTap: () {
             Modular.to.pushNamed(SettingsPage.routeName);
           },
-          text: "Настройки",
+          text: LocaleKeys.settings.tr(),
           icon: Assets.images.icons.setting.svg(),
         ),
         DrawerItem(
           onTap: () {},
-          text: "Поделиться",
+          text: LocaleKeys.share.tr(),
           icon: Assets.images.icons.share.svg(),
         ),
       ],
@@ -351,7 +354,10 @@ class DrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onTap(),
+      onTap: () {
+        HomePage.globalKey.currentState!.closeDrawer();
+        onTap();
+      },
       child: SizedBox(
         height: 55,
         child: Row(

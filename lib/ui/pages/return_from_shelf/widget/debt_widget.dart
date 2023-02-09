@@ -5,7 +5,10 @@ import 'package:uikit/uikit.dart';
 
 class DebtWidget extends StatelessWidget {
   const DebtWidget({
-    Key? key, required this.money, required this.title, required this.width,
+    Key? key,
+    required this.money,
+    required this.title,
+    required this.width,
   }) : super(key: key);
   final int money;
   final String title;

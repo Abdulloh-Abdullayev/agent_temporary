@@ -1,14 +1,15 @@
 import 'dart:async';
 import 'dart:math';
-import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:agent/core/constants/app_const.dart';
 import 'package:agent/core/extensions/num_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/map_page/widgets/custom_map_widget.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -237,14 +238,13 @@ class _CustomMapState extends State<CustomMap> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       AppWidgets.textLocale(
-                                        localeKey:
-                                            "Маршрут построен пост оен построен осое стро",
+                                        localeKey: LocaleKeys.route_built,
                                         fontSize: 16.sp,
                                         fontWeight: FontWeight.w400,
                                         maxLines: 1,
                                       ),
                                       AppWidgets.text(
-                                        text: 'Ехать ' +
+                                        text: '${LocaleKeys.drive.tr()} ' +
                                             double.parse(
                                               calculateDistance(
                                                 currentLocation!.latitude,

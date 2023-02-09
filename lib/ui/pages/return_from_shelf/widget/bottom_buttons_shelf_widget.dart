@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
-import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page_widget/row_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:agent/ui/pages/customer_data_editing_page/widgets/row_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/uikit.dart';
@@ -26,15 +28,15 @@ class BottomButtonsShelfWidget extends StatelessWidget {
       child: Column(
         children: [
           CustomerEditingRowWidget(
-            "Общая объем",
+            LocaleKeys.total_volume.tr(),
             "1365 о",
           ).paddingOnly(bottom: 12.w),
           CustomerEditingRowWidget(
-            "Общее кол-во",
-            "Общее кол-во",
+            LocaleKeys.total_qty.tr(),
+            LocaleKeys.total_qty.tr(),
           ).paddingOnly(bottom: 12.w),
           CustomerEditingRowWidget(
-            "Общая сумма",
+            LocaleKeys.total_amount.tr(),
             "1150 000 000 UZS",
             ColorName.button,
           ).paddingOnly(bottom: 16.w),
@@ -45,7 +47,7 @@ class BottomButtonsShelfWidget extends StatelessWidget {
                     height: 45.w,
                     // padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: AppButton(
-                      text: "Черновик",
+                      text: LocaleKeys.draft.tr(),
                       textSize: 14,
                       textColor: ColorName.mainColor,
                       color: ColorName.gray,
@@ -61,7 +63,7 @@ class BottomButtonsShelfWidget extends StatelessWidget {
                     height: 45.w,
                     //padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: AppButton(
-                      text: "Продолжить",
+                      text: LocaleKeys.continue_c.tr(),
                       textSize: 14,
                       textColor: ColorName.white,
                       color: ColorName.button,
@@ -78,12 +80,10 @@ class BottomButtonsShelfWidget extends StatelessWidget {
                           context: context,
                           builder: (context) {
                             return DateTimeDialog(
-                              title: 'Добавить срок годности',
-                              closeTitle: 'Закрыть',
-                              addTitle: 'Добавить',
-                              addTap: (){
-
-                              },
+                              title: LocaleKeys.add_expiration_date.tr(),
+                              closeTitle: LocaleKeys.close.tr(),
+                              addTitle: LocaleKeys.add.tr(),
+                              addTap: () {},
                             );
                           },
                         );

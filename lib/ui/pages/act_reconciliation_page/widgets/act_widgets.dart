@@ -38,10 +38,10 @@ class ActWidget {
     required String firstText,
     required String buttonText,
     required String dropDownText,
-    required Function() backOnTap,
-    required Function() firstDataOnTap,
-    required Function() secondDataOnTap,
-    required Function() buttonOnTap,
+    required VoidCallback backOnTap,
+    required VoidCallback firstDataOnTap,
+    required VoidCallback secondDataOnTap,
+    required VoidCallback buttonOnTap,
     required String firstDate,
     required String secondDate,
     List<Widget>? actions,
@@ -68,7 +68,7 @@ class ActWidget {
                 onTap: backOnTap,
               ),
               Row(
-                children: [...actionList],
+                children: actionList,
               )
             ],
           ).marginLTRB(20, 19, 20, 18),
@@ -304,8 +304,7 @@ class ActWidget {
       return 3;
     } else if (text.contains("+")) {
       return 1;
-    } else if (int.tryParse(
-            text.replaceAll(RegExp(r'([a-z]|[A-Z])|\ *'), "")) !=
+    } else if (int.tryParse(text.replaceAll(RegExp(r'([a-z]|[A-Z])|\*'), "")) !=
         null) {
       return 2;
     } else {

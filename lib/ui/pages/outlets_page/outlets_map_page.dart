@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
@@ -9,7 +7,6 @@ import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:yandex_mapkit/yandex_mapkit.dart';
 
 import 'map_sample.dart';
 import 'widgets/outlets_bottom_sheet.dart';
@@ -37,7 +34,8 @@ class OutletsMapPage extends StatefulWidget {
 }
 
 class _OutletsMapPageState extends State<OutletsMapPage> {
-  Completer<YandexMapController> completer = Completer();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +72,7 @@ class _OutletsMapPageState extends State<OutletsMapPage> {
       body: Stack(
         children: [
           MapSample(),
-          bottomSection()
+          bottomSection(),
         ],
       ),
       floatingActionButton: Column(

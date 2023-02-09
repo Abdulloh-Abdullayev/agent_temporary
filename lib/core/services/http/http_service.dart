@@ -1,10 +1,10 @@
 import 'dart:io';
 
+import 'package:agent/core/constants/api_const.dart';
+import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:agent/core/constants/api_const.dart';
-import 'package:agent/core/utils/app_logger_util.dart';
 
 class HttpService {
   HttpService.init() {
@@ -176,7 +176,7 @@ class HttpService {
         response = await _dio!.get(url, queryParameters: parameters);
         return response;
       }
-    } catch (e) {
+    }catch (e) {
       AppLoggerUtil.e(e.toString());
       rethrow;
     }

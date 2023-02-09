@@ -1,3 +1,4 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
@@ -5,6 +6,7 @@ import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/outlets_page/outlets_map_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +28,9 @@ class OutletsPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppWidgets.textLocale(localeKey: "Фильтр"),
+                  AppWidgets.textLocale(
+                    localeKey: LocaleKeys.debtors,
+                  ),
                   DropDown(
                     items: const [
                       'dcsdvsd',
@@ -45,22 +49,19 @@ class OutletsPage extends StatelessWidget {
                 child: ListView.builder(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                   itemCount: 10,
-                  itemBuilder: (context, index) => GestureDetector(
-                    onTap: () {
-                      // Modular.to.pushNamed(OutletsMapPage.routeName);
+                  itemBuilder: (context, index) => Cards.cards_11(
+                    name: "name",
+                    supermarket: "supermarket",
+                    uzs: "uzs",
+                    image:
+                        "https://podrobno.uz/upload/iblock/b24/1212121212.jpg",
+                    persent: "60-80",
+                    summa: "2000",
+                    cp: "cp",
+                    card_onTap: () {
+                      Modular.to.pushNamed(OutletsMapPage.routeName);
                     },
-                    child: Cards.cards_11(
-                      name: "name",
-                      supermarket: "supermarket",
-                      uzs: "uzs",
-                      image:
-                          "https://podrobno.uz/upload/iblock/b24/1212121212.jpg",
-                      persent: "60-80",
-                      summa: "2000",
-                      cp: "cp",
-                      card_onTap: () {},
-                    ).paddingOnly(top: 12.w),
-                  ),
+                  ).paddingOnly(top: 12.w),
                 ),
               )
             ],
@@ -96,11 +97,11 @@ class OutletsPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InkWell(
-                onTap: () {
-                   HomePage.globalKey.currentState!.openDrawer();
+              AppWidgets.iconButton(
+                onPressed: () {
+                  HomePage.globalKey.currentState!.openDrawer();
                 },
-                child: Assets.images.icons.menu.svg(),
+                icon: Assets.images.icons.menu,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -118,23 +119,25 @@ class OutletsPage extends StatelessWidget {
             ],
           ),
           AppWidgets.textLocale(
-            localeKey: "Торговые точки",
+            localeKey: LocaleKeys.outlets_full.tr(),
             fontWeight: FontWeight.w600,
             fontSize: 24.sp,
             color: Colors.white,
           ).paddingOnly(top: 20.w, bottom: 18.w),
           AppSelectTabBar(
-            tabs: const [
-              'Все',
-              'ПН',
-              'ВТ',
-              'СР',
-              'ЧТ',
-              'ПТ',
-              'СБ',
-              'ВС',
+            tabs: [
+              LocaleKeys.all.tr(),
+              LocaleKeys.mon.tr(),
+              LocaleKeys.tue.tr(),
+              LocaleKeys.wed.tr(),
+              LocaleKeys.thu.tr(),
+              LocaleKeys.fri.tr(),
+              LocaleKeys.sat.tr(),
+              LocaleKeys.sun.tr()
             ],
-            onTap: () {},
+            onTap: (int i) {
+              print(i);
+            },
           )
         ],
       ),

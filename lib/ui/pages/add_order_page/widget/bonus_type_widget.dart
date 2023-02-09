@@ -1,6 +1,8 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,9 +15,9 @@ class BonusTypeWidget extends StatefulWidget {
   State<BonusTypeWidget> createState() => _BonusTypeWidgetState();
 }
 
-bool isShow = false;
-
 class _BonusTypeWidgetState extends State<BonusTypeWidget> {
+  bool isShow = false;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -28,7 +30,7 @@ class _BonusTypeWidgetState extends State<BonusTypeWidget> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           AppWidgets.text(
-            text: "Бонус 1+5",
+            text: LocaleKeys.bonus_15.tr(),
             fontSize: 14.sp,
             fontWeight: FontWeight.w400,
           ),
@@ -64,17 +66,17 @@ class CategoryListWidget extends StatefulWidget {
   State<CategoryListWidget> createState() => _CategoryListWidgetState();
 }
 
-bool isCheck = false;
-
 class _CategoryListWidgetState extends State<CategoryListWidget> {
+  bool isCheck = false;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         InkWell(
-          onTap: (){
+          onTap: () {
             setState(() {
-              isCheck=!isCheck;
+              isCheck = !isCheck;
             });
           },
           child: Row(

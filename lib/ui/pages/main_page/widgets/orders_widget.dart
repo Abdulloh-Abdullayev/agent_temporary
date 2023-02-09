@@ -1,6 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
+import 'package:agent/ui/pages/return_from_shelf/return_from_shelf.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -59,7 +62,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                 Row(
                   children: [
                     AppWidgets.text(
-                      text: "//*// Не синхрованные заказы",
+                      text: "//*// ${LocaleKeys.out_sync_orders.tr()}",
                       isRichText: true,
                       color: ColorName.gray3,
                       fontSize: 16.sp,
@@ -132,20 +135,21 @@ class _OrdersWidgetState extends State<OrdersWidget>
                     (index) {
                       return Cards.cards_1(
                         height: 85.w,
-
+                        context: context,
                         width: 1.sw,
                         name: "name",
                         time: "17:18",
-                        spot: "spot",
-                        noBonus: "noBonus",
-                        volume: "Obem",
+                        spot: LocaleKeys.spot.tr(),
+                        noBonus: LocaleKeys.no_bonus.tr(),
+                        volume: LocaleKeys.volume.tr(),
                         volumeNumber: "15",
-                        count: "count",
+                        count: LocaleKeys.qty.tr(),
                         countNumber: '15',
-                        summa: 'summa',
+                        summa: LocaleKeys.amount.tr(),
                         summaNumber: "150 000 000",
-                        context: context,
-                        card_onTap: () {},
+                        card_onTap: () {
+                          Modular.to.pushNamed(ReturnFromShelf.routeName);
+                        },
                       ).paddingOnly(
                         left: 18.w,
                         right: 18.w,

@@ -4,11 +4,15 @@ import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'category_remain.dart';
 
 class RemainStockItem extends StatefulWidget {
-  RemainStockItem({required this.index, Key? key}) : super(key: key);
-  int index;
+  const RemainStockItem({
+    required this.index,
+    Key? key,
+  }) : super(key: key);
+  final int index;
 
   @override
   State<RemainStockItem> createState() => _RemainStockItemState();

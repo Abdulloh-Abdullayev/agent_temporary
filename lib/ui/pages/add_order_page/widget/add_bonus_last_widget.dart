@@ -1,11 +1,14 @@
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uikit/extensions/app_extensions.dart';
 import 'package:uikit/uikit.dart';
+
+import '../../../../core/localization/locale_keys.g.dart';
 
 class AddBonusLastWidget extends StatelessWidget {
   const AddBonusLastWidget({
@@ -29,15 +32,15 @@ class AddBonusLastWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                mainAxisAlignment:
-                MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                      child: Icon(
-                        Icons.keyboard_arrow_down_sharp,
-                        size: 25.w,
-                        color: ColorName.gray2,
-                      )),
+                    child: Icon(
+                      Icons.keyboard_arrow_down_sharp,
+                      size: 25.w,
+                      color: ColorName.gray2,
+                    ),
+                  ),
                   InkWell(
                     onTap: () {
                       Modular.to.pop();
@@ -50,7 +53,7 @@ class AddBonusLastWidget extends StatelessWidget {
                 ],
               ),
               AppWidgets.textLocale(
-                localeKey: "Добавление бонуса",
+                localeKey: LocaleKeys.add_bonus,
                 fontWeight: FontWeight.w600,
                 fontSize: 24.sp,
               ).paddingOnly(
@@ -78,31 +81,32 @@ class AddBonusLastWidget extends StatelessWidget {
                     horizontal: 15.w,
                     vertical: 12.w,
                   ),
+                  margin: EdgeInsets.only(top: 18.w),
                   width: 1.sw,
                   decoration: BoxDecoration(
-                    borderRadius:
-                    BorderRadius.circular(8.w),
+                    borderRadius: BorderRadius.circular(8.w),
                     border: Border.all(
                       color: ColorName.gray,
                     ),
                   ),
                   child: Row(
-                    mainAxisAlignment:
-                    MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           AppWidgets.textLocale(
-                            localeKey: "Бонус 1+5",
+                            localeKey: LocaleKeys.bonus_15.tr(),
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
-                          ).paddingOnly(bottom: 10.w,),
+                          ).paddingOnly(
+                            bottom: 10.w,
+                          ),
                           Row(
                             children: [
                               AppWidgets.textLocale(
-                                localeKey: "Категория: ",
+                                localeKey: "${LocaleKeys.category.tr()}: ",
                                 color: ColorName.gray2,
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w400,
@@ -123,34 +127,31 @@ class AddBonusLastWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                ).paddingOnly(top: 18.w),
+                ),
               ),
             ],
           ),
           Row(
-            mainAxisAlignment:
-            MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppButton(
                 height: 45.w,
                 width: 115.w,
-                text: "Закрыть",
+                text: LocaleKeys.close.tr(),
                 textSize: 14.sp,
                 textColor: ColorName.mainColor,
                 color: ColorName.gray,
-                splashColor:
-                ColorName.black.withOpacity(0.2),
+                splashColor: ColorName.black.withOpacity(0.2),
                 onPressed: () {},
               ),
               AppButton(
                 height: 45.w,
                 width: 200.w,
-                text: "Завершить",
+                text: LocaleKeys.complete.tr(),
                 textSize: 14.sp,
                 textColor: ColorName.white,
                 color: ColorName.button,
-                splashColor:
-                ColorName.black.withOpacity(0.2),
+                splashColor: ColorName.black.withOpacity(0.2),
                 onPressed: () {
                   Modular.to.pop();
                 },

@@ -1,7 +1,9 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,12 +37,13 @@ class ReturnWidget {
                 fontWeight: FontWeight.w400,
               ),
             ),
-            AppWidgets.text(text: secondName,
-                textStyle: const TextStyle(
-                  color: ColorName.black,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
+            AppWidgets.text(
+              text: secondName,
+              textStyle: const TextStyle(
+                color: ColorName.black,
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ],
         ),
@@ -55,9 +58,9 @@ class ReturnWidget {
   }
 
   static Widget appBar(
-      {required String title,
-        required BuildContext context,
-        required Function(String key) ontap}) =>
+          {required String title,
+          required BuildContext context,
+          required Function(String key) ontap}) =>
       Container(
         height: 139.h,
         width: 1.sw,
@@ -86,8 +89,7 @@ class ReturnWidget {
                       Modular.to.pop();
                     },
                     child: Center(
-                      child:
-                      Assets.images.icons.backIcon.svg(height: 9.5),
+                      child: Assets.images.icons.backIcon.svg(height: 9.5),
                     ),
                   ),
                 ),
@@ -104,9 +106,9 @@ class ReturnWidget {
                       if (p0 == 1) {
                         showDialog(
                           context: context,
-                          builder: (ctx) => const AlertDialog(
+                          builder: (ctx) => AlertDialog(
                             content: CommitTextField(
-                              text: "Добавление комментарии",
+                              text: LocaleKeys.adding_comments.tr(),
                             ),
                           ),
                         );
@@ -116,9 +118,9 @@ class ReturnWidget {
                           builder: (ctx) => Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DateTimeDialog(
-                                title: "Добавить дату отгрузки",
-                                closeTitle: "Закрыть",
-                                addTitle: "Добавить",
+                                title: LocaleKeys.add_shipping_date.tr(),
+                                closeTitle: LocaleKeys.close.tr(),
+                                addTitle: LocaleKeys.add.tr(),
                                 addTap: () {}),
                           ),
                         );
@@ -128,19 +130,19 @@ class ReturnWidget {
                           builder: (ctx) => Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DateTimeDialog(
-                                title: "Добавить консигнация",
-                                closeTitle: "Закрыть",
-                                addTitle: "Добавить",
+                                title: LocaleKeys.add_consignment.tr(),
+                                closeTitle: LocaleKeys.close.tr(),
+                                addTitle: LocaleKeys.add.tr(),
                                 addTap: () {}),
                           ),
                         );
                       }
                     },
-                    textName: const [
-                      "Редактрировать",
-                      "Комментария к заказу",
-                      "Дата отгрузки",
-                      "Удалить"
+                    textName: [
+                      LocaleKeys.edit.tr(),
+                      LocaleKeys.comments_to_order.tr(),
+                      LocaleKeys.shipping_date.tr(),
+                      LocaleKeys.delete.tr()
                     ],
                     icons: [
                       Assets.images.icons.edit.svg(),
@@ -182,18 +184,18 @@ class ReturnWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppWidgets.text(
-              text: "Coca cola 1.5",
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              color: ColorName.black)
+                  text: "Coca cola 1.5",
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: ColorName.black)
               .marginOnly(top: 14, left: 12),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              textBuilder("Обьем", "15"),
-              textBuilder("Обьем", "15"),
+              textBuilder(LocaleKeys.volume.tr(), "15"),
+              textBuilder(LocaleKeys.volume.tr(), "15"),
               textBuilder(
-                "Обьем",
+                LocaleKeys.volume.tr(),
                 "100 000 00",
                 color: ColorName.button,
               ),
@@ -205,13 +207,13 @@ class ReturnWidget {
   }
 
   static Widget textBuilder(
-      String text1,
-      String text2, {
-        Color? color,
-        TextStyle? textStyle,
-        MainAxisAlignment? mainAxisAlignment,
-        CrossAxisAlignment? crossAxisAlignment,
-      }) =>
+    String text1,
+    String text2, {
+    Color? color,
+    TextStyle? textStyle,
+    MainAxisAlignment? mainAxisAlignment,
+    CrossAxisAlignment? crossAxisAlignment,
+  }) =>
       Row(
         mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
         crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,

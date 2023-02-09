@@ -4,6 +4,7 @@ import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/balance_page/bloc/balance_cubit.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:animated_digit/animated_digit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -79,11 +80,11 @@ class BalancePage extends StatelessWidget {
               itemBuilder: (context, index) {
                 var model = state.balanceList[index];
                 return Cards.cards_6(
-                  zakaz: "Заказ от",
+                  zakaz: LocaleKeys.order_from.tr(),
                   date: model.dateToString,
                   status: model.statusType!,
                   nachisleniya: model.status!,
-                  summa: "Сумма",
+                  summa: LocaleKeys.amount.tr(),
                   summaNumber: model.priceToString,
                   onTap: () {},
                 ).paddingOnly(top: 12.w);
@@ -122,7 +123,7 @@ class BalancePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               AppWidgets.textLocale(
-                localeKey: LocaleKeys.total_sum,
+                localeKey: LocaleKeys.total_volume,
                 fontWeight: FontWeight.w400,
                 fontSize: 14.sp,
                 color: Colors.white.withOpacity(0.6),

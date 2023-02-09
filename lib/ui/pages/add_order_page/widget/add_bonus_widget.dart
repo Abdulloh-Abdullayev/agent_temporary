@@ -1,6 +1,8 @@
+import 'package:agent/core/localization/locale_keys.g.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,11 +36,12 @@ class AddBonusWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                      child: Icon(
-                    Icons.keyboard_arrow_down_sharp,
-                    size: 25.w,
-                    color: ColorName.gray2,
-                  )),
+                    child: Icon(
+                      Icons.keyboard_arrow_down_sharp,
+                      size: 25.w,
+                      color: ColorName.gray2,
+                    ),
+                  ),
                   InkWell(
                     onTap: () {
                       Modular.to.pop();
@@ -51,7 +54,7 @@ class AddBonusWidget extends StatelessWidget {
                 ],
               ),
               AppWidgets.textLocale(
-                localeKey: "Добавление бонуса",
+                localeKey: LocaleKeys.add_bonus,
                 fontWeight: FontWeight.w600,
                 fontSize: 24.sp,
               ).paddingOnly(
@@ -59,6 +62,7 @@ class AddBonusWidget extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
+                  Modular.to.pop();
                   showModalBottomSheet(
                     context: context,
                     backgroundColor: Colors.transparent,
@@ -66,9 +70,10 @@ class AddBonusWidget extends StatelessWidget {
                     isDismissible: false,
                     isScrollControlled: true,
                     shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(12),
-                    )),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(12),
+                      ),
+                    ),
                     builder: (context) {
                       return const SelectCategoryWidget();
                     },
@@ -79,6 +84,7 @@ class AddBonusWidget extends StatelessWidget {
                     horizontal: 15.w,
                     vertical: 12.w,
                   ),
+                  margin: EdgeInsets.only(top: 18.w),
                   width: 1.sw,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.w),
@@ -90,7 +96,7 @@ class AddBonusWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppWidgets.textLocale(
-                        localeKey: "Выбрать бонус",
+                        localeKey: LocaleKeys.select_bonus.tr(),
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                       ),
@@ -100,7 +106,7 @@ class AddBonusWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                ).paddingOnly(top: 18.w),
+                ),
               ),
             ],
           ),
@@ -110,7 +116,7 @@ class AddBonusWidget extends StatelessWidget {
               AppButton(
                 height: 45.w,
                 width: 115.w,
-                text: "Закрыть",
+                text: LocaleKeys.close.tr(),
                 textSize: 14.sp,
                 textColor: ColorName.mainColor,
                 color: ColorName.gray,
@@ -120,7 +126,7 @@ class AddBonusWidget extends StatelessWidget {
               AppButton(
                 height: 45.w,
                 width: 200.w,
-                text: "Завершить без бонуса",
+                text: LocaleKeys.complete_without_bonus.tr(),
                 textSize: 14.sp,
                 textColor: ColorName.white,
                 color: ColorName.button,
@@ -134,4 +140,3 @@ class AddBonusWidget extends StatelessWidget {
     );
   }
 }
-
