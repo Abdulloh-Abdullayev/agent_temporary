@@ -17,23 +17,28 @@ const ProductDbSchema = CollectionSchema(
   name: r'ProductDb',
   id: 532979765871063140,
   properties: {
-    r'categoryId': PropertySchema(
+    r'apiId': PropertySchema(
       id: 0,
+      name: r'apiId',
+      type: IsarType.string,
+    ),
+    r'categoryId': PropertySchema(
+      id: 1,
       name: r'categoryId',
       type: IsarType.string,
     ),
     r'name': PropertySchema(
-      id: 1,
+      id: 2,
       name: r'name',
       type: IsarType.string,
     ),
     r'quantityInPackage': PropertySchema(
-      id: 2,
+      id: 3,
       name: r'quantityInPackage',
       type: IsarType.long,
     ),
     r'unitId': PropertySchema(
-      id: 3,
+      id: 4,
       name: r'unitId',
       type: IsarType.string,
     )
@@ -58,6 +63,12 @@ int _productDbEstimateSize(
   Map<Type, List<int>> allOffsets,
 ) {
   var bytesCount = offsets.last;
+  {
+    final value = object.apiId;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.categoryId;
     if (value != null) {
@@ -85,10 +96,11 @@ void _productDbSerialize(
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
-  writer.writeString(offsets[0], object.categoryId);
-  writer.writeString(offsets[1], object.name);
-  writer.writeLong(offsets[2], object.quantityInPackage);
-  writer.writeString(offsets[3], object.unitId);
+  writer.writeString(offsets[0], object.apiId);
+  writer.writeString(offsets[1], object.categoryId);
+  writer.writeString(offsets[2], object.name);
+  writer.writeLong(offsets[3], object.quantityInPackage);
+  writer.writeString(offsets[4], object.unitId);
 }
 
 ProductDb _productDbDeserialize(
@@ -98,11 +110,12 @@ ProductDb _productDbDeserialize(
   Map<Type, List<int>> allOffsets,
 ) {
   final object = ProductDb();
-  object.categoryId = reader.readStringOrNull(offsets[0]);
+  object.apiId = reader.readStringOrNull(offsets[0]);
+  object.categoryId = reader.readStringOrNull(offsets[1]);
   object.id = id;
-  object.name = reader.readStringOrNull(offsets[1]);
-  object.quantityInPackage = reader.readLongOrNull(offsets[2]);
-  object.unitId = reader.readStringOrNull(offsets[3]);
+  object.name = reader.readStringOrNull(offsets[2]);
+  object.quantityInPackage = reader.readLongOrNull(offsets[3]);
+  object.unitId = reader.readStringOrNull(offsets[4]);
   return object;
 }
 
@@ -118,8 +131,10 @@ P _productDbDeserializeProp<P>(
     case 1:
       return (reader.readStringOrNull(offset)) as P;
     case 2:
-      return (reader.readLongOrNull(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 3:
+      return (reader.readLongOrNull(offset)) as P;
+    case 4:
       return (reader.readStringOrNull(offset)) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
@@ -217,6 +232,152 @@ extension ProductDbQueryWhere
 
 extension ProductDbQueryFilter
     on QueryBuilder<ProductDb, ProductDb, QFilterCondition> {
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'apiId',
+      ));
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'apiId',
+      ));
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdEqualTo(
+    String? value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'apiId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdGreaterThan(
+    String? value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'apiId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdLessThan(
+    String? value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'apiId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdBetween(
+    String? lower,
+    String? upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'apiId',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'apiId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'apiId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdContains(
+      String value,
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'apiId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdMatches(
+      String pattern,
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'apiId',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'apiId',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> apiIdIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'apiId',
+        value: '',
+      ));
+    });
+  }
+
   QueryBuilder<ProductDb, ProductDb, QAfterFilterCondition> categoryIdIsNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNull(
@@ -811,6 +972,18 @@ extension ProductDbQueryLinks
     on QueryBuilder<ProductDb, ProductDb, QFilterCondition> {}
 
 extension ProductDbQuerySortBy on QueryBuilder<ProductDb, ProductDb, QSortBy> {
+  QueryBuilder<ProductDb, ProductDb, QAfterSortBy> sortByApiId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'apiId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterSortBy> sortByApiIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'apiId', Sort.desc);
+    });
+  }
+
   QueryBuilder<ProductDb, ProductDb, QAfterSortBy> sortByCategoryId() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'categoryId', Sort.asc);
@@ -863,6 +1036,18 @@ extension ProductDbQuerySortBy on QueryBuilder<ProductDb, ProductDb, QSortBy> {
 
 extension ProductDbQuerySortThenBy
     on QueryBuilder<ProductDb, ProductDb, QSortThenBy> {
+  QueryBuilder<ProductDb, ProductDb, QAfterSortBy> thenByApiId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'apiId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<ProductDb, ProductDb, QAfterSortBy> thenByApiIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'apiId', Sort.desc);
+    });
+  }
+
   QueryBuilder<ProductDb, ProductDb, QAfterSortBy> thenByCategoryId() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'categoryId', Sort.asc);
@@ -927,6 +1112,13 @@ extension ProductDbQuerySortThenBy
 
 extension ProductDbQueryWhereDistinct
     on QueryBuilder<ProductDb, ProductDb, QDistinct> {
+  QueryBuilder<ProductDb, ProductDb, QDistinct> distinctByApiId(
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'apiId', caseSensitive: caseSensitive);
+    });
+  }
+
   QueryBuilder<ProductDb, ProductDb, QDistinct> distinctByCategoryId(
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
@@ -960,6 +1152,12 @@ extension ProductDbQueryProperty
   QueryBuilder<ProductDb, int, QQueryOperations> idProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'id');
+    });
+  }
+
+  QueryBuilder<ProductDb, String?, QQueryOperations> apiIdProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'apiId');
     });
   }
 

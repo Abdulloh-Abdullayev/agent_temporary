@@ -6,6 +6,7 @@ import 'package:agent/core/utils/colors.gen.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -286,10 +287,12 @@ class AppWidgets {
   static Widget iconButton({
     required VoidCallback onPressed,
     required SvgGenImage icon,
+    Widget? content,
     Color bgColor = const Color.fromRGBO(255, 255, 255, 0.1),
+    double borderRadius = 4,
+    Color? iconColor,
     double height = 28,
     double width = 28,
-    Color? iconColor,
   }) {
     return InkWell(
       onTap: onPressed,
@@ -297,15 +300,16 @@ class AppWidgets {
         height: height,
         width: width,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(borderRadius),
           color: bgColor,
         ),
-        child: Center(
-          child: icon.svg(
-            fit: BoxFit.cover,
-            color: iconColor,
-          ),
-        ),
+        child: content ??
+            Center(
+              child: icon.svg(
+                fit: BoxFit.cover,
+                color: iconColor,
+              ),
+            ),
       ),
     );
   }
@@ -417,6 +421,37 @@ class AppWidgets {
         },
         fullscreenDialog: true,
         opaque: false,
+      ),
+    );
+  }
+  static Widget divider(
+      {EdgeInsets margin = EdgeInsets.zero, Color color = ColorName.gray}) {
+    return Container(
+      margin: margin,
+      height: 1,
+      color: color,
+    );
+  }
+  static Widget circularAvatar({
+    required String imgUrl,
+    double radius = 27,
+  }) {
+    return CircleAvatar(
+      radius: radius,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(radius),
+        child: CachedNetworkImage(
+          width: 2 * radius,
+          height: 2 * radius,
+          imageUrl: imgUrl,
+          fit: BoxFit.cover,
+          placeholder: (context, url) => const CupertinoActivityIndicator(),
+          errorWidget: (context, url, error) => Icon(
+            Icons.person,
+            color: ColorName.white,
+            size: 50.w,
+          ),
+        ),
       ),
     );
   }

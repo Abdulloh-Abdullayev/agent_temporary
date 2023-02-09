@@ -7,8 +7,9 @@ import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/draft_page/draft_page.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
+import 'package:agent/ui/pages/left_menu/accounts_cubit/accounts_cubit.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
-import 'package:agent/ui/pages/left_menu/left_menu.dart';
+import 'package:agent/ui/pages/left_menu/left_menu_widget.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
 import 'package:agent/ui/pages/main_page/main_page.dart';
 import 'package:agent/ui/pages/outlets_page/outlets_page.dart';
@@ -43,6 +44,10 @@ class HomePageModule extends Module {
           (i) => AppNavigationBloc(),
           onDispose: (value) => value.close(),
         ),
+    Bind<AccountsCubit>(
+          (i) => AccountsCubit()..load(),
+          onDispose: (value) => value.close(),
+        ),
         Bind<MainCubit>(
           (i) => MainCubit(),
           onDispose: (value) => value.close(),
@@ -74,7 +79,7 @@ class HomePage extends StatelessWidget {
         return SafeArea(
           child: Scaffold(
             key: HomePage.globalKey,
-            drawer: LeftMenuPage(),
+            drawer: LeftMenuWidget(),
             extendBody: true,
             body: bodyBuilder(state.appNavigationType, context),
             bottomNavigationBar: AppNavigationBar(

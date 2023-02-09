@@ -38,6 +38,7 @@ import 'ui/pages/add_order_page/add_order_page.dart';
 import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/debtors_page/widget/deptors_history.dart';
 import 'ui/pages/outlets_page/outlets_map_page.dart';
+import 'ui/pages/profile_page/profile_page.dart';
 import 'ui/pages/refund_page/refund_page.dart';
 import 'ui/pages/rest_of_container_page/rest_of_container_page.dart';
 import 'ui/pages/return_about_page/return_about_page.dart';
@@ -53,7 +54,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(HomePage.routeName);
+    Modular.setInitialRoute(LoginPage.routeName);
     // Modular.setInitialRoute(LoginPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
@@ -139,5 +140,6 @@ class AppModule extends Module {
         ModuleRoute("/", module: ActReconciliationPageModule()),
         ModuleRoute("/", module: DraftPageModule()),
         ModuleRoute("/", module: SalaryPageModule()),
+        ModuleRoute("/", module: ProfilePageModule()),
       ];
 }
