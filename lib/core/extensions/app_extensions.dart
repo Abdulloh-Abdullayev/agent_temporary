@@ -16,6 +16,16 @@ extension WidgetPaddingX on Widget {
           ),
           child: this);
 
+  Widget paddingLTRB(
+    double left,
+    double top,
+    double right,
+    double bottom,
+  ) =>
+      Padding(
+        padding: EdgeInsets.fromLTRB(left, top, right, bottom),
+        child: this,
+      );
   Widget paddingOnly({
     double left = 0.0,
     double top = 0.0,
@@ -32,14 +42,6 @@ extension WidgetPaddingX on Widget {
         child: this,
       );
 
-  /// paddingLTRB EdgeInsets.fromLTRB(left, top, right, bottom)
-  Widget paddingLTRB(double left, double top, double right, double bottom) =>
-      Padding(
-        padding: EdgeInsets.fromLTRB(left, top, right, bottom),
-        child: this,
-      );
-
-  /// Transform.rotate
   Widget rotateX(double angle) {
     return Transform.rotate(
       angle: angle,
@@ -48,6 +50,7 @@ extension WidgetPaddingX on Widget {
     );
   }
 }
+
 
 /// Add margin property to widget
 extension WidgetMarginX on Widget {
@@ -98,6 +101,13 @@ extension WidgetBackground on Widget {
         alignment: Alignment.bottomCenter,
         child: this,
       );
+
+  Widget onTap(Function() ontap) {
+    return GestureDetector(
+      onTap: ontap,
+      child: this,
+    );
+  }    
 }
 
 extension WidgetAlign on Widget {
@@ -154,4 +164,16 @@ extension WidgetAlign on Widget {
         alignment: Alignment.topRight,
         child: this,
       );
+}
+
+extension IntToString on int {
+  String timeFormat() {
+    if (this >= 60) {
+      return "${this ~/ 60}:00";
+    } else if (this >= 10 && this <= 59) {
+      return "0:$this";
+    } else {
+      return "0:0${this % 60}";
+    }
+  }
 }

@@ -225,26 +225,33 @@ class AppWidgets {
   static Widget buttonBuilder({
     double height = 28,
     double width = 28,
-    double redius = 28,
-    Color backColor = ColorName.white,
+    double radius = 4,
+    Color backColor = ColorName.button,
     Widget? child,
     EdgeInsets padding = EdgeInsets.zero,
     Alignment alignment = Alignment.center,
     required Function() onTap,
   }) =>
-      GestureDetector(
-        onTap: onTap,
-        child: Container(
-          alignment: alignment,
-          decoration: BoxDecoration(
-            color: backColor,
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: GestureDetector(
+      Container(
+        alignment: alignment,
+        decoration: BoxDecoration(
+          color: backColor,
+          borderRadius: BorderRadius.circular(radius),
+        ),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: onTap,
+            customBorder: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(radius),
+            ),
             child: Container(
               height: height,
               width: width,
               padding: padding,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(radius * 2),
+              ),
               child: child ?? SizedBox.shrink(),
             ),
           ),

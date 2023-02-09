@@ -338,6 +338,9 @@ class $AssetsImagesIconsGen {
   SvgGenImage get pinButton =>
       const SvgGenImage('assets/images/icons/pin_button.svg');
 
+  /// File path: assets/images/icons/ping.svg
+  SvgGenImage get ping => const SvgGenImage('assets/images/icons/ping.svg');
+
   /// File path: assets/images/icons/pinned.svg
   SvgGenImage get pinned => const SvgGenImage('assets/images/icons/pinned.svg');
 
