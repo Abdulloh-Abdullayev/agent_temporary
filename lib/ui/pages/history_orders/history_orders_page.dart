@@ -91,8 +91,8 @@ class _HistoryOrdersPageState extends State<HistoryOrdersPage>
                                 iconCencel: Assets.images.icons.cencel.svg(),
                                 firstDate: "12",
                                 secondDate: "До",
-                                firstMoneyStatus: 1,
-                                secondMoneyStatus: 1,
+                                firstMoneyStatus: 1.0,
+                                secondMoneyStatus: 1.0,
                                 text: "Фильтр",
                                 dropdownText: ["dropdownText"],
                                 save: () {

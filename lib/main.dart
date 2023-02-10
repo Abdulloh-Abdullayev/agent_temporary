@@ -63,7 +63,7 @@ Future<void> main() async {
             Locale("en", "EN"),
           ],
           fallbackLocale: const Locale("ru", "RU"),
-          child: ModularApp(module: AppModule(), child: SizedBox()),
+          child: ModularApp(module: AppModule(), child: App()),
         ),
       );
     },

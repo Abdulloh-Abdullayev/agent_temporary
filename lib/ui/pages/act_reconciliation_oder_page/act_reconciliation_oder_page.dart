@@ -68,7 +68,7 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
               child: Column(
                 children: [
                   ActWidget.AppBar(
-                    title: LocaleKeys.order_reconciliation_act,
+                    title: LocaleKeys.order_reconciliation_act.tr(),
                     firstText: LocaleKeys.select_date,
                     buttonText: LocaleKeys.apply,
                     dropDownText: LocaleKeys.current_month,
@@ -216,7 +216,6 @@ class _ActReconciliationOderPageState extends State<ActReconciliationOderPage> {
             _cubit.changeDate(key, dateTime);
           },
         );
-        ;
       },
     );
   }

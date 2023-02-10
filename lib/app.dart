@@ -8,7 +8,6 @@ import 'package:agent/ui/pages/act_reconciliation_oder_page/act_reconciliation_o
 import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
 import 'package:agent/ui/pages/all_tasks_page/all_tasks_page.dart';
 import 'package:agent/ui/pages/all_tasks_page/widgets/clicked_item.dart';
-import 'package:agent/ui/pages/map_page/custom_map.dart';
 import 'package:agent/ui/pages/visits_page/visits_page.dart';
 import 'package:agent/ui/pages/customer_data_editing_page/customer_data_editing_page.dart';
 import 'package:agent/ui/pages/customer_data_page/customer_data_page.dart';
@@ -36,10 +35,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:agent/core/bloc/language/language_cubit.dart';
-import 'package:agent/core/services/db/db_service.dart';
-import 'package:agent/core/services/http/http_service.dart';
-import 'core/services/hive_service.dart';
 import 'ui/pages/add_order_page/add_order_page.dart';
 import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/outlets_page/outlets_map_page.dart';
