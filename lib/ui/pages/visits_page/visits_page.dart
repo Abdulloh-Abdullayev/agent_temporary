@@ -3,19 +3,15 @@ import 'dart:ui';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/ui/pages/map_page/custom_map.dart';
 import 'package:agent/ui/pages/visits_page/widget/visits_widgets.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uikit/uikit.dart';
 
-import '../../../core/localization/locale_keys.g.dart';
 import '../../../core/utils/assets.gen.dart';
 import '../../../core/utils/colors.gen.dart';
 import '../../widgets/app_widgets.dart';
-
-import '../order_page/order_page.dart';
 
 class VisitsPageModule extends Module {
   @override
@@ -44,6 +40,7 @@ class VisitsPage extends StatefulWidget {
 }
 
 class _VisitsPageState extends State<VisitsPage> {
+  bool isTap = false;
   var textfieldIsOpen = false;
   var sbh = MediaQueryData.fromWindow(window).padding.top;
   @override
@@ -109,6 +106,46 @@ class _VisitsPageState extends State<VisitsPage> {
                     ],
                   ).marginLTRB(20, 18, 20, 0)
                 : SizedBox.shrink(),
+            Visibility(
+              visible: isTap ? false : true,
+              child: SizedBox(height: 18),
+            ),
+            Visibility(
+              visible: isTap ? false : true,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 5,
+                    child: AppInputTextField(
+                      // controller: ,
+                      // onChanged: ,
+                      hint: "  Искать",
+                      hintStyle: TextStyle(
+                        color: ColorName.gray,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      prefix: Icon(
+                        Icons.search,
+                        color: ColorName.gray2,
+                      ),
+                    ).paddingOnly(left: 20.w),
+                  ),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          isTap = true;
+                        });
+                      },
+                      child: Assets.images.icons.remove
+                          .svg(color: ColorName.black)
+                          .paddingOnly(right: 10.w),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(height: 18),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

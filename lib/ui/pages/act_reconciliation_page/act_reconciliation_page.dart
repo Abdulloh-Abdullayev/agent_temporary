@@ -4,10 +4,12 @@ import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/cubit/act_cubit.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/widgets/act_widgets.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:uikit/uikit.dart';
 
 class ActReconciliationPageModule extends Module {
   @override
@@ -57,13 +59,37 @@ class _ActReconciliationPageState extends State<ActReconciliationPage> {
                       Modular.to.pop();
                     },
                     buttonOnTap: () {},
-                    firstDataOnTap: () {},
-                    secondDataOnTap: () {},
+                    firstDataOnTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => DateTimeDialog(
+                          title: LocaleKeys.select.tr(),
+                          closeTitle: LocaleKeys.close.tr(),
+                          addTitle: LocaleKeys.add.tr(),
+                          addTap: (DateTime time) {
+                            // print("time");
+                          },
+                        ),
+                      );
+                    },
+                    secondDataOnTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => DateTimeDialog(
+                          title: LocaleKeys.select.tr(),
+                          closeTitle: LocaleKeys.close.tr(),
+                          addTitle: LocaleKeys.add.tr(),
+                          addTap: (DateTime time) {
+                            // print("time");
+                          },
+                        ),
+                      );
+                    },
                     firstText: LocaleKeys.select_date,
                     dropDownText: LocaleKeys.current_month,
                     buttonText: LocaleKeys.apply,
-                    firstDate: "01.02.2022",
-                    secondDate: "18.02.2022",
+                    firstDate: "С",
+                    secondDate: "По",
                   ),
                   AppWidgets.textLocale(
                     localeKey: LocaleKeys.request_history,

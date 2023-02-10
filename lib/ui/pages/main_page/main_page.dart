@@ -4,7 +4,6 @@ import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
 import 'package:agent/ui/pages/main_page/widgets/orders_widget.dart';
 import 'package:agent/ui/pages/main_page/widgets/others_widget.dart';
-import 'package:agent/ui/pages/return_from_shelf/return_from_shelf.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:agent/ui/widgets/appbar_main.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -94,11 +93,16 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Widgets.iconButton(
-                                      height: 67.w,
-                                      width: 144.w,
-                                      count: 125,
-                                      title: LocaleKeys.visited.tr(),
+                                    InkWell(
+                                      onTap:(){
+                                        showAlertDialog(context);
+                                      },
+                                      child: Widgets.iconButton(
+                                        height: 67.w,
+                                        width: 144.w,
+                                        count: 125,
+                                        title: LocaleKeys.visited.tr(),
+                                      ),
                                     ),
                                     Widgets.iconButton(
                                       height: 67.w,
@@ -221,4 +225,88 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
       },
     );
   }
+}
+
+Future<void> showAlertDialog(BuildContext context) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false, // user must tap button!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        content: SingleChildScrollView(
+          child: Row(
+            children: [
+              Expanded(
+                flex: 6,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Assets.images.icons.pin.svg(),
+                        SizedBox(
+                          width: 10.w,
+                        ),
+                        AppWidgets.textLocale(
+                          localeKey: "По маршруту ",
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.gray2,
+                        ),
+                        SizedBox(
+                          width: 20.w,
+                        ),
+                        AppWidgets.textLocale(
+                          localeKey: "100",
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.button,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 18.w,
+                    ),
+                    Row(
+                      children: [
+                        Assets.images.icons.pinLeft.svg(),
+                        SizedBox(
+                          width: 10.w,
+                        ),
+                        AppWidgets.textLocale(
+                          localeKey: "По маршруту ",
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
+                          color: ColorName.gray2,
+                        ),
+                        SizedBox(
+                          width: 20.w,
+                        ),
+                        AppWidgets.textLocale(
+                          localeKey: "100",
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ColorName.button,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: InkWell(
+                  onTap: (){
+                    Navigator.of(context).pop();
+                  },
+                  child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(Icons.highlight_remove_outlined,color: ColorName.red,)
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      );
+    },
+  );
 }

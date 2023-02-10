@@ -134,7 +134,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                     9,
                     (index) {
                       return Cards.cards_1(
-                        height: 85.w,
+                        height: 90.w,
                         context: context,
                         width: 1.sw,
                         name: "name",

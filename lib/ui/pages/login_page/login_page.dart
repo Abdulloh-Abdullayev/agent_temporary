@@ -3,8 +3,8 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:uikit/uikit.dart';
 import 'bloc/auth/auth_cubit.dart';
+import 'package:uikit/uikit.dart';
 
 class LoginPageModule extends Module {
   @override
