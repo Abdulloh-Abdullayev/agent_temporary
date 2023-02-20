@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,6 +16,9 @@ class $AssetsColorGen {
 
   /// File path: assets/color/colors.xml
   String get colors => 'assets/color/colors.xml';
+
+  /// List of all assets
+  List<String> get values => [colors];
 }
 
 class $AssetsImagesGen {
@@ -47,6 +50,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/reportImage.png
   AssetGenImage get reportImage =>
       const AssetGenImage('assets/images/reportImage.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [agentIcon, direction, exel, location, market, person, reportImage];
 }
 
 class $AssetsLangsGen {
@@ -60,6 +67,9 @@ class $AssetsLangsGen {
 
   /// File path: assets/langs/uz-UZ.json
   String get uzUZ => 'assets/langs/uz-UZ.json';
+
+  /// List of all assets
+  List<String> get values => [enEN, ruRU, uzUZ];
 }
 
 class $AssetsImagesIconsGen {
@@ -469,6 +479,121 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/zadachi.svg
   SvgGenImage get zadachi =>
       const SvgGenImage('assets/images/icons/zadachi.svg');
+
+  /// List of all assets
+  List<dynamic> get values => [
+        imageIcon,
+        add,
+        agentIcon,
+        arrowDown,
+        arrowRight,
+        backArrow,
+        backButton,
+        backIcon,
+        bigger,
+        bin,
+        bottomArrow,
+        box,
+        box1,
+        calendarIcon,
+        calender,
+        caretDown,
+        cash,
+        cencel,
+        cencelIcon,
+        chat,
+        check,
+        checkIcon,
+        clock,
+        communication,
+        communicationActive,
+        date,
+        delete,
+        downIcon,
+        draft,
+        draftActive,
+        edit,
+        edite,
+        editeAlt,
+        excelIcon,
+        excelIconSvg,
+        exchange,
+        fileUpload,
+        filter,
+        fotoOtchot,
+        freedge,
+        history,
+        home,
+        homeActive,
+        homeIcon,
+        homeIcon2,
+        human,
+        infoCircle,
+        invoise,
+        left,
+        location,
+        locationActive,
+        locationBuuton,
+        locationIcon,
+        logout,
+        luggage,
+        mapArrowIcon,
+        mapLocation,
+        menu,
+        menuIcon,
+        minus,
+        moreButton,
+        note,
+        notification,
+        obmen,
+        piceChart,
+        piceChartAlt,
+        pie2Chart,
+        pieChart,
+        pieChartActive,
+        pieIcon,
+        pin,
+        pinAccros,
+        pinButton,
+        pinLeft,
+        ping,
+        pinned,
+        place,
+        placeActive,
+        plus,
+        plusIcon,
+        popupmenu,
+        profile,
+        profileActive,
+        qrCode,
+        refresh,
+        refreshIcon,
+        remove,
+        right,
+        savedOnes,
+        savedOnesActive,
+        search,
+        search1,
+        searchButton,
+        send,
+        setting,
+        share,
+        shopMenu,
+        shopping,
+        shoppingCardIcon,
+        smaller,
+        smartphone,
+        stack,
+        telephoneButton,
+        trash,
+        trashCan,
+        uploadingFile,
+        user,
+        userTimer,
+        wallet,
+        xIcon,
+        zadachi
+      ];
 }
 
 class Assets {
@@ -537,6 +662,8 @@ class AssetGenImage {
     );
   }
 
+  ImageProvider provider() => AssetImage(_assetName);
+
   String get path => _assetName;
 
   String get keyName => _assetName;
@@ -589,4 +716,6 @@ class SvgGenImage {
   }
 
   String get path => _assetName;
+
+  String get keyName => _assetName;
 }

@@ -1,37 +1,41 @@
 part of 'accounts_cubit.dart';
 
 class AccountsState extends Equatable {
-  final List<AccountModel> accounts;
-  final AccountModel? selectedAccount;
+  final List<UserModel> users;
+  final UserModel? selectedUser;
   final bool isExpended;
   final bool reload;
+  final bool loading;
 
   const AccountsState({
-    this.accounts = const [],
-    this.selectedAccount,
+    this.users = const [],
+    this.selectedUser,
     this.isExpended = false,
     this.reload = false,
+    this.loading = true,
   });
 
   AccountsState copyWith({
-    List<AccountModel>? accounts,
-    AccountModel? selectedAccount,
+    List<UserModel>? accounts,
+    UserModel? selectedAccount,
     bool? isExpended,
+    bool? loading,
   }) {
     return AccountsState(
-      accounts: accounts ?? this.accounts,
-      selectedAccount: selectedAccount ?? this.selectedAccount,
+      users: accounts ?? this.users,
+      selectedUser: selectedAccount ?? this.selectedUser,
       isExpended: isExpended ?? this.isExpended,
       reload: !reload,
+      loading: loading??this.loading,
     );
   }
 
   @override
-  List<Object?> get props =>
-      [
-        accounts,
-        selectedAccount,
+  List<Object?> get props => [
+        users,
+        selectedUser,
         isExpended,
         reload,
+        loading,
       ];
 }

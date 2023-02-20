@@ -55,6 +55,7 @@ class AppWidgets {
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(borderRadius),
+            border: Border.all(color: borderColor,width: 2)
           ),
           child: Center(
             child: Row(

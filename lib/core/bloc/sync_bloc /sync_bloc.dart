@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/db/models/product/product_db.dart';
+import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:agent/ui/widgets/sync_db_page.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -9,7 +10,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:isar/isar.dart';
 
 import '../../models/product/product.dart';
-
 
 part 'sync_event.dart';
 
@@ -26,8 +26,6 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
     SyncLoaded event,
     Emitter<SyncState> emit,
   ) async {
-    // final entity = DBEntityRepository<Product>();
-    // await DBService.createDb(event.dbName);
     Modular.to.push(
       PageRouteBuilder(
         opaque: false,
@@ -35,10 +33,12 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
       ),
     );
     try {
+      List<String> statusList = [];
+      emit(SyncSuccess(percent: 0));
       List<Product> products = getList();
-      await DBService.to.isar.productDbs.clear();
       await DBService.to.isar.writeTxn(
         () async {
+          await DBService.to.isar.productDbs.clear();
           products.forEach((element) async {
             await DBService.to.isar.productDbs
                 .put(ProductDb.fromProduct(element));
@@ -47,10 +47,27 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
       );
 
       final list = await DBService.to.isar.productDbs.where().findAll();
+      AppLoggerUtil.i("message length->${list.length}");
+      await Future.delayed(Duration(seconds: 1));
+      statusList.add("Products");
       emit(
-        SyncSuccess(
-          syncString: list.map((e) => e.name!).toList(),
-        ),
+          (state as SyncSuccess).copyWith(percent: 20, syncString: statusList));
+      await Future.delayed(Duration(seconds: 1));
+      statusList.add("Models");
+      emit(
+          (state as SyncSuccess).copyWith(percent: 40, syncString: statusList));
+      await Future.delayed(Duration(seconds: 1));
+      statusList.add("Visits");
+      emit(
+          (state as SyncSuccess).copyWith(percent: 60, syncString: statusList));
+      await Future.delayed(Duration(seconds: 1));
+      statusList.add("Comments");
+      emit(
+          (state as SyncSuccess).copyWith(percent: 80, syncString: statusList));
+      await Future.delayed(Duration(seconds: 1));
+      statusList.add("Init database");
+      emit(
+        (state as SyncSuccess).copyWith(percent: 100, syncString: statusList),
       );
     } catch (e) {
       emit(SyncFailure());

@@ -1,10 +1,10 @@
-import 'package:agent/core/services/db/entities/base_entity.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'product.g.dart';
 
 @JsonSerializable()
-class Product extends BaseEntity {
+class Product extends Equatable {
   final String? id;
   final String? name;
   @JsonKey(name: 'category_id')

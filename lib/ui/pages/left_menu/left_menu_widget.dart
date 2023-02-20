@@ -1,12 +1,14 @@
 import 'package:agent/core/bloc/app_navigation/app_navigation_bloc.dart';
 import 'package:agent/core/extensions/app_extensions.dart';
 import 'package:agent/core/localization/locale_keys.g.dart';
+import 'package:agent/core/models/user/user_model.dart';
 import 'package:agent/core/utils/assets.gen.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/all_tasks_page/all_tasks_page.dart';
 import 'package:agent/ui/pages/debtors_page/debtors_page.dart';
 import 'package:agent/ui/pages/diagnostics_page/diagnostics_page.dart';
+import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/left_menu/account_item_widget.dart';
 import 'package:agent/ui/pages/left_menu/accounts_cubit/accounts_cubit.dart';
 import 'package:agent/ui/pages/left_menu/left_menu.dart';
@@ -155,6 +157,9 @@ class LeftMenuWidget extends StatelessWidget {
   }
 
   Widget buildAccounts(AccountsState state) {
+    if (state.loading) {
+      return CircularProgressIndicator();
+    }
     return Container(
       color: ColorName.drawerColor,
       padding: EdgeInsets.symmetric(
@@ -175,21 +180,21 @@ class LeftMenuWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     AppWidgets.circularAvatar(
-                      imgUrl: state.selectedAccount!.imgUrl,
+                      imgUrl: "",
                     ).paddingOnly(right: 10.w),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AppWidgets.text(
-                          text: state.selectedAccount!.name,
+                          text: state.selectedUser!.firstName ?? "",
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                           color: ColorName.white,
                         ).paddingOnly(bottom: 4.w),
                         AppWidgets.text(
                           text:
-                              "${LocaleKeys.server.tr()}: ${state.selectedAccount!.serverName}",
+                              "${LocaleKeys.server.tr()}: ${state.selectedUser!.serverName}",
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                           color: ColorName.white.withOpacity(0.5),
@@ -218,17 +223,20 @@ class LeftMenuWidget extends StatelessWidget {
             ],
           ).paddingSymmetric(horizontal: 20.w),
           AnimatedContainer(
-            height: state.isExpended ? (state.accounts.length + 1) * 55 : 0,
+            height: state.isExpended ? (state.users.length + 1) * 55 : 0,
             duration: const Duration(milliseconds: 300),
             child: ListView.separated(
-              itemCount: state.accounts.length + 1,
+              itemCount: state.users.length + 1,
               addSemanticIndexes: true,
               itemBuilder: (context, index) {
-                if (index == state.accounts.length) {
+                if (index == state.users.length) {
                   return const AddAccountButton();
                 }
                 return AccountItemWidget(
-                  accountModel: state.accounts[index],
+                  user: state.users[index],
+                  onTap: () {
+                    showAlertDialog(context, state.users[index]);
+                  },
                 ).paddingSymmetric(horizontal: 20.w);
               },
               separatorBuilder: (BuildContext context, int index) {
@@ -241,6 +249,42 @@ class LeftMenuWidget extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+
+  void showAlertDialog(BuildContext context, UserModel userModel) {
+    // set up the buttons
+    Widget cancelButton = TextButton(
+      child: Text("Cancel"),
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    );
+    Widget continueButton = TextButton(
+      child: Text("Ok"),
+      onPressed: () async {
+        Modular.to.pop();
+        await AccountsCubit.to.changeUser(userModel).then((value) {
+          HomePage.globalKey.currentState!.closeDrawer();
+        });
+      },
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("SalesDoctor"),
+      content:
+          Text("Вы действительно хотите перейти на. другого пользователя?"),
+      actions: [
+        cancelButton,
+        continueButton,
+      ],
+    );
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
 }

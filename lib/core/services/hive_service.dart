@@ -35,9 +35,27 @@ class HiveService {
   String getDbName() {
     return _box.get(_HiveKeys.dbName);
   }
+
+  void setCurrentUserId(String id) {
+    _box.put(_HiveKeys.userId, id);
+  }
+
+  String getCurrentUserId() {
+    return _box.get(_HiveKeys.userId, defaultValue: '');
+  }
+
+  void setIsLoggedIn(bool value) {
+    _box.put(_HiveKeys.isLoggedIn, value);
+  }
+
+  bool getIsLoggedIn() {
+    return _box.get(_HiveKeys.isLoggedIn,defaultValue: false);
+  }
 }
 
 class _HiveKeys {
   static const String lang = "lang";
   static const String dbName = "dbName";
+  static const String userId = "userId";
+  static const String isLoggedIn = "isLoggedIn";
 }

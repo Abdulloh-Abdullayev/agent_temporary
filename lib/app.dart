@@ -1,8 +1,10 @@
 import 'package:agent/core/bloc/language/language_cubit.dart';
 import 'package:agent/core/bloc/loader/loader_cubit.dart';
+import 'package:agent/core/services/account_service/account_service.dart';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
 import 'package:agent/core/services/http/http_service.dart';
+import 'package:agent/core/services/http/user_service.dart';
 import 'package:agent/ui/pages/about_order/about_order.dart';
 import 'package:agent/ui/pages/act_reconciliation_oder_page/act_reconciliation_oder_page.dart';
 import 'package:agent/ui/pages/act_reconciliation_page/act_reconciliation_page.dart';
@@ -35,8 +37,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'core/bloc/sync_bloc /sync_bloc.dart';
 import 'ui/pages/add_order_page/add_order_page.dart';
 import 'ui/pages/balance_page/balance_page.dart';
+import 'ui/pages/left_menu/accounts_cubit/accounts_cubit.dart';
 import 'ui/pages/outlets_page/outlets_map_page.dart';
 import 'ui/pages/profile_page/profile_page.dart';
 import 'ui/pages/refund_page/refund_page.dart';
@@ -47,7 +51,7 @@ import 'ui/pages/return_from_shelf/return_from_shelf.dart';
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute(LoginPage.routeName);
+    Modular.setInitialRoute(HomePage.routeName);
     // Modular.setInitialRoute(LoginPage.routeName);
     Modular.setObservers([BotToastNavigatorObserver()]);
     return BlocBuilder<LanguageCubit, Locale>(
@@ -91,9 +95,21 @@ class AppModule extends Module {
           onDispose: (v) => v.close(),
         ),
         AsyncBind<HiveService>((i) => HiveService.init()),
+        AsyncBind<AccountService>((i) => AccountService.init()),
         AsyncBind<DBService>((i) => DBService.init()),
-        Bind<LoaderCubit>((i) => LoaderCubit(), onDispose: (v) => v.close()),
-        // Bind<SyncBloc>((i) => SyncBloc(), onDispose: (v) => v.close())
+        Bind.lazySingleton<UserService>((i) => UserService()),
+        Bind<LoaderCubit>(
+          (i) => LoaderCubit(),
+          onDispose: (v) => v.close(),
+        ),
+        Bind<AccountsCubit>(
+          (i) => AccountsCubit(),
+          onDispose: (value) => value.close(),
+        ),
+        Bind<SyncBloc>(
+          (i) => SyncBloc(),
+          onDispose: (v) => v.close(),
+        )
       ];
 
   @override

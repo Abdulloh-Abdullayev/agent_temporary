@@ -1,7 +1,9 @@
 import 'dart:ui';
 
-import 'package:agent/core/utils/colors.gen.dart';
+import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
+import 'package:bot_toast/bot_toast.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -17,7 +19,7 @@ class SyncDbPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () async => false,
+      onWillPop: () async => true,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: BackdropFilter(
@@ -31,8 +33,22 @@ class SyncDbPage extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.4),
             ),
-            child: BlocBuilder<SyncBloc, SyncState>(
+            child: BlocConsumer<SyncBloc, SyncState>(
+              listener: (context, state) {
+                if (state is SyncSuccess) {
+                  if (state.percent == 100) {
+                    BotToast.showText(text: "success");
+                    Modular.to.pushReplacementNamed(HomePage.routeName);
+                  }
+                }
+              },
               bloc: SyncBloc.to,
+              buildWhen: (previous, current) {
+                if (current is SyncSuccess) {
+                  return true;
+                }
+                return false;
+              },
               builder: (context, state) {
                 if (state is SyncInitial) {
                   return CircularProgressIndicator();
@@ -44,20 +60,25 @@ class SyncDbPage extends StatelessWidget {
                       CircularPercentIndicator(
                         radius: 60.0,
                         lineWidth: 5.0,
-                        percent: 0.5,
-                        center: new Text("${state.syncString.length}"),
+                        percent: state.percent / 100,
+                        center: new Text("${state.percent.toInt()} %"),
                         progressColor: Colors.green,
                       ),
-                      CircularProgressIndicator(
-                        color: ColorName.mainColor,
+                      SizedBox(
+                        height: 30,
                       ),
+                      state.percent != 100
+                          ? const CupertinoActivityIndicator(
+                              radius: 20,
+                            )
+                          : SizedBox(),
                       AppWidgets.textLocale(
                         localeKey: state.syncString.toString(),
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
                         maxLines: 100,
-                      ).paddingOnly(top: 14.w),
+                      ).paddingSymmetric(horizontal: 20, vertical: 14),
                       AppWidgets.appButton(
                         title: "Apply",
                         onTap: () {

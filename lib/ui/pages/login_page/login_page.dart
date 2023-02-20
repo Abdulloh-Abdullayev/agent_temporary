@@ -1,3 +1,4 @@
+import 'package:agent/core/routes/module_init_guard.dart';
 import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -20,6 +21,9 @@ class LoginPageModule extends Module {
         ChildRoute(
           LoginPage.routeName,
           child: (context, args) => LoginPage(),
+          guards: [
+            ModuleInitGuard(),
+          ],
         )
       ];
 }

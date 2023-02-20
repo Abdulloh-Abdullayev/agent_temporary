@@ -7,7 +7,6 @@ import 'package:agent/ui/pages/add_outlets_page/add_outlets_page.dart';
 import 'package:agent/ui/pages/draft_page/draft_page.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar.dart';
 import 'package:agent/ui/pages/home/widgets/app_navigation_bar_item.dart';
-import 'package:agent/ui/pages/left_menu/accounts_cubit/accounts_cubit.dart';
 import 'package:agent/ui/pages/left_menu/bloc/left_menu_bloc.dart';
 import 'package:agent/ui/pages/left_menu/left_menu_widget.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
@@ -42,10 +41,6 @@ class HomePageModule extends Module {
   List<Bind<Object>> get binds => [
         Bind<AppNavigationBloc>(
           (i) => AppNavigationBloc(),
-          onDispose: (value) => value.close(),
-        ),
-    Bind<AccountsCubit>(
-          (i) => AccountsCubit()..load(),
           onDispose: (value) => value.close(),
         ),
         Bind<MainCubit>(

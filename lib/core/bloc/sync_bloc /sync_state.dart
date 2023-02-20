@@ -5,7 +5,6 @@ abstract class SyncState extends Equatable {
   const SyncState();
 }
 
-
 class SyncInitial extends SyncState {
   @override
   List<Object?> get props => [];

@@ -215,7 +215,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                 onPressed: () async {
                   // SyncBloc.to.add(SyncLoaded(dbName: 'db2'));
                 },
-                backgroundColor: ColorName.bluePercent,
+                backgroundColor: ColorName.mainColor,
                 child: Text('2'),
                 heroTag: "2",
               ),
