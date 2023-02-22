@@ -70,6 +70,7 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
         (state as SyncSuccess).copyWith(percent: 100, syncString: statusList),
       );
     } catch (e) {
+      AppLoggerUtil.e('$e');
       emit(SyncFailure());
     }
   }
@@ -89,4 +90,55 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
     }
     return list;
   }
+
+  Map<String, dynamic> map = {
+    "name": "null",
+    "company_name": "null",
+    "address": "null",
+    "navigate": "null",
+    "phone": "null",
+    "contact": "null",
+    "inn": "null",
+    "jshshir": "null",
+    "description": "null",
+    "lat": "",
+    "lon": "",
+    "balance": 0,
+    "bank": "null",
+    "mfo": "null",
+    "oked": "null",
+    "visit_days": ["monday", "tuesday", "wednesday"],
+    "territory": {
+      "name": "null",
+      "lat": null,
+      "lon": null,
+      "is_active": false,
+      "region": {
+        "name": "null",
+        "description": "null",
+        "id": "00000000-0000-0000-0000-000000000000"
+      },
+      "id": "00000000-0000-0000-0000-000000000000"
+    },
+    "sales_channel": {
+      "name": "null",
+      "id": "00000000-0000-0000-0000-000000000000"
+    },
+    "category": {
+      "name": "null",
+      "description": "null",
+      "code": "null",
+      "is_active": false,
+      "id": "00000000-0000-0000-0000-000000000000"
+    },
+    "client_type": {
+      "name": "null",
+      "color": "null",
+      "xml": "null",
+      "id": "00000000-0000-0000-0000-000000000000"
+    },
+    "orders": null,
+    "sum": 0,
+    "id": "00000000-0000-0000-0000-000000000000"
+  };
 }
