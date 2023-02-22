@@ -1,4 +1,5 @@
-import 'package:agent/core/models/product/product.dart';
+
+import 'package:agent/core/models/products_model/products_model.dart';
 import 'package:isar/isar.dart';
 
 part 'product_db.g.dart';
@@ -12,21 +13,17 @@ class ProductDb {
   String? unitId;
   int? quantityInPackage;
 
- static ProductDb fromProduct(Product product) {
+ static ProductDb fromProduct(ProductsModel productsModel) {
     return ProductDb()
-      ..apiId = product.id
-      ..name = product.name
-      ..categoryId = product.categoryId
-      ..unitId = product.unitId
-      ..quantityInPackage = product.quantityInPackage;
+      ..apiId = productsModel.id
+      ..name = productsModel.name
+      ..quantityInPackage = productsModel.quantityInPackage;
   }
 
-  Product toProduct() {
-    return Product(
+  ProductsModel toProduct() {
+    return ProductsModel(
       id: apiId,
-      unitId: unitId,
       quantityInPackage: quantityInPackage,
-      categoryId: categoryId,
       name: name,
     );
   }

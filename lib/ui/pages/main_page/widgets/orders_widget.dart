@@ -159,7 +159,8 @@ class _OrdersWidgetState extends State<OrdersWidget>
                   ),
                 )
               ],
-            ));
+            ),
+        );
       },
     );
   }

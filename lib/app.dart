@@ -1,5 +1,6 @@
 import 'package:agent/core/bloc/language/language_cubit.dart';
 import 'package:agent/core/bloc/loader/loader_cubit.dart';
+import 'package:agent/core/bloc/sync_data_bloc/sync_data_bloc.dart';
 import 'package:agent/core/services/account_service/account_service.dart';
 import 'package:agent/core/services/db/db_service.dart';
 import 'package:agent/core/services/hive_service.dart';
@@ -37,7 +38,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'core/bloc/sync_bloc /sync_bloc.dart';
 import 'ui/pages/add_order_page/add_order_page.dart';
 import 'ui/pages/balance_page/balance_page.dart';
 import 'ui/pages/left_menu/accounts_cubit/accounts_cubit.dart';
@@ -106,8 +106,8 @@ class AppModule extends Module {
           (i) => AccountsCubit(),
           onDispose: (value) => value.close(),
         ),
-        Bind<SyncBloc>(
-          (i) => SyncBloc(),
+        Bind<SyncDataBloc>(
+          (i) => SyncDataBloc(),
           onDispose: (v) => v.close(),
         )
       ];

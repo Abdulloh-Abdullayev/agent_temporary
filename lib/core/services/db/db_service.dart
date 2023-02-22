@@ -1,4 +1,5 @@
 import 'package:agent/core/models/client_model/client_model.dart';
+import 'package:agent/core/models/products_model/products_model.dart';
 import 'package:agent/core/services/account_service/user_db/user_db.dart';
 import 'package:agent/core/services/db/models/product/product_db.dart';
 import 'package:agent/core/services/hive_service.dart';
@@ -70,5 +71,6 @@ class DBService {
     UserDBSchema,
     ProductDbSchema,
     ClientModelSchema,
+    ProductsModelSchema
   ];
 }

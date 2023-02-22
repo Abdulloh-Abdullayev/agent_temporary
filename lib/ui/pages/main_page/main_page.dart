@@ -1,4 +1,5 @@
 import 'package:agent/core/extensions/app_extensions.dart';
+import 'package:agent/core/services/products_servise/products_servise.dart';
 import 'package:agent/core/utils/colors.gen.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/pages/main_page/bloc/main_cubit.dart';
@@ -104,13 +105,18 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                                         title: LocaleKeys.visited.tr(),
                                       ),
                                     ),
-                                    Widgets.iconButton(
-                                      height: 67.w,
-                                      width: 144.w,
-                                      count: 125,
-                                      title: LocaleKeys.left.tr(),
-                                      icon: Icons.check_box_outlined,
-                                      color: ColorName.red,
+                                    InkWell(
+                                      onTap: (){
+                                        ProductService().getProductsApi(1, 10);
+                                      },
+                                      child: Widgets.iconButton(
+                                        height: 67.w,
+                                        width: 144.w,
+                                        count: 125,
+                                        title: LocaleKeys.left.tr(),
+                                        icon: Icons.check_box_outlined,
+                                        color: ColorName.red,
+                                      ),
                                     ),
                                   ],
                                 ).paddingOnly(top: 20.w),

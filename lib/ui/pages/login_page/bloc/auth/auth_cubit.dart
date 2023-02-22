@@ -1,5 +1,5 @@
 import 'package:agent/core/bloc/loader/loader_cubit.dart';
-import 'package:agent/core/bloc/sync_bloc%20/sync_bloc.dart';
+import 'package:agent/core/bloc/sync_data_bloc/sync_data_bloc.dart';
 import 'package:agent/core/constants/api_const.dart';
 import 'package:agent/core/models/token_model/token_model.dart';
 import 'package:agent/core/models/user/user_model.dart';
@@ -48,7 +48,7 @@ class AuthCubit extends Cubit<AuthState> {
       await AccountsCubit.to.load();
       LoaderCubit.to.hide();
       HiveService.to.setIsLoggedIn(true);
-      SyncBloc.to.add(SyncLoaded(dbName: "dbName"));
+      SyncDataBloc.to.add(SyncDataLoaded(dbName: "dbName"));
     } catch (e) {
       AppLoggerUtil.e("$e");
       LoaderCubit.to.hide();

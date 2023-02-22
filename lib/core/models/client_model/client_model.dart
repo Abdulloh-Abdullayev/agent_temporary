@@ -1,3 +1,4 @@
+import 'package:agent/core/models/category_model/category_model.dart';
 import 'package:isar/isar.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -119,24 +120,6 @@ class SalesChannel {
       _$SalesChannelFromJson(json);
 
   Map<String, dynamic> toJson() => _$SalesChannelToJson(this);
-}
-
-@JsonSerializable()
-@embedded
-class Category {
-  String? name;
-  String? description;
-  String? code;
-  @JsonKey(name: 'is_active', defaultValue: false)
-  bool? isActive;
-  String? id;
-
-  Category({this.name, this.description, this.code, this.isActive, this.id});
-
-  factory Category.fromJson(Map<String, dynamic> json) =>
-      _$CategoryFromJson(json);
-
-  Map<String, dynamic> toJson() => _$CategoryToJson(this);
 }
 
 @JsonSerializable()
