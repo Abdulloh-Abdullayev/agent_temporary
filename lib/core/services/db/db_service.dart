@@ -1,3 +1,4 @@
+import 'package:agent/core/models/client_model/client_model.dart';
 import 'package:agent/core/services/account_service/user_db/user_db.dart';
 import 'package:agent/core/services/db/models/product/product_db.dart';
 import 'package:agent/core/services/hive_service.dart';
@@ -20,10 +21,7 @@ class DBService {
     AppLoggerUtil.w("userid $userId");
     if (userId.isNotEmpty) {
       var isar = await Isar.open(
-        [
-          UserDBSchema,
-          ProductDbSchema,
-        ],
+        schemas,
         name: userId,
       );
       instance.isar = isar;
@@ -71,5 +69,6 @@ class DBService {
   static List<CollectionSchema> schemas = [
     UserDBSchema,
     ProductDbSchema,
+    ClientModelSchema,
   ];
 }

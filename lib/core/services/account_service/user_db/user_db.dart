@@ -23,24 +23,6 @@ class UserDB {
   DateTime? expireTime;
   String? serverName;
 
-  // UserDB({
-  //   String? firstName,
-  //   String? lastName,
-  //   String? middleName,
-  //   String? phone,
-  //   String? login,
-  //   String? agentType,
-  //   String? apkVersion,
-  //   DateTime? lastSync,
-  //   String? color,
-  //   String? code,
-  //   String? fullName,
-  //   String? id,
-  //   String? token,
-  //   String? refreshToken,
-  //   DateTime? expireTime,
-  // })
-
   static UserDB fromUser(UserModel model) {
     return UserDB()
       ..apiId = model.id

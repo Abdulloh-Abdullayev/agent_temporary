@@ -1,15 +1,11 @@
 import 'dart:async';
-import 'package:agent/core/services/db/db_service.dart';
-import 'package:agent/core/services/db/models/product/product_db.dart';
+import 'package:agent/core/models/client_model/client_model.dart';
 import 'package:agent/core/utils/app_logger_util.dart';
 import 'package:agent/ui/widgets/sync_db_page.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:isar/isar.dart';
-
-import '../../models/product/product.dart';
 
 part 'sync_event.dart';
 
@@ -35,20 +31,20 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
     try {
       List<String> statusList = [];
       emit(SyncSuccess(percent: 0));
-      List<Product> products = getList();
-      await DBService.to.isar.writeTxn(
-        () async {
-          await DBService.to.isar.productDbs.clear();
-          products.forEach((element) async {
-            await DBService.to.isar.productDbs
-                .put(ProductDb.fromProduct(element));
-          });
-        },
-      );
+      // List<ClientModel> products = getList();
+      // await DBService.to.isar.writeTxn(
+      //   () async {
+      //     await DBService.to.isar.clientModels.clear();
+      //     for(var client in products){
+      //       await DBService.to.isar.clientModels.put(client);
+      //     }
+      //   },
+      // );
 
-      final list = await DBService.to.isar.productDbs.where().findAll();
-      AppLoggerUtil.i("message length->${list.length}");
+      // final list = await DBService.to.isar.productDbs.where().findAll();
+      // AppLoggerUtil.i("message length->${list.length}");
       await Future.delayed(Duration(seconds: 1));
+// todo get product
       statusList.add("Products");
       emit(
           (state as SyncSuccess).copyWith(percent: 20, syncString: statusList));
@@ -75,18 +71,10 @@ class SyncBloc extends Bloc<SyncEvent, SyncState> {
     }
   }
 
-  List<Product> getList() {
-    List<Product> list = [];
-    for (int i = 0; i <= 3; i++) {
-      list.add(
-        Product(
-          id: "08cfeb88-1bb5-479c-a224-817443bae10c$i",
-          name: "Product $i",
-          categoryId: "08cfeb88-1bb5-479c-a224-817443bae10c",
-          quantityInPackage: i,
-          unitId: "87a3588c-f530-4388-b0c4-9f7001082be2",
-        ),
-      );
+  List<ClientModel> getList() {
+    List<ClientModel> list = [];
+    for (int i = 0; i <= 1000; i++) {
+      list.add(ClientModel.fromJson(map));
     }
     return list;
   }

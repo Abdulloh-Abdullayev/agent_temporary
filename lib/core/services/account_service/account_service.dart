@@ -1,6 +1,6 @@
 import 'package:agent/core/models/user/user_model.dart';
 import 'package:agent/core/services/account_service/user_db/user_db.dart';
-import 'package:agent/core/services/db/models/product/product_db.dart';
+import 'package:agent/core/services/db/db_service.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
@@ -13,10 +13,7 @@ class AccountService {
     var instance = AccountService();
     final dir = await getApplicationSupportDirectory();
     instance.isar = await Isar.open(
-      [
-        UserDBSchema,
-        ProductDbSchema,
-      ],
+      DBService.schemas,
       directory: dir.path,
       name: 'accountsdb',
     );
