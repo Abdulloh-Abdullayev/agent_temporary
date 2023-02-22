@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:agent/core/bloc/sync_data_bloc/sync_data_bloc.dart';
 import 'package:agent/ui/pages/home/home_page.dart';
 import 'package:agent/ui/widgets/app_widgets.dart';
 import 'package:bot_toast/bot_toast.dart';
@@ -10,8 +11,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:uikit/extensions/app_extensions.dart';
-
-import '../../core/bloc/sync_bloc /sync_bloc.dart';
 
 class SyncDbPage extends StatelessWidget {
   const SyncDbPage({Key? key}) : super(key: key);
@@ -33,27 +32,27 @@ class SyncDbPage extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.4),
             ),
-            child: BlocConsumer<SyncBloc, SyncState>(
+            child: BlocConsumer<SyncDataBloc, SyncDataState>(
               listener: (context, state) {
-                if (state is SyncSuccess) {
+                if (state is SyncDataSuccess) {
                   if (state.percent == 100) {
                     BotToast.showText(text: "success");
                     Modular.to.pushReplacementNamed(HomePage.routeName);
                   }
                 }
               },
-              bloc: SyncBloc.to,
+              bloc: SyncDataBloc.to,
               buildWhen: (previous, current) {
-                if (current is SyncSuccess) {
+                if (current is SyncDataSuccess) {
                   return true;
                 }
                 return false;
               },
               builder: (context, state) {
-                if (state is SyncInitial) {
+                if (state is SyncDataInitial) {
                   return CircularProgressIndicator();
                 }
-                if (state is SyncSuccess) {
+                if (state is SyncDataSuccess) {
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -88,7 +87,7 @@ class SyncDbPage extends StatelessWidget {
                     ],
                   );
                 }
-                if (state is SyncFailure) {
+                if (state is SyncDataFailure) {
                   return Icon(Icons.error);
                 }
                 return Container(
